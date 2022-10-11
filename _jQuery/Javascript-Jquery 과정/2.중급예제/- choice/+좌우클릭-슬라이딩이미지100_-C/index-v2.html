@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>좌우슬라이딩</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" >
+<link href="css/title.css" rel="stylesheet" type="text/css" >
+<script src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			var n=0;
+			$("p.next").click(
+				function(){
+					n++;
+					if(n<4){
+						$("div ul").animate({"left":-100*n+"%"},1500,function(){
+								if(n==3){
+									//$("p.next").hide();
+									$("p.next").animate({"right":"-50px"},500);
+								}
+							});
+						//$("p.prev").show();
+						$("p.prev").animate({"left":"0px"},500);
+					}else{
+						n=0;
+						$("div ul").animate({"left":-100*n+"%"},1500);
+					}
+				}
+			);
+			
+			$("p.prev").click(
+				function(){
+					n--;
+					if(n>0){
+						$("div ul").animate({"left":-100*n+"%"},500);
+						//$("p.next").show();
+						$("p.next").animate({"right":"0px"},500);
+					}else{
+						n=0;
+						$("div ul").animate({"left":-100*n+"%"},500,function(){
+								if(n==0){
+									//$("p.prev").hide();
+									$("p.prev").animate({"left":"-50px"},500);
+								}
+							});
+						}
+				}
+			);
+			var hh;
+			$(window).resize(
+				function(){
+					hh=$("img").height()/2;
+					$("p").css("top",hh);
+				}
+			);
+			
+		}
+	);
+</script>
+</head>
+
+<body>
+	<div id="title">
+      <ul>
+          <li><img src="img/t1.jpg" /></li>
+          <li><img src="img/t2.jpg" /></li>
+          <li><img src="img/t3.jpg" /></li>
+          <li><img src="img/t4.jpg" /></li>
+      </ul>
+      <p class="prev">이전</p>
+      <p class="next">다음</p>
+    </div>
+</body>
+</html>

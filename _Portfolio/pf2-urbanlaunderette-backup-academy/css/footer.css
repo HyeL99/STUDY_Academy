@@ -1,0 +1,138 @@
+footer {
+  background-color: #000000;
+  color: #fff;
+  line-height: 1.7;
+  position: relative;
+}
+footer::before{
+  content: "Urban Launderette";
+  color: #3f3d3d;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  font-size: 0;
+  font-weight: 700;
+}
+footer a{
+  color: #fff;
+}
+footer div.inner {
+  align-items: flex-end;
+  position: relative;
+  
+}
+footer div.inner h1 {
+  
+}
+footer div.inner .left {
+  
+}
+footer div.inner .left .tel {
+  font-size: 15px;
+}
+footer div.inner .left .tel p.phone {
+  
+}
+footer div.inner .left .tel p.phone strong {
+  display: block;
+  font-size: 40px;
+  line-height: 1;
+  margin: 8px 0 26px;
+}
+footer div.inner .left .tel p:not(.phone) {
+  
+}
+footer div.inner .left address {
+  margin-bottom: 100px;
+  margin-top: 60px;
+  color: #999;
+  font-size: 13px;
+  letter-spacing: -1px;
+}
+footer div.inner .left address span{
+  display: none;
+}
+footer div.inner .left ul.bnb {
+  transform: translateX(-14px);
+}
+footer div.inner .left ul.bnb li {
+  
+}
+footer div.inner .left ul.bnb li a {
+  padding: 15px 14px;
+  font-size: 14px;
+}
+footer div.inner .left ul.bnb li:not(:first-child) a{
+  color: #999;
+}
+footer div.inner .right {
+  
+}
+footer div.inner .right ul.sns {
+  
+  margin-bottom: 100px;
+}
+footer div.inner .right ul.sns li {
+  
+}
+footer div.inner .right ul.sns li a {
+  font-size: 0;
+  width: 45px;
+  height: 45px;
+  display: block;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer div.inner .right ul.sns li:nth-child(1) a {
+    background-image: url(../img/f.svg);
+}
+footer div.inner .right ul.sns li:nth-child(2) a {
+    background-image: url(../img/i.svg);
+}
+footer div.inner .right ul.sns li:nth-child(3) a {
+    background-image: url(../img/blog.svg);
+}
+footer div.inner .right > a.email {
+  color: #999;
+}
+footer div.inner .right > a.email::before{
+  content: "";
+  width: 100%;
+  position: absolute;
+  border-top: 1px solid #666;
+  left: 0;
+  transform: translateY(-40px);
+}
+footer a.top{
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  position: absolute;
+  top: -25px;
+  left: calc(50% - 25px);
+  padding: 0;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+}
+footer a.top:hover{
+  background-color: #615e5e;
+}
+footer a.top::before{
+  right: calc(50% - 15px);
+  background-color: white;
+}
+footer a.top::after{
+  right: 10px;
+  border-color: white;
+}
+.top:hover span.pentagon{
+  display: none;
+}
+
+
+
+
+
+

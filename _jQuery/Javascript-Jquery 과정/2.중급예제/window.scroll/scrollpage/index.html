@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrap">
+<!-- ---------------------------- 상단 -->
+    	<div id="top">
+        	<h1>LSH'S HOMEPAGE</h1>
+            <ul>
+            	<li>블로그</li>
+                <li>트위터</li>
+            </ul>
+        </div>
+        <div id="middle">
+<!-- ---------------------------- 메뉴 -->
+            <div id="menu">
+                <ul>
+                    <li><a href="#contents">마이프로필</a></li>
+                    <li><a href="#contents2">그래픽작품</a></li>
+                    <li><a href="#contents3">웹작품</a></li>
+                    <li><a href="#contents4">게시판</a></li>
+                </ul>
+            </div>	
+<!-- ---------------------------- 컨텐츠 -->
+            <div id="contents">
+                <h2>마이프로필</h2>
+            </div>
+            <div id="contents2">
+                <h2>그래픽작품</h2>
+            </div>
+            <div id="contents3">
+                <h2>웹작품</h2>
+                <h3>포플1</h3>
+                <p><a href="http://free21.dothome.co.kr/pf1" target="_blank">작품보기</a></p>
+                <h3>포플2</h3>
+                <p><a href="http://free21.dothome.co.kr/pf2" target="_blank">작품보기</a></p>
+            </div>
+            <div id="contents4">
+                <h2>게시판</h2>
+            </div>		
+        </div>
+<!-- ---------------------------- 하단 -->
+        <div id="bottom">
+        	<address>leesunhan@nate.com</address>
+     </div>		
+</div>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="js/jquery.smooth-scroll.min.js"></script>
+<!--<script src="lightbox/js/lightbox.js"></script>-->
+
+<script>
+  jQuery(document).ready(function($) {
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
+
+      $('.showOlderChanges').on('click', function(e){
+        $('.changelog .old').slideDown('slow');
+        $(this).fadeOut();
+        e.preventDefault();
+      })
+  });
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2196019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

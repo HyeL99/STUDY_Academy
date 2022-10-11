@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>작품갤러리</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		font-family: 'notokr-demilight';
+		}
+	body{
+		}
+	ul{
+		list-style:none;
+		}
+	a{
+		text-decoration:none;
+		color:#666;
+		}
+	h1{
+		font-size:25px;
+		}
+	/* 슬라이딩시 등장메뉴 */	
+	ul.hiddenmenu{
+		 /*width:260px; */
+		 float:left;
+		 position:fixed;
+		 right:5%;
+		 top: -80px;
+		 background:#f4f4f4;
+		 border-radius:0 0 8px 8px ;
+		 padding:8px;
+		 box-shadow:0px 1px 3px;
+		}	
+		ul.hiddenmenu li{
+			line-height:1.5em;
+			font-size:12px;
+			border-right:1px dotted #999999;
+			padding:0 3px;
+			float:left;
+			}
+		ul.hiddenmenu li.last{
+			border:none;
+			}
+	div#wrap{
+		width:500px;
+		margin:40px auto 0;
+		font-family: 'notokr-demilight';
+		overflow:hidden;
+		}
+	div#wrap ul{
+		list-style:none;
+		background:#CCC;
+		overflow:hidden;
+		width:320px;
+		float:left;
+		}
+		div#wrap ul li{
+			float:left;
+			border-right:1px solid #666;
+			text-align:center;
+			}
+			div#wrap ul li:last-child{
+				border:none;
+				}
+			div#wrap ul li a{
+				display:block;
+				padding:5px 20px;
+				text-decoration:none;
+				color:#333;
+				}
+		div.button{
+			float:right;
+			}
+			div.button button{
+				display:block;
+				background:none;
+				border:none;
+				cursor:pointer;
+				font-size:11px;
+				font-family: 'notokr-demilight';
+				}
+		div#gallery{
+			width:500px;
+			height:500px;
+			margin:100px auto 0;
+			}
+			div#gallery h2{
+				float:left;
+				}
+			div#gallery ul{
+				float:right;
+				position:relative;
+				width:400px;
+				height:500px;
+				}
+				div#gallery ul li{
+					float:left;
+					width:25%;
+					text-align:center;
+					cursor:pointer;
+					transition:all 0.5s;
+					}
+					div#gallery ul li:hover{
+						color:#F60;
+						}
+					.bg{
+						background:#CCC;
+						}
+					div#gallery ul li h3+p{
+						position:absolute;
+						left:0;
+						width:400px;
+						height:400px
+						}
+					div#gallery ul li p.ex{
+						position:absolute;
+						left:0;
+						bottom:100px;
+						width:100%;
+						background:rgba(212,85,85,0.6); /*red green blue alpha*/
+						color:#FFF;
+						/*opacity:0.5;*/
+						}
+						div#gallery ul li p img{
+							border:1px solid gray;
+							width:100%;
+							height:100%;
+							}
+				/*  3번 서브메뉴 */
+				div#submenu{
+					width:500px;
+					height:400px;
+					margin:0 auto;
+					}
+					div#submenu>ul{
+						background:#F3F3F3;
+						border-radius:0 0 5px 5px;
+						width:120px;
+						padding: 8px 8px 25px 8px;
+						}
+					div#submenu h1{
+						margin:0 0 20px 0;
+						}
+					div#submenu h2{
+						font-size:14px;
+						}
+						div#submenu h2 i{
+							font-size:11px;
+							margin:0 0 0 5px;
+							}
+						div#submenu>ul>li{
+							border-bottom:1px #999999 dotted;
+							line-height:1.9em;
+							}
+						div#submenu>ul>li:last-child{
+							border:none;
+							}
+							div#submenu ul li ul{
+								margin:0 0 6px 8px;
+								}
+								div#submenu>ul>li ul li{
+									line-height:1.2em;}
+								div#submenu ul li ul li a{
+									font-size:12px;
+									}
+						/* 4 이미지 슬라이드 */
+						div#wslide{
+							width:500px;
+							margin:0 auto;
+							position:relative;
+							}
+							div#wslide h1{
+								margin:0 0 20px 0;
+								}
+							div#slide{
+								width:400px;
+								height:265px;
+								margin:0 auto;
+								overflow:hidden;
+								position:relative;
+								}
+								div#slide ul{
+									width:1200px;
+									position:absolute;
+									left:0;
+									top:0;
+									}
+									div#slide ul li{
+										float:left;
+										}
+							div#wslide p i{
+								font-size:50px;
+								color:#999;
+								cursor:pointer;
+								}
+							div#wslide p.next{
+								position:absolute;
+								right:0;
+								top:50%;
+								}
+							div#wslide p.prev{
+								position:absolute;
+								left:0;
+								top:50%;
+								}
+				/* 수직갤러리 */
+						div#wslide2{
+							width:500px;
+							margin:100px auto 0;
+							position:relative;
+							}
+							div#wslide2 h1{
+								margin:0 0 20px 0;
+								font-size:20px;
+								}
+							div#wslide2>ul>li{
+								border-bottom:1px dotted #ccc;
+								width:60px;
+								font-size:12px;
+								line-height:2em;
+								cursor:pointer;
+								transition:color 0.5s;
+								}
+							div#wslide2>ul>li:hover{
+								color:#F00;
+								}
+							div#slide2{
+								width:379px;
+								height:249px;
+								margin:0 auto;
+								overflow:hidden;
+								position:absolute;
+								right:0;
+								top:0;
+								}
+								div#slide2 ul{
+									position:absolute;
+									left:0;
+									top:0;
+									}
+									div#slide2 ul li{
+										
+										}
+									div#slide2 ul li img{
+										vertical-align:top;
+										}
+					/* 로고 순차적 등장 */
+					div#logo{
+						margin:20px auto 200px;
+						}
+						div#logo h1{
+							width:400px;
+							text-align:center;
+							border-bottom:2px solid #CCC;
+							overflow:hidden;
+							margin:0 auto;
+							}
+						div#logo h1 span{
+							background:#ccc;
+							width:60px;
+							display:inline-block;
+							text-align:center;
+							font-size:40px;
+							border-radius:6px 6px 0 0 ;
+							position:relative;
+							transform-origin:left bottom; /* 회전축  위치 지정*/
+							transition:transform 0.5s , text-shadow 0.5s; /* 여러개 속성 지정 */
+							}
+						div#logo h2{
+							position:fixed;
+							left:-38px;
+							top:0;
+							width:40px;
+							padding:0 0 40px 0;
+							background:#F90;
+							border-radius:0 0 30px 0;
+							text-align:center;
+							}
+						div#footer{
+							height:30px;
+							width:1000px;
+							background: #ccc;
+							border-radius: 5px 5px 0 0;
+							text-align:center;
+							position:fixed;
+							bottom:0;
+							top:auto;
+							opacity:1; 
+							}
+							address{
+								font-style:normal;
+								line-height:30px;
+								}
+							div#footer span{
+								position:absolute;
+								right:-60px;
+								top:-20px;
+								font-size:14px;
+								}
+								div#footer span:hover a{
+									color:#000;
+									}
+								div#footer span i{
+									vertical-align:top;
+									}							
+</style>
+<link href="css/bonGothic.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome-4.6.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<link rel="stylesheet" href="css/style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="easing/jquery.easing.1.3.js"></script>
+<script>
+	$(document).ready(
+		function(){
+		//첫번째li를 클릭하면 실행하시오(div안의 ul을 애니메이트하시오 top값을 -250px,2초)
+			/*
+			$("li:eq(0)").click(
+				function(){
+					$("div ul").animate({"top":"0px"},2000);
+				}
+			);
+			$("li:eq(1)").click(
+				function(){
+					$("div ul").animate({"top":"-250px"},2000);
+				}
+			);
+			$("li:eq(2)").click(
+				function(){
+					$("div ul").animate({"top":"-500px"},2000);
+				}
+			);
+			*/
+			var n=0;
+			$("li").click(
+				function(){
+					n=$(this).attr("data-y"); //클릭한 li의 속성 data-y의 값을 가져와서 n에 넣어라
+					$("div ul").animate({"top":-250*n},2000,"swing");
+				}
+			);
+		}
+	);
+</script>
+</head>
+
+<body>
+	<div id="wslide2">
+    	<h1>작품갤러리</h1>
+        <ul>
+        	<li data-y="0">작품1</li>
+            <li data-y="1">작품2</li>
+            <li data-y="2">작품3</li>
+        </ul>
+        <div id="slide2">
+            <ul>
+                <li><img src="img/up1.jpg" alt="" /></li>
+                <li><img src="img/up2.jpg" alt="" /></li>
+                <li><img src="img/up3.jpg" alt="" /></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header">
+      <div class="kugg-1"><i class="ion-gear-a first"></i><i class="ion-gear-a second"></i>`					</div>
+      <div class="text-container">
+        <h1>회전바퀴</h1>
+        <p class="lead">css3를 이용한 애니메이션 </p>
+      </div>
+    </div>
+</body>
+</html>

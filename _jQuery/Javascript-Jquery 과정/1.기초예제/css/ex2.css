@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+body {
+	margin:20px auto;
+	padding:0;	
+	width:700px;
+	background:#192839;
+}
+.thumbs {
+   width:100px;	
+   float:left;
+}
+.thumbs img {
+	border:solid 1px #ccc;
+	padding:5px;
+	margin-bottom:3px;
+}
+.thumbs img:hover {
+	border-color: #EF4018;
+}
+
+#largeImg {
+	border: solid 1px #ccc;
+	width: 500px;
+	height: 280px;
+	padding:5px;
+    margin-left:110px;
+	overflow:hidden;
+	position:relative; /* ie6과 7에서도 overflow:hidden; 속성 적용되기 위해서 width 와 height와 함께 선언 */
+	
+}
+
+#caption{
+	background:url(../images/1/captionBg.png) repeat-y;   /* 자막 투명 지원 ie6에서 안됨 */
+	border:#ccc 1px thin;
+	padding:10px;
+	position:relative;
+	color:#fff;
+}
+
+

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-2</title>
+<style type="text/css">
+  body{
+    transition: all 1s;
+    width: 100%;
+    overflow: hidden;
+  }
+	.day{
+    background-color: #eee;
+  }
+  .night{
+    background-color: #999;
+  }
+  aside{
+    background-color: #eee;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    right: -200px;
+  }
+  aside span{
+    position: absolute;
+    left: -70px;
+    width: 70px;
+    background-color: #eee;
+    text-align: center;
+  }
+  .show{
+    right: 0 !important;
+    transition: all 1s;
+  }
+  .close{
+    right: -200px !important;
+    transition: all 1s;
+  }
+</style>
+<script src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+      $(".ya").click(
+        function(){
+          $("body").addClass("night");
+          return false;
+        }
+      );
+      //사이드메뉴 클릭시 보이게
+      $("aside span").click(
+        ()=>{
+          // $("aside").addClass("show");
+          $("aside").toggleClass("show"); //class 스위치 형식으로 추가
+        }
+      )
+		}
+	);
+</script>
+</head>
+
+<body>
+  <aside>
+    <span>펼치기</span>
+  </aside>
+  <span>
+    <a href="" class="ju">주간모드</a>
+    <a href="" class="ya">야간모드</a>
+  </span>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내냉 개발중 - 업로드페이지</title>
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/title.css" />
+    <link rel="stylesheet" href="css/upload.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- 카테고리 불러오기 -->
+    <script>
+        let category = [
+            {
+                name : "베이킹",
+                img : "assets/img/category/btn-baking.png"
+            },
+            {
+                name : "집들이",
+                img : "assets/img/category/btn-home.png"
+            },
+            {
+                name : "야식",
+                img : "assets/img/category/btn-night.png"
+            },
+            {
+                name : "파티",
+                img : "assets/img/category/btn-party.png"
+            },
+            {
+                name : "이유식",
+                img : "assets/img/category/btn-baby.png"
+            },
+            {
+                name : "다이어트",
+                img : "assets/img/category/btn-diet.png"
+            },
+            {
+                name : "간식",
+                img : "assets/img/category/btn-snack.png"
+            },
+            {
+                name : "자취",
+                img : "assets/img/category/btn-self.png"
+            }
+        ];
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inner flex jusSpaBet alnCen">
+            <h1><a href="index.html">내냉</a></h1>
+            <div class="inputPlace">
+                <input type="text" name="search" id="search" placeholder="원하시는 레시피를 찾아가세요! 🥄내냉" autocomplete="off">
+            </div>
+            <nav>
+                <ul class="gnb flex alnCen">
+                    <li><a href="#">추가메뉴</a></li>
+                    <li><a href="category.html">카테고리</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="inner">
+            <div class="ContentWrap flex fCol">
+                <div class="title flex alnCen">
+                    <h2>레시피 제목</h2>
+                    <div class="inputPlace">
+                        <input type="text" placeholder="~자 이내로 입력해주세요!" name="recipeTitle">
+                    </div>
+                </div>
+                <div class="wrap flex jusSpaBet">
+                    <div class="category flex alnCen">
+                        <h2>카테고리</h2>
+                        <div class="inputPlace">
+                            <select name="recipeCategory" id="recipeCategory">
+                                <option selected>카테고리 선택</option>
+                                <script>
+                                    for(let item of category){
+                                        document.write(`<option value="${item.name}">${item.name}</option>`);
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="time flex alnCen">
+                        <h2>소요시간</h2>
+                        <div class="inputPlace">
+                            <input type="text" name="recipeTime">
+                        </div>
+                        <p>분</p>
+                    </div>
+                </div>
+                <div class="ingredient">
+                    <h2>사용재료</h2>
+                    <div class="wrap flex alnCen">
+                        <div class="inputPlace">
+                            <input type="text" placeholder="재료명" name="ingredientName">
+                        </div>
+                        <div class="inputPlace">
+                            <input type="text" placeholder="양" name="ingredientAmount">
+                        </div>
+                        <div class="inputPlace">
+                            <select name="ingredientUnit" id="ingredientUnit">
+                                <option selected>단위 선택</option>
+                                <option value="mg">mg</option>
+                                <option value="g">g</option>
+                                <option value="kg">kg</option>
+                                <option value="ts">ts</option>
+                                <option value="TS">TS</option>
+                                <option value="C">C</option>
+                                <option value="ml">ml</option>
+                                <option value="L">L</option>
+                                <option value="개">개</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="button">추가하기</button>
+                </div>
+                <div class="tag">
+                    <h2>태그</h2>
+                    <div class="inputPlace">
+                        <input type="text" placeholder="#으로 구분해주세요! / 최대 5개 추가 가능" name="recipeTag">
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <h2>대표사진</h2>
+                    <div class="inputPlace">
+                        <button class="button">파일찾기</button>
+                    </div>
+                </div>
+                <div class="contentPlace">
+                    <h2>본문</h2>
+                    <div class="wrap">
+                        <div class="inputPlace">
+                            <div class="top flex alnCen">
+                                <h3>컨텐츠 추가</h3>
+                                <div class="place">
+                                    <button class="button">파일찾기</button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <ul class="flex fCol">
+                                    <li class="flex jusSpaBet">
+                                        <img src="https://via.placeholder.com/200x200/fee190/ffffff/?text=Content+1" alt="컨텐츠이미지1">
+                                        <textarea name="contentText01" id="contentText01" class="contentText" placeholder="요리 사진에 대한 설명을 적어주세요."></textarea>
+                                        <button class="listDeleteBtn">X</button>
+                                    </li>
+                                    <li class="flex jusSpaBet">
+                                        <img src="https://via.placeholder.com/200x200/fee190/ffffff/?text=Content+2" alt="컨텐츠이미지2">
+                                        <textarea name="contentText02" id="contentText02" class="contentText" placeholder="요리 사진에 대한 설명을 적어주세요."></textarea>
+                                        <button class="listDeleteBtn">X</button>
+                                    </li>
+                                    <script>
+                                        resizeTextarea("#contentText01");
+                                        resizeTextarea("#contentText02");
+    
+    
+                                        function resizeTextarea(query){
+                                            let $textarea = document.querySelector(query);
+                                            $textarea.addEventListener('keyup',function(){
+                                                autoResizeHeight();
+                                            });
+                                            $textarea.addEventListener('keydown',function(){
+                                                autoResizeHeight();
+                                            });
+    
+                                            function autoResizeHeight(){
+                                                if ($textarea) {
+                                                    $textarea.style.height = 'auto';
+                                                    let scrollH = $textarea.scrollHeight;
+                                                    $textarea.style.height = `${scrollH}px`;
+                                                }
+                                            }
+                                        }
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <button class="button">업로드하기</button>
+        </div>
+    </main>
+    <footer>
+        <div class="inner">
+            <ul class="flex">
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">문의</a></li>
+                <li><a href="#">오류보고</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

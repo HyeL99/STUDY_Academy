@@ -1,0 +1,69 @@
+html,body{
+  height: 100%;
+}
+ul.title{
+  color: #fff;
+  height: 100%;
+  overflow: hidden;
+}
+ul.title li{
+  float: left;
+  width: 33.33333%;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 1s;
+}
+ul.title li:nth-child(1){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg1.jpg?ukey=2VxcVW8);
+}
+ul.title li:nth-child(2){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg2.jpg?ukey=rHIaRCv);
+}
+ul.title li:nth-child(3){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg3.jpg?ukey=nvvQbhS);
+}
+ul.title li h2{
+  
+  font-size: 30px;
+  line-height: 3;
+  width: 150px;
+}
+ul.title li h3{
+  
+  font-size: 20px;
+  line-height: 3;
+  width: 250px;
+}
+ul.title li p{
+  
+  font-size: 15px;
+  line-height: 1.5;
+  width: 410px;
+}
+.wide{
+/*   animation-name:wide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards ;
+  animation-direction: alternate ; */
+  width:70% !important;
+}
+@keyframes wide{
+  100%{
+    width:70%;
+  }
+}
+.narrow{
+/*   animation-name:narrow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards ; */
+  width:15% !important;
+}
+@keyframes narrow{
+  100%{
+    width:15% ;
+  }
+}

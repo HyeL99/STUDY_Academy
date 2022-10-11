@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div{
+			width:250px;
+			height:170px;
+			border:#333 2px solid;
+			overflow:hidden;
+			margin:0 auto;
+			position:relative;
+			}
+			div ul{
+				overflow:hidden;
+				position:absolute;
+				left:0;
+				top:0;
+				width:300%;
+				}
+				div ul li{
+					float:left;
+					width: 33.3%;
+					}
+					div ul li img{
+						width: 100%;
+					 }
+				p{
+					text-align:center;
+					cursor:pointer;
+					margin:6px 0 0 0;
+					}
+				ul.sm{
+					/*border:#333 1px solid;*/
+					float:left;
+					position:absolute;
+					top:0;
+					left:50%;
+					}
+					ul.sm li{
+						margin:0 0 0 140px;
+						}
+					ul.sm li img{ width:80px;}

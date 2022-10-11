@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>좌우슬라이딩</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" >
+<link href="css/title.css" rel="stylesheet" type="text/css" >
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			var n=0; //변수선언과 초기화,대입연산자 =
+			$("p.prev").css("left","-46px"); //css()의 구문형식
+			$("p.next").click(function(){
+				if(n<3){ //if구문형식,비교연산자 <
+					n++; // n의 값에 1씩 더해라(증가시켜라)
+					$("#title ul").animate({"left":-100*n+"%"},1000,function(){
+						if(n==3){ //비교연산자 ==
+							$("p.next").animate({"right":"-46px"},1000);
+						}
+					}
+					); //animate()구문형식,사칙연산자,문자와 숫자,변수 연결
+					
+					$("p.prev").animate({"left":0},1000);
+					console.log(n+"번째이미지 / n값은"+n); // console창,log()
+				}else{
+					n=0;
+					$("#title ul").animate({"left":-100*n+"%"},1000);
+					
+				}
+			});
+			$("p.prev").click(function(){
+				if(n>0){
+					n--;
+					$("#title ul").animate({"left":-100*n+"%"},1000,function(){
+						if(n==0){
+							$("p.prev").animate({"left":"-46px"},1000);
+						}
+					});
+					$("p.next").animate({"right":0},1000);
+					
+					
+				}
+				
+			});
+
+		}		
+	);
+</script>
+</head>
+
+<body>
+	<div id="title">
+      <ul>
+          <li><img src="img/t1.jpg" /></li>
+          <li><img src="img/t2.jpg" /></li>
+          <li><img src="img/t3.jpg" /></li>
+          <li><img src="img/t4.jpg" /></li>
+      </ul>
+      <p class="prev">이전</p>
+      <p class="next">다음</p>
+    </div>
+</body>
+</html>

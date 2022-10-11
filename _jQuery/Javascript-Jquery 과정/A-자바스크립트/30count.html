@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>자바스크립트기초-1</title>
+    <script type="text/javascript">
+      window.onload=function(){
+
+          var d_day = new Date();
+          var year=d_day.getFullYear();
+          var month=d_day.getMonth()+1;
+          var date=d_day.getDate();
+          var day=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+          var hour=d_day.getHours();
+          var minute=d_day.getMinutes();
+          var second=d_day.getSeconds();
+           // document.write("현재 날짜는 "+year+"년 "+month+"월 "+date+"일 "+day[d_day.getDay()]+hour+"시 "+minute+"분입니다");
+          document.getElementById("a").innerHTML=year+"년";
+          document.getElementsByClassName("bb")[0].innerHTML=month+"월";
+          document.getElementById("c").innerHTML=date+"일";
+          document.getElementById("d").innerHTML=day[d_day.getDay()];
+          document.getElementById("e").innerHTML=hour+"시";
+          document.getElementById("f").innerHTML=minute+"분";
+
+
+
+        var timer=setInterval(function(){
+          var d_day = new Date();
+          var year=d_day.getFullYear();
+          var month=d_day.getMonth()+1;
+          var date=d_day.getDate();
+          var day=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+          var hour=d_day.getHours();
+          var minute=d_day.getMinutes();
+          var second=d_day.getSeconds();
+           // document.write("현재 날짜는 "+year+"년 "+month+"월 "+date+"일 "+day[d_day.getDay()]+hour+"시 "+minute+"분입니다");
+          document.getElementById("a").innerHTML=year+"년";
+          document.getElementsByClassName("bb")[0].innerHTML=month+"월";
+          document.getElementById("c").innerHTML=date+"일";
+          document.getElementById("d").innerHTML=day[d_day.getDay()];
+          document.getElementById("e").innerHTML=hour+"시";
+          document.getElementById("f").innerHTML=minute+"분";
+          if(second<10){
+            document.getElementById("g").innerHTML="0"+second+"초";
+          }else{
+            document.getElementById("g").innerHTML=second+"초"; 
+          }
+
+
+           
+        },1000);
+       
+      }
+    </script>
+    <style>
+      body{
+        text-align: center;
+      }
+
+      time{
+      background-color: #333;
+      display: inline-block;
+      padding: 4px;
+      }
+
+      time span{
+      background-color: #fff;
+      width: 60px;
+      display: inline-block;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>날짜</h1>
+    <time>
+      <span id="a"></span>
+      <span id="b" class="bb"></span>
+      <span id="c"></span>
+      <span id="d"></span>
+      <span id="e"></span>
+      <span id="f"></span>
+      <span id="g"></span>
+    </time>
+    <!-- <script>
+          var d_day = new Date();
+          var year=d_day.getFullYear();
+          var month=d_day.getMonth()+1;
+          var date=d_day.getDate();
+          var day=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+          var hour=d_day.getHours();
+          var minute=d_day.getMinutes();
+
+          document.write("현재 날짜는 "+year+"년 "+month+"월 "+date+"일 "+day[d_day.getDay()]+hour+"시 "+minute+"분입니다");
+          document.getElementById("a").innerHTML=year+"년";
+    </script> -->
+  </body>
+</html>

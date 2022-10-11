@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f1e090;
+        }
+
+        body>div {
+            width: 300px;
+            margin: 200px auto;
+            padding: 20px;
+            background: #fcab68;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #502b0c;
+        }
+
+        h1>img {
+            width: 200px;
+        }
+
+        li {
+            list-style: none;
+            line-height: 50px;
+            color: white;
+            background-color: #dac5b5c5;
+            margin-top: 20px;
+        }
+
+        #p1 {}
+
+        #p2 {
+            background: #538c96;
+            color: #fff;
+            ;
+        }
+
+        .red {
+            background-color: rgb(255, 53, 53);
+        }
+
+        .sky {
+            background-color: aqua;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .line {
+            text-decoration: underline overline;
+        }
+        .check{
+            background: white url("img/check-mark.png") no-repeat right / 25px;
+            color: red;
+        }
+        .tt{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <h1>
+            <img src="img/icon.svg" alt="">
+        </h1>
+        <h2>
+            모든 선택이 가능.
+        </h2>
+        <ul>
+            <li>야채곱창</li>
+            <li>소금막창</li>
+            <li>닭갈비볶음밥</li>
+        </ul>
+        <ul><li>두번째 ul</li><li>소금막창</li><li id="three" class="sky">훠궈</li><li>연어초밥</li><li>닭갈비볶음밥</li><li>크로플</li></ul>
+        </div>
+        <script>
+        const elStart = document.getElementsByTagName("ul")[1];
+        // 항상 배열로 인식
+        console.log('elStart',elStart);
+        const elFirst = elStart.firstChild;
+        console.log('elFirst',elFirst)
+        elFirst.classList.add("check");
+        // elStart요소의 자식 노드 중 첫번재, 마지막 노드
+        const elLast = elStart.lastChild;
+        elLast.classList.add("red");
+        const el3 = elStart.childNodes[2];
+        console.log('elStart.childNodes',elStart.childNodes);
+        el3.classList.replace("sky", "orange");
+        el3.classList.add("tt"); 
+        // classList.replace('이전클래스', '새로 바뀔 클래스')
+        const elStart2 = document.getElementsByTagName("ul")[0];
+
+        const elChildren = elStart2.children;
+        console.log('elChildren',elChildren);
+        
+        const elCh3 = elStart2.children[2];
+        console.log('elCh3',elCh3)
+
+        elCh3.classList.add('check');
+
+        // 부모요소.children - 자식노드들 중에 enter 같은 부분을 제외하고 객체로 반환
+        // 부모요소.childNodes - 모든 자식노드 선택(enter, 여백, 주석등 포함)
+        console.log('자식의 갯수는~!',elStart2.childNodes.length);
+        console.log('자식의 갯수는~!',elStart2.children.length);
+        
+    </script>
+</body>
+
+</html>

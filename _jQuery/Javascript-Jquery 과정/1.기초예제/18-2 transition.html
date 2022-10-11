@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>조건문</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+		}
+	body>div{
+		outline:2px solid black;
+		width:720px;
+		overflow:hidden;
+		margin:0 auto;
+		}
+		div div{
+			width:200px;
+			height:200px;
+			background:#ccc;
+			margin:0 20px; /* 바같여백 */
+			cursor:pointer;/* 커서 손모양 */
+			transition:background 0.5s,font-size 0.5s; /*변이.이행  transition:속성 시간s;*/
+			float:left; /*수직을 수평으로 */
+			text-align:center;/*글자를 중앙으로*/
+			line-height:200px;/* 줄간격조정 수직중앙배치 */
+			outline:1px solid red; /* 외곽선지정 */
+		}
+		.over{
+			background:#F90;
+			font-size:32px;
+		}
+    </style>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+				$("div div").hover(
+					function(){
+						//$(this).addClass("over").css("opacity",0).animate({"opacity":1},500);
+						$(this).addClass("over");
+					},
+					function(){
+						$(this).removeClass("over");
+					}
+					
+				);
+
+			}
+		);
+	</script>
+</head>
+
+<body>
+    <div>
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box1</div>
+    </div>
+</body>
+</html>

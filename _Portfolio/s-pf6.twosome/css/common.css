@@ -1,0 +1,79 @@
+/* commen */
+* {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+* ::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera*/
+}
+
+body {
+  font-size: 18px;
+  overflow-x: hidden;
+  font-family:"Mark Pro",'Noto Sans KR',sans-serif;
+}
+
+/* font size */
+.h2{
+  display: inline-block !important;
+  font-size: 98px;
+  font-weight: 900;
+  position: relative;
+  margin-bottom: 72px;
+}
+.h2::after{
+  content:"";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #d50037;
+  bottom:6px;
+  right: -30px;
+}
+.h3{
+  font-size: 32px;
+  font-weight: 900;
+}
+.h4{
+  font-size: 24px;
+  font-weight: 600;
+}
+/* class */
+.hide{
+  display: none;
+}
+.br{
+  display: block;
+}
+.inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* flex */
+.flex {
+  display: flex;
+}
+.fCol {
+  flex-direction: column;
+}
+.jusCen {
+  justify-content: center;
+}
+.jusSpaBet {
+  justify-content: space-between;
+}
+.alnCen {
+  align-items: center;
+}
+.alnEnd {
+  align-items: flex-end;
+}
+.jusEnd {
+  justify-content: flex-end;
+}
+.fWrap {
+  flex-wrap: wrap;
+}

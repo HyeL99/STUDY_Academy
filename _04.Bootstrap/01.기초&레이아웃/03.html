@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 레이아웃 기초</title>
+
+    <!-- Bootstrap script and css (local file) -->
+    <link rel="stylesheet" href="../plugin/bootstrap.css">
+    <script defer src="../plugin/bootstrap.min.js"></script>
+    <!-- Bootstrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- defer : 화면 로딩 후 스크립트 실행 -->
+
+    <style>
+        #w_num {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        .fixedEl span:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        header {
+            margin-top: 100px;
+        }
+        .inner {
+            border: 1px solid red;
+        }
+        h1, nav {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixedEl bg-primary bg-opacity-25 text-center py-3 fixed-top">
+        <div class="inner">
+            <p id="w_num" class="border p-2 bg-white fs-2 text-primary">가로너비</p>
+            <div class="wrap">
+                <span><strong>xs</strong> &lt;576px </span><!-- '&lt;' = '>' -->
+                <span><strong>sm</strong> ≥576px </span>
+                <span><strong>md</strong> ≥768px </span>
+                <span><strong>lg</strong> ≥992px </span>
+                <span><strong>xl</strong> ≥1200px </span>
+                <span><strong>xxl</strong> ≥1400px </span>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-success bg-opacity-50">
+        <div class="inner container-lg text-light">
+            <div class="wrap row justify-content-between align-items-center">
+                <h1 class="text-center col-lg-auto">BOOTSTRAP</h1>
+                <nav class="text-center col-lg-auto">MENU1 | MENU2 | MENU3 | MENU4 | MENU5 | MENU6</nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-lg border my-4 border-dark px-4 py-3">
+        <section class="row border border-success">
+            <article class="border border-secondary col-xl me-xl-3 mb-md-3 mb-xl-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec pellentesque lacus, eleifend blandit eros. Phasellus eros nulla, suscipit ac luctus id, luctus sed ante. Praesent gravida enim sed pellentesque tempor. Curabitur sed rhoncus lectus. Curabitur ac sollicitudin tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec nec arcu nec risus lobortis tristique. Etiam vestibulum elit ac tincidunt egestas. Phasellus nisi dolor, ultrices at ligula tempor, consequat pretium velit. Phasellus facilisis massa eget ultricies convallis. Maecenas ante nulla, congue at urna sit amet, ornare efficitur erat. Phasellus ac eros vestibulum, elementum odio et, eleifend elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                <br>
+                Nam mauris sem, pretium sit amet laoreet a, ullamcorper quis justo. Sed a maximus enim. Donec at elit egestas, suscipit nulla sit amet, viverra orci. Nam mollis sapien eu dui ornare bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In at semper neque. Mauris id augue et nisl commodo rutrum. Vestibulum vestibulum lorem vel diam consectetur ornare. Fusce sodales malesuada blandit. Proin eu nulla vitae odio euismod viverra ut sit amet ipsum. Duis finibus orci a eleifend aliquet. Nulla vel euismod augue.
+            </article>
+
+            <article class="border border-secondary col-md col-lg-8 col-xl me-md-2 my-3 my-md-0">
+                Suspendisse felis nisl, porttitor at purus vel, interdum rhoncus purus. Suspendisse iaculis urna id dui congue, in eleifend tellus iaculis. Vivamus at vestibulum lorem, ut porttitor nunc. Ut vel lorem porttitor, sagittis mi et, iaculis metus. Quisque sollicitudin egestas fermentum. Donec id sem nulla. Nullam id tincidunt diam. Morbi nunc massa, sodales non eros ut, bibendum pretium risus. Praesent accumsan massa quis purus efficitur condimentum. Phasellus luctus sapien malesuada ligula facilisis, ac accumsan dui egestas. Donec efficitur felis quis enim auctor sollicitudin. Vivamus blandit at enim eu pellentesque. Fusce risus dolor, tincidunt sit amet felis et, fermentum tempus ex. Phasellus porta arcu ut nulla venenatis, non fringilla nunc auctor. Proin rutrum velit nec venenatis dapibus. Nunc eget facilisis arcu.
+            </article>
+
+            <article class="border border-secondary col-md ms-md-2">
+                Donec elementum elit nisi, nec aliquam leo gravida nec. Quisque in malesuada risus, ut venenatis dolor. Nam quis erat metus. Vivamus eget porta risus, vitae egestas odio. Etiam ligula justo, eleifend eu nulla eget, egestas convallis dui. Donec venenatis aliquam lectus, quis lobortis sem sodales vitae. Cras eu dui at nulla mattis egestas eu tincidunt quam. Ut quis placerat diam. Sed non erat sapien. Vivamus id pharetra enim, sit amet iaculis risus. 
+            </article>
+        </section>
+    </main>
+
+    <footer class="bg-secondary bg-gradient py-4 text-white">
+        <p style="margin-bottom:0" class="container-lg">이 사이트는 부트스트랩 연습용 사이트 입니다.</p>
+    </footer>
+    
+    <script>
+        function setBg(){
+            width01.style.backgroundColor = 'rgba(255,0,0,0)';
+            width02.style.backgroundColor = 'rgba(255,0,0,0)';
+            width03.style.backgroundColor = 'rgba(255,0,0,0)';
+            width04.style.backgroundColor = 'rgba(255,0,0,0)';
+            width05.style.backgroundColor = 'rgba(255,0,0,0)';
+            width06.style.backgroundColor = 'rgba(255,0,0,0)';
+            if(window.innerWidth < 576) {
+                width01.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 768){
+                width02.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 992){
+                width03.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1200){
+                width04.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1400){
+                width05.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else {
+                width06.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            }                
+        }
+        function winWidth() {
+            let winW = window.innerWidth;
+            w_num.innerText = `가로너비 : ${winW}px`;
+            setBg();
+        }
+        winWidth();
+        setBg();
+        window.addEventListener('resize', winWidth)
+    </script>
+</body>
+</html>

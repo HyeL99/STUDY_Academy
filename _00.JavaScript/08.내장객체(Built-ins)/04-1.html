@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-1. Random</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .random01 img{
+            width: 100%;
+        }
+        .random02 img{
+            width: 200px;
+        }
+    </style>
+
+</head>
+<body>
+    <article class="random01">
+        <h2>랜덤 이미지</h2>
+        <div><img src="./img/banner01.jpg" alt="배너01"></div>
+    </article>
+
+    <article class="random02">
+        <div><img src="./img/pic1.png" alt=""></div>
+        <button onclick="changeImg()">랜덤이미지</button>
+    </article>
+    <script>
+        const $Img1 = document.querySelector('.random01 img');
+        const $Img2 = document.querySelector('.random02 img');
+
+        const imgURL = [
+            "./img/banner01.jpg",
+            "./img/banner02.jpg",
+            "./img/banner03.jpg"
+        ];  // 이미지들을 배열로 변수에 넣는다.
+
+        const imgURL2 = [
+            "./img/pic1.png",
+            "./img/pic2.png",
+            "./img/pic3.png",
+            "./img/pic4.png",
+            "./img/pic5.jpg",
+            "./img/pic6.png",
+        ];
+
+        RandomImg();
+        changeImg();
+
+        function RandomImg(){
+            let rd = Math.random();
+            let imgNum1 = imgURL.length;
+            let random = Math.floor(rd * imgNum1);       //랜덤값에 이미지 숫자를 곱하고, 소숫점 이하 자리는 없애준다. 
+            console.log(rd);
+            console.log(imgNum1);
+            $Img1.src = imgURL[random];
+        }
+        function changeImg(){
+            let random2 = Math.floor(Math.random() * imgURL2.length);       //랜덤값에 이미지 숫자를 곱하고, 소숫점 이하 자리는 없애준다. 
+            console.log(random2);
+            $Img2.src = imgURL2[random2];
+        }
+    </script>
+</body>
+</html>

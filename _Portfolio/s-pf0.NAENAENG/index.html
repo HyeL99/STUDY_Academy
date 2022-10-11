@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내냉 개발중 - 메인페이지</title>
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/title.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- slick style and script -->
+    <link rel="stylesheet" type="text/css" href="plugin/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="plugin/slick/slick-theme.css"/>
+    <script type="text/javascript" src="plugin/slick/slick.js"></script>
+    <link rel="stylesheet" href="css/slickModify.css" />
+
+    <!-- title slick script -->
+    <script type="text/javascript">
+        $(function(){
+            $('.container').slick({
+                dots: true,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inner flex jusSpaBet alnCen">
+            <h1><a href="index.html">내냉</a></h1>
+            <div class="inputPlace">
+                <input type="text" name="search" id="search" placeholder="원하시는 레시피를 찾아가세요! 🥄내냉" autocomplete="off">
+            </div>
+            <nav>
+                <ul class="gnb flex alnCen">
+                    <li><a href="#">추가메뉴</a></li>
+                    <li><a href="category.html">카테고리</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+    <div id="title">
+        <div class="container">
+            <div class="event">
+                <a href="#"><img src="https://via.placeholder.com/400x150/fee190/666666/?text=Title+Image+1" alt="이벤트 이미지1"></a>
+            </div>
+            <div class="event">
+                <a href="#"><img src="https://via.placeholder.com/400x150/fee190/666666/?text=Title+Image+2" alt="이벤트 이미지2"></a>
+            </div>
+            <div class="event">
+                <a href="#"><img src="https://via.placeholder.com/400x150/fee190/666666/?text=Title+Image+3" alt="이벤트 이미지3"></a>
+            </div>
+        </div>
+        <a id="upload" href="uploadPage.html">레시피 업로드</a>
+    </div>
+    <main>
+        <section id="main01">
+            <div class="inner">
+                <h2>[레시피 분류]</h2>
+                <ul class="flex fWrap">
+                    <script>    // 카테고리 개수대로 li 삽입
+                        let category = [
+                            {
+                                name : "베이킹",
+                                img : "assets/img/category/btn-baking.png"
+                            },
+                            {
+                                name : "집들이",
+                                img : "assets/img/category/btn-home.png"
+                            },
+                            {
+                                name : "야식",
+                                img : "assets/img/category/btn-night.png"
+                            },
+                            {
+                                name : "파티",
+                                img : "assets/img/category/btn-party.png"
+                            },
+                            {
+                                name : "이유식",
+                                img : "assets/img/category/btn-baby.png"
+                            },
+                            {
+                                name : "다이어트",
+                                img : "assets/img/category/btn-diet.png"
+                            },
+                            {
+                                name : "간식",
+                                img : "assets/img/category/btn-snack.png"
+                            },
+                            {
+                                name : "자취",
+                                img : "assets/img/category/btn-self.png"
+                            }
+                        ];
+                        let index = 0;
+                        for(let item of category){
+                            document.write(`<li class="categoryItem"><a href="#">${item.name}</a></li>`);
+                            $(`li.categoryItem:eq(${index}) a`).css('background-image',`url(${item.img})`);
+                            index++;
+                        }
+                    </script>
+                </ul>
+            </div>
+        </section>
+        <section id="main02" class="scrollBox">
+            <div class="inner">
+                <h2>[업로드된 레시피]</h2>
+                <ul class="recipePlace">
+                    <script>    // 최신 레시피 리스트 기반으로 article 8개 호출
+                        // 레시피 리스트 가져오기
+                        let recipeList = [
+                            {
+                                title:"레시피1",
+                                writer : "철수",
+                                tag : ['사과','당근','비트','한끼대용'],
+                                time: 30
+                            },
+                            {
+                                title:"레시피2",
+                                writer : "영희",
+                                tag : ['사과','당근','비트','한끼대용'],
+                                time: 40
+                            },
+                            {
+                                title:"레시피3",
+                                writer : "민수",
+                                tag : ['사과','당근','비트','한끼대용'],
+                                time: 50
+                            },
+                            {
+                                title:"레시피4",
+                                writer : "바둑이",
+                                tag : ['사과','당근','비트','한끼대용'],
+                                time: 20
+                            }
+                        ]
+                        // article을 8개로 제한하기 위한 변수 설정
+                        let num = 0;
+                        for(let recipe of recipeList){
+                            document.write(`
+                                <li>
+                                    <article>
+                                        <span class="img"></span>
+                                        <div class="text flex fCol">
+                                            <h3>${recipe.title}</h3>
+                                            <p class="writer">${recipe.writer}</p>
+                                            <p class="tag">게시물 태그<br><span class="tagList"></span></p>
+                                            <span class="time">${recipe.time}분 소요</span>
+                                        </div>
+                                    </article>
+                                </li>
+                            `);
+                            // span.tagList 태그 내에 태그 추가
+                            for(let k=0; k<recipeList[num].tag.length; k++){
+                                $(`.recipePlace li:eq(${num}) .tagList`).append(`#${recipe.tag[k]} `)
+                            }
+                            num++;  // article 1개를 추가하면 num 1증가
+                            console.log(num);
+                            if(num == 8) break;     //article 8개 불러오면 반복문 중단
+                        };
+                    </script>
+                </ul>
+            </div>
+        </section>
+        <section id="main03">
+            <div class="inner">
+                <h2>[추천 레시피 영상]</h2>
+                <ul class="flex fWrap">
+                    <script>    // 최신 비디오 리스트 기반으로 a태그 4개 호출
+                        // 비디오 리스트 가져오기
+                        let videoList = [
+                            {
+                                title : "제목1",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+1"
+                            },
+                            {
+                                title : "제목2",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+2"
+                            },
+                            {
+                                title : "제목3",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+3"
+                            },
+                            {
+                                title : "제목4",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+4"
+                            },
+                            {
+                                title : "제목5",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+5"
+                            },
+                            {
+                                title : "제목6",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+6"
+                            },
+                            {
+                                title : "제목7",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+7"
+                            },
+                            {
+                                title : "제목8",
+                                link : "",
+                                thumbnail : "https://via.placeholder.com/250x145/f4f4f4/666666/?text=Youtube+8"
+                            }
+                        ];
+                        let i=0;    // 비디오가 연결될  a태그를 4개로 제한하기 위한 변수 설정
+                        for(let video of videoList){
+                            document.write(`<li><a href="#"><span>${video.title}<span></a></li>`);
+                            $(`#main03 ul li:eq(${i}) a`).css('background-image',`url(${video.thumbnail})`);
+                            i++;    // a 태그 1개를 추가하면 i 1증가
+                            if(i==4) break; //a 태그 8개 불러오면 반복문 중단
+                        }
+                    </script>
+                </ul>
+            </div>
+        </section>
+        <section id="main04">
+            <div class="inner">
+                <h2>[게시판]</h2>
+                <ul class="flex">
+                    <li><a href="#">게시판1</a></li>
+                    <li><a href="#">게시판2</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="inner">
+            <ul class="flex">
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">문의</a></li>
+                <li><a href="#">오류보고</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

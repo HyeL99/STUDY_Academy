@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내냉 개발중 - 회원가입 개인정보 페이지</title>
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/title.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/info.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="inner flex jusSpaBet alnCen">
+            <h1><a href="index.html">내냉</a></h1>
+            <div class="inputPlace">
+                <input type="text" name="search" id="search" placeholder="원하시는 레시피를 찾아가세요! 🥄내냉" autocomplete="off">
+            </div>
+            <nav>
+                <ul class="gnb flex alnCen">
+                    <li><a href="#">추가메뉴</a></li>
+                    <li><a href="category.html">카테고리</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+    <main>
+        <div class="inner">
+            <div class="wrap">
+                <div class="face"><span>얼굴이미지</span></div>
+                <div class="content flex fCol">
+                    <h2>내냉</h2>
+                    <div id="info">
+                        <div class="PageCircle flex jusCen">
+                            <div class="circle active">
+                                개인정보
+                            </div>
+                            <div class="circle">
+                                관심분야
+                            </div>
+                        </div>
+                        <div class="infoPlace flex alnCen">
+                            <span>닉네임</span>
+                            <div><input type="text" name="nickname" id="nickname" autocomplete="off"></div>
+                        </div>
+                        <div class="infoPlace flex alnCen">
+                            <span>프로필</span>
+                            <div class="filePlace flex alnCen">
+                                <input class="uploadName" autocomplete="off">
+                                <label for="file">파일찾기</label>
+                                <input type="file" id="file">
+                            </div>
+                            <script>
+                                $("#file").on('change',function(){
+                                    let fileName = $("#file").val();
+                                    $(".uploadName").val(fileName);
+                                });
+                            </script>
+                        </div>
+                        <button><a href="getInfo02.html">다음</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="inner">
+            <ul class="flex">
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">문의</a></li>
+                <li><a href="#">오류보고</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

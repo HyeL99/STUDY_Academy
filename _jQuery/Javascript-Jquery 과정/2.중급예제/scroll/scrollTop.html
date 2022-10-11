@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		}
+	div#wrap{
+		width:1000px;
+		margin:0 auto;
+		}
+	div{
+		height:600px;
+		}
+	div#area1{
+		background:#0C0;
+		padding:80px 0 0 0 ;
+		}
+	div#area2{
+		background: #FF6;
+		}
+	div#area3{
+		background: #CCF;
+		}
+	div#area4{
+		background: #099;
+		}
+	div#menu{
+		position:fixed;
+		left:0;
+		width:100%;
+		height:auto;
+		background:#CCC;
+		z-index:1;
+		}
+		div#menu ul{
+			overflow:hidden;
+			margin:0 auto;
+			width:500px;
+			height:80px;
+			}
+			div#menu ul li{
+				float:left;
+				padding:10px;
+				}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+//	$(document).ready(
+//		function(	){
+//			$("li.num1").click(
+//				function(){
+//					$(this).css("background","gray");
+//					$(document).animate({scrollTop: '420'}, 1000);
+//				}
+//			);
+		//	$(document).on("scroll",function(){
+//				if($(window).scrollTop()>50){
+//					$("#wrap div:eq(1)").animate({"opacity":0.2},500);
+//					$("div#menu").animate({"opacity":0},500);
+//				}
+//				//else{
+//	//				$("#wrap div:eq(0)").animate({"opacity":1},500);
+//	//			}
+//			});
+	//	}
+//	);
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+    	<div id="menu">
+        	<ul>
+            	<li class="num1">마이프로필</li>
+                <li>그래픽작품</li>
+                <li>웹작품</li>     
+            </ul>
+        </div>
+        <div id="area1">
+        </div>
+        <div id="area2">
+        </div>
+        <div id="area3">
+        </div>
+        <div id="area4">
+        </div>
+    </div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		   $('.num1').bind('click', function() {
+		   $("html,body").animate({scrollTop: 1000}, 680);
+			});
+		// 애니메이션 효과로 자연스럽게 이동됨, 0.68초
+		   	
+		   $('#movetopbt').on('click', function() {
+		   $(document).scrollTop(0);
+		});
+		// 애니메이션 효과없이 즉시 해당 위치 0 지점으로 이동함
+		});
+	</script>
+</body>
+</html>

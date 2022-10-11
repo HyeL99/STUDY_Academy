@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header, aside, article, footer {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 20px;
+        }
+        article div {
+            background: cornsilk;
+            margin: 10px;
+        }
+        aside li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .pc{
+            margin-top: 10px;
+            background: #ccc;
+            display: none;
+        }
+        footer{
+            text-align: center;
+        }
+
+        /* 큰 모바일,테블릿 600px 이상 */
+        @media (min-width: 600px) {
+            .divWrap{
+                display: flex;
+            }
+            article div {
+                flex : 1;
+            }
+        }
+        /* 데스크탑 960px 이상 */
+        @media (min-width : 960px) {
+            main .inner{
+                display: flex;
+            }
+            aside{
+                width: 15%;
+            }
+            section{
+                width: 85%;
+            }
+            aside li{
+                margin:0;
+            }
+            .pc{
+                display: block;
+            }
+        }
+        /* 큰 데스크탑 1400px 이상 */
+        @media (min-width : 1400px) {
+            .inner{
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1>Responsive Layout</h1>
+        </div>
+    </header>
+    <main>
+        <div class="inner">
+            <aside>
+                <ul>
+                    <li>MENU_1</li>
+                    <li>MENU_2</li>
+                    <li>MENU_3</li>
+                    <li>MENU_4</li>
+                    <li>MENU_5</li>
+                </ul>
+            </aside>
+            <section>
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium diam in nisl viverra accumsan nec tincidunt nisi. Maecenas nec gravida quam. Nunc ac scelerisque arcu. Donec elit massa, bibendum in fermentum eget, pretium at tortor. Duis interdum mattis metus, sed tincidunt nisl mollis facilisis. Ut non tellus auctor, dignissim ex vitae, cursus dolor. Nunc sed sollicitudin turpis. Proin consequat ac leo efficitur varius.</p>
+                    <p class="pc">Cras in turpis mauris. Sed metus quam, imperdiet vel ligula non, posuere scelerisque mi. Duis consectetur viverra elit, sed iaculis nulla consequat a. Aliquam in nisl interdum, iaculis quam quis, laoreet metus. Suspendisse eu aliquet urna. Etiam eleifend quam ut finibus ultrices. Duis porttitor nisl sit amet libero vestibulum scelerisque.</p>
+                </article>
+                <article>
+                    <p>Nullam sit amet nisi ac lacus suscipit malesuada. Pellentesque commodo tortor vel dui dignissim pharetra. Phasellus in tristique urna, eu aliquam metus. Suspendisse malesuada erat porta quam cursus dapibus. Ut ipsum nunc, condimentum quis lectus quis, commodo feugiat purus. Fusce quis massa nunc. Nulla at rutrum erat. Ut consequat aliquet iaculis.</p>
+                    <p class="pc">Donec sit amet massa sed risus venenatis sollicitudin vel efficitur quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent suscipit nisl sed eros vestibulum porta. Sed semper lobortis interdum. Curabitur non facilisis nibh, quis porta nulla. Nullam ut ullamcorper mauris. Praesent ultrices sodales feugiat. Donec a pretium est.</p>
+                </article>
+                <article class="divWrap">
+                    <div>Praesent tincidunt commodo tellus eu malesuada. Duis pretium vitae justo eu mollis. Nullam dignissim ipsum vitae rhoncus sollicitudin.</div>
+                    <div>Praesent lorem lacus, tristique ut interdum et, consectetur et nibh. Nullam nec gravida ligula. Suspendisse consectetur nisi in felis porttitor, at suscipit nisl venenatis.</div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="inner">
+            Responsive Layout Practice
+        </div>
+    </footer>
+</body>
+</html>

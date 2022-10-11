@@ -1,0 +1,25 @@
+[input tag name list]
+레시피 제목 recipeTitle
+카테고리(select) recipeCategory
+소요시간 recipeTime
+새료명 ingredientName
+양 ingredientAmount
+단위 선택(select) ingredientUnit
+태그 recipeTag
+
+[내냉 제작 페이지]
+메인 페이지 index.html  - 완료
+카테고리 페이지 category.html  - 완료
+로그인 페이지 login.html
+회원가입 페이지 signUp.html
+작성 페이지 upload.html  - 완료
+레시피 페이지 recipe.html
+
+[추가 필요 요소]
+1. 마이페이지 필요
+- 마이페이지에서는 개인정보와 찜한 페이지를 확인할 수 있도록 함
+
+2. 로그인 이후 메인 페이지 (로그인 자리에 들어갈 요소 형태)
+- 개인적 의견 : 프로필 아이콘 노출, 클릭시 마이 페이지로 이동
+
+

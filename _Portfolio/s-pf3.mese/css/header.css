@@ -1,0 +1,6 @@
+header .inner {
+  position: fixed;
+  height:100%;
+  width: 120px;
+  background: red;
+}

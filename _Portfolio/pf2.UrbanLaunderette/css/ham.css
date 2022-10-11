@@ -1,0 +1,84 @@
+.up{
+  opacity: 0;
+}
+.menuBack{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left:-100%;
+  background: #000;
+  transform-origin: 0 0;
+  transition: left 0.5s;
+}
+.menuBackStart{
+  animation: scaleWide 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes scaleWide{
+  0%{
+    transform: translateX(-0%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.menuBack::before{
+  content:"";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("../img/logo-top.svg") no-repeat center /contain;
+  opacity: 0.1;
+}
+
+.menuBackMove{
+    animation: closeMenu 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes closeMenu{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(200%);
+  }
+}
+header .inner .wgnb a.ham {
+  font-size: 0;
+  width: 36px;
+  height: 28px;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+header .inner .wgnb a.ham span {
+  font-size: 0;
+  width: 100%;
+  height: 0px;
+  display: block;
+  border-top: 4px solid;
+  position : absolute;
+  top: calc(50% - 2px);
+  }
+header .inner .wgnb a.ham span::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  border-top: 4px solid;
+  top: 9px;
+}
+header .inner .wgnb a.ham span::after{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0px;
+  width: 100%;
+  border-top: 4px solid;
+  bottom: 12px;
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+}
+div {
+    border: 5px solid #ddd;
+    box-sizing: border-box;
+    background: cornsilk;
+    line-height: 200px;
+    text-align: center;
+}
+
+div > div {
+    border: 3px solid crimson;
+    background-color: rgb(255, 219, 222);
+    box-sizing: border-box;
+}

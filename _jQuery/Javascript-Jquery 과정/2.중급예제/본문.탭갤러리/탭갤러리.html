@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>제이쿼리-addclass</title>
+<style type="text/css">
+a{
+	text-decoration:none;
+	color: #333;
+	font-weight:bold;
+	font-size:16px;
+	cursor:hand;
+	}
+ul{
+	list-style:none;
+	overflow:hidden;
+	background:#CCC;
+	}
+	ul li{
+		float:left;
+		}
+		ul li a{
+			padding:3px 10px;
+			}
+     p{
+	 width:400px;
+	 height:300px;
+	 }
+	 
+	 .bg1{
+		 background:url(images/pic1.jpg) no-repeat;
+		 }
+	 .bg2{
+		 background:url(images/pic2.jpg) no-repeat;
+		 }
+	 .bg3{
+		 background:url(images/pic3.jpg) no-repeat;
+		 }
+		 .on{
+			background:#F90;
+			 }
+		 .off{
+			background: none;
+			 }
+	  p{ display:none;}
+</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script>
+
+		$(document).ready(
+		    function(){
+                
+                $("p").addClass("bg1").show();
+				$(".a1").addClass("on");
+                var n; //변수선언 n
+                $("a").hover(
+					function(){
+                        n=$(this).attr("data-n");
+						$("p").addClass("bg"+n).hide().fadeIn(500);
+						$("p").attr("class","pic bg"+n);
+
+						$(this).addClass("on");
+						$("a").not(this).removeClass("on");
+					}
+	
+				);
+                
+                /* 
+                $("a.a1").hover(
+					function(){
+						$("p").addClass("bg1").hide().fadeIn(500);
+						$("p").removeClass("bg2").removeClass("bg3");
+						
+						$(this).addClass("on");
+						$("a.a2,a.a3").removeClass("on");
+					}
+	
+				);
+				$("a.a2").hover(
+					function(){
+						$("p").addClass("bg2").hide().fadeIn(500);
+						$("p").removeClass("bg1").removeClass("bg3");
+						
+						$(this).addClass("on");
+						$("a.a1,a.a3").removeClass("on");
+					}
+				);
+				$("a.a3").hover(
+					function(){
+						$("p").addClass("bg3").hide().fadeIn(500);
+						$("p").removeClass("bg2").removeClass("bg1");
+						
+						$(this).addClass("on");
+						$("a.a1,a.a2").removeClass("on");
+					}
+				);
+                */
+			}
+		);
+		
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a class="a1" data-n="1">제품1</a></li>
+        <li><a class="a2" data-n="2">제품2</a></li>
+        <li><a class="a3" data-n="3">제품3</a></li>
+    </ul>
+    <div>
+        <p class="pic"></p>
+    </div>
+</body>
+</html>

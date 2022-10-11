@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>animate()메서드</title>
+	<link href="style.css" type="text/css"  rel="stylesheet" />
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <!--<script src="js/next.js"></script>-->
+   <!-- <style>
+	</style>-->
+    <script>
+		$( //$(document).ready 을 $로 단축표기할 수있음
+			function(){
+				var n=1  
+				var timer=setInterval(function(){
+						n+=1    // n=n+1  n안의 값에 1을 더해서 그 더한값을 다시 n에 넣어라
+						if(n>3){  // ==은 비교연산자: 같다
+							$("div ul").animate({left:"0px"},500);
+							n=1
+							}
+						else{
+								$("div ul").animate({left:"-=250px"},500);
+							                            // 속성:"값"
+								}
+						},2000
+					);
+				  // var는 변수선언 , 변수란 그릇(데이터보관하는) var n=0은 n이 변수이고 거기에 0을 넣어라
+				                // =은 대입연산자    a=b은 a안에 b를 넣어라
+									 
+				function slide(a){
+						clearInterval(timer);
+						n+=1    // n=n+1  n안의 값에 1을 더해서 그 더한값을 다시 n에 넣어라
+						if(n>3){  // ==은 비교연산자: 같다
+							$("div ul").stop().animate({left:"0px"},a);
+							n=1
+							}
+						else{
+								$("div ul").stop().animate({left:"-=250px"},a);
+							                            // 속성:"값"
+								}
+
+					}
+					
+				$("p").click(
+					//div안의 ul을 animate해라
+					function(){
+						slide(2000);
+					}
+				);
+				$("ul.sm li:first").click(
+					function(){
+						$("div ul").animate({left:"0px"},500);
+					}
+				);
+				$("ul.sm li:nth-child(2)").click(
+					function(){
+						$("div ul").animate({left:"-250px"},500);
+					}
+				);
+				
+				$("ul.sm li:nth-child(3)").click(
+					function(){
+						$("div ul").animate({left:"-500px"},500);
+					}
+				);
+				
+			}
+		);
+    </script>
+</head>
+
+<body>
+    <div>
+    	<ul>
+        	<li><img src="img/w1.jpg" /></li>
+            <li><img src="img/w2.jpg" /></li>
+            <li><img src="img/w3.jpg" /></li>
+        </ul>
+    </div>
+    <p>다음보기</p>
+    <ul class="sm">
+        	<li><img src="img/w1.jpg" /></li>
+            <li><img src="img/w2.jpg" /></li>
+            <li><img src="img/w3.jpg" /></li>
+    </ul>
+</body>
+</html>

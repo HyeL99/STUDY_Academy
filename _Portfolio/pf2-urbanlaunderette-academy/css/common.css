@@ -1,0 +1,149 @@
+.hide{
+  display: none;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color:transparent;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:transparent;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:transparent;
+}
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:transparent;
+}
+.inner{
+  width: 80%;
+  margin: 0 auto;
+}
+.innerPadding{ /* 카멜케이스방식:첫자소문자로시작..다른단어첫자는 대문자로시작 */
+  padding-top:20px;
+  padding-bottom:60px; 
+}
+/* hn태그스타일링 */
+.h1{
+  font-size: 80px;
+  font-weight: 700;
+  font-family: 'Binggrae-Bold';
+}
+.h2{
+  font-size: 54px;
+  font-weight: 700;
+  font-family: 'Binggrae-Bold';
+}
+.h3{
+  font-size: 31px;
+  font-weight: 700;
+  font-family: 'Binggrae-Bold';
+}
+.h4{
+  font-size: 27px;
+  font-weight: 700;
+}
+.h5{
+  font-size: 20px;
+  font-weight: 700;
+}
+/* flex */
+.flex{
+  display: flex;
+}
+.flexBetween{
+  justify-content: space-between;
+}
+.flexAround{
+  justify-content: space-around;
+}
+.flexEvenly{
+  justify-content: space-evenly;
+}
+.flexCenter{
+  justify-content: center;
+}
+.flexColumn{
+  flex-direction: column;
+}
+.flexAlignCenter{
+  align-items: center;
+}
+.flexAlignEnd{
+  align-items: flex-end;
+}
+.flexWrap{
+  flex-wrap: wrap;
+}
+.br{
+  display: block;
+}
+.p{
+  line-height: 1.5;
+}
+/* 패딩 */
+.padding50{
+  padding: 50px;
+}
+.padding100{
+  padding-top:100px;
+  padding-bottom:100px;
+}
+
+/* 버튼 */
+.btn1{
+  height: 40px;
+  width: 130px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+}
+/* 글자정렬 */
+
+.text-center{
+  text-align: center;
+}
+
+/* 화살표 */
+.more {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding-right:30px
+}
+.more::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 1px);
+  z-index: 1;
+  background-color:black;
+}
+.more::after{
+  content: "";
+  display:block;
+  width:8px;
+  height:8px;
+  border: 2px solid #333;
+  transform:rotate(45deg);
+  border-bottom:transparent;
+  border-left: transparent;
+  position:absolute;
+  right:0;
+  top:calc(50% - 5px);
+}
+
+
+
+
+
+
+

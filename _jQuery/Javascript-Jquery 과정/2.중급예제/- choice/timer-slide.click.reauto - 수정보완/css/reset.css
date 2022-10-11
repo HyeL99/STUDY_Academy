@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	 margin:0;
+	 padding:0;
+	 border:0;
+	 outline:0;
+	 vertical-align:top;
+  }
+a{
+	text-decoration: none;
+  }
+html,body{
+
+    height:100%;
+
+  }
+
+hr{
+
+	display:none;
+
+}    
+ul{
+	
+	list-style:none;
+
+	/*! width: 70%; */
+}
+
+h1,h2,h3,h4,h5,h6{
+
+	font-weight:normal;
+	font-size:100%;
+
+}
+
+img{
+	
+ 	max-width:100%;
+	border:none;
+
+}
+ 
+a{
+ 	text-decoration:0;
+	color:#000;
+ 	/*! padding: 3px 7px; */
+ }
+ 
+table{ 
+	border-collapse:collapse;
+	border-spacing:0;
+   }
+ 
+input,select{ 
+	vertical-align:middle;
+ }
+ 
+body{
+	font-family:'NanumGothicWeb','돋움'; 
+	font-size:100%;
+	line-height:1;
+ }
+ 
+i,em,address{
+ 	font-style:normal;
+ 	font-weight:normal;
+ }
+
+ hr{
+ 	display: none;
+ }

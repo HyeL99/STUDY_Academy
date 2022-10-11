@@ -1,0 +1,33 @@
+#story {
+  color: 111;
+}
+#story div.inner {
+  color: 111;
+}
+#story div.inner hgroup {
+  color: 111;
+}
+#story div.inner hgroup h2 {
+  color: 111;
+}
+#story div.inner hgroup h3 {
+  color: 111;
+}
+#story div.inner hgroup h4 {
+  color: 111;
+}
+#story div.inner hgroup h4 span {
+  color: 111;
+}
+#story div.inner ul.contents li {
+  color: 111;
+}
+#story div.inner ul.contents li h5 {
+  color: 111;
+}
+#story div.inner ul.contents li p {
+  color: 111;
+}
+#story div.inner a.more {
+  color: 111;
+}

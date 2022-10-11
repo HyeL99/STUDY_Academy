@@ -1,0 +1,239 @@
+textarea {
+    min-height: 200px;
+    overflow-y: hidden;
+    resize:none;
+    border:0;
+    outline:0;
+    width: calc(100% - 250px);
+}
+select{
+    border: 1px solid #f8f8f8;
+    background: transparent;
+    outline: none;
+    width: 100%;
+}
+
+.button{
+    background: #fdba02;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    height: 25px;
+    width: 80px;
+    border-radius: 5px;
+    border:0;
+    outline:0;
+}
+
+main {
+    background: #fff;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px #bbb;
+}
+main div.inner {
+    padding: 30px 50px 70px;
+}
+main div.inner div.ContentWrap {
+    row-gap: 20px;
+    max-width: 700px;
+}
+main div.inner div.ContentWrap h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 20px;
+    white-space: nowrap;
+    line-height: 2.5;
+}
+
+div.ContentWrap .inputPlace{
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+    box-sizing: border-box;
+    background: #eee;
+}
+div.ContentWrap .inputPlace input {
+    background: transparent;
+    color: #666;
+    border: 0;
+    outline: 0;
+    line-height: 40px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+main div.inner div.ContentWrap div.title {
+}
+main div.inner div.ContentWrap div.title h2 {
+}
+main div.inner div.ContentWrap div.title div.inputPlace {
+}
+main div.inner div.ContentWrap div.title div.inputPlace input {
+    background: #fff;
+}
+
+
+main div.inner div.ContentWrap > div.wrap {
+    column-gap: 100px;
+}
+main div.inner div.ContentWrap > div.wrap div.category {
+    flex: 3;
+}
+main div.inner div.ContentWrap > div.wrap div.category h2 {
+}
+main div.inner div.ContentWrap > div.wrap div.category div.inputPlace {
+    background: #fff;
+}
+main div.inner div.ContentWrap > div.wrap div.category div.inputPlace select {
+    height: 40px;
+}
+main div.inner div.ContentWrap > div.wrap div.category div.inputPlace select option {
+}
+
+
+main div.inner div.ContentWrap div.time {
+    flex: 2;
+}
+main div.inner div.ContentWrap div.time h2 {
+}
+main div.inner div.ContentWrap div.time div.inputPlace {
+    background: #fff;
+}
+main div.inner div.ContentWrap div.time div.inputPlace input {
+}
+main div.inner div.ContentWrap div.time p {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+
+main div.inner div.ContentWrap div.ingredient {
+    text-align: center;
+}
+main div.inner div.ContentWrap div.ingredient h2 {
+    text-align: left;
+}
+main div.inner div.ContentWrap div.ingredient div.wrap {
+    column-gap: 20px;
+}
+main div.inner div.ContentWrap div.ingredient div.wrap div.inputPlace:nth-of-type(1) {
+    flex:4.5
+}
+main div.inner div.ContentWrap div.ingredient div.wrap div.inputPlace:nth-of-type(2) {
+    flex:2
+}
+main div.inner div.ContentWrap div.ingredient div.wrap div.inputPlace:nth-of-type(3) {
+    flex:1;
+    background: #fff;
+}
+main div.inner div.ContentWrap div.ingredient div.wrap div.inputPlace input {
+}
+main div.inner div.ContentWrap div.ingredient div.wrap div.inputPlace select {
+    height: 40px;
+}
+main div.inner div.ContentWrap div.ingredient div.wrap div.inputPlace select option {
+}
+main div.inner div.ContentWrap div.ingredient button {
+    margin-top: 20px;
+}
+
+
+main div.inner div.ContentWrap div.tag {
+}
+main div.inner div.ContentWrap div.tag h2 {
+}
+main div.inner div.ContentWrap div.tag div.inputPlace {
+}
+main div.inner div.ContentWrap div.tag div.inputPlace input {
+    padding-left: 20px;
+}
+
+
+main div.inner div.ContentWrap div.thumbnail {
+}
+main div.inner div.ContentWrap div.thumbnail h2 {
+}
+main div.inner div.ContentWrap div.thumbnail div.inputPlace {
+    height: 40px;
+    text-align: end;
+    padding: 7.5px 0;
+}
+main div.inner div.ContentWrap div.thumbnail div.inputPlace button {
+    margin-right: 20px;
+}
+
+
+main div.inner div.ContentWrap div.contentPlace {
+}
+main div.inner div.ContentWrap div.contentPlace h2 {
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap {
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace {
+    padding: 20px;;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.top{
+    margin-bottom: 10px;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.top h3 {
+    color: #666;
+    margin-right: 20px;
+    font-weight: 700;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.top div.place {
+    height: 40px;
+    width: 100%;
+    flex: 1;
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: end;
+    padding: 6.5px;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.top div.place button {
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.content {
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.content ul {
+    row-gap: 20px;;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.content ul li {
+    position:relative;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.content ul li img {
+    width:200px;
+    height:200px;
+    border-radius: 15px;
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.content ul li textarea {
+}
+main div.inner div.ContentWrap div.contentPlace div.wrap div.inputPlace div.content ul li button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: crimson;
+    color:#fff;
+    font-size: 12px;
+    border-radius: 10px;
+    left: 185px;
+    top: -5px;
+    cursor: pointer;
+    outline: 0;
+    border:0;
+}
+
+
+main div.inner > button {
+    font-size: 16px;
+    height: 40px;
+    width: 180px;
+    border-radius: 20px;
+    float:right;
+}

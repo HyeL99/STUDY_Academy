@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+
+</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			const ar=["10억","연인","피부미남"]; // 배열선언 const 이름 = [];
+			//const는 상수: 값이 변하지 않는 그릇
+			// 배열은 같은 자료들을 담는 자료구조 중의 하나이다.
+			//배열은 순서가 있는 값을 의미하며 배열에 있는 값은 요소라고 한다.
+		//   alert(ar[2]);
+		// 	ar[2]="남북통일";
+		// 	alert(ar[2]);
+		console.log(ar[0])
+		});
+	</script>
+</head>
+
+<body>
+	<span>
+		<button id="btn1">btn1-Click!!</button><br />
+		<button id="btn2">btn2-Click!!</button><br />
+		<button id="btn3">btn3-Click!!</button><br />
+		<button id="btn4">btn4-Click!!</button>
+	</span>	
+
+<script>
+$(document).ready(function(){
+	let a="전역변수";
+	// var b="지역변수";
+	$("#btn1").click(function(){
+		alert(a);	 //경고창을 띄워라  숫자는 따옴표 뺌
+		var b="지역변수"; // 지역함수는 선언한 함수 내에서만 사용할 수 있음
+		sc="함수내부 var없는 전역변수";
+	});
+
+	$("#btn2").click(function(){
+		alert(b);	//문자는 "" 따옴표 넣음
+
+	});
+	$("#btn3").click(function(){
+		alert(sc);	//문자는 "" 따옴표 넣음
+
+	});
+});
+	
+
+
+</script>
+</body>
+</html>

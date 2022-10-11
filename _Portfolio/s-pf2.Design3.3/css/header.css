@@ -1,0 +1,50 @@
+header {
+  background: transparent;
+  position: fixed;
+}
+header div.inner {
+  height: 88px;
+}
+header div.inner h1 {
+}
+header div.inner h1 a {
+  font-size: 0;
+}
+header div.inner ul {
+}
+header div.inner ul li {
+}
+header div.inner ul li a {
+}
+header div.inner ul li div.wgnb {
+}
+header div.inner ul li div.wgnb span {
+}
+header div.inner ul li div.wgnb nav {
+}
+header div.inner ul li div.wgnb nav ul.gnb {
+}
+header div.inner ul li div.wgnb nav ul.gnb li {
+}
+header div.inner ul li div.wgnb nav ul.gnb li a {
+}
+header div.inner ul li div.wgnb nav ul.gnb li span {
+}
+header div.inner ul li div.wgnb nav ul.gnb li ul.gnbsub {
+}
+header div.inner ul li div.wgnb nav ul.gnb li ul.gnbsub li {
+}
+header div.inner ul li div.wgnb nav ul.gnb li ul.gnbsub li a {
+}
+header div.inner ul li div.wgnb nav div.gnb-bottom {
+}
+header div.inner ul li div.wgnb nav div.gnb-bottom a {
+}
+header div.inner ul li div.wgnb nav div.gnb-bottom a span {
+}
+header div.inner ul li div.wgnb nav div.gnb-bottom ul.social {
+}
+header div.inner ul li div.wgnb nav div.gnb-bottom ul.social li {
+}
+header div.inner ul li div.wgnb nav div.gnb-bottom ul.social li a {
+}

@@ -1,0 +1,15 @@
+footer {
+    background: #8b8b8b;
+}
+footer div.inner {
+    padding: 40px 50px 80px;
+    color: #fff;
+}
+footer div.inner ul {
+    column-gap: 50px;
+    font-weight: 700;
+}
+footer div.inner ul li {
+}
+footer div.inner ul li a {
+}

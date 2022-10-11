@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>태그속성값변경</title>
+	<style type="text/css">
+	div{
+		width:400px;
+		margin:0 auto;
+		border:#666 2px solid;
+		overflow:hidden;
+	}
+	p,ul{
+		float:left;
+	}
+	</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+                var n;
+                $("li").hover(
+                    function(){
+                        n=$(this).attr("data-n");
+                        $("p img").attr("src","images/pic"+n+".jpg");
+                    }
+                );
+			}
+		);
+	</script>
+</head>
+
+<body>
+<div id="pro">
+	<p><img src="images/pic1.jpg" /></p>
+	<ul>
+		<li data-n="1"><img src="https://via.placeholder.com/150" /></li>
+		<li data-n="2"><img src="https://via.placeholder.com/150" /></li>
+		<li data-n="3"><img src="https://via.placeholder.com/150" /></li>
+		<li data-n="4"><img src="https://via.placeholder.com/150" /></li>
+	</ul>
+</div>
+	
+</body>
+</html>

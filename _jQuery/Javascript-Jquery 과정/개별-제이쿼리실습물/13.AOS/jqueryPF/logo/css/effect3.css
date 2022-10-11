@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+body{	
+	margin:20px auto;
+	padding:0;
+	width:800px;
+	background:#192839;
+}
+
+div{
+	padding:0;
+	overflow:hidden;
+	position:relative;  /* ie6에서 overflow:hidden; 오류 해결하기 위해서 위드와 하이트도 반드시 선언 */
+	width:800px;
+	height:300px;
+	border:#f00 this solid;
+}
+
+img{
+	position:relative;
+}
+

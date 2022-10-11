@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+		 }
+			#wrap div{
+				background:#C90;
+				width:1400px;
+				margin:0 auto;
+				transition:height 1s, width 1s;
+				}
+				div#about{
+					background:red;
+					}
+				div#graphic{
+					background:green;
+					}
+				div#web{
+					background:blue;
+				 }
+		html,body{
+			height:100%;
+			}
+			div#menu{
+				background:gray;
+				float:left;
+				width:180px;
+				position:fixed;
+				}
+			div#wrap{
+				float:left;
+				margin-left:200px;
+				}
+			@media only screen and (max-width:1400px){
+					#wrap div{
+						width:1000px;
+					}
+			}
+	</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+			$(document).ready(
+				function(){
+					var h=$(window).height(); //브라우저창 높이값을 변수 h에 넣어라
+					$("#menu").css("height",h); //변수h안의 높이값을 #menu높이값에 적용해라
+					$("#wrap div").css("height",h); //변수h안의 높이값을 #menu div 높이값에 적용해라
+					
+					$(window).resize( // 창크기를 조정하면 실행해라
+						function(){
+							// h=$(window).height();
+						  	// $("#menu").css("height",h);
+							// $("#wrap div").css("height",h);
+							/*if(h<500){ // 창크기가 500보다 작아지면 각 div높이 변동없게(컨텐츠의 최소높이값을 500으로 본경우
+								
+							}else{	 // 그렇치 않은 경우에 실행
+							$("#menu").css("height",h);
+							$("#wrap div").css("height",h);
+							}*/
+						}
+
+					);
+				}
+			);
+		</script>
+<!--<script> 
+$(document).ready(function(){
+		var h=$(window).height()/2-100;
+		var w=$(window).width()/2-100;
+        $("#in2").css({"top":h,"left":w});
+		
+		$(window).resize(function(){
+			var h=$(window).height()/2-100;
+			var w=$(window).width()/2-100;
+			 $("#in2").css({"top":h,"left":w});
+		});
+});
+</script> -->
+</head>
+
+<body>
+	<div id="menu">메뉴</div>
+    <div id="wrap">
+      <div id="about">
+        마이프로필
+      </div>
+      <div id="graphic">
+        그래픽
+      </div>
+      <div id="web">
+        웹
+      </div>
+    </div>
+</body>
+</html>

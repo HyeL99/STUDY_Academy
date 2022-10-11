@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>요소에 css()로 스타일 설정하기</title>
+<!--내부스타일설정하기-->
+	<style type="text/css">
+	 /*a태그의 스타일지정: 밑줄없애고 글자색지정*/
+	 a{
+		 text-decoration:none;
+		 color:#333;
+		 }
+	 /*a:hover의 스타일 지정: 글자색 지정*/
+	 a:hover{
+		 color:#F60;
+		 }
+	.click{
+		color:#F60;
+		width:120px;
+		background:#CCC;
+		}
+	.noclick{
+		color:#333;
+		font-style:italic;
+		
+		}
+	</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			     //첫번째 li에 class를 붙여라(noclick)
+				 // li:first(필터선택자) 는 첫번째 li를 의미 ---> :first를 필터선택자라고 함(li들 중에서 first를 걸러냄)
+				 // 이런 선택자를 사용하게 되면 class를 쓰지 않아도 됨(html문서가 간결해짐)
+				  $("li:first").addClass("noclick");
+				  //$("li:first+li").addClass("noclick"); // +는 바로 옆에 있는 요소(태그)를 의미 : 인접,형제 선택자
+				  $("li:last").addClass("noclick"); // li:last는 마지막 li를 의미
+			     //a를 클릭하면 a에 class를 붙여라(click)
+					//$("a").click(
+						//function(){
+							//$("a").addClass("click");
+							//}
+						//);
+				//첫번째 li를 클릭하면 class를 붙여라(click)
+
+				/*
+				$("li:first a").click(
+					function(){
+						$(this).addClass("click"); //this는 앞에서 언급한 대상 li:first를 의미하는 선택자				
+						$("li:first+li a").removeClass("click");
+						$("li:last a").removeClass("click");
+					}
+				);
+				$("li:first+li a").click(
+					function(){
+						$(this).addClass("click"); //this는 앞에서 언급한 대상 li:first를 의미하는 선택자
+						$("li:first a").removeClass("click");
+						$("li:last a").removeClass("click");
+					}
+				);
+				$("li:last a").click(
+					function(){
+						$(this).addClass("click"); //this는 앞에서 언급한 대상 li:first를 의미하는 선택자
+						$("li:first+li a").removeClass("click");
+						$("li:first a").removeClass("click");
+					}
+				);
+				*/
+				$("li a").click(function(){
+					$(this).addClass("click");
+					$("li a").not(this).removeClass("click");
+				});
+			  }
+
+			);
+		
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+    </ul>
+</body>
+</html>

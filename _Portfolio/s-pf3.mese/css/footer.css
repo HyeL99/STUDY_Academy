@@ -1,0 +1,14 @@
+footer .inner{
+  position: fixed;
+  text-align: center;
+  width: calc(100% - 120px);
+  right: 0;
+  bottom:0;
+  height: 120px;
+  background: red;
+  color: #c3c3c3;
+}
+footer .inner p {
+  font-size: 50px;
+  line-height: 2.5;
+}

@@ -1,0 +1,39 @@
+<script type="text/javascript">
+        $(function(){
+           $(".titleslide").slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                vertical:true,
+                speed : 1500    
+           }); 
+           //페이지로딩시 첫번째 항목의 글자가 등장하게
+           $("#title .inner.slick-current h2 span").addClass("h2up");
+           $("#title .inner.slick-current p span").addClass("pup");
+           $(".slick-arrow").click(function(){
+                //이전,이후버튼 클릭시 글자가 등장하게
+                $("#title .inner.slick-current h2 span").addClass("h2up");
+                $("#title .inner.slick-current p span").addClass("pup");
+
+                if($(this).hasClass("slick-next")){ // 다음버튼 클릭시 이전항목글자가 사라지게
+                    if($("#title .inner.slick-current").hasClass("titleslide1")){
+                        // 5번째항목글자밑으로 사라지게
+                        $("#title .inner:nth-of-type(6)").children("h2").children("span").removeClass("h2up");
+                        $("#title .inner:nth-of-type(6)").children("p").children("span").removeClass("pup");
+                        // 5번째 항목에서 첫번째 항목으로 넘어갈때 1번째항목의 글자올라오게
+                        $("#title .inner:nth-of-type(6)").next().children("h2").children("span").addClass("h2up");
+                        $("#title .inner:nth-of-type(6)").next().children("p").children("span").addClass("pup");
+                    }else{
+                        //다음항목이 위로 보여질때 이전항목의 글자가 사라지게
+                        $("#title .inner.slick-current").prev().children("h2").children("span").removeClass("h2up");
+                        $("#title .inner.slick-current").prev().children("p").children("span").removeClass("pup");  
+                    }
+                }else{ //이전버튼 클릭시 이전항목글자가 사라지게
+                    $("#title .inner.slick-current").next().children("h2").children("span").removeClass("h2up");
+                    $("#title .inner.slick-current").next().children("p").children("span").removeClass("pup");
+                }
+                
+           });
+
+        });
+    </script>

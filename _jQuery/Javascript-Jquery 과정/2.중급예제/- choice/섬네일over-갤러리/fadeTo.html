@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>fadeTo()</title>
+<style type="text/css">
+	div{
+		background:#000;
+		width:600px;
+		margin:0 auto;
+		}
+		div#big img{
+					opacity:1;
+					width:600px;
+					}
+		div#small img{
+					opacity:0.2;
+					width:80px;
+					}
+		.current{
+			opacity: 1 !important;
+		}			
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			$("div#small img").first().addClass("current");//
+			$("div#big img").first().siblings().hide();
+			$("div#small img").hover(
+				function(){
+					$(this).fadeTo(500,0.6);
+				},
+				function(){
+					$(this).fadeTo(500,0.4);
+				}
+			);
+			var number; //변수 선언
+			$("div#small img").click(function(){
+				$(this).addClass("current");
+				$("div#small img").not(this).removeClass("current");
+
+				number=$(this).index(); //제이쿼리 index(),this
+				$("div#big img:eq("+number+")").fadeIn();
+				$("div#big img:eq("+number+")").siblings().hide();
+			});
+		// 일일이 하나씩 처리하기(코드가 많아지는 단점)
+		/*
+			$("div#small img:first").click(
+				function(){
+					$("div#big img:first").hide().fadeIn();
+					$("div#big img:first").siblings().hide();
+				}
+			);
+			$("div#small img:first+img").click(
+				function(){
+					$("div#big img:first+img").hide().fadeIn();
+					$("div#big img:first+img").siblings().hide();
+				}
+			);
+			$("div#small img:first+img+img").click(
+				function(){
+					$("div#big img:first+img+img").hide().fadeIn();
+					$("div#big img:first+img+img").siblings().hide();
+				}
+			);
+			$("div#small img:first+img+img+img").click(
+				function(){
+					$("div#big img:first+img+img+img").hide().fadeIn();
+					$("div#big img:first+img+img+img").siblings().hide();
+				}
+			);
+			$("div#small img:first+img+img+img+img").click(
+				function(){
+					$("div#big img:first+img+img+img+img").hide().fadeIn();
+					$("div#big img:first+img+img+img+img").siblings().hide();
+				}
+			);
+			$("div#small img:last").click(
+				function(){
+					$("div#big img:last").hide().fadeIn();
+					$("div#big img:last").siblings().hide();
+				}
+			);
+			*/
+		}
+	);
+</script>
+</head>
+
+<body>
+	<div id="big">
+    	<img src="img/m06_01.jpg" alt="2" />
+        <img src="img/m06_02.jpg" alt="2" />
+        <img src="img/m06_03.jpg" alt="2" />
+        <img src="img/m06_04.jpg" alt="2" />
+        <img src="img/m06_05.jpg" alt="2" />
+        <img src="img/m06_06.jpg" alt="2" />
+    </div>
+    <div id="small">
+        <img src="img/m06_01.jpg" alt="2" />
+        <img src="img/m06_02.jpg" alt="2" />
+        <img src="img/m06_03.jpg" alt="2" />
+        <img src="img/m06_04.jpg" alt="2" />
+        <img src="img/m06_05.jpg" alt="2" />
+        <img src="img/m06_06.jpg" alt="2" />
+    </div>
+</body>
+</html>

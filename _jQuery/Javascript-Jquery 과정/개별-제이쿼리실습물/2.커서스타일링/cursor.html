@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <style>
+  /* 기본 색상 변수에 담기 */
+    html {
+        --color-texta: #1d1d1d;
+        --color-textb: #fff;
+    }
+  /* 시스템 커서 안 보이게 숨기기 */
+    body {
+        cursor: none;
+    }
+    /* 커스텀 커서 스타일 정의해주기 */
+      .cursor {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(255, 64, 129, 0.4);
+        border: 2px solid #FF4081;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: background-color 0.25s;
+        pointer-events: none;
+        z-index: 1000000000000000100000;
+      }
+      .cursor:before, .cursor:after {
+          position: absolute;
+          content: "";
+          background-color: rgba(255, 255, 255, 0.5);
+          transition: 0.25s;
+        }
+        .cursor:before {
+          top: 0;
+          left: 50%;
+          width: 1px;
+          height: 50px;
+          transform: translateY(-25%);
+        }
+        .cursor:after {
+          top: 50%;
+          left: 0;
+          width: 50px;
+          height: 1px;
+          transform: translateX(-25%);
+        }
+        .cursor span {
+          position: relative;
+          display: flex;
+          width: 11px;
+          height: 11px;
+          background-color: #FF4081;
+          border-radius: 50%;
+          transition: 0.25s;
+          z-index: -1;
+        }
+  </style>
+  <!-- <script>
+    let mouseCursor = document.querySelector(".cursor");
+    let navLinks = document.querySelectorAll(".gnb li a"); //메뉴 링크
+    //window 객체에 scroll & mouse 이벤트를 추가하고 cursor함수 실행되도록 함
+    window.addEventListener("scroll", cursor);
+    window.addEventListener("mousemove", cursor);
+    //커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
+    function cursor(e) {
+      mouseCursor.style.left = e.pageX + "px";
+      mouseCursor.style.top = e.pageY - scrollY + "px";
+    }
+  </script> -->
+  <script
+			  src="https://code.jquery.com/jquery-1.12.4.min.js"
+			  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+			  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  const cursor = document.querySelector(".cursor");
+  const changer = document.querySelector(".changer");
+  const span = document.querySelector("span");
+
+  document.addEventListener("mousemove", (e) => {
+  let x = e.clientX;
+  let y = e.clientY;
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+  //console.log(x + 'px,' + y + 'px');
+  });
+
+  changer.addEventListener("click", () => {
+  cursor.classList.toggle("green");
+  });
+
+  changer.addEventListener("mouseover", () => {
+  span.style.width = 100 + "%";
+  span.style.height = 100 + "%";
+  span.style.opacity = 0.6;
+  span.style.boxShadow = "inset 0 0 10px rgba(0,0,0,0.9)";
+  });
+
+  changer.addEventListener("mouseout", () => {
+  span.style.width = 11 + "px";
+  span.style.height = 11 + "px";
+  span.style.boxShadow = "none";
+  });
+
+  </script>
+  </head>
+  <body>
+    <header>
+
+      <div class="cursor"></div>
+
+      <nav>
+      마우스오버했을 때 스타일이 바뀌게 될 네비게이션 메뉴 ⬇
+        <ul class="gnb">
+          <li><a href="index.html" title="home" class="pink">Home</a></li>
+          <li><a href="work.html" title="work">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="playground.html">Playground</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </body>
+</html>

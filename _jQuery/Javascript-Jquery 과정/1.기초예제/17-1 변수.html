@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+
+	<button id="btn1">btn1-Click!!</button><br />
+	<button id="btn2">btn2-Click!!</button><br />
+	<button id="btn3">btn3-Click!!</button><br />
+
+	<script>
+
+	var a = 10; // variable  변수(데이터담는그릇)  a가 변수(그릇,폴더)이다.거기에 10을 넣어라
+	var b = 5; // = 대입연산자(넣다)
+	//var c = a + b;  // + 사칙연산자중에 더하기연산자
+	//a += b; //a=a+b; a와b의 값을 더해서 a에 넣어라
+	//a *= b; //a=a*b; a와b의 값을 곱해서 a에 넣어라
+	// a -= b; //a=a-b; a에서b의 값을 빼서 a에 넣어라
+	// a /= b; //a=a/b; a와b의 값을 나워서서 a에 넣어라
+	//a %= b; //a=a%b; a의 값을 b의 값으로 나눈후 나머지값 a에 넣어라
+	
+	console.log(a);
+
+	$("#btn1").click(function(){
+		alert(a);
+	});
+
+	$("#btn2").click(function(){
+		alert(b);
+	});
+
+	$("#btn3").click(function(){
+		alert(a);
+	});
+
+	</script>
+</body>
+</html>
+
+
+<!--
+var    	변수 선언
+
+변수는 지역 변수와 전역 변수로 나뉨.
+지역 변수는 특정 함수 내에서만 영향력을 미침
+전역 변수는 스크립트 전체 영역 내에서 영향력을 미침.
+
+
+#지역 변수	-  특정 함수 내에서 선언된 변수
+function sum1(){
+	var a=10
+    alert(a)
+}
+바로 위 예제에서 a 변수는 특정 함수 내에서 선언되었기 때문에
+지역 변수임. 즉 sum1 이라는 함수 내에서만 영향력을 미침.
+
+#전역 변수 - 스크립트 내부에 선언된 변수
+*case1
+
+<script>
+var b=7;
+</script>
+스크립트 내에 b라는 변수가 선언되었음. 전역 변수로
+해당 스크립트 내에서 영향력을 미침.
+
+*case2
+
+function sum2(){
+	c=77;
+    alert(c)
+}
+
+sum2 함수 내에서 변수 c가 있음.
+var로 선언이 되지 않았기 때문에, 스크립트 전체에 영향을
+미치는 전역 변수가 됨.
+-->

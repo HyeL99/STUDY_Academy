@@ -1,0 +1,492 @@
+@import 'https://fonts.googleapis.com/css?family=Bitter';
+@import 'https://fonts.googleapis.com/css?family=Bitter|Dancing+Script';
+* {
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+  font-size: 100%;
+  font-weight: normal; 
+}
+body>div{
+	position:relative;
+	}
+body>div:first-child{
+	opacity:1;
+	top:0px;
+	}
+
+.header {
+  background: #fff;
+  margin: 10em auto 2em;
+  height: 400px;
+  width: 500px;
+  max-width: 1200px;
+  box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 2em;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.header .kugg-1 {
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  bottom: 6px;
+  left: -130px;
+}
+.header i.ion-gear-a.first {
+  font-size: 555px;
+  color: orangered;
+}
+.header i.ion-gear-a.first:before {
+  -webkit-animation: spinny 10s linear infinite;
+          animation: spinny 10s linear infinite;
+}
+.header i.ion-gear-a.second {
+  font-size: 355px;
+  position: absolute;
+  top: 200px;
+  left: 422px;
+}
+.header i.ion-gear-a.second:before {
+  -webkit-animation: gear 6s linear infinite;
+          animation: gear 6s linear infinite;
+}
+.header .text-container {
+  float: right;
+  position: relative;
+  top: -30px;
+}
+.header .text-container h1 {
+  margin-right: 1em;
+  margin-bottom: 0em;
+  font-size: 45px;
+}
+.header .text-container p.lead {
+  margin-top: 0;
+  margin-bottom: 2em;
+  font-size: inherit;
+  font-family: inherit;
+}
+.header .text-container p {
+  line-height: 1.3;
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
+}
+.header .text-container a {
+  font-family: "Bitter", serif;
+  font-size: 13px;
+  padding: 0.5em;
+  border-radius: 3px;
+  font-style: normal;
+  border: 1px solid #ccc;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.header .text-container a:hover {
+  border: 1px solid #999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@-webkit-keyframes spinny {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes spinny {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes gear {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes gear {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@media (max-width: 1165px) {
+  .header {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: 500px;
+    height: 400px;
+  }
+  .header .kugg-1 {
+    bottom: 100px;
+    left: -200px;
+  }
+  .header .kugg-1 i.ion-gear-a.first {
+    font-size: 310px;
+  }
+  .header .kugg-1 i.ion-gear-a.second {
+    font-size: 180px;
+    top: 0px;
+    left: 225px;
+    margin-bottom: 2em;
+  }
+  .header .text-container {
+    float: none;
+    position: relative;
+    top: 30px;
+    padding: 7em 0em 1em;
+  }
+  .header .text-container h1 {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    font-size: 30px;
+    margin-top: 1.5em;
+  }
+  .header .text-container p.lead {
+    font-size: 12px;
+  }
+  .header .text-container p {
+    font-size: 20px;
+  }
+  .header .text-container br {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .header .text-container h1 {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    font-size: 25px;
+  }
+  .header .text-container p.lead {
+    margin-top: 0.3em;
+  }
+}
+@media (max-width: 400px) {
+  .header .text-container h1 {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    font-size: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .header .kugg-1 {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    bottom: 140px;
+    left: -150px;
+  }
+  .header .kugg-1 i.ion-gear-a.first {
+    font-size: 310px;
+  }
+  .header .kugg-1 i.ion-gear-a.second {
+    font-size: 180px;
+    top: 85px;
+    left: 235px;
+    margin-bottom: 2em;
+  }
+  .header .text-container {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    float: none;
+  }
+  .header .text-container h1 {
+    margin: 0em;
+  }
+  .header .text-container p {
+    margin-bottom: 1em;
+  }
+  .header .text-container a {
+    font-size: 9px;
+  }
+}
+div#submenu .menu{
+  width:400px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+div#submenu{
+  width: auto;
+  height: auto;
+  max-width: 1600px;
+  padding-top: 100px;
+}
+div#submenu .portfolio{
+  overflow: hidden;
+}
+div#submenu .portfolio li{
+  width: 33.3333%;
+  float: left;
+  height: 300px;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+div#submenu .portfolio li h3{
+  
+}
+div#submenu .portfolio li a{
+  
+}
+div#gallery {
+    margin: 0 auto;
+    padding-top: 200px;
+}
+/* 이미지 슬라이드 */
+div#wslide {
+    background-image: url(../img/samsung.png);
+    width: 547px;
+    height: 445px;
+    background-position-y: 29px;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+}
+div#slide {
+ width: 528px;
+ height: 300px;
+ margin: 0 auto;
+ overflow: hidden;
+ position: relative;
+ }
+div#wslide h1 {
+ margin: 0 0 20px 0;
+ text-align: center;
+ }
+div#slide ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1584px;
+}
+div#slide ul li {
+    float: left;
+    width: 528px;
+    height: 100%;
+}
+div#slide ul li img{
+ width: 100%;
+ }
+div#wslide p.prev {
+ position: absolute;
+ left: -28px;
+ top: 40%;
+ }
+div#wslide p.next {
+ position: absolute;
+ right: -28px;
+ top: 40%;
+ }
+div#wslide span.circle{
+ text-align:center;
+ float: right;
+ margin-top: 8px;
+ margin-right: 85px;
+ }
+.currentG{
+  background-color: red !important;
+}
+div#wslide span.circle a{
+ display:inline-block;
+ width:20px;
+ height:20px;
+ border-radius:50%;
+ background-color:#ccc;
+ margin:6px;
+ }
+
+/* 수직 갤러리2 */
+
+div#slide2 ul li:nth-child(2) img {
+ height: 333px;
+ width: 100%;
+}
+div#slide2 ul li:nth-child(3) img {
+ height: 200px;
+ width: 100%;
+}
+div#slide2 {
+ transition: all 1s;
+}
+
+/* 회전바퀴 */
+.ion-alert::before {
+ animation-name: ro45;
+ animation-duration: 2s;
+ animation-iteration-count: infinite ;
+ animation-direction: alternate ; 
+ animation-timing-function: linear ; 
+ transform-origin: 50% 700%; 
+}
+@keyframes  ro45{
+  0%{
+   transform: rotate(-45deg); 
+  }
+  50%{
+   transform: rotate(0deg);  
+  }
+  100%{
+    transform: rotate(45deg);
+  }
+}
+
+/* 커서 */
+div.cursor{
+  width: 80px;
+  height: 80px;
+  background-image: url(../img/hand.png);
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* 비디오 */
+.wvideo{
+  
+}
+.wvideo video{
+ width:100%; 
+}
+
+.wvideo button{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 45px;
+  bottom: -45px;
+  background-color: #fff;
+  box-shadow: 5px 15px 15px rgba(0,0,0,0.15);
+  
+}
+.wvideo button span.stop{
+  letter-spacing: 1px;
+  display: block;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  padding-top: 35px;
+  background-image: url(../img/x.png);
+  background-position-y: -10px;
+}
+.wvideo button span.play{
+  letter-spacing: 1px;
+  display: block;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  padding-top: 35px;
+  background-image: url(../img/x2.png);
+  background-position-y: -10px;
+}
+div.dokdo{
+  
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+div.dokdo h2{
+  
+  font-size: 60px;
+  color: #fff;
+}
+div.dokdo p{
+  
+  font-size: 25px;
+  color: #eee;
+}
+/* 하단 타이트분할 */
+html,body{
+  height: 100%;
+}
+ul.ftitle{
+  color: #fff;
+  height: 100%;
+  overflow: hidden;
+}
+ul.ftitle li{
+  float: left;
+  width: 33.33333%;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 1s;
+}
+ul.ftitle li:nth-child(1){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg1.jpg?ukey=2VxcVW8);
+}
+ul.ftitle li:nth-child(2){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg2.jpg?ukey=rHIaRCv);
+}
+ul.ftitle li:nth-child(3){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg3.jpg?ukey=nvvQbhS);
+}
+ul.ftitle li h2{
+  
+  font-size: 30px;
+  line-height: 3;
+  width: 150px;
+}
+ul.ftitle li h3{
+  
+  font-size: 20px;
+  line-height: 3;
+  width: 250px;
+}
+ul.ftitle li p{
+  
+  font-size: 15px;
+  line-height: 1.5;
+  width: 410px;
+}
+.wide{
+/*   animation-name:wide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards ;
+  animation-direction: alternate ; */
+  width:70% !important;
+}
+@keyframes wide{
+  100%{
+    width:70%;
+  }
+}
+.narrow{
+/*   animation-name:narrow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards ; */
+  width:15% !important;
+  filter: brightness(30%);
+}
+@keyframes narrow{
+  100%{
+    width:15% ;
+    
+  }
+}

@@ -1,0 +1,50 @@
+/*
+Plugin: jQuery Parallax
+Version 1.1
+Author: Ian Lunn
+Author URL: http://www.ianlunn.co.uk/
+Plugin URL: http://www.ianlunn.co.uk/plugins/jquery-parallax/
+
+License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike). Please attribute work to Ian Lunn simply by leaving these comments in the source code or if you'd prefer, place a link on your website to http://www.ianlunn.co.uk/.
+*/
+
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0;
+	min-width: 1000px;
+	padding: 0;
+}
+
+img{
+	border: 0;
+}
+
+#contact, #second{
+	width: 100%;
+}
+
+#contact{
+/*	background:url(images/firstBG.jpg) 100% 0 no-repeat fixed;*/
+	height: 200px;
+	margin: 0 auto;
+}
+
+
+
+.small5{
+	margin: 0 auto;
+	min-width: 1000px;
+	overflow: auto;
+	width: 1000px;
+}
+
+.small5 {
+	position: relative;
+	width: 350px;	
+}
+
+.slide {
+	width: 100%;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 레이아웃 기초</title>
+
+    <!-- Bootstrap script and css (local file) -->
+    <link rel="stylesheet" href="../plugin/bootstrap.css">
+    <script defer src="../plugin/bootstrap.min.js"></script>
+    <!-- Bootstrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- defer : 화면 로딩 후 스크립트 실행 -->
+
+    <style>
+        * {margin: 0; padding: 0; line-height: 1;}
+        a {color: inherit; text-decoration: none;}
+        #w_num {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        header span:not(:first-child) {
+            margin-left: 20px;
+        }
+        body > div {
+            margin-top: 100px;
+            /*border: 1px solid green;*/
+        }
+        .row {
+            border: 2px solid blue;
+            margin-bottom: 20px;
+        }
+        .row > div {
+            border: 2px solid orange;
+            height: 70px;
+            line-height: 2;
+            background: #fff6e4;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary bg-opacity-25 text-center py-3 fixed-top">
+        <div class="inner">
+            <p id="w_num" class="border p-2 bg-white fs-2 text-primary">가로너비</p>
+            <div class="wrap">
+                <span><strong>xs</strong> &lt;576px </span><!-- '&lt;' = '>' -->
+                <span><strong>sm</strong> ≥576px </span>
+                <span><strong>md</strong> ≥768px </span>
+                <span><strong>lg</strong> ≥992px </span>
+                <span><strong>xl</strong> ≥1200px </span>
+                <span><strong>xxl</strong> ≥1400px </span>
+            </div>
+        </div>
+    </header>
+
+    <!--<main class="container-fluid">--> <!--container-fluid : 반응형 없이 항상 풀로 꽉 참-->
+    <main class="container-xl" style="padding: 100px 0;">
+        <div class="row">
+            <div class="col-sm">col-sm : 576 이상일 때부터 flex 적용</div>
+            <div class="col">COL</div>
+            <div class="col-lg">col-lg : 992 이상일 때부터 flex 적용</div>
+        </div>
+
+        <div class="row">
+            <div>아무것도 적용X</div>
+            <div class="col col-xl-9">.</div>
+            <div class="col-md">.</div>
+            <div class="col-md">.</div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-xl-3">.</div>
+            <div class="col-md-2 col-xl-3">.</div>
+            <div class="col-md-6 col-xl-3">.</div>
+            <div>아무것도 적용X</div>
+        </div>
+
+        <div class="row">
+            <div class="col">col</div>
+            <div class="col-md-auto">col-md-auto</div>
+            <div class="col">col</div>
+            <div class="col col-xl-12">col</div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3">col-sm : 576 이상일 때부터 flex 적용</div>
+            <div class="col-sm-12 col-md-6 col-lg-3">col-md : 760 이상일 때부터 flex 적용</div>
+            <div class="col-sm-12 col-md-6 col-lg-3">col-sm : 992 이상일 때부터 flex 적용</div>
+            <div class="col-sm-12 col-md-6 col-lg-3">COL</div>
+        </div>
+    </main>
+
+    <footer class="bg-secondary bg-gradient py-4 text-white fixed-bottom">
+        <p style="margin-bottom:0" class="container-lg">이 사이트는 부트스트랩 연습용 사이트 입니다.</p>
+    </footer>
+    <script>
+        function setBg(){
+            width01.style.backgroundColor = 'rgba(255,0,0,0)';
+            width02.style.backgroundColor = 'rgba(255,0,0,0)';
+            width03.style.backgroundColor = 'rgba(255,0,0,0)';
+            width04.style.backgroundColor = 'rgba(255,0,0,0)';
+            width05.style.backgroundColor = 'rgba(255,0,0,0)';
+            width06.style.backgroundColor = 'rgba(255,0,0,0)';
+            if(window.innerWidth < 576) {
+                width01.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 768){
+                width02.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 992){
+                width03.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1200){
+                width04.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1400){
+                width05.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else {
+                width06.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            }                
+        }
+        function winWidth() {
+            let winW = window.innerWidth;
+            w_num.innerText = `가로너비 : ${winW}px`;
+            setBg();
+        }
+        winWidth();
+        setBg();
+        window.addEventListener('resize', winWidth)
+    </script>
+</body>
+</html>

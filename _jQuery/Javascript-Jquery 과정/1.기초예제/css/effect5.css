@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+body {
+	margin:20px auto;
+	padding:0;	
+	width:600px;
+	background:#192839;
+}
+
+div {
+	background-image:url(../images/effect/5/pic_bg.jpg);
+	width:600px;
+	height:379px;
+	border:5px #EF4018 solid; 
+	overflow:hidden;
+}
+	 
+div img{
+	display:none;
+	position:relative; /*마우스 오버 시 left, top 속성을 사용하여 현재 위치에서 이동하기 위해서 */
+}

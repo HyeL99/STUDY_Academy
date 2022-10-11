@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+	div.sgallery{
+		width:490px;
+		margin:0 auto;
+		position:relative;
+		/*! overflow:hidden; */
+		height:215px;
+		}
+	/*affter,before*/
+	div.sgallery p.before{
+		position:absolute;
+		top: 87px;
+		left: 1px;
+		width: 35px;
+		height: 35px;
+		background: #000;
+		font-size: 24px;
+		line-height: 1.5em;
+		color: #fff;
+		z-index: 2;
+		cursor:pointer;
+	  }
+	div.sgallery p.after{
+		position:absolute;
+		top: 87px;
+		right: 1px;
+		width: 35px;
+		height: 35px;
+		background: #000;
+		font-size: 24px;
+		line-height: 1.5em;
+		color: #fff;
+		cursor:pointer;
+	  }
+	div.sgallery div.reauto{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width:600%;
+		}	
+	div.sgallery ul{
+		width: 50%;
+		float:left;
+		}
+		div.sgallery ul li{
+	   width: 33.33%;
+	   float: left;
+		 }
+		div.sgallery ul li img{
+		 }

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+		*{
+		margin:0;
+		padding:0;
+	  }
+	  body{
+		  }
+	div#menu h1{
+		text-align:center;
+		height:100px;
+		line-height:100px;	
+		}
+	div#menu ul{
+		background:rgba(0,0,0,0.5);
+		transition:all 1s;
+		height:80px;
+		width:1000px;
+		/*z-index:2;*/
+		text-align:center;
+		line-height:80px;
+		}
+		div#menu ul li{
+			display:inline-block;
+			width:25%;
+			vertical-align:top;
+			}
+		.a{
+			
+			}
+		.red{
+			background: #F60 !important;
+			}
+		.green{
+			background: #6C0 !important;
+			}
+		.blue{
+			background: #39F   !important;
+			}
+		.yellow{
+			background: #F0F !important;
+			}
+	div#wrap{
+		width:1000px;
+		padding:220px 0 0 0;
+		margin:0 auto;
+		position:relative;
+		}
+	div#wrap div#title{
+		height:600px;
+		}
+	div#wrap div{
+		height:600px;
+		}
+	div#area1{
+		background:#0C0;
+		transition:background 1s, margin-top 3s;
+		margin-top:100px;
+		opacity:0;
+		position:relative;
+		overflow:hidden;
+		}
+		div#area1 h2{
+			position:absolute;
+			left:-10%;
+			}
+		div#area1 p{
+			position:absolute;
+			right:-10%;
+			width:90%;
+			}
+	div#area2{
+		background: #FF6;
+		opacity:0;
+		}
+	div#area3{
+		background: #CCF;
+		opacity:0;
+		}
+	div#area4{
+		background: #099;
+		opacity:0;
+		}
+	.fixed{
+		position:fixed !important;
+		top:0 !important;
+		}
+	.current{
+		background:#ededed !important;
+		margin-top:0px !important;
+		
+		}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      var st=$(window).scrollTop(); 
+      var menuUlTop=$("#menu ul").offset().top;  
+      alert(menuUlTop);
+
+      $(window).scroll(function(){ //스크롤하면 실행하시오 scroll이벤트
+        st=$(window).scrollTop();
+
+        if(st>menuUlTop){
+           $("#menu ul").css({"position":"fixed","top":"0px"});
+        }
+        if(st<menuUlTop){
+            $("#menu ul").css({"position":"static","top":"0px"});  
+        }
+
+        console.log($(window).scrollTop());
+
+      }); 
+
+	});
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<div id="menu">
+		<ul>
+			<li>마이프로필</li>
+			<li>그래픽작품</li>
+			<li>웹작품</li>     
+		</ul>
+	</div>
+	<div id="area1">
+		<h2>마이프로필</h2>
+		<p>
+		<img src="http://www.placehold.it/500x500" >
+		</p>
+	</div>
+	<div id="area2">
+	</div>
+	<div id="area3">
+	</div>
+	<div id="area4">
+	</div>
+</div>
+</body>
+</html>

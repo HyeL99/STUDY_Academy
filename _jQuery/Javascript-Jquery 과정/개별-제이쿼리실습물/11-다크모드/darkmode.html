@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+          var a;
+
+          $("button").click(
+            function(){
+
+              a=$(this).attr("data-n");
+
+              if(a==1){
+                $("body").addClass("dark");
+              }else{
+                $("body").removeClass("dark");
+              }
+
+
+            }
+          );
+
+      });
+    </script>
+    <style>
+      body{
+        transition: all 0.5s;
+      }
+      .dark{
+        background-color: #333;
+      }
+
+    </style>
+  </head>
+  <body>
+    <span>
+      <button type="button" name="button" data-n="1">다크모드</button>
+      <button type="button" name="button" data-n="2">라이드모드</button>
+    </span>
+  </body>
+</html>

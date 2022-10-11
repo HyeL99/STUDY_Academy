@@ -1,0 +1,30 @@
+#title {
+    position: relative;
+}
+#title div.container {
+    margin:0;
+}
+#title div.container div.event {
+    width: 100%;
+}
+#title div.container div.event a {
+    padding:0;
+    display: block;
+    font-size: 0;
+}
+#title div.container div.event a img {
+    width: 100%;
+    margin: 0;
+    padding: 0;    
+}
+#title a#upload{
+    position: absolute;
+    display: block;
+    width: 200px;
+    height:54px;
+    font-size: 0;
+    background: url('../assets/img/btn-upload.png') no-repeat center / contain;
+    bottom: 60px;
+    left: calc(50% - 100px);
+    cursor: pointer;
+}

@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div{
+			width:960px;
+			height:640px;
+			border:2px solid gray;
+			margin:90px auto 0;
+			position:relative;
+			overflow:hidden;
+			border-radius:7px;
+			box-shadow:7px 7px 15px #CCC;
+			}
+			div>ul:first-child{
+				position:absolute;
+				width:960px;
+				z-index:1;
+				}
+				div>ul:first-child>li{
+					position:absolute;
+					width:960px;
+					height:640px;
+					line-height:240px;
+					text-align:center;
+					}
+				.zz{
+					z-index:2;
+					}
+			div ul.list{
+				z-index:12;
+				margin:600px auto 0;
+				text-align:center;
+				position:relative;
+				}
+				div ul.list li{
+					display:inline-block;
+					margin:3px;
+					padding:7px;
+					background:#999;
+					color:#FFF;
+					}
+			div a[href="#1"]{
+				text-decoration:none;
+				position:absolute;
+				left:0;
+				top:320px;
+				background:#FC0;
+				border-radius:0 7px 7px 0;
+				padding:3px;
+				z-index:3;
+				}	
+			div a[href="#2"]{
+				text-decoration:none;
+				position:absolute;
+				right:0;
+				top:320px;
+				background:#FC0;
+				border-radius:7px 0 0 7px;
+				padding:3px;
+				z-index:3;
+				}
+				.current{
+					background:#FC0 !important;
+					color:#333 !important;
+					}
+	</style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+		$(document).ready(
+			function() {
+				//alert("li:eq("+1+")");
+				//a태그를 클릭하면 실행하시오();
+				//div안의 첫번째자식인ul의 li을 하이드시켜라
+				$("div ul:first-child li").hide();
+				//div안의 첫번째자식인ul의 첫번째li는 보이게 해라 eq()이용
+				$("div ul:first-child li:eq(0)").show();
+				//변수n을 선언하고 초기값 0을 넣으시오
+				var n=0;
+				//클래스명이 list인 ul의 첫번째li에 addClass(current)시켜라
+				$("ul.list li:eq(0)").addClass("current");
+				$("a[href='#2']").click( //a[속성="값"] 속성과 값을 갖고 있는 a태그
+					function(){
+						//div안의 첫번째자식인ul의 li를 fadeIn시켜라
+						//$("div ul:first-child li:eq(n)").fadeIn(500); 
+						//위를 연산자로 처리하시오 n을 변수로 사용해서
+						//변수n값을 1씩 증가시키시오
+						
+						if(n>=3){ //n의 값이 3과 같거나 크다면
+							n=3
+						}else{
+						n++;
+						$("div ul:first-child li:eq("+n+")").fadeIn(500);
+						//위의 있는 n번째 li를 제외한 나머지li를 하이드시켜라
+						$("div ul:first-child li:eq("+n+")").siblings().hide();
+						//리스트 색 변경
+						$("ul.list li:eq("+n+")").addClass("current");
+						$("ul.list li:eq("+n+")").siblings().removeClass("current");
+						}
+					}
+				);
+				$("a[href='#1']").click(
+					function(){
+					    //변수n값을 1씩 감소시키시오
+						
+						if(n<=0){
+							n=0;
+						}else{
+							n--;
+							$("div ul:first-child li:eq("+n+")").fadeIn(500);
+							//위의 있는 n번째 li를 제외한 나머지li를 하이드시켜라
+							$("div ul:first-child li:eq("+n+")").siblings().hide();
+							$("ul.list li:eq("+n+")").addClass("current");
+							$("ul.list li:eq("+n+")").siblings().removeClass("current");
+						}
+					}
+				);
+				//class명이 num1를 클릭하면 실행해라();
+				$("ul.list li.num1").click(
+					function(){
+						//첫번째 ul의 첫번째 li를 fadeIn시켜라
+						$("div ul:first-child li:eq(0)").fadeIn();
+						$("div ul:first-child li:eq(0)").siblings().hide();
+						$("div ul.list li:eq(0)").addClass("current");
+						$("div ul.list li:eq(0)").siblings().removeClass("current");
+						n=0;
+						//나머지 li를 하이드시켜라
+					}
+				);
+				$("ul.list li.num2").click(
+					function(){
+						//첫번째 ul의 첫번째 li를 fadeIn시켜라
+						$("div ul:first-child li:eq(1)").fadeIn();
+						$("div ul:first-child li:eq(1)").siblings().hide();
+						$("div ul.list li:eq(1)").addClass("current");
+						$("div ul.list li:eq(1)").siblings().removeClass("current");
+						n=1;
+						//나머지 li를 하이드시켜라
+					}
+				);
+				$("ul.list li.num3").click(
+					function(){
+						//첫번째 ul의 첫번째 li를 fadeIn시켜라
+						$("div ul:first-child li:eq(2)").fadeIn();
+						$("div ul:first-child li:eq(2)").siblings().hide();
+						$("div ul.list li:eq(2)").addClass("current");
+						$("div ul.list li:eq(2)").siblings().removeClass("current");
+						n=2;
+						//나머지 li를 하이드시켜라
+					}
+				);
+				$("ul.list li.num4").click(
+					function(){
+						//첫번째 ul의 첫번째 li를 fadeIn시켜라
+						$("div ul:first-child li:eq(3)").fadeIn();
+						$("div ul:first-child li:eq(3)").siblings().hide();
+						$("div ul.list li:eq(3)").addClass("current");
+						$("div ul.list li:eq(3)").siblings().removeClass("current");
+						n=3;
+						//나머지 li를 하이드시켜라
+					}
+				);
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<div class="pro">
+        <ul>
+            <li class="num1"><img src="img/p1.jpg" alt="그림1"></li>
+            <li class="num2"><img src="img/p2.jpg" alt="그림2"></li>
+            <li class="num3"><img src="img/p3.jpg" alt="그림3"></li>
+            <li class="num4"><img src="img/p4.jpg" alt="그림4"></li>
+        </ul>
+		<ul class="list">
+			<li class="num1">1</li>
+			<li class="num2">2</li>
+			<li class="num3">3</li>
+			<li class="num4">4</li>
+		</ul>
+        <a href="#1">이전</a><a href="#2">이후</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>본문갤러리3</title>
+<style>
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#box_wrap{
+	width:700px;
+	margin:0 auto;
+}
+
+.thumbs{
+	width:100px;
+	float:left;
+}
+
+.thumbs img{
+	border:solid 1px #ccc;
+	padding:5px;
+	margin-bottom:8px;
+}
+
+.thumbs img:hover{
+	border-color:#ef4018;
+}
+
+
+#largeImg{
+	float:left;
+	display:inline;
+	border:solid 1px #ccc;
+	width:500px;
+	height:280px;
+	padding:5px;
+	margin-left:10px;
+/*	overflow:hidden;
+*/}
+ul{
+	list-style:none;
+	font-size:12px;
+	}
+em{
+	display:none;
+}
+#caption{
+	background:url(images/1/captionBg.png) repeat-y;   /* 자막 투명 지원 ie6에서 안됨 */
+	border:#ccc 1px thin;
+	padding:10px;
+	position:relative;
+	color:#fff;
+}
+a{
+	width:100px;
+	height:50px;
+	border:1px solid green;
+	display:block;
+	text-align:center;
+	line-height:50px;
+	text-decoration:none;
+	transition:background 0.5s;
+	}
+a:hover{
+	background:#F90;
+	}
+
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(
+		function(){
+			// a다음에 오는 ul을 안보이게
+			$(".thumbs a").next().hide();
+			
+			// 로딩시 첫기사가 보이게 
+			$("#largeImg").append("<div id='multi'><ul></ul></div>");
+			var cont=$(".thumbs a:first-child").next().html(); // ul안의 li들만 저장됨
+			$("div#multi ul").html(cont);
+			
+			// 클릭시 해당기사가 보이게
+			$(".thumbs a").click(
+				function(){
+					$("div#multi").remove();
+					
+					/*
+					$("#largeImg").append("<div id='multi'><ul></ul></div>");
+					cont=$(this).next().html(); // ul안의 li들만 저장됨
+					$("div#multi ul").html(cont).css("opacity",0).animate({"opacity":1},500);
+					*/
+					$("#largeImg").append("<div id='multi'></div>");
+					$(this).next().clone().appendTo("div#multi");
+					$("div#multi ul").show().css("opacity",0).animate({"opacity":1},500);
+					return false;
+				}
+			);
+		}
+	);
+</script>
+</head>
+
+<body>
+    <div id="box_wrap">
+        <div class="thumbs">
+            <a href="#1" alt="공지사항">
+                공지사항
+            </a>
+            <ul>
+                <li>· 안산시 도서관 2016년 8월 하반기 추천도서입니다.</li>
+                <li>· 중앙도서관 재능나눔 부모교육특강 [두뇌과학을 통한 학부모 자녀교육]</li>
+                <li>· [초지작은도서관] 임어진 작가와의 만남</li>    
+                <li>· 샛별도서관 방학프로그램<흥미진진! 적정기술을 아니?> 프로그램 안내</li>
+                <li>· 중앙도서관 희망도서 비치안내(2016년 7월 1차)</li>
+                <li>· 중앙도서관 8월 인문학 열두 마당 [이주헌의 행복한 명화 읽기] 강연 안내</li>
+                <li>· 안산시 도서관 2016년 8월 상반기 추천도서입니다.</li>
+                <li>· 중앙도서관 시민이 만드는 도서관 갤러리[윤경묵 작가님의 소품 한국화]를 전시합니다</li>
+        	</ul>
+           
+            <a href="#2" alt="문화강좌">
+            	문화강좌
+            </a>
+            <ul> 
+                <li>· [재능나눔] 부모교육특강 "두뇌과학을 통한 학부모 자녀교육"</li>
+                <li>· 중앙도서관 재능나눔 부모교육특강 [두뇌과학을 통한 학부모 자녀교육]</li>
+                <li>· [초지작은도서관] 임어진 작가와의 만남</li>
+                <li>· 샛별도서관 방학프로그램<흥미진진! 적정기술을 아니?> 프로그램 안내</li>
+                <li>· 중앙도서관 희망도서 비치안내(2016년 7월 1차)</li>
+                <li>· 중앙도서관 8월 인문학 열두 마당 [이주헌의 행복한 명화 읽기] 강연 안내</li>
+                <li>· 안산시 도서관 2016년 8월 상반기 추천도서입니다.</li>
+                <li>· 중앙도서관 시민이 만드는 도서관 갤러리[윤경묵 작가님의 소품 한국화]를 전시합니다.</li>
+            </ul> 
+                
+            <a href="#3" alt="칭찬합시다">
+                칭찬합시다
+            </a>
+            <em> 3Lorem Ipsum is simply dummy.</em>
+            
+        </div>
+        <div id="largeImg">
+        </div>
+    </div>
+</body>
+</html>

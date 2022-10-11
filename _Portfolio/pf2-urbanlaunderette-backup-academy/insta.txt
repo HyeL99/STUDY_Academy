@@ -1,0 +1,43 @@
+<!-- 인스타그램 -->
+        <section id="instagram">
+            <div class="inner flex flexColumn flexCenter">
+                <h2 class="h2">INSTAGRAM</h2>
+                <ul class="contents flex flexBetween">
+                    <li>
+                        <figure><img src="img/insta1.jpg" alt=""></figure>
+                        <p class="p">6월 5일, 세계 환경의 날을 기념하여 텀블러를 가지고 방문해 주시는 고객님들께 음료 메뉴에 한하여 1,000원 할인 이벤트를 진행합니다. 많은 관심과 참여 부탁드립니다. 감사합니...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta2.jpg" alt=""></figure>
+                        <p class="p">Hand-made pottery with earthy and natural rough texture from the soil itself. urbanlaunderette #어...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta3.jpg" alt=""></figure>
+                        <p class="p">2022. 05. 19 (목) PM 3~9 휴무 안내
+                            어반런드렛 더 테라스와 더 팩토리는 5월 19일 오후 3시에서 9시, 해당 기간 동안 시설 전체 대관으로 카페와 세탁소 운영...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta4.jpg" alt=""></figure>
+                        <p class="p">어반테라피 티는 유자를 베이스로 모과, 귤껍질, 로즈마리가 블렌딩 된 비타민 차입니다. 순수한 유자 원물과 허브 추출만으로 유자의 고유의 향과 깔끔한 맛을 살린 어반런드렛 더 테라...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta5.jpg" alt=""></figure>
+                        <p class="p">깊은 숲속의 나무와 흙, 풀잎 향이 어우러진 어반테라피의 시그니처 향은 지친 우리 일상에 편안함과 위로를 선사합니다. 어반테라피의 런드리 컬렉션, 세탁 세제와 섬유유연제를 함께 사...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta6.jpg" alt=""></figure>
+                        <p class="p">Green Therapy
+                            #urbanlaundertte #어반런드렛...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta7.jpg" alt=""></figure>
+                        <p class="p">어반테라피 런드리 컬렉션은 식물에서 유래한 성분을 베이스로 만든 친환경 세제와 섬유유연제 입니다. 자연에서 추출한 원료와 식물성 계면 활성제를 베이스로 만들어 매일 안심하고 사용할...</p>
+                    </li>
+                    <li>
+                        <figure><img src="img/insta8.jpg" alt=""></figure>
+                        <p class="p">Urban Therapy
+                            라이프 스타일 브랜드 어반런드렛의 시그니처 향을 담은 ‘어반테라피(URBAN THERAPY)’ 라인이 어반런드렛 더 테라스에서 첫 ...</p>
+                    </li>
+                </ul>
+            </div>
+        </section>

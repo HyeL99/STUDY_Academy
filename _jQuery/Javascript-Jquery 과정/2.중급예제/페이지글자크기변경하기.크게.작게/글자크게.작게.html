@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="js/jquery-1.6.2.min.js"></script>
+<script>
+	$(document).ready(
+		function(){
+      var n=16; //기본폰트사이즈 : 16px
+			$(".first").click(
+				function(){
+					//글자크기가 2씩 커지게 +=
+          if(n<20){
+            $("p").css("font-size","+=2px"); //1클릭 18폰트  n 18
+            n+=2;                            //2클릭 20폰트  n 20  
+          }else{
+            //폰트의 색상을 #ccc로 지정    
+          }
+				}
+			);
+			$(".last").click(
+				function(){
+          //글자크기가 2씩 작아지게 -=
+          if(n>12){
+            $("p").css("font-size","-=2px");
+            n-=2;    
+          }
+				}
+			);
+		}
+	);
+</script>
+</head>
+
+<body>
+    <ul>
+        <li class="first">글자크게하기</li>
+        <li class="last">글자작게하기</li>
+    </ul>
+    <p>
+        메모장은 간단한 문서를 만들 수 있는 기본 텍스트 편집기입니다. 메모장을 사용하는 가장 일반적인 경우는 텍스트(.txt) 파일을 보거나 편집할 때이지만, 많은 사용자들은 메모장을 웹 페이지를 만드는 간단한 도구로 사용하고 있습니다.
+        메모장은 아주 기본적인 서식만 지원하므로 순수 텍스트만 필요한 문서에 특별한 서식이 함께 저장되는 일은 발생하지 않습니다. 게시된 웹 페이지에 특별 문자나 기타 서식이 표시되지 않거나 그로 인해 오류가 발생할 수 있으므로 메모장은 웹 페이지용 HTML 문서를 만들 때 특히 유용합니다.   
+        메모장 파일을 유니코드, ANSI, UTF-8 또는 big-endian 유니코드로 저장할 수 있습니다. 이런 형식은 다양한 문자 집합을 사용하는 문서를 가지고 작업할 때 융통성을 높여줍니다.
+    </p>
+</body>
+</html>

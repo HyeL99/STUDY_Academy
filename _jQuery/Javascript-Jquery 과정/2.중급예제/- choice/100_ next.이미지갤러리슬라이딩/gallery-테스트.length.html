@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>gallery</title>
+	<style type="text/css">
+	html,body{
+		height:100%;
+		}
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div.list{
+			width:250px;
+			height:170px;
+			overflow:hidden;
+			margin:0 auto;
+			position:relative;
+			}
+		div.list ul{
+			overflow:hidden;
+			position:absolute;
+			left:0;
+			top:0;
+			width:750px;
+			}
+		div.list ul li{
+			float:left;
+			}
+		ul.sm{
+			position:absolute;
+			left:50%;
+			top:0;
+			margin:0 0 0 125px;
+			}
+			ul.sm li{
+				margin:0 0 6px 0;
+				}
+		ul.sm img{
+			width:85px;
+			height:50px;
+			 }
+		p{
+			text-align:center;
+			padding:10px 0 0 0 ;
+			float:left;
+			position:relative;
+			left:50%;
+			}
+		div.big{
+			position:absolute;
+			left:50%;
+			top:50%;
+			border:1px solid gray;
+			}
+			div.big img{
+				position:relative;
+				left:-50%;
+				top:-50%;
+				}
+		
+    </style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script src="js/gallery.js"></script>
+</head>
+
+<body>
+    <div class="list">
+      <ul>
+          <li><img src="img/w1.jpg" /></li>
+          <li><img src="img/w2.jpg" /></li>
+          <li><img src="img/w3.jpg" /></li>
+      </ul>
+    </div>
+    <p class="next">다음보기</p>
+    <ul class="sm">
+        <li><img src="img/w1.jpg" /></li>
+        <li><img src="img/w2.jpg" /></li>
+        <li><img src="img/w3.jpg" /></li>
+    </ul>
+    <div class="big">
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+<style type="text/css">
+	p{ display:none;}
+</style>
+<script src="js/jquery-1.6.2.min.js"></script>
+<script>
+	$(document).ready(
+		function() {
+			/*
+        	$("h1:eq(0)").click(
+				function(){
+					$("p:eq(0)").slideDown(500);
+					//$("p:eq(0)").siblings().slideUp(500);
+
+					
+					//$("p:eq(1)").slideUp(500);
+					//$("p:eq(2)").slideUp(500);
+					
+					$("p").not("p:eq(0)").slideUp();
+				}
+			);
+			$("h1:eq(1)").click(
+				function(){
+					$("p:eq(1)").slideDown(500);
+					$("p:eq(0)").slideUp(500);
+					$("p:eq(2)").slideUp(500);
+				}
+			);
+			$("h1:eq(2)").click(
+				function(){
+					$("p:eq(2)").slideDown(500);
+					$("p:eq(1)").slideUp(500);
+					$("p:eq(0)").slideUp(500);
+				}
+			);
+			*/
+
+			/*
+			$("h1").click(function(){
+				$(this).next().slideToggle();
+				$("p").not($(this).next()).slideUp();
+			});	
+			*/
+			var nextP; 
+			$("h1").click(function(){
+				$(this).next().slideToggle();
+				nextP=$(this).next();
+				$("p").not(nextP).slideUp();
+			});
+
+			$(".close").click(
+				function(){
+					$("p").slideUp(500);
+				}
+			);
+
+    	}
+	);
+</script>
+</head>
+
+<body>
+ 	<h1>Instructions</h1>
+    <p>Be aware that the CSS for these layouts is heavily commented. If you do most of your work in Design view, have a peek at the code to get tips on working with the CSS for the liquid layouts. You can remove these comments before you launch your site. To learn more about the techniques used in these CSS Layouts, read this article at Adobe's Developer Center - <a href="http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>.</p>
+    
+	<h1>Clearing</h1>
+    <p>Because all the columns are floated, this layout uses overflow:hidden on the .container. This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If you have a large element that protrudes outside the .container, it will appear to be cut off. You also won't be able to use negative margins or absolute positioning with negative values to pull elements outside the .container or they will also won't display outside the .container.</p>
+	
+	<h1>Footer</h1>
+	<p>If you need to use these properties, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect.</p>
+	
+	<a class="close">전체닫기</a>	
+</body>
+</html>

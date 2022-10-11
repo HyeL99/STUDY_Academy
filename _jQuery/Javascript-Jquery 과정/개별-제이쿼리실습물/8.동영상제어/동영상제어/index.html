@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>코딩작품-독도재단</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/response.css">
+
+
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    <!-- 2~4,slick get it now 코드/1,usage코드 -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- 별똥별 -->
+    <script type="text/javascript">
+      $("document").ready(
+        function(){
+          setInterval(function(){    // shootingStar
+
+          	$("<div/>")
+          	.addClass("shootingStar")
+          	.appendTo("#upper");
+          	var windowWidth = $(window).width();
+          	var windowHeight = $(window).height();
+          	var startX = Math.ceil(Math.random()*windowWidth);
+          	var startY = Math.ceil((Math.random()*windowHeight)/2)
+          	for(var i=0; i<8; i++){
+          		var number = i+1;
+          		var toLeft = startX + 5*i;
+          		var toTop = startY - 2*i;
+          		var followLeft = startX + 5*i +2;
+          		var followTop = startY - 2*i -1;
+          		$("<div/>")
+          		.addClass("sS"+number)
+          		.attr("style", "left: "+toLeft+"px; top: "+toTop+"px;")
+          		.appendTo(".shootingStar");
+          		$("<div/>")
+          		.addClass("sS"+number)
+          		.attr("style", "left: "+followLeft+"px; top: "+followTop+"px;")
+          		.appendTo(".shootingStar");
+          	}
+          	var count = 0;
+          	var shooting = setInterval(function(){
+          		count++;
+          		var toLeft = -5*count;
+          		var toTop = 2*count;
+          		var opacityChange = 1 - count/63;
+          		$(".shootingStar")
+          		.attr("style", "left: "+toLeft+"px; top: "+toTop+"px; opacity: "+opacityChange+";");
+          		if(count == 64){
+          			count = 0;
+          			clearInterval(shooting);
+          			$(".shootingStar").remove();
+          		}
+          	},50);
+          },3300);
+        }
+      );
+
+
+    </script>
+    <!-- 클릭시 멈춤/재생 텍스트변경-->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $(".first").show();
+          $(".second").hide();
+
+         /*first을 클릭했을 때 second를 보여줌*/
+          $(".first").click(
+            function(){
+              $(".first").hide();
+              $(".second").show();
+           }
+          );
+          $(".second").click(
+            function(){
+              $(".first").show();
+              $(".second").hide();
+            }
+          );
+          //동영상 제어버튼
+          var sample = $("video").get(0);
+          // $(".first").on("click",function(){ sample.load; });
+          $(".first").on("click",function(){ sample.pause(); });
+          $(".second").on("click",function(){ sample.play(); });
+
+
+        }
+      );
+    </script>
+    <!-- 클릭시 멈춤/재생 이미지 변경 -->
+    <script type="text/javascript">
+      var playbt=1;
+      $("#title button").click(
+        function(){
+        if(playbt==1){
+          $(".first").html("PLAY");
+          playbt=0;
+        }else{
+          $(".first").html("STOP");
+          playbt=1;
+        }
+        }
+      );
+
+    </script>
+    <!-- top버튼 클릭시 상단이동 -->
+    <script type="text/javascript">
+      $("document").ready(
+        function(){
+          $("#footer button a").click(
+            function(){
+              $("html,body").animate({scrollTop:"0px"},1000);
+              return false;
+            }
+          );
+        }
+      );
+    </script>
+    <!--배너  -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+          $('.bannerautoplay').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+          });
+        }
+      );
+    </script>
+
+    <!-- 클릭시 메뉴 펼쳐짐 -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $("#title form input").click(
+            function(){
+              $("#title .gradi").toggleClass("gradimove");
+              $("header>div>nav>ul>li a ").delay(0.8).toggleClass("text-white");
+
+              $("#title .letter>div").toggleClass(".loading");
+
+
+            }
+          );
+          //옵션 화살표
+          $("header select").after("<span class='glyphicon glyphicon-triangle-bottom'></span>");
+          var a=1;
+          $(".area select").click(
+            function(){
+
+              if(a==1){
+                $(this).next("span").attr("class","glyphicon glyphicon-triangle-bottom");
+                a=0;
+              }else{
+                $(this).next("span").attr("class","glyphicon glyphicon-triangle-top");
+                a=1;
+              }
+            }
+          );
+          // 오픈버튼 클릭시 클로즈버튼으로변경
+          var btn = document.querySelector('input');
+          //querySelector-input값 선택, 가져오기
+
+          btn.addEventListener('click', bt);
+          //addEventListener-해당하는 모든 값에 addEventListener를 지정해 클릭시 click함수를 실행
+          function bt() {
+            if (btn.value === "open") {
+              $("#title div.loading").addClass();
+              //===같다
+              btn.value = 'close';
+              //value는 btn표시되는 //value="기계 켜기"-기계켜기 버튼이 나옴
+            } else {
+              btn.value = 'open';
+            }
+          }
+
+        }
+      );
+    </script>
+    <!-- 공지사항 버튼 -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $("#news .w1200 ul.list li").click(
+            function(){
+              $(this).addClass("active");
+
+              $("#news .w1200 ul.list li").not(this).removeClass("active");
+              return false;
+
+
+            }
+          );
+        }
+      );
+
+    </script>
+    <!-- 알림존 버튼 -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+          var movex=0;
+          $(".prebt p.next").click(
+            function(){
+              // 00을 애니메이트시켜라...
+              if(movex==8){ // ==은 같다
+                movex=0;
+                $(".banner-right ul.linkautoplay").animate({"left":-260*movex},1000);
+              }else{ //그렇치 않다면
+                movex+=1; //  movex=movex+1 과 동일 ,변수movex안에 1을 추가하라
+                $(".banner-right ul.linkautoplay").animate({"left":-260*movex},1000);
+              }
+            }
+          );
+
+          $(".prebt p.pre").click(
+            function(){
+              // 00을 애니메이트시켜라...
+              if(movex==0){ // ==은 같다
+                movex=8;
+                $(".banner-right ul.linkautoplay").animate({"left":-260*movex},1000);
+              }else{ //그렇치 않다면
+                movex-=1; //  movex=movex+1 과 동일 ,변수movex안에 1을 추가하라
+                $(".banner-right ul.linkautoplay").animate({"left":-260*movex},1000);
+              }
+            }
+          );
+        }
+      );
+
+    </script>
+
+
+  </head>
+  <body>
+    <!-- 상단영역 -->
+    <header>
+      <div>
+        <h1><a href="#">(재)독도재단</a></h1>
+          <nav>
+            <ul>
+              <li class="menu1">
+                <a href=""><span>주요사업</span></a>
+                  <div>
+                  <ul class="ver">
+                    <li><a href="">플랫폼</a></li>
+                    <li><a href="">홍보(국내)</a></li>
+                    <li><a href="">홍보(국외)</a></li>
+                    <li><a href="">동해(독도)기반콘텐츠 개발</a></li>
+                    <li><a href="">독도문화행사</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu2">
+                <a href=""><span>자료실</span></a>
+                  <div>
+                    <ul class="ver">
+                      <li><a href="">독도사진</a></li>
+                      <li><a href="">독도영상</a></li>
+                      <li><a href="">연구자료</a></li>
+                      <li><a href="">매거진</a></li>
+                      <li><a href="">매거진신청</a></li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+              <li class="menu3">
+                <a href=""><span>알림마당</span></a>
+                  <div>
+                    <ul class="ver">
+                      <li><a href="">재단알림</a></li>
+                      <li><a href="">정보공개</a></li>
+                      <li><a href="">고객광장</a></li>
+                      <li><a href="">윤리경영</a></li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+              <li class="menu4">
+                <a href=""><span>기관소개</span></a>
+                  <div>
+                    <ul class="ver">
+                      <li><a href="">재단소개</a></li>
+                      <li><a href="">열린경영</a></li>
+                      <li><a href="">경영고시</a></li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+              <li class="menu5">
+                <a href=""><span>독도현황</span></a>
+                  <div>
+                    <ul class="ver">
+                      <li><a href="">정부입장</a></li>
+                      <li><a href="">일반현황</a></li>
+                      <li><a href="">독도역사</a></li>
+                      <li><a href="">관리현황</a></li>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+              <li class="menu6"><a href=""><span>K-독도</span></a></li>
+              <div class="area">
+
+                <select name="lang" id="">
+                  <option value="">한국어</option>
+                    <!-- <i class="glyphicon glyphicon-triangle-bottom"></i> -->
+                  <option value="">English</option>
+                  <option value="">日本語</option>
+                  <option value="">中文</option>
+
+                </select>
+                <ul class="right">
+                  <li><a href="">로그인</a></li>
+                  <li><a href="">회원가입</a></li>
+                </ul>
+              </div>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- 타이틀영역 -->
+    <div id="title">
+      <div class="vedio">
+        <video muted controls autoplay loop>
+          <source src="http://www.koreadokdo.or.kr/images/video_bg02.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="stop">
+          <span class="first">STOP</span>
+          <span class="second">PLAY</span>
+        </button>
+      </div>
+      <div class="gradi">
+        <div class="star">
+          <div class="s1"></div>
+          <div class="s2"></div>
+          <div class="s3"></div>
+          <div class="s4"></div>
+          <div class="s5"></div>
+          <div class="s6"></div>
+          <div class="s7"></div>
+          <div class="s8"></div>
+        </div>
+        <div class="letter left">
+          <form>
+            <input type="button" value="open">
+          </form>
+          <div class="loading">
+            <i>
+              <span>독</span>
+              <span>도</span>
+              <span>,</span>
+            </i>
+            <span>한</span>
+            <span>반</span>
+            <span>도</span>
+            <span>의</span>
+            <span>&nbsp</span>
+            <span>아</span>
+            <span>침</span>
+            <span>이</span>
+            <br>
+            <span>시</span>
+            <span>작</span>
+            <span>되</span>
+            <span>는</span>
+            <span>&nbsp</span>
+            <span>최</span>
+            <span>동</span>
+            <span>단</span>
+            <span>!</span>
+          </div>
+          <div>
+            <i>
+              <span>독</span>
+              <span>도</span>
+              <span>,</span>
+            </i>
+            <br>
+            <span>천</span>
+            <span>연</span>
+            <span>기</span>
+            <span>념</span>
+            <span>물</span>
+            <span>&nbsp</span>
+            <span>제</span>
+            <span>3</span>
+            <span>3</span>
+            <span>6</span>
+            <span>호</span>
+            <span>!</span>
+            <br>
+            <span>문</span>
+            <span>화</span>
+            <span>&nbsp</span>
+            <span>예</span>
+            <span>술</span>
+            <span>의</span>
+            <span>&nbsp</span>
+            <span>섬</span>
+            <span>입</span>
+            <span>니</span>
+            <span>다</span>
+            <span>.</span>
+          </div>
+        </div>
+        <div class="etcmenu right">
+          <ul>
+            <li><a href="">홍보관</a></li>
+            <li><a href="">독도영상</a></li>
+            <li><a href="">독도사진</a></li>
+            <li><a href="">언론홍보</a></li>
+            <li><a href="">계약체결</a></li>
+            <li><a href="">고객참여</a></li>
+            <li><a href="">국민제안</a></li>
+            <li><a href="">교육참여</a></li>
+            <li><a href="">홍보버스신청</a></li>
+            <li><a href="">전시자료신청</a></li>
+          </ul>
+        </div>
+        <div class="cloud"></div>
+      </div>
+    </div>
+    <!--sns 영역  -->
+    <aside>
+      <ul>
+        <li><a href="">페이스북</a></li>
+        <li><a href="">인스타그램</a></li>
+        <li><a href="">블로그</a></li>
+        <li><a href="">유튜브</a></li>
+      </ul>
+      <span class="scroll">
+        <span>Scroll</span>
+        <i></i>
+      </span>
+    </aside>
+    <!-- 컨텐츠영역 -->
+    <div class="content">
+      <!--재단소식  -->
+      <div id="news">
+        <div class="w1200">
+          <div class="jd">
+            <h2>Notice</h2>
+            <h3>재단소식</h3>
+            <p>독도재단의 이슈와 <br>정보를 안내해드립니다.</p>
+            <ul class="list">
+              <li><a href="">공지사항</a></li>
+              <li><a href="">언론ㆍ홍보</a></li>
+              <li><a href="">보도자료</a></li>
+            </ul>
+            <a href=""></a>
+          </div>
+          <div class="white">
+            <div class="notice sub1">
+              <h2>공지사항</h2>
+              <ul class="detail">
+                <li>
+                  <a href="">
+                    <h3><i>제4회 K-독도 공모전 1차 합격자 발표!</i></h3>
+                    <span></span>
+                    <p>2020-11-10</p>
+                  </a>
+                </li>
+                <li>
+                    <a href="">
+                      <h3><i>독도를 상징하는 '도량'과 '도아'이모티콘 무료배포!</i></h3>
+                      <span>안녕하십니까! 독도재단 입니다~<span></span>
+                      독도재단에서 10월 ‘독도의 달’ 과 ‘도민의 날’ 을 맞아 독도를 상징하는 ‘도랑’과 ‘도아’이모티콘 7종을 전격 공개합니다!!!</span>
+                      <p>2020-10-23</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                      <h3><i>신입직원 채용시험 최종 합격자 공고</i></h3>
+                      <span>-(재)독도재단 공고 제2019-21호 - 재단법인 독도재단 직원채용 공고(제2019-17호)에 따라 실시한 직원 채용시험의 최종합격자를 다음과 같이 공고합니다.
+                        ※ 세부사항은 본 게시물의 첨부파일을 확인하시기 바랍니다.</span>
+                      <p>2019-12-18</p>
+                    </a>
+                </li>
+              </ul>
+            </div>
+            <div class="notice sub2">
+              <h2>언론ㆍ홍보</h2>
+              <ul class="detail no">
+                <li>
+                  <a href="">
+                    <h3>울릉군 독도수호도 온택트시대…‘제4회 K-독도 공모전’ 성황</h3>
+                    <p>클릭시 기사로 연결됩니다.</p>
+                    <p>2020-11-23</p>
+                  </a>
+                </li>
+                <li>
+                    <a href=""><h3>독도지킴이 안용복에게서 배운다 <1> 전문가 좌담회</h3>
+                      <p>클릭시 기사로 연결됩니다.</p>
+                      <p>2020-11-12</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                      <h3>경상북도 독도재단, 대구서 ‘제2회 독도상품 비즈 페어’ 개장</h3>
+                      <p>클릭시 기사로 연결됩니다.</p>
+                      <p>2020-11-09</p>
+                    </a>
+                </li>
+              </ul>
+            </div>
+            <div class="notice sub3">
+              <h2>보도자료</h2>
+              <ul class="detail no">
+                <li>
+                  <a href="">
+                    <h3>독도 수호도 온택드시대 '제4회 K-독도 공모전' 성황</h3>
+                    <p>독도 수호도 온택트 시대, ‘제4회 K-독도 공모전’ 성황 일본 엉터리 주장 잠재울 ‘국내 최대 독도 콘텐츠’의 향연 경상북도 출연기관인 독도재단(이사장 이철우도지사)은 지난 20일 대구경북디자인센터 아트홀에서 제4회 K-독도 공모전 평가대회 및 시상식을 개최했다.   국내 최대 규모의 독도 홍보 콘텐츠 창작 공모전인 ‘제4회 K-독도 공모전’에서 평택대 ‘독순이’팀, 서울과학기술대 ‘이너컴스’팀, 서울여대 전수빈 학생, 광주여대 김아현 학생이 각각 영상·카드뉴스·인쇄광고·캐릭터 부문에서 대상을 차지했다.   전국 대학생을 대상으로 한 이번 공모전은 뉴미디어 시대를 맞아 다양한 독도 관련 콘텐츠를 생산하고 국민들의 독도 수호 참여 기회를 확대하기 위해 마련됐다.   이날 평가대회에는 지난 8월 17일부터 11월 1일까지 공모전에 응모한 254개 팀 가운데 1차 심사를 통과한 20개 팀이 참가해 최종 발표를 가졌다.   4회를 맞는 올해 공모전은 영상과 카드뉴스, 인쇄광고, 캐릭터 부문으로 진행됐다.   독도와 콘텐츠 전문가 4명으로 구성된 심사위원들은 톡톡 튀는 아이디어와 개성 넘치는 콘텐츠, 창의적이고 기발한 독도 홍보 방안 등을 평가한 뒤 각 부문별 대상과 최우수상, 우수상, 장려상을 선정했다.   영상 부문에서는 평택대 변수현, 임찬우, 주희, 최수빈 학생으로 구성된 ‘독순이’팀이 일본의 엉터리 독도 영유권 주장에 요목조목 반박하는 내용의 ‘정말 독도가 일본의 땅일까’란 작품으로 대상을 받았다.   카드뉴스 부문에서는 서울과학기술대 김서영, 민경서, 선우보경, 전은빈 학생으로 꾸려진 ‘이너컴스’팀이 독도에 살고 있는 동식물의 이야기를 다양한 일러스트로 소개해 대상을 차지했다.   또 바늘과 실처럼 긴밀한 사이인 대한민국과 독도를 응원하자는 아이디어가 돋보인 서울여대 전수빈 학생의 ‘실로 당연한 이야기’가 인쇄광고 부문 대상을, 독도와 관련된 다양한 캐릭터를 움직이는 이모티콘으로 제작한 ‘한반독’ 작품의 광주여대 김아현 학생이 캐릭터 부문 대상의 영예를 안았다.   이날 입상자 전원에게는 독도재단 이사장 상장과 함께 대상 200만 원, 최우수 100만 원, 우수 70만 원, 장려상 30만 원의 상금이 수여됐다.   독도재단은 공모전 입상작들을 독도 콘텐츠 플랫폼인 ‘K-독도’ 홈페이지와 SNS 등에 올려 공유하는 등 독도 홍보에 적극 활용할 계획이다.   독도재단 신순식 사무총장은 “1인 미디어와 온택트 시대에는 톡톡 튀는 아이디어의 창작 콘텐츠가 ‘대한민국 땅 독도’를 세계로 알리는 강력한 힘이 된다”며 “매년 규모가 커지고 있는 K-독도 공모전에서 생산된 독도 콘텐츠로 일본의 억지 주장과 역사 왜곡을 잠재우겠다”고 말했다.   한편, 이날 평가대회 및 시상식은 마스크 착용과 사회적 거리두기 등 코로나19 방역수칙을 준수한 채 진행됐다.
+                    </p>
+                    <p>2020-11-23</p>
+                  </a>
+                </li>
+                <li>
+                    <a href="">
+                      <h3>독도재단, ‘종이 없는 스마트 회의’ 확대</h3>
+                      <p>독도재단,‘종이 없는 스마트 회의’확대 시간·비용 최소화로 업무혁신 박차 경상북도 출연기관인 독도재단(이사장 이철우도지사)이 온택트(비대면 온라인소통)시대를 맞아 기관의 주요 사업· 업무공유 회의 시 스마트한 업무추진을 위해 ‘종이 없는(paperless) 스마트 회의’를 확대한다고 2일 밝혔다.   스마트 모바일 시대에 발맞추어 회의문화 개선과 친환경 경영시스템 개선을 위해 주요사업 피드백 회의와 주요업무 보고에서 스마트 기기를 적극 활용, 종이 인쇄와 파기 등으로 인한 불필요한 시간과 비용을 최소화하는 업무혁신 전략을 가속화 한다는 방침이다.   특히 종이 없는 스마트 회의를 통해 회의 자료 관리용이·외부유출 방지 및 보안 유지, 외부 출장 시 각종 자료 검색 등 소모품 사용 감소로 환경 보호, 수평적 소통 문화 정착으로 스마트한 업무 환경을 조성한다. 또 임직원 회의뿐만 아니라 각종 업무 보고와 주요사업 제안서 평가 시 태블릿PC, 노트북 등 스마트 기기를 이용하여 진행할 계획이다.   신순식 사무총장은 “도정방향에 맞춰 스마트한 근무 환경 조성과 종이로 된 회의록에 따른 자원 낭비를 최소화하고, 업무 정보를 스마트기기로 빠르게 공유함으로써 행정의 효율성을 높이는데 적극 참여하겠다.”고 말했다.</p>
+                      <p>2020-11-03</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                      <h3>독도재단-대구한의대학교 업무협약 체결</h3>
+                      <p>독도재단, 독도의 달 10월에‘독도 지킴이 안용복’을 기억하다. 대구한의대학교와 MOU통해 독도수호인물 선양 사업 공동추진 10월 독도의 달을 마무리하면서 독도&안용복연구소를 설립하여 대표적 독도수호인물인 안용복에 대한 연구를 진행하고 있는 대구한의대학교와 안용복 재단으로 출범하여 독도역사인물 선양사업을 주요 사업으로 하고 있는 독도재단이 업무협약을 통해 “독도 지킴이 안용복”을 재조명할 예정이어서 눈길을 끌고 있다. 경상북도 출연기관인 (재)독도재단은 30일 대구한의대학교(총장 변창훈)와 업무협약서를 체결하고, 전 국민의 확고한 독도 영토주권 개념수립과 역사인식 확대를 위해 힘을 모으기로 했다.   양 기관 관계자들이 참석한 가운데 대구한의대학교 본관 2층 대회의실에서 진행된 업무협약은 독도 영토주권 교육 및 홍보 강화를 위해 ▲대학생 독도교육 및 홍보행사 공동개최 등 상호협력 ▲독도관련 학술연구 및 학술대회 공동 개최 ▲기타 독도 영토주권 강화를 위한 공동 노력 등의 내용을 담고 있고 독도 수호자 안용복 선양 사업도 공동 추진한다.   신순식 독도재단 사무총장은 “이번 업무협약을 통해 적극적인 독도수호인물 선양사업을 실시하여 국민들에게 독도관련 인물에 대해 널리 알리기 위한 기회라고 생각한다.”며 “양 기관이 파트너십을 맺음으로써 독도관련역사인물에 대한 대외적 인식을 제고할 수 있는 협업의 시너지 효과를 낼 수 있기를 기대한다”고 말했다.</p>
+                      <p>2020-10-30</p>
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--행사일정  -->
+      <div class="schedule">
+        <div class="center">
+          <div class="event">
+            <h2>event</h2>
+            <h3>행사일정</h3>
+            <p>독도의 다양한 행사에<br>많은 관심 바랍니다.</p>
+          </div>
+          <span>등록 된 행사가 없습니다.</span>
+          <div class="banner">
+            <div class="banner-left">
+              <h2>Banner</h2>
+              <h3>알림존</h3>
+            </div>
+            <div class="banner-right">
+              <div class="prebt">
+                <p class="pre"></p>
+                <p class="next"></p>
+              </div>
+                <ul class="linkautoplay">
+                  <li><a href=""><img src="img/link1.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link2.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link3.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link4.png" alt=""></a></li>
+                  <li><a href=""><img src="img/link5.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link6.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link7.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link8.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link9.jpg" alt=""></a></li>
+                  <li><a href=""><img src="img/link10.jpg" alt=""></a></li>
+                </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- 독도 라이브 -->
+      <div class="live">
+        <div class="live1">
+          <h2>Dokdo Live</h2>
+          <img src="http://www.koreadokdo.or.kr/images/main/img_live01_new.jpg" alt="">
+          <p>여기는 독도입니다.<br>작은 관심이 독도사랑의 첫 걸음 입니다.</p>
+        </div>
+        <div class="live2">
+          <div class="box">
+            <h2>느껴보세요!</h2>
+            <p><i>아름다운 독도의 숨결</i>을 <br>생생하게 전해드립니다.</p>
+            <p>실시간으로 독도에 <br>사랑의 손길을 보내주세요</p>
+          </div>
+          </div>
+        <div class="live3">
+          <h2>Magazine</h2>
+          <h3>독도매거진</h3>
+          <span><a href="">
+              <img src="http://www.koreadokdo.or.kr/upload/board_mag/21847_%ED%91%9C%EC%A7%80.jpg" alt="">
+              <p>2020.08</p>
+              <p>독도로 32.33호</p>
+            </a>
+          </span>
+            <div class="color">
+              <div class="ebook">
+                <a href="">E-book보기</a>
+                <a href="">매거진신청</a>
+              </div>
+            </div>
+        </div>
+        <div class="live4">
+          <h2>독도가는길</h2>
+          <p>아직까지 한 번도 경험하지 못하였다면<br>독도를 느껴보세요! 입도와 교통 편을 <br>안내해 드립니다.</p>
+          <a href=""></a>
+          <span class="tel">
+            울릉군 독도관리사무소
+						<a href="tel:0547906646">T. 054-790-6646</a>
+					</span>
+        </div>
+      </div>
+      <div class="logo">
+        <div class="btcontrol">
+          <a href="">prev</a>
+          <a href="">play</a>
+          <a href="">next</a>
+        </div>
+        <div class="center">
+          <ul class="bannerautoplay">
+          <li><a href=""  title="새창열림"><img src="img/logo01.gif" alt="외교부"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo02.gif" alt="국민권익위원 "/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo03.jpg" alt="공공재정환수법"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo04.gif" alt="경상북도사이버독도"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo05.gif" alt="경상북도"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo06.gif" alt="K-독도"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo07.gif" alt="독도박물관"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo08.gif" alt="국회도서관"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo09.gif" alt="청렴포털"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo10.gif" alt="나라독도살리기국민운동본부"/></a></li>
+          <li><a href=""  title="새창열림"><img src="img/logo11.jpg" alt="엑스포"/></a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    <!-- 하단영역 -->
+    <div id="footer">
+      <div>
+        <ul class="personal">
+          <li><a href="">개인정보처리방침</a></li>
+          <li><a href="">이용약관</a></li>
+          <li><a href="">이메일무단수집거부</a></li>
+          <li><a href="">홈페이지불법신고</a></li>
+          <li><a href="">사이트맵</a></li>
+          <li><a href="">관리자</a></li>
+        </ul>
+        <!--sns  -->
+        <ul class="circle">
+          <li><a href="">페이스북</a></li>
+          <li><a href="">인스타그램</a></li>
+          <li><a href="">블로그</a></li>
+          <li><a href="">유튜브</a></li>
+        </ul>
+        <address>
+          <span>우) 37751 경상북도 포항시 북구 중흥로 231 동양빌딩 9층</span>
+					<span>이메일 : dokdo@koreadokdo.or.kr</span>
+					<span>대표번호 : <a href="tel:0542726513">054-272-6513</a></span>
+					<span>팩스번호 : 054-272-6515</span>
+        </address>
+        <p>COPYRIGHT 2019. BY 재단법인 독도재단. ALL RIGHTS RESERVED. Design by KOWEB.</p>
+        <button type="button" name="top button"><a href="">TOP</a></button>
+      </div>
+    </div>
+  </body>
+</html>

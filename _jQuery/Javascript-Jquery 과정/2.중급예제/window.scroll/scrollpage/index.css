@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+/* ---------------------초기화--------------------*/
+*{
+	margin:0;
+	padding:0;
+	}
+html,body{
+	height:100%;
+	}
+ul{
+	list-style:none;
+	}
+body{
+	font-family: "맑은 고딕";/**/
+	font-style:normal;/*글자스타일*/
+	font-weight:normal;/*글자두께*/
+	}
+/* ---------------------레이아웃--------------------*/
+
+div#wrap{
+	width:1000px;
+	height:100%;
+	margin:0 auto;
+	}
+	/* ---------------------상단--------------------*/
+	div#top{
+		width:1000px;
+		height:120px;
+		position:relative;
+		border-top:#999 4px solid;
+	}
+		div#top h1{
+			position:absolute;
+			left:20px;
+			top:15px;
+		}
+		div#top ul{
+			position:absolute;
+			right:120px;
+			top:10px;
+			font-size:11px;
+		}
+		div#top ul li{
+			float:left;
+			margin:0 20px 0  0;
+			}
+	/* ---------------------미들--------------------*/
+	 div#middle{
+		 height:100%;
+		 margin:-120px 0 -80px 0 ;
+		 }
+	
+	/* ---------------------메뉴--------------------*/
+	div#menu{
+		width:100px;
+		height:200px;
+		position:fixed;
+		float:left;
+		padding:120px 0 0 0 ;
+	
+		}
+		div#menu ul{
+			font-size:11px;
+			border-top:#999 4px solid;
+			}
+		div#menu ul li{
+			margin:0 0 10px  0;
+			}
+	/* ---------------------컨텐츠--------------------*/
+	div#contents{
+		width:850px;
+		height:300px;
+		position:relative;
+		float:right;
+		padding:120px 0 0 0;
+	
+	
+	}
+		div#contents h2{
+			position:absolute;
+			left:20px;
+			top:130px;
+			border-top:#999 4px solid;		
+	     }
+	/* ---------------------컨텐츠2--------------------*/
+	div#contents2{
+		width:850px;
+		height:300px;
+		position:relative;
+		float:right;
+		padding:120px 0 0 0;
+	
+	
+	}
+	/* ---------------------컨텐츠3--------------------*/
+	div#contents3{
+		width:850px;
+		height:300px;
+		position:relative;
+		float:right;
+		padding:120px 0 0 0;
+	
+	
+	}
+	/* ---------------------컨텐츠4-------------------*/
+	div#contents4{
+		width:850px;
+		height:300px;
+		position:relative;
+		float:right;
+		padding:120px 0 0 0;
+	
+	
+	}
+	/* ---------------------하단--------------------*/
+	div#bottom{
+		width:1000px;
+		height:80px;
+		position:relative;
+		clear:both;
+		text-align:left;
+	    }
+			div#bottom address{
+				margin:0 120px 0 800px;
+				border-top:#999 4px solid;
+				width:180px;
+				}

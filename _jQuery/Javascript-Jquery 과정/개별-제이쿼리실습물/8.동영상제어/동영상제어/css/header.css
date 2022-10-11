@@ -1,0 +1,187 @@
+body{
+  overflow-x: hidden;
+}
+header{
+  max-width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+header>div{
+  height: 80px;
+  width: 1900px;
+  padding-top: 20px;
+}
+header div h1{
+  
+  text-indent: -9999px;
+  background-image: url(http://www.koreadokdo.or.kr/images/common/logo.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 36px;
+  background-size: contain;
+  padding: 50px 70px;
+  margin-left: 70px;
+  margin-top: 0;
+}
+header div h1 a{
+  
+}
+header>div>nav{
+  
+  position: absolute;
+  top: 20px;
+  left: 400px;
+  z-index: 90;
+  width: 1200px;
+}
+header>div>nav>ul{
+  
+  margin-left: 40px;
+} 
+header>div>nav>ul>li{
+  
+  display: inline-block;
+  width: 135px;
+  position: relative;
+}
+header>div>nav>ul>li>div{
+  display: none;
+  position: absolute;
+  left: -40px;
+  top: 30px;
+  background-color: #383a4a;
+  line-height: 2;
+  width: 150px;
+}
+header>div>nav>ul>li:hover>div{
+  display: block;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+   
+  }
+
+  to {
+    margin-left: 0%;
+    
+  }
+}
+
+  
+}
+ @keyframes tr{
+
+  0%{transform:translatex(0px);
+    opacity: 0};
+
+  100%{transform:translateY(10px);
+   opacity: 2};
+ } 
+header>div>nav>ul>li a {
+  
+  color: #000;
+  transition: 0.5s all;
+  font-size: 17px;
+}
+header > div > nav > ul > li>a{
+  padding-bottom: 20px
+}
+.text-white{
+  color: #fff !important;
+}
+header>div>nav>ul>li a span{
+  
+}
+header>div>nav>ul>li>div .ver{
+  
+  box-shadow: 3px 15px 15px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+header>div>nav ul li div .ver li{
+  
+}
+header>div>nav ul li div .ver li a{
+  
+  line-height: 3;
+  color: #Fff;
+}
+header>div>nav ul li div .ver li a:hover{
+  color: #fee7a8;
+}
+header>div>nav ul .area{
+  
+  position: relative;
+  top: -25px;
+  right: -80%;
+  width: 400px;
+} 
+.glyphicon{
+  
+  position: absolute !important;
+  top: 5px;
+  right: 0 !important;
+  color: #fff;
+}
+header>div>nav ul .area select{
+  float: right;
+ -webkit-appearance:none;
+  -moz-appearance:none;
+  -o-appearance:none;
+   appearance:none; 
+  width: 150px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  line-height: 2;
+  color: #fff;
+  font-weight: bold;
+}
+header>div>nav ul .area select option{
+  
+}
+header>div>nav ul .area .right{
+  
+  width: ;
+}
+header>div>nav ul .area .right li{
+  
+  float: left;
+  width: calc(250px / 2);
+}
+header>div>nav ul .area .right li a{
+  margin-right: 50px;
+  color: #fff;
+}
+header > div > nav ul .area .right li:nth-child(1) a::before{
+  content: "";
+  background-image: url(../img/login.png);
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+header > div > nav ul .area .right li:nth-child(2) a::before{
+  content: "";
+  background-image: url(../img/apply.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+
+
+  

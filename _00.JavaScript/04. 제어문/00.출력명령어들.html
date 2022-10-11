@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력 명령어들</title>
+    <style>
+        h1{
+
+        }
+        div{
+
+        }
+        span{
+
+        }
+    </style>
+    <script>
+        document.write('화면에 그냥 출력\n');
+        //alert("경고창");        //경고창과 확인버튼
+        //confirm("확인창");      //확인창과 확인/취소버튼
+        let msg = prompt("이름을 입력해 주세요","");     //prompt("제목","입력할 내용(생략가능)");
+        //document.write(`msg =? ${msg}\n`);
+
+        // let msg = prompt()      //입력된 값을 변수 msg에 저장한다.
+    </script>
+</head>
+<body>
+    <h1>JavaScript - 출력명령어</h1>
+    <div><span id="name"></span>님 반갑습니다😊</div>
+
+    <script>
+        //프롬프트 창에 입력한 내용을 id="name"으로 정의한 요소에 문자로 넣는다.
+        let $name = document.querySelector('#name');
+        $name.textContent = msg;
+    </script>
+</body>
+</html>

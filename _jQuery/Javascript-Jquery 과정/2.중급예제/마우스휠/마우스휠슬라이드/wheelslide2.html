@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;list-style-type: none;}
+        .clearfix{*zoom: 1;}
+        .clearfix:after{content: '';display: block;clear: both;}
+        div{position: relative;width: 1000px;height: 200px;margin: 0 auto;overflow: hidden;}
+        ul{position: absolute;left: 0;top: 0;width: 3000px;}
+        ul li{width: 1000px;height: 200px;float: left;}
+        .box1{background-color: #b3c4f8;}
+        .box2{background-color: #f8bfb4;}
+        .box3{background-color: #b4f8b6;}
+   </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
+                var E = e.originalEvent;
+                delta = 0;
+                if (E.detail) {
+                    delta = E.detail * -40;
+                }else{
+                    delta = E.wheelDelta;
+                };
+            });
+        });
+   </script>
+</head>
+<body>
+    <div>
+        <ul class="clearfix">
+            <li class="box1"></li>
+            <li class="box2"></li>
+            <li class="box3"></li>
+        </ul>
+    </div>
+</body>
+</html>

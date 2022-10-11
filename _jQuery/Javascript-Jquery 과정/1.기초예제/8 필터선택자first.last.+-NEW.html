@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Untitled Document</title>
+    <style type="text/css">
+      /*a태그의 스타일지정: 밑줄없애고 글자색지정*/
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      /*  //a:hover의 스타일 지정: 글자색 지정
+	 a:hover{
+		 color:#F60;
+		 } */
+      .click {
+        color: #f60;
+        background-color: #eee;
+      }
+      /* .noclick{
+		color:#333;
+		font-style:italic;
+		} */
+    </style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //첫번째li의a에 클래스를 붙여라(클래스명click)
+        $("li:first a").addClass("click"); //:first는 대상의 첫번째를 의미
+        //li의 a를 클릭하면 실행하시오(클릭한 a에 클래스를 붙이고 다른 li의 a는 클래스를 없애시오)
+        $("li a").click(function () {
+          $(this).addClass("click");
+          // $(this).parent().siblings().children().removeClass("click");
+          $("li a").not(this).removeClass("click");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h3>웹표준기술</h3>
+    <ul>
+      <li><a href="#">html</a></li>
+      <li><a href="#">css</a></li>
+      <li><a href="#">javascript</a></li>
+    </ul>
+  </body>
+</html>

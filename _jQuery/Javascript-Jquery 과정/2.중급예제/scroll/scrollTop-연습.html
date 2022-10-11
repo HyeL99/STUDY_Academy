@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		}
+	div#wrap{
+		width:1000px;
+		margin:0 auto;
+		}
+	div{
+		height:600px;
+		}
+	div#area1{
+		background:#0C0;
+		padding:80px 0 0 0 ;
+		}
+	div#area2{
+		background: #FF6;
+		}
+	div#area3{
+		background: #CCF;
+		}
+	div#area4{
+		background: #099;
+		}
+	div#menu{
+		position:fixed;
+		left:0;
+		width:100%;
+		height:auto;
+		background:#CCC;
+		z-index:1;
+		}
+		div#menu ul{
+			overflow:hidden;
+			margin:0 auto;
+			width:500px;
+			height:80px;
+			}
+			div#menu ul li{
+				float:left;
+				padding:10px;
+				}
+		footer{
+			background-color: gray;
+			height: 400px;
+		}
+		footer a{
+			position: fixed;
+			right: 20px;
+			bottom: 30px;
+			display: none;
+		}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+    	<div id="menu">
+        	<ul>
+            	<li class="num1">마이프로필</li>
+                <li>그래픽작품</li>
+                <li>웹작품</li>     
+            </ul>
+        </div>
+        <div id="area1">
+			<h2>타이틀</h2>
+        </div>
+        <div id="area2">
+			<h2>마이프로필</h2>
+        </div>
+        <div id="area3">
+			<h2>그래픽작품</h2>
+        </div>
+        <div id="area4">
+			<h2>웹작품</h2>
+        </div>
+		<footer>
+			<a href="">위로가기</a>
+		</footer>
+    </div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+            var a2=$("#area2").offset().top - $("#menu").height();
+			var a3=$("#area3").offset().top - $("#menu").height();
+			var a4=$("#area4").offset().top - $("#menu").height();
+			var pos=[a2,a3,a4];
+			//alert(pos[1]);
+			/*
+			//마이프로필
+            $("div#menu ul li.num1").click(function(){
+                $("html,body").animate({scrollTop:a2},1000);
+            });
+			// 그래픽작품
+			$("div#menu ul li:eq(1)").click(function(){
+				$("html,body").animate({scrollTop:a3},1000);
+			});
+			// 웹작품
+			$("div#menu ul li:eq(2)").click(function(){
+				$("html,body").animate({scrollTop:a4},1000);
+			});
+			*/
+			var m;
+			$("div#menu ul li").click(function(){
+				m=$(this).index();
+				//alert(m);
+				//alert(typeof "a"+m);
+                $("html,body").animate({scrollTop:pos[m]},1000);
+            });
+
+			// 위로가기
+			$("footer a").click(function(){
+				$("html,body").animate({scrollTop:0},1000);
+				return false; //a태그의 기본동작(새로고침,페이지이동)을 막는다
+			});
+
+			// 하단부분보이면 위로가기 버튼 보여지게 스크롤이벤트
+			var ft=$("footer").offset().top - $(window).height();
+			
+			$(window).scroll(function(){
+				if($(window).scrollTop()>ft){
+					$("footer a").fadeIn();
+				}else{
+					$("footer a").fadeOut();
+				}
+				
+			});
+
+		});
+	</script>
+</body>
+</html>

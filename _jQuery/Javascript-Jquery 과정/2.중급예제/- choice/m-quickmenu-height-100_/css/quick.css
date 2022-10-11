@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul#quick{
+	background: #f71a1a;
+	position: absolute;
+	right: 10px;
+/* 	top: 45%; */
+	}
+	ul#quick li{
+	line-height: 2em;
+	font-size: 12px;
+	text-align: center;
+	border-bottom: 1px dotted;
+	width: 50px;
+	}
+	ul#quick li.prev{
+	}
+	ul#quick li.home{
+	}
+	ul#quick li.next{
+	}

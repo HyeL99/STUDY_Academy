@@ -1,0 +1,64 @@
+h2{
+  font-size: 16px;
+  font-weight: 700;
+}
+.button{
+  width: 12vw;
+  padding: 1.2vw;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+#fixed {
+}
+#fixed ul {
+}
+#fixed ul li {
+}
+#fixed ul li a {
+}
+
+/* class */
+.inner {
+  width: 80%;
+  margin: 0 auto;
+}
+.hide{
+  display:none;
+}
+.show{
+  display: block;
+}
+
+/* flex */
+.flex {
+  display: flex;
+}
+.fCol {
+  flex-direction: column;
+}
+.jusCen {
+  justify-content: center;
+}
+.jusSpaBet {
+  justify-content: space-between;
+}
+.jusSpaAnd{
+  justify-content: space-around;
+}
+.alnStr{
+  align-items: flex-start;
+}
+.alnCen {
+  align-items: center;
+}
+.alnEnd {
+  align-items: flex-end;
+}
+.jusEnd {
+  justify-content: flex-end;
+}
+.fWrap {
+  flex-wrap: wrap;
+}

@@ -1,0 +1,867 @@
+@charset "UTF-8";
+html,body{
+  height:100%;
+}
+
+/* 페이지  1 */
+#page1{
+  background-image: url(../img/p0.jpg);
+  background-size: cover;
+  height: 1000px;
+  height: 100%;
+}
+#page1 .titleset{
+  position: relative;
+  top: 26%;
+  left: 41%;
+  height: 650px;
+  width: 400px;
+}
+
+@keyframes set1{
+  0%{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#page1 .titleset ul.wset{ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+}
+
+#page1 .titleset span.set1{
+  position: absolute;
+  animation-delay: 4s;
+  animation-name: set1;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; 
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+@keyframes set1{
+  0%{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+#page1 .titleset span.set1 h2{ 
+  width: 400px;
+  height: 400px;
+  background-color: #81cfee;
+  text-align: center;
+  color: #fff;
+  font-size: 45px;
+  line-height: 2;
+  padding-top: 47px;
+  box-sizing: border-box;
+}
+
+#page1 .titleset span.set2{
+  position: absolute;
+  animation-delay: 1s;
+  animation-name: set2;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;  
+   left: 0;
+   top: 0;
+   opacity: 0;
+}
+@keyframes set2{
+  0%{
+    transform: translateY(40px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}
+#page1 .titleset span.set2 h2{
+   width: 400px;
+  height: 400px;
+  background-color: #fff;
+  text-align: center;
+  color: #81cfee;
+  font-size: 45px;
+  line-height: 2;
+  padding-top: 20px;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+#page1 .titleset .logo{
+  position: relative;
+  top: 66%;
+  left: 122px;
+}
+#page1 .titleset .btnscroll{ 
+  position: relative;
+  top: 80%;
+  left: 154px;
+}
+#page1 .advertising{
+  position: absolute;
+  left: 120px;
+  top: calc(50% - 130px);
+  width: 450px;
+}
+#page1 .advertising img{
+ 
+}
+#page1 .advertising a{
+  float: right;
+  text-decoration: none;
+  color: #000;
+  
+}
+#page1 .advertising p{
+  
+}
+/*   페이지  2       */
+#page2{
+  height: 1000px;
+  background-image: url(http://sysclein.com/images/bg_about.jpg);
+  background-size: 100%;
+  background-position: center;
+  height: 100%;
+}
+.bgani{
+  animation-name: bgscale;
+  animation-duration: 20s;
+  animation-direction: normal ;
+  animation-fill-mode: forwards;
+  animation-timing-function:linear;
+}
+@keyframes bgscale{
+  100%{
+    background-size:120%; 
+  }
+}
+#page2 .wpage2{ 
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 120px;
+  height: 700px;
+}
+
+#page2 .wpage2 .about{ 
+  margin-top: 80px;
+  height: 700px;
+}
+#page2 .wpage2 .about h2{
+  font-size: 48px;
+  font-weight: bold;
+  color: #0082a1;
+  margin-top: 20px;
+}
+
+#page2 .wpage2 .about p{ 
+  padding-top: 65px;
+  line-height: 3;
+  font-weight: bold;
+  color: #0082a1;
+}
+#page2 .wpage2 .about img.p1{ 
+  margin-top: 20px;
+  position: relative;
+  top: -70px;
+  left: 128px;
+  display: inline;
+}
+#page2 .wpage2 .about img.p2{ 
+  position: relative;
+  top: 73px;
+  left: -84px;
+  display: inline;
+}
+/*       name             */
+#page2 .wpage2 .name{ 
+  height: 700px;
+  display: block;
+/*   border: 13px solid #222; */
+  background-color: #fff;
+  box-sizing: border-box;
+}
+#page2 .wpage2 .name img{ 
+  margin-top: 80px;
+  margin-bottom: 37px;
+  display: inline;
+}
+#page2 .wpage2 .name h2{  
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 47px;
+  color: #0082a1;
+}
+#page2 .wpage2 .name p{ 
+  padding-bottom: 47px;
+  line-height: 2;
+  color: #0082a1;
+}
+#page2 .wpage2 .name a{ 
+  text-decoration: none;
+  border: 1px solid #eee;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  width: 76px;
+  color: #fff;
+  background-color: #17afe3;
+}
+#page2 .wpage2 .distinct{
+  
+  height: 700px;
+  box-sizing: border-box;
+}
+#page2 .wpage2 .distinct h2{
+  font-size: 31px;
+  color: #0082a1;
+  margin-bottom: 50px;
+  font-weight: bold;
+  margin-top: 124px;
+}
+#page2 .wpage2 .distinct ul{
+  
+  text-align: center;
+  width: 900px;
+  margin: 0 auto;
+}
+#page2 .wpage2 .distinct ul li{
+  display: inline-block;
+}
+#page2 .wpage2 .distinct ul li a{
+  
+  text-decoration: none;
+  display: inline-block;
+  background-image: url(http://www.sysclein.com/images/bg_tab.png);
+  background-repeat: no-repeat;
+  width: 177px;
+  height: 194px;
+  vertical-align: top;
+}
+#page2 .wpage2 .distinct ul li a p{
+  color: #666;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+#page2 .wpage2 .distinct ul li a span{
+  
+  display: inherit;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 50px;
+  left: 40px;
+}
+#page2 .wpage2 .distinct ul li:nth-of-type(1) a span{
+  background-image: url(http://sysclein.com/images/ico_01.png);
+}
+#page2 .wpage2 .distinct ul li:nth-of-type(2) a span{
+  background-image: url(http://sysclein.com/images/ico_02.png);
+}
+#page2 .wpage2 .distinct ul li:nth-of-type(3) a span{
+  background-image: url(http://sysclein.com/images/ico_03.png);
+}
+#page2 .wpage2 .distinct ul li:nth-of-type(4) a span{
+  background-image: url(http://sysclein.com/images/ico_04.png);
+  
+}
+#page2 .wpage2 .composition{ 
+  height: 700px;
+  display: block;
+  border: 1px solid #fff;
+  background-color: #fff;
+  box-sizing: border-box; 
+  width: 1200px !important;
+}
+#page2 .wpage2 .composition h2{
+  font-size: 31px;
+  color: #0082a1;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  width: 100%;
+}
+
+#page2 .wpage2 .composition img{
+  display: inline;
+}
+/*           페이지 3         */
+#page3{ 
+  width: 100%;
+  height: 1000px;
+  background-image: url(http://www.sysclein.com/images/bg_story.jpg);
+  height: 100%;
+}
+#page3 .wstory{ 
+  max-width: 1200px !important;
+  height: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 120px;
+}
+#page3 .wstory .story1{
+  height: 700px;
+  width: 1200px !important;
+  margin-top: 80px;
+  height: 700px; 
+}
+
+#page3 .wstory .story1 h2{
+  font-size: 48px;
+  font-weight: bold;
+  color: #0082a1;
+  position: relative;
+  margin-top: 70px; 
+}
+#page3 .wstory .story1 p{
+  padding-top: 65px;
+  line-height: 3;
+  font-weight: bold;
+  color: #0082a1; 
+}
+#page3 .wstory .story2{
+  height: 700px;
+  overflow: hidden;
+  padding: 28px;
+  box-sizing: border-box;
+  display: block;
+  width: 1200px !important;
+  background-color: #fff;
+}
+#page3 .wstory .story2 img{ 
+  float: left;
+  display: block;
+  width: 500px;
+  height: 579px;
+}
+#page3 .wstory .story2 h3{
+  font-size: 22px;
+  color: #0082a1;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-weight: bold;
+}
+#page3 .wstory .story2 p{
+  font-size: 14px;
+  line-height: 3;
+  font-weight: 300;
+  color: #0082a1;
+  margin-bottom: 10px;
+}
+#page3 .wstory .story3{
+  height: 700px;
+  overflow: hidden;
+  box-sizing: border-box; 
+  padding: 28px;
+  display: block;
+  width: 1200px !important;;
+  background-color: #fff;
+}
+
+#page3 .wstory .story3 img{ 
+  float: left;
+  display: block;
+  width: 600px;
+  height: 579px;
+}
+#page3 .wstory .story3 h3{
+  font-size: 22px;
+  color: #0082a1;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-weight: bold; 
+}
+#page3 .wstory .story3 p{
+  font-size: 14px;
+  line-height: 3;
+  font-weight: 300;
+  color: #0082a1;
+  margin-bottom: 10px;
+}
+#page3 .wstory .story4{
+  
+  height: 700px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 28px;
+  display: block;
+  width: 1200px !important;
+  background-color: #fff;
+}
+#page3 .wstory .story4 img{ 
+  float: left;
+}
+#page3 .wstory .story4 h3{
+   font-size: 22px;
+  color: #0082a1;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-weight: bold; 
+}
+#page3 .wstory .story4 p{
+   font-size: 14px;
+  line-height: 3;
+  font-weight: 300;
+  color: #0082a1;
+  margin-bottom: 10px;  
+}
+#page3 .wstory .story5{
+  
+  height: 700px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 28px;
+  width: 1200px !important;
+  background-color: #fff;
+}
+#page3 .wstory .story5 img{ 
+  float: left;
+}
+#page3 .wstory .story5 h3{
+    font-size: 22px;
+  color: #0082a1;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-weight: bold;  
+}
+#page3 .wstory .story5 p{
+    font-size: 14px;
+  line-height: 3;
+  font-weight: 300;
+  color: #0082a1;
+  margin-bottom: 10px;  
+}
+#page3 .wstory .story6{
+  height: 700px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 28px;
+  width: 1200px !important;
+  background-color: #fff;
+}
+#page3 .wstory .story6 img{  
+  float: left;
+}
+#page3 .wstory .story6 h3{
+  font-size: 22px;
+  color: #0082a1;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-weight: bold;  
+  
+}
+#page3 .wstory .story6 p{
+   font-size: 14px;
+  line-height: 2.5;
+  font-weight: 300;
+  color: #0082a1;
+  margin-bottom: 10px;  
+}
+
+/*        page 4          */
+#page4{
+  
+  width: 100%;
+  height: 1000px;
+  background-image: url(http://www.sysclein.com/images/bg_product.jpg);
+  background-size: cover;
+  height: 100%;
+}
+#page4 .wproduct{
+  
+  max-width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 120px   
+}
+#page4 .wproduct .product1{
+  width: 1200px;
+  height: 700px;
+  margin-top: 120px;
+  height: 700px;
+}
+#page4 .wproduct .product1 h2{
+  
+  margin-top: 243px;
+  font-size: 56px;
+  color: #0082a1;
+}
+#page4 .wproduct .product1 p{ 
+  color: #0082a1;
+  margin: 50px 0;
+}
+#page4 .wproduct .product1 button{
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #0082a1;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  background-color: #0082a1;
+  position: static;
+  font-size: initial;
+  width: auto;
+}
+#page4 .wproduct .product1 button.slick-next::before{
+  content: "";
+}
+#page4 .wproduct .product2{ 
+  width: 1200px;
+  height: 700px;
+}
+#page4 .wproduct .product2 h3{ 
+  margin-top: 243px;
+  font-size: 25px;
+  color: #0082a1;
+  font-weight: bold;
+}
+#page4 .wproduct .product2 ul{ 
+  margin-top: 30px;
+}
+#page4 .wproduct .product2 ul li{  
+  display: inline-block;
+  margin: 50px;
+}
+#page4 .wproduct .product2 ul li a{
+  text-decoration: none;
+  display: inline-block;
+  background-image: url(http://www.sysclein.com/images/bg_tab.png);
+  background-repeat: no-repeat;
+  width: 177px;
+  height: 194px;
+  
+}
+#page4 .wproduct .product2 ul li a span{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  display: block;
+  background-position: center;
+}
+#page4 .wproduct .product2 ul li:nth-of-type(1) a span{
+  background-image: url(http://www.sysclein.com/images/thumb_product01.png);
+}
+#page4 .wproduct .product2 ul li:nth-of-type(2) a span{
+  background-image: url(http://www.sysclein.com/images/thumb_product02.png);
+}
+#page4 .wproduct .product2 ul li:nth-of-type(3) a span{
+  background-image: url(http://www.sysclein.com/images/thumb_product03.png); 
+}
+#page4 .wproduct .product2 ul li a p{
+  margin-top: 25px;
+  color: #333;
+}
+
+/*        페이지  5                */
+#page5{
+  width: 100%;
+  height: 1000px;
+  height: 100%;
+}
+#page5 .gallery{
+  width: 1200px;
+  text-align: center;
+  margin: 210px auto;
+}
+#page5 .gallery h2{
+  font-size: 48px;
+  padding-bottom: 50px;
+   color: #0082a1;
+}
+#page5 .gallery p{
+  margin-bottom: 35px;
+   color: #0082a1;
+}
+#page5 .gallery .wgallery{
+  width: 1000px;
+  height: 550px;
+  margin: 0 auto;
+}
+#page5 .gallery .wgallery .gallery1{
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+  height: 550px;
+}
+
+#page5 .gallery .wgallery .gallery1 p,#page5 .gallery .wgallery .gallery2 p,
+#page5 .gallery .wgallery .gallery3 p{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+}
+#page5 .gallery .wgallery .gallery2{
+  position: relative;
+  width: 1000px;
+  height: 550px;
+}
+#page5 .gallery .wgallery .gallery3{
+  position: relative;
+  width: 1000px;
+  height: 550px;
+}
+
+#page5 .gallery .wgallery .gallery4{
+  position: relative;
+  width: 1000px;
+  height: 550px;
+  
+}
+#page5 .gallery .wgallery .gallery4 a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-decoration:none;
+  color: green;
+  font-weight: bold;
+}
+
+#page5 .gallery .wgallery .gallery4 span{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: green;
+}
+#page5 .gallery .wgallery .gallery4 button{
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+}
+/*          페이지 6                */
+#page6{
+  width: 100%;
+ height: 1000px;
+ background-image: url(http://sysclein.com/images/bg_use.jpg);
+  height: 100%;
+}
+#page6 .wapply{
+  width: 1200px;
+  margin: 0 auto;
+}
+#page6 .wapply .apply1{
+  width: 1200px;
+  height: 850px;
+  margin: 0 auto;
+  margin-top: 80px;
+  height: 700px;
+}
+#page6 .wapply .apply1 h2{
+  text-align: center;
+  padding-top: 80px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0082a1;
+}
+#page6 .wapply .apply1 p,#page6 .wapply .apply2 p{
+  margin-top: 50px;
+  text-align: center;
+  color: #0082a1;
+  font-weight:bold;
+  font-size: 20px;
+}
+#page6 .wapply .apply1 ul,#page6 .wapply .apply2 ul{
+  margin-top: 25px;
+  text-align: center;
+}
+#page6 .wapply .apply1 ul li,#page6 .wapply .apply2 ul li{
+  width: 18%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0182a1;
+  border: 1px solid #fff;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+  background-color: #fff;
+  margin: 7px;
+}
+#page6 .wapply .apply2{
+  width: 1200px;
+  height: 850px;
+  margin: 0 auto;    
+}
+#page6 .wapply .apply2 h2{
+  text-align: center;
+  padding-top: 200px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0082a1;
+}
+
+/*          페이지  7              */
+#page7{
+  width: 100%;
+  height: 1000px;
+  background-image: url(http://www.sysclein.com/images/bg_buy.jpg);
+  height: 100%;
+}
+#page7 .shop{
+  width: 1200px;
+  height: 850px;
+  margin: 0 auto;
+  margin-top: 80px;
+  height: 700px;
+}
+#page7 .shop h2{
+  text-align: center;
+  padding-top: 200px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0082a1;
+}
+#page7 .shop img{
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+#page7 .shop div{
+  text-align: center;
+}
+#page7 .shop a{
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #0082a1;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  background-color: #0082a1;
+  width: 60px;
+}
+/*       페이지    8              */
+#page8{
+  width: 100%;
+  height: 1000px;
+  background-image: url(http://sysclein.com/images/bg_contact.jpg);
+  height: 100%;
+}
+#page8 .wcontact{
+  width: 100%;
+  height: 850px;
+}
+#page8 .wcontact .contact1{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+  height: 700px;
+}
+#page8 .wcontact .contact1 h2{
+  padding-top: 300px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0082a1;
+}
+#page8 .wcontact .contact1 p{
+  margin-top: 80px;
+  line-height: 3;
+   color: #0082a1;
+  font-size:20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#page8 .wcontact .contact1 a{
+   display: inline-block;
+  text-decoration: none;
+  border: 1px solid #0082a1;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  background-color: #0082a1;
+  width: 80px;
+}
+#page8 .wcontact .contact2{
+  text-align: center;
+  margin: 0 auto;
+ 
+}
+#page8 .wcontact .contact2 .formset{
+  margin: 150px auto;
+  width: 600px;
+  height: 615px;
+  display: inline-block;
+  padding: 40px;
+  text-align: left;
+  border: 1px solid #fafafa;
+  background-color: #fafafa;
+   color: #666;
+  font-weight:300;
+  font-size: 14px;
+}
+
+#page8 .wcontact .contact2 .formset h2{
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px !important;
+}
+
+#page8 .wcontact .contact2 .formset form{
+ width: 100%;
+}
+#page8 .wcontact .contact2 .formset .personal{
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+#page8 .wcontact .contact2 .formset .personal .phone{
+  width: 158%;
+}
+#page8 .wcontact .contact2 .formset .personal .textarea{  
+  width: 243%;
+}
+#page8 .wcontact .contact2 .formset .personal .email{
+  width: 243%;
+}
+#page8 .wcontact .contact2 .formset .guide{
+  border: 1px solid #eee;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #666;
+  font-weight:300;
+}
+#page8 .wcontact .contact2 .formset .guide h3{
+  margin-bottom: 10px;
+}
+#page8 .wcontact .contact2 .formset .guide p{
+  font-size: 12px;
+  line-height: 2;
+}
+#page8 .wcontact .contact2 .formset .agree{
+   color: #666;
+  border-collapse: separate;
+  border-spacing: 40px 0;
+}
+#page8 .wcontact .contact2 .formset .submit{
+  margin-top: 20px;
+  width: 232%;
+  display: block;
+  height: 30px;
+  background-color: #0082a1;
+  color: #fff;
+  cursor: pointer;
+}
+#page2,#page3,#page4,#page6,#page8{
+  
+}

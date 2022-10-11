@@ -1,0 +1,46 @@
+#title {
+  width: 100%;
+  height: 100%;
+  background: url("../img/visual-1.jpg") no-repeat center / cover;
+  position: relative;
+}
+#title div.inner {
+  height: 100%;
+}
+#title div.inner section {
+  padding-top: 30%;
+  color: #fff;
+}
+#title div.inner section h2.h5 {
+}
+#title div.inner section p.h2 {
+}
+#title div.inner section p.h4 {
+}
+#title div.inner section a.button {
+}
+#title div.inner div.carousel-menu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#title div.inner div.carousel-menu a.before-btn {
+}
+#title div.inner div.carousel-menu div {
+  color: #fff;
+}
+#title div.inner div.carousel-menu a.after-btn {
+}
+#title div.inner div.carousel-menu a.stop-btn {
+}
+#title div.inner div.scroll-space {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#title div.inner div.scroll-space p {
+}
+#title div.inner div.scroll-space div.scroll-place {
+}
+#title div.inner div.scroll-space div.scroll-place span {
+}

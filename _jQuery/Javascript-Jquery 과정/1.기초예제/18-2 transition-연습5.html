@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>transition</title>
+	<style type="text/css">
+	
+		*{
+			margin:0;
+			padding:0;
+			}
+		body{
+			width:1000px;
+			margin:0 auto;
+			}	
+		ul{
+			list-style:none;
+			}
+			li{
+				width:120px;
+				height:70px;
+				text-align:center;
+				line-height:70px;
+				background:#CCC;
+				margin:0 0 4px 0;
+				transition:all 0.7s;
+				}
+			li:hover{
+				background:#FC0;
+				color:#FFF;
+				width:140px;
+				}
+			div.wrap{
+				width:1000px;
+				height:200px;
+				background:url(images/bg-sun.jpg) center center;
+				background-size:cover;
+				position: relative;
+				}
+				h2{
+					float:left;
+					width:25%;
+					height:200px;
+					text-align:center;
+					line-height:200px;
+					/*! opacity:0.5; */
+					outline:1px solid black;
+					color:#FFF;
+					transition:all 0.7s;
+					position: relative;
+					background-size: cover;
+					overflow: hidden;
+					}
+					h2::before{
+            background-size: cover;
+						background-position: center;
+						content: "";
+						width:750px;
+						height: 100%;
+						position: absolute;
+						left: 0;
+						top:0;
+					}
+					h2:nth-of-type(1)::before{
+						background-image: url(img/po1.png);
+					}
+          h2:nth-of-type(2)::before{
+          	background-image: url(img/po2.png);
+					}
+          h2:nth-of-type(3)::before{
+						background-image: url(img/po3.png);
+					}
+          h2:nth-of-type(4)::before{
+          	 background-image: url(img/po4.png);
+					}
+						h2 span{
+							position: relative;
+						}
+					.bg{
+						display: block;
+						width: 100%;
+						height: 100%;	
+						position: absolute;
+						left: 0;
+						top:0;
+						background-size: cover;	
+					   }	
+					.over{
+						width:70%;
+						opacity:1;
+						}
+					.other{
+						width:10%;
+						}	
+
+	</style>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+				$("h2").hover(
+					function(){
+						$(this).addClass("over");
+						$(this).siblings().addClass("other");
+						bg=$(this).attr("data-bg");
+						//$("div").css("background-image","url(img/"+bg+")");
+						$(".bg").remove();
+						$("div.wrap").prepend("<div class='bg'></div>");
+                        $("div.wrap .bg").hide().fadeIn().css("background-image","url(img/po"+bg+".png)");
+					},
+					function(){
+						$("div.wrap .bg").fadeOut();
+						$(this).removeClass("over");
+						$(this).siblings().removeClass("other");
+					}
+					
+				);
+
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li>마이프로필</li>
+		<li>그래픽작품</li>
+		<li>웹작품</li>
+	</ul>
+	<div class="wrap">
+		<!-- <h2 data-bg="po1.png">제품1</h2>
+		<h2 data-bg="po2.png">제품2</h2>
+		<h2 data-bg="po3.png">제품3</h2>
+		<h2 data-bg="po4.png">제품4</h2> -->
+        <h2 data-bg="1"><span>제품1</span></h2>
+		<h2 data-bg="2"><span>제품2</span></h2>
+		<h2 data-bg="3"><span>제품3</span></h2>
+		<h2 data-bg="4"><span>제품4</span></h2>
+	</div>
+</body>
+</html>

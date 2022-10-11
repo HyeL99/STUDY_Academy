@@ -1,0 +1,21 @@
+@charset "utf-8";
+/*기본여백초기화*/
+*{ margin:0; padding:0;}
+/* *표시는 모든 마크업태그를 의미*/
+body{font-size:12px; font-family:"Nanum Gothic", dotum,"돋움",sans-serif; color:#444}
+body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td{margin:0; padding:0}
+ul,ol,li{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-style:normal;}/*100%는 13px로 통일*/
+a {text-decoration:none}
+address{ font-style:normal;}
+img{ border:none;}
+body{font-size:12px; font-family:"Nanum Gothic", dotum,"돋움",sans-serif; color:#444}
+body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td{margin:0; padding:0}
+ul,ol,li{list-style:none}
+img, fieldset{border:none; vertical-align:top}
+legend, caption{display:none}
+textarea, button{vertical-align:middle}
+input, select{background:#fff; color:#444; font-size:1.00em; font-family:"Nanum Gothic", dotum,"돋움",sans-serif; vertical-align:middle}
+input{padding:3px}
+select{padding:2px}
+textarea{padding:3px; border:1px solid #ddd; background:#fff; color:#444; vertical-align:middle}

@@ -1,0 +1,193 @@
+#title {
+  height: 100%;
+  background-color: #eee;
+  min-height: 480px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#title::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  background-color: black;
+}
+#title .inner {
+  width: 80% !important;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  height: 673px;
+  margin-left: 10%;
+  display: flex;
+}
+#title .inner h2{
+  position: relative;
+  z-index: 1;
+  font-size: 65px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+#title .inner h2 span{
+  display: block;
+  
+}
+@keyframes h2up{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0.4;
+  }
+}
+.slick-active h2 span{
+  animation-name: h2up;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
+}
+.slick-active p span{
+  animation-name: pup;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
+}
+#title .inner p{
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+#title .inner p span{
+  display: block;
+  
+}
+@keyframes pup{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(100%);
+     opacity: 0;
+  }
+}
+#title .inner br{
+
+}
+#title .inner .video{
+  width: 1188px;
+  height: 673px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#title span.titleaside{
+  position: absolute;
+  right: calc(20% / 4 - 82px);
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*! height: 500px; */
+  justify-content: space-between;
+  width: 164px;
+}
+#title .titleaside a.campaign{
+  transform: rotate(90deg) translateX(78px);
+}
+#title span.titleaside a.scroll{
+  font-size:12px; 
+  position: relative;
+  text-transform: uppercase;
+  animation-name: textcolor;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes textcolor{
+  0%{
+   color:black;
+  }
+  15%{
+   color:yellowgreen;
+  }
+  30%{
+   color:black;
+  }
+  100%{
+    color:black;
+  }
+}
+#title span.titleaside a.scroll::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  top: -13px;
+  border: 3px solid;
+  border-left: transparent;
+  border-top: transparent;
+  transform:scale(0.5) translateY(-15px) rotate(45deg);
+  color: #000;
+  left: calc(50% - 7.5px);
+  animation-name: scrollani1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes scrollani1{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 0;
+  }
+   20%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+#title span.titleaside a.scroll::after{
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  top: -22px;
+  border: 3px solid;
+  border-left: transparent;
+  border-top: transparent;
+  transform:scale(0.5) translateY(-15px) rotate(45deg);
+  color: #333;
+  left: calc(50% - 7.5px);
+  animation-name: scrollani2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes scrollani2{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
+
+

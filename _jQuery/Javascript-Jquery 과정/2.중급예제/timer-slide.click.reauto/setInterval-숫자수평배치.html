@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>아름다운 커피</title>
+<!--IE9이하에서도 HTML5태그를 사용가능하게 처리해줌-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div.rotate{
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: #eee;
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        flex-wrap:wrap;
+        
+    }
+    span{
+       border: 1px solid #ccc;
+       width: 20%;
+       box-sizing: border-box;
+    }
+</style>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+        $(function(){
+            /*
+            var r=10;
+            setInterval(function(){
+                $(".line").css("transform","rotate("+r+"deg)");
+                //r++; //r의 값을 1씩 증가시키시오
+                r+=10; //r의 값에 10을 추가하시오
+            },1000);
+            */
+           var n=1;
+            setInterval(function(){
+                if(n<31){
+                    $(".rotate").append("<span>"+n+"</span>");
+                    n++;
+                }
+            },100);
+        });
+    </script>
+</head>
+<body>
+    <div class="rotate">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset'UTF-8';
+
+img {
+    max-width: 100%; /*이미지의 원래 사이즈보다 커지진 않음*/
+}
+body {
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+}
+header {
+    background: url('../assets/img/main.jpeg') no-repeat center center / cover;
+    padding: 180px 0;
+}
+.h1{
+    width: 90px;
+}
+.nav-item {
+    margin-right: 30px;
+}
+.nav-item > a {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+    color: #000;
+}
+.nav-item:first-child {
+    margin-right: 20px;
+}
+.m-info span {
+    font-family: 'Kanit', sans-serif;
+}
+.m-info p {
+    font-size: 18px;
+}

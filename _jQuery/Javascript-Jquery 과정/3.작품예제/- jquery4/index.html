@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이미지슬라이드</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/easySlider1.7.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){	
+				$("#slider").easySlider({
+					auto:true, 
+					continuous: true,
+					numeric: false
+				});
+			});	
+	</script>
+	<link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />	
+</head>
+
+<body>
+	<div id="slider">
+			<ul>				
+				<li><a href="http://templatica.com/preview/30"><img src="http://www.placehold.it/1000x300/222222" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/7"><img src="http://www.placehold.it/1000x300/333333" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/25"><img src="http://www.placehold.it/1000x300/444444" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/26"><img src="http://www.placehold.it/1000x300/555555" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/27"><img src="http://www.placehold.it/1000x300/666666" alt="Css Template Preview" /></a></li>			
+			</ul>
+	</div>
+</body>
+</html>

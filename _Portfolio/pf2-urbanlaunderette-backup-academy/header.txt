@@ -1,0 +1,48 @@
+<header id="top">
+        <div class="inner">
+            <h1><a href="">urbanlaunderette</a></h1>
+            <ul class="gnb">
+                <li>
+                    <h2><a href="">BRAND</a></h2>
+                    <ul class="gnbsub">
+                        <li><a href="">CONCEPT</a></li>
+                        <li><a href="">DESIGN</a></li>
+                        <li><a href="">MEDIA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="">BUSINESS</a></h2>
+                    <ul class="gnbsub">
+                        <li><a href="">FOR BUSINESS</a></li>
+                        <li><a href="">POWERED BY MIELE</a></li>
+                        <li><a href="">GREEN CAMPAIGN</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="">SERVICE</a></h2>
+                    <ul class="gnbsub">
+                        <li><a href="">SERVICE</a></li>
+                        <li><a href="">MAGAZINE</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="">STORE</a></h2>
+                    <ul class="gnbsub">
+                        <li><a href="">STORE</a></li>
+                        <li><a href="">ONLINE SHOP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="">CONTACT</a></h2>
+                    <ul class="gnbsub">
+                        <li><a href="">VISIT</a></li>
+                        <li><a href="">REGISTER</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="enb">
+                <li><a href="">KaKao login</a></li>
+                <li><a href="">Sign up</a></li>
+            </ul>
+        </div>
+    </header>

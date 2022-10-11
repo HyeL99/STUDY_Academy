@@ -1,0 +1,60 @@
+header{
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(125,125,125,0.3);
+    position: relative;
+    z-index: 1;
+}
+header div.inner {
+    height: 30px;
+    padding: 50px 50px 20px;
+}
+header div.inner h1 {
+}
+header div.inner h1 a {
+    display: block;
+    width: 86px;
+    height: 30px;
+    background: url("../assets/img/logo.png") no-repeat center / contain;
+    font-size: 0;
+}
+header div.inner div.inputPlace {
+    flex: 1;
+    margin: 0 50px;
+    background: #f7f7f7;
+    height: 100%;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 0 30px 0 50px;
+    position: relative;
+}
+header div.inner div.inputPlace::before{
+    content:"search icon";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../assets/img/search.png') no-repeat center / contain;
+    left: 15px;
+    font-size: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header div.inner div.inputPlace input {
+    width: 100%;
+    line-height: 24px;
+    border: 0;
+    margin-top: 2px;
+    outline: 0;
+    background: transparent;
+}
+header div.inner nav {
+}
+header div.inner nav ul.gnb {
+    column-gap: 50px;
+}
+header div.inner nav ul.gnb li {
+    font-size: 12px;
+    font-weight: 700;
+}
+header div.inner nav ul.gnb li a {
+}

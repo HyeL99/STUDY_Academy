@@ -1,0 +1,107 @@
+main {
+    background: #fff;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px #bbb;
+}
+main div.inner {
+    width: 400px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+main div.inner div.wrap {
+    border: 2px solid #444;
+    border-radius: 15px;
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+main div.inner div.wrap div.face {
+    width: 180px;
+    height: 90px;
+    padding: 16px;
+    background: #71b2ff;
+    border-radius: 15px;
+    border: 2px solid #444;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+main div.inner div.wrap div.face span {
+    display: block;
+    font-size: 0;
+    width: 180px;
+    height: 90px;
+    background: url('../assets/img/face.png') no-repeat center / cover;
+}
+main div.inner div.wrap div.content {
+}
+main div.inner div.wrap div.content h2 {
+    font-size: 0;
+    height: 60px;
+    width: 180px;
+    background: url('../assets/img/loginTitle.png') no-repeat center / contain;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    position: relative;
+}
+main div.inner div.wrap div.content h2::before{
+    content:"underline";
+    font-size: 0;
+    display: block;
+    position: absolute;
+    width: 240px;
+    height: 0;
+    border-top: 1px solid #ddd;
+    bottom: -25px;
+    left: calc(50% - 120px);
+}
+main div.inner div.wrap div.content button {
+    width: 80%;
+    height: 40px;
+    margin: 5px auto;
+    border: 2px solid #444;
+    border-radius: 10px;
+    position: relative;
+    background: #24cd0b;
+    color: #fff;
+    cursor: pointer;
+}
+main div.inner div.wrap div.content button::before {
+    content: "button-icon";
+    position: absolute;
+    left: 10px;
+    top:50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 34px;
+    height: 34px;
+    font-size: 0;
+    background: url('../assets/img/social/logo-naver.png') no-repeat center / cover;
+}
+main div.inner div.wrap div.content button:nth-of-type(2){
+    background: #fee502;
+    color: #444;
+}
+main div.inner div.wrap div.content button:nth-of-type(2)::before{
+    background: url('../assets/img/social/logo-kakao.png') no-repeat center / cover;
+}
+main div.inner div.wrap div.content button:nth-of-type(3){
+    background: #fff;
+    color: #444;
+    margin-bottom: 50px;
+}
+main div.inner div.wrap div.content button:nth-of-type(3)::before{
+    background: url('../assets/img/social/logo-google.png') no-repeat center / cover;
+}
+main div.inner div.wrap > p {
+    line-height: 1.5;
+    font-weight: 500;
+}
+main div.inner div.wrap > p span {
+}
+main div.inner div.wrap > p a {
+    font-weight: 700;
+    text-decoration: underline;
+}

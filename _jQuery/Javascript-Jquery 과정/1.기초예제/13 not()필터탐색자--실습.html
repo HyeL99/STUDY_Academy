@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(document).ready(	
+	function(){
+		//클래스가 last가 아닌 li들에 배경색 지정하시오
+		$("li").not(".last").css("background","red");
+		//li중에 짝수(even)가 아닌 li의 글자색을 blue로 지정하시오
+		$("li").not(":even").css("color","blue"); // even 짝수의 / odd 홀수의   ---> li:fisrt형식처럼
+		//li중에 홀수(odd)가 아닌 li의 글자색을 흰색으로 지정하시오
+		$("li").not(":odd").css("color","white"); 
+		//li중에 첫번째 3번째 li가 아닌 것에 밑줄 지정하시오.....
+		$("li").not(":eq(0),:eq(2)").css("text-decoration","underline");
+		// li중에 표준게시판을 포함한 li에 클래스 a와 b를 붙이시오
+		$("li:contains('표준게시판')").addClass("a b");
+	}
+);
+</script>
+<style type="text/css">
+	li.menu{
+		font-size:40px;
+		}
+	li.first{
+		background:#000 !important;
+		}
+	li.last{
+		background:green;
+		}
+	
+</style>
+</head>
+<body>
+	<ul>
+    	<li class="first menu">html</li>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>html5</li>
+        <li>css3</li>
+        <li class="last menu">표준게시판</li>
+    </ul>
+</body>
+</html>

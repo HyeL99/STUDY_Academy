@@ -1,0 +1,27 @@
+/*animate section*/
+section#box_wrap {width: 100%; overflow: hidden;margin-top: 200px;}
+#box_wrap .box {width: 1100px; margin: 0 auto;height: 250px;border: 2px solid #000;position: relative;overflow: hidden;}
+#box_wrap .box ul {width: 400%; position: absolute; top: 0; left: 0;height: 100%;}
+#box_wrap .box li.stage {list-style: none; height: 250px; float: left; width: 25%;}
+
+#box_wrap .box .stage p:first-child {background: #517edb; color: #fefefe;padding: 10px 10px; font-weight: 700;border-bottom: 1px solid #fff;text-align: center;}
+#box_wrap .box .stage p:first-child+p {font-weight: 600; border-bottom: 1px dotted #fff; padding: 10px 10px;background: #4778b7;color: #fff;text-align: center;}
+#box_wrap .box .stage ol {padding-left: 80px;margin-top: 22px;}
+#box_wrap .box .stage ol li {padding: 5px 2px;}
+
+#box_wrap .box .stage_1 {background: red; color: #fff;}
+#box_wrap .box .stage_2 {background: green;color: #fff;}
+#box_wrap .box .stage_3 {background: black;color: #fff;}
+#box_wrap .box .stage_4 {background: yellow;color: #000;}
+
+
+/*button-click-section*/
+section#click_function {width: 100%; clear: both;}
+#click_function dl {width: 1100px; margin: 0 auto;}
+#click_function dl dd {float: left; width: 25%; height: 50px;}
+#click_function dl dd button {width: 100%; height: 100%;}
+#click_function dl dd button.a {background: red; color: #fff;}
+#click_function dl dd button.b {background: green;color: #fff;}
+#click_function dl dd button.c {background: black;color: #fff;}
+#click_function dl dd button.d {background: yellow;color: #000;}
+

@@ -1,0 +1,43 @@
+<script type="text/javascript" src="easing/jquery.easing.1.3.js"></script>
+
+$("ul.menu li a.m3").click(
+  function(){
+    $("div ul").animate({"left":"-2000px"},1000,"easeInOutBounce");
+  }
+);
+
+url : http://rayuela.kr/ex/r1310251956.html
+
+linear
+swing
+jswing
+easeInQuad
+easeOutQuad
+easeInOutQuad
+easeInCubic
+easeOutCubic
+easeInOutCubic
+easeInQuart
+easeOutQuart
+easeInOutQuart
+easeInQuint
+easeOutQuint
+easeInOutQuint
+easeInSine
+easeOutSine
+easeInOutSine
+easeInExpo
+easeOutExpo
+easeInOutExpo
+easeInCirc
+easeOutCirc
+easeInOutCirc
+easeInElastic
+easeOutElastic
+easeInOutElastic
+easeInBack
+easeOutBack
+easeInOutBack
+easeInBounce
+easeOutBounce
+easeInOutBounce

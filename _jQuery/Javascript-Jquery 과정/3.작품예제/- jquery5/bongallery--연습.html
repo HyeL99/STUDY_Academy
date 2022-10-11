@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>본문갤러리3</title>
+<style>
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#box_wrap{
+	width:700px;
+	margin:0 auto;
+}
+
+.thumbs{
+	width:100px;
+	float:left;
+}
+
+.thumbs img{
+	border:solid 1px #ccc;
+	padding:5px;
+	margin-bottom:8px;
+}
+
+.thumbs img:hover{
+	border-color:#ef4018;
+}
+
+
+#largeImg{
+	float:left;
+	display:inline;
+	border:solid 1px #ccc;
+	width:500px;
+	height:280px;
+	padding:5px;
+	margin-left:10px;
+/*	overflow:hidden;
+*/}
+
+em{
+	display:none;
+}
+#caption{
+	background:url(images/1/captionBg.png) repeat-y;   /* 자막 투명 지원 ie6에서 안됨 */
+	border:#ccc 1px thin;
+	padding:10px;
+	position:relative;
+	color:#fff;
+}
+
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(
+		function(){
+			
+		}
+	);
+</script>
+</head>
+
+<body>
+    <div id="box_wrap">
+        <div class="thumbs">
+            <a href="images/1/pic1.jpg" title="image1">
+                <img src="images/1/th_pic1.jpg" />
+            </a>
+            <em>
+            1Lorem Ipsum is simply dummy text of the pdrinting and typesetting industry.
+            </em>
+           
+            <a href="images/1/pic2.jpg" title="image2">
+            <img src="images/1/th_pic2.jpg" />
+            </a>
+            <em> 
+            2Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
+             Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis tempor magna 
+             sem vel justo. Etiam eget ipsum ante. 
+            </em> 
+                
+            <a href="images/1/pic3.jpg" title="image3">
+                <img src="images/1/th_pic3.jpg" />
+            </a>
+            <em> 3Lorem Ipsum is simply dummy.</em>
+            
+        </div>
+        <div id="largeImg"><img src="images/1/pic1.jpg" alt="image1" /></div>
+    </div>
+</body>
+</html>

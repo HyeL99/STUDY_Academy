@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+		*{
+		margin:0;
+		padding:0;
+	  }
+	  body{
+		  }
+	div#menu h1{
+		text-align:center;
+		height:100px;
+		line-height:100px;	
+		}
+	div#menu ul{
+		background:rgba(0,0,0,0.5);
+		transition:all 1s;
+		height:80px;
+		width:1000px;
+		/*z-index:2;*/
+		text-align:center;
+		line-height:80px;
+		}
+		div#menu ul li{
+			display:inline-block;
+			width:25%;
+			vertical-align:top;
+			}
+		.a{
+			
+			}
+		.red{
+			background: #F60 !important;
+			}
+		.green{
+			background: #6C0 !important;
+			}
+		.blue{
+			background: #39F   !important;
+			}
+		.yellow{
+			background: #F0F !important;
+			}
+	div#wrap{
+		width:1000px;
+		padding:120px 0 0 0;
+		margin:0 auto;
+		position:relative;
+		}
+	div#wrap div#title{
+		height:600px;
+		}
+	div#wrap div{
+		height:600px;
+		}
+	div#area1{
+		background:#0C0;
+		transition:background 1s, margin-top 3s;
+		margin-top:100px;
+		opacity:1;
+		position:relative;
+		overflow:hidden;
+		}
+		div#area1 h2{
+			position:absolute;
+			left:-10%;
+			}
+		div#area1 p{
+			position:absolute;
+			right:-10%;
+			width:90%;
+			}
+	div#area2{
+		background: #FF6;
+		opacity:1;
+		}
+	div#area3{
+		background: #CCF;
+		opacity:1;
+		}
+	div#area4{
+		background: #099;
+		opacity:1;
+		}
+	.fixed{
+		position:fixed !important;
+		top:0 !important;
+		}
+	.current{
+		background:#ededed !important;
+		margin-top:0px !important;
+		
+		}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(function(	){
+			//문서를 스크롤하면 실행해라
+			var m=$("div#menu").offset().top;
+			var a1=$("div#area1").offset().top-$("div#area1").height()/2;
+			var a2=$("div#area2").offset().top;
+			var a3=$("div#area3").offset().top;
+			var a4=$("div#area4").offset().top;
+			console.log(m);
+			console.log("1번째 div의 위치: " + a1);
+			console.log("2번째 div의 위치: " + a2);
+			console.log("3번째 div의 위치: " + a3);
+			console.log("4번째 div의 위치: " + a4);
+			$(document).on("scroll",function(){	//스크롤 이벤트
+				console.log($(window).scrollTop())
+				//메뉴div안의 ul의 스타일을 지정하시오(position값을 fixed로)
+				if($(window).scrollTop()>m){ //$(window).scrollTop()은 창의 스크롤바상단위치값을 의미
+					$("div#menu ul").css("position","fixed").css("top",0);
+				}
+				if($(window).scrollTop()<119){
+					$("div#menu ul").css("position","relative");
+				}
+				if($(window).scrollTop()>=a1){
+					$("div#area1").stop().animate({"opacity":1},1000);
+					$("div#area1 h2").stop().animate({"left":0},2000);
+					$("div#area1 p").stop().animate({"right":0},2000);
+				}
+				if($(window).scrollTop()<a1){
+					$("div#area1").stop().animate({"opacity":0},1000);
+					$("div#area1 h2").stop().animate({"left":"-10%"},2000);
+					$("div#area1 p").stop().animate({"right":"-10%"},2000);
+				}
+				
+			});		
+	});
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<div id="menu">
+		<ul>
+			<li>마이프로필</li>
+			<li>그래픽작품</li>
+			<li>웹작품</li>     
+		</ul>
+	</div>
+	<div id="area1">
+		<h2>마이프로필</h2>
+		<p>
+		<img src="http://www.placehold.it/500x500" >
+		</p>
+	</div>
+	<div id="area2">
+	</div>
+	<div id="area3">
+	</div>
+	<div id="area4">
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<style>
+div{
+	width:100px;
+	height:100px;
+	background:#ccc;
+	margin-top:20px;
+	cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="box1">box1</div>
+<div id="box2">box2</div>
+
+
+<script>
+
+$("#box1").click(function(){
+	n=7;
+	change1();
+});
+
+$("#box2").click(function(){
+	n=4;
+	change1();
+});
+
+function change1(){
+	if(n>5){
+		$("#box1").css("color","#f60");
+	}else{
+		$("#box2").css("color","#00f");
+	}
+}
+
+</script>
+</body>
+</html>
+
+
+
+<!--
+if(조건){
+	명령1
+}else{
+	명령2
+}
+
+만약 조건에 만족하면(true) 명령1이 실행
+그렇지 않다면(false) 명령2가 실행
+-->
+
+
+
+
+
+
+

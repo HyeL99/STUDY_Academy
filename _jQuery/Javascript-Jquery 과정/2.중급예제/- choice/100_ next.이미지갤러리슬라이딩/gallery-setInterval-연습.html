@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>animate()메서드</title>
+	<link href="style.css" type="text/css"  rel="stylesheet" />
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <!--<script src="js/next.js"></script>-->
+   <!-- <style>
+	</style>-->
+    <script>
+        //$(document).ready(function(){
+
+        //});
+        $(function(){
+            var n=0;
+            var slide = setInterval(function(){
+                if(n<2){
+                    n++;
+                    $("div ul").stop().animate({"left":-100*n+"%"},1000);
+                }else{
+                    n=0;
+                    $("div ul").stop().animate({"left":-100*n+"%"},1000);
+                }
+               
+            },2000);
+
+            $(".pause").click(function(){
+                clearInterval(slide);
+            });
+            $(".play").click(function(){
+                slide = setInterval(function(){
+                        if(n<2){
+                            n++;
+                            $("div ul").stop().animate({"left":-100*n+"%"},1000);
+                        }else{
+                            n=0;
+                            $("div ul").stop().animate({"left":-100*n+"%"},1000);
+                        }
+                    
+                    },2000);
+            });
+            $("ul.sm li:first").click(
+					function(){
+						n=1;
+						$("div ul").stop().animate({left:"0px"},500);
+                        clearInterval(slide);
+					}
+				);
+				$("ul.sm li:nth-child(2)").click(
+					function(){
+						n=2;
+						$("div ul").stop().animate({left:"-250px"},500);
+                        clearInterval(slide);
+					}
+				);
+				
+				$("ul.sm li:nth-child(3)").click(
+					function(){
+						n=3;
+						$("div ul").stop().animate({left:"-500px"},500);
+                        clearInterval(slide);
+					}
+				);
+
+                $("ul.sm li").mouseleave(function(){
+                    slide = setInterval(function(){
+                        if(n<2){
+                            n++;
+                            $("div ul").animate({"left":-100*n+"%"},1000);
+                        }else{
+                            n=0;
+                            $("div ul").animate({"left":-100*n+"%"},1000);
+                        }
+                    
+                    },2000);
+                });
+            /*
+            // h2회전
+            var r=0;
+            setInterval(function(){
+                r += 6;
+                $("h2").css("transform","rotate("+r+"deg)");
+            },3000);
+            
+            //카운터숫자
+            var c=0;
+            $("p").text(c);
+            setInterval(function(){
+                c++;
+                $("p").text(0+c);
+            },1000);
+            */
+        });
+    </script>
+    <style>
+        h2{
+            width: 100px;
+            height: 2px;
+            background-color: #777;
+            margin: 100px 0;
+        }
+        p{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <h2></h2>
+    <p></p> -->
+    <div>
+    	<ul>
+        	<li><img src="img/w1.jpg" /></li>
+            <li><img src="img/w2.jpg" /></li>
+            <li><img src="img/w3.jpg" /></li>
+        </ul>
+    </div>
+    <span class="control">
+		<a class="pause">pause</a> <a class="play">play</a>
+	</span>
+    <ul class="sm">
+        	<li><img src="img/w1.jpg" /></li>
+            <li><img src="img/w2.jpg" /></li>
+            <li><img src="img/w3.jpg" /></li>
+    </ul>
+</body>
+</html>

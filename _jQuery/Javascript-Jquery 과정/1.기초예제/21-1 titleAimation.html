@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>slick</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/midify.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(
+        function(){
+          /*
+          $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+          });
+          $('.slider-nav').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+          });
+          */
+          $('.slider').slick({
+            dots: true, // 캐러셀 하단에 화면 개수 만큼 도트 생성
+            infinite: true, // 마지막 화면에서 처음 화면으로 이어줌
+            //infinite: false, // 마지막 화면에서 더이상 캐러셀이 진행되지 않음.
+            speed: 300, //슬라이드가 넘어가는 시간
+            fade: true, //화면이 넘어갈 때 fade 효과 부여
+            cssEase: 'linear', //화면이 넘어갈 때 fade의 ease효과 부여
+            slidesToShow: 2, // 보여지는 화면 개수
+            slidesToScroll: 1, // 스크롤하면 넘어가는 화면 개수
+            autoplay: true, //자동으로 화면 넘김
+            autoplaySpeed: 2000, //자동으로 넘기는데 걸리는 시간
+            //rtl: true, //캐러셀 역방향 정렬
+
+          });
+        }
+      );
+    </script>
+    <style>
+      img{
+        width: 100%;
+      }
+      .wrap{
+        width: 90%;
+        margin: 0 auto;
+        padding: 70px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="slider">
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_01.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_02.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_03.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_04.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_05.jpg" alt=""></li>
+      </ul>
+    </div>
+  </body>
+</html>

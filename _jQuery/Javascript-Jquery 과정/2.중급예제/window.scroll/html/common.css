@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+div#all{
+	margin:0 auto;
+	/*width:1028px;*/
+	width:1259px;
+	height:590px;
+	}
+	div#contents{
+		width:935px;
+		height:620px;
+		float:left;
+		outline:1px solid red;
+		}
+	div#menu{
+		width:93px;
+		/*height:520px;*/
+		height:620px;
+		overflow:hidden;
+		outline:1px solid blue;
+		}
+		div#menu ul li{
+			float:left;
+			}
+		div#menu ul li.m1{
+			width:31px;
+			height:520px;
+			background-color:#a2a2a2;
+			}
+		div#menu ul li.m2{
+			width:31px;
+			height:520px;
+			background-color:#be2c2f;
+			}
+		div#menu ul li.m3{
+			width:31px;
+			height:520px;
+			background-color:#171d37;
+			}

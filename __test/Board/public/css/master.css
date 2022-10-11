@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.breadcrumb-item {
+    font-size: 0.8em !important;
+}
+.ellipsis{
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 1 */
+}
+
+.board-table {
+    table-layout: fixed;
+}
+.board-table .date {
+    width: 100px;
+}
+
+.post-body{
+    white-space: pre-line; /* 2 */
+}
+.post-info{
+    font-size: 0.8em;
+}
+.user-form {
+    width: 400px;
+}
+
+/*
+1. ellipsis는 해당 element의 text가 너무 길 경우, 넘치는 text를 ...로 표시해줍니다.
+
+2. 이 부분이 없으면 게시물 본문의 줄바꿈(/n)이 표현되지 않습니다.
+왜냐하면 HTML에서의 줄바꿈은 <br/>이기 때문이죠.
+이 부분을 통해 /n이 제대로 줄바꿈을 표현할 수 있게 됩니다.
+*/

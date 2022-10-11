@@ -1,0 +1,120 @@
+header {
+  position: sticky;
+  width: 100%;
+  top: -30px;
+  left: 0;
+  z-index: 1;
+}
+header a {
+  color:white;
+}
+header .inner {
+  height: 100px;
+  padding-top: 25px;
+  align-items: flex-end;
+  /*! background: gray; */
+  padding-bottom: 25px;
+  width: 90%;
+  position: relative;
+}
+header .inner h1 {
+  position: absolute;
+  width: 330px;
+  left: calc(50% - 165px);
+  /*! text-align: center; */
+  /*! order: 2; */
+}
+header .inner h1 a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 23px;
+}
+
+header .inner h1 img{
+  transform: translateY(-10px);
+}
+header .inner .wgnb{
+  order: 1;
+}
+header .inner .wgnb nav {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 130px;
+}
+header .inner .wgnb nav ul.gnb {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  text-align: start;
+  position: absolute;
+  left: 15%;
+  top: calc(50% - 100px);
+  transform: translateY(-50%);
+}
+header .inner .wgnb nav ul.gnb li {
+
+}
+header .inner .wgnb nav ul.gnb>li>a {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 3;
+}
+header .inner .wgnb nav ul.gnb li ul.gnbSub {
+
+}
+header .inner .wgnb nav ul.gnb li ul.gnbSub li {
+  color:#fff;
+  font-size: 17px;
+  font-weight: 500;
+  line-height:2;
+  opacity: 0.5
+}
+header .inner .wgnb nav ul.gnb li ul.gnbSub li a {
+}
+.wgnb-bottom{
+  position: absolute;
+  left: 5%;
+  bottom: 55px;
+  width: 90%;
+  opacity: 0;
+}
+.wgnb-bottom p{
+  color: #fff;
+  opacity: 0.3;
+  font-size: 13px;
+  font-weight: 500;
+}
+.wgnb-bottom ul.social {
+  height: 100%;
+}
+.wgnb-bottom ul.social li {
+}
+.wgnb-bottom ul.social li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url("../img/logo-facebook.svg") no-repeat 50%/88%;
+  opacity: 0.3;
+  font-size: 0;
+}
+.wgnb-bottom ul.social li:hover a {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+.wgnb-bottom ul.social li:nth-of-type(2) a {
+  background: url("../img/logo-instagram.svg") no-repeat center/90%;
+}
+.wgnb-bottom ul.social li:nth-of-type(3) a {
+  background: url("../img/logo-blog.svg") no-repeat center/110%;
+}
+header .inner .enb{
+  order: 3;
+}
+header .inner .enb li{
+  margin-left: 30px;
+}
+header .inner .enb li a{
+
+}

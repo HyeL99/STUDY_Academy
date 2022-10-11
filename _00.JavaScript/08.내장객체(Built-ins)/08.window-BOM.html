@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체 - window(browser)객체</title>
+    <style>
+        body{
+            background: lightcyan;
+            color: rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        body > div{
+            width: 600px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            margin: 200px auto;
+            padding: 20px;
+            color: #fff;
+        }
+        #p1{
+            font-size: 20px;
+        }
+        #p1 h2 {
+            color: lightcyan;
+        }
+        hr{
+            border:1px solid #fff;
+        }
+        .lo {
+            padding-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .btns{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Browser Object Model (BOM)</h1>
+        <p id="p1">
+        </p>
+    </div>
+    <p class="btns">
+        <a href="javascript:window.history.back()">◀ 뒤로가기</a>
+        <a href="javascript:reload()">페이지 새로 고침🔁</a>
+        <a href="#">새창열기 ▶</a>
+    </p>
+    <script>
+        const $p1 = document.querySelector('#p1');
+        const $p2 = document.querySelector('.btns a:nth-of-type(3');
+        let msg = `<h2>현재 열려있는 브라우저 창</h2>`;
+        msg += `<p>너비 : ${window.innerWidth}px</p>`;
+        msg += `<p>높이 : ${window.innerHeight}px</p>`;
+        //브라우저창의 너비와 높이
+
+        msg += `<h2>현재 열려있는 디바이스(화면)</h2>`;
+        msg += `<p>너비 : ${window.screen.width}px</p>`;
+        msg += `<p>높이 : ${window.screen.height}px</p>`;
+        // 화면 전체 크기 (모니터, 핸드폰 기기의 화면 크기)
+
+        msg += `<h2>히스토리</h2>`;
+        msg += `<p>아이템 : ${window.history.length}</p>`;
+        //브라우저의 히스토리에 저장된 페이지 개수(현재 페이지 포함)
+
+        msg += `<h2>현재 페이지의 위치</h2>`;
+        msg += `<p class='lo'>URL : ${window.location}</p>`;
+        
+        $p1.innerHTML = msg;
+
+        function reload(){
+            window.location.reload();   //새로고침, F5 누른 효과
+        }
+        function winOpen(){
+            window.open('06.date.html', 'pop', 'width=500, height=500');
+            //window.open('웹페이지 주소', '이름', '속성들')
+        }
+        
+        const btnNew = document.querySelector('.btns a:nth-child(3');
+        btnNew.onclick = winOpen;   //함수의 소괄호 생략
+    </script>
+</body>
+</html>

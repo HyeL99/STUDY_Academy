@@ -1,0 +1,48 @@
+/* commen */
+body {
+    background: #eee;
+    color: #444;
+    min-width: 800px;
+}
+
+/* class */
+.hide{
+    display: none;
+}
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.scrollBox{
+    -ms-overflow-style: none;
+}
+.scrollBox::-webkit-scrollbar{
+    display:none;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+.fCol {
+    flex-direction: column;
+}
+.jusCen {
+    justify-content: center;
+}
+.jusSpaBet {
+    justify-content: space-between;
+}
+.alnCen {
+    align-items: center;
+}
+.alnEnd {
+    align-items: flex-end;
+}
+.jusEnd {
+    justify-content: flex-end;
+}
+.fWrap {
+    flex-wrap: wrap;
+}

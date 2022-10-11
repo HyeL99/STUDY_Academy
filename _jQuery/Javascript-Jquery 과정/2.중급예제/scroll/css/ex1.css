@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+body{
+	margin:20px auto;
+	width:700px;
+	padding:0;
+	background:#192839;
+}
+
+.thumbs{
+	width:100px;
+	float:left;
+}
+
+.thumbs img{
+	border:solid 1px #ccc;
+	padding:5px;
+	margin-bottom:8px;
+}
+.thumbs img:hover{
+	border-color:#ef4018;
+}
+
+#largeImg{
+	float:left;
+	display:inline;
+	border:solid 1px #ccc;
+	width:500px;
+	height:280px;
+	padding:5px;
+	margin-left:10px;
+	overflow:hidden;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>갤러리</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div{
+			width:960px;
+			height:640px;
+			border:2px solid gray;
+			margin:90px auto 0;
+			position:relative;
+			overflow:hidden;
+			border-radius:7px;
+			}
+			div ul{
+				position:absolute;
+				width:3840px;
+				}
+				div ul li{
+					float:left;
+					width:960px;
+					height:640px;
+					line-height:240px;
+					text-align:center;
+					}
+			div a[href="#1"]{
+				text-decoration:none;
+				position:absolute;
+				left:0;
+				top:320px;
+				background:#FC0;
+				border-radius:0 7px 7px 0;
+				padding:3px;
+				}	
+			div a[href="#2"]{
+				text-decoration:none;
+				position:absolute;
+				right:0;
+				top:320px;
+				background:#FC0;
+				border-radius:7px 0 0 7px;
+				padding:3px;
+				}
+	</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				var n=0;
+				$("a[href='#1']").click(
+					function(){
+						n--;
+						console.log(n);
+						if(n>-1){
+						$("ul").animate({"left":"+=960px"},1500,"easeOutSine");
+						}
+						if(n<0){
+							n=0;
+						}
+//						if("div ul".left()==0){
+//							$("a[href='#1']").hide();
+//						}else{
+//							$("a[href='#1']").show();
+//							}
+					}
+				);
+				$("a[href='#2']").click(
+					function(){
+						n++;
+						console.log(n);
+						if(n<4){
+						$("ul").animate({"left":"-=960px"},1500,"easeOutSine");
+						}
+						if(n>3){
+							n=3;
+							console.log(n);
+							}
+//						if("div ul".left()==0){
+//							$("a[href='#1']").hide();
+//						}else{
+//							$("a[href='#1']").show();
+//							}
+					}
+				);
+			}
+		);
+	</script>
+	<script src="easing/jquery.easing.1.3.js"></script>
+	<script src="easing/jquery.easing.compatibility.js"></script>
+</head>
+
+<body>
+	<div class="pro">
+        <ul>
+            <li><img src="img/p1.jpg"></li>
+            <li><img src="img/p2.jpg"></li>1
+            <li><img src="img/p3.jpg"></li>2
+            <li><img src="img/p4.jpg"></li>3
+        </ul>
+        <a href="#1">이전</a><a href="#2">이후</a>
+    </div>
+</body>
+</html>

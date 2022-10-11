@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-edit">
+        <h2>Edit</h2>
+        <form class="contact-form" action="/contacts/<%= contact._id %>?_method=put" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<%= contact.name %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" value="<%= contact.email %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" value="<%= contact.phone %>" class="form-control">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<!--
+    edit.ejs는 new.ejs와 거의 같지만 form에 해당 data의 값들이 미리 들어 있고, form action이 다릅니다.
+    put 역시 form에서 사용할 수 없으므로 _method=put을 사용하였습니다.
+-->

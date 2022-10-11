@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+
+	}
+	div.fullbg{
+		position:fixed;
+		left:0;
+		top:0;
+		z-index:-1;
+		width:100%;
+		height:692px;
+		}
+		div.fullbg img{
+			width:100%;
+			height:auto;
+			}
+	h1,h2{
+		text-align:center;
+		}
+	h1{
+		margin:73px 0 38px 0;
+		}	
+	div#quick{
+		z-index:20;
+		}
+/*헤더영역...................................................................................................................................*/
+	header{
+		width:100%;
+		}
+		/*메뉴영역...................................................................................................................................*/
+		header div#menu{
+				margin:0 auto;
+				height:61px;
+				/*background:url(img/menubg.jpg) no-repeat;*/
+				}
+				header div#menu .small1{
+					margin:0 auto;
+					width:1000px;
+					height:61px;
+					overflow:hidden;
+					}
+					header div#menu .small1 ul{
+						padding-top:24px;
+						float:right;
+						}
+						header div#menu .small1 ul li{
+							float:left;
+							margin-left:80px;
+							}
+		
+		/*메인영역...................................................................................................................................*/	
+		header div#main{
+				margin:0 auto;
+				height:631px;
+				position:relative;
+				/*background:url(img/mainbg.jpg) no-repeat;*/
+				}
+				header div#main p img{
+						position:absolute;
+						bottom:104px;
+						left:48%;
+						}
+
+
+/*섹션영역...................................................................................................................................*/	
+	section{
+			position:relative;
+			}
+		
+		/*퀵영역...................................................................................................................................*/		
+		section div#quick{
+			position:absolute;
+			right:10px;
+			top:20px;
+			}
+			
+		/*어바웃영역...................................................................................................................................*/	
+		section div#about{
+				margin:0 auto;
+				height:692px;
+				background:url(img/aboutbg.jpg) no-repeat center -1px #fff;
+				overflow:hidden;
+				}
+				section div#about .small2{
+						margin:0 auto;
+						width:1000px;
+						height:692px;
+						}
+						section div#about .small2 ul{
+							margin:69px 0 0 155px;
+							}
+							section div#about .small2 ul li{
+							 	float:left;
+								}
+								section div#about .small2 ul li:first-child{
+									margin-right:93px;
+									}
+			
+		/*그래픽영역...................................................................................................................................*/	
+		section div#graphic{
+				margin:0 auto;
+				height:1588px;
+				/*border:1px solid red;*/
+				background:url(img/graphicbg.jpg) repeat-x;
+				overflow:hidden;
+				}
+				section div#graphic .small3{
+						margin:0 auto;
+						width:1000px;
+						height:1588px;
+						/*border:1px solid red;*/
+						}
+						section div#graphic .small3 h2{
+							margin-bottom:120px;
+							}
+						section div#graphic .small3 ul{
+							width:1000px;
+							cursor: default;
+/*							overflow:hidden;*/
+							}
+							section div#graphic .small3 ul:first-child{
+								margin-top:93px;
+								}
+								section div#graphic .small3 ul a{
+									cursor: default;
+									}
+									section div#graphic .small3 ul .preview{
+										display: none;
+										width: 351px;
+										height: 351px;
+										}
+									section div#graphic .small3 ul a:hover .preview{
+										display: block;
+										position: absolute;
+										top: -33px;
+										left: -45px;
+										z-index: 1;
+										}
+								section div#graphic .small3 ul img{
+									border:1px solid red;
+									color: inherit;
+									vertical-align: top;
+									width: 237px;
+									height: 237px;
+									}			
+							section div#graphic .small3 ul li{
+								outline:1px solid black;
+								width:237px;
+								height:237px;
+								float:left;
+								margin-right:14px;
+								margin-bottom:93px;
+								color: inherit;
+/*								display: inline;*/
+								position: relative;
+								}
+								section div#graphic .small3 ul li.last{
+									margin-right:0;
+									}
+								section div#graphic .small3 ul li:first-child+li+li+li{
+									margin-right:-17px;
+									}
+	
+		/*웹영역...................................................................................................................................*/	
+		section div#web{
+				margin:0 auto;
+				height:692px;
+				border:1px solid red;
+				background:url(img/webbg.jpg) no-repeat center top #F2F2F2;
+				}
+				section div#web .small4{
+						margin:0 auto;
+						width:1000px;
+						height:692px;
+						border:1px solid red;
+						position:relative;
+						}
+						section div#web .small4 p.leftp{
+						position:absolute;
+						top:400px;
+						left:68px;
+						outline:1px red green;
+						}
+						section div#web .small4 p.rightp{
+						position:absolute;
+						top:400px;
+						right:68px;
+						}
+						section div#web .small4 div.slide{
+							width:558px;
+							height:317px;
+							overflow:hidden;
+							margin:87px 0 0 222px;
+							position:relative;
+							top: 182px !important;
+							}
+						section div#web .small4 ul{
+							width:2790px;
+							overflow:hidden;
+							position:absolute;
+							top:0;
+							left:0;
+							}
+							section div#web .small4 ul li{
+							float:left;
+							}
+			
+		/*컨텍트영역...................................................................................................................................*/	
+		section div#contact{
+				margin:0 auto;
+				height:692px;
+				border:1px solid red;
+			/*	background-color:#3fc7c7;*/
+				position:relative;
+				}
+				section div#contact .small5{
+						margin:0 auto;
+						width:1000px;
+						height:692px;
+						border:1px solid red;
+						}
+						section div#contact .small5 h2{
+							margin-bottom:113px;
+							}
+						section div#contact .small5 p{
+							width:456px;
+							height:44px;
+							background-color:#fff;
+							margin:0 auto;
+							}
+							section div#contact .small5 p:hover{
+							width:456px;
+							height:44px;
+							background-color:#c3f2f2;
+							}
+				   div.cbg{
+					  width:100%;
+					  position:fixed;
+					  left:0;
+					  top:500px;
+					  height:692px;
+					  z-index:-1;
+					  background:#3fc7c7;
+					  overflow:hidden;
+					  border:2px solid red;
+					  }	
+					    #contact div.cbg img{
+							width:100%;
+							height:auto;
+							}

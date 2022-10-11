@@ -1,0 +1,53 @@
+.menuback{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  left: 0;
+  top: 0;
+  animation-name:scalewide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform-origin: 0 0;
+  transition: left 0.5s;
+  overflow:hidden;
+}
+@keyframes scalewide{
+  0%{
+   width: 0; 
+  }
+  100%{
+   width: 100%; 
+  }
+}
+.menubackmove{
+  left: 100%;
+}
+.menuback .wrapsns{
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  padding:0 15% 60px 15%;
+  box-sizing: border-box;
+  display:flex;
+  justify-content:space-between;
+}
+.menuback .copyright{
+  color: #fff;
+  overflow: hidden;
+}
+.menuback .copyright span{
+  transform: translateY(100%);
+  display: block;
+  transition: transform 1s;
+  transition-delay: 1s;
+}
+.menuback .sns{
+ overflow: hidden;
+}
+.menuback .sns li{
+  transform: translateY(100%);
+  transition: transform 1s;
+  transition-delay: 1s;
+}

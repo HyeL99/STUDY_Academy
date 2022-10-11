@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>21</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<style>
+div{
+	width:100px;
+	height:100px;
+	background:#ccc;
+	margin-top:20px;
+	cursor:pointer;
+	/* 트랜지션지정해서 크기가 커지는 애니*/
+	transition:width 1s;
+}
+</style>
+</head>
+
+<body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+<script>
+	//이름있는 함수선언하기 function 이름(){실행할 명령;} 
+	   function pop(){
+		   //만약에 
+		   //조건()안에 기재-has를 이용하기 $("div").has("box1")
+		   if($("div").has("box1")){
+			   $("div#box1").css("width","200px");
+			}else if($("div").has("box2")){
+				$("div#box2").css("width","200px");
+				   }
+		   
+		   
+	   }
+	// 각 div를 클릭하면 함수실행
+	   $("div").click(
+		 function(){
+			pop();
+		 }
+	   );
+</script>
+</body>
+
+</html>

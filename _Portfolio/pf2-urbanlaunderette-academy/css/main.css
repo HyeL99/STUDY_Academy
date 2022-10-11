@@ -1,0 +1,439 @@
+div.tnb{
+ position: sticky;
+ top: 0px;
+}
+div.tnb ul.menu{
+position: absolute;
+top: 0px;
+}
+
+main{
+  position: relative;
+}
+#service {
+  
+}
+#service .inner {
+  
+  padding-bottom: 460px;
+  position: relative;
+}
+#service .inner hgroup {
+  
+}
+#service .inner hgroup h2 {
+  
+  color: #ccc;
+}
+#service .inner hgroup h3 {
+  line-height: 2;
+}
+#service .inner .contents {
+  flex-wrap: wrap;
+  row-gap: 150px;
+  margin-top: 60px;
+  column-gap: 50px;
+}
+#service .inner .contents article {
+  width: calc(100% / 3 - 100px / 3);
+}
+#service .inner .contents article:nth-child(3n+1){
+  transform: translateY(25%);
+}
+#service .inner .contents article:nth-child(3n+2){
+  transform: translateY(50%);
+}
+#service .inner .contents article a {
+  
+}
+#service .inner .contents article a::before{
+  content: "";
+  width: 100%;
+  display: block;
+  height: 595px;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s;
+  box-sizing: border-box;
+  background-origin: border-box;
+  border: 0px solid green;
+}
+#service .inner .contents article a:hover::before{
+  border: 50px solid green;
+}
+#service .inner .contents article:nth-child(1) a::before{
+  background-image: url(../img/service-01.jpg);
+}
+#service .inner .contents article:nth-child(2) a::before{
+  background-image: url(../img/service-02.jpg);
+}
+#service .inner .contents article:nth-child(3) a::before{
+  background-image: url(../img/service-03.jpg);
+}
+#service .inner .contents article:nth-child(4) a::before{
+  background-image: url(../img/service-04.jpg);
+}
+#service .inner .contents article:nth-child(5) a::before{
+  background-image: url(../img/service-05.jpg);
+}
+#service .inner .contents article:nth-child(6) a::before{
+  background-image: url(../img/service-06.jpg);
+}
+#service .inner .contents article a h4 {
+  line-height: 1.3;
+  margin: 10px 0;
+}
+#service .inner .contents article a p {
+  
+}
+#service .inner .contents article a p:nth-of-type(1){
+  color:#999;
+}
+#service .inner .contents a.more {
+  /*! width: 300px; */
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 50px);
+  width: 100px;
+  text-align: center;
+  padding-right:30px
+}
+#service .inner .contents a.more::before{
+  content: "";
+  display:block;
+  width:30px;
+  height:2px;
+  background-color:#333;
+  position:absolute;
+  right:0;
+  top:calc(50% - 1px);
+}
+#service .inner .contents a.more::after{
+  content: "";
+  display:block;
+  width:8px;
+  height:8px;
+  border: 2px solid #333;
+  transform:rotate(45deg);
+  border-bottom:transparent;
+  border-left: transparent;
+  position:absolute;
+  right:0;
+  top:calc(50% - 5px);
+}
+
+/* space,miele */
+#space{
+  position: relative;
+  padding: 280px 0 100px;
+}
+#space .inner{
+  background-image: url(../img/main-space.jpg);
+}
+#space .inner,#miele .inner,#contact .inner{
+  margin-left: 0;
+  padding-left: 10%;
+  height: 560px;
+}
+#space .inner h2,#miele .inner h2{
+  font-size: 187px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: left;
+}
+#space .inner>*:not(h2),#miele .inner>*:not(h2),#contact .inner>*:not(h2){
+  color: #fff;
+}
+#space .inner p,#miele .inner p,#contact .inner p{
+line-height: 1.2;
+margin-bottom:40px;
+margin-top:32px;
+}
+#space .inner a.more{
+
+}
+#space .inner a.more::before,#miele .inner a.more::before,#contact .inner a.more::before{
+  background-color: #fff;
+}
+.more span.pentagon{
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url(../img/pentagon-2.svg);
+  background-size: cover;
+  position: absolute;
+  right: -12px;
+  top: calc(50% - 15px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.more:hover span.pentagon{
+   opacity: 1;
+  animation-name: moreRotate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  transform-origin:51% 55%;
+  animation-timing-function: linear ;
+}
+@keyframes moreRotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+#space .inner a.more::after{
+  border-color: #fff;
+}
+
+/* 브랜드 스토리 */
+#story {
+  
+}
+#story div.inner {
+  
+}
+#story div.inner hgroup {
+  
+  margin-bottom: 100px;
+}
+#story div.inner hgroup h2 {
+  
+  color: #ccc;
+}
+#story div.inner hgroup h3 {
+  
+  line-height: 2;
+  margin-bottom: 12px;
+}
+#story div.inner hgroup h4 {
+  
+}
+#story div.inner hgroup h4 span {
+  
+}
+#story div.inner ul.contents{
+  width: 90%;
+  text-align: center;
+}
+#story div.inner ul.contents li {
+  flex-grow: 1;
+  width: calc(100% / 3);
+}
+#story div.inner ul.contents li:nth-child(2) {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+#story div.inner ul.contents li:before{
+  content: "";
+  display: block;
+  height: 115px;
+  background-size:contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+  width: 200px;
+  margin: 0 auto;
+}
+#story div.inner ul.contents li:nth-child(1):before{
+background-image: url(../img/story1.svg);
+}
+#story div.inner ul.contents li:nth-child(2):before{
+background-image: url(../img/story2.svg);
+}
+#story div.inner ul.contents li:nth-child(3):before{
+background-image: url(../img/story3.svg);
+}
+#story div.inner ul.contents li h5 {
+  
+  line-height: 3;
+}
+#story div.inner ul.contents li p {
+  
+}
+#story div.inner a.more {
+  
+  margin-top: 80px;
+}
+/* 밀레,컨텍 */
+#miele{
+  position: relative;
+}
+#miele .inner{
+  background-image: url(../img/mielebg.jpg);
+}
+#miele .inner h2,#contact .inner h2{
+  
+  position: static;
+  color: #fff;
+  font-size: 54px;
+  margin-bottom: 20px;
+}
+#miele .inner h2 small,#contact .inner h2 small{
+  /*! margin-bottom: 0px; */
+  /*! display: block; */
+  line-height: 2.5;
+}
+#miele  .inner p,#contact  .inner p{
+  
+  margin-top: initial;
+}
+#miele  .inner a{
+  
+}
+#miele  .inner a::after,#contact  .inner a::after{
+  
+  border-color: #fff;
+}
+#miele  .inner a span.pentagon{
+  
+}
+#miele::after{
+  content: "";
+  width:30%;
+  height: 120px;
+  position: absolute;
+  right: 0;
+  bottom:0;
+  background-color: #878762;
+  z-index: -1;
+}
+/* contact */
+#contact{
+  padding: 100px 0;
+  position: relative;
+}
+#contact::after{
+  content: "";
+  width:30%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom:0;
+  background-color: #878762;
+  z-index: -1;
+}
+#contact .inner{
+  position: relative;
+}
+#contact .inner::before{
+  content: "";
+  background-color: #ccc;
+  width: 600px;
+  height: 700px;
+  position: absolute;
+  right: 80px;
+  top: calc(50% - 350px);
+  background-image: url(../img/registerbg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#contact .inner h2,#contact .inner p,#contact .inner a{
+  color:#000;
+}
+/* 인스타그램 */
+#instagram {
+  
+  background-color: #222;
+}
+#instagram .inner {
+  
+  row-gap: 30px;
+}
+#instagram .inner h2 {
+  
+  color: #fff;
+}
+#instagram .inner ul {
+  
+  gap: 30px;
+  flex-wrap: wrap;
+}
+#instagram .inner ul li {
+  flex-basis: calc(100% / 4 - 90px / 4);
+  width: calc(100% / 4 - 90px / 4);
+}
+#instagram .inner ul li a {
+  position: relative;
+  display: block;
+}
+#instagram .inner ul li a::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0,0.7);
+  position:absolute;
+  left:0;
+  top:0;
+  opacity: 0;
+  transition: all 0.7s;
+}
+#instagram .inner ul li a:hover::before{
+  opacity: 1;
+}
+#instagram .inner ul li a figure {
+  
+}
+#instagram .inner ul li a figure img {
+  display: block;
+}
+#instagram .inner ul li a p {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  opacity: 0;
+  transition: all 0.7s;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+#instagram .inner ul li a:hover p{
+  display: block;
+  opacity: 1;
+}
+
+/* aside */
+aside{
+ position:sticky;
+ right: 30px;
+ bottom: 40px;
+ z-index: 1;
+}
+aside ul{
+  position:absolute;
+  right: 30px;
+  bottom: 20px;
+}
+aside a{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+text-align: center;
+line-height: 50px;
+display: block;
+font-size: 14px;
+margin: 10px 0;
+}
+aside a.shop{
+background-color: #333;
+color: white;
+
+}
+aside a.kakao{
+  background-color: rgb(188, 206, 29);
+  color: #333;
+}
+
+
+
+
+

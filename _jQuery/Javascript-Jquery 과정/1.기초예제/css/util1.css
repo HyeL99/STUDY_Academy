@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+div.draggable {
+	float:left;
+	width: 160px;
+	height: 160px;
+	padding:10px 0px 0px 20px;
+	background:url(../images/util/post.png) no-repeat;
+}
+
+div.invert {  background:url(../images/util/post2.png) no-repeat;}
+
+

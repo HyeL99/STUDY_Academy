@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<title> 퀵메뉴만들기 </title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{margin:0;padding:0;font:'돋움'dotum,helvetica,sans-serif;font-size:12px;}
+body{}
+#wrap{width:800px;margin:0 auto;}
+#header{height:80px;border-bottom:1px solid #00ccff;}
+#container{position:relative;width:100%;*zoom:1;}
+#container:after{content:'';display:block;clear:both;}
+#nav{float:left;width:180px;}
+#contents{float:right;width:600px;height:1200px;/*test*/}
+#quick{background-color:#ffcccc;}
+#footer{height:40px;}
+</style>
+<script type="text/javascript" src="topscroll.js"></script>
+
+
+</head>
+<body>
+
+<div id="wrap">
+
+	<div id="header"><h1>Logo</h1></div><!-- header -->
+
+	<div id="container">
+		
+		<div id="nav">
+		<h2>Nav</h2>
+		</div><!-- nav -->
+
+		<div id="contents">
+		<h2>Contents Title</h2>
+		<p>Contents Text</p>
+		</div><!-- contents -->
+
+		<div id="quick">
+		<h2>바로가기메뉴</h2>
+		</div><!-- quick -->
+		<script type="text/javascript">
+		//<![CDATA[
+		 initializequick("quick",800,0)
+		 //]]>
+		 </script>
+
+	</div><!-- container -->
+
+	<div id="footer">
+	<address>서울시 은평구 갈현동 뿌잉뿌잉</address>
+	</div> <!-- //footer -->
+
+
+</div><!-- wrap -->
+
+
+</body>
+</html>
