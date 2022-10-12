@@ -1,1 +1,51 @@
 @charset 'UTF-8';
+
+header {
+    background: #990000;
+}
+header .inner {
+}
+header .inner h1 {
+    text-align: center;
+    color: transparent;
+    width: 120px;
+    line-height: 100px;
+    background: url("../assets/img/logo.png") no-repeat center / contain;
+}
+header .inner nav {
+}
+header .inner nav ul.gnb {
+}
+header .inner nav ul.gnb li.gnbList {
+}
+header .inner nav ul.gnb li.gnbList a {
+    padding: 5px 10px;
+    font-weight: 700;
+}
+header .inner nav ul.gnb li.gnbList ul.gnbSub {
+    display: none;
+}
+header .inner nav ul.gnb li.gnbList ul.gnbSub li {
+}
+header .inner nav ul.gnb li.gnbList ul.gnbSub li a {
+}
+header .inner ul.menuWrap {
+}
+header .inner ul.menuWrap li {
+    margin-left: 15px;
+}
+header .inner ul.menuWrap li a {
+    display: block;
+    width: 40px;
+    line-height: 100px;
+    background: url(../assets/img/icon/search.svg) no-repeat center / contain;
+}
+header .inner ul.menuWrap li:nth-of-type(2) a {
+    background: url(../assets/img/icon/global.svg) no-repeat center / contain;
+}
+header .inner ul.menuWrap li:nth-of-type(3) a {
+    background: url(../assets/img/icon/account.svg) no-repeat center / contain;
+}
+header .inner ul.menuWrap li a span {
+    font-size: 0;
+}

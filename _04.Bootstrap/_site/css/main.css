@@ -10,6 +10,11 @@ header {
     background: url('../assets/img/main.jpeg') no-repeat center center / cover;
     padding: 180px 0;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Kanit', sans-serif;
+}
 .h1{
     width: 90px;
 }
@@ -17,9 +22,7 @@ header {
     margin-right: 30px;
 }
 .nav-item > a {
-    font-family: 'Kanit', sans-serif;
     font-weight: 700;
-    color: #000;
 }
 .nav-item:first-child {
     margin-right: 20px;
@@ -30,3 +33,90 @@ header {
 .m-info p {
     font-size: 18px;
 }
+
+.mainText {
+    margin:0 0 0 10vw;
+}
+.mainText h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight:700;
+    font-size:30px;
+    color:rgba(0,0,0,0.7)
+}
+.mainText span { 
+    font-size:12px;
+}
+
+/* section */
+section {
+    padding: 70px 0 80px;
+}
+.sectionTitle {} 
+.sectionTitle h2 {
+    font-size: 30px;
+    margin: 0 0 30px 0;
+}
+.sectionTitle img { 
+    width:50px; height:50px;} 
+
+.sectionTitle {
+    padding: 15px;
+}
+
+.sectionThumbnail {
+    padding: 15px;
+}
+.sectionThumbnail a {
+    font-weight: 500;
+}
+.sectionThumbnail a:hover {
+    color: inherit;
+}
+.sectionThumbnail p {
+    margin: 15px 0 0 0;
+    font-size: 1.05em;
+}
+.sectionThumbnail span {
+    font-weight: 300;
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+    margin-left: 10px;
+    color: #666;
+}
+
+.section02 {
+    height: 80vh;
+    padding: 0;
+}
+.section02 .sectionBg {
+    background: url('../assets/img/2-1.jpg') no-repeat top center / 100% auto;
+    width: 100%;
+    height: 100%;
+}
+.section02 .sectionTitle {
+    color: #fff;
+    padding-top: 70px;
+}
+
+.section03 {}
+.section03 .sectionThumbnail a {
+    display: block;
+}
+.section03 .sectionTextWrap {
+    background: #fff;
+    padding: 30px;
+}
+.section03 .sectionTextDesc {
+    color: #666;
+    font-size: 1.05em;
+}
+.section03 .sectionWriter {
+    color: #aaa;
+    text-align: end;
+    margin-top: 40px;
+}
+
+.section04 .storeInfoWrap {}
+.section04 .storeInfoWrap h3 {}
+.section04 .storeInfoWrap p {}
+.section04 .storeInfo {}
+.section04 .storeInfo li {}

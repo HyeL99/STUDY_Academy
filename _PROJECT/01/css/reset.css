@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1;
 }
 /* html5에서 추가된 시멘틱 태그 */
 header, main, footer, nav, section, aside, article, menu, details, figure, figcaption{

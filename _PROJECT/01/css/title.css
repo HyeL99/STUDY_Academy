@@ -1,1 +1,11 @@
 @charset 'UTF-8';
+
+#title {
+}
+#title .inner {
+  width: 100%;
+}
+#title .inner img {
+}
+#title .inner #pagingWrap {
+}

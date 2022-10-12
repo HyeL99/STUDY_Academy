@@ -1,1 +1,329 @@
 @charset 'UTF-8';
+
+main {
+}
+main section {
+}
+main section .inner {
+}
+main section h2 {
+  font-size: 48px;
+}
+
+#main01 {
+}
+#main01 .inner {
+  height: 600px;
+  background: url('../assets/img/main.jpg') no-repeat right center / contain;
+  font-weight: 700;
+  padding-top: 150px;
+}
+#main01 .inner p {
+  font-size: 24px;
+  line-height: 1.2;
+}
+#main01 .inner p:first-child {
+  margin-bottom: 40px;
+}
+#main01 .inner h2 {
+}
+
+#main02 {
+  background: #900;
+  padding: 50px 0;
+}
+#main02 .inner {
+  column-gap: 20px;
+}
+#main02 .inner article {
+  width: calc((100% - 60px) / 4);
+}
+#main02 .inner article span {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: calc((80vw - 60px) / 4);
+  background: #fff url('../assets/img/brand-01.jpg') no-repeat center / 70%;
+  font-size: 0;
+  border-radius: 25px;
+}
+#main02 .inner article:nth-of-type(2) span {
+  background: #fff url('../assets/img/brand-02.png') no-repeat center / cover;
+}
+#main02 .inner article:nth-of-type(3) span {
+  background: #fff url('../assets/img/brand-03.jpg') no-repeat center / contain;
+}
+#main02 .inner article:nth-of-type(4) span {
+  background: #fff url('../assets/img/brand-04.jpg') no-repeat center / contain;
+}
+#main02 .inner article p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#main03 {
+  padding: 100px 0;
+  position: relative;
+}
+#main03 img.bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  opacity: 0.8;
+}
+#main03 h2 {
+  margin-bottom: 50px;
+}
+#main03 .wrap {
+  column-gap: 20px;
+  row-gap: 20px;
+}
+#main03 .wrap article {
+  width: calc((100% - 40px) / 3);
+  text-align: center;
+  background: rgba(153, 0, 0,0.8);
+  padding: 20px;
+}
+#main03 .wrap article h3 {
+  font-size: 16px;
+}
+#main03 .wrap article h3 span {
+  color: #AF9375;
+  margin-right: 16px;
+}
+#main03 .wrap article span.bar {
+  display: block;
+  width: 60px;
+  max-width: 100%;
+  border-top: 1px solid #fff;
+  margin: 10px auto 20px;;
+}
+#main03 .wrap article p {
+  font-size: 14px;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+#main04 {
+  background: url('../assets/img/benefit-bg.jpg') no-repeat center / cover;
+  padding: 100px 0;
+}
+#main04 .inner {
+}
+#main04 .inner h2 {
+}
+#main04 .inner > p {
+  line-height: 2;
+  margin-bottom: 50px;
+}
+#main04 .inner .wrap {
+  column-gap: 20px;
+}
+#main04 .inner .wrap article {
+  width: calc((100% - 40px) / 3);
+  height: calc((80vw - 40px) / 3);
+  padding: 50px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 65px;
+  text-align: center;
+}
+#main04 .inner .wrap article img {
+  width: 160px;
+  margin-bottom: 20px;
+}
+#main04 .inner .wrap article .textWrap {
+}
+#main04 .inner .wrap article .textWrap h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+#main04 .inner .wrap article .textWrap p {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#main05 {
+  background: #fff;
+  color: #000;
+}
+#main05 .contentWrap {
+}
+#main05 .contentWrap .front {
+  background: url('../assets/img/membership-bg.jpg') no-repeat top center / cover;
+  height: 645px;
+  padding-bottom: 45px;
+  position: relative;
+}
+#main05 .contentWrap .front button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  border: 0;
+  outline: 0;
+  background: #900;
+  color: #fff;
+}
+#main05 .contentWrap .front button span {
+}
+#main05 .contentWrap .back {
+  height: 645px;
+  position: relative;
+  padding: 50px 0;
+}
+#main05 .contentWrap .back .content {
+  text-align: center;
+}
+#main05 .contentWrap .back .content h2 {
+}
+#main05 .contentWrap .back .content > p {
+  margin-bottom: 50px;
+}
+#main05 .contentWrap .back .content ul {
+  row-gap: 100px;
+}
+#main05 .contentWrap .back .content ul li {
+  width: calc((100% - 40px) / 3);
+  position: relative;
+}
+#main05 .contentWrap .back .content ul li img {
+  width: 160px;
+}
+#main05 .contentWrap .back .content ul li .textWrap {
+  text-align: start;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+#main05 .contentWrap .back .content ul li .textWrap h3 {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+#main05 .contentWrap .back .content ul li .textWrap p {
+  line-height: 1.2;
+}
+#main05 .contentWrap .back .buttonWrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+}
+#main05 .contentWrap .back .buttonWrap button {
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: #900;
+}
+#main05 .contentWrap .back .buttonWrap button:last-child {
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: #343436;
+}
+#main05 .contentWrap .back .buttonWrap button span.prevArrow {
+}
+#main05 .contentWrap .back .buttonWrap button span.plus {
+}
+
+#main06 {
+  position: relative;
+  padding: 100px 0;
+}
+#main06 .bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url('../assets/img/board-bg.jpg') no-repeat center / cover;
+}
+#main06 .inner {
+}
+#main06 .inner .selectBox {
+}
+#main06 .inner .selectBox h2 {
+  font-size: 64px;
+  line-height: 0.7;
+  margin-bottom: 50px;
+}
+#main06 .inner .selectBox h2 span {
+  font-size: 36px;
+  display: block;
+  margin-bottom: -10px;
+  font-weight: 500;
+}
+#main06 .inner .selectBox button {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  border:0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  opacity: 0.6;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+#main06 .inner .selectBox button:hover {
+  opacity: 1;
+}
+#main06 .inner ul.boardBox {
+  flex-grow: 1;
+  margin-left: 100px;
+}
+#main06 .inner ul.boardBox li {
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+  padding: 10px 20px 0;
+}
+#main06 .inner ul.boardBox li span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+#main06 .inner ul.boardBox li .boardText {
+  padding: 10px 0 20px;
+}
+#main06 .inner ul.boardBox li .boardText h3 {
+}
+#main06 .inner ul.boardBox li .boardText span {
+}
+
+#main07 {
+}
+#main07 .inner {
+}
+#main07 .inner a {
+  display: block;
+  background: #907354 url(../assets/img/button01.png) no-repeat right 20px bottom 20px/ 75px 75px;
+  width: calc(100% / 3);
+  height: 120px;
+  padding: 20px;
+}
+#main07 .inner a:nth-of-type(2){
+  background: #646464 url(../assets/img/button02.png) no-repeat right 20px bottom 20px/ 75px 75px;
+}
+#main07 .inner a:nth-of-type(3){
+  background: #907354 url(../assets/img/button03.png) no-repeat right 20px bottom 35px/ 75px auto;
+}
+#main07 .inner a h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+#main07 .inner a p {
+  font-size: 16px;
+  line-height: 1.2;
+}

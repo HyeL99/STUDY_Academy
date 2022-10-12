@@ -1,1 +1,87 @@
 @charset 'UTF-8';
+
+footer {
+  background: #900;
+  padding: 50px 0;
+}
+footer .inner {
+}
+footer .inner .fTop {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 30px;
+}
+footer .inner .fTop ul.linkList {
+}
+footer .inner .fTop ul.linkList li {
+}
+footer .inner .fTop ul.linkList li a {
+}
+footer .inner .fTop ul.social {
+}
+footer .inner .fTop ul.social li {
+}
+footer .inner .fTop ul.social li a {
+  display: block;
+  width:50px;
+  height: 50px;
+  background: url('../assets/img/icon-insta.png') no-repeat center;
+}
+footer .inner .fTop ul.social li:nth-of-type(2) a {
+  background: url('../assets/img/icon-facebook.png') no-repeat center;
+}
+footer .inner .fTop ul.social li:nth-of-type(3) a {
+  background: url('../assets/img/icon-youtube.png') no-repeat center;
+}
+footer .inner .fTop ul.social li:nth-of-type(4) a {
+  background: url('../assets/img/icon-kakao.png') no-repeat center;
+}
+footer .inner .fTop ul.social li a span {
+  font-size: 0;
+}
+footer .inner .fBot {
+}
+footer .inner .fBot ul.buttons {
+  row-gap: 20px;
+  column-gap: 20px;
+}
+footer .inner .fBot ul.buttons li {
+}
+footer .inner .fBot ul.buttons li a {
+  display: block;
+  width: 150px;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+footer .inner .fBot ul.buttons li button {
+  display: block;
+  width: 150px;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+footer .inner .fBot ul.buttons li button span {
+  font-size: 0;
+}
+footer .inner .fBot ul.info {
+  width: 80%;
+  color: rgba(255,255,255,0.6)
+}
+footer .inner .fBot ul.info li {
+}
+footer .inner .fBot ul.info li button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: inherit;
+  font-weight: 700;
+}
+footer .inner .fBot ul.info li hr {
+}
