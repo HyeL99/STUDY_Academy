@@ -86,6 +86,7 @@ section {
 .section02 {
     height: 80vh;
     padding: 0;
+    max-height: 600px;
 }
 .section02 .sectionBg {
     background: url('../assets/img/2-1.jpg') no-repeat top center / 100% auto;
@@ -115,8 +116,20 @@ section {
     margin-top: 40px;
 }
 
-.section04 .storeInfoWrap {}
-.section04 .storeInfoWrap h3 {}
-.section04 .storeInfoWrap p {}
-.section04 .storeInfo {}
-.section04 .storeInfo li {}
+.section04{
+    padding: 70px 0 150px;
+}
+.section04 .storeInfoWrap p {
+    word-break: keep-all;
+}
+.section04 .storeInfo .title{
+    font-family: 'Kanit', sans-serif;
+    color: #555;
+}
+
+.section05{
+    height: 48vh;
+    max-height: 480px;
+    min-height: 350px;
+    background: url('../assets/img/5-1.jpg') no-repeat center / cover;
+}
