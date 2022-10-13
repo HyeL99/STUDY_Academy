@@ -4,6 +4,7 @@ header {
     background: #990000;
 }
 header .inner {
+    box-shadow: 0 0 2px rgba(0,0,0,0.5)
 }
 header .inner h1 {
     text-align: center;
@@ -13,21 +14,63 @@ header .inner h1 {
     background: url("../assets/img/logo.png") no-repeat center / contain;
 }
 header .inner nav {
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:0;
+    line-height: 100px;
+    padding-top: 40px;
+    
 }
-header .inner nav ul.gnb {
+header .inner nav > ul.gnb {
 }
-header .inner nav ul.gnb li.gnbList {
+header .inner nav > ul.gnb li.gnbList {
+    position: relative;
 }
-header .inner nav ul.gnb li.gnbList a {
-    padding: 5px 10px;
+header .inner nav > ul.gnb li.gnbList > a{
+    display: block;
+    padding: 0 20px;
     font-weight: 700;
+    line-height: 1.2;
+    transition: all 0.3s;
 }
-header .inner nav ul.gnb li.gnbList ul.gnbSub {
-    display: none;
+header .inner nav > ul.gnb li.gnbList:hover > a {
+    color: #af9375;
 }
-header .inner nav ul.gnb li.gnbList ul.gnbSub li {
+header .inner nav > ul.gnb li.gnbList ul.gnbSub {
+    position: absolute;
+    line-height: 1.25;
+    z-index: 1;
+    left:0;
+    white-space: nowrap;
+    top: 120px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.2s;
 }
-header .inner nav ul.gnb li.gnbList ul.gnbSub li a {
+header .inner nav:hover > ul.gnb li.gnbList ul.gnbSub {
+    height: 350px;
+}
+header .inner nav > ul.gnb li.gnbList:nth-of-type(1) ul.gnbSub{
+    left: -216px;
+}
+header .inner nav > ul.gnb li.gnbList:nth-of-type(2) ul.gnbSub{
+    left: -145px;
+}
+header .inner nav > ul.gnb li.gnbList:nth-of-type(3) ul.gnbSub{
+    left: 39px;
+}header .inner nav > ul.gnb li.gnbList:nth-of-type(4) ul.gnbSub{
+    left: 100px;
+}header .inner nav > ul.gnb li.gnbList:nth-of-type(5) ul.gnbSub{
+    left: 158px;
+}
+header .inner nav > ul.gnb li.gnbList ul.gnbSub li {
+}
+header .inner nav > ul.gnb li.gnbList ul.gnbSub li a {
+    line-height: 1.25;
+}
+header .inner nav > ul.gnb li.gnbList ul.gnbSub li a:hover {
+    color: #d00;
 }
 header .inner ul.menuWrap {
 }
@@ -48,4 +91,46 @@ header .inner ul.menuWrap li:nth-of-type(3) a {
 }
 header .inner ul.menuWrap li a span {
     font-size: 0;
+}
+header .navSub{
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:100px;
+    height: 00px;
+    overflow: hidden;
+    transition: all 0.3s;
+    background: rgba(0,0,0,0.8);
+}
+header nav:hover .navSub{
+    height: 350px
+}
+header .navSub::before {
+    content: "";
+    width: 1080px;
+    position: absolute;
+    border-top: 1px solid #fff;
+    left: calc(50% - 1080px / 2);
+    top: 50px;
+    
+}
+header .navSub ul li {
+    padding: 20px;
+    box-sizing: content-box;
+    flex-shrink: 0;
+}
+header .navSub ul li:nth-of-type(1) {
+    width: 127px
+}
+header .navSub ul li:nth-of-type(2) {
+    width: 230px;
+}
+header .navSub ul li:nth-of-type(3) {
+    width: 170px;
+}
+header .navSub ul li:nth-of-type(4) {
+    width: 125px;
+}
+header .navSub ul li:nth-of-type(5) {
+    width: 172px;
 }
