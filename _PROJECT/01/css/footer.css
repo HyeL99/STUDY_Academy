@@ -64,7 +64,7 @@ footer .inner .fBot ul.buttons li a {
   line-height: 50px;
   border: 1px solid #fff;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 1rem;
 }
 footer .inner .fBot ul.buttons li button {
   display: block;
@@ -75,7 +75,7 @@ footer .inner .fBot ul.buttons li button {
   box-sizing: border-box;
   background: transparent;
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
 }
 footer .inner .fBot ul.buttons li button span {
   font-size: 0;

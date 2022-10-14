@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 #title {
+  padding-top: 100px;
 }
 #title .inner {
   width: 100%;

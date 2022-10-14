@@ -1,5 +1,70 @@
 @charset "UTF-8";
-/* 768px 이상 테블릿, 데스크탑 버전*/
-@media (min-width: 768px) {
+/* 1024px 미만 테블릿 버전 */
+@media (max-width: 1023px) {
+  html {
+    font-size: 14px;
+  }
+  .inner {
+    width: 90%;
+  }
+  /* header */
+  header .inner {
+    justify-content: center;
+  }
+  header .inner nav {
+    top: 100px;
+    height: 70px;
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+  header .inner nav::after {
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: #343436;
+    top:0;
+    z-index: -1;
+    box-shadow:  0 2px 5px rgba(0,0,0,0.8);
+  }
+  header nav:hover .navSub {
+    height: 18.75rem;
+  }
+  header .inner nav > ul.gnb li.gnbList ul.gnbSub {
+    top: 110px;
+  }
+  header .inner ul.menuWrap {
+    position: absolute;
+    right: 10%;
+    top: 85px;
+  }
+  header .inner ul.menuWrap li:first-child {
+    position: fixed;
+    left:10%;
+  }
+  header .inner ul.menuWrap li a {
+    width: 25px;
+  }
+    
+  /* title */
+  #title {
+    padding-top: 170px;
+  }
+  
+  /* main */
+  
+  /* footer */
+  
+}
 
+/* 768px 미만 모바일 버전 */
+@media (max-width: 767px) {
+  /* header */
+    
+  /* title */
+  
+  /* main */
+  
+  /* footer */
+  
 }
