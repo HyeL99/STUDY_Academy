@@ -19,7 +19,7 @@ main section h2 {
   padding-top: 150px;
 }
 #main01 .inner p {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.2;
 }
 #main01 .inner p:first-child {
@@ -59,7 +59,7 @@ main section h2 {
 #main02 .inner article p {
   margin-top: 20px;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -146,6 +146,7 @@ main section h2 {
 #main04 .inner .wrap article .textWrap p {
   font-size: 16px;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 #main05 {
@@ -287,19 +288,19 @@ main section h2 {
 #main06 .inner .selectBox {
 }
 #main06 .inner .selectBox h2 {
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 0.7;
   margin-bottom: 50px;
 }
 #main06 .inner .selectBox h2 span {
-  font-size: 36px;
+  font-size: 2.25rem;
   display: block;
   margin-bottom: -10px;
   font-weight: 500;
 }
 #main06 .inner .selectBox button {
   display: block;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   border:0;
   outline: 0;
@@ -343,6 +344,7 @@ main section h2 {
 }
 #main06 .inner ul#boardBox li .boardText span {
   margin-left: 30px;
+  white-space: nowrap;
 }
 
 #main07 {

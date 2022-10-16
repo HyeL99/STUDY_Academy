@@ -2,7 +2,8 @@
 
 footer {
   background: #900;
-  padding: 50px 0;
+  padding: 3.125rem 0;
+  font-size : 0.75rem;
 }
 footer .inner {
 }
@@ -64,7 +65,7 @@ footer .inner .fBot ul.buttons li a {
   line-height: 50px;
   border: 1px solid #fff;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 footer .inner .fBot ul.buttons li button {
   display: block;
@@ -81,10 +82,14 @@ footer .inner .fBot ul.buttons li button span {
   font-size: 0;
 }
 footer .inner .fBot ul.info {
-  width: 650px;
+  width: 400px;
   color: rgba(255,255,255,0.6)
 }
 footer .inner .fBot ul.info li {
+  margin-right: 1rem;
+}
+footer .inner .fBot ul.info li:nth-of-type(4) {
+  padding-bottom : 1rem;
 }
 footer .inner .fBot ul.info li button {
   border: 0;
@@ -92,6 +97,4 @@ footer .inner .fBot ul.info li button {
   color: #fff;
   font-size: inherit;
   font-weight: 700;
-}
-footer .inner .fBot ul.info li hr {
 }
