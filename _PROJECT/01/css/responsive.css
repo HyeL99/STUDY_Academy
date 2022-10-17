@@ -36,7 +36,7 @@
   header .inner ul.menuWrap {
     position: absolute;
     right: 10%;
-    top: 85px;
+    top: 100px;
   }
   header .inner ul.menuWrap li:first-child {
     position: fixed;
@@ -44,6 +44,7 @@
   }
   header .inner ul.menuWrap li a {
     width: 25px;
+    line-height: 70px;
   }
     
   /* title */
@@ -147,8 +148,24 @@
     padding: 0 50px;
   }
   /* header */
+  header::before {
+    height: 50px;
+  }
+  header .inner h1 {
+    line-height: 50px;
+    background: url("../assets/img/logo.png") no-repeat center / auto 22px;
+  }
+  header .inner nav {
+    display: none;
+  }
+  header .inner ul.menuWrap {
+    display: none;
+  }
     
   /* title */
+  #title {
+    padding-top: 50px;
+  }
   
   /* main */
   #main01 .inner {

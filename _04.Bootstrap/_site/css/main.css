@@ -169,14 +169,34 @@ footer .storeInfo {
     font-size: 11px;
     color: #666;
 }
+footer .storeInfo li {
+    line-height: 2;
+}
+footer .storeInfo li a {
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom : 1px solid;
+    color: #999;
+}
 footer .infoPlace {
     color: #999;
     font-size: 11px;
 }
 footer .infoList li {
     margin-right: 1em;
+    line-height: 2;
 }
 footer .infoList span{
     color: #666;
     margin-left: 0.5em;
+}
+footer .infoList .copy {
+    line-height: 2;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
+.navbar-toggler {
+    border: 0 solid transparent;
 }
