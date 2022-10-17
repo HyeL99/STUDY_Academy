@@ -42,6 +42,9 @@ header .inner nav > ul.gnb li.gnbList > a{
     line-height: 30px;
     transition: all 0.3s;
 }
+header .inner nav > ul.gnb li.gnbList > a button.toggle {
+    display: none;
+}
 header .inner nav > ul.gnb li.gnbList:hover > a {
     color: #af9375;
 }
@@ -143,4 +146,35 @@ header .navSub ul li:nth-of-type(4) {
 }
 header .navSub ul li:nth-of-type(5) {
     width: 8.07rem;
+}
+header .inner button#gnbBtn {
+    display: none;
+    position: absolute;
+    left:20px;
+    font-size: 0;
+    border: 0;
+    padding: 5px;
+    background: transparent;
+}
+header .inner button#gnbBtn span.bar {
+    display: block;
+    width: 25px;
+    border-top: 3px solid #fff;
+    transition: all 0.3s;
+}
+header .inner button#gnbBtn span.bar:not(:last-child){
+    margin-bottom: 5px;
+}
+
+header .inner button.active span.bar:nth-of-type(1) {
+    transform-origin: 50% 50%;
+    transform: translateY(7.5px) rotate(-45deg);
+}
+header .inner button.active span.bar:nth-of-type(2) {
+    transform-origin: 50% 50%;
+    transform: scale(0);
+}
+header .inner button.active span.bar:nth-of-type(3) {
+    transform-origin: 50% 50%;
+    transform: translateY(-8.5px) rotate(45deg);
 }

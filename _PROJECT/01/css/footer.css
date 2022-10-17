@@ -14,6 +14,9 @@ footer .inner .fTop {
 }
 footer .inner .fTop ul.linkList {
 }
+footer .inner .fTop ul.linkList br {
+  display: none;
+}
 footer .inner .fTop ul.linkList li {
 }
 footer .inner .fTop ul.linkList li a {
@@ -76,7 +79,7 @@ footer .inner .fBot ul.buttons li button {
   box-sizing: border-box;
   background: transparent;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 footer .inner .fBot ul.buttons li button span {
   font-size: 0;
@@ -87,9 +90,10 @@ footer .inner .fBot ul.info {
 }
 footer .inner .fBot ul.info li {
   margin-right: 1rem;
+  line-height: 1.2
 }
 footer .inner .fBot ul.info li:nth-of-type(4) {
-  padding-bottom : 1rem;
+  padding-bottom : 0.8rem;
 }
 footer .inner .fBot ul.info li button {
   border: 0;

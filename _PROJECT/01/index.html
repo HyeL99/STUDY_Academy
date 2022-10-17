@@ -9,6 +9,7 @@
     <!-- favicon 삽입 -->
     <!-- <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon"> -->
 
+    
     <!-- link stylesheet -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/flex.css">
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -28,6 +30,15 @@
 
     <!-- jQuery script -->
     <script src="js/jquery-3.6.0.min.js"></script>
+
+
+    <!-- slick connect -->
+    <link rel="stylesheet" type="text/css" href="plugin/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="plugin/slick/slick-theme.css"/>
+    <script type="text/javascript" src="plugin/slick/slick.js"></script>
+    <link rel="stylesheet" href="css/slickModify.css" />
+
+    <!-- my script -->
     <script defer src="js/main.js"></script>
     <!-- defer : 화면 로딩 후 스크립트 실행 -->
 </head>
@@ -38,7 +49,10 @@
             <nav>
                 <ul class="gnb flex jusCen">
                     <li class="gnbList">
-                        <a href="#">BRAND</a>
+                        <a href="#">
+                            BRAND
+                            <button class="toggle"><span>열기</span><i class="fa-solid fa-caret-down"></i></button>
+                        </a>
                         <ul class="gnbSub">
                             <li class=""><a href="#">OUTBACK STORY</a></li>
                             <li class=""><a href="#">BEEF STORY</a></li>
@@ -48,7 +62,10 @@
                         </ul>
                     </li>
                     <li class="gnbList">
-                        <a href="#">MENU</a>
+                        <a href="#">
+                            MENU
+                            <button class="toggle"><span>열기</span><i class="fa-solid fa-caret-down"></i></button>
+                        </a>
                         <ul class="gnbSub">
                             <li class=""><a href="#">TOMAHAWK PREMIUM CHOICE</a></li>
                             <li class=""><a href="#">TOMAHAWK STEAK</a></li>
@@ -64,14 +81,20 @@
                         </ul>
                     </li>
                     <li class="gnbList">
-                        <a href="#">MEMBERSHIP</a>
+                        <a href="#">
+                            MEMBERSHIP
+                            <button class="toggle"><span>열기</span><i class="fa-solid fa-caret-down"></i></button>
+                        </a>
                         <ul class="gnbSub">
                             <li class=""><a href="#">MEMBERSHIP BENEFIT</a></li>
                             <li class=""><a href="#">BOOMERANG VIP</a></li>
                         </ul>
                     </li>
                     <li class="gnbList">
-                        <a href="#">BENEFIT</a>
+                        <a href="#">
+                            BENEFIT
+                            <button class="toggle"><span>열기</span><i class="fa-solid fa-caret-down"></i></button>
+                        </a>
                         <ul class="gnbSub">
                             <li class=""><a href="#">CREDIT CARDS</a></li>
                             <li class=""><a href="#">SKT＆KT</a></li>
@@ -81,7 +104,10 @@
                         </ul>
                     </li>
                     <li class="gnbList">
-                        <a href="#">ACADEMY</a>
+                        <a href="#">
+                            ACADEMY
+                            <button class="toggle"><span>열기</span><i class="fa-solid fa-caret-down"></i></button>
+                        </a>
                         <ul class="gnbSub">
                             <li class=""><a href="#">Steak Cooking Class Ⅰ</a></li>
                             <li class=""><a href="#">Steak Cooking Class Ⅱ</a></li>
@@ -109,15 +135,24 @@
                 <li><a href="#"><span>언어선택</span></a></li>
                 <li><a href="#"><span>계정</span></a></li>
             </ul>
+            <button id="gnbBtn">
+                메뉴 열기/닫기
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
         </div>
         
     </header>
     <div id="title">
         <div class="inner">
-            <img src="assets/img/main-01.jpg" alt="">
-            <div id="pagingWrap">
-
+            <div id="slideContainer">
+                <img src="assets/img/main-01.jpg" alt="토마호크 세트메뉴">
+                <img src="assets/img/main-02.jpg" alt="티본 스테이크">
+                <img src="assets/img/main-03.jpg" alt="블랙라벨">
+                <img src="assets/img/main-04.jpg" alt="아웃백 딜리버리">
             </div>
+        </div>
+        <div id="pagingWrap">
+            01 / 14
         </div>
     </div>
     <main>
@@ -205,7 +240,7 @@
             <div class="inner">
                 <h2>OUTBACK BENEFIT</h2>
                 <p>다양한 멤버십과 제휴 할인 혜택을 누리세요</p>
-                <div class="wrap flex fWrap">
+                <div class="contentWrap flex fWrap">
                     <article class="flex jusCen alnCen">
                         <div class="wrap">
                             <img src="assets/img/benefit-01.png" alt="MEMBERSHIP">
@@ -248,6 +283,16 @@
         <section id="main05">
             <div class="contentWrap">
                 <div class="front">
+                    <div class="box">
+                        <div class="content">
+                            <h2><span>BOOMERANG</span>MEMBERSHIP</h2>
+                            <p>
+                                부메랑 카드<br>
+                                리워드 혜택을 만나보세요
+                            </p>
+                            <button>자세히보기</button>
+                        </div>
+                    </div>
                     <button>VIEW MORE <span class="nextArrow"></span></button>
                 </div>
                 <div class="back">
@@ -334,8 +379,10 @@
                         News<br>
                         &Notice
                     </h2>
-                    <button id="newsBtn">NEWS</button>
+                    <div class="wrap">
+                        <button id="newsBtn">NEWS</button>
                     <button id="noticeBtn">NOTICE</button>
+                    </div>
                 </div>
                 <ul id="boardBox">
                     <li>
@@ -402,7 +449,7 @@
                 <ul class="linkList flex">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">홈페이지 이용약관</a></li>
-                    <li><a href="#">위치정보 이용약관</a></li>
+                    <li><a href="#">위치정보 이용약관</a></li><br>
                     <li><a href="#">윤리경영</a></li>
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">사이트맵</a></li>
@@ -597,6 +644,43 @@
         });
         $('#main05 .contentWrap .back button.backBtn').click(function(){
             $('#main05 .contentWrap').removeClass('active');
+        });
+
+        $('#gnbBtn').click(function(){
+            $(this).toggleClass('active');
+            $('nav').toggleClass('active');
+            $('.menuWrap').toggleClass('active');
+        });
+        $('.gnbList a').click(function(){
+            $(this).siblings('.gnbSub').slideToggle();
+            $(this).parent('li').toggleClass('active');
+        });
+
+        $(function(){
+            if( $(window).width() > 767) {
+                $('ul.gnbSub').slideDown();
+            } else {
+                $('ul.gnbSub').slideUp();
+            }
+            
+            $(window).resize(function(){
+                const winW = $(window).width();
+                console.log(winW);
+
+                if(winW > 767) {
+                    $('ul.gnbSub').slideDown();
+                } else {
+                    $('li:not(.active) ul.gnbSub').slideUp();
+                    $('li.active ul.gnbSub').slideDown();
+                }
+            });
+            $('#slideContainer').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
         });
     </script>
 </body>

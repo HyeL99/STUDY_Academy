@@ -7,7 +7,7 @@ main section {
 main section .inner {
 }
 main section h2 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 #main01 {
@@ -26,6 +26,7 @@ main section h2 {
   margin-bottom: 40px;
 }
 #main01 .inner h2 {
+  
 }
 
 #main02 {
@@ -122,10 +123,10 @@ main section h2 {
   line-height: 2;
   margin-bottom: 50px;
 }
-#main04 .inner .wrap {
+#main04 .inner .contentWrap {
   column-gap: 40px;
 }
-#main04 .inner .wrap article {
+#main04 .inner .contentWrap article {
   width: calc((100% - 80px) / 3);
   height: calc((80vw - 80px) / 3);
   padding: 50px;
@@ -133,18 +134,19 @@ main section h2 {
   border-radius: 65px;
   text-align: center;
 }
-#main04 .inner .wrap article img {
+#main04 .inner .contentWrap article img {
   width: 160px;
   margin-bottom: 20px;
+  object-fit: contain;
 }
-#main04 .inner .wrap article .textWrap {
+#main04 .inner .contentWrap article .textWrap {
 }
-#main04 .inner .wrap article .textWrap h3 {
-  font-size: 24px;
+#main04 .inner .contentWrap article .textWrap h3 {
+  font-size: 1.5rem;
   margin-bottom: 15px;
 }
-#main04 .inner .wrap article .textWrap p {
-  font-size: 16px;
+#main04 .inner .contentWrap article .textWrap p {
+  font-size: 1rem;
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -174,7 +176,49 @@ main section h2 {
   height: 100%;
   backface-visibility: hidden;
 }
-#main05 .contentWrap .front button {
+#main05 .contentWrap .front .box {
+  display: none;
+  
+  position: relative;
+  width: 70%;
+  min-width: 280px;
+  height: 60%;
+  border: 5px solid #343436;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  color: #343436;
+}
+#main05 .contentWrap .front .box .content {
+  position: absolute;
+  background: #fff;
+  left: -5px;
+  top: -5px;
+  padding-bottom: 50px;
+  width: 70%;
+}
+#main05 .contentWrap .front .box .content h2 {
+}
+#main05 .contentWrap .front .box .content h2 span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: -5px;
+}
+#main05 .contentWrap .front .box .content p {
+  font-size: 1.25rem;
+  opacity: 0.7;
+  margin: 50px 0; 
+}
+#main05 .contentWrap .front .box .content button {
+  border: 0;
+  background: #343436;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 10px 20px;
+}
+#main05 .contentWrap .front > button {
   position: absolute;
   bottom: -45px;
   width: 100%;
@@ -184,7 +228,7 @@ main section h2 {
   background: #900;
   color: #fff;
 }
-#main05 .contentWrap .front button span {
+#main05 .contentWrap .front > button span {
 }
 #main05 .contentWrap .back {
   background: #fff;
@@ -365,10 +409,10 @@ main section h2 {
   background: #907354 url(../assets/img/button03.png) no-repeat right 20px bottom 35px/ 75px auto;
 }
 #main07 .inner a h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 #main07 .inner a p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.2;
 }

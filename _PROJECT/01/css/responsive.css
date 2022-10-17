@@ -57,16 +57,19 @@
     padding: 20px;
   }
   
-  #main04 .inner .wrap {
+  #main04 .inner .contentWrap {
     column-gap: 20px;
   }
-  #main04 .inner .wrap article {
+  #main04 .inner .contentWrap article {
     width: calc((100% - 40px) / 3);
     height: calc((80vw - 40px) / 3);
     border-radius: 15px; 
   }
-  #main04 .inner .wrap article img {
+  #main04 .inner .contentWrap article img {
     width: 80px;
+    margin-bottom: 0;
+    display: block;
+    height: auto;
   }
   
   #main05 .contentWrap {
@@ -112,7 +115,6 @@
   /* footer */
   footer {
     font-size: 1rem;
-    padding 20px 0;
     padding: 20px 0 30px;
   }
   footer .inner .fTop {
@@ -138,14 +140,14 @@
   
 }
 
-/* 768px 미만 모바일 버전 */
+/* 768px 미만 화면 큰 모바일 버전 */
 @media (max-width: 767px) {
   html {
     font-size: 12px;
   }
   .inner {
     width: 100%;
-    padding: 0 50px;
+    padding: 0 20px;
   }
   /* header */
   header::before {
@@ -156,22 +158,110 @@
     background: url("../assets/img/logo.png") no-repeat center / auto 22px;
   }
   header .inner nav {
+    width: 250px;
+    background: #000;
+    height: calc(100vh - 50px);
+    top: 50px;
+    padding: 0 10px;
+    overflow-y: scroll;
+    left:-250px;
+    transition: all 0.3s;
+  }
+  header .inner nav.active {
+    left: 0;
+  }
+  header .inner nav::after {
+    display: none;
+  }
+  header .inner nav > ul.gnb {
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  header .inner nav > ul.gnb li.gnbList > a {
+    padding: 0;
+    width: 100%;
+    background: #907354;
+    padding : 0 5px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-sizing: border-box;
+  }
+  header .inner nav > ul.gnb li.gnbList:first-child > a {
+    border-top: 1px solid rgba(255,255,255,0.2)
+  }
+  header .inner nav > ul.gnb li.gnbList:hover > a,
+  header .inner nav > ul.gnb li.gnbList:hover > a button.toggle,
+  header .inner nav > ul.gnb li.gnbList.active > a,
+  header .inner nav > ul.gnb li.gnbList.active > a button.toggle {
+    color: #343436;
+  }
+  header .inner nav > ul.gnb li.gnbList > a button.toggle {
+    display: block;
+    float: right;
+    height: 50px;
+    border:0;
+    background: transparent;
+    color: #fff;
+    transition: all 0.3s;
+    width: 30px;
+    background: url('../assets/img/icon/slideDown.svg')
+  }
+  header .inner nav > ul.gnb li.gnbList > a button.toggle span {
+    font-size: 0;
+  }
+  header .inner nav ul.gnb li.gnbList ul.gnbSub {
+    height: auto;
+    position: relative;
+    left: 0 !important;
+    top: 0;
+    background: #605346;
+    padding: 10px 5px;
+    transform: none;
+    transition: none;
+  }
+  header .inner nav ul.gnb li.gnbList ul.gnbSub li {
+    line-height: 1.8;
+  }
+  header .inner nav:hover > ul.gnb li.gnbList ul.gnbSub {
+    display: static;
+    height: auto;
+    transition: none;
+  }
+  header .navSub {
     display: none;
   }
   header .inner ul.menuWrap {
-    display: none;
+    top: 50px;
+    left: -250px;
+    transition: all 0.3s;
+  }
+  header .inner ul.menuWrap.active {
+    left: 0;
+  }
+  header .inner ul.menuWrap li a {
+    line-height: 50px;
+    width: 20px;
+  }
+  header .inner ul.menuWrap li:first-child {
+    position: relative;
+    left: 0;
+  }
+  header .inner button#gnbBtn {
+    display: block;
   }
     
   /* title */
   #title {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
   
   /* main */
   #main01 .inner {
-    height: 111vw;
+    height: 500px;
     position: relative;
-    padding-top: 30vw;
+    padding: 30vw 20px 0;
+    background: url('../assets/img/main.jpg') no-repeat center / contain;
   }
   #main01 .inner::before {
     content:"";
@@ -185,6 +275,7 @@
   #main01 .inner * {
     position: relative;
     text-align: center;
+    word-break: keep-all;
   }
   
   #main02 {
@@ -201,23 +292,214 @@
     padding-bottom: 150px;
   }
   #main02 .inner article:last-child {
-    padding-right: 50px;
-    width: 200px;
+    padding-right: 20px;
+    width: 170px;
   }
   
   #main03 {
     display: none;
   }
-  #main04 .inner .wrap {
+  #main04 .inner .contentWrap {
     row-gap: 20px;
   }
-  #main04 .inner .wrap article{
+  #main04 .inner .contentWrap article{
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  #main04 .inner .contentWrap article .wrap{
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
     width: 100%;
   }
-  /* footer */
+  #main04 .inner .contentWrap article .wrap br {
+    display: none;
+  }
+  #main04 .inner .contentWrap article .wrap img {
+    display: block;
+    margin-right: 20px;
+  }
+  #main04 .inner .contentWrap article .wrap .textWrap {
+  }
+  #main04 .inner .contentWrap article .wrap .textWrap p {
+    white-space: normal;
+    word-break: keep-all;
+  }
+  #main05 .contentWrap .front {
+    background: transparent;
+  }
+  #main05 .contentWrap .front::after {
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url('../assets/img/boomerang_obj.png') no-repeat right -25px bottom -15px / 250px auto;
+    z-index: -1;
+  }
+  #main05 .contentWrap .front .box {
+    display: block;
+  }
+  #main05 .contentWrap .back {
+    padding-top: 20px;
+  }
+  #main05 .contentWrap .back .content ul li .textWrap p {
+    display: none;
+  }
+  #main05 .contentWrap .back .content ul li {
+    display: flex;
+    width: calc(50% - 10px);
+    flex-direction: column;
+    align-items: center;
+  }
+  #main05 .contentWrap .back .content ul li img {
+    width: 140px;
+  }
+  #main05 .contentWrap .back .content ul li .textWrap h3 {
+    font-weight: 500;
+  }
+  #main06 .inner {
+    display: block;
+  }
+  #main06 .inner .selectBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #main06 .inner .selectBox .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #main06 .inner .selectBox button {
+    text-align: end;
+  }
+  #main06 .inner ul#boardBox {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  #main07 .inner a {
+    background:none;
+    position: relative;
+    background: #907354;
+    text-align: center;
+    word-break: keep-all;
+  }
+  #main07 .inner a:nth-of-type(2){
+    background: #646464;
+  }
+  #main07 .inner a:nth-of-type(3){
+    background: #907354;
+  }
+  #main07 .inner a::before {
+    content:"";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    background: url(../assets/img/button01.png) no-repeat center/ 50px 50px;
+  }
+  #main07 .inner a:nth-of-type(2)::before{
+    background: url(../assets/img/button02.png) no-repeat center/ 50px 50px;
+  }
+  #main07 .inner a:nth-of-type(3)::before{
+    background: url(../assets/img/button03.png) no-repeat center/ 50px auto;
+  }
   
+  /* footer */
+  footer .inner .fTop ul.linkList {
+    display: block;
+    text-align: center
+  }
+  footer .inner .fTop ul.linkList li {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  footer .inner .fTop ul.linkList br {
+    display: block;
+  }
+  footer .inner .fTop ul.linkList li a {
+    padding: 0 10px;
+  }
+  footer .inner .fTop ul.linkList li:nth-of-type(4) {
+    border-left: 0;
+  }
+  footer .inner .fBot {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  footer .inner .fBot ul.info {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  footer .inner .fBot ul.buttons {
+    margin-right: 0;
+    row-gap: 10px;
+  }
+  footer .inner .fBot ul.buttons li {
+    width: calc((100% - 40px)/3)
+  }
+  footer .inner .fBot ul.buttons li:last-child {
+    width : 100%;
+  }
+  footer .inner .fBot ul.buttons li a,
+  footer .inner .fBot ul.buttons li button {
+    line-height: 25px;
+  }
 }
 
+/* 470px 미만 화면 작은 모바일 버전 */
+@media (max-width: 499px) {
+  /* header */
+  
+  /* title */
+  
+  /* main */
+  #main01 .inner {
+    height: 400px;
+  }
+  #main01 .inner p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+  #main01 .inner h2 {
+    font-size: 2rem;
+  }
+  
+  #main02 .inner article {
+    width: 100px;
+    flex-shrink: 0;
+  }
+  #main02 .inner article span {
+    padding-bottom: 100px;
+  }
+  #main02 .inner article p {
+    font-size: 1rem;
+  }
+  #main02 .inner article:last-child {
+    width: 120px;
+  }
+  #main05 .contentWrap .back .content ul li .textWrap h3 {
+    font-size: 1rem;
+  }
+  #main07 .inner a {
+    padding: 25px 10px;
+  }
+  #main07 .inner a h2 {
+    font-size: 1.25rem;
+  }
+  /* footer */
+  footer .inner .fTop ul.linkList {
+    font-size: 0.7rem;
+  }
+  footer .inner .fBot ul.info {
+    width: 280px;
+    font-size: 0.7rem;
+  }
+}
 
 
 
