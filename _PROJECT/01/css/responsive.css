@@ -67,7 +67,6 @@
   }
   #main04 .inner .contentWrap article img {
     width: 80px;
-    margin-bottom: 0;
     display: block;
     height: auto;
   }
@@ -153,8 +152,8 @@
   header::before {
     height: 50px;
   }
-  header .inner h1 {
-    line-height: 50px;
+  header .inner h1 a {
+    height: 50px;
     background: url("../assets/img/logo.png") no-repeat center / auto 22px;
   }
   header .inner nav {
@@ -256,6 +255,10 @@
     padding: 50px 0 0;
   }
   
+  #title #pagingWrap {
+    display: none;
+  }
+  
   /* main */
   #main01 .inner {
     height: 500px;
@@ -318,6 +321,7 @@
   }
   #main04 .inner .contentWrap article .wrap img {
     display: block;
+    margin: 0;
     margin-right: 20px;
   }
   #main04 .inner .contentWrap article .wrap .textWrap {
@@ -446,8 +450,9 @@
     width : 100%;
   }
   footer .inner .fBot ul.buttons li a,
-  footer .inner .fBot ul.buttons li button {
+  footer .inner .fBot ul.buttons li select {
     line-height: 25px;
+    height: 25px;
   }
 }
 

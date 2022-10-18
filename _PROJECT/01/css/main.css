@@ -39,6 +39,9 @@ main section h2 {
 #main02 .inner article {
   width: calc((100% - 60px) / 4);
 }
+#main02 .inner article a {
+  display: block;
+}
 #main02 .inner article span {
   display: block;
   width: 100%;
@@ -136,6 +139,7 @@ main section h2 {
 }
 #main04 .inner .contentWrap article img {
   width: 160px;
+  margin: 0 auto;
   margin-bottom: 20px;
   object-fit: contain;
 }
@@ -367,6 +371,9 @@ main section h2 {
 }
 #main06 .inner ul#boardBox li {
   border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+#main06 .inner ul#boardBox li a {
+  display: block;
   padding: 10px 20px 0;
 }
 #main06 .inner ul#boardBox li span {

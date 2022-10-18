@@ -70,16 +70,18 @@ footer .inner .fBot ul.buttons li a {
   box-sizing: border-box;
   font-size: 0.75rem;
 }
-footer .inner .fBot ul.buttons li button {
+footer .inner .fBot ul.buttons li select {
   display: block;
   width: 100%;
   text-align: center;
   line-height: 50px;
+  height: 50px;
   border: 1px solid #fff;
   box-sizing: border-box;
   background: transparent;
   color: #fff;
   font-size: 0.75rem;
+  background: #900;
 }
 footer .inner .fBot ul.buttons li button span {
   font-size: 0;

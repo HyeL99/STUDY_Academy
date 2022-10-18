@@ -1,0 +1,70 @@
+#subPage {
+    padding-top: 100px;
+    background: #fff;
+    color: #343436;
+}
+#subPage #subtitle {}
+#subPage #subtitle img {}
+#subPage #navbar {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+#subPage #navbar .dropdownSection {
+}
+#subPage #navbar .dropdownSection > a,
+#subPage #navbar .dropdownSection select {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.5);
+    background: transparent;
+    line-height: 30px;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    border: 0;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+#subPage #navbar .dropdownSection select.dropdownTitle {
+    width: 18rem;
+    text-align: start;
+    position: relative;
+}
+#subPage #navbar .dropdownSection select.dropdownTitle i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#subPage #navbar .dropdownSection select.dropdownTitle:nth-of-type(1) {
+    width: 8rem;
+    border:0;
+}
+#subPage #navbar .dropdownSection select.dropdownTitle:nth-of-type(2) {
+    font-weight: 500;
+}
+#subPage #navbar .currentPageNav {
+    font-size: 0.7rem;
+    color: rgba(0,0,0,0.5);
+    line-height: 30px;
+    white-space: nowrap;
+}
+#subPage #navbar .currentPageNav span {
+    color:#000;
+}
+#subPage .inner {}
+#subPage .inner #subContent01 {}
+#subPage .inner #subContent01 .sub01 {}
+#subPage .inner #subContent01 .sub01 img {}
+
+/* 1024px 미만 테블릿 버전 */
+@media (max-width: 1023px) {
+    #subPage {
+        padding-top: 170px;
+    }
+}
+/* 768px 미만 화면 큰 모바일 버전 */
+@media (max-width: 767px) {
+    #subPage {
+        padding-top: 50px;
+    }
+}

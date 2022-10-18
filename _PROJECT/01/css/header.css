@@ -15,12 +15,15 @@ header::before {
     top:0;
     box-shadow: 0 0 5px rgba(0,0,0,0.8)
 }
-header .inner h1 {
+header .inner h1 a {
+    display: block;
     text-align: center;
     color: transparent;
     width: 120px;
-    line-height: 100px;
+    height: 100px;
     background: url("../assets/img/logo.png") no-repeat center / contain;
+    position: relative;
+    z-index: 1;
 }
 header .inner nav {
     position: absolute;
