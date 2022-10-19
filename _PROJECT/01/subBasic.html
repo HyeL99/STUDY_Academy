@@ -144,30 +144,36 @@
     </header>
     <main id="subPage">
         <section id="subtitle">
-            <img src="assets/img/menu/01-0.jpg" alt="토마호크 프리미엄 초이스">
+            <img src="assets/img/menu/02-0.jpg" alt="토마호크 스테이크">
         </section>
+        <div class="currentPageNav inner">
+            Home > <span id="textGnb">MENU</span> > <span id="textGnbSub">SUBMENU</span>
+        </div>
         <section id="navbar">
-            <div class="dropdownSection">
-                <button>Home</button>
-                <select name="gnbSelect" id="gnbSelect" class="dropdownTitle">
-                    <option value="BRAND"><a href="brand01.html">BRAND</a></option>
-                    <option value="MENU" selected><a href="menu01.html">MENU</a></option>
-                    <option value="MEMBERSHP"><a href="membership01.html">MEMBERSHP</a></option>
-                    <option value="BENEFIT"><a href="benefit01.html">BENEFIT</a></option>
-                    <option value="ACADEMY"><a href="academy01.html">ACADEMY</a></option>
-                    <option value="STORE"><a href="store.html">STORE</a></option>
-                </select>
-                <select name="gnbSubSelect" id="gnbSubSelect" class="dropdownTitle"></select>
-            </div>
-            <div class="currentPageNav">
-                Home > MENU > <span>TOMAHAWK PREMIUM CHOICE</span>
+            <div class="inner">
+                <div class="dropdownSection flex">
+                    <a href="index.html">Home</a>
+                    <select name="gnbSelect" id="gnbSelect" class="dropdownTitle">
+                        <option value="BRAND">BRAND</option>
+                        <option value="MENU" selected>MENU</option>
+                        <option value="MEMBERSHIP">MEMBERSHIP</option>
+                        <option value="BENEFIT">BENEFIT</option>
+                        <option value="ACADEMY">ACADEMY</option>
+                        <option value="STORE">STORE</option>
+                    </select>
+                    <select name="gnbSubSelect" id="gnbSubSelect" class="dropdownTitle" onchange="if(this.value) location.href=(this.value);">
+                        <option value="TOMAHAWK PREMIUM CHOICE">TOMAHAWK PREMIUM CHOICE</option>
+                    </select>
+                </div>
             </div>
         </section>
-        <section id="subContent01">
-            <article class="sub01">
-                ~~~~~
-            </article>
-        </section>
+        <div class="inner">
+            <section id="subContent01">
+                <article class="sub01">
+                    <div style="padding: 50px 0">MENU - MENU02.html</div>
+                </article>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="inner">
@@ -194,15 +200,14 @@
                     <li><a href="recruit.html">채용 안내</a></li>
                     <li><a href="newStore.html">신규 입점 제의</a></li>
                     <li>
-                        <select name="familySite" id="familySite">
+                        <select name="familySite" id="familySite" onchange="if(this.value) location.href=(this.value);">
                             <option selected>패밀리사이트</option>
-                            <option value="BHC그룹"><a href="http://www.bhcgroup.co.kr/">BHC그룹</a></option>
-                            <option value="BHC"><a href="https://www.bhc.co.kr/">BHC</a></option>
-                            <option value="OUTBACK"><a href="https://www.outback.co.kr/">OUTBACK</a></option>
-                            <option value="창고43"><a href="http://www.changgo43.co.kr/">창고43</a></option>
-                            <option value="큰맘할매순대국"><a href="http://www.bkfood.kr/">큰맘할매순대국</a></option>
-                            <option value="족발상회"><a href="http://jokbalstore.com/">족발상회</a></option>
-                            <option value="그램그램"><a href="http://www.gram-gram.com/">그램그램</a></option>
+                            <option value="http://www.bhcgroup.co.kr/">BHC그룹</option>
+                            <option value="https://www.outback.co.kr/">OUTBACK</option>
+                            <option value="http://www.changgo43.co.kr/">창고43</option>
+                            <option value="http://www.bkfood.kr/">큰맘할매순대국</option>
+                            <option value="http://jokbalstore.com/">족발상회</option>
+                            <option value="http://www.gram-gram.com/">그램그램</option>
                         </select>
                     </li>
                 </ul>
@@ -221,130 +226,58 @@
             </div>
         </div>
     </footer>
+    <div id="popupWrap">
+        <div id="searchCard">
+            <img src="assets/img/searchCardTitle.svg" alt="검색 팝업 이미지">
+            <form action="" class="flex">
+                <input type="text" id="search" autocomplete="off" placeholder="검색어를 입력해주세요">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="wrap">
+                <h2>인기검색어</h2>
+                <hr>
+                <ul class="">
+                    <li><a href="#">1. 고객센터</a></li>
+                    <li><a href="#">2. 멤버십</a></li>
+                    <li><a href="#">3. 아카데미</a></li>
+                    <li><a href="#">4. 매장찾기</a></li>
+                    <li><a href="#">5. 토마호크</a></li>
+                </ul>
+            </div>
+            <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="loginCard">
+            <img src="assets/img/loginCardTitle.jpg" alt="로그인 팝업 이미지">
+            <form action="">
+                <div class="wrap flex">
+                    <input type="text" id="userName" onblur="checkN()" autocomplete="off" placeholder="ID">
+                    <span>ID저장</span>
+                </div>
+                <div class="wrap">
+                    <input type="password" id="pw" autocomplete="off" placeholder="PW">
+                </div>
+                <input type="submit" value="LOGIN">
+            </form>
+            <ul class="flex jusCen">
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">ID 찾기</a></li>
+                <li><a href="#">비밀번호 찾기</a></li>
+            </ul>
+            <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="translateCard">
+            <img src="assets/img/translateCardTitle.png" alt="언어 선택 팝업 이미지">
+            <p>
+                죄송합니다.<br>
+                해당 서비스를 준비 중입니다.
+            </p>
+            <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
     <script>
-        let subList = {
-            brand : [
-                {
-                    title : 'OUTBACK STORY',
-                    link : 'brand01.html',
-                },
-                {
-                    title : 'BEEF STORY',
-                    link : 'brand02.html',
-                },
-                {
-                    title : 'STEAK ACADEMY',
-                    link : 'brand03.html',
-                },
-                {
-                    title : 'OUTBACK CSR',
-                    link : 'brand04.html',
-                },
-                {
-                    title : 'PRESS CENTER',
-                    link : 'brand05.html',
-                }
-            ],
-            menu : [
-                {
-                    title : 'TOMAHAWK PREMIUM CHOICE',
-                    link : 'menu01.html',
-                },
-                {
-                    title : 'TOMAHAWK STEAK',
-                    link : 'menu02.html',
-                },
-                {
-                    title : 'T-BONE STEAK',
-                    link : 'menu03.html',
-                },
-                {
-                    title : 'BLACK LABEL STEAKS',
-                    link : 'menu04.html',
-                },
-                {
-                    title : 'STEAK ＆ FAVORITES',
-                    link : 'menu05.html',
-                },
-                {
-                    title : 'LUNCH SET',
-                    link : 'menu06.html',
-                },
-                {
-                    title : 'PASTA ＆ SALADS',
-                    link : 'menu07.html',
-                },
-                {
-                    title : 'WINES',
-                    link : 'menu08.html',
-                },
-                {
-                    title : 'DESSERTS ＆ OTHERS',
-                    link : 'menu09.html',
-                },
-                {
-                    title : 'DELIVERY',
-                    link : 'menu10.html',
-                },
-                {
-                    title : 'LUNCH BOX',
-                    link : 'menu11.html',
-                }
-            ],
-            membership : [
-                {
-                    title : 'MEMBERSHIP BENEFIT',
-                    link : 'membership01.html',
-                },
-                {
-                    title : 'BOOMERANG VIP',
-                    link : 'membership02.html',
-                }
-            ],
-            benefit : [
-                {
-                    title : 'CREDIT CARDS',
-                    link : 'benefit01.html',
-                },
-                {
-                    title : 'SKT＆KT',
-                    link : 'benefit02.html',
-                },
-                {
-                    title : 'POINT PAYMENT',
-                    link : 'benefit03.html',
-                },
-                {
-                    title : 'VOUCHER',
-                    link : 'benefit04.html',
-                },
-                {
-                    title : 'EVENT',
-                    link : 'benefit05.html',
-                }
-                
-            ],
-            academy : [
-                {
-                    title : 'Steak Cooking Class Ⅰ',
-                    link : 'academy01.html',
-                },
-                {
-                    title : 'Steak Cooking Class Ⅱ',
-                    link : 'academy02.html',
-                },
-                {
-                    title : 'Culinary Class',
-                    link : 'academy03.html',
-                },
-                {
-                    title : 'Wine Class',
-                    link : 'academy04.html',
-                },
-            ]
-        }
+        // only menu01.html
         $(function(){
-
+            getSelect(1);
         })
     </script>
 </body>

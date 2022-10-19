@@ -339,6 +339,7 @@ main section h2 {
   font-size: 4rem;
   line-height: 0.7;
   margin-bottom: 50px;
+  cursor: pointer;
 }
 #main06 .inner .selectBox h2 span {
   font-size: 2.25rem;
@@ -357,9 +358,21 @@ main section h2 {
   opacity: 0.6;
   margin-bottom: 20px;
   transition: all 0.3s;
+  position: relative;
 }
 #main06 .inner .selectBox button.active {
   opacity: 1;
+}
+#main06 .inner .selectBox button .focusBar {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  border-bottom: 3px solid #900;
+  transition: all 0.3s;
+}
+#main06 .inner .selectBox button.active .focusBar {
+  width: 10rem;
 }
 #main06 .inner .selectBox button:hover {
   opacity: 1;

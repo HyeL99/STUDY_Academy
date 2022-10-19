@@ -303,7 +303,7 @@
                             <button><a href="membership01.html">자세히보기</a></button>
                         </div>
                     </div>
-                    <button>VIEW MORE <span class="nextArrow"></span></button>
+                    <button>VIEW MORE <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div class="back">
                     <div class="content inner">
@@ -374,8 +374,8 @@
                         </ul>
                     </div>
                     <div class="buttonWrap flex">
-                        <button class="backBtn"><span class="prevArrow"></span>BACK</button>
-                        <button class="moreBtn"><a href="membership01.html"><span class="plus"></span>자세히보기</a></button>
+                        <button class="backBtn"><i class="fa-solid fa-arrow-left"></i> BACK</button>
+                        <button class="moreBtn"><a href="membership01.html"><i class="fa-solid fa-plus"></i> 자세히보기</a></button>
                     </div>
                 </div>
             </div>
@@ -390,8 +390,8 @@
                         &Notice
                     </h2>
                     <div class="wrap">
-                        <button id="newsBtn">NEWS</button>
-                    <button id="noticeBtn">NOTICE</button>
+                        <button id="newsBtn">NEWS<span class="focusBar"></span></button>
+                        <button id="noticeBtn">NOTICE<span class="focusBar"></span></button>
                     </div>
                 </div>
                 <ul id="boardBox">
@@ -442,7 +442,7 @@
                     <li><a href="recruit.html">채용 안내</a></li>
                     <li><a href="newStore.html">신규 입점 제의</a></li>
                     <li>
-                        <select name="familySite" id="familySite">
+                        <select name="familySite" id="familySite" onchange="if(this.value) location.href=(this.value);">
                             <option selected>패밀리사이트</option>
                             <option value="BHC그룹"><a href="http://www.bhcgroup.co.kr/">BHC그룹</a></option>
                             <option value="BHC"><a href="https://www.bhc.co.kr/">BHC</a></option>
@@ -469,6 +469,53 @@
             </div>
         </div>
     </footer>
-    
+    <div id="popupWrap">
+        <div id="searchCard">
+            <img src="assets/img/searchCardTitle.svg" alt="검색 팝업 이미지">
+            <form action="" class="flex">
+                <input type="text" id="search" autocomplete="off" placeholder="검색어를 입력해주세요">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="wrap">
+                <h2>인기검색어</h2>
+                <hr>
+                <ul class="">
+                    <li><a href="#">1. 고객센터</a></li>
+                    <li><a href="#">2. 멤버십</a></li>
+                    <li><a href="#">3. 아카데미</a></li>
+                    <li><a href="#">4. 매장찾기</a></li>
+                    <li><a href="#">5. 토마호크</a></li>
+                </ul>
+            </div>
+            <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="loginCard">
+            <img src="assets/img/loginCardTitle.jpg" alt="로그인 팝업 이미지">
+            <form action="">
+                <div class="wrap flex">
+                    <input type="text" id="userName" onblur="checkN()" autocomplete="off" placeholder="ID">
+                    <span>ID저장</span>
+                </div>
+                <div class="wrap">
+                    <input type="password" id="pw" autocomplete="off" placeholder="PW">
+                </div>
+                <input type="submit" value="LOGIN">
+            </form>
+            <ul class="flex jusCen">
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">ID 찾기</a></li>
+                <li><a href="#">비밀번호 찾기</a></li>
+            </ul>
+            <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="translateCard">
+            <img src="assets/img/translateCardTitle.png" alt="언어 선택 팝업 이미지">
+            <p>
+                죄송합니다.<br>
+                해당 서비스를 준비 중입니다.
+            </p>
+            <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
 </body>
 </html>

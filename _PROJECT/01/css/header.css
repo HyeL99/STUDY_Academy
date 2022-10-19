@@ -88,6 +88,8 @@ header .inner nav > ul.gnb li.gnbList ul.gnbSub li a:hover {
     color: #d00;
 }
 header .inner ul.menuWrap {
+    position: ralative;
+    z-index: 1;
 }
 header .inner ul.menuWrap li {
     margin-left: 15px;

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+
+/* 1024px 미만 작은 데스크탑 버전 */
+@media (max-width: 1400px){
+  footer .inner .fBot ul.buttons li {
+    width: calc(50% - 10px);
+    opacity: 0.7;
+  }
+}
 /* 1024px 미만 테블릿 버전 */
 @media (max-width: 1023px) {
   html {
@@ -254,9 +262,11 @@
   #title {
     padding: 50px 0 0;
   }
-  
   #title #pagingWrap {
-    display: none;
+    bottom: 10px;
+    left: auto;
+    right: 10px;
+    transform: translate(0);
   }
   
   /* main */
@@ -380,6 +390,10 @@
   #main06 .inner ul#boardBox {
     max-width: 100%;
     margin-left: 0;
+  }
+  #main06 .inner .selectBox button .focusBar {
+    left: auto;
+    right:0;
   }
   #main07 .inner a {
     background:none;

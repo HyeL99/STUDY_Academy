@@ -5,6 +5,15 @@
 }
 #subPage #subtitle {}
 #subPage #subtitle img {}
+#subPage .currentPageNav {
+    font-size: 0.7rem;
+    color: rgba(0,0,0,0.5);
+    line-height: 30px;
+    white-space: nowrap;
+}
+#subPage .currentPageNav span#textGnbSub {
+    color:#000;
+}
 #subPage #navbar {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -17,7 +26,7 @@
     font-size: 0.8rem;
     color: rgba(0,0,0,0.5);
     background: transparent;
-    line-height: 30px;
+    line-height: 25px;
     white-space: nowrap;
     padding: 0 0.5rem;
     border: 0;
@@ -41,15 +50,6 @@
 }
 #subPage #navbar .dropdownSection select.dropdownTitle:nth-of-type(2) {
     font-weight: 500;
-}
-#subPage #navbar .currentPageNav {
-    font-size: 0.7rem;
-    color: rgba(0,0,0,0.5);
-    line-height: 30px;
-    white-space: nowrap;
-}
-#subPage #navbar .currentPageNav span {
-    color:#000;
 }
 #subPage .inner {}
 #subPage .inner #subContent01 {}

@@ -92,6 +92,152 @@ let newsList = [
 
 // ALL BOARD LIST
 let allList = noticeList.concat(newsList);
+// SELECT OPTION LIST
+const subList = [
+    {
+        name:'BRAND',
+        list :  [
+            {
+                title : 'OUTBACK STORY',
+                link : 'brand01.html',
+            },
+            {
+                title : 'BEEF STORY',
+                link : 'brand02.html',
+            },
+            {
+                title : 'STEAK ACADEMY',
+                link : 'brand03.html',
+            },
+            {
+                title : 'OUTBACK CSR',
+                link : 'brand04.html',
+            },
+            {
+                title : 'PRESS CENTER',
+                link : 'brand05.html',
+            }
+        ]
+    },
+    {
+        name:'MENU',
+        list :  [
+            {
+                title : 'TOMAHAWK PREMIUM CHOICE',
+                link : 'menu01.html',
+            },
+            {
+                title : 'TOMAHAWK STEAK',
+                link : 'menu02.html',
+            },
+            {
+                title : 'T-BONE STEAK',
+                link : 'menu03.html',
+            },
+            {
+                title : 'BLACK LABEL STEAKS',
+                link : 'menu04.html',
+            },
+            {
+                title : 'STEAK ＆ FAVORITES',
+                link : 'menu05.html',
+            },
+            {
+                title : 'LUNCH SET',
+                link : 'menu06.html',
+            },
+            {
+                title : 'PASTA ＆ SALADS',
+                link : 'menu07.html',
+            },
+            {
+                title : 'WINES',
+                link : 'menu08.html',
+            },
+            {
+                title : 'DESSERTS ＆ OTHERS',
+                link : 'menu09.html',
+            },
+            {
+                title : 'DELIVERY',
+                link : 'menu10.html',
+            },
+            {
+                title : 'LUNCH BOX',
+                link : 'menu11.html',
+            }
+        ]
+    },
+    {
+        name:'MEMBERSHIP',
+        list : [
+            {
+                title : 'MEMBERSHIP BENEFIT',
+                link : 'membership01.html',
+            },
+            {
+                title : 'BOOMERANG VIP',
+                link : 'membership02.html',
+            }
+        ]
+    },
+    {
+        name:'BENEFIT',
+        list :  [
+            {
+                title : 'CREDIT CARDS',
+                link : 'benefit01.html',
+            },
+            {
+                title : 'SKT＆KT',
+                link : 'benefit02.html',
+            },
+            {
+                title : 'POINT PAYMENT',
+                link : 'benefit03.html',
+            },
+            {
+                title : 'VOUCHER',
+                link : 'benefit04.html',
+            },
+            {
+                title : 'EVENT',
+                link : 'benefit05.html',
+            }
+            
+        ]
+    },
+    {
+        name:'ACADEMY',
+        list :  [
+            {
+                title : 'Steak Cooking Class Ⅰ',
+                link : 'academy01.html',
+            },
+            {
+                title : 'Steak Cooking Class Ⅱ',
+                link : 'academy02.html',
+            },
+            {
+                title : 'Culinary Class',
+                link : 'academy03.html',
+            },
+            {
+                title : 'Wine Class',
+                link : 'academy04.html',
+            },
+        ]
+    },
+    {
+        name:'STORE',
+        list :  [
+            {
+                title : 'Store',
+                link : 'store.html',
+            }
+        ]
+    }
+];
 
 function setBoard(state){
     $(this).addClass('active');
@@ -112,7 +258,7 @@ function setBoard(state){
             list = list.sort((a,b)=>(a.date - b.date))
             break;
     }
-    console.log(list);
+
     let fixedItem = list.filter((item)=>item.fix == true);
     let nonFixedItem = list.filter((item)=>item.fix == false);
     if(fixedItem.length>0){
@@ -151,9 +297,47 @@ function setBoard(state){
     }
 }
 
+function getSelect(number){
+    let state = $('#gnbSelect option:selected').text();
+    let optionList;
+    let selectInner='';
+    setSelect()
+
+    // only menu01.html
+    $(`#gnbSubSelect option:eq(${number})`).prop('selected', true);
+
+    let subState = $('#gnbSubSelect option:selected').text();
+
+    $('#textGnb').text(state);
+    $('#textGnbSub').text(subState);
+
+    $('#gnbSelect').on('change',function(){
+        state = this.value;
+        setSelect();
+        location.href=(gnbSubSelect.value);
+    })
+
+    function setSelect() {
+        for(let item of subList){
+            if(item.name == state){
+                optionList = item.list;
+            }
+        }
+        selectInner = '';
+        let num = 1;
+        for (let item of optionList){
+            selectInner += `<option value="${item.link}" id="menu${num}">${item.title}</option>`;
+            num++;
+        }
+        $('#gnbSubSelect').html(selectInner);
+    }
+
+    
+}
+
 setBoard('all')
 $('#allBtn').click(function(){
-    $(this).siblings().removeClass('active');
+    $(this).siblings().children().removeClass('active');
     setBoard('all');
 });
 $('#noticeBtn').click(function(){
@@ -184,6 +368,26 @@ $('.gnbList a').click(function(){
     $(this).parent('li').toggleClass('active');
     $(this).children('button').children('i').toggleClass('fa-caret-down');
     $(this).children('button').children('i').toggleClass('fa-caret-up');
+});
+
+$('#popupWrap #loginCard form .wrap span').click(function(){
+    $(this).toggleClass('focus');
+});
+$('ul.menuWrap li:eq(0) a').click(function(){
+    $('#searchCard').addClass('active');
+    $('#popupWrap').addClass('active'); 
+});
+$('ul.menuWrap li:eq(1) a').click(function(){
+    $('#loginCard').addClass('active');
+    $('#popupWrap').addClass('active'); 
+});
+$('ul.menuWrap li:eq(2) a').click(function(){
+    $('#translateCard').addClass('active');
+    $('#popupWrap').addClass('active'); 
+});
+$('#popupWrap button.closeCard').click(function(){
+    $(this).parent().removeClass('active');
+    $('#popupWrap').removeClass('active');
 });
 
 $(function(){
@@ -222,25 +426,6 @@ $(function(){
         $status.html('<span class = "currentPage">' + '0' + i + '</span> ' + ' / 0' + (slick.$dots[0].children.length));
     });
 
-    // select 관련 js
-    let state = $('#gnbSelect option:selected').text();
-    console.log(state);
-    let optionList;
-    let selectInner='';
-
-    for(let item of subList){
-        if(item.name == state){
-            optionList = item.list;
-        }
-    }
-    console.log(optionList)
-    let num = 1;
-    for (let item of optionList){
-        selectInner += `<option value="${item.link}" id="menu${num}">${item.title}</option>`;
-        num++;
-    }
-    $('#gnbSubSelect').html(selectInner);
-
     $('#slideContainer').slick({
         dots: true,
         infinite: true,
@@ -251,4 +436,6 @@ $(function(){
         prevArrow: $("#slickPrevBtn"),
         nextArrow: $("#slickNextBtn"),
     });
+
+    // select 관련 js
 });
