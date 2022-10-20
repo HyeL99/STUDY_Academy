@@ -1,0 +1,12 @@
+@charset'UTF-8';
+
+img {
+    max-width: 100%; /*이미지의 원래 사이즈보다 커지진 않음*/
+}
+body {
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
