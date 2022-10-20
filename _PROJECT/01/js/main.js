@@ -303,7 +303,6 @@ function getSelect(number){
     let selectInner='';
     setSelect()
 
-    // only menu01.html
     $(`#gnbSubSelect option:eq(${number})`).prop('selected', true);
 
     let subState = $('#gnbSubSelect option:selected').text();
@@ -364,10 +363,13 @@ $('#gnbBtn').click(function(){
     $('.menuWrap').toggleClass('active');
 });
 $('.gnbList a').click(function(){
-    $(this).siblings('.gnbSub').slideToggle();
-    $(this).parent('li').toggleClass('active');
-    $(this).children('button').children('i').toggleClass('fa-caret-down');
-    $(this).children('button').children('i').toggleClass('fa-caret-up');
+    if($(window).width() <= 767){
+        $(this).siblings('.gnbSub').slideToggle();
+        $(this).parent('li').toggleClass('active');
+        $(this).children('button').children('i').toggleClass('fa-caret-down');
+        $(this).children('button').children('i').toggleClass('fa-caret-up');
+    }
+    
 });
 
 $('#popupWrap #loginCard form .wrap span').click(function(){

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUTBACK::BRAND</title>
+    <title>OUTBACK::ETC</title>
 
     <!-- favicon 삽입 -->
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
@@ -144,26 +144,29 @@
     </header>
     <main id="subPage">
         <section id="subtitle">
-            <img src="assets/img/brand/00.jpg" alt="BRAND">
-            <p>BRAND</p>
+            <img src="assets/img/store00.jpg" alt="STORE">
+            <p>POLICY</p>
         </section>
         <div class="currentPageNav inner">
-            Home > <span id="textGnb">MENU</span> > <span id="textGnbSub">SUBMENU</span>
+            Home > <span id="textGnb">ETC</span> > <span id="textGnbSub">개인정보처리방침</span>
         </div>
         <section id="navbar">
             <div class="inner">
                 <div class="dropdownSection flex">
                     <a href="index.html">Home</a>
-                    <select name="gnbSelect" id="gnbSelect" class="dropdownTitle">
-                        <option value="BRAND" selected>BRAND</option>
-                        <option value="MENU">MENU</option>
-                        <option value="MEMBERSHIP">MEMBERSHIP</option>
-                        <option value="BENEFIT">BENEFIT</option>
-                        <option value="ACADEMY">ACADEMY</option>
-                        <option value="STORE">STORE</option>
+                    <select name="gnbSelect" id="gnbSelect" class="dropdownTitle" onchange="if(this.value) location.href=(this.value);">
+                        <option value="aboutOutback.html">회사 소개</option>
+                        <option value="recruit.html">채용 안내</option>
+                        <option value="newStore.html">신규 입점 제의</option>
+                        <option value="etc01.html" selected>ETC</option>
                     </select>
                     <select name="gnbSubSelect" id="gnbSubSelect" class="dropdownTitle" onchange="if(this.value) location.href=(this.value);">
-                        <option value="TOMAHAWK PREMIUM CHOICE">TOMAHAWK PREMIUM CHOICE</option>
+                        <option value="etc01.html" selected>개인정보처리방침</option>
+                        <option value="etc02.html">홈페이지 이용약관</option>
+                        <option value="etc03.html">위치정보 이용약관</option>
+                        <option value="etc04.html">윤리경영</option>
+                        <option value="etc05.html">공지사항</option>
+                        <option value="etc06.html">사이트맵</option>
                     </select>
                 </div>
             </div>
@@ -171,7 +174,7 @@
         <div class="inner">
             <section id="subContent01">
                 <article class="sub01">
-                    <div style="padding: 50px 0">BRAND - BRAND04.html</div>
+                    <div style="padding: 50px 0">ETC - ETC01.html</div>
                 </article>
             </section>
         </div>
@@ -275,11 +278,5 @@
             <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
-    <script>
-        // only menu01.html
-        $(function(){
-            getSelect(3);
-        })
-    </script>
 </body>
 </html>

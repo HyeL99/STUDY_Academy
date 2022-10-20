@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUTBACK::BRAND</title>
+    <title>OUTBACK::회사 소개</title>
 
     <!-- favicon 삽입 -->
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
@@ -144,26 +144,21 @@
     </header>
     <main id="subPage">
         <section id="subtitle">
-            <img src="assets/img/brand/00.jpg" alt="BRAND">
-            <p>BRAND</p>
+            <img src="assets/img/store00.jpg" alt="STORE">
+            <p>회사 소개</p>
         </section>
         <div class="currentPageNav inner">
-            Home > <span id="textGnb">MENU</span> > <span id="textGnbSub">SUBMENU</span>
+            Home > <span id="textGnbSub">회사 소개</span>
         </div>
         <section id="navbar">
             <div class="inner">
                 <div class="dropdownSection flex">
                     <a href="index.html">Home</a>
-                    <select name="gnbSelect" id="gnbSelect" class="dropdownTitle">
-                        <option value="BRAND" selected>BRAND</option>
-                        <option value="MENU">MENU</option>
-                        <option value="MEMBERSHIP">MEMBERSHIP</option>
-                        <option value="BENEFIT">BENEFIT</option>
-                        <option value="ACADEMY">ACADEMY</option>
-                        <option value="STORE">STORE</option>
-                    </select>
-                    <select name="gnbSubSelect" id="gnbSubSelect" class="dropdownTitle" onchange="if(this.value) location.href=(this.value);">
-                        <option value="TOMAHAWK PREMIUM CHOICE">TOMAHAWK PREMIUM CHOICE</option>
+                    <select name="gnbSelect" id="gnbSelect" class="dropdownTitle" onchange="if(this.value) location.href=(this.value);">
+                        <option value="aboutOutback.html" selected>회사 소개</option>
+                        <option value="recruit.html">채용 안내</option>
+                        <option value="newStore.html">신규 입점 제의</option>
+                        <option value="etc01.html">ETC</option>
                     </select>
                 </div>
             </div>
@@ -171,7 +166,7 @@
         <div class="inner">
             <section id="subContent01">
                 <article class="sub01">
-                    <div style="padding: 50px 0">BRAND - BRAND04.html</div>
+                    <div style="padding: 50px 0">aboutOutback.html</div>
                 </article>
             </section>
         </div>
@@ -275,11 +270,5 @@
             <button class="closeCard"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
-    <script>
-        // only menu01.html
-        $(function(){
-            getSelect(3);
-        })
-    </script>
 </body>
 </html>

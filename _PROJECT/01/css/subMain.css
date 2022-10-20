@@ -3,8 +3,21 @@
     background: #fff;
     color: #343436;
 }
-#subPage #subtitle {}
+#subPage #subtitle {
+    position: relative;
+}
 #subPage #subtitle img {}
+#subPage #subtitle p {
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-bottom : 1px solid #fff;
+}
 #subPage .currentPageNav {
     font-size: 0.7rem;
     color: rgba(0,0,0,0.5);
@@ -30,8 +43,10 @@
     white-space: nowrap;
     padding: 0 0.5rem;
     border: 0;
-    border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
+}
+#subPage #navbar .dropdownSection > a {
+    border-left: 1px solid #ddd;
 }
 #subPage #navbar .dropdownSection select.dropdownTitle {
     width: 18rem;
@@ -46,7 +61,6 @@
 }
 #subPage #navbar .dropdownSection select.dropdownTitle:nth-of-type(1) {
     width: 8rem;
-    border:0;
 }
 #subPage #navbar .dropdownSection select.dropdownTitle:nth-of-type(2) {
     font-weight: 500;

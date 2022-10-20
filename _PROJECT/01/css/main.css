@@ -52,7 +52,7 @@ main section h2 {
   border-radius: 25px;
 }
 #main02 .inner article:nth-of-type(2) span {
-  background: #fff url('../assets/img/brand-02.png') no-repeat center / cover;
+  background: #fff url('../assets/img/brand-02.PNG') no-repeat center / cover;
 }
 #main02 .inner article:nth-of-type(3) span {
   background: #fff url('../assets/img/brand-03.jpg') no-repeat center / contain;
@@ -65,6 +65,7 @@ main section h2 {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 #main03 {
@@ -197,8 +198,8 @@ main section h2 {
 #main05 .contentWrap .front .box .content {
   position: absolute;
   background: #fff;
-  left: -5px;
-  top: -5px;
+  left: -6px;
+  top: -6px;
   padding-bottom: 50px;
   width: 70%;
 }
