@@ -350,11 +350,12 @@ $('#newsBtn').click(function(){
     setBoard('news');
 });
 
-$('#main05 .contentWrap .front button').click(function(){
+$('#main05 .contentWrap .front > button').click(function(){
     $('#main05 .contentWrap').addClass('active');
 });
 $('#main05 .contentWrap .back button.backBtn').click(function(){
     $('#main05 .contentWrap').removeClass('active');
+    console.log(2)
 });
 
 $('#gnbBtn').click(function(){
@@ -368,9 +369,14 @@ $('.gnbList a').click(function(){
         $(this).parent('li').toggleClass('active');
         $(this).children('button').children('i').toggleClass('fa-caret-down');
         $(this).children('button').children('i').toggleClass('fa-caret-up');
+    } else {
+        location.href =$(this).siblings('ul').children('li:first-child').children('a').attr('href')
     }
     
 });
+$('button[type = "submit"]').click(function(e){
+    e.preventDefault();
+})
 
 $('#popupWrap #loginCard form .wrap span').click(function(){
     $(this).toggleClass('focus');
@@ -380,11 +386,11 @@ $('ul.menuWrap li:eq(0) a').click(function(){
     $('#popupWrap').addClass('active'); 
 });
 $('ul.menuWrap li:eq(1) a').click(function(){
-    $('#loginCard').addClass('active');
+    $('#translateCard').addClass('active');
     $('#popupWrap').addClass('active'); 
 });
 $('ul.menuWrap li:eq(2) a').click(function(){
-    $('#translateCard').addClass('active');
+    $('#loginCard').addClass('active');
     $('#popupWrap').addClass('active'); 
 });
 $('#popupWrap button.closeCard').click(function(){

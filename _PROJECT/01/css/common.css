@@ -103,6 +103,10 @@ button {
     padding: 0 1rem;
     border-radius: 10px;
     overflow: hidden;
+    color: #fff;
+}
+#popupWrap #searchCard form input::placeholder {
+    color: #fff;
 }
 #popupWrap #searchCard form button {
     font-size: 2rem;
@@ -160,6 +164,12 @@ button {
     padding: 0 1rem;
     line-height: 3rem;
     overflow: hidden;
+}
+#popupWrap #loginCard form .wrap input {
+    color: #fff;
+}
+#popupWrap #loginCard form .wrap input::placeholder {
+    color: #fff;
 }
 #popupWrap #loginCard form .wrap span {
     line-height: 3rem;

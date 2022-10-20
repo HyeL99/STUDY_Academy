@@ -293,6 +293,11 @@
   
   #main02 {
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  #main02::-webkit-scrollbar{
+    display:none;
   }
   #main02 .inner {
     column-gap: 40px;

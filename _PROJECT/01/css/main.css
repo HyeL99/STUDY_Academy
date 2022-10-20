@@ -52,7 +52,7 @@ main section h2 {
   border-radius: 25px;
 }
 #main02 .inner article:nth-of-type(2) span {
-  background: #fff url('../assets/img/brand-02.PNG') no-repeat center / cover;
+  background: #fff url('../assets/img/brand-02.png') no-repeat center / cover;
 }
 #main02 .inner article:nth-of-type(3) span {
   background: #fff url('../assets/img/brand-03.jpg') no-repeat center / contain;
@@ -164,7 +164,6 @@ main section h2 {
 #main05 .contentWrap {
   position: relative;
   transition: all 1s;
-  
   height: 645px;
   transform-style: preserve-3d;
 }
@@ -233,6 +232,9 @@ main section h2 {
   background: #900;
   color: #fff;
 }
+#main05 .contentWrap.active .front > button {
+  pointer-events : none;
+}
 #main05 .contentWrap .front > button span {
 }
 #main05 .contentWrap .back {
@@ -244,7 +246,7 @@ main section h2 {
   width: 100%;
   height: 100%;
   transform: rotateY(180deg);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 #main05 .contentWrap .back .content {
   text-align: center;
@@ -296,7 +298,7 @@ main section h2 {
   width: 100%;
   height: 45px;
 }
-#main05 .contentWrap .back .buttonWrap button {
+#main05 .contentWrap .back .buttonWrap button:first-child {
   height: 100%;
   width: 50%;
   display: inline-block;
