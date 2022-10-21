@@ -1,6 +1,5 @@
 import './App.css'
-import Hello01 from './component/Hello01.js'
-import Hello02 from './component/Hello02.js'
+import Hello from './component/Hello.js'
 import Wrapper from './component/Wrapper.js'
 
 const App = () => {
@@ -20,16 +19,10 @@ const App = () => {
       </p>
       <hr />
       <div style={{ color: 'red' }}>Hello</div>
-      <Hello01 style={{ color: 'red' }} />
-      <Hello01 class01='red' />
-      <Hello01 color='orange' />
-      <Hello01 color='green' name='회원' />
-      <hr />
-      <div style={{ color: 'red' }}>Hello</div>
-      <Hello02 style={{ color: 'red' }} />
-      <Hello02 class01='red' />
-      <Hello02 color='orange' />
-      <Hello02 color='green' name='회원' />
+      <Hello style={{ color: 'red' }} special={true}/>
+      <Hello class01='red' special={false} />
+      <Hello color='orange' special={0} />
+      <Hello color='green' name='회원' special />
       
     </Wrapper>
   )

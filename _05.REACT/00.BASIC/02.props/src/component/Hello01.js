@@ -1,16 +1,17 @@
 import React from 'react';
 
-const Hello = (props) => {
+const Hello01 = ({class01, color, name}) => {
     return (
-        <div className={props.class} style={{ color: props.color }}>안녕하세요! {props.name ? props.name + '님!' : ''}</div>
+        <div className={class01} style={{ color: color }}>안녕하세요! {name ? name + '님!' : ''}</div>
     )
 }
 //props가 설정되지 않았을 때, defaultProps
-Hello.defaultProps = {
-    name: 'no-name',
-    class: ''
+Hello01.defaultProps = {
+    name: '...',
+    class: '',
+    color: 'inherit'
 }
-export default Hello;
+export default Hello01;
 
 /*
     {{객체}}
