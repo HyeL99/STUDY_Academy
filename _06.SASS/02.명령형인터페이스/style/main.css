@@ -1,0 +1,31 @@
+@charset "UTF-8";
+.container {
+  border: 2px solid red;
+}
+.container .item { /* 중첩 */
+  width: 300px;
+  height: 100px;
+  background: lightgreen;
+  margin: 50px auto;
+}
+.container .box {
+  width: 750px;
+  background: yellow;
+  margin: 0 auto;
+  border: 5px solid lightgray;
+}
+.container .box p {
+  color: grey;
+}
+.container .box p span {
+  font-weight: bold;
+  color: #000;
+}
+
+/*
+npm i -g sass     --sass 컴파일러 설치 
+sass --version    --sass 컴파일러 버전 확인
+sass style/main.scss:style/main.css       --컴파일
+sass --watch style/main.scss:style/main.css     --실시간컴파일
+sass --style compressed style/main.scss:style/main.css     --압축형으로
+*//*# sourceMappingURL=main.css.map */

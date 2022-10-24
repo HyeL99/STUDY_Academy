@@ -1,0 +1,105 @@
+html {
+    font-size: 16px;
+}
+body {
+    background: url('../assets/img/bg-re.jpg') no-repeat top center / cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+.row, .col, .row>*, .col>* {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding:0;
+    line-height: 1;
+}
+h1 {
+    padding-top: 50px;
+    line-height: 150px;
+    text-align: center;
+    box-sizing: content-box;
+}
+
+header #nav-tab {
+    background: rgba(0,0,0,0.5);
+    border: 0;
+    padding-top: 0.5rem;
+}
+header #nav-tab button {
+    color: rgba(255,255,255,0.7);
+    outline: 0;
+    border: 0;
+    padding: 0 1rem;
+    line-height: 40px;
+    margin:0;
+}
+header #nav-tab button.active {
+    background: #0A2051;
+    color: #fff;
+    border: 0;
+}
+
+main .profile {
+    background: rgba(45,77,138,0.8);
+}
+main .profile h2 {
+    font-size: 1.5rem;
+}
+main .profile span {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.625rem;
+}
+main .profile p {
+    font-size: 0.625rem;
+}
+main .profile .snsWrap a {
+    margin-left: 0.5rem;
+}
+main .profile .btn-group-vertical {
+    width: 100%;
+}
+main .profile .btn-group-vertical * {
+    width: 100%;
+}
+main .profile .btn-group-vertical button {
+    background: #0A2051;
+    color: #fff;
+    text-align: start;
+    padding-left: 1.25rem;
+    font-size: 0.8rem;
+}
+main .profile .accordion-body {
+    padding: 0;
+    color: #fff;
+    font-size: 0.8rem;
+}
+main .profile .accordion-item {
+    border-bottom: 0;
+    background: #998CC4;
+    font-size: 0.6rem;
+}
+main .profile .accordion-body button {
+    background-color: inherit;
+}
+main .accordion-button:focus {
+    border: none;
+    box-shadow: none;
+}
+.accordion-button:not(.collapse)::after {
+    background-image: url('../assets/img/dropdown.svg');
+}
+.accordion-button::after {
+    background-image: url('../assets/img/dropdown.svg');
+}
+.tab-content > div {
+    height: calc(100vh - 240px - 6.5rem - 24px);
+    overflow-y: scroll;
+    box-sizing: border-box;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.tab-content > div::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}

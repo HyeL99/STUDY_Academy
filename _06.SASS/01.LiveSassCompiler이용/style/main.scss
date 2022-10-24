@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+.container {
+    border: 2px solid red;
+    .item { /* 중첩 */
+        width: 300px;
+        height: 100px;
+        background: yellow;
+        margin: 50px auto;
+    }
+}

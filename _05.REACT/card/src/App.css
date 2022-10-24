@@ -1,0 +1,40 @@
+.profile {
+  width: 250px;
+  padding: 1em;
+  text-align: center;
+  background-color: #eee;
+  border-radius: 1em;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+  display: inline-block;
+  margin: 2em;
+  position: relative;
+}
+.photo {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.profile h2 {
+  word-break: keep-all;
+}
+.profile p {
+  word-break: keep-all;
+}
+.profile .new {
+  background: orangered;
+  color: #fff;
+  padding: 0.2em 1em;
+  border-radius: 0.5em;
+  position: absolute;
+  left: 65%;
+  top: 8%;
+}
