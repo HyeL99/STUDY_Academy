@@ -1,0 +1,34 @@
+@charset'UTF-8';
+html {
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%; /*이미지의 원래 사이즈보다 커지진 않음*/
+}
+body {
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* md */
+@media (max-width:991px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* sm */
+@media (max-width:767px) {
+    html {
+        font-size: 12px;
+    }
+}
+

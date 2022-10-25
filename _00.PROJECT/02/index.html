@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자체 제작 블로그</title>
+
+    <!-- bootstrap css and script (cdn) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- font awesome script (cdn) -->
+    <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+
+    <!-- web font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="">
+        <h1>HyeL's Blog</h1>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <div class="container-lg d-flex">
+                    <button class="nav-link d-block d-lg-none" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">HOME</button>
+                    <button class="nav-link" id="nav-gallery-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery" type="button" role="tab" aria-controls="nav-gallery" aria-selected="false">Gallery</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Content</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-lg">
+            <div class="wrap row">
+                <div class="col-2 d-none d-lg-block">
+                    <!-- sideBar profile -->
+                    <div class="profile px-3 py-3 h-100">
+                        <div class="photo mb-3">
+                            <img src="assets/img/profile.jpg" alt="profile img">
+                        </div>
+                        <h2>UserName</h2>
+                        <span>@writeYiurID</span>
+                        <p>Ut nec tellus nunc. Proin et venenatis urna. Cras quam sapien, aliquam a tincidunt posuere, rhoncus a ligula.</p>
+                        <div class="snsWrap mb-4">
+                            <a href="#" class="">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span class="d-none">Instagram</span>
+                            </a>
+                            <a href="#" class="">
+                                <i class="fa-brands fa-github"></i>
+                                <span class="d-none">github</span>
+                            </a>
+                            <a href="#" class="">
+                                <i class="fa-sharp fa-solid fa-comment"></i>
+                                <span class="d-none">kakaotalk</span>
+                            </a>
+                        </div>
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <button type="button" class="btn">About Me</button>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            Category
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <button type="button" class="btn">lorem ipsum</button>
+                                            <button type="button" class="btn">lorem ipsum</button>
+                                            <button type="button" class="btn">lorem ipsum</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            Portfolio
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <button type="button" class="btn">lorem ipsum</button>
+                                            <button type="button" class="btn">lorem ipsum</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn">Contact Me</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col content">
+                    <div class="tab-content bg-white bg-opacity-25" id="nav-tabContent">
+                        <!-- Profile Tab -->
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                            <div class="profile p-3">
+                                <div class="photo square">
+                                    <img src="assets/img/profile.jpg" alt="profile img">
+                                </div>
+                                <h2>UserName</h2>
+                                <span>@writeYiurID</span>
+                                <p>Ut nec tellus nunc. Proin et venenatis urna. Cras quam sapien, aliquam a tincidunt posuere, rhoncus a ligula.</p>
+                                <div class="snsWrap">
+                                    <a href="#" class="">
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <span class="d-none">Instagram</span>
+                                    </a>
+                                    <a href="#" class="">
+                                        <i class="fa-brands fa-github"></i>
+                                        <span class="d-none">github</span>
+                                    </a>
+                                    <a href="#" class="">
+                                        <i class="fa-sharp fa-solid fa-comment"></i>
+                                        <span class="d-none">kakaotalk</span>
+                                    </a>
+                                </div>
+                                <div class="btn-group-vertical mt-5" role="group" aria-label="Vertical button group">
+                                    <button type="button" class="btn">About Me</button>
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                    Category
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <button type="button" class="btn">lorem ipsum</button>
+                                                    <button type="button" class="btn">lorem ipsum</button>
+                                                    <button type="button" class="btn">lorem ipsum</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                                    Portfolio
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <button type="button" class="btn">lorem ipsum</button>
+                                                    <button type="button" class="btn">lorem ipsum</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn">Contact Me</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Home Tab -->
+                        <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="row">
+                                <div class="col-4 pe-2">
+                                    <div class="square">
+                                        <img src="assets/img/01.jpg" alt="대문 이미지">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h2 class="mb-4">Lorem ipsum</h2>
+                                    <p>
+                                        Mauris pretium dui sapien, non porta turpis sollicitudin a. Sed aliquam justo at tortor semper posuere. Maecenas varius lectus nec turpis pharetra, at pulvinar mauris consequat. Curabitur suscipit imperdiet leo sed mollis. Sed ultricies ut elit eu hendrerit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="photos mt-5">
+                                <div class="title d-flex justify-content-between align-items-end mb-4">
+                                    <h2>Recent Photos</h2>
+                                    <button>VIEW MORE</button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="square">
+                                            <img src="assets/img/02.jpg" alt="img02">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="square">
+                                            <img src="assets/img/03.jpg" alt="img03">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="square">
+                                            <img src="assets/img/04.jpg" alt="img01">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contents mt-5">
+                                <h2 class="mb-4"m>Recent Contents</h2>
+                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                    <a class="btn" href="#" role="button">
+                                        <h3>Etiam tristique augue</h3>
+                                        <span>@UseName, 2022.10.21</span>
+                                    </a>
+                                    <a class="btn" href="#" role="button">
+                                        <h3>Phasellus a elit</h3>
+                                        <span>@UseName, 2022.10.20</span>
+                                    </a>
+                                    <a class="btn" href="#" role="button">
+                                        <h3>Sed ullamcorper leo</h3>
+                                        <span>@UseName, 2022.10.18</span>
+                                    </a>
+                                    <a class="btn" href="#" role="button">
+                                        <h3>Pellentesque auctor</h3>
+                                        <span>@UseName, 2022.10.15</span>
+                                    </a>
+                                    <a class="btn" href="#" role="button">
+                                        <h3>Nulla pulvinar ipsum</h3>
+                                        <span>@UseName, 2022.09.30</span>
+                                    </a>
+                                    <a class="btn" href="#" role="button">
+                                        <h3>Cras efficitur lorem nec</h3>
+                                        <span>@UseName, 2022.09.21</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Gallery Tab -->
+                        <div class="tab-pane fade p-3" id="nav-gallery" role="tabpanel" aria-labelledby="nav-gallery-tab" tabindex="0">
+                            <div class="row">
+                                <div class="col-4 pe-2">
+                                    <div class="square">
+                                        <img src="assets/img/01.jpg" alt="대문 이미지">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h2 class="mb-4">Lorem ipsum</h2>
+                                    <p>
+                                        Mauris pretium dui sapien, non porta turpis sollicitudin a. Sed aliquam justo at tortor semper posuere. Maecenas varius lectus nec turpis pharetra, at pulvinar mauris consequat. Curabitur suscipit imperdiet leo sed mollis. Sed ultricies ut elit eu hendrerit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mt-5" id="allImage">
+                                <img src="assets/img/02.jpg" alt="img02" class="col-3 p-1 ps-0">
+                                <img src="assets/img/03.jpg" alt="img03" class="col-6 p-1">
+                                <img src="assets/img/04.jpg" alt="img04" class="col-3 p-1 pe-0">
+                                <img src="assets/img/05.jpg" alt="img05" class="col-6 p-1 ps-0">
+                                <img src="assets/img/06.jpg" alt="img06" class="col-3 p-1">
+                                <img src="assets/img/07.jpg" alt="img07" class="col-3 p-1 pe-0">
+                                <img src="assets/img/08.jpg" alt="img08" class="col-4 p-1 ps-0">
+                                <img src="assets/img/09.jpg" alt="img09" class="col-4 p-1">
+                                <img src="assets/img/10.jpg" alt="img10" class="col-4 p-1 pe-0">
+                            </div>
+                        </div>
+                        <!-- Content Tab -->
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                            <div class="row flex-row-reverse">
+                                <div class="col-3">
+                                    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch">
+                                        <nav class="nav nav-pills flex-column">
+                                            <h2>Contents</h2>
+                                            <a class="nav-link" href="#item-1">1. Proin accumsan</a>
+                                            <nav class="nav nav-pills flex-column">
+                                                <a class="nav-link ms-3 my-1" href="#item-1-1">1.1. Integer a mauris</a>
+                                            </nav>
+                                            <a class="nav-link" href="#item-2">2. Ut at ante viverra</a>
+                                            <nav class="nav nav-pills flex-column">
+                                                <a class="nav-link ms-3 my-1" href="#item-2-1">2.1. Duis eu</a>
+                                                <a class="nav-link ms-3 my-1" href="#item-2-2">2.2. Fusce ut erat</a>
+                                                <a class="nav-link ms-3 my-1" href="#item-2-3">2.3. Sed vitae</a>
+                                            </nav>
+                                            <a class="nav-link" href="#item-3">3. Tortor gravida</a>
+                                        </nav>
+                                    </nav>
+                                </div>
+                                <div class="col-9 innerContent p-3">
+                                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+                                        <h2>Etiam tristique augue</h2>
+                                        <span class="opacity-75">@UseName, 2022.10.21</span>
+                                        <div id="item-1" class="mt-5">
+                                            <h3 class="mb-3">Proin accumsan</h3>
+                                            <p>
+                                                Quisque quis iaculis dolor, auctor blandit ante. Nunc dignissim tincidunt ligula et pharetra. Maecenas auctor urna est, sed cursus ex pulvinar a. Nam vitae consequat justo.
+                                            </p>
+                                        </div>
+                                        <div id="item-1-1" class="mt-4">
+                                            <div class="row">
+                                                <div class="col-12 col-lg-6 pe-lg-3 mb-2 mb-lg-0">
+                                                    <img src="assets/img/alb01.jpg" alt="album01">
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="mb-2">Integer a mauris</h4>
+                                                    <p>
+                                                        Nullam viverra egestas nibh, in maximus sem dignissim ac. Aenean eu feugiat odio. Quisque eget quam at sem bibendum fringilla. Sed placerat viverra pharetra.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div id="item-2" class="mt-5">
+                                            <h3 class="mb-3">Ut at ante viverra</h3>
+                                            <p>
+                                                Maecenas eu pretium odio. Sed rhoncus egestas dignissim. Nullam sodales mi a orci suscipit, in ornare nunc lacinia. Nam et felis ut neque condimentum sagittis ac quis eros. Sed eu rhoncus nisl.
+                                            </p>
+                                        </div>
+                                        <div id="item-2-1" class="mt-4">
+                                            <div class="row">
+                                                <div class="col-12 col-lg-6 pe-lg-3 mb-2 mb-lg-0">
+                                                    <img src="assets/img/alb02.jpg" alt="album02">
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="mb-2">Duis eu</h4>
+                                                    <p>
+                                                        Integer orci urna, convallis euismod molestie eget, tristique quis magna. Pellentesque eu ligula convallis, accumsan tortor et, accumsan justo. Pellentesque vitae blandit felis. Proin nisl eros, semper ac elit sit amet, lacinia vehicula tellus.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="item-2-2" class="mt-4">
+                                            <div class="row flex-row-reverse">
+                                                <div class="col-12 col-lg-6 ps-lg-3 mb-2 mb-lg-0">
+                                                    <img src="assets/img/alb03.jpg" alt="album03">
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="mb-2">Fusce ut erat</h4>
+                                                    <p>
+                                                        Donec tristique ligula magna, ac laoreet orci malesuada sit amet. Mauris gravida ligula nec urna pulvinar condimentum. Aenean accumsan molestie est eget fermentum. Donec non nisi nec metus finibus dapibus. Donec porttitor magna egestas efficitur ultrices. Duis maximus commodo ante posuere commodo.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="item-2-3" class="mt-4">
+                                            <div class="row">
+                                                <div class="col-12 col-lg-6 pe-lg-3 mb-2 mb-lg-0">
+                                                    <img src="assets/img/alb04.jpg" alt="album04">
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="mb-2">Sed vitae</h4>
+                                                    <p>
+                                                        Etiam congue a erat ut feugiat. Nam rhoncus, orci in cursus vestibulum, eros massa cursus urna, a tempor nulla metus pellentesque libero. Morbi tempus dolor ac felis blandit condimentum. Sed consequat erat eu vulputate euismod.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div id="item-3"class=mt-5>
+                                                <h3 class="mb-3">Tortor gravida</h3>
+                                                <p>
+                                                    In viverra orci in nisi volutpat, sed ultrices magna viverra. Fusce imperdiet congue mauris non ultrices. Curabitur sit amet egestas tortor, at efficitur leo. Nullam pharetra felis sit amet orci pharetra, a volutpat ante sollicitudin. Proin sit amet tincidunt turpis. In molestie volutpat lobortis. In lectus felis, ornare ac diam nec, auctor fringilla nisl. Praesent maximus urna ut ultricies iaculis. Phasellus maximus orci lectus, et sagittis purus dictum mollis.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>&copy; 2022. HyeL all rights reserved. </footer>
+</body>
+</html>

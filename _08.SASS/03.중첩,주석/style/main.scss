@@ -1,0 +1,51 @@
+// 중첩 - 한줄짜리 주석(js등 프로그래밍 언어에서 주로 쓰임)
+//      - css파일로 컴파일 후엔 안보임
+.wrap {
+    background: cornsilk;
+    h1 {
+        color: coral;
+    }
+    p {
+        color: cornflowerblue;
+        span {  //다중중첩
+            color:yellow;
+            background: crimson;
+        }
+    }
+}
+button {
+    padding: 0.5rem 1rem;
+    border:0;
+    outline: none;
+    border-radius: 0.5rem;
+    color:rgba(0,0,0,0.5);
+    font-weight: 700;
+}
+/*
+    & - 자신이 속한 상위 선택자
+    font, text, background  등은 css단축속성
+        - sass에서 중첩을 이용해서  단축 속성의 하위 속성을 그룹화
+*/
+.btn1 {
+    background: rgb(255, 196, 186);
+    &:hover {
+        background: {color: tomato};
+        color:#fff;
+    }
+}
+.btn2 {
+    background: rgb(196, 217, 255);
+    &:hover {
+        background: {color: cornflowerblue};
+        color:#fff;
+        font: {size: 20px; family:'궁서체',serif;};
+    }
+}
+/*
+    여러줄 주석
+    sass style/main.scss:style/main.css
+    sass --watch style/main.scss:style/main.css
+
+    한줄 주석은 css파일로 넘어갈 때 날라가지만
+    여러줄 주석은 css파일에서도 유지된다.
+*/
