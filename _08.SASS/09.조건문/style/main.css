@@ -1,0 +1,35 @@
+/*
+    boolean
+*/
+.h1_1 {
+  color: red;
+}
+
+.h1_2 {
+  color: seagreen;
+}
+
+.h1_3 {
+  background-color: pink;
+}
+
+.h1_4 {
+  background: gray;
+}
+
+.v1, .v2 {
+  height: 100px;
+  border: 2px solid #000;
+}
+
+.v1 {
+  width: 500px;
+  background: blue;
+}
+
+.v2 {
+  width: 300px;
+  background: coral;
+}
+
+/*# sourceMappingURL=main.css.map */

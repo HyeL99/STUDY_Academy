@@ -21,93 +21,108 @@
 
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/main.css" />
+
+    <style>
+        * {
+            color: #000;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-4">
-            <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+    <div class="row flex-row-reverse">
+        <div class="col-3 fixed-top">
+            <nav id="navbar-example3" class="h-100 flex-column align-items-stretch">
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link" href="#item-1">Item 1</a>
+                    <h2>Contents</h2>
+                    <a class="nav-link" href="#item-1">1. Proin accumsan</a>
                     <nav class="nav nav-pills flex-column">
-                        <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-                        <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                        <a class="nav-link ms-3 my-1" href="#item-1-1">1.1. Integer a mauris</a>
                     </nav>
-                    <a class="nav-link" href="#item-2">Item 2</a>
-                    <a class="nav-link" href="#item-3">Item 3</a>
+                    <a class="nav-link" href="#item-2">2. Ut at ante viverra</a>
                     <nav class="nav nav-pills flex-column">
-                        <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-                        <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                        <a class="nav-link ms-3 my-1" href="#item-2-1">2.1. Duis eu</a>
+                        <a class="nav-link ms-3 my-1" href="#item-2-2">2.2. Fusce ut erat</a>
+                        <a class="nav-link ms-3 my-1" href="#item-2-3">2.3. Sed vitae</a>
                     </nav>
+                    <a class="nav-link" href="#item-3">3. Tortor gravida</a>
                 </nav>
             </nav>
         </div>
-
-        <div class="col-8">
-            <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
-                class="scrollspy-example-2" tabindex="0">
-                <div id="item-1">
-                    <h4>Item 1</h4>
+        <div class="col-9 innerContent p-3">
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+                <h2>Etiam tristique augue</h2>
+                <span class="opacity-75">@UseName, 2022.10.21</span>
+                <div id="item-1" class="mt-5">
+                    <h3 class="mb-3">Proin accumsan</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
+                        Quisque quis iaculis dolor, auctor blandit ante. Nunc dignissim tincidunt ligula et pharetra. Maecenas auctor urna est, sed cursus ex pulvinar a. Nam vitae consequat justo.
                     </p>
                 </div>
-                <div id="item-1-1">
-                    <h5>Item 1-1</h5>
+                <div id="item-1-1" class="mt-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pe-lg-3 mb-2 mb-lg-0">
+                            <img src="assets/img/alb01.jpg" alt="album01">
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-2">Integer a mauris</h4>
+                            <p>
+                                Nullam viverra egestas nibh, in maximus sem dignissim ac. Aenean eu feugiat odio. Quisque eget quam at sem bibendum fringilla. Sed placerat viverra pharetra.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="item-2" class="mt-5">
+                    <h3 class="mb-3">Ut at ante viverra</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
+                        Maecenas eu pretium odio. Sed rhoncus egestas dignissim. Nullam sodales mi a orci suscipit, in ornare nunc lacinia. Nam et felis ut neque condimentum sagittis ac quis eros. Sed eu rhoncus nisl.
                     </p>
                 </div>
-                <div id="item-1-2">
-                    <h5>Item 1-2</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                    </p>
+                <div id="item-2-1" class="mt-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pe-lg-3 mb-2 mb-lg-0">
+                            <img src="assets/img/alb02.jpg" alt="album02">
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-2">Duis eu</h4>
+                            <p>
+                                Integer orci urna, convallis euismod molestie eget, tristique quis magna. Pellentesque eu ligula convallis, accumsan tortor et, accumsan justo. Pellentesque vitae blandit felis. Proin nisl eros, semper ac elit sit amet, lacinia vehicula tellus.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div id="item-2">
-                    <h4>Item 2</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                    </p>
+                <div id="item-2-2" class="mt-4">
+                    <div class="row flex-row-reverse">
+                        <div class="col-12 col-lg-6 ps-lg-3 mb-2 mb-lg-0">
+                            <img src="assets/img/alb03.jpg" alt="album03">
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-2">Fusce ut erat</h4>
+                            <p>
+                                Donec tristique ligula magna, ac laoreet orci malesuada sit amet. Mauris gravida ligula nec urna pulvinar condimentum. Aenean accumsan molestie est eget fermentum. Donec non nisi nec metus finibus dapibus. Donec porttitor magna egestas efficitur ultrices. Duis maximus commodo ante posuere commodo.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div id="item-3">
-                    <h4>Item 3</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                    </p>
-                </div>
-                <div id="item-3-1">
-                    <h5>Item 3-1</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                    </p>
-                </div>
-                <div id="item-3-2">
-                    <h5>Item 3-2</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quaerat odit consectetur eaque. Possimus labore quidem, hic quasi ducimus est quam commodi ullam nisi dolorum optio iste explicabo minus doloribus.<br>
-                    </p>
+                <div id="item-2-3" class="mt-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pe-lg-3 mb-2 mb-lg-0">
+                            <img src="assets/img/alb04.jpg" alt="album04">
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-2">Sed vitae</h4>
+                            <p>
+                                Etiam congue a erat ut feugiat. Nam rhoncus, orci in cursus vestibulum, eros massa cursus urna, a tempor nulla metus pellentesque libero. Morbi tempus dolor ac felis blandit condimentum. Sed consequat erat eu vulputate euismod.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="item-3"class=mt-5>
+                        <h3 class="mb-3">Tortor gravida</h3>
+                        <p>
+                            In viverra orci in nisi volutpat, sed ultrices magna viverra. Fusce imperdiet congue mauris non ultrices. Curabitur sit amet egestas tortor, at efficitur leo. Nullam pharetra felis sit amet orci pharetra, a volutpat ante sollicitudin. Proin sit amet tincidunt turpis. In molestie volutpat lobortis. In lectus felis, ornare ac diam nec, auctor fringilla nisl. Praesent maximus urna ut ultricies iaculis. Phasellus maximus orci lectus, et sagittis purus dictum mollis.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,30 @@
+@mixin box($width:500px,$height:50px){
+    width: $width;
+    height: $height;
+    border: 1px solid lightcoral;
+    padding: 0 20px;
+}
+.item {
+    @include box;
+    display: flex;
+    align-items: center;
+}
+.inputStyle {
+    @include box(400px);
+}
+.btnStyle {
+    @include box(100px, 52px);
+    padding:0;
+    background: lightcoral;
+    vertical-align: middle;
+    &:hover {
+        background: {
+            color: #000;
+        }
+        color: #fff;
+        border: 0;
+    }
+}
+.h1 {
+    color: lightcoral;
+}
