@@ -21,11 +21,13 @@ a {
 a:hover {
     color: #fff;
 }
+h1 {
+    text-align: center;
+}
 h1 a{
-    display: block;
+    display: inline-block;
     padding-top: 3vh;
     line-height: 12vh;
-    text-align: center;
     box-sizing: content-box;
     color: #fff;
 }
@@ -235,4 +237,35 @@ footer {
 }
 .nav-pills {
     word-break: keep-all;
+}
+
+aside {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+aside > button {
+    border: 0;
+    background: transparent;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.8);
+}
+.popover-header {
+    background: #2c4a8a;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+.bs-popover-auto[data-popper-placement^="bottom"] .popover-header::before {
+    border-bottom-color: #2c4a8a;
+}
+.bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after, .bs-popover-bottom > .popover-arrow::after {
+    border-bottom-color: #2c4a8a;
+}
+.popover-body {
+    padding: 0.5rem 1rem;
+    color: #2c4a8a;
+    font-size: 0.7rem;
+}
+.popover {
+    background-color: rgba(255,255,255,0.8);
 }
