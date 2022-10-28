@@ -1,0 +1,24 @@
+.loginContainer {
+    width: 100%;
+    height: 100%;
+    background-color: $mainColor;
+}
+.login {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    min-height: 460px;
+    justify-content: center;
+    height: 100%;
+    .loginLogo {
+        line-height: 100px;
+        text-align: center;
+        color: transparent;
+        background: {
+            image : url('../img/logo.svg');
+            repeat: no-repeat;
+            position: center;
+            size: auto 100%;
+        };
+    }
+}

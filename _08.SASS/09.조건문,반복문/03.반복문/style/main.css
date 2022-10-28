@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*
+    반복문 사용
+    @each $데이터 in $변수(배열요소) { 반복내용 }
+
+    index($변수, 아이템) - 아이템이 $변수에서 몇번째인지 알아옴
+*/
+.fruits li:nth-child(1) {
+  background-image: url("../img/apple.png");
+}
+.fruits li:nth-child(2) {
+  background-image: url("../img/banana.png");
+}
+.fruits li:nth-child(3) {
+  background-image: url("../img/grape.png");
+}
+.fruits li:nth-child(4) {
+  background-image: url("../img/mango.png");
+}
+.fruits li {
+  list-style: none;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 2px solid gray;
+}
+
+/*# sourceMappingURL=main.css.map */
