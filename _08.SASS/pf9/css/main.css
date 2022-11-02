@@ -329,6 +329,35 @@ button {
   margin-left: 0.5rem;
   color: rgba(100, 100, 100, 0.5);
 }
+.chatScreen .bubbleContainer .myMsg .previewColumn:first-child {
+  display: none;
+}
+.chatScreen .bubbleContainer .myMsg .previewColumn:first-child .previewPic {
+  display: none;
+}
+.chatScreen .bubbleContainer .myMsg .bubbleWrap {
+  flex-direction: row-reverse;
+  width: 100%;
+  text-align: end;
+}
+.chatScreen .bubbleContainer .myMsg .bubbleWrap .bubbleContent .bubble {
+  background-color: .chatScreen .bubbleContainer .myMsg .bubbleWrap .bubbleContent .bubble subColor01 !important;
+}
+.chatScreen .bubbleContainer .myMsg .bubbleWrap .bubbleContent .bubble::before {
+  content: "";
+  position: absolute;
+  border: 0.5rem solid #FFE2E2;
+  border-left-color: #FFE2E2;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  left: auto;
+  right: -0.5rem;
+  top: 0.2rem;
+}
+.chatScreen .bubbleContainer .myMsg .bubbleWrap .bubbleTime {
+  margin: 0;
+  margin-right: 0.5rem;
+}
 
 .chatForm {
   background: #8785A2;

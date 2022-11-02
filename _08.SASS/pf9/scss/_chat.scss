@@ -66,6 +66,42 @@
                 }
             }
         }
+        .myMsg{
+            .previewColumn:first-child {
+                display: none;
+                .previewPic {
+                    display: none;
+                }
+            }
+            .bubbleWrap {
+                flex-direction: row-reverse;
+                width: 100%;
+                text-align: end;
+                .bubbleContent{
+                    .previewNick {
+                    }
+                    .bubble {
+                        background-color: &subColor01 !important;
+
+                        &::before {
+                            content:"";
+                            position: absolute;
+                            border: 0.5rem solid $subColor01;
+                            border-left-color: $subColor01;
+                            border-right-color: transparent;
+                            border-bottom-color: transparent;
+                            left: auto;
+                            right: -0.5rem;
+                            top: 0.2rem;
+                        }
+                    }
+                }
+                .bubbleTime {
+                    margin:0;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
     }
 }
 
