@@ -29,4 +29,38 @@ window.addEventListener('load',function(){
       iso.arrange({filter:filtering});
     })
   }
+
+  //각 article을 클릭하면 팝업창 띄움
+  const $items = document.querySelectorAll('article');  //각 article을 변수(배열)에 
+  const $popup = document.querySelector('#popup');
+  const $closeBtn = document.querySelector('#closeBtn')
+  for(let $item of $items){
+    $item.addEventListener('click', (e)=> {
+      //클릭한 article img의 src값, p를 변수에 저장
+      const img = e.currentTarget.querySelector('img').getAttribute('src');
+      const title = e.currentTarget.querySelector('h2').innerText;
+      const desc = e.currentTarget.querySelector('p').innerText;
+
+      //화면너비
+      const winW = document.body.clientWidth;
+      if(winW > 767) {
+        //pop에 위의 변수를 적용
+        $popup.querySelector('img').setAttribute('src',img);
+        $popup.querySelector('h2').innerText = title;
+        $popup.querySelector('p').innerText = desc;
+
+        $popup.classList.add('on');
+      }
+    })
+    window.addEventListener('resize',function(){
+      const $onPopup = document.querySelector('#popup.on')
+      const winW = document.body.clientWidth;
+          if(winW <= 767) {
+            $popup.classList.remove('on');
+          }
+    });
+    $closeBtn.addEventListener('click',function(){
+      $popup.classList.remove('on');
+    })
+  }
 })
