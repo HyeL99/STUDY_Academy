@@ -11,6 +11,7 @@ function App() {
   
   return (
     <>
+      <h1>Todo List</h1>
       <Navbar filters={filters} filter={filter} onFilterChange={setFilter}/>
       <TodoList filter={filter} />
     </>

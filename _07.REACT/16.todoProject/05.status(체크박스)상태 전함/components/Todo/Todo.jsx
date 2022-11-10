@@ -2,19 +2,17 @@
 import React from 'react'
 import {GrTrash} from 'react-icons/gr'
 
-const Todo = ({item, onUpdate, onDelete}) => {
+const Todo = ({item, onUpdate}) => {
   const handleChange = (e) => {
     const status = e.target.checked ? "completed" : "active";
     onUpdate({...item, status});
   }
 
-  const handleDelete = () => onDelete(item);
-
   return (
     <li className={item.status=='active'? 'active':'completed'}>
-      <input type="checkbox" id={`item@${item.id}`} checked={ item.status=='completed'?'checked':''} onChange={handleChange}/>
+      <input type="checkbox" id={`item@${item.id}`} checked={ item.status=='active'?'':'checked'} onChange={handleChange}/>
       <label htmlFor={`item@${item.id}`}>{item.text}</label>
-      <button onClick={handleDelete}><GrTrash /></button>
+      <button><GrTrash /></button>
     </li>
   )
 }
