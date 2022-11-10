@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/*=================== reset ===================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #354463;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; /*기본크기로 16px*/
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+}
+
+/*=================== variable ===================*/ /*=================== mixin ===================*/ /*=================== font ===================*/
+@font-face {
+  font-family: "ELAND_Nice_M";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*=================== common ===================*/
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "GmarketSansMedium", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: "ELAND_Nice_M", serif;
+  font-weight: 700;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*=================== main ===================*/
+/*=================== index ===================*/ /*=================== home ===================*/ /*=================== d-day ===================*/ /*=================== todoList ===================*/ /*=================== today ===================*/ /*=================== timer ===================*/
+
+/*# sourceMappingURL=main.css.map */
