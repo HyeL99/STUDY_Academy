@@ -1,10 +1,10 @@
 :root {
-  --color-bg:#F7EDDB;
-  --color-main:#CCD6A6;
-  --color-sub: #DAE2B6;
-  --color-light: #DFE8CC;
-  --color-dark : #888d71;
-  --color-accent: #6b9fff;
+  --color-bg:#edf0ff;
+  --color-main:#9da7d3;
+  --color-sub: #c4ccef;
+  --color-bg-dark: #5d73d8;
+  --color-dark : #424874;
+  --color-accent: #ffe54f;
 }
 * {
   padding:0;
@@ -25,7 +25,7 @@ html {
   font-size: 16px;
 }
 body{
-  background: linear-gradient(30deg, var(--color-bg) 0%, var(--color-light) 100%); 
+  background: linear-gradient(30deg, var(--color-bg) 0%, var(--color-bg-dark) 100%); 
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -39,8 +39,7 @@ body{
   max-width: 500px;
   background-color: var(--color-bg);
   border-radius: 1rem;
-  /* display: flex;
-  flex-direction: column; */
   box-shadow: 5px 5px 15px var(--color-dark);
   overflow: hidden;
+  position: relative;
 }

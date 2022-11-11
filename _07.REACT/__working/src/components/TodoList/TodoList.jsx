@@ -1,6 +1,7 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState, useEffect} from 'react'
 import AddTodo from '../AddTodo/AddTodo'
 import Todo from '../Todo/Todo'
+import styles from './TodoList.module.css'
 
 const TodoList = ({filter}) => {
   const [todos, setTodos] = useState([
@@ -25,7 +26,7 @@ const TodoList = ({filter}) => {
   // 필터링해주는 함수 실행
 
   return (
-    <section>
+    <section className={styles.container}>
       <ul>
         {filtered.map((item)=> (
           <Todo item={item} key={item.id} onUpdate={handleUpdate} onDelete={handleDelete} />

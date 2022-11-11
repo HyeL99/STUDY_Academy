@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 // 자동 고유key값 생성 https://www.npmjs.com/package/uuid
 import { v4 as uuidv4 } from 'uuid';
+import styles from './AddTodo.module.css'
 
 // const AddTodo = ({todos, setTodos}) => {
 const AddTodo = ({onAdd}) => {
@@ -25,7 +26,7 @@ const AddTodo = ({onAdd}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input type="text" placeholder='할 일을 입력해주세요' onChange={handleChange} value={text} autoFocus />
       <button type='submit'>Add</button>
     </form>
