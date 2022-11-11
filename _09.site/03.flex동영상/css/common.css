@@ -1,11 +1,5 @@
 /* font */
-@font-face {
-  font-family: 'ELAND_Nice_M';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 @font-face {
   font-family: 'GmarketSansMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
@@ -23,7 +17,6 @@ body {
     font-weight: 300;
 }
 h1 {
-  font-family: 'ELAND_Nice_M',serif;
   font-weight: 700;
 }
 

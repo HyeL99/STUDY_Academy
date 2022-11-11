@@ -1,10 +1,5 @@
 /*=================== font ===================*/
-@font-face {
-  font-family: 'ELAND_Nice_M';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://webfontworld.github.io/heiroflight/HeirofLight.css');
 
 @font-face {
   font-family: 'GmarketSansMedium';
@@ -15,17 +10,19 @@
 
 /*=================== common ===================*/
 html {
-  font-size: 10px;
+  font-size: 16px;
 }
 body {
-    font-family: 'GmarketSansMedium' ,sans-serif;
+    font-family: 'HeirofLight' ,sans-serif;
     font-weight: 300;
-}
-h1 {
-  font-family: 'ELAND_Nice_M',serif;
-  font-weight: 700;
+    background: $mainColor;
 }
 .inner {
-  width: 90%;
-  margin: 0 auto;
+  margin: 0 10px;
+}
+.bar {
+  width: 100%;
+  img {
+    width: 100%;
+  }
 }

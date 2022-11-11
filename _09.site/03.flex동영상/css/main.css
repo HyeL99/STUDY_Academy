@@ -1,11 +1,21 @@
+:root {
+  --colorBg: #333;
+  --colorText0: #fff;
+  --colorText1: #ccc;
+  --colorText2: #999;
+  --colorText3: #777;
+  --colorText4: #444;
+  --colorText5: #222;
+  --colorAccent: orange;
+}
+
 main {
-  border: 3px solid red;
   width: 100%;
   height: 100vh;
   display: flex;
+  background-color: var(--colorBg);
 }
 main header {
-  border: 3px solid blue;
   width: 20%;
   padding: 10vh 0;
   display: flex;
@@ -14,9 +24,22 @@ main header {
   align-items: center;
 }
 main header h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+}
+main header h1 i {
+  font-size: 5vw;
+  color: var(--colorText0);
+}
+main header h1 span {
+  font-size: 25px;
+  margin-top: 1vw;
+  display: block;
+  font: 700 1.2vw/1 "arial";
+  color: var(--colorText2);
+}
+main header address {
+  font: 700 0.8vw/1 "arial";
+  color: var(--colorText2);
 }
 main nav {
   position: absolute;
@@ -25,17 +48,109 @@ main nav {
 }
 main nav ul {
   display: flex;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
-main nav ul li a i {
-  color: rgb(195, 135, 255);
+main nav ul li a {
+  color: var(--colorText1);
+  font-size: 18px;
 }
 main nav ul li a span {
   font-size: 0;
 }
 main section {
-  border: 10px solid rgb(0, 187, 255);
   width: 80%;
   margin-top: 15vh;
-}/*# sourceMappingURL=main.css.map */
+  display: flex;
+}
+main section article {
+  flex: 1;
+  padding: 70px 40px 100px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.5s;
+  position: relative;
+}
+main section article .inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+main section article .inner .txt h2 {
+  font-size: 2vw;
+  padding-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Cinzel", serif;
+  font-weight: 300;
+  color: var(--colorText0);
+  transition: 0.5s;
+}
+main section article .inner .txt h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  border-top: 3px solid var(--colorText3);
+  margin-top: 10px;
+  transition: all 0.8s;
+}
+main section article .inner .txt p {
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colorText2);
+}
+main section article .inner figure {
+  width: 100%;
+  height: 15vh;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(255, 255, 255, 0.9);
+  filter: saturate(10%) blur(1px);
+  transition: 0.5s;
+  transform-origin: left center;
+}
+main section article .inner figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+main section article .articleBg {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  width: 85%;
+  height: 100%;
+  background: var(--colorText3);
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 1;
+  font-size: 0;
+}
+main section article:hover {
+  flex: 1.5;
+  opacity: 1;
+}
+main section article:hover .txt {
+  width: 75%;
+}
+main section article:hover .txt h2 {
+  font-size: 3.5vw;
+  padding-top: 0;
+}
+main section article:hover .txt h2::after {
+  width: 100%;
+  border-color: var(--colorAccent);
+}
+main section article:hover figure {
+  height: 25vh;
+  filter: saturate(102%) blur(0px);
+  transform: translateY(3vh);
+}
+main section article.back .articleBg {
+  left: 0;
+  opacity: 0.7;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -9,6 +9,7 @@ a{
 }
 h1, h2, h3, h4, h5, h6{
     font-size: 100%; /*기본크기로 16px*/
+    font-weight: 700;
 }
 html, body{
     width: 100%;
