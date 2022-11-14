@@ -1,6 +1,8 @@
 <!--
   달력 만들기에 필요한 링크
-  달력 만드는 코드 해석 https://bigtop.tistory.com/64
+  달력 만드는 코드 해석 | https://bigtop.tistory.com/64
+  달력 관련 라이브러리 | https://nowonbun.tistory.com/368
+  datePicker | https://www.nextree.co.kr/p9887/
 -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,7 +25,8 @@
   <link rel="stylesheet" href="css/main.css" />
   
   <script src="js/jquery-3.6.0.min.js"></script>
-  <script defer src="js/main.js"></script>
+  <script defer src="./js/loadCalandar.js"></script>
+  <!-- <script defer src="js/main.js"></script> -->
 </head>
 <body>
   <div id="mobileContainer">
@@ -56,13 +59,31 @@
         <span class="bar"><img src="./assets/img/line.png"></span>
         <section id="contentsBtn">
           <article class="day">
-            <h2>오늘의 일정</h2>
+            <div class="title">
+              <h2>오늘의 일정</h2>
+              <button>+</button>
+            </div>
+            <ul class="contents">
+              <li>오늘 일정은 없습니다.</li>
+            </ul>
           </article>
           <article class="d-day">
-            <h2>D-day</h2>
+            <div class="title">
+              <h2>D-day</h2>
+              <button>+</button>
+            </div>
+            <ul class="contents">
+              <li>❤종강<span>d-72</span></li>
+            </ul>
           </article>
           <article class="timeTable">
-            <h2>타임테이블</h2>
+            <div class="title">
+              <h2>타임테이블</h2>
+              <button>+</button>
+            </div>
+            <ul class="contents">
+              <li>코딩<span>03:28:12</span></li>
+            </ul>
           </article>
           <article class="todoList">
             <h2>Todo List</h2>
@@ -76,6 +97,29 @@
       </div>
     </footer>
     <div id="subContainer">
+      
+      <div id="todayPage">
+        <div class="inner">
+          <button class="closeBtn">X</button>
+        </div>
+      </div>
+      <div id="d-dayPage">
+        <div class="inner">
+          <button class="closeBtn">X</button>
+        </div>
+      </div>
+      <div id="timeTablePage">
+        <div class="inner">
+          <button class="closeBtn">X</button>
+        </div>
+      </div>
+      <div id="todoListPage">
+        <div class="inner">
+          <button class="closeBtn">X</button>
+        </div>
+      </div>
+    </div>
+    <aside>
       <div id="enterPage">
         <div class="logo">
           <img src="./assets/img/logoClock.png" alt="나의 시간">
@@ -90,7 +134,7 @@
         </div>
         <h1><img src="./assets/img/title.png" alt="나의 시간 - 일정관리앱"></h1>
       </div>
-    </div>
+    </aside>
   </div>
 </body>
 </html>

@@ -76,6 +76,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #E9D5DA;
 }
 #enterPage .logo {
   position: relative;
@@ -150,6 +151,7 @@ header {
   top: 0;
   width: 100%;
   height: 50px;
+  z-index: 4;
 }
 header h1 {
   color: #E9D5DA;
@@ -171,6 +173,7 @@ main {
   padding: 50px 0;
 }
 main .inner {
+  padding: 10px 0;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
@@ -183,70 +186,80 @@ main #calendar {
   flex-direction: column;
 }
 main #calendar .days {
-  border: 1px solid red;
   display: flex;
   text-align: center;
   background: #827397;
   color: #E9D5DA;
 }
 main #calendar .days .day {
-  border: 1px solid rgb(47, 0, 255);
   width: 14.2857142857%;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
+  font-weight: 700;
 }
 main #calendar .days .day:nth-child(7n) {
-  color: rgb(144, 179, 255);
+  color: rgb(98, 166, 255);
 }
 main #calendar .days .day:nth-child(7n+1) {
-  color: crimson;
+  color: rgb(255, 129, 129);
 }
 main #calendar .dates {
-  border: 1px solid rgb(255, 0, 221);
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   height: 100%;
   background: #fff;
+  border: 2px solid #827397;
 }
 main #calendar .dates .date {
-  border: 1px solid rgb(119, 255, 0);
   width: 14.2857142857%;
   height: 16.6666666667%;
   padding: 0.3rem;
+  border-bottom: 1px dashed #827397;
+  border-left: 1px dashed #827397;
 }
 main #calendar .dates .date:nth-child(7n) {
-  color: rgb(144, 179, 255);
+  color: rgb(98, 166, 255);
 }
 main #calendar .dates .date:nth-child(7n+1) {
-  color: crimson;
+  color: rgb(255, 129, 129);
+  border-left: 0;
+}
+main #calendar .dates .date:nth-child(n+36) {
+  border-bottom: 0;
 }
 main #calendar .dates .date .num {
   display: inline-block;
+  width: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
 }
-main #calendar .dates .date.today .num {
+main #calendar .dates .date.today .num span {
   position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
   z-index: 1;
+  font-weight: 700;
 }
-main #calendar .dates .date.today .num::before {
+main #calendar .dates .date.today .num span::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 1.5rem;
-  height: 1.5rem;
+  left: -0.2rem;
+  top: -0.2rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #E9D5DA;
   opacity: 0.5;
   z-index: -1;
   border-radius: 50%;
+  filter: saturate(200%);
 }
-main #calendar .dates .date.other {
+main #calendar .dates .date.other .num {
   opacity: 0.5;
 }
 main #contentsBtn {
   width: 100%;
   height: 140px;
-  background: rebeccapurple;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -257,11 +270,45 @@ main #contentsBtn article {
   width: calc((100% - 20px) / 2);
   height: 60px;
   background-color: white;
+  border: 2px solid #827397;
+  padding: 0.5rem;
+}
+main #contentsBtn article .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+main #contentsBtn article .title h2 {
+  font-weight: 700;
+}
+main #contentsBtn article .title button {
+  background: transparent;
+}
+main #contentsBtn article .contents li {
+  position: relative;
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+}
+main #contentsBtn article .contents li::before {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  left: 0;
+  top: 0;
+  background: url("../assets/img/dot.png") no-repeat center/contain;
 }
 main #contentsBtn article.timeTable {
   height: 90px;
 }
 main #contentsBtn article.todoList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 30px;
 }
 
@@ -272,6 +319,7 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+  z-index: 5;
 }
 footer button {
   height: 50px;
@@ -281,7 +329,38 @@ footer button img {
   height: 100%;
 }
 
-/*=================== d-day ===================*/ /*=================== todoList ===================*/ /*=================== today ===================*/ /*=================== timer ===================*/
+/*=================== d-day ===================*/
+#d-dayPage {
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 151, 113);
+  display: none;
+}
+
+/*=================== todoList ===================*/
+#todoListPage {
+  width: 100%;
+  height: 100%;
+  background: rgb(244, 205, 99);
+  display: none;
+}
+
+/*=================== today ===================*/
+#todayPage {
+  width: 100%;
+  height: 100%;
+  background: rgb(196, 154, 220);
+  display: none;
+}
+
+/*=================== timer ===================*/
+#timeTablePage {
+  width: 100%;
+  height: 100%;
+  background: rgb(188, 224, 171);
+  display: none;
+}
+
 #mobileContainer {
   min-width: 300px;
   max-width: 600px;
@@ -293,8 +372,23 @@ footer button img {
 }
 
 #subContainer {
+  z-index: 3;
   width: 100%;
   height: 100%;
+  min-height: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+aside {
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: none;
 }
 
