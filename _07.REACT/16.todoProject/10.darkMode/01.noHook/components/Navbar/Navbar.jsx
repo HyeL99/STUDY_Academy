@@ -1,11 +1,11 @@
 //다크모드 콘텍스트 연결
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Navbar.module.css'
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs"
-import { useDarkMode } from '../context/DarkModeContext'
+import { DarkModeContext } from '../context/DarkModeContext'
 
 export default function Navbar({filters, filter, onFilterChange}) {
-  const {darkMode, toggleDarkMode} = useDarkMode();
+  const {darkMode, toggleDarkMode} = useContext(DarkModeContext)
 
   let onIndex =0;
 

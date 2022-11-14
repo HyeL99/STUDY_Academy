@@ -47,7 +47,7 @@ button {
 }
 /*=================== common ===================*/
 html {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 body {
@@ -179,7 +179,69 @@ main .inner {
 main #calendar {
   width: 100%;
   height: 100%;
-  background: crimson;
+  display: flex;
+  flex-direction: column;
+}
+main #calendar .days {
+  border: 1px solid red;
+  display: flex;
+  text-align: center;
+  background: #827397;
+  color: #E9D5DA;
+}
+main #calendar .days .day {
+  border: 1px solid rgb(47, 0, 255);
+  width: 14.2857142857%;
+  padding: 0.5rem 0;
+}
+main #calendar .days .day:nth-child(7n) {
+  color: rgb(144, 179, 255);
+}
+main #calendar .days .day:nth-child(7n+1) {
+  color: crimson;
+}
+main #calendar .dates {
+  border: 1px solid rgb(255, 0, 221);
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  background: #fff;
+}
+main #calendar .dates .date {
+  border: 1px solid rgb(119, 255, 0);
+  width: 14.2857142857%;
+  height: 16.6666666667%;
+  padding: 0.3rem;
+}
+main #calendar .dates .date:nth-child(7n) {
+  color: rgb(144, 179, 255);
+}
+main #calendar .dates .date:nth-child(7n+1) {
+  color: crimson;
+}
+main #calendar .dates .date .num {
+  display: inline-block;
+}
+main #calendar .dates .date.today .num {
+  position: relative;
+  z-index: 1;
+}
+main #calendar .dates .date.today .num::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #E9D5DA;
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 50%;
+}
+main #calendar .dates .date.other {
+  opacity: 0.5;
 }
 main #contentsBtn {
   width: 100%;
