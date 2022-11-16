@@ -6,7 +6,6 @@ header{
   top:0;
   width: 100%;
   height: 50px;
-  z-index: 4;
   //display:none;
   h1 {
     color: $mainColor;
@@ -45,7 +44,8 @@ main{
       color: $mainColor;
       .day{
         width: calc(100% / 7);
-        padding: 0.8rem 0;
+        padding: 0.5rem 0;
+        font-size: 0.8rem;
         font-weight: 700;
         &:nth-child(7n){color: $saturdayColor}
         &:nth-child(7n+1){color: $sundayColor}
@@ -76,9 +76,10 @@ main{
         }
         .num{
           display:inline-block;
-          width: 1.6rem;
-          line-height: 1.6rem;
+          width: 1rem;
+          line-height: 1rem;
           text-align: center;
+          font-size: 0.8rem;
         }
         .view{}
         &.today{
@@ -93,10 +94,10 @@ main{
               &::before{
                 content:"";
                 position: absolute;
-                left:-0.2rem;
-                top: -0.2rem;
-                width: 2rem;
-                height: 2rem;
+                left:-0.1rem;
+                top: -0.1rem;
+                width: 1.2rem;
+                height: 1.2rem;
                 background-color: $mainColor;
                 opacity: 0.5;
                 z-index: -1;
@@ -117,15 +118,17 @@ main{
   }
   #contentsBtn {
     width: 100%;
-    height: 140px;
+    height: 200px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 20px;
+    flex-shrink: 0;
     article{
       width: calc((100% - 20px) / 2);
-      height: 60px;
+      height: calc((100% - 20px) / 2);
       background-color: white;
       border:2px solid $subColor;
       padding: 0.5rem;
@@ -137,7 +140,8 @@ main{
         h2{
           font-weight: 700;
         }
-        button{background: transparent;}
+        button{background: transparent;
+        }
       }
       .contents{
         li{
@@ -146,7 +150,7 @@ main{
           display: flex;
           justify-content: space-between;
           align-items: center;
-          font-size: 0.7rem;
+          font-size: 0.8rem;
           &::before{
             content: "";
             position: absolute;
@@ -159,25 +163,24 @@ main{
         }
       }
       &.timeTable {
-        height: 90px;
+        height: calc((100% - 20px) * 2 / 3);
       }
       &.todoList {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 30px;
+        height: calc((100% - 20px) / 3);
       }
     }
   }
 }
-footer{
+footer{z-index: 5;
   background: $subColor;
   position: fixed;
   left:0;
   bottom:0;
   width: 100%;
   text-align: center;
-  z-index: 5;
   button{
     height: 50px;
     background: transparent;

@@ -2,7 +2,7 @@
 @import 'variable.scss';
 @import 'mixin.scss';
 @import 'common.scss';
-/*=================== main ===================*/
+
 @import 'index.scss';
 @import 'home.scss';
 @import 'd-day.scss';
@@ -10,6 +10,7 @@
 @import 'today.scss';
 @import 'timer.scss';
 
+/*=================== main ===================*/
 #mobileContainer{
   min-width: 300px;
   max-width: 600px;
@@ -19,15 +20,25 @@
   height: 100%;
   position: relative;
 }
-#subContainer {
+#d-dayPage,
+#todayPage,
+#todoListPage,
+#timeTablePage {
   z-index: 3;
+  min-width: 300px;
+  max-width: 600px;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  height: calc(100% - 100px);
   min-height: 0;
   position: fixed;
-  left:0;
-  top:0;
-  //display: none;
+  left:50%;
+  top:100%;
+  transition: all 0.5s;
+}
+#timeTablePage {
+  z-index: 4;
 }
 aside {
   z-index: 999;

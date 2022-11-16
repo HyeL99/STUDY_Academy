@@ -1,7 +1,22 @@
 /*=================== d-day ===================*/
-#d-dayPage {
+@mixin SetBox() {
   width: 100%;
-  height:100%;
-  background: rgb(255, 151, 113);
-  display: none;
+  background-color: #fff;
+  border: 2px solid $subColor;
+  padding: 1rem;
 }
+#d-dayPage {
+  background: $mainColor;
+  .d-daySection{
+    @include SetBox();
+    h2{}
+    .d-dayList{
+      li{
+        h3{}
+        span{}
+        button{}
+      }
+    }
+  }
+}
+

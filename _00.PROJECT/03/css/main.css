@@ -47,7 +47,7 @@ button {
 }
 /*=================== common ===================*/
 html {
-  font-size: 10px;
+  font-size: 16px;
 }
 
 body {
@@ -58,6 +58,13 @@ body {
 
 .inner {
   margin: 0 10px;
+  position: relative;
+  padding: 1rem;
+}
+.inner .closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .bar {
@@ -67,7 +74,6 @@ body {
   width: 100%;
 }
 
-/*=================== main ===================*/
 /*=================== index ===================*/
 #enterPage {
   width: 100%;
@@ -151,7 +157,6 @@ header {
   top: 0;
   width: 100%;
   height: 50px;
-  z-index: 4;
 }
 header h1 {
   color: #E9D5DA;
@@ -193,7 +198,8 @@ main #calendar .days {
 }
 main #calendar .days .day {
   width: 14.2857142857%;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 main #calendar .days .day:nth-child(7n) {
@@ -229,9 +235,10 @@ main #calendar .dates .date:nth-child(n+36) {
 }
 main #calendar .dates .date .num {
   display: inline-block;
-  width: 1.6rem;
-  line-height: 1.6rem;
+  width: 1rem;
+  line-height: 1rem;
   text-align: center;
+  font-size: 0.8rem;
 }
 main #calendar .dates .date.today .num span {
   position: relative;
@@ -244,10 +251,10 @@ main #calendar .dates .date.today .num span {
 main #calendar .dates .date.today .num span::before {
   content: "";
   position: absolute;
-  left: -0.2rem;
-  top: -0.2rem;
-  width: 2rem;
-  height: 2rem;
+  left: -0.1rem;
+  top: -0.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: #E9D5DA;
   opacity: 0.5;
   z-index: -1;
@@ -259,16 +266,18 @@ main #calendar .dates .date.other .num {
 }
 main #contentsBtn {
   width: 100%;
-  height: 140px;
+  height: 200px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   column-gap: 20px;
   row-gap: 20px;
+  flex-shrink: 0;
 }
 main #contentsBtn article {
   width: calc((100% - 20px) / 2);
-  height: 60px;
+  height: calc((100% - 20px) / 2);
   background-color: white;
   border: 2px solid #827397;
   padding: 0.5rem;
@@ -291,7 +300,7 @@ main #contentsBtn article .contents li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 main #contentsBtn article .contents li::before {
   content: "";
@@ -303,23 +312,23 @@ main #contentsBtn article .contents li::before {
   background: url("../assets/img/dot.png") no-repeat center/contain;
 }
 main #contentsBtn article.timeTable {
-  height: 90px;
+  height: calc((100% - 20px) * 2 / 3);
 }
 main #contentsBtn article.todoList {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: calc((100% - 20px) / 3);
 }
 
 footer {
+  z-index: 5;
   background: #827397;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
-  z-index: 5;
 }
 footer button {
   height: 50px;
@@ -331,36 +340,30 @@ footer button img {
 
 /*=================== d-day ===================*/
 #d-dayPage {
-  width: 100%;
-  height: 100%;
-  background: rgb(255, 151, 113);
-  display: none;
+  background: #E9D5DA;
 }
-
+#d-dayPage .d-daySection {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #827397;
+  padding: 1rem;
+}
 /*=================== todoList ===================*/
 #todoListPage {
-  width: 100%;
-  height: 100%;
   background: rgb(244, 205, 99);
-  display: none;
 }
 
 /*=================== today ===================*/
 #todayPage {
-  width: 100%;
-  height: 100%;
   background: rgb(196, 154, 220);
-  display: none;
 }
 
 /*=================== timer ===================*/
 #timeTablePage {
-  width: 100%;
-  height: 100%;
   background: rgb(188, 224, 171);
-  display: none;
 }
 
+/*=================== main ===================*/
 #mobileContainer {
   min-width: 300px;
   max-width: 600px;
@@ -371,14 +374,26 @@ footer button img {
   position: relative;
 }
 
-#subContainer {
+#d-dayPage,
+#todayPage,
+#todoListPage,
+#timeTablePage {
   z-index: 3;
+  min-width: 300px;
+  max-width: 600px;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  height: calc(100% - 100px);
   min-height: 0;
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 100%;
+  transition: all 0.5s;
+}
+
+#timeTablePage {
+  z-index: 4;
 }
 
 aside {

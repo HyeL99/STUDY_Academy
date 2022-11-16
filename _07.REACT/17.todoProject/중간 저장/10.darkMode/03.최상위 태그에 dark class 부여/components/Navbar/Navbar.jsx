@@ -10,7 +10,6 @@ export default function Navbar({filters, filter, onFilterChange}) {
   let onIndex =0;
 
   filters.map((item,index) => {item === filter? onIndex = onIndex+index : onIndex = onIndex});
-  console.log(onIndex);
 
   return (
     <header className={styles.header}>

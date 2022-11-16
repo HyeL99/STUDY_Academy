@@ -1,32 +1,28 @@
-<!--
-  달력 만들기에 필요한 링크
-  달력 만드는 코드 해석 | https://bigtop.tistory.com/64
-  달력 관련 라이브러리 | https://nowonbun.tistory.com/368
-  datePicker | https://www.nextree.co.kr/p9887/
--->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <title>일정관리앱</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-  <link rel="stylesheet" href="css/reset.css" />
 
   <!-- font awesome script (cdn) -->
   <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
   <!-- isotope script (cdn) -->
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-
-  <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/main.css" />
   
+  <!-- db.json -->
+  <script src="./db/db.json" type="text/javascript"></script>
+
   <script src="js/jquery-3.6.0.min.js"></script>
   <script defer src="./js/loadCalandar.js"></script>
-  <!-- <script defer src="js/main.js"></script> -->
+  <script defer src="./js/addDBtem.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/layout.js"></script>
 </head>
 <body>
   <div id="mobileContainer">
@@ -93,30 +89,42 @@
     </main>
     <footer>
       <div class="inner">
-        <button><img src="./assets/img/logoClock-bright.png" alt="타이머 오픈"></button>
+        <button id="timerBtn"><img src="./assets/img/logoClock-bright.png" alt="타이머 오픈"></button>
       </div>
     </footer>
-    <div id="subContainer">
-      
-      <div id="todayPage">
-        <div class="inner">
-          <button class="closeBtn">X</button>
-        </div>
+    <div id="todayPage">
+      <div class="inner">
+        <button class="closeBtn">X</button>
       </div>
-      <div id="d-dayPage">
-        <div class="inner">
-          <button class="closeBtn">X</button>
-        </div>
+    </div>
+    <div id="d-dayPage">
+      <div class="inner">
+        <button class="closeBtn">X</button>
+        <Section class="d-daySection">
+          <h2>D-day</h2>
+          <ul class="d-dayList">
+            <li id="d-dayItem01">
+              <h3>수능</h3>
+              <span>d-2</span>
+              <button class="deleteD-day">휴지통</button>
+            </li>
+            <li id="d-dayItem02">
+              <h3>크리스마스</h3>
+              <span>d-40</span>
+              <button class="deleteD-day">휴지통</button>
+            </li>
+          </ul>
+        </Section>
       </div>
-      <div id="timeTablePage">
-        <div class="inner">
-          <button class="closeBtn">X</button>
-        </div>
+    </div>
+    <div id="todoListPage">
+      <div class="inner">
+        <button class="closeBtn">X</button>
       </div>
-      <div id="todoListPage">
-        <div class="inner">
-          <button class="closeBtn">X</button>
-        </div>
+    </div>
+    <div id="timeTablePage">
+      <div class="inner">
+        <button class="closeBtn">X</button>
       </div>
     </div>
     <aside>
