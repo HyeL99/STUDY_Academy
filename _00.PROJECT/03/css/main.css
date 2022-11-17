@@ -36,6 +36,11 @@ button {
   cursor: pointer;
   border: 0;
   outline: 0;
+  font-family: inherit;
+}
+
+input {
+  outline: 0;
 }
 
 /*=================== variable ===================*/ /*=================== mixin ===================*/ /*=================== font ===================*/
@@ -59,12 +64,13 @@ body {
 .inner {
   margin: 0 10px;
   position: relative;
-  padding: 1rem;
 }
 .inner .closeBtn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  padding: 0.5rem;
 }
 
 .bar {
@@ -276,11 +282,16 @@ main #contentsBtn {
   flex-shrink: 0;
 }
 main #contentsBtn article {
-  width: calc((100% - 20px) / 2);
-  height: calc((100% - 20px) / 2);
   background-color: white;
   border: 2px solid #827397;
   padding: 0.5rem;
+  width: calc((100% - 20px) / 2);
+  height: calc((100% - 20px) / 2);
+}
+main #contentsBtn article h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 main #contentsBtn article .title {
   display: flex;
@@ -290,26 +301,27 @@ main #contentsBtn article .title {
 }
 main #contentsBtn article .title h2 {
   font-weight: 700;
+  margin: 0;
 }
 main #contentsBtn article .title button {
   background: transparent;
 }
 main #contentsBtn article .contents li {
-  position: relative;
   padding-left: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+  position: relative;
 }
 main #contentsBtn article .contents li::before {
   content: "";
   position: absolute;
-  width: 1em;
-  height: 1em;
   left: 0;
   top: 0;
-  background: url("../assets/img/dot.png") no-repeat center/contain;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
 }
 main #contentsBtn article.timeTable {
   height: calc((100% - 20px) * 2 / 3);
@@ -319,6 +331,9 @@ main #contentsBtn article.todoList {
   align-items: center;
   justify-content: center;
   height: calc((100% - 20px) / 3);
+}
+main #contentsBtn article.todoList h2 {
+  margin: 0;
 }
 
 footer {
@@ -343,11 +358,98 @@ footer button img {
   background: #E9D5DA;
 }
 #d-dayPage .d-daySection {
-  width: 100%;
-  background-color: #fff;
+  background-color: white;
   border: 2px solid #827397;
-  padding: 1rem;
+  padding: 0.5rem;
 }
+#d-dayPage .d-daySection h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#d-dayPage .d-daySection .d-dayList li {
+  display: flex;
+  align-items: center;
+}
+#d-dayPage .d-daySection .d-dayList li h3 {
+  flex: 1;
+  padding-left: 1.5rem;
+  position: relative;
+}
+#d-dayPage .d-daySection .d-dayList li h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#d-dayPage .d-daySection .d-dayList li span {
+  margin: 0.5rem;
+}
+#d-dayPage #addD-dayItemBtn {
+  float: right;
+  padding: 0.5rem;
+  background: transparent;
+  transform: translateX(0.5rem);
+  font-weight: 700;
+}
+#d-dayPage #d-dayPopup {
+  background-color: white;
+  border: 2px solid #827397;
+  padding: 0.5rem;
+}
+#d-dayPage #d-dayPopup h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#d-dayPage #d-dayPopup h2 {
+  margin-bottom: 1rem;
+}
+#d-dayPage #d-dayPopup form #d-dayTitle {
+  width: 100%;
+  font-size: 1.25rem;
+  border: 0;
+  color: #827397;
+  padding: 0.3rem;
+}
+#d-dayPage #d-dayPopup form #d-dayTitle::placeholder {
+  color: #E9D5DA;
+}
+#d-dayPage #d-dayPopup form hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #827397;
+}
+#d-dayPage #d-dayPopup form .wrap {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+#d-dayPage #d-dayPopup form .wrap label {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+#d-dayPage #d-dayPopup form .wrap label img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#d-dayPage #d-dayPopup form .wrap #d-dayDatepicker {
+  flex: 1;
+  border: 1px solid #827397;
+  width: 100%;
+  position: relative;
+  color: #827397;
+  padding: 0.3rem;
+  text-align: center;
+}
+#d-dayPage #d-dayPopup form .wrap #d-dayDatepicker::placeholder {
+  color: #E9D5DA;
+}
+
 /*=================== todoList ===================*/
 #todoListPage {
   background: rgb(244, 205, 99);
@@ -383,6 +485,7 @@ footer button img {
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
+  padding: 10px 0;
   transform: translateX(-50%);
   height: calc(100% - 100px);
   min-height: 0;
@@ -390,6 +493,8 @@ footer button img {
   left: 50%;
   top: 100%;
   transition: all 0.5s;
+  background: #E9D5DA;
+  color: #827397;
 }
 
 #timeTablePage {

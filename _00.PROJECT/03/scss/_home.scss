@@ -127,11 +127,9 @@ main{
     row-gap: 20px;
     flex-shrink: 0;
     article{
+      @include SetBox();
       width: calc((100% - 20px) / 2);
       height: calc((100% - 20px) / 2);
-      background-color: white;
-      border:2px solid $subColor;
-      padding: 0.5rem;
       .title {
         display: flex;
         justify-content: space-between;
@@ -139,27 +137,19 @@ main{
         margin-bottom: 1rem;
         h2{
           font-weight: 700;
+          margin:0;
         }
         button{background: transparent;
         }
       }
       .contents{
         li{
-          position: relative;
           padding-left: 1.5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
           font-size: 0.8rem;
-          &::before{
-            content: "";
-            position: absolute;
-            width: 1em;
-            height: 1em;
-            left:0;
-            top:0;
-            background: url('../assets/img/dot.png') no-repeat center / contain;
-          }
+          @include Dots();
         }
       }
       &.timeTable {
@@ -170,6 +160,9 @@ main{
         align-items: center;
         justify-content: center;
         height: calc((100% - 20px) / 3);
+        h2{
+          margin:0;
+        }
       }
     }
   }

@@ -10,15 +10,23 @@
 
   <!-- font awesome script (cdn) -->
   <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
-  <!-- isotope script (cdn) -->
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-  <link rel="stylesheet" href="css/main.css" />
-  
+  <link rel="stylesheet" href="plugin/jQeury/jquery-ui.css" />
+  <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
+  <script src="plugin/jQeury/jquery-ui.js"></script>
+
   <!-- db.json -->
   <script src="./db/db.json" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="css/main.css">
 
-  <script src="js/jquery-3.6.0.min.js"></script>
+  <!-- jQuery script
+  <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
+
+  jQuery UI script and stylesheet
+  <script src="plugin/jQeury/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="plugin/jQeury/jquery-ui.min.css"> -->
+
   <script defer src="./js/loadCalandar.js"></script>
   <script defer src="./js/addDBtem.js"></script>
   <script defer src="js/main.js"></script>
@@ -92,57 +100,69 @@
         <button id="timerBtn"><img src="./assets/img/logoClock-bright.png" alt="타이머 오픈"></button>
       </div>
     </footer>
-    <div id="todayPage">
-      <div class="inner">
-        <button class="closeBtn">X</button>
-      </div>
-    </div>
-    <div id="d-dayPage">
-      <div class="inner">
-        <button class="closeBtn">X</button>
-        <Section class="d-daySection">
-          <h2>D-day</h2>
-          <ul class="d-dayList">
-            <li id="d-dayItem01">
-              <h3>수능</h3>
-              <span>d-2</span>
-              <button class="deleteD-day">휴지통</button>
-            </li>
-            <li id="d-dayItem02">
-              <h3>크리스마스</h3>
-              <span>d-40</span>
-              <button class="deleteD-day">휴지통</button>
-            </li>
-          </ul>
-        </Section>
-      </div>
-    </div>
-    <div id="todoListPage">
-      <div class="inner">
-        <button class="closeBtn">X</button>
-      </div>
-    </div>
-    <div id="timeTablePage">
-      <div class="inner">
-        <button class="closeBtn">X</button>
-      </div>
-    </div>
-    <aside>
-      <div id="enterPage">
-        <div class="logo">
-          <img src="./assets/img/logoClock.png" alt="나의 시간">
-          <div class="backBubble">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <h1><img src="./assets/img/title.png" alt="나의 시간 - 일정관리앱"></h1>
-      </div>
-    </aside>
   </div>
+  <div id="todayPage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+    </div>
+  </div>
+  <div id="d-dayPage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+      <Section class="d-daySection">
+        <h2>D-day</h2>
+        <ul class="d-dayList">
+          <li id="d-dayItem01">
+            <h3>수능</h3>
+            <span>d-2</span>
+            <button class="deleteD-day">휴지통</button>
+          </li>
+          <li id="d-dayItem02">
+            <h3>크리스마스</h3>
+            <span>d-40</span>
+            <button class="deleteD-day">휴지통</button>
+          </li>
+        </ul>
+      </Section>
+      <button id="addD-dayItemBtn">추가하기</button>
+      <article id="d-dayPopup">
+        <h2>D-day</h2>
+        <form action="">
+          <input type="text" id="d-dayTitle" placeholder="제목 입력" autocomplete="off">
+          <hr>
+          <div class="wrap">
+            <label for="d-dayDatepicker"><img src="./assets/img/iconCalendar.svg" alt="d-day 날짜 선택"></label>
+            <input type="text" id="d-dayDatepicker" autocomplete="off" placeholder="d-day 날짜 선택">
+          </div>
+        </form>
+      </article>
+    </div>
+  </div>
+  <div id="todoListPage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+    </div>
+  </div>
+  <div id="timeTablePage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+    </div>
+  </div>
+  <aside>
+    <div id="enterPage">
+      <div class="logo">
+        <img src="./assets/img/logoClock.png" alt="나의 시간">
+        <div class="backBubble">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <h1><img src="./assets/img/title.png" alt="나의 시간 - 일정관리앱"></h1>
+    </div>
+  </aside>
 </body>
 </html>

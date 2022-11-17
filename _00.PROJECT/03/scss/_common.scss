@@ -20,11 +20,12 @@ body {
 .inner {
   margin: 0 10px;
   position: relative;
-  padding: 1rem;
   .closeBtn {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    padding: 0.5rem;
   }
 }
 .bar {
