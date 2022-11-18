@@ -1,7 +1,6 @@
 /*=================== d-day ===================*/
 #d-dayPage {
   background: $mainColor;
-  position: relative;
   .d-daySection{
     @include SetBox();
     h2{}
@@ -34,9 +33,9 @@
     position: absolute;
     width: 100%;
     left:0;
-    top:0;
+    top:100vh;
     z-index:3;
-    transition: all 0.3s;
+    transition: all 0.5s;
     h2{
       margin-bottom: 1rem;
     }

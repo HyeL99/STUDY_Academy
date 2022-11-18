@@ -29,6 +29,10 @@
 
   <script defer src="./js/loadCalandar.js"></script>
   <script defer src="./js/addDBtem.js"></script>
+  <script defer src="js/d-day.js"></script>
+  <script defer src="js/todo.js"></script>
+  <script defer src="js/time.js"></script>
+  <script defer src="js/today.js"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/layout.js"></script>
 </head>
@@ -138,7 +142,7 @@
         </form>
         <div class="btnPlace">
           <button class="popupSubmit">등록</button>
-          <button class="popupCancle">취소</button>
+          <button class="popupCancel">취소</button>
         </div>
       </article>
     </div>
@@ -146,13 +150,65 @@
   <div id="todoListPage">
     <div class="inner">
       <button class="closeBtn">X</button>
-      TODO LIST PAGE
+      <section class="todoListSection">
+        <h2>Todo List</h2>
+        <div class="filterBtns">
+          <button id="all" class="active">ALL</button>
+          <button id="active">active</button>
+          <button id="done">done</button>
+        </div>
+        <ul class="todos">
+          <li id="todoItem01">
+            <input type="checkbox" id="checkItem01">
+            <label for="checkItem01">1번 투두 아이템</label>
+            <button class="deleteTodo">X</button>
+          </li>
+          <li id="todoItem02">
+            <input type="checkbox" id="checkItem02">
+            <label for="checkItem02">2번 투두 아이템</label>
+            <button class="deleteTodo">X</button>
+          </li>
+        </ul>
+      </section>
+      <form action="">
+        <input type="text" placeholder="할 일을 입력해주세요.">
+        <button type="submit">+</button>
+      </form>
     </div>
   </div>
   <div id="timeTablePage">
     <div class="inner">
       <button class="closeBtn">X</button>
-      TIME TABLE PAGE
+      <section class="timeSection">
+        <div class="date">2022.11.18(금)</div>
+        <span class="bar"><img src="./assets/img/line.png"></span>
+        <div class="timerContainer">
+          <div class="left">
+            <div class="topic">코딩</div>
+            <div class="on">재생중</div>
+          </div>
+          <div id="timerNumber">
+            00:03:02
+          </div>
+        </div>
+        <span class="bar"><img src="./assets/img/line.png"></span>
+        <div class="contentsContainer">
+          <div class="left">
+            <div id="topicContents">
+              #topicContents
+            </div>
+            <div id="timelineContents">
+              #timelineContents
+            </div>
+          </div>
+          <div id="timeTableViewer">
+            <h2>Time Table</h2>
+            <div id="timetableArea">
+              #timetableArea
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
   <aside>
