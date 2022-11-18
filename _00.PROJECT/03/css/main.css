@@ -80,6 +80,26 @@ body {
   width: 100%;
 }
 
+.btnPlace {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 1rem;
+  margin-top: 100px;
+}
+.btnPlace button {
+  background-color: white;
+  border: 2px solid #827397;
+  padding: 0.5rem;
+  padding: 0.3rem 2rem;
+  border-width: 1px;
+  display: block;
+}
+.btnPlace button h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
 /*=================== index ===================*/
 #enterPage {
   width: 100%;
@@ -163,6 +183,7 @@ header {
   top: 0;
   width: 100%;
   height: 50px;
+  z-index: 7;
 }
 header h1 {
   color: #E9D5DA;
@@ -337,7 +358,7 @@ main #contentsBtn article.todoList h2 {
 }
 
 footer {
-  z-index: 5;
+  z-index: 6;
   background: #827397;
   position: fixed;
   left: 0;
@@ -356,6 +377,7 @@ footer button img {
 /*=================== d-day ===================*/
 #d-dayPage {
   background: #E9D5DA;
+  position: relative;
 }
 #d-dayPage .d-daySection {
   background-color: white;
@@ -399,6 +421,12 @@ footer button img {
   background-color: white;
   border: 2px solid #827397;
   padding: 0.5rem;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  transition: all 0.3s;
 }
 #d-dayPage #d-dayPopup h2 {
   font-size: 1.25rem;
@@ -439,12 +467,11 @@ footer button img {
 }
 #d-dayPage #d-dayPopup form .wrap #d-dayDatepicker {
   flex: 1;
-  border: 1px solid #827397;
+  border: 0;
   width: 100%;
   position: relative;
   color: #827397;
   padding: 0.3rem;
-  text-align: center;
 }
 #d-dayPage #d-dayPopup form .wrap #d-dayDatepicker::placeholder {
   color: #E9D5DA;
@@ -480,7 +507,7 @@ footer button img {
 #todayPage,
 #todoListPage,
 #timeTablePage {
-  z-index: 3;
+  z-index: 2;
   min-width: 300px;
   max-width: 600px;
   width: 100%;

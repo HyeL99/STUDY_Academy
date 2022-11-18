@@ -1,0 +1,39 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.todo input{
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--color-bg-dark);
+}
+.todo label {
+  flex:1;
+  font-size: 1.5rem;
+  padding: 0 3rem 0 1em;
+  transition: all 0.3s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--color-text)
+}
+.completed label {
+  text-decoration:line-through;
+  opacity: 0.5;
+}
+.todo button {
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-main);
+  border-radius: 50%;
+  padding-top: 0.1rem;
+  transition: all 0.3s;
+  opacity: 0.5;
+}
+.todo button:hover {
+  transform:rotate(30deg);
+  background-color: var(--color-accent);
+  opacity: 1;
+}

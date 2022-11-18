@@ -1,6 +1,7 @@
 /*=================== d-day ===================*/
 #d-dayPage {
   background: $mainColor;
+  position: relative;
   .d-daySection{
     @include SetBox();
     h2{}
@@ -27,8 +28,15 @@
     transform: translateX(0.5rem);
     font-weight: 700;
   }
+  
   #d-dayPopup{
     @include SetBox();
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:0;
+    z-index:3;
+    transition: all 0.3s;
     h2{
       margin-bottom: 1rem;
     }
@@ -63,12 +71,11 @@
         }
         #d-dayDatepicker{
           flex: 1;
-          border: 1px solid $subColor;
+          border:0;
           width: 100%;
           position: relative;
           color:$subColor;
           padding: 0.3rem;
-          text-align: center;
           &::placeholder{
             color: $mainColor;
           }
