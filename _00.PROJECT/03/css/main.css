@@ -589,8 +589,150 @@ footer button img {
 }
 
 /*=================== timer ===================*/
-#timeTablePage {
-  background: rgb(188, 224, 171);
+#timeTablePage .inner .timeSection {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px - 2rem);
+}
+#timeTablePage .inner .timeSection .date {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+#timeTablePage .inner .timeSection .timerContainer {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 2rem;
+}
+#timeTablePage .inner .timeSection .timerContainer .left .topic {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+#timeTablePage .inner .timeSection .timerContainer .left .player {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/img/play.png") no-repeat center/contain;
+  font-size: 0;
+}
+#timeTablePage .inner .timeSection .timerContainer #timerNumber {
+  font-size: 2.25rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: end;
+}
+#timeTablePage .inner .timeSection span.bar:nth-of-type(2) img {
+  transform: rotate(180deg);
+}
+#timeTablePage .inner .timeSection .contentsContainer {
+  display: flex;
+  column-gap: 10px;
+  height: 100%;
+  flex: 1;
+  margin-top: 0.5rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: calc(50% - 5px);
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #topicContents {
+  background-color: white;
+  border: 2px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-width: 1px;
+  width: 100%;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #topicContents h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #topicContents #topicList li {
+  font-size: 0.8rem;
+  position: relative;
+  padding-left: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #topicContents #topicList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #topicContents #topicList li::before {
+  background-image: url(../assets/img/play.png);
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #timelineContents {
+  background-color: white;
+  border: 2px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-width: 1px;
+  width: 100%;
+  flex: 1;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #timelineContents h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #timelineContents #timeLineList li .top {
+  font-size: 0.9rem;
+  padding-left: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #timelineContents #timeLineList li .top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#timeTablePage .inner .timeSection .contentsContainer .left #timelineContents #timeLineList li .bottom {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timeTableViewer {
+  background-color: white;
+  border: 2px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-width: 1px;
+  width: calc(50% - 5px);
+  display: flex;
+  flex-direction: column;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timeTableViewer h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timeTableViewer #timeTableArea {
+  flex: 1;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timeTableViewer #timeTableArea #timeTable {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timeTableViewer #timeTableArea #timeTable span {
+  border: 1px solid red;
+  display: block;
+  width: 16.6666666667%;
+  height: 4.1666666667%;
 }
 
 /*=================== main ===================*/

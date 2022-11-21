@@ -14,10 +14,7 @@
   <link rel="stylesheet" href="plugin/jQeury/jquery-ui.css" />
   <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
   <script src="plugin/jQeury/jquery-ui.js"></script>
-
-  <!-- db.json -->
-  <script src="./db/db.json" type="text/javascript"></script>
-  
+    
   <link rel="stylesheet" href="css/main.css">
 
   <!-- jQuery script
@@ -185,7 +182,7 @@
         <div class="timerContainer">
           <div class="left">
             <div class="topic">코딩</div>
-            <div class="on">재생중</div>
+            <div class="player on">타이머 버튼버튼</div>
           </div>
           <div id="timerNumber">
             00:03:02
@@ -195,16 +192,36 @@
         <div class="contentsContainer">
           <div class="left">
             <div id="topicContents">
-              #topicContents
+              <h2>TOPIC</h2>
+              <ul id="topicList">
+                <li>코딩 <span>00:03:28</span></li>
+              </ul>
             </div>
             <div id="timelineContents">
-              #timelineContents
+              <h2>타임라인</h2>
+              <ul id="timeLineList">
+                <li>
+                  <div class="top">
+                    코딩 <span>01:20:00</span>
+                  </div>
+                  <div class="bottom">
+                    <div class="start">
+                      시작시간: 09:05:00
+                    </div>
+                    <div class="end">
+                      종료시간: 10:25:00
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
           <div id="timeTableViewer">
-            <h2>Time Table</h2>
-            <div id="timetableArea">
-              #timetableArea
+            <h2>타임테이블</h2>
+            <div id="timeTableArea">
+              <div id="timeTable">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
             </div>
           </div>
         </div>

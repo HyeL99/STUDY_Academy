@@ -1,11 +1,13 @@
 import React from 'react'
 
-const WeatherBox = () => {
+//props 대신 destructuring(구조분해)
+const WeatherBox = ({weather}) => {
+  console.log(weather)
   return (
-    <div className='menuBox'>
-      <div className='text-light h1'>서울</div>
-      <h2 className='text-warning h1'>30도 / 120화씨</h2>
-      <h3 className='text-info h2'>맑은하늘</h3>
+    <div className='weatherBox'>
+      <div className='text-light h4'>{weather.name? weather.name:''}</div>
+      <h2 className='text-warning h1'>온도 : {weather.main? weather.main.temp:''}도 / 습도 : {weather.main? weather.main.humidity:''}</h2>
+      <h3 className='text-info h2'>{weather.weather? weather.weather[0].description:''}</h3>
     </div>
   )
 }

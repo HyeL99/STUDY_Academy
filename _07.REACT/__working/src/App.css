@@ -15,7 +15,7 @@ body {
   align-items: center;
   height: 100vh;
 }
-.menuBox{
+.weatherBox{
   background-color: rgba(46, 48, 54, 0.4);
   width: 100%;
   max-width: 700px;
@@ -24,21 +24,18 @@ body {
   padding: 50px;
   margin-bottom: 20px;
 }
-.menuBox > div{
-  font-size: 1.25rem;
-  font-weight: 700;
-}
 .buttonBox {
   background-color: rgba(46, 48, 54, 0.4);
   width: 100%;
   max-width: 700px;
   text-align: center;
   border-radius: 12px;
-  padding: 10px calc(10px + 0.3rem);
+  padding: 10px;
 }
 .buttonBox .btn {
   width: 100%;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
 }
 .buttonBox .btn:first-child {
   white-space: nowrap;
