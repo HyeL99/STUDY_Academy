@@ -105,7 +105,78 @@
   <div id="todayPage">
     <div class="inner">
       <button class="closeBtn">X</button>
-      TODAY PAGE
+      <Section class="todaySection">
+        <div class="top">
+          <button id="prevDay">2022.11.21(월)</button>
+          <p>2022.11.22(화)</p>
+          <button id="nextDay">2022.11.23(수)</button>
+        </div>
+        <div class="contents">
+          <article>
+            <h2>오늘의 일정</h2>
+            <button id="editScheduleBtn" class="edit">edit</button>
+            <ul id="scheduleList">
+              <li>오늘은 일정이 없습니다.</li>
+            </ul>
+          </article>
+          <article id="todayTimeTableArticle">
+            <h2>타임테이블</h2>
+            <button>+</button>
+            <ul id="timeTableList">
+              <li>코딩<span>01:20:00</span></li>
+            </ul>
+          </article>
+          <span class="bar"><img src="./assets/img/line.png"></span>
+          <article>
+            <h2>오늘의 기록</h2>
+            <button id="editDiaryBtn" class="edit">edit</button>
+            <ul id="diaryList">
+              <li>아직 기록이 없습니다.</li>
+            </ul>
+          </article>
+        </div>
+      </Section>
+      <article id="editSchedulePopup">
+        <h2>일정</h2>
+        <form action="">
+          <input type="text" id="scheduleTitle" placeholder="제목 입력" autocomplete="off">
+          <input type="text" id="scheduleContent" placeholder="내용 입력" autocomplete="off">
+          <hr>
+          <div class="wrap">
+            <label for="scheduleDatepicker"><img src="./assets/img/iconCalendar.svg" alt="일정 날짜 선택"></label>
+            <input type="text" id="scheduleDatepicker" autocomplete="off" placeholder="일정 날짜 선택">
+          </div>
+        </form>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
+      <article id="editDiaryPopup">
+        <div class="top">
+          <h2>오늘의 기록</h2>
+          <div class="wrap">
+            <label for="diarydDatepicker"><img src="./assets/img/iconCalendar.svg" alt="일정 날짜 선택"></label>
+            <input type="text" id="diaryDatepicker">
+          </div>
+        </div>
+        <form action="">
+          <div id="fileBox">
+            <input class="uploadName" placeholder="이미지 선택(최대 1개)" disabled="disabled">
+            <label for="diaryFile">첨부</label>
+            <input type="file" id="diaryFile" accept="image/*" autocomplete="off">
+          </div>
+          <div id="imgViewer">
+            <img id="preview" alt="No Image">
+          </div>
+          <hr>
+          <textarea id="diaryContent" placeholder="내용 입력" autocomplete="off"></textarea>
+        </form>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
     </div>
   </div>
   <div id="d-dayPage">
@@ -190,39 +261,29 @@
         </div>
         <span class="bar"><img src="./assets/img/line.png"></span>
         <div class="contentsContainer">
-          <div class="left">
-            <div id="topicContents">
-              <h2>TOPIC</h2>
-              <ul id="topicList">
-                <li>코딩 <span>00:03:28</span></li>
-              </ul>
-            </div>
-            <div id="timelineContents">
-              <h2>타임라인</h2>
-              <ul id="timeLineList">
-                <li>
-                  <div class="top">
-                    코딩 <span>01:20:00</span>
-                  </div>
-                  <div class="bottom">
-                    <div class="start">
-                      시작시간: 09:05:00
-                    </div>
-                    <div class="end">
-                      종료시간: 10:25:00
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div id="topicContents">
+            <h2>TOPIC</h2>
+            <ul id="topicList">
+              <li>코딩 <span>00:03:28</span></li>
+            </ul>
           </div>
-          <div id="timeTableViewer">
-            <h2>타임테이블</h2>
-            <div id="timeTableArea">
-              <div id="timeTable">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
-            </div>
+          <div id="timelineContents">
+            <h2>타임라인</h2>
+            <ul id="timeLineList">
+              <li>
+                <div class="top">
+                  코딩 <span>01:20:00</span>
+                </div>
+                <div class="bottom">
+                  <div class="start">
+                    시작시간: 09:05:00
+                  </div>
+                  <div class="end">
+                    종료시간: 10:25:00
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

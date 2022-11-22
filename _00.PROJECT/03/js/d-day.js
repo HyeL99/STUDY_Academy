@@ -29,12 +29,11 @@ $(function(){
     dayNamesMin: ['일','월','화','수','목','금','토'],
     dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
     yearRange:"2002:2042"
-  })
-  console.log($.datepicker);
+  });
   
   $("#d-dayDatepicker").datepicker()
 
-  $('#datepicker').datepicker('setDate', 'today');
+  $('#datepicker').datepicker('setDate', 'today');
 
 
   /* input 입력 이벤트 */
@@ -57,7 +56,9 @@ $(function(){
       return;
     }
     const restDay = getRestDay(dDayDate);
+
     let dDayText = '';
+
     if(restDay > 0){
       dDayText = `D-${restDay}`
     } else if (restDay == 0) {
@@ -65,20 +66,23 @@ $(function(){
     } else {
       dDayText = `D+${-1*restDay}`
     }
+
     const addHtml = `
-    <li id="${Math.random()*10000/100}">
-      <h3>${dDayTitle}</h3>
-      <span>${dDayText}</span>
-      <button class="deleteD-day">휴지통</button>
-    </li>
+      <li id="${Math.random()*10000/100}">
+        <h3>${dDayTitle}</h3>
+        <span>${dDayText}</span>
+        <button class="deleteD-day">휴지통</button>
+      </li>
     `;
+
     $('.d-dayList').append(addHtml);
     /*가져온 json 배열을 수정하고 다시 업로드하는 코드 필요*/
     $('#d-dayPopup').css('top','100vh');
     $('#d-dayPopup form')[0].reset();
+    
     dDayTitle='';
     dDayDate = '';
-    deleteDday();
+    deleteDday(); //새로 추가되는 li에 이벤트 부여 필요
   });
 
   $('#d-dayPopup .popupCancel').on('click',function(){
@@ -87,6 +91,7 @@ $(function(){
     dDayDate = '';
     $('#d-dayPopup').css('top','100vh');
   });
+
   deleteDday();
 })
 
