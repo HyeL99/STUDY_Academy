@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>s-pf6.A Twosome Place</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/quick.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/aside.css" />
+    <link rel="stylesheet" href="css/jQueryItem.css">
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- slick script & link css file -->
+    <link rel="stylesheet" type="text/css" href="plugin/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="plugin/slick/slick-theme.css"/>
+    <script type="text/javascript" src="plugin/slick/slick.js"></script>
+    <link rel="stylesheet" href="css/slickModify.css" />
+
+    <!-- common script -->
+    <script type="text/javascript">
+      $(function(){
+        $('a').click(function(){return false;});
+      });
+    </script>
+
+    <!-- header script -->
+    <script type="text/javascript">
+      $(function(){
+        $('.gnbSub').slideUp();
+        $('header .inner').before('<span class="menuback"></span>');
+
+        $('header').hover(function(){
+          $(this).css('color','#000');
+          $(this).children('span').css({"height":"350px","background":"#fff", "opacity":"1"});
+          $('.gnbSub').slideDown(300);
+          $('h1 a').css('background','url("./assets/img/logo-black.svg") no-repeat center / contain');
+          $('.menuBtn span').css('background','url("./assets/img/menu-black.svg") no-repeat center / contain');
+        },function(){
+          if($(window).height()>$(window).scrollTop()){
+            $(this).css('color','#fff');
+            $('h1 a').css('background','url("./assets/img/logo-white.svg") no-repeat center / contain');
+            $('.menuBtn span').css('background','url("./assets/img/menu-white.svg") no-repeat center / contain');
+            $(this).children('span').css({"height":"100px","background":"transparent", "opacity":"1"});
+          }else if($(window).height()*5<$(window).scrollTop()){
+            $('header').children('span').css({"height":"100px","opacity":"0.8","background":"#fff"});
+          }else{
+            $(this).children('span').css({"height":"100px","background":"transparent","opacity":"1"});
+          }
+          $('.gnbSub').slideUp(200);
+        });
+        $(window).on('scroll',function(){
+          scroll = $(window).scrollTop();
+          winH = $(window).height();
+          if(winH<scroll){
+            $('header').css('color','#000');
+            $('h1 a').css('background','url("./assets/img/logo-black.svg") no-repeat center / contain');
+            $('.menuBtn span').css('background','url("./assets/img/menu-black.svg") no-repeat center / contain');
+          } else {
+            $('header').css('color','#fff');
+            $('h1 a').css('background','url("./assets/img/logo-white.svg") no-repeat center / contain');
+            $('.menuBtn span').css('background','url("./assets/img/menu-white.svg") no-repeat center / contain');
+          }
+          if(winH*5<scroll){
+            $('header').children('span').css({"opacity":"0.8","background":"#fff"});
+          } else {
+            $('header').children('span').css({"opacity":"1","background":"transparent"});
+          }
+        })
+      });
+    </script>
+
+    <!-- #main01 slick script -->
+    <script type="text/javascript">
+      $(function(){
+        let mainSlide=$('#main01 .slickContainer');
+        let enableNav = true;
+        
+        // 슬라이드 페이징 기능
+        mainSlide.on('init reInit',function(event, slick){
+          if(!slick.$dots) return;
+          $('#main01 .buttonSpace p').html('<span class="page">'+(slick.currentSlide+1)+'</span> / ' +(slick.$dots[0].children.length));
+        }).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          if(!slick.$dots) return;
+          let i = (nextSlide ? nextSlide : 0) + 1;
+          $('#main01 .buttonSpace p').find('.page').text(i);
+        });
+
+        mainSlide.slick({
+          dots: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: $(".mainPrev"),
+          nextArrow: $(".mainNext"),
+        });
+    });
+    </script>
+
+    <!-- #main02 script -->
+    <script type="text/javascript">
+      $(function(){
+        let coffeeItem = [
+        {
+          name: "스페니쉬 연유 라떼",
+          img: "./assets/img/story/menu_coffee1.jpg",
+        },
+        {
+          name: "롱블랙",
+          img: "./assets/img/story/menu_coffee2.jpg",
+        },
+        {
+          name: "TWG 1837 블랙티",
+          img: "./assets/img/story/menu_coffee3.jpg",
+        },
+        {
+          name: "스트로베리 피치 프라페",
+          img: "./assets/img/story/menu_coffee4.jpg",
+        }
+      ];
+        let dessertItem = [
+          {
+            name: "스트로베리 초콜릿 생크림",
+            img: "./assets/img/story/menu_dessert1.jpg",
+          },
+          {
+            name: "마스카포네 티라미수",
+            img: "./assets/img/story/menu_dessert2.jpg",
+          },
+          {
+            name: "레드벨벳",
+            img: "./assets/img/story/menu_dessert3.jpg",
+          },
+          {
+            name: "뉴욕 치즈 케이크",
+            img: "./assets/img/story/menu_dessert4.jpg",
+          },
+          {
+            name: "아이스 박스",
+            img: "./assets/img/story/menu_dessert5.jpg",
+          },
+          {
+            name: "마카롱 세트(6개입)",
+            img: "./assets/img/story/menu_dessert6.jpg",
+          },
+          {
+            name: "소프트 아이스크림(컵)",
+            img: "./assets/img/story/menu_dessert7.jpg",
+          }
+        ];
+        let deliItem = [
+          {
+            name: "B.E.L.T.샌드위치",
+            img: "./assets/img/story/menu_deli1.jpg",
+          },
+          {
+            name: "페스토 햄치즈 파니니",
+            img: "./assets/img/story/menu_deli2.jpg",
+          },
+          {
+            name: "클래식 루벤",
+            img: "./assets/img/story/menu_deli3.jpg",
+          },
+          {
+            name: "그릴드 치킨 샐러드",
+            img: "./assets/img/story/menu_deli4.jpg",
+          },
+          {
+            name: "크루아상",
+            img: "./assets/img/story/menu_deli5.jpg",
+          }
+        ];
+
+        let storySlide = $('#main02 .inner .slickContainer');
+        $('#main02 .slickContainer').css('height',$('#main02 .inner').width()*0.4);
+        let innerW = $('#main02 .inner').width()*0.4;
+        let num=0;
+
+        // 메뉴 css 작업
+        $('#main02 div.inner ul.menu li p').hide();
+        $('#main02 div.inner ul.menu li:eq(0) p').show();
+        $('#main02 div.inner ul.menu li h3').css({"text-decoration":"none","color":"#888"});
+        $('#main02 div.inner ul.menu li:eq(0) h3').css({"text-decoration":"underline","color":"#000"})
+
+        $('#main02 div.inner ul.menu li').click(function(){
+          $(this).children('h3').css({"text-decoration":"underline","color":"#000"});
+          $(this).siblings('li').children('h3').css({"text-decoration":"none","color":"#888"});
+          $(this).children('p').show();
+          $(this).siblings('li').children('p').hide();
+        })
+        //기본 slick item 세팅
+        setSlickItem(coffeeItem);
+        $('#main02 .inner .buttonSpace p').html(`${coffeeItem[0].name}`);
+
+        //메뉴 클릭시 slickItem 교체
+        $('.coffee').click(function(){
+          setSlickItem(coffeeItem);
+          $('#main02 .inner .buttonSpace p').html(`${coffeeItem[0].name}`);
+        });
+        $('.dessert').click(function(){
+          setSlickItem(dessertItem);
+          $('#main02 .inner .buttonSpace p').html(`${dessertItem[0].name}`);
+        });
+        $('.deli').click(function(){
+          setSlickItem(deliItem);
+          $('#main02 .inner .buttonSpace p').html(`${deliItem[0].name}`);
+        });
+
+         //paging 기능
+        array=coffeeItem;
+        $('#main02 div.inner ul.menu li').click(function(){
+          num=0;
+          if($(this).hasClass('coffee')){
+            array = coffeeItem;
+          }else if($(this).hasClass('dessert')){
+            array = dessertItem;
+          }else if($(this).hasClass('deli')){
+            array = deliItem;
+          }
+        });
+        $('.storyNext').click(function(){
+          num++;
+          if(num>=array.length){
+            num=0;
+            $('#main02 .inner .buttonSpace p').html(`${array[0].name}`);
+          }else{
+            $('#main02 .inner .buttonSpace p').html(`${array[num].name}`);
+          }
+        });
+        $('.storyPrev').click(function(){
+          num--;
+          if(num<0){
+            num=array.length-1;
+            $('#main02 .inner .buttonSpace p').html(`${array[num].name}`);
+          }else{
+            $('#main02 .inner .buttonSpace p').html(`${array[num].name}`);
+          }
+        });
+        
+        //slick 설정
+        function setSlickItem(arr){
+          storySlide.filter('.slick-initialized').slick('unslick');
+          let j=0;
+          let innerL = $('#main02 .inner .slickContainer').offset().right;
+          $('#main02 .inner .slickContainer').children().remove();
+          for(let item of arr){
+            j++;
+            //console.log(`do${j}`);
+            $('#main02 .inner .slickContainer').append(`<a class='main02Item item${j} href=""'></a>`);
+            $(`.item${j}`).css({
+              "background":`url(${item.img}) no-repeat center /cover`,
+              'width':$('#main02 .inner').width()*0.4,
+              'height':$('#main02 .inner').width()*0.4,
+            });
+          }
+          storySlide.not('.slick-initialized').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: $(".storyPrev"),
+            nextArrow: $(".storyNext"),
+            
+          })
+        }
+      
+      });
+    </script>
+
+    <!-- #main04 script -->
+    <script type="text/javascript">
+      $(function(){
+        let brandSlide = $('#main04 .inner .slickContainer')
+
+
+        // 슬라이드 페이징 기능
+        brandSlide.on('init reInit',function(event, slick){
+          if(!slick.$dots) return;
+          $('#main04 .buttonSpace p').html('<span class="page">'+(slick.currentSlide+1)+'</span> / ' +(slick.$dots[0].children.length));
+        }).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          if(!slick.$dots) return;
+          let i = (nextSlide ? nextSlide : 0) + 1;
+          $('#main04 .buttonSpace p').find('.page').text(i);
+        });
+
+        // slick 설정
+        brandSlide.slick({
+          dots: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: $(".brandPrev"),
+          nextArrow: $(".brandNext"),
+        });
+      })
+    </script>
+
+    <!-- #main06 script -->
+    <script type="text/javascript">
+      $(function(){
+        let content = [
+          {
+            name: "news",
+            data:[],
+          },
+          {
+            name: "notice",
+            data: [
+              {
+                title : "위치기반서비스 이용약관 개정 안내",
+                date : "2022-05-26",
+              },
+              {
+                title : "개인정보처리방침 개정 안내",
+                date : "2022-04-15",
+              },
+              {
+                title : "제 4기 투썸플레이스 주식회사 결산 공고",
+                date : "2022-03-31",
+              },
+              {
+                title : "제 4기 투썸플레이스 주식회사 결산 공고",
+                date : "2022-03-31",
+              },
+              {
+                title : "제 4기 투썸플레이스 주식회사 결산 공고",
+                date : "2022-03-31",
+              },
+            ],
+          },
+        ];
+        let list = [];
+        $('.noticePlace li:eq(0) a').addClass('selected');
+        callArticle(content[0])
+        $('.noticePlace li a').click(function(){
+          $(this).addClass('selected');
+          $(this).parent('li').siblings('li').children('a').removeClass('selected');
+
+          for(let array of content){
+            if(array.name == this.dataset.title){
+              list = array;
+            }
+          }
+          callArticle(list);
+        });
+
+        // 게시글의 개수에 따라 최대 3개까지 게시글을 보여주는 함수
+        function callArticle(list){
+          $('.postPlace').children().remove();
+          if(list.data.length == 0){
+            $('.postPlace').append(
+              `<article>
+                <p class='noData'>등록된 게시글이 없습니다.</p>
+              </article>`
+            );
+          }else{
+            let i=0;
+            for(let item of list.data){
+              i++;
+              $('.postPlace').append(
+                `<article>
+                  <p>${list.name == 'news'?'보도자료':'공지사항'}</p>
+                  <h3>${item.title}</h3>
+                  <p>${item.date}</p>
+                </article>`
+              );
+              if(i==3){
+                break;
+              }
+            }
+          }
+        }
+      });
+    </script>
+
+    <!-- aside script -->
+    <script type="text/javascript">
+      $(function(){
+        setButton();
+        setSideBar();
+        $(window).on('scroll',function(){
+          setButton();
+          setSideBar();
+        })
+        function setButton(){
+          if($(window).scrollTop()>0){
+            $('.topBtn').css("display","block");
+            $('.redBtn').css("bottom","120px");
+          }else{
+            $('.topBtn').css("display","none");
+            $('.redBtn').css("bottom","32px");
+          };
+        };
+        function setSideBar(){
+          if($(window).scrollTop()>$(window).height()*5 - 1){
+            $('.currentNum').html('06');
+            $('.currentBar').css('height','calc(100% / 6 * 6)')
+          }else if($(window).scrollTop()>$(window).height()*4 - 1){
+            $('.currentNum').html('05');
+            $('.currentBar').css('height','calc(100% / 6 * 5)')
+          }else if($(window).scrollTop()>$(window).height()*3 - 1){
+            $('.currentNum').html('04');
+            $('.currentBar').css('height','calc(100% / 6 * 4)')
+          }else if($(window).scrollTop()>$(window).height()*2 - 1){
+            $('.currentNum').html('03');
+            $('.currentBar').css('height','calc(100% / 6 * 3)')
+          }else if($(window).scrollTop()>$(window).height() -1){
+            $('.currentNum').html('02');
+            $('.currentBar').css('height','calc(100% / 6 * 2)')
+          }else{
+            $('.currentNum').html('01');
+            $('.currentBar').css('height','calc(100% / 6 * 1)')
+          };
+        };
+      });
+    </script>
+
+    <!-- scroll paging event script -->
+    <script type="text/javascript">
+      $(function(){
+        window.addEventListener("wheel", function(e){
+          e.preventDefault();
+        },{passive : false});
+
+        var $html = $("html");
+        var page = 1;
+        var lastPage = $(".content").length;
+        $html.animate({scrollTop:0},1000)
+
+        $(window).on("wheel", function(e){
+    
+        if($html.is(":animated")) return;
+        
+        if(e.originalEvent.deltaY > 0){
+          if(page== lastPage) return;
+          page++;
+        }else if(e.originalEvent.deltaY < 0){
+          if(page == 1) return;
+          page--;
+        }
+
+        var posTop = (page-1) * $(window).height();
+        $html.animate({scrollTop : posTop});
+      });
+    });
+    
+    </script>
+
+    <!-- scroll top script -->
+    <script>
+      $(function(){
+        $(".topBtn").click(function(){
+          $("html,body").animate({scrollTop:0},1000);
+          return false; //a태그의 기본동작(새로고침,페이지이동)을 막는다
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="inner flex jusSpaBet">
+          <h1><a>투썸플레이스</a></h1>
+          <nav>
+            <ul class="gnb flex jusSpaBet">
+              <li class="gnbList">
+                <a href=""><h2>투썸플레이스 소개</h2></a>
+                <ul class="gnbSub">
+                  <li class="gnbSubList">
+                    <a href=""><h3>투썸플레이스</h3></a>
+                    <ul class="sub">
+                      <li><a href=""><h4>비전체계</h4></a></li>
+                      <li><a href=""><h4>연혁</h4></a></li>
+                      <li><a href=""><h4>BI</h4></a></li>
+                      <li><a href=""><h4>20주년 이야기</h4></a></li>
+                      <li><a href=""><h4>Recruit</h4></a></li>
+                    </ul>
+                  </li>
+                  <li class="gnbSubList">
+                    <a href=""><h3>매장</h3></a>
+                    <ul class="sub">
+                      <li><a href=""><h4>DT/DI</h4></a></li>
+                    </ul>
+                  </li>
+                  <li class="gnbSubList"><a href=""><h3>브랜드 브로슈어</h3></a></li>
+                </ul>
+              </li>
+              <li class="gnbList">
+                <a href=""><h2>메뉴이야기</h2></a>
+                <ul class="gnbSub">
+                  <li class="gnbSubList"><a href=""><h3>커피이야기</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>디저트이야기</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>델리이야기</h3></a></li>
+                </ul>
+              </li>
+              <li class="gnbList">
+                <a href=""><h2>브랜드 지원</h2></a>
+                <ul class="gnbSub">
+                  <li class="gnbSubList"><a href=""><h3>어썸 페어링 플랜트</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>어썸 디저트 플랜트</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>C&D센터</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>SEP센터</h3></a></li>
+                </ul>
+              </li>
+              <li class="gnbList">
+                <a href=""><h2>투썸플레이스 앱 & 멤버십</h2></a>
+                <ul class="gnbSub">
+                  <li class="gnbSubList"><a href=""><h3>투썸플레이스 앱 소개</h3></a></li>
+                  <li class="gnbSubList">
+                    <a href=""><h3>투썸 플레이스 멤버십</h3></a>
+                    <ul class="sub">
+                      <li><a href=""><h4>멤버십 소개</h4></a></li>
+                      <li><a href=""><h4>등급 및 혜택</h4></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="gnbList">
+                <a href=""><h2>가맹점 창업안내</h2></a>
+                <ul class="gnbSub">
+                  <li class="gnbSubList"><a href=""><h3>가맹점 개설 안내</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>창업설명회</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>온라인 창업상담신청</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>FAQ</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>가맹점 전용 금융 상품</h3></a></li>
+                </ul>
+              </li>
+              <li class="gnbList">
+                <a href=""><h2>새소식 & 공지</h2></a>
+                <ul class="gnbSub">
+                  <li class="gnbSubList"><a href=""><h3>공지사항</h3></a></li>
+                  <li class="gnbSubList"><a href=""><h3>보도자료</h3></a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <a href="" class="menuBtn"><span>메뉴보기</span></a>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <section id="main01">
+            <div class="slickContainer">
+              <span class="slide1">1번 슬라이드</span>
+              <span class="slide2">2번 슬라이드</span>
+            </div>
+            <div class="buttonSpace">
+              <a href="" class="mainPrev prev">이전슬라이드</a>
+              <p><span>/2</span></p>
+              <a href="" class="mainNext next">다음슬라이드</a>
+            </div>
+          </section>
+          <section id="main02">
+            <div class="inner flex fCol">
+              <h2 class="h2">MENU STORY</h2>
+              <ul class="menu flex fCol jusSpaBet">
+                <li class="coffee">
+                  <p>전문가의 섬세함으로 완성한 최상의 커피</p>
+                  <h3 class="h3">COFFEE STORY</h3>
+                </li>
+                <li class="dessert">
+                  <p>다양한 프리미엄 케이크 & 디저트</p>
+                  <h3 class="h3">DESSERT STORY</h3>
+                </li>
+                <li class="deli">
+                  <p>가볍게 즐기는 맛있는 식사, 델리</p>
+                  <h3 class="h3">DELI STORY</h3>
+                </li>
+              </ul>
+              <div class="slickContainer"></div>
+              <div class="buttonSpace">
+                <a href="" class="storyPrev prev">이전슬라이드</a>
+                <p>슬라이드인덱스</p>
+                <a href="" class="storyNext next">다음슬라이드</a>
+              </div>
+            </div>
+          </section>
+          <section id="main03">
+            <div class="inner">
+              <h2 class="h2">에이리스트</h2>
+              <p class="h3">TWOSOME<span class="br"></span>IN YOUR MUG, A LIST</p>
+              <p class="h4">언제 어디서나 여유롭게 즐기는 에이리스트</p>
+              <p class="h5">좋은 커피를 마셔야 비로소 하루가 시작되는 느낌이라면 하루에도 몇 번씩 그윽한 커피 향이 생각난다면 마음속 우선순위에 언제나 커피가 있는 당신이라면 잊지 말고 챙겨야 할 단 하나의 리스트, 투썸플레이스 에이리스트. </p>
+            </div>
+          </section>
+          <section id="main04">
+            <div class="inner">
+              <h2 class="h2">BRAND <span class="br"></span>SUPPORT</h2>
+              <div class="slickContainer">
+                <div class="brand brand01">
+                  <span>Roasting Plant</span>
+                  <div class="text">
+                    <h3 class="h3">로스팅 플랜트</h3>
+                    <p>원두 로스팅부터 고객의 손에 들리는 한 잔의 커피까지, 최고의 커피 품질을 만듭니다.</p>
+                  </div>
+                </div>
+                <div class="brand brand02">
+                  <span>Dessert Plant</span>
+                  <div class="text">
+                    <h3 class="h3">디저트 플랜트</h3>
+                    <p>최고의 맛과 품질을 자랑하는 투썸플레이스의 디저트를 만듭니다.</p>
+                  </div>
+                </div>
+                <div class="brand brand03">
+                  <span>C&D Center</span>
+                  <div class="text">
+                    <h3 class="h3">C&D센터</h3>
+                    <p>창의성을 바탕으로 고부가가치 제품 개발과 원가경쟁력을 갖춘 제품 체계를 만들어 고객의 만족도를 높이고, 더욱 투썸플레이스답게 만들어주는 곳입니다.</p>
+                  </div>
+                </div>
+                <div class="brand brand04">
+                  <span>SEP Center</span>
+                  <div class="text">
+                    <h3 class="h3">SEP센터</h3>
+                    <p>투썸플레이스 SEP센터는 브랜드 가치를 만들어 내는 전문가 육성 센터입니다.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttonSpace">
+                <a href="" class="brandPrev prev">이전슬라이드</a>
+                <p>슬라이드인덱스</p>
+                <a href="" class="brandNext next">다음슬라이드</a>
+              </div>
+            </div>
+          </section>
+          <section id="main05">
+            <div class="inner">
+              <h2 class="h2">FRANCHISE</h2>
+              <p class="h4">당신의 창업 성공 스토리, <span class="br"></span>투썸플레이스가 함께합니다.</p>
+              <p>향기로운 커피와 달콤한 디저트가 함께하는 프리미엄 <span class="br"></span>디저트 카페 투썸플레이스, 투썸플레이스의 축적된 경험과 노하우를 <span class="br"></span>바탕으로 여러분의 성공창업을 약속 드립니다.</p>
+              <ul class="buttonPlace flex jusCen">
+                <li class="buttonSlide"><span class="btnBack"></span><a href="">창업안내 바로가기<span class="next"></span></a></li>
+                <li class="buttonSlide"><span class="btnBack"></span><a href="">가맹상담 신청<span class="next"></span></a></li>
+              </ul>
+            </div>
+          </section>
+          <section id="main06">
+            <div class="inner">
+              <h2 class="h2">NEWS <span class="br"></span>&NOTICE</h2>
+              <ul class="noticePlace">
+                <li><a href="" data-title="news">보도자료</a></li>
+                <li><a href="" data-title="notice">공지사항</a></li>
+              </ul>
+              <div class="postPlace">
+                <article>
+                  <p>공지사항</p>
+                  <h3>위치 기반 서비스 이용약관 개정 안내</h3>
+                  <p>2022-05-26</p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="sideBar"><span></span></div>
+      </main>
+      <footer>
+        <div class="inner">
+          <div class="fTop flex jusSpaBet">
+            <div class="right"><ul>
+              <li><a href="">기업 및 단체구매안내</a></li>
+              <li><a href="">가맹상담신청</a></li>
+              <li><a href="">사이버 신문고</a></li>
+            </ul></div>
+            <div class="left">
+              <ul class="flex fCol jusSpaBet">
+                <li>
+                  <h2>Adress</h2>
+                  <address>서울특별시 중구 을지로 170, 8층(을지로4가, 을지트윈타워)투썸플레이스(주)</address>
+                </li>
+                <li>
+                  <h2>Customer Center</h2>
+                  <span>고객센터 : 1577-4410</span>
+                  <span>팩스 : 02-2058-6777</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="fBottom flex fCol">
+            <ul class="top flex">
+              <li><a href="">이용약관</a></li>
+              <li><a href="">개인정보처리방침</a></li>
+              <li><a href="">위치기반서비스 이용약관</a></li>
+              <li><a href="">이메일 무단수집거부</a></li>
+              <li><a href="">법적고지</a></li>
+              <li><a href="">사업자정보확인</a></li>
+            </ul>
+            <ul class="bottom flex">
+              <li>대표이사 : 이영상<span></span></li>
+              <li>개인정보보호책임자 : 장재호<span></span></li>
+              <li>사업자등록번호 : 404-86-01054<span></span></li>
+              <li>통신판매업종신고증 : 제 2018-서울중구-0353호<span></span></li>
+              <li>대표이메일 : helpmaster@twosome.co.kr<span></span></li>
+            </ul>
+            <p>Copyright ⓒ 2021 A TWOSOME PLACE Co., LTD. All Rights Reserved.</p>
+            <ul class="social">
+              <li><a href="">페이스북</a></li>
+              <li><a href="">인스타그램</a></li>
+              <li><a href="">유튜브</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <aside>
+        <a href="" class="redBtn">기업 단체 구매</a>
+        <a href="" class="topBtn"><span>위로 이동</span></a>
+        <div class="sideBar">
+          <span class="num currentNum">01</span>
+          <span class="totalBar">totalsidebar</span>
+          <span class="currentBar">currentsidebar</span>
+          <span class="num totalNum">06</span>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

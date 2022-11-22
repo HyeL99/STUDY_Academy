@@ -1,0 +1,109 @@
+footer {
+  background: #222;
+  color: #fff;
+}
+footer div.inner {
+  transform: scale(1);
+  max-width: 1312px;
+}
+footer div.inner div.fTop {
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+footer div.inner div.fTop div.right {
+}
+footer div.inner div.fTop div.right ul {
+}
+footer div.inner div.fTop div.right ul li {
+}
+footer div.inner div.fTop div.right ul li a {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 2;
+}
+footer div.inner div.fTop div.right ul li:hover a{
+  text-decoration: underline;
+}
+footer div.inner div.fTop div.left {
+}
+footer div.inner div.fTop div.left ul {
+  height: 100%;
+}
+footer div.inner div.fTop div.left ul li {
+}
+footer div.inner div.fTop div.left ul li h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+footer div.inner div.fTop div.left ul li address,
+footer div.inner div.fTop div.left ul li span {
+  font-size: 14px;
+  opacity: 0.5;
+}
+footer div.inner div.fBottom {
+  padding: 50px 0 70px;
+  font-size: 14px;
+  color: #777;
+}
+footer div.inner div.fBottom ul.top {
+  margin-bottom: 20px;
+}
+footer div.inner div.fBottom ul.top li {
+  float: left;
+  margin-right: 30px;
+}
+footer div.inner div.fBottom ul.top li a {
+  color: #fff;
+  font-weight: 700;
+}
+footer div.inner div.fBottom ul.top li a:hover{
+  text-decoration: underline;
+}
+footer div.inner div.fBottom ul.top li:nth-of-type(2) a{
+  color: #f5ce3e;
+}
+footer div.inner div.fBottom ul.bottom {
+  width: 50%;
+  flex-wrap: wrap;
+}
+footer div.inner div.fBottom ul.bottom li {
+  line-height: 2;
+}
+footer div.inner div.fBottom ul.bottom li:nth-of-type(1) span,
+footer div.inner div.fBottom ul.bottom li:nth-of-type(2) span,
+footer div.inner div.fBottom ul.bottom li:nth-of-type(4) span {
+  margin: 0 15px;
+  display: inline-block;
+  width: 1px;
+  height: 40%;
+  border-left: 1px solid #777;
+  
+}
+footer div.inner div.fBottom p {
+  margin-top: 10px;
+}
+footer div.inner div.fBottom ul.social {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+footer div.inner div.fBottom ul.social li {
+  margin-left: 15px;
+}
+footer div.inner div.fBottom ul.social li a {
+  font-size: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #777;
+  border-radius: 16px;
+  background: url('../assets/img/facebook.svg') no-repeat center / contain;
+}
+footer div.inner div.fBottom ul.social li:nth-of-type(2) a{
+  background: url('../assets/img/insta.svg') no-repeat center / contain;
+}
+footer div.inner div.fBottom ul.social li:nth-of-type(3) a{
+  background: url('../assets/img/youtube.svg') no-repeat center / contain;
+}

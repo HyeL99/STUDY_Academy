@@ -1,0 +1,72 @@
+header {
+  position: fixed;
+  color: white;
+  width: 100%;
+  z-index:1;
+}
+header div.inner {
+ width: 65%;
+}
+header div.inner h1 {
+  position: absolute;
+  margin-top: 35px;
+  left: 30px;
+}
+header div.inner h1 a {
+  display: block;
+  width:216px;
+  height: 30px;
+  font-size: 0;
+  background: url("../assets/img/logo-white.svg") no-repeat center / contain;
+}
+header div.inner nav {
+  flex-grow: 1;
+}
+header div.inner nav ul.gnb {
+}
+header div.inner nav ul.gnb li.gnbList {
+}
+header div.inner nav ul.gnb li.gnbList:nth-of-type(2){
+  width:96.3px;
+}
+header div.inner nav ul.gnb li.gnbList:nth-of-type(3){
+  width:129.7px;
+}
+header div.inner nav ul.gnb li.gnbList:nth-of-type(5){
+  width:150px;
+}
+header div.inner nav ul.gnb li.gnbList>a {
+  line-height: 100px;
+  font-weight: 700;
+}
+header div.inner nav ul.gnb li.gnbList ul.gnbSub {
+}
+header div.inner nav ul.gnb li.gnbList ul.gnbSub li.gnbSubList {
+  margin-bottom: 12px;
+}
+header div.inner nav ul.gnb li.gnbList ul.gnbSub li.gnbSubList a {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+header div.inner nav ul.gnb li.gnbList ul.gnbSub li.gnbSubList ul.sub {
+}
+header div.inner nav ul.gnb li.gnbList ul.gnbSub li.gnbSubList ul.sub li {
+}
+header div.inner nav ul.gnb li.gnbList ul.gnbSub li.gnbSubList ul.sub li a {
+  font-size: 14px;
+  color: #707070;
+  line-height: 21px;
+}
+header div.inner a.menuBtn {
+  position: absolute;
+  margin-top: 35px;
+  right:30px;
+}
+header div.inner a.menuBtn span {
+  display: block;
+  width:30px;
+  height: 30px;
+  font-size: 0;
+  background: url("../assets/img/menu-white.svg") no-repeat center / contain;
+}

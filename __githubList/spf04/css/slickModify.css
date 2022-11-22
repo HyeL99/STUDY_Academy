@@ -1,0 +1,39 @@
+.prev{
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 15px);
+  width:30px;
+  height: 30px;
+  font-size: 0;
+  background: url("../assets/img/arrow-prev.svg") no-repeat center / contain;
+}
+.next{
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 15px);
+  width:30px;
+  height: 30px;
+  font-size: 0;
+  background: url("../assets/img/arrow-next.svg") no-repeat center / contain;
+}
+.buttonSpace{
+  background: black;
+}
+.slick-list{
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.slick-dots{
+  display: none !important;
+}
+.slick-dotted.slick-slider{
+  margin:0 !important;
+}
+.main02Item{
+  transform: scale(0.8);
+  transform-origin: bottom;
+}
+.slick-active .main02Item{
+  transform: scale(1);
+}
