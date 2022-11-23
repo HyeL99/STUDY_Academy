@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	  }
+	  body{
+		  }
+	div#menu h1{
+		text-align:center;
+		height:100px;
+		line-height:100px;	
+		}
+	div#menu ul{
+		background:rgba(0,0,0,0.5);
+		transition:all 1s;
+		height:80px;
+		width:100%;
+		/*z-index:2;*/
+		text-align:center;
+		line-height:80px;
+		}
+		div#menu ul li{
+			display:inline-block;
+			width:25%;
+			vertical-align:top;
+			}
+		.a{
+			
+			}
+		.red{
+			background: #F60 !important;
+			}
+		.green{
+			background: #6C0 !important;
+			}
+		.blue{
+			background: #39F   !important;
+			}
+		.yellow{
+			background: #F0F !important;
+			}
+	div#wrap{
+		width:1000px;
+		padding:120px 0 0 0;
+		margin:0 auto;
+		}
+	div#wrap div{
+		height:600px;
+		}
+	div#area1{
+		background:#0C0;
+		}
+	div#area2{
+		background: #FF6;
+		}
+	div#area3{
+		background: #CCF;
+		}
+	div#area4{
+		background: #099;
+		}
+	.fixed{
+		position:fixed !important;
+		top:0 !important;
+		}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+	<div id="menu" class="a">
+        <h1>로고</h1>
+        <ul>
+        	<li>회사소개</li><!--
+            --><li>제품소개</li><!--
+            --><li>주문상담</li><!--
+            --><li>고객문의</li>
+        </ul>
+    </div>
+	<div id="wrap">
+        <div id="area1">
+        </div>
+        <div id="area2">
+        </div>
+        <div id="area3">
+        </div>
+        <div id="area4">
+        </div>
+    </div>
+    <script>
+		var m=$("div#menu ul").offset().top;
+		var ulH=$("div#menu ul").height();
+		$(window).on("scroll",function(){
+			var n=$("div#menu").offset().top;
+			
+			var a=$("div#area1").offset().top;
+			var b=$("div#area2").offset().top;
+			var c=$("div#area3").offset().top;
+			var d=$("div#area4").offset().top;
+			//var scfinish=$(window).scrollTop();
+			
+			if($(window).scrollTop()>=m){
+				//$("#wrap div:eq(0)").animate({"opacity":0.2},500);
+				//$("div#menu").animate({"top":-120},500);
+				$("div#menu ul").css({"position":"fixed","top":0});//addClass("fixed");
+				$("#wrap").css("margin-top",ulH);
+				console.log($(window).scrollTop());
+			}
+			if($(window).scrollTop()<m){
+				$("div#menu ul").css({"position":"relative","top":""});//removeClass("fixed");
+				$("#wrap").css("margin-top",0);
+			}
+			
+			if($(window).scrollTop()>a){
+				//$("#wrap div:eq(0)").animate({"opacity":0.2},500);
+				//$("div#menu").animate({"top":-120},500);
+				$("div#menu ul").attr("class","red");
+			}
+			if($(window).scrollTop()>b){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+			$("div#menu ul").attr("class","green");
+			}
+			if($(window).scrollTop()>c){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+				$("div#menu ul").attr("class","blue");
+			}
+				if($(window).scrollTop()>d){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+				$("div#menu ul").attr("class","yellow");
+			}
+		});
+</script>
+</body>
+</html>

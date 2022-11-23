@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background:url(img/bg.gif) repeat-x;
+	}
+div#top{
+	width:996px;
+	margin:0 auto;
+	/*overflow:hidden;*/
+	position:relative;
+	}
+	div#top h1{
+		text-indent:-999px;
+		background:url(img/logo.gif) no-repeat;
+		width:123px;
+		height:46px;
+		margin:54px 0 0 0;
+		}
+	div#top ul.top1{
+		position:absolute;
+		left:172px;
+		top:76px;
+		}
+		div#top ul.top1>li{
+			float:left;
+			padding:3px 41px 20px;
+			font-size:11px;
+			position:relative;
+			}
+			/*서브메뉴ul*/
+			div#top ul.top1 li ul{
+				position:absolute;
+				left:0;
+				top:40px;
+				width:100%;
+				display:none;
+				background:#666;
+				}
+			div#top ul.top1 li:hover ul{
+				display:block;
+				}
+				div#top ul.top1 li ul li{
+					height:25px;
+					line-height:25px;
+					padding:0 0 0 41px;
+					}
+				div#top ul.top1 li ul li:hover{
+					background:#CCC;
+					}
+			
+	div#top ul.top2{
+		position:absolute;
+		right:0;
+		top:0;
+		}
+		div#top ul.top2 li{
+			float:left;
+			height:25px;
+			line-height:25px;
+			padding:0 9px;
+			font-size:11px;
+			}
+	div#top p{
+		position:absolute;
+		right:144px;
+		top:0;
+		height:25px;
+		line-height:25px;
+		}

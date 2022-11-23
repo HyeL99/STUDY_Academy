@@ -1,0 +1,36 @@
+.item {
+  width: 500px;
+  height: 50px;
+  border: 1px solid lightcoral;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.inputStyle {
+  width: 400px;
+  height: 50px;
+  border: 1px solid lightcoral;
+  padding: 0 20px;
+}
+
+.btnStyle {
+  width: 100px;
+  height: 52px;
+  border: 1px solid lightcoral;
+  padding: 0 20px;
+  padding: 0;
+  background: lightcoral;
+  vertical-align: middle;
+}
+.btnStyle:hover {
+  background-color: #000;
+  color: #fff;
+  border: 0;
+}
+
+.h1 {
+  color: lightcoral;
+}
+
+/*# sourceMappingURL=App.css.map */

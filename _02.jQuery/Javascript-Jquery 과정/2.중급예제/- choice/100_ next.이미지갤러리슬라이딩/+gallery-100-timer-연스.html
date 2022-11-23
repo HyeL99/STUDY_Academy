@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>gallery</title>
+	<style type="text/css">
+	html,body{
+		height:100%;
+		}
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div.list{
+			position:relative;
+			width:100%;
+			overflow:hidden;
+			height:100%;
+			}
+		div.list ul{
+			overflow:hidden;
+			position:absolute;
+			left:0;
+			top:0;
+			width:300%;
+			}
+		div.list ul li{
+			float:left;
+			width:33.3%;
+			}
+			div.list ul li img{
+				width:100%;
+				}
+
+		p.prev{
+			position:absolute;
+			left:0;
+			top:50%;
+			background:#F90;
+			color:#FFF;
+			padding:7px;
+			}
+		p.next{
+			position:absolute;
+			right:0;
+			top:50%;
+			background:#F90;
+			color:#FFF;
+			padding:7px;
+			}
+
+		
+    </style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <!--<script src="js/gallery-timer.js"></script>-->
+    <script>
+		$(document).ready(
+			function(){
+				//div안에 <p class="next">다음</p>를 추가하시오 append()
+				$("div").append("<p class='next'>다음</p>").append("<p class='prev'>이전</p>");
+				//div안의 ul을 animate하시오
+				//$("div ul").animate({"left":"-=100%"},2000);
+				//4000초지연후 반복실행하시오 setInterval(함수,지연시간);
+				var n=2;
+				/*setInterval(
+					function(){
+						if(n<4){
+						   $("div ul").animate({"left":"-=100%"},2000);
+						   n++;
+						} // 그렇치않은 경우 div ul을 처음상태로 애니메이트하시오
+						else{
+						 $("div ul").animate({"left":"0%"},2000);
+						 //처음상태로 돌아간후 다시 if구문이 실행되게 n값을 초기화하시오
+						 n=2;
+						}
+					},4000
+				);*/
+				// setInterval명령구문을 변수 timer에 넣으시오
+				var timer=setInterval(
+					function(){
+						if(n<4){
+						   $("div ul").animate({"left":"-=100%"},2000);
+						   n++;
+						} // 그렇치않은 경우 div ul을 처음상태로 애니메이트하시오
+						else{
+						 $("div ul").animate({"left":"0%"},2000);
+						 //처음상태로 돌아간후 다시 if구문이 실행되게 n값을 초기화하시오
+						 n=2;
+						}
+					},4000
+				);
+				
+				//p.next버튼을 누르면 실행하시오(setInterval명령을 취소하시오.클릭시 애니메이트처리)
+				$("p.next").click(
+					function(){
+						clearInterval(timer);
+						if(n<4){
+							$("div ul").animate({"left":"-=100%"},2000);
+							n++;
+						}else{
+							$("div ul").animate({"left":"0%"},2000);
+							n=2;
+						}
+						
+					}
+				);
+				$("p.prev").click(
+					function(){
+						clearInterval(timer);
+						if(n>2){
+							$("div ul").animate({"left":"+=100%"},2000);
+							n--;
+						}else{
+							$("div ul").animate({"left":"0%"},2000);
+							n=2;
+						}
+						
+					}
+				);
+				
+			}
+		);
+	</script>
+</head>
+
+<body>
+    <div class="list">
+      <ul>
+          <li><img src="img/w1.jpg" /></li>
+          <li><img src="img/w2.jpg" /></li>
+          <li><img src="img/w3.jpg" /></li>
+      </ul>
+    </div>
+</body>
+</html>

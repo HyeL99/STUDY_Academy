@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div.container {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+            margin-bottom: 100px;
+	    }
+
+        div.item{
+            border: solid 3px black;
+            background-color: coral;
+
+        }
+
+        /*auto-fill, auto-fit
+        column의 갯수를 정하지 않고 사이즈로만 정할 때에 사이즈가 허용하는 만ㅇ큼 최대한 셀을 
+        채우는 방식이다.
+        fill은 영역보다 들어가는 갯수가 모자를 경우 영역을 비운다.
+        fit은 영역보다 들어가는 갯수가 모자를 경우 영역을 알아서 채운다.
+        
+        */
+        div.container02 {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">item01</div>
+        <div class="item">item02</div>
+        <div class="item">item03</div>
+        <div class="item">item04</div>
+
+    </div>
+
+    <div class="container02">
+        <div class="item">item01</div>
+        <div class="item">item02</div>
+        <div class="item">item03</div>
+        <div class="item">item04</div>
+
+    </div>
+    
+</body>
+</html>

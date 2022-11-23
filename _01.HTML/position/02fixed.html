@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션 속성</title>
+    <style>
+        /*
+        fixed
+        다른 position들은 body를 기준으로 위치하지만 fixed는 viewport(window)를 기준으로 위치한다.
+        absolute처럼 기존 flow를 따라가지 않으며, 화면을 위치값의 기준으로 한다.
+        레이아웃의 flow에서 완벽한 배제
+            (body의 크기와는 상관없다.)
+            
+        */
+        body {
+            height: 5000px;
+        }
+        div.fixed{
+            width: 100%;
+            height: 200px;
+            background: red;
+            position:fixed;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed"></div>
+</body>
+</html>

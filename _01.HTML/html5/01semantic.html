@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semanticTag</title>
+    <style>
+        html, body, div, header, section, article, nav, h1, h2, h3, h4, h5, h6, a, ul, li, p {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        .inner{
+            /* text-align: center; */
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            background: cornsilk;
+            position: relative;
+        }
+        /*header*/
+        header{
+            width: 100%;
+            height: 100px;
+            background: lightpink;
+            margin-bottom: 20px;
+        }
+        h1.logo {
+            width: 100px;
+            height: 50px;
+            background: lightblue;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        nav.gnb {
+            width: 750px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 50px;
+            background: lightcoral;
+        }
+        nav.gnb ul{
+            width: 100%;
+            height: 100%;
+        }
+        nav.gnb ul li{
+            width: 150px;
+            height: 100%;
+            margin-right : 25px;
+            float: left;
+            background: red;
+        }
+        nav.gnb ul li:last-of-type{
+            margin-right:0;
+        }
+        nav.gnb ul li a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        /*main*/
+        main {
+            width: 100%;
+            height: 100%;
+            padding: 25px 0;
+            background: lightgray;
+        }
+        div.mainContent {
+            width: 70%;
+            margin-right: 5%;
+            float: left;
+            background: rgb(255, 251, 0);
+        }
+        aside{
+            width: 25%;
+            height: 1000px;
+            float: left;
+            background:crimson;
+        }
+        section.content01 {
+            width: 100%;
+            padding: 25px 0;
+            margin-bottom: 20px;
+        }
+        h2.mainTitle{
+            width: 100%;
+            background:rgb(132, 130, 255);
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        article{
+            width: 100%;
+            height: 200px;
+            background: rgb(195, 216, 255);
+            margin-bottom: 10px;
+        }
+        section.content02 {
+            width: 100%;
+            background:lightpink;
+            height: 300px;
+            margin-bottom: 25px;
+        }
+        /*footer*/
+        footer{
+            width: 100%;
+            height: 100px;
+            padding: 25px 0;
+            background: black;
+        }
+        p.fLogo{
+            width: 150px;
+            height: 50px;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: lightskyblue;
+        }
+        p.copy{
+            position: absolute;
+            height: 100px;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        제목을 표시하는 태그
+        <h1>~<h6>까지 사용하며, 제목의 크기에 따라 숫자의 크기가 달라진다.
+            폰트사이즈의 크기를 말하는 것이 아닌 주제가 가지고 있는 내용의 크기를 말하는 것이다.
+            스타일에 따라 제목요소의 크기를 결정지어서는 안된다.
+            보통 h1을 사이트의 제목(로고)로 사용하며, 웹 사이트에서 한번만 사용한다.
+                하단에 있는 로고의 경우 h요소보다는 p태그나 div 태그로 사용
+            순서대로 h2, h3, ... 순으로 내려가야하며 h1 → h3으로 건너뛸 수 없다.
+
+        header : 사이트 내에서 메인메뉴, 로고와 같은 페이지와 관계 없이 동일한 구조를 가진 영역
+        footer : 사이트 하단 영역에 들어가는 공통 정보를 넣는 영역
+        header와 마찬가지로 동일한 구조를 가지고 있어야 한다.
+        main : 컨텐츠를 담고 있는 가장 큰 상위개념의 태그
+            문서 하나에 하나의 main 태그만 사용할 수 있다.
+        --------------------------------------------------
+        nav : 웹 페이지를 이동할 수 있는 메인메뉴 역할을 하는 gnb의 박스 태그
+        aside : 메인 컨텐츠 외에 부가적으로 들어가는 영역에 대한 태그
+        
+        이 외에 의미를 가지고 있지는 않거나 단순한 컨텐츠 영역을 설정할 때에는 div를 사용한다.
+        --------------------------------------------------
+        section : 어떤 주제에 관련되어 있는 여러개의 요소들을 묶는 태그 //하나의 주제에 묶인 요소들을 그루핑
+            제목요소와 내용이 반드시 있어야 한다.
+        article : 독립적으로 구분되거나 재사용이 가능한 영역을 나누는 태그//해당 컨텐츠를 분리했을 때 단독적으로 구별 가능
+        블로그 글, 신문 칼럼 등이 해당된다.(명세)
+
+        논리적인 구조에 따라 section 안에 article이 올 수도 있고 article 안에 section이 오는 경우도 있다. 둘 다 맞는 구조이지만 대체적으로 section 안에 article 구조가 더 많은 편이다.
+
+    -->
+    <header>
+        <div class="inner">
+            <h1 class="logo">logo</h1>
+            <nav class="gnb">
+                <ul class="clearfix">
+                    <li><a href="#" title="메인메뉴">menu01</a></li>
+                    <li><a href="#" title="메인메뉴">menu02</a></li>
+                    <li><a href="#" title="메인메뉴">menu03</a></li>
+                    <li><a href="#" title="메인메뉴">menu04</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main> <!--주요 컨텐츠를 묶는 태그-->
+        <div class="inner clearfix">
+            <div class="mainContent">
+                <section class="content01">
+                    <h2 class="mainTitle">
+                        타이틀입니다.
+                    </h2>
+                    <article>
+                        <h3>article title</h3>
+                        컨텐츠 내용입니다.
+                    </article>
+                    <article>
+                        <h3>article title</h3>
+                        컨텐츠 내용입니다.
+                    </article>
+                    <article>
+                        <h3>article title</h3>
+                        컨텐츠 내용입니다.
+                    </article>
+                </section>
+                <section class="content02">
+                    <h2 class="mainTitle">
+                        컨텐츠
+                    </h2>
+                </section>
+            </div> <!--mainContent-->
+            <aside>
+                aside
+            </aside>
+        </div><!--inner-->
+    </main>
+    <footer>
+        <div class="inner">
+            <p class="fLogo">
+                logo
+            </p>
+            <p class="copy">
+                Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

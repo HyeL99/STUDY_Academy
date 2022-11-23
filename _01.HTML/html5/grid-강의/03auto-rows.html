@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드</title>
+    <style>
+
+        div.container{
+            display: grid;
+            background-color: yellow;
+            padding: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-rows: repeat(3, minmax(100px, auto)); */
+		    grid-auto-rows: minmax(50px, auto);
+            gap: 20px;
+
+        }
+        div.item{
+            border: solid 3px black;
+            background-color: coral;
+
+        }
+
+        /*
+        grid-auto-columns, grid-auto-rows
+        아이템의 갯수를 알 수 없는 경우 횟수를 지정하지 않고 영역으로만 알아서 처리해준다.
+        
+        
+        */
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="item">item01</div>
+        <div class="item">item02</div>
+        <div class="item">item03</div>
+        <div class="item">item04</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est cupiditate libero autem labore vitae? Praesentium excepturi quae temporibus perspiciatis laudantium?</div>
+        <div class="item">item06</div>
+        <div class="item">item07</div>
+        <div class="item">item08</div>
+        <div class="item">item09</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sequi sapiente, dolores id ea at omnis hic. Dignissimos, assumenda omnis nesciunt atque magnam autem placeat minima suscipit exercitationem sit laudantium impedit. Repudiandae aperiam esse, ducimus dolorem quod quo obcaecati assumenda laborum quibusdam at facilis quasi temporibus atque. Laboriosam, sint natus?</div>
+        <div class="item">item11</div>
+        <div class="item">item12</div>
+    </div>
+    
+</body>
+</html>

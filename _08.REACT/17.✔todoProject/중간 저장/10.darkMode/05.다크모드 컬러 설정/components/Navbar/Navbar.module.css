@@ -1,0 +1,60 @@
+.header {
+    width: 100%;
+    background-color: var(--color-bg-dark);
+    box-shadow: 0 2px 5px var(--color-dark);
+    padding: 2rem 1rem 0.5rem;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.header .toggle {
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: var(--color-bg);
+    margin-left: 0.3rem;
+    padding: 0.5rem;
+    opacity: 0.6;
+    transition: all 0.3s ease-out;
+    transform-origin: center;
+    transform: translateY(0.3rem);
+}
+.header .toggle:hover {
+    transform: scale(1.1) translateY(0.3rem);
+    opacity: 1;
+    color: var(--color-accent);
+}
+.header ul {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 0.5rem;
+}
+.header ul li button {
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: transparent;
+    color: var(--color-bg);
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+.header ul li:hover button {
+    opacity: 1;
+}
+.header ul li.on button {
+    opacity: 1;
+    color: var(--color-accent);
+}
+.header ul li button::after {
+    content:"";
+    display: block;
+    width: 0%;
+    border-bottom: 2px solid var(--color-bg);
+    transition: all 0.3s;
+}
+.header ul li:hover button::after {
+    width: 100%;
+}
+.header ul li.on button::after {
+    width: 100%;
+    border-bottom: 2px solid var(--color-accent);
+}

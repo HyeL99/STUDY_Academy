@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 기본</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+		.container {
+			display: flex;
+			/* display: inline-flex; */
+            height: 100vh;
+			align-items: center;
+		}
+        .item:nth-child(2) {
+			/* align-self: auto; */
+			/* align-self: stretch; */
+			align-self: flex-start;
+			/* align-self: flex-end; */
+			/* align-self: center; */
+			/* align-self: baseline; */
+		}
+		
+      
+        
+	</style>
+</head>
+<body>
+    <div class="container">
+		<div class="item">AAAAAAAAAAAA</div>
+		<div class="item">BBB</div>
+		<div class="item">CCCCCCC</div>
+	</div>
+	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, facere.
+    
+</body>
+</html>

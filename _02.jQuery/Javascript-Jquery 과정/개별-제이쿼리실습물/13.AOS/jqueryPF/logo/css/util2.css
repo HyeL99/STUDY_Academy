@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+* {margin:0px; padding:0px;}
+
+#wrap { 
+	width:600px;	
+	overflow:hidden;
+	background:#CF0;
+	position:relative;
+	height:330px;
+}
+#content {height:300px;}
+
+#scrollBar {
+	width:600px;
+	height:30px;
+	background:#06C;	
+}
+#bar{
+	width:30px;
+	height:30px;
+	background:#FF0;	
+}
+
+#content {	position:relative;	};
+

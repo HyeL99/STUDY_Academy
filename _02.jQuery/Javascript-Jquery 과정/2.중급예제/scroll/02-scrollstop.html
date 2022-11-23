@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	  }
+	  body{
+		padding-top: 120px;
+		  }
+	div#menu{
+		background:#666;
+		height:120px;
+		width:100%;
+		z-index:2;
+		top:0;
+		transition:all 0.7s;
+		border: 1px silid red;
+		}
+	.up{
+		margin-top: 120px !important;
+	}	
+	div#wrap{
+		width:1000px;
+		padding:120px 0 0 0;
+		margin:0 auto;
+		}
+	div{
+		height:600px;
+		position: relative;
+		}
+	div#area1{
+		background:#0C0;
+		}
+	div#area2{
+		background: #FF6;
+		}
+	div#area3{
+		background: #CCF;
+		}
+	div#area4{
+		background: #099;
+		}
+	.rMenu{
+		position: fixed;
+		/* right: -60px; */
+		right: 30px;
+		background-color: #ccc;
+		width: 60px;
+		height: 60px;
+		top: 230px;
+		transition:all 0.7s;
+	}	
+	.slideR{
+		/*right: 30px !important;*/
+		right: -60px !important;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(function(){
+		let m=$("#menu").offset().top;
+		$("#menu").after("<div class='rMenu'></div>");
+		$(window).on("scroll",function(){
+			if($(window).scrollTop()>m){
+				$("#menu").css({
+					"position" : "fixed",
+				});
+				$("#wrap").addClass("up");
+				$(".rMenu").addClass("slideR");
+				$("#wrap div:eq(0)").stop().animate({"left":"-70px"},300);
+			} else {
+				$("#menu").css({
+					"position" : "static",
+				});
+				$("#wrap").removeClass("up");
+				$(".rMenu").removeClass("slideR");
+				$("#wrap div:eq(0)").stop().animate({"left":"0px"},300);
+			}
+			
+		});
+	})
+</script>
+</head>
+
+<body>
+	<div id="menu"></div>
+	<div id="wrap">
+        <div id="area1">
+        </div>
+        <div id="area2">
+        </div>
+        <div id="area3">
+        </div>
+        <div id="area4">
+        </div>
+    </div>
+    <script>
+		/*
+	//$(function(	){
+		$("#menu").after("<div class='rMenu'></div>");
+		$(document).on("scroll",function(){
+			var scfinish=$(window).scrollTop();
+			console.log(scfinish);
+			if($(window).scrollTop()>200){
+				//$("#wrap div:eq(0)").animate({"opacity":0.2},500);
+				//$("div#menu").stop().animate({"top":-120},500);
+				$("div#menu").addClass("up");
+				$(".rMenu").addClass("slideR");
+			}
+			if($(window).scrollTop()<200){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+				$("div#menu").removeClass("up");
+				$(".rMenu").removeClass("slideR");
+			}
+			$(".rMenu").click(function(){
+				$(this).removeClass("slideR");
+				$("div#menu").removeClass("up");
+			});
+		});
+
+	//});
+	*/
+</script>
+</body>
+</html>

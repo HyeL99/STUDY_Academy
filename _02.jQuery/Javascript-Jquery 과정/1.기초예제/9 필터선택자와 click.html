@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style type="text/css">
+	 /*a태그의 스타일지정: 밑줄없애고 글자색지정*/
+	 a{
+		 text-decoration:none;
+		 color:#333;
+		 }
+	 /*a:hover의 스타일 지정: 글자색 지정*/
+	 a:hover{
+		 color:#F60;
+		 }
+	.click{
+		color:#F60;
+		}
+	.noclick{
+		color:#333;
+		}
+	</style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+				//첫번째자식li의 a에 클래스를 붙이시오(클래스명 click)
+				$("li:first-child a").addClass("click"); // first-child는 자식요소중 처음오는 것
+				//첫번째 자식li의 옆에 있는 li의 a에 클래스를 붙이시오("click")
+				$("li:first-child+li a").addClass("click"); // +는 인접선택자(바로옆에 있는 대상)
+				//마지막 자식li의 a에 클래스를 붙이시오("click");
+				$("li:last-child a").addClass("click");
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<ul>
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+    </ul>
+</body>
+</html>

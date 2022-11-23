@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>갤러리</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div{
+			width:300px;
+			height:80px;
+			border:2px solid gray;
+			margin:0 auto;
+			position:relative;
+			overflow:hidden;
+			}
+			div ul{
+				position:absolute;
+				width:1200px;
+				}
+				div ul li{
+					float:left;
+					width:300px;
+					height:80px;
+					line-height:80px;
+					text-align:center;
+					}
+			div a[href="#1"]{
+				position:absolute;
+				left:0;
+				top:35px;
+				}	
+			div a[href="#2"]{
+				position:absolute;
+				right:0;
+				top:35px;
+				}
+	</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				$("a[href='#1']").click(
+					function(){
+						$("ul").animate({"left":"-=300px"},500);
+					}
+				);
+				$("a[href='#2']").click(
+					function(){
+						$("ul").animate({"left":"+=300px"},500);
+					}
+				);
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<div class="pro">
+        <ul>
+            <li>제품1</li>
+            <li>제품2</li>
+            <li>제품3</li>
+            <li>제품4</li>
+        </ul>
+        <a href="#1">이전</a><a href="#2">이후</a>
+    </div>
+</body>
+</html>

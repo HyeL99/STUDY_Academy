@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container{
+            display: flex;
+            width: 800px;
+            margin: 0px auto;
+            padding: 20px; 
+            flex-wrap: nowrap;
+        }
+        .item{
+            flex-basis: 300px;
+            flex-shrink: 1;
+        }
+        .item:nth-child(2){
+            flex-shrink: 0;
+        }
+        /*
+        shrink 속성은 값보다 작을 경우 축소해주지는 않는다.
+        숫자는 남는 영역의 배율만큼을 의미한다.
+
+        container 영역 - 넘치는 영역 /shrink 선언 숫자
+
+        로 되어 1는 1배 2는 2배율로 적용된다.
+
+        grow는 반대
+        */
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+        <div class="item">d</div>
+        <div class="item">e</div>
+    </div>
+    
+</body>
+</html>

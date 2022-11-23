@@ -1,0 +1,21 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+@media (max-width:767px) {
+  div {
+    background-color: seagreen;
+  }
+}
+@media (max-width:1000px) and (min-width: 768px) {
+  div {
+    background-color: crimson;
+  }
+}
+@media (min-width:1001px) {
+  div {
+    background-color: cornflowerblue;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

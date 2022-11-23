@@ -1,0 +1,122 @@
+#footer{
+  width: 100%;
+  height: 200px;
+  background-color: #383a4a;
+  clear: both;
+}
+#footer div{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
+}
+#footer div .personal{
+  
+}
+#footer div .personal li{
+  
+  display: inline-block;
+  padding-right: 40px;
+  margin: 0 20px 20px;
+}
+#footer div .personal li:nth-child(1) a{
+  color:#7a85ff;
+}
+#footer div .personal li a{
+  
+  color: #c7c7c7;
+}
+#footer div .personal li a:hover{
+  color: #fff;
+}
+#footer div ul.circle{
+  
+float: right;
+}
+#footer div ul.circle li{
+  
+  display: inline;
+}
+#footer div ul.circle li a{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  text-indent: -9999px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 6px;
+  position: relative;
+  background-size: 74%;
+  background-repeat: no-repeat;
+  background-position-y: 4px;
+  background-position-x: 4px;
+}
+#footer div ul.circle li:nth-child(1) a{
+  
+  background-image: url(../img/facebook.png);
+}
+#footer div ul.circle li:nth-child(2) a{
+  
+  background-image: url(../img/instagram.png);
+}
+#footer div ul.circle li:nth-child(3) a{
+  
+  background-image: url(../img/blog.png);
+  background-position-y: 7px;
+}
+#footer div ul.circle li:nth-child(4) a{
+  
+  background-image: url(../img/youtube.png);
+}
+#footer div .sns li{
+  
+}
+#footer div .sns li a{
+  
+}
+#footer div address{
+  
+clear: both;
+color: #c7c7c7;
+line-height: 2;
+}
+#footer div address span{
+
+}
+#footer div address span a{
+  
+  color: #c7c7c7;
+}
+#footer div p{
+  
+  color: #c7c7c7;
+}
+#footer div button{
+  
+}
+#footer div button a{
+  
+  display: block;
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  padding-top: 55px;
+  background: #41478f;
+  background-image: -moz-linear-gradient(-40deg, #41478f 35%, #c1445a);
+  box-shadow: 5px 15px 15px rgba(0,0,0,0.15);
+  font-size: 13px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+#footer div button a::before{
+  content: ">";
+  display: block;
+  transform: rotate(-90deg);
+  
+}
+

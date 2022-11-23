@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 기본</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+		.container {
+			display: flex;
+			/* display: inline-flex; */
+            flex-direction: column;
+		}
+
+        @media screen and (min-width: 600px) {
+			.container {
+				flex-direction: row;
+			}
+			.item {
+				flex: 1;
+			}
+		}
+      
+        
+	</style>
+</head>
+<body>
+    <div class="container">
+		<div class="item">AAAAAAAAAAAA</div>
+		<div class="item">BBB</div>
+		<div class="item">CCCCCCC</div>
+	</div>
+	
+    
+</body>
+</html>

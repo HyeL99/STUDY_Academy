@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform</title>
+    <style>
+      /*
+        transform(변형)속성
+        객체를 회전하거나 스케일을 조절하거나 하는 변형 요소
+        기본값으로 활용하거나 이벤트에 적용하는 요소로도 사용할 수 있다.
+
+        translate(n)
+            현재위치를 기준으로 해당 객체를 X축과 Y축으로 지정된 수치만큼 이동시킨다. (px, % 등)
+            음수, 양수를 적용한 모든 숫자 값을 의미하며, 양수면 정방향으로 이동하고 음수면 역방향으로 이동한다.
+
+            그룹속성 translate(x, y)
+                값이 1개면 x축만 적용
+                값이 2개면 순서대로 x축, y축 적용
+                벤더프리픽스 : 호환성 부분을 위해 처리하는 일종의 핵
+                    -webkit-transform: translate(100px); chrome
+                    -ms-transform: translate(100px); ie
+                    -moz-transform: translate(100px); firefox
+                    -o-transform: translate(100px); opera 
+            translate3d(x,y,z)
+                z축은 일반적으로 확인할 수 없으나 pespective를 설정하여 확인할 수 있다. (z축은 % 단위가 없으며 px만 사용한다.)
+                순서는 반드시 지켜서 기입한다.
+
+            rotate() : 객체를 중심을 기준으로 회전
+                단위는 deg를 사용한다.
+                그룹속성에서 하나의 값만 사용시 x, y축 둘 다 적용
+
+            scale : 객체를 중심을 기준으로 수치만큼 비율을 늘리거나 줄인다.
+                기본값은 1(100%)
+                1보다 크면 확대, 1보다 작으면 축소
+                위치값은 항상 객체의 가운데를 기준으로 하기 때문에 화면을 벗어나는 경우도 있다.
+            skew() : 기울이기
+                해당 객체를 각도만큼 기울인다.
+                단위는 deg
+            transform-origin : rotate나 scale, skew같이 객체의 중심을 기준으로 하는 경우 기준을 바꾸는 용도로 사용한다.
+                px이나 %처럼 숫자 단위로도 쓰일 수 있으며, 특정 위치값으로도 이동이 가능하다.
+                기본값은 50% 50%
+                첫번째 값은 left, 두번째 값은 top이다.
+        */
+      div.box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transform: translate(100px); /*position 대용*/
+        /*
+            -webkit-transform: translate(100px);chrome
+            -ms-transform: translate(100px);ie
+            -moz-transform: translate(100px);firefox
+            -o-transform: translate(100px);opera 
+            벤더프리픽스 : 호환성 부분을 위해 처리하는 일종의 핵
+            */
+      }
+      div.box2 {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        transform: rotate(45deg); /*단위는 deg*/
+        /* transform-origin: left top; */
+      }
+      div.box3 {
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        transform: scale(1.5, 1.2);
+        transform-origin: left top;
+      }
+      div.box4 {
+        width: 100px;
+        height: 100px;
+        background: green;
+        transform: skew(20deg, 30deg);
+        transform-origin: left top;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">box</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </body>
+</html>

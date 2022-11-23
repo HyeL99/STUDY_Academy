@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        /*
+        가상 선택자
+        - 사용자의 행동에 영향을 받는 요소를 생성하거나(event)
+        - 특정한 위치의 순번을 가진 선택자를 찾을 때(select)를 통틀어서 가상 선택자라고 한다.
+
+        이벤트 선택자
+            a태그에만 들어가는 이벤트
+                :visited - 방문했던 페이지 링크에 대한 이벤트 속성
+                :link - 방문하지 않은 페이지 링크에 대한 이벤트 속성
+
+                a태그?
+                참조페이지로 이동할 수 있게 해주는 태그
+                a태그 속성
+                href : 이동하는 참조 페이지 링크
+                    반드시 존재해야하며, 이동할 페이지가 없을 경우 생략하지 말고 임시링크(#)를 걸어놓는다.
+                title : 해당 링크에 대한 목적지를 알려주는 용도로 사용하며, 링크에 마우스 커서를 올렸을 때 나오는 도움말로도 이용된다.
+                    a태그 안에 있는 텍스트가 다른 의미를 말하고 있다면 접극성 측면에서 반드시 명시해야 한다.
+                target : 링크를 클릭할 때 창을 여는 설정
+                    _self : 클릭한 창에서 링크 이동 (기본값)
+                    _blank :  새 창으로 링크 이동
+                    --아래는 조건이 까다로워서 사용 잘 안함--
+                    _parent : 부모창에서 링크 이동 (부모창 없으면 _self)
+                    _top : 전체 브라우저 중에서 가장 상위 창에서 링크 이동(부모창 없으면 _self)
+                a태그는 기본적으로 text-decoration(밑줄)이 걸려있어서 none으로 해제하여 사용한다.
+
+            모든 태그에 적용되는 이벤트
+                :hover - 마우스 이벤트(마우스 커서가 해당 링크에 올라가 있을 때)
+                :active - 클릭 이벤트(마우스를 클릭한 상태이거나 요소가 활성화 되어있을 때)
+                :focus - 키보드 이벤트(해당 객체가 포커싱 되어있을 때)
+                포커스 이벤트는 기능, 이동, 입력과 같은 특정한 행동들을 발생시키는 태그에만 적용
+
+        */
+        a{
+            text-decoration: none;
+        }
+        a:visited {
+            color:aqua;
+            background: black;
+        }
+        a:link{
+            color:red;
+            background: yellow;
+        }
+        p:active{
+            background: red;
+        }
+        a:focus{
+            background: blue;
+            color:white;
+            outline: none;
+        }
+        div.box div:nth-child(2){
+            background: coral;
+        }
+        div.box div:nth-child(4){
+            background: pink;
+        }
+        div.box div:first-child{
+            background: yellow;
+        }
+        div.box div:last-child{
+            background: yellowgreen;
+        }
+
+        div.box p:last-of-type{
+            background: aqua;
+        }
+        /*
+        선택자 찾는 요소
+        선택자:nth-child(n): 해당 순번에 있는 선택자를 찾는다.
+        선택자:first-child : 가장 첫번째 있는 선택자를 찾는다.
+        선택자:last-child : 가장 마지막에 있는 선택자를 찾는다.
+
+        -child의 특징은 태그의 선택자와는 관계 없이 부모 요소에서 해당하는 순번만 만족한다. 해당 순번에 해당하는 태그가 아닐 경우 출력하지 않는다.
+        단, -child는 선택자와 관계 없이 순서를 따지기 때문에 해당 순번의 태그가 선택자와 일치하는지 확인 후 출력한다.
+
+        태그와 순번을 모두 만족하려면 -of-type을 사용해야 한다.
+
+        nth-of-type(n) :
+        first-of-type :
+        last-of-type :
+
+        이때 nth-of-type(n)에서 even은 짝수, odd는 홀수를 나타낸다.
+        */
+        ul.gnb{
+            width: 1300px;
+            padding: 25px;
+            margin: 0 auto;
+            background: coral;
+            list-style: none;
+        }
+
+        ul.gnb li{
+            width: 200px;
+            height: 100px;
+            background: pink;
+            margin-right: 20px;
+            float:left;
+        }
+        ul.gnb li:last-of-type{
+            margin-right: 0px;
+        }
+
+        ul.gnb li:nth-of-type(even){
+            background: red;
+        }/*even: 짝수 */
+        ul.gnb li:nth-of-type(odd){
+            background: aqua;
+        }/*odd: 홀수 */
+    </style>
+</head>
+<body>
+    <a href="http://www.sdfsf.com" title="네이버 페이지 새 창 이동" target="_blank">바로가기</a>
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <a href="http://www.naver.com" title="네이버 페이지 새 창 이동" target="_blank">바로가기</a>
+    <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+
+    <div>___________________________________________</div>
+
+    <div class="box">
+        <div>Lorem ipsum dolor sit amet</div>
+    <div>Lorem ipsum dolor sit amet</div>
+    <div>Lorem ipsum dolor sit amet</div>
+    <p>Lorem ipsum dolor sit amet</p>
+    <div>Lorem ipsum dolor sit amet</div>
+    <p>Lorem ipsum dolor sit amet</p>
+    <div>Lorem ipsum dolor sit amet</div>
+    </div>
+
+    <ul class="gnb">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+    </ul>
+    
+</body>
+</html>

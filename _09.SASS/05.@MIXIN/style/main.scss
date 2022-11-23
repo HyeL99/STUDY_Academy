@@ -1,0 +1,85 @@
+/*
+    믹스인 - 함수와 비슷, 반복적으로 재사용할 CSS 스타일 그룹을 선언
+*/
+
+// mixin스타일 정의
+@mixin boxStyle01() {
+    width : 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: orangered;
+    color: #fff;
+    font: {
+        size:1.5rem;
+        weight:700;
+    }
+    margin: 5px;
+    float: left;
+    box-sizing: border-box;
+}
+// mixin스타일 정의 - 인자값 지정
+@mixin boxStyle02($bgColor, $fontColor) {
+    width : 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bgColor;
+    color: $fontColor;
+    font: {
+        size:1.5rem;
+        weight:700;
+    }
+    margin: 5px;
+    float: left;
+    box-sizing: border-box;
+}
+// mixin스타일 정의 - 인자값 지정, 인자에 기본값
+@mixin boxStyle03($bgColor:yellow, $fontColor:green) {
+    width : 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bgColor;
+    color: $fontColor;
+    font: {
+        size:1.5rem;
+        weight:700;
+    }
+    margin: 5px;
+    float: left;
+    box-sizing: border-box;
+}
+@mixin borderLine($bSize:2px,$bStyle:solid,$bColor:#000) {
+    border: $bSize $bStyle $bColor;
+}
+
+
+//믹스인 호출(적용)
+.b01 {
+    @include boxStyle01;
+}
+// 인자가 지정된 믹스인 호출(적용)
+.b02 {
+    // @include boxStyle02; - 에러발생
+    // @include boxStyle02(); - 에러발생
+    @include boxStyle02(cornflowerblue, lightgreen)
+
+    // (인자값)을 적지 않으면 적용되지 않음.
+}
+.b03 {
+    @include boxStyle02(black, yellow);
+    @include borderLine(3px, solid, red);
+}
+// 믹스인에서 기본값이 설정 되어 있을 때, 인자를 전달하지 않은 상태로 호출하면 기본값 적용
+.b04 {
+    @include boxStyle03;
+    font-size: 1.2rem;
+}
+.b05 {
+    @include boxStyle03(cornsilk);
+    @include borderLine;
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AOS</title>
+    <!-- 리셋cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css ">
+    <!-- 제이쿼리 cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- AOS cdn -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="layout.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      $(document).ready(
+        function(){
+          AOS.init();
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          //클릭이벤트1
+          /*
+          $(".ftitle li").click(
+						function(){
+							$(this).attr("class","wide");
+							$(this).siblings().attr("class","narrow");
+						}
+					);
+          */
+          $(".ftitle li").on("mouseenter click",function(){
+            $(this).attr("class","wide");
+            $(this).siblings().attr("class","narrow");
+          });
+
+          // 마우스 벗어나면 원래상태로 돌아감
+          $(".ftitle li").on("mouseleave",function(){
+            $(".ftitle li").removeClass();
+          });
+          // 자세히보기 버튼
+          var portT=[];
+          portT[0]=$("#porfolio .Graphic").offset().top;
+          portT[1]=$("#porfolio .WebSite").offset().top;
+          portT[2]=$("#porfolio .jQuery").offset().top;
+          var j=0;
+          $(".ftitle li button").click(
+            function(){
+              j=$(this).attr("data-port");
+              $("html,body").animate({scrollTop:portT[j]},1000);
+            }
+          );
+        }
+      );
+    </script>
+    <script type="text/javascript" src="js/fixed.js"></script>
+    <!-- 그랙픽 작품 슬라이더 bxslider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      $('.gslider').bxSlider({
+        // mode: 'fade',horizontal
+        // mode: 'horizontal',
+        mode: 'vertical',
+        captions: true,
+        slideWidth: 600,
+        touchEnabled:true,
+        auto: true
+      });
+    });
+    </script>
+    <!-- 웹사이트 작품 -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+          $('.webslide').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+    			  infinite: true,
+            speed:3000,
+            arrows:true,
+          });
+
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          var jsrc;
+          $(".jportfolio a").click(
+            function(){
+              jsrc=$(this).attr("data-j");
+              $(".jview iframe").attr("src",jsrc);
+              $(".jview").fadeIn();
+
+              return false;
+            }
+          );
+          $(".jview button").click(
+            function(){
+              $(".jview").fadeOut();
+            }
+          );
+
+
+        }
+      );
+    </script>
+    <!-- sns -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          if($(window).width()>1200){
+            $("#contact ul li:nth-child(3)").hide();
+          }
+          $(window).resize(
+            function(){
+              if($(window).width()<969){
+                $("#contact ul li:nth-child(3)").show();
+              }
+
+            }
+          );
+
+        }
+      );
+    </script>
+  <!-- ionicon -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  </head>
+  <body>
+    <header>
+      <ul class="gnb">
+          <li><a href="#" data-top="0">프로필</a></li>
+          <li><a href="#" data-top="1">포트폴리오</a></li>
+          <li><a href="#" data-top="2">컨텍</a></li>
+      </ul>
+    </header>
+    <div id="title">
+      <ul class="ftitle">
+  			<li class="Graphic">
+  				<h2>Graphic</h2>
+  				<h3>그래픽 작품</h3>
+  				<p>도움의 손길이 필요한 우리 주변의 많은 소외된 이웃에게<br>빛이되는 다양한 사업을 진행하고 있습니다.</p>
+          <button class="detailview" data-port="0">자세히 보기</button>
+        </li>
+  			<li class="WebSite">
+  				<h2>Web Site</h2>
+  				<h3>웹사이트 작품</h3>
+  				<p>어려운 이웃에게 나눔과 사랑을 주고 더불어 살아가는 사회,<br>셀트리온복지재단이 만들어가고 있습니다.</p>
+          <button class="detailview" data-port="1">자세히 보기</button>
+        </li>
+  			<li class="jQuery">
+  				<h2>jQuery</h2>
+  				<h3>제이쿼리 작품</h3>
+  				<p>아름다운 사회를 만들기 위해 노력하는 셀트리온복지재단의<br>다양한 소식과 감동의 순간을 전달해드립니다.</p>
+          <button class="detailview" data-port="2">자세히 보기</button>
+        </li>
+  		</ul>
+    </div>
+    <div id="about">
+      <h2 data-aos="fade-up">ABOUT</h2>
+      <div class="profile">
+        <img src="https://images.unsplash.com/photo-1488716820095-cbe80883c496?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" alt="">
+        <p>문재인 정부의 첫 외교부 장관이자 마지막 ‘원년 내각 멤버’였던 강경화 외교부 장관이 3년 8개월 만에 외교부를 떠났다. 1332일 전 최초의 비외무고시 출신의 비주류·여성으로 업무를 시작하며 올랐던 그 계단에서 간부들과 인사를 나누며 임기를 마무리했다.
+        강 장관의 ‘이별식’은 8일 오전 국회 외교통일위원회에서 후임 정의용 외교부 장관 후보자의 인사청문경과보고서가 채택되면서 시작했다. 17층 장관 사무실에서 나온 그는 16층부터 외교부 청사 사무실을 돌며 인사를 나눴다고 한다. 외교부 당국자는 “말 그대로 모든 방을 다 돌았다”며 “손편지를 써서 전하는 직원도 꽤 있었다”고 전했다. 어떤 과는 사무실 입구에 ‘장관님 사랑해요’라는 문구를 붙여놓고 강 장관을 맞았다고 했다. 코로나19로 공식 이임식을 열지 않은 까닭도 있지만, 재임 기간 직원들과 격 없이 지낸 강 장관을 떠나보내는 아쉬움을 담은 것으로 보인다.
+        </p>
+      </div>
+    </div>
+    <div id="porfolio">
+      <h2>PORFOLIO</h2>
+      <section class="Graphic">
+        <h3>Graphic</h3>
+        <p>그래픽작품</p>
+        <ul class="gslider">
+          <li><img src="https://bxslider.com/assets/images/coffee1.jpg" title="Funky roots"></li>
+          <li><img src="https://bxslider.com/assets/images/coffee2.jpg" title="The long and winding road"></li>
+          <li><img src="https://bxslider.com/assets/images/coffee3.jpg" title="Happy trees"></li>
+        </ul>
+      </section>
+      <section class="WebSite">
+        <h3>WebSite</h3>
+        <p>웹사이트작품</p>
+        <div class="monitor">
+          <div class="screen">
+            <ul class="webslide">
+              <li>
+                <img src="https://images.unsplash.com/photo-1519222970733-f546218fa6d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+                <div class="webdescription">
+                  <h4>작품1</h4>
+                  <p>코딩,반응</p>
+                  <a href="" target="_blank">작업사이트 보기</a>
+                </div>
+              </li>
+              <li>
+                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+                <div class="webdescription">
+                  <h4>작품2</h4>
+                  <p>코딩,반응</p>
+                  <a href="" target="_blank">작업사이트 보기</a>
+                </div>
+              </li>
+              <li>
+                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" alt="">
+                <div class="webdescription">
+                  <h4>작품3</h4>
+                  <p>코딩,반응,제이쿼리</p>
+                  <a href="" target="_blank">작업사이트 보기</a>
+                </div>
+              </li>
+              <li>
+                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+                <div class="webdescription">
+                  <h4>작품4</h4>
+                  <p>코딩,반응,제이쿼리</p>
+                  <a href="" target="_blank">작업사이트 보기</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+      <section class="jQuery">
+        <h3>jQuery</h3>
+        <p>제이쿼리작품</p>
+        <ul class="jportfolio">
+  				<li class="coding">
+  					<h3>제이쿼리작품1</h3>
+  					<a href="" data-j="jqueryPF/logo/logo.html">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품2</h3>
+  					<a href="" data-j="jqueryPF/hormenu/hormenu.html">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품3</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품4</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품5</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품6</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품7</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품8</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  				<li class="coding">
+  					<h3>제이쿼리작품9</h3>
+  					<a href="">작품보기</a>
+  				</li>
+  			</ul>
+        <div class="jview">
+          <iframe src=""></iframe>
+          <button type="button" name="button">닫기</button>
+        </div>
+      </section>
+
+    </div>
+    <div id="contact">
+      <h2 data-aos="fade-up">CONTACT</h2>
+      <ul>
+        <li><a href="mailto:49gold2012@gmail.com">49gold2012@gmail.com</a></li>
+        <li><a href="tel:010-9021-8816">01090218816</a></li>
+        <li><a href="sms:010-9021-8816">문자보내기</a></li>
+      </ul>
+    </div>
+    <div id="sns">
+      <h2 data-aos="fade-up">SNS</h2>
+      <ul>
+        <li><a href=""><i class="ion-social-instagram"></i>인스타그램</a></li>
+        <li><a href=""><i class="ion-social-facebook"></i>페이스북</a></li>
+        <li><a href=""><i class="ion-social-twitter"></i>트위터</a></li>
+      </ul>
+    </div>
+    <footer>
+      <address>
+        경기도 안산시상록
+      </address>
+    </footer>
+
+  </body>
+</html>

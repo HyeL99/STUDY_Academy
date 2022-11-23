@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 폰트</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet&family=Song+Myung&family=Ibarra+Real+Nova:ital,wght@1,500&display=swap" rel="stylesheet"> -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hahmlet&family=Ibarra+Real+Nova:ital,wght@1,500&family=Song+Myung&display=swap"); /*@import 는 최상단에 넣을 것*/
+      /*
+        웹 폰트
+        웹 페이지에 사용하는 폰트를 서버에 같이 업로드를 해서 사이트를 이용하는 사람들이 폰트를 적용할 수 있도록 하는 코드
+
+        웹폰트 적용 방법
+        1. cdn 방식을 이용한 웹폰트
+            소스 사이트에서 외부링크를 통해 가져오는 방식 (ex.구글폰트)
+        2. @import로 style영역에 선언하여 사용하는 방식
+            css코드 중간에 기입하면 안되고 항상 상단에 있어야 한다.
+
+        link와 @import의 차이점
+            다운로드 방식에서 차이가 있기 때문에 웹 페이지의 성능을 고려한다면 @import보다 link 방식을 선호한다.
+            다운로드 방식이 link는 병렬, @import는 직렬이기 때문에 @import의 경우 로딩시간에 문제가 생길 수 있다.
+            css를 @import방식으로 할 경우 엣지브라우저에서 인식하지 못하는 이슈가 있었다.
+        추천 : link
+        import가 많아지면 로딩 시간이 길어짐
+        */
+      html, body {
+        font-family: "Hahmlet", serif;
+      }
+      p {
+        font-family: "Song Myung", serif;
+      }
+      [lang="en"] {
+        font-family: "Song Myung", serif;
+      }
+    </style>
+  </head>
+  <body>
+    오늘의 한줄
+    <p>일단 시작해라. 나중에 완벽해지면 된다. -론 무어</p>
+    <p lang="en">When nothing is sure, ecerything is possible.</p>
+  </body>
+</html>

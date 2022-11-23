@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+
+<button id="btn1">btn1-Click!!</button><br />
+<button id="btn2">btn2-Click!!</button><br />
+<button id="btn3">btn3-Click!!</button><br />
+<button id="btn4">btn4-Click!!</button>
+<script>
+
+
+$("#btn1").click(function(){
+	var a =10;
+	var b = 5;
+	var c = a + b;
+	alert(c);	
+});
+/* 지역 함수는 함수<function()> 내부에 선언되었기 때문에 지역(선언된 함수 내부에서만) 변수로서 함수 내부에만 영향을 미침. */
+
+$("#btn2").click(function(){
+	alert(c);	
+});
+
+
+
+$("#btn3").click(function(){
+	d = 7;
+	e = 12;
+	f = d + e;
+	alert(f);	
+});
+/* 함수 내부에 존재하지만 var 선언을 하지 않으면 자동으로 전역(전체 영역) 함수가 되어서 전체 영역에 영향을 미침 */
+
+
+$("#btn4").click(function(){
+	alert(f);	
+});
+
+
+
+</script>
+</body>
+</html>

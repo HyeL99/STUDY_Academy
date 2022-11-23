@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* font */
+@font-face {
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700;900&display=swap');
+
+/* common */
+/* 16px = 1rem, 1px = 0.0625rem */
+html {
+    font-size: 16px;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+h1{
+    font-family: '국립박물관문화재단클래식B', 'Noto Sans KR', sans-serif;
+}
+
+/* class */
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.inner{
+    width: 100%
+}
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+.br {
+    display: block;
+}
+.colorText {
+    background: linear-gradient(to right, #a1e2b7, #00c6c1 42.9%, #0095d6 61%, #0228a0);
+    color: transparent;
+    -webkit-background-clip: text;
+}

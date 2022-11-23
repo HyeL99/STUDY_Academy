@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f1e090;
+        }
+
+        body>div {
+            width: 300px;
+            margin: 200px auto;
+            padding: 20px;
+            background: #fcab68;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #502b0c;
+        }
+
+        h1>img {
+            width: 200px;
+        }
+
+        li {
+            list-style: none;
+            line-height: 50px;
+            color: white;
+            background-color: #dac5b5c5;
+            margin-top: 20px;
+        }
+
+        #p1 {}
+
+        #p2 {
+            background: #538c96;
+            color: #fff;
+            ;
+        }
+
+        .red {
+            background-color: rgb(255, 53, 53);
+        }
+
+        .sky {
+            background-color: aqua;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .line {
+            text-decoration: underline overline;
+        }
+        .check{
+            background: white url("img/check-mark.png") no-repeat right / 25px;
+            color: red;
+        }
+        .tt{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <h1>
+            <img src="img/icon.svg" alt="">
+        </h1>
+        <h2>
+            모든 선택이 가능.
+        </h2>
+        <ul>
+            <li>야채곱창</li>
+            <li>소금막창</li>
+            <li>닭갈비볶음밥</li>
+        </ul>
+        <ul>
+            <li>고구마피자</li>
+            <li id="two">소금막창</li>
+            <li id="three" class="sky">훠궈</li>
+            <li id="four">연어초밥</li>
+            <li>닭갈비볶음밥</li>
+            <li>크로플</li>
+        </ul>
+        </div>
+        <script>
+            const item1 = document.getElementById("two");
+            let elText = item1.nodeValue;
+            console.log('elText',elText);
+            // 인식 못함 -> 텍스트 요소도 자식노드로 인식하기 때문에. 
+            let elText2 = item1.firstChild.nodeValue;
+            console.log('elText2',elText2);
+            item1.firstChild.nodeValue = 
+            elText2.replace("소금막창", "소금구이장어");
+            let elText3 = four.firstChild.nodeValue;
+            four.firstChild.nodeValue = elText3.replace("연어", "참치")
+            four.firstChild.nodeValue = "런던베이글 부추크림치즈";
+
+    </script>
+</body>
+
+</html>

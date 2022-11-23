@@ -1,0 +1,62 @@
+@charset "UTF-8";
+#title{
+  
+  /*! width: 1200px; */
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  /*! top: 60px; */
+  height: 870px;
+  overflow: hidden;
+  background-image: url(../img/star-1.jpg);
+  background-position-y: 0;
+}  
+
+#title .room{
+   width: 1200px;
+   margin: 0 auto;
+   position: relative;
+   padding-top: 80px;
+}
+#title .room h2{
+  
+  font-size: 53px;
+  margin-right: 346px;
+  font-weight: bold;
+  margin-top: 0;
+  color: #fff;
+}
+#title .room p{
+  font-size: 40px;
+  margin-right: 440px;
+  margin-top: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+#title .room p:nth-of-type(1){  
+  color: #bfffbf;
+  font-size: 53px;
+}
+
+#title span{  
+  position: absolute;
+  right: 30px;
+  top: 102px;
+}
+#title span input#user{
+  
+  width: 200px;
+  height: 30px;
+}
+#title span button{
+  
+  width: 30px;
+  height: 30px;
+  background-image: url(http://stompmusic.com/images/search-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  transform: translateY(2px);
+}
+
+

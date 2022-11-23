@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 기본</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+		.container {
+			display: flex;
+			/* display: inline-flex; */
+		}
+        .item:nth-child(1) {
+			/* flex: 1; */
+			/* flex: 1 1 0; */
+			/* overflow: hidden; */
+			/* width: 20%; */
+			flex: 0 1 20%;
+			/* flex-shrink: 20%;와 같음 */
+		}
+        .item:nth-child(2) {
+			/* flex: 3; */
+			/* flex: 3 1 0; */
+			/* width: 60%; */
+			flex: 0 1 60%;
+		}
+		.item:nth-child(3) {
+			/* flex: 1; */
+			/* flex: 1 1 0; */
+			/* width: 20%; */
+			flex: 0 1 20%;
+		}
+		.item p {
+			/* white-space: nowrap; */
+		}
+      
+        
+	</style>
+</head>
+<body>
+    <div class="container">
+		<div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nulla eaque officiis eligendi ullam hic temporibus corrupti ducimus sunt! Aut quae rem nobis dolores facilis repudiandae qui, possimus rerum error veritatis quidem blanditiis quia nesciunt? Fugit veritatis quaerat consectetur quam est, sed sint quae vitae velit vel dolorem cumque illum.</p>
+        </div>
+		<div class="item">BBB</div>
+		<div class="item">CCCCCCC</div>
+	</div>
+	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, facere.
+    
+</body>
+</html>

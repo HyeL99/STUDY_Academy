@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+*{margin:0px; padding:0px;}
+
+#navigation{
+	position:fixed; 
+	top:50%;
+	right:0px;
+	height:200px;
+	width:50px; 
+	background:#000;	  
+	text-align:center;
+	font-size:14px;
+}
+
+#navigation li a { text-decoration:none; color:#FFF;}
+#navigation li a:hover {color:#0F0;}
+
+#wrap {width:800px;margin:0 auto;margin-top:80px;   }
+#red{background:red; height:700px;}
+#blue{background:blue; height:700px;}
+#yellow{background:yellow; height:700px;}
+#black{background:black; height:700px;}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>필터선택자</title>
+<!--제이쿼리 연결방식1 제이쿼리를 다운받아 스크립트를 기재한다
+	제이쿼리 다운받기 http://jquery.com
+    <script src="폴더명/제이쿼리명.js"></script>
+-->
+<!--제이쿼리연결방법2.제이쿼리링크주소를 기재하는 방법-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(document).ready(	
+		function(){
+			//$("li").css("color","#ccc");
+			$("li:eq(0)").css("color","#333");
+			//5번째 li이후의 글자의 색상을 yellow로 설정하시오
+			// :gt(숫자)  괄호안의 숫자이후의 대상들 greater than
+			$("li:gt(0)").css("color","#ccc");
+		}
+	);
+</script>
+</head>
+
+<body>
+    <ul>
+    	<li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>html5</li>
+        <li>css3</li>
+        <li>표준게시판</li>
+    </ul>
+    
+</body>
+</html>

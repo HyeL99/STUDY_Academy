@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width:400px;
+			border:#999 2px solid;
+			position:relative;
+			
+			}
+		ul{
+			list-style:none;
+			overflow:hidden;
+			}
+			ul li{
+				float:left;
+				margin:0 4px 0 0;
+				padding:3px;
+				background:#096;
+				width:60px;
+				height:60px;
+				border:4px solid;
+				}
+				ul li a{
+					display:block;
+					
+					}
+				a[href="#1"]{
+					position:absolute;
+					left:0;
+					top: 10px;
+					}
+				a[href="#2"]{
+					position:absolute;
+					right:0;
+					top: 10px;
+					}
+				
+	</style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script src="js/imgslide.js"></script>
+</head>
+
+<body>
+	<div class="pro">
+        <ul>
+            <li>제품1</li>
+            <li>제품2</li>
+            <li>제품3</li>
+            <li>제품4</li>
+        </ul>
+        <a href="#1">이전</a><a href="#2">이후</a>
+    </div>
+</body>
+</html>

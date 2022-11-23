@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        grid-container 속성
+
+        display	그리드 컨테이너(Container)를 정의
+        grid-template-rows	명시적 행(Track)의 크기를 정의
+        grid-template-columns	명시적 열(Track)의 크기를 정의
+        grid-template-areas	영역(Area) 이름을 참조해 템플릿 생성
+        grid-template	grid-template-xxx의 단축 속성
+        row-gap(grid-row-gap)	행과 행 사이의 간격(Line)을 정의
+        column-gap(grid-column-gap)	열과 열 사이의 간격(Line)을 정의
+        gap(grid-gap)	xxx-gap의 단축 속성
+        grid-auto-rows	암시적인 행(Track)의 크기를 정의
+        grid-auto-columns	암시적인 열(Track)의 크기를 정의
+        grid-auto-flow	자동 배치 알고리즘 방식을 정의
+        grid	grid-template-xxx과 grid-auto-xxx의 단축 속성
+        align-content	그리드 콘텐츠(Grid Contents)를 수직(열 축) 정렬
+        justify-content	그리드 콘텐츠를 수평(행 축) 정렬
+        place-content	align-content와 justify-content의 단축 속성
+        align-items	그리드 아이템(Items)들을 수직(열 축) 정렬
+        justify-items	그리드 아이템들을 수평(행 축) 정렬
+        place-items	align-items와 justify-items의 단축 속성
+
+
+
+        grid-item 속성
+
+        grid-row-start	그리드 아이템(Item)의 행 시작 위치 지정
+        grid-row-end	그리드 아이템의 행 끝 위치 지정
+        grid-row	grid-row-xxx의 단축 속성(행 시작/끝 위치)
+        grid-column-start	그리드 아이템의 열 시작 위치 지정
+        grid-column-end	그리드 아이템의 열 끝 위치 지정
+        grid-column	grid-column-xxx의 단축 속성(열 시작/끝 위치)
+        grid-area	영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성
+        align-self	단일 그리드 아이템을 수직(열 축) 정렬
+        justify-self	단일 그리드 아이템을 수평(행 축) 정렬
+        place-self	align-self와 justify-self의 단축 속성
+        order	그리드 아이템의 배치 순서를 지정
+        z-index	그리드 아이템의 쌓이는 순서를 지정
+
+
+    -->
+
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            div.container{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 100px);
+                gap: 10px;
+                background-color: coral;
+                grid-template-areas: 
+                "header header header header"
+                "body body body none"
+                "item01 item01 item01 item01"
+                "item02 item02 item03 item03"
+                "footer footer footer footer";
+                /*..나 none으로 삭제*/
+
+            }
+            div.item{
+                background-color: pink;
+                border: solid 1px #000;
+            }
+            div.header{ grid-area: header;}
+            div.body{grid-area: body;}
+            div.side{grid-area:side}
+            div.item01{grid-area:item01}
+            div.item02{grid-area:item02}
+            div.item03{grid-area:item03}
+            div.footer{grid-area:footer}
+
+
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item header">1</div>
+        <div class="item body">2</div>
+        <div class="item side">3</div>
+        <div class="item item01">4</div>
+        <div class="item item02">5</div>
+        <div class="item item03">6</div>
+        <div class="item footer">7</div>
+    </div>
+
+    
+
+    
+    
+</body>
+</html>

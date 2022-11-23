@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>함수</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(
+		function(){
+			
+			function opennotice(){
+				$("#c1").show();
+				$("#c2").hide();
+			}
+			function opennews(){
+				$("#c2").show();
+				$("#c1").hide();
+			}
+			
+			$("#btn1").click(	
+				function(){
+					opennotice();
+				}
+			);
+			$("#btn2").click(	
+				function(){
+					opennews();
+				}
+			);
+		}
+	);
+</script>
+<style type="text/css">
+	div#c1{
+		width:400px;
+		height:300px;
+		background:#CCC;
+		}
+	div#c2{
+		width:400px;
+		height:300px;
+		background:#eee;
+		display:none;
+		}
+</style>
+</head>
+
+<body>
+    <button id="btn1">공지사항</button>
+    <button id="btn2">뉴스</button>
+    <div id="c1">
+    	공지사항입니다
+    </div>
+    <div id="c2">
+    	뉴스입니다
+    </div>
+</body>
+</html>

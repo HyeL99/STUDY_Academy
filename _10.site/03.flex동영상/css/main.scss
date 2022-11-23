@@ -1,0 +1,217 @@
+:root {
+  // --color-bg: #1F1D36;
+  // --color-light01: #E9A6A6;
+  // --color-light02: #864879;
+  // --color-sub: #3F3351;
+  --colorBg: #333;
+  --colorText0: #fff;
+  --colorText1: #ccc;
+  --colorText2: #999;
+  --colorText3: #777;
+  --colorText4: #444;
+  --colorText5: #222;
+  --colorAccent: orangered;
+}
+body {}
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: var(--colorBg);
+  header{
+    width: 20%;
+    padding: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+      text-align: center;
+      i {
+        font-size: 5vw;
+        color:var(--colorText0)
+      }
+      span{
+        font-size: 25px;
+        margin-top: 1vw;
+        display: block;
+        font: 700 1.2vw /1 'arial';
+        // font: weight size /line-height family
+        color: var(--colorText2);
+      }
+    }
+    address {
+      font: 700 0.8vw /1 'arial';
+        // font: weight size /line-height family
+      color: var(--colorText2);
+    }
+  }
+  nav{
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    z-index: 2;
+    ul{
+      display: flex;
+      column-gap: 1rem;
+      li{
+        a{
+          color:var(--colorText1);
+          font-size: 18px;
+          i {}
+          span{
+            font-size: 0;
+          }
+        }
+      }
+    }
+  }
+  section{
+    width: 80%;
+    margin-top: 15vh;
+    display: flex;
+    
+    article {
+      flex: 1;
+      padding: 70px 40px 100px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all .5s;
+      position: relative;
+      .inner{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        position: relative;
+        z-index: 1;
+        .txt{
+          h2{
+            font-size: 2vw;
+            padding-top: 70px;
+            margin-bottom: 40px;
+            font-family: 'Cinzel', serif;
+            font-weight: 300;
+            color: var(--colorText0);
+            transition: .5s;
+            &::after {
+              content:"";
+              display: block;
+              width: 50px;
+              border-top: 3px solid var(--colorText3);
+              margin-top: 10px;
+              transition: all .8s;
+            }
+          }
+          p{
+            font-size: 14px;
+            line-height: 1.2;
+            color:var(--colorText2)
+          }
+        }
+        figure{
+          width: 100%;
+          height: 15vh;
+          overflow: hidden;
+          box-shadow: 5px 5px 30px rgba(255,255,255,0.9);
+          filter: saturate(10%) blur(1px);
+          transition: .5s;
+          transform-origin: left center;
+          video{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            
+          }
+        }
+      }
+      .articleBg {
+        position: absolute;
+        left:-100px;
+        top:0;
+        width: 85%;
+        height: 100%;
+        background: var(--colorText3);
+        opacity: 0;
+        transition:all .5s;
+        z-index: 1;
+        font-size: 0;
+      }
+      &:hover{
+        flex: 1.5;
+        opacity: 1;
+        .txt {
+          width: 75%;
+          h2 {
+            font-size: 3.5vw;
+            padding-top: 0; 
+            &::after {
+              width: 100%;
+              border-color: var(--colorAccent);
+            }
+          }
+        }
+        figure {
+          height: 25vh;
+          filter: saturate(102%) blur(0px);
+          transform: translateY(3vh);
+        }
+      }
+      &.back{
+        .articleBg {
+          left:0;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  aside{
+    position: absolute;
+    top:0;
+    left:-100%;
+    width: 100%;
+    height: 100vh;
+    background:var(--colorText5);
+    z-index: 1;
+    padding: 20vh 7vw 15vh 20vw;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: all 1s ease-out;
+    .txt{
+      color: #fff;
+      width: 25%;
+      h2{
+        color: #fff;
+        font-size: 3vw;
+        font-family: 'Cinzel', serif;
+        margin-bottom: 20px;
+      }
+      p{
+        font-size: 1.2vw;
+        line-height: 1.2;
+        color:var(--colorText2);
+        margin-bottom: 100px;
+      }
+      span{
+        color:var(--colorAccent);
+        cursor: pointer;
+        font-size: 1rem;
+      }
+    }
+    figure {
+      width: 70%;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &.on{
+      opacity: 1;
+      left:0;
+    }
+  }
+}

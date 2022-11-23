@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-content</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container{
+            display: flex;
+            align-content:space-around;
+            height: 500px;
+            width:50%;
+            flex-wrap: wrap;
+        }
+        /*
+        align-content : 여러줄의 행을 정렬해주는 속성
+            위 속성을 사용하기 위해서는 flex-warp의 값이 nowrap이면 안된다.
+
+            stetch : 기본값
+            flex-start : 시작점으로 정렬
+            flex-end : 끝점으로 정렬
+            center : 가운데 정렬
+            space-around : 둘레에 여백을 "균등"하게 분배
+            space-between :  자식 사이에 여백을 "동일하게 분배"
+            space-evenly : 균등하게 정렬
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="item">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+        <div class="item">cccccccccccccccccccccccccccccccc</div>
+        <div class="item">dddddddddddddddddddddddddddddddddddd</div>
+        <div class="item">aaaaaaaa</div>
+        <div class="item">bbbbbbbbb</div>
+        <div class="item">cccccccc</div>
+        <div class="item">dddddddddddd</div>
+    </div>
+    Lorem ipsum dolor sit amet.
+</body>
+</html>

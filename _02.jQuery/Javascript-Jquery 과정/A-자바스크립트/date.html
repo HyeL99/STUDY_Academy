@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>자바스크립트기초-1</title>
+    <script type="text/javascript">
+      window.onload=function(){
+        // var next_day=new Date(2021,7,31);
+        // var current_day=new Date();
+        //var distance=next_day-current_day;
+        //var distance=(next_day-current_day)/86400000;
+        // distance=distance/1000; //초
+        // distance=distance/60; //분
+        // distance=distance/60; //시
+        // distance=distance/24; //일
+        // 하루는 86,400,000 밀리세컨드
+        //alert(distance);
+        // document.getElementById("count").innerHTML=next_day.getDate()-current_day.getDate()+"일";
+        //document.getElementById("count").innerHTML=distance+"일";
+        // alert(next_day.getDate()-current_day.getDate());
+
+        // 미래날짜객체 생성
+          var fday=new Date(2021,10,29);
+        // 현재날짜객체
+          var cday=new Date();
+        //미래날짜객체.getDate() - 현재날짜객체.getDate()
+          var dis=fday.getDate()-cday.getDate();
+          var m=fday.getMonth();
+          var mm=m-(cday.getMonth()+1);
+        //body안에 마크업태그배치후 그 안에 차이값을 넣기
+          document.getElementById("count").innerHTML=mm+"개월 "+dis+"일";
+
+         // 문서로드와 동시에 날짜표시-----------------------------------------
+          var d_day = new Date();
+          var year=d_day.getFullYear();
+          var month=d_day.getMonth()+1;
+          var date=d_day.getDate();
+          var day=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+          var hour=d_day.getHours();
+          var minute=d_day.getMinutes();
+          var second=d_day.getSeconds();
+           // document.write("현재 날짜는 "+year+"년 "+month+"월 "+date+"일 "+day[d_day.getDay()]+hour+"시 "+minute+"분입니다");
+          document.getElementById("a").innerHTML=year+"년";
+          document.getElementsByClassName("bb")[0].innerHTML=month+"월";
+          document.getElementById("c").innerHTML=date+"일";
+          document.getElementById("d").innerHTML=day[d_day.getDay()];
+          document.getElementById("e").innerHTML=hour+"시";
+          document.getElementById("f").innerHTML=minute+"분";
+          if(second<10){
+            document.getElementById("g").innerHTML="0"+second+"초";
+          }else{
+            document.getElementById("g").innerHTML=second+"초";
+          }
+
+        // 1초마다 날짜카운터되게-----------------------------------------------
+        var timer=setInterval(function(){
+          var d_day = new Date();
+          var year=d_day.getFullYear();
+          var month=d_day.getMonth()+1;
+          var date=d_day.getDate();
+          var day=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+          var hour=d_day.getHours();
+          var minute=d_day.getMinutes();
+          var second=d_day.getSeconds();
+           // document.write("현재 날짜는 "+year+"년 "+month+"월 "+date+"일 "+day[d_day.getDay()]+hour+"시 "+minute+"분입니다");
+          document.getElementById("a").innerHTML=year+"년";
+          document.getElementsByClassName("bb")[0].innerHTML=month+"월";
+          document.getElementById("c").innerHTML=date+"일";
+          document.getElementById("d").innerHTML=day[d_day.getDay()];
+          document.getElementById("e").innerHTML=hour+"시";
+          document.getElementById("f").innerHTML=minute+"분";
+          if(second<10){
+            document.getElementById("g").innerHTML="0"+second+"초";
+          }else{
+            document.getElementById("g").innerHTML=second+"초";
+          }
+
+
+        },1000);
+
+
+      }
+    </script>
+    <style>
+      body{
+        text-align: center;
+      }
+
+      time{
+      background-color: #333;
+      display: inline-block;
+      padding: 4px;
+      }
+
+      time span{
+      background-color: #fff;
+      width: 60px;
+      display: inline-block;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 13px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>현재날짜</h1>
+    <time>
+      <span id="a"></span>
+      <span id="b" class="bb"></span>
+      <span id="c"></span>
+      <span id="d"></span>
+      <span id="e"></span>
+      <span id="f"></span>
+      <span id="g"></span>
+    </time>
+    <h2>수료일까지 남은 일수</h2>
+    <p id="count"></p>
+    <!-- <script>
+          var d_day = new Date();
+          var year=d_day.getFullYear();
+          var month=d_day.getMonth()+1;
+          var date=d_day.getDate();
+          var day=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+          var hour=d_day.getHours();
+          var minute=d_day.getMinutes();
+
+          document.write("현재 날짜는 "+year+"년 "+month+"월 "+date+"일 "+day[d_day.getDay()]+hour+"시 "+minute+"분입니다");
+          document.getElementById("a").innerHTML=year+"년";
+    </script> -->
+  </body>
+</html>

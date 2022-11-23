@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        /* 
+        선택자는 대상을 자세하게 지칭할수록 정확도와 우선순위가 올라간다.
+        
+        * = 모든 태그를 선택
+            사용하지 않는 태그도 같이 선택하기 때문에 사양이 낮다면 버벅임 발생
+        선택자, 선택자{} = 2개 이상의 여러 선택자를 동시 선택
+            ex) div, p {}
+            한번에 여러 태그에 하나의 값이 들어갈 경우 관리가 용이하도록 한번에 선택
+        선택자 선택자{} = 앞에 작성된 선택자의 하위 선택자를 선택할 때(자식, 자손 모두 포함)
+            ex) div p{} //div 아래 있는 모든 p 선택(자식과 자손)
+        선택자 > 선택자 = 앞에 작성된 선택자의 바로 아래 있는 하위 선택자(자식)
+
+        점수가 높을수록 우선순위
+            id[100], class[10], 태그명[1], *[0]
+            p#text 101점= id[100]+태그명[1]
+            #text 100점 = id[100]
+            점수가 같은 경우 가장 나중에 작성된 css가 최종 적용된다.
+        */
+
+        *{
+            color: blue;
+        }
+        div, p{
+            color: aqua;
+        }
+        p span {
+            color: red;
+        }
+        p>span {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>div 태그입니다.</div>
+        <div>div 태그입니다.</div>
+        <div>div 태그입니다.</div>
+
+        <p>p 태그입니다.</p>
+        <p>p 태그입니다.</p>
+        <p>p 태그입니다.</p>
+        
+        <span>span 태그입니다.</span>
+        <span>span 태그입니다.</span>
+        <span>span 태그입니다.</span>
+
+        <p>
+            저는
+            <span>
+                span 태그
+                <span>입니다.</span>
+            </span>
+        </p>
+    </div>
+</body>
+</html>

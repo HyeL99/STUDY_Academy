@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스프라이트 이미지 연습</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 50px;
+        }
+        ul, li {
+            list-style: none;
+        }
+        h1 a {
+            display: inline-block;
+            
+            /*width: 308px*/
+            width: 154px;
+            /*height: 59px*/
+            height: 30px;
+            background-image: url('./sp_main_4f8ccb.png');
+            /*background-position: -134px -350px;*/
+            background-position: -67px -175px;
+            background-size: 457px 434px;
+        }
+        h1 a span {display: none;}
+        ul.naver {}
+        ul.naver li {
+            padding: 20px 0;
+        }
+        ul.naver li a {
+            display: inline-block;
+            background-image: url('./sp_main_4f8ccb.png');
+            background-size: 457px 434px;
+            /*text-indent: -999px;*/ /*들여쓰기*/
+            font-size: 0;
+        }
+        .img1{
+            width: 61px;
+            height: 10px;
+            background-position: -199px -330px;
+        }
+        .img2{
+            width: 68px;
+            height: 22px;
+            background-position: -281px -267px;
+        }
+        .img3{
+            width: 84px;
+            height: 28px;
+            background-position: -196px -267px;
+        }
+        .img4{
+            width: 98px;
+            height: 38px;
+            background-position: -275px -166px;
+        }
+        ul.gmarket{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul.gmarket li{}
+        ul.gmarket li a {
+            width: 68px;
+            height: 68px;
+            display: inline-block;
+            background: url('./css_sprites.png');
+            background-size: 156px 156px;
+            color: #000;
+            text-decoration: none;
+            text-align: center;
+        }
+        ul.gmarket li:nth-of-type(1) a {
+                    background-position: -5px -5px;
+        }
+        ul.gmarket li:nth-of-type(2) a {
+                    background-position: -83px -5px;
+        }
+        ul.gmarket li:nth-of-type(3) a {
+            background-position: -5px -83px;            
+        }
+        ul.gmarket li:nth-of-type(4) a {
+            background-position: -83px -83px;            
+        }
+        ul.gmarket li a span {
+            display: block;
+            font-size: 10px;
+            width: 68px;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="/"><span>네이버 로고</span></a></h1>
+    <ul class="naver">
+        <li><a href="#" class="img1">쥬니어네이버</a></li>
+        <li><a href="#" class="img2">브이라이브</a></li>
+        <li><a href="#" class="img3">오디오클립</a></li>
+        <li><a href="#" class="img4">추천 크리에이터</a></li>
+    </ul>
+    <ul class="gmarket">
+        <li><a href="#"><span>스마일클럽</span></a></li>
+        <li><a href="#"><span>스마일배송</span></a></li>
+        <li><a href="#"><span>스마일카드</span></a></li>
+        <li><a href="#"><span>당일배송</span></a></li>
+    </ul>
+</body>
+</html>

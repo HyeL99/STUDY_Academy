@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    /*
+        flex : grow shirink basis를 한번에 관리하는 그룹 속성
+            순서를 준수해야 한다.
+            기본값에 유의해서 사용해야 한다.
+        */
+        .container{
+            display: flex;
+        }
+        .item:nth-of-type(1){
+            flex:1;/* 1 1 0 */
+        }
+        .item:nth-of-type(2){
+            flex: 1 1 auto; /**/
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="item">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="item">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+        <div class="item">cccccccccccccccccccccccccccccccc</div>
+        <div class="item">dddddddddddddddddddddddddddddddddddd</div> -->
+        <div class="item">aaaaaaaa</div>
+        <div class="item">bbbbbbbbb</div>
+        <div class="item">cccccccc</div>
+        <!-- <div class="item">dddddddddddd</div> -->
+    </div>
+    Lorem ipsum dolor sit amet.
+</body>
+</html>

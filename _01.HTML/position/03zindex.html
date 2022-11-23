@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션 속성</title>
+    <style>
+        /*
+        z-index:
+        position이 동일하게 적용되어 있을 경우 가장 나중에 작성된 객체가 제일 상위에 배치되게 된다.
+        순서를 바꿔야 할 경우 z-index로 배치한다.
+        z-index의 기본값은 auto
+        음수나 양수의 숫자를 사용하며, 숫자가 높을수록 상위에 배치된다.
+        의미론적으로 가장 상위에 배치해야 하는 객체의 경우 9999와 같은 숫자를 넣기도 한다.
+        */
+        div.box01{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        div.box02{
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+        div.box03{
+            width: 250px;
+            height: 250px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box01"></div>
+    <div class="box02"></div>
+    <div class="box03"></div>
+</body>
+</html>

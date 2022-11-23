@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹폰트 - 폰트페이스</title>
+        <style>
+            /*]
+            폰트 다운 사이트
+            영문 : 구글폰트(무료), dafont.com(부분유료)
+            국문 : 구글폰트(무료), 눈누폰트(무료)
+
+            폰트 확장자
+            ttf : 트루타입 폰트
+                ms랑 apple에서 만든 가장 기본적인 폰트
+            eot : 앰베디드 오픈 타입
+                ms에서 만든 오픈타입 기반 확장폰트
+                ie에서만 지원
+            otf : 오픈타입 포맷
+                ttf 기반으로 만든 확장 포맷
+            woff : 웹 오픈 폰트 포맷
+                웹에서 사용하도록 만든 폰트
+                w3c에서 권고하는 폰트 확장자
+                압축률이나 구현률에서 웹에 가장 특화된 폰트
+                (모든 브라우저 호환하나 ie 하위버전(6-8)을 지원하지 않음)
+            woff2 : 웹 오픈 폰트 포맷 업그레이드형
+                자잘한 버그나 압축률 면에서 기존 것보다 좋지 않아서 잘 사용하지 않음
+
+            ttf를 woff와 eot로 변경
+            https://transfonter.org/
+
+            */
+
+            @font-face {
+                font-family: 'PyeongChangPeace-light';
+                src: local('PyeongChangPeace-light'), 
+                url("font/PyeongChangPeace-light.eot?#iefix") format("embedded-opentype"),
+                url("font/PyeongChangPeace-light.woff") format("woff");
+                /*
+                font src 입력 순서
+                local() : 
+                    필수 요소는 아니지만 local을 먼저 선언하게 되면 사용자가 이미 다운받았거나 컴퓨터에 폰트가 있을 경우 다운받지 않는다.
+                url() :
+                    폰트를 다운받도록 한다.
+                        폰트 등록 확장자 순서는 파일의 크기에 따라서 배치하는게 기본순서이다.
+                        local > eot > woff > otf
+                        사이트를 이용하는 사용자의 브라우저 환경에 맞춰서 특정한 폰트만 다운받기 때문에 순서를 지켜서 하는 것이 좋다.
+                        ?#iefix (쿼리스트링 방식 명령어)
+                            ie8 이하에서 버그가 있는데, 쿼리 스트링 방식의 명령을 사용해서 다른 경로의 파일을 받지 않도록 규정한다.
+                             ie를 제외한 브라우저는 지원하지 않는 포맷은 다운하지 않는다.
+                             ie는 지원을 종료했기 때문에 eot는 사용하지 않아도 된다.
+                */
+            } /*내가 새로 폰트 규칙을 선언하겠어!*/
+
+            html,body{
+                font-family: 'PyeongChangPeace-light', serif;
+            }
+        </style>
+    
+</head>
+<body>
+    오늘의 한줄
+    <p>일단 시작해라. 나중에 완벽해지면 된다. -론 무어</p>
+    <p lang="en">When nothing is sure, ecerything is possible.</p>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>slick</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(
+        function(){
+
+          $('.slider-for').slick(
+             {
+               dots: true,
+               autoplay:true,
+              //  infinite: false,
+               speed: 1300,
+               slidesToShow: 3,
+               adaptiveHeight: true,
+               centerMode: true,
+               centerPadding: '60px',
+               slidesToScroll: 1
+              // centerMode: true,
+              // centerPadding: '60px',
+              // slidesToShow: 1,
+              // arrows: true,
+              // dots: true,
+              // autoplay: true,
+              // autoplaySpeed: 2000,
+              // fade: true,
+              // responsive: [
+              //   {
+              //     breakpoint: 768,
+              //     settings: {
+              //       arrows: false,
+              //       centerMode: true,
+              //       centerPadding: '40px',
+              //       slidesToShow: 3
+              //     }
+              //   },
+              //   {
+              //     breakpoint: 480,
+              //     settings: {
+              //       arrows: false,
+              //       centerMode: true,
+              //       centerPadding: '40px',
+              //       slidesToShow: 1
+              //     }
+              //   }
+              // ]
+
+             }
+          );
+
+        }
+      );
+
+    </script>
+    <style>
+    
+      
+      
+      
+  
+    
+      
+      
+      
+    body{
+            background-color: #ccc;
+        }
+        #title{
+            max-width: 1100px;
+            margin:0 auto;
+            height: 300px;
+        }
+        img{
+            width: 100%;
+        }
+        button.slick-arrow{
+        width: 60px;
+        height: 60px;
+        top: calc(50% - 30px);
+        }
+        button.slick-arrow.slick-prev{
+        left: -70px;
+        }
+        button.slick-arrow.slick-next{
+        right: -70px;
+        }
+        button.slick-arrow::before{
+        font-family: initial !important;
+        content: "" !important;
+        width: 60px;
+        height: 60px;
+        display: block;
+        border: 5px solid #333;
+        border-bottom:transparent;
+        border-left:transparent;    
+        } 
+        .slick-prev::before{
+        transform: rotate(-135deg);
+        }
+        .slick-next::before{
+        transform: rotate(45deg);
+        }
+        .slick-dots li{
+            width: 55px;
+        }
+        .slick-dots li button{
+            font-size: initial;
+            color: #8b8888;
+            font-size: 12px;
+            transition: all 0.5s;
+            width: 100%;
+            font-size: 0;
+        }
+        .slick-dots  button::before{
+            transition: all 0.2s;
+            /*! font-size: 0 !important; */
+        }
+        .slick-dots .slick-active button{
+           color: #333;
+           transform: translateY(-1px) scale(1);
+        }
+        .slick-dots .slick-active button::before{
+          font-size: 20px;
+          /*! color: transparent !important; */  
+        }
+        .slick-dots li button::before{
+        font-size: 12px;
+        color: initial;    
+        width: 100%;
+        }
+        .slick-dots li:nth-child(1) button::before{
+        content:"작품1";
+        }
+        .slick-dots li:nth-child(2) button::before{
+        content:"작품2";
+        }
+        .slick-dots li:nth-child(3) button::before{
+        content:"작품3";
+        }
+        .slick-dots li:nth-child(4) button::before{
+        content:"작품4";
+        }
+        .slick-dots li:nth-child(5) button::before{
+        content:"작품5";
+        }
+        .slick-initialized .slick-slide {
+          padding: 0 10px;
+          box-sizing: border-box;
+        }
+        .slick-dots li button::before
+
+    
+    
+
+    
+    </style>
+  </head>
+  <body>
+    <div id="title">
+      <ul class="slider-for">
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_01.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_02.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_03.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_04.jpg" alt=""></li>
+        <li><img src="http://image.lottecon.co.kr/_img/kor/main/visual/vis_bg_05.jpg" alt=""></li>
+      </ul>
+    </div>
+  </body>
+</html>

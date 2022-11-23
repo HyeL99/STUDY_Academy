@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+div#title{
+	width:1000px;
+	height:600px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+	}
+	div#title ul{
+		width:4000px;
+		position:absolute;
+		}
+		div#title ul li{
+			float:left;
+			}
+	div#title p{
+		cursor:pointer;
+		}
+	div#title p:hover{
+		background: #F60;
+		}
+	div#title p.next{
+		background:#FC0;
+		padding:7px;
+		position:absolute;
+		right:0;
+		top:300px;
+		}
+	div#title p.prev{
+		background:#FC0;
+		padding:7px;
+		position:absolute;
+		left:0;
+		top:300px;
+		}

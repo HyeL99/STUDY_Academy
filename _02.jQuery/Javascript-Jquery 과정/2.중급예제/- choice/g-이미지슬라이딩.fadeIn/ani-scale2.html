@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>if</title>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<style type="text/css">
+		div{
+			width:400px;
+			height:400px;
+			background:#999;
+			margin:0 auto;
+			}
+			p{
+				display:table;
+				margin:0 auto;
+				background:#FC0;
+				}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				var n=0;
+				$("p").click(
+					function(){
+						$("div").animate({"width":"+=100px"},500);	
+						if($("div").width()==1000){
+							$("div").animate({"width":"400px"},500);
+							}					
+					}
+				);
+				
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<div id="title"></div>
+	<p>확대보기</p>
+</body>
+</html>

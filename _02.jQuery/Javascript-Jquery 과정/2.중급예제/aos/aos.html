@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		}
+	div#wrap{
+		width:1000px;
+		margin:0 auto;
+		}
+	div{
+		height:600px;
+		}
+	div#area1{
+		background:#0C0;
+		padding:80px 0 0 0 ;
+		}
+	div#area2{
+		background: #FF6;
+		}
+	div#area3{
+		background: #CCF;
+		}
+	div#area4{
+		background: #099;
+		}
+	div#menu{
+		position:fixed;
+		left:0;
+		width:100%;
+		height:auto;
+		background:#CCC;
+		z-index:1;
+		}
+		div#menu ul{
+			overflow:hidden;
+			margin:0 auto;
+			width:500px;
+			height:80px;
+			}
+			div#menu ul li{
+				float:left;
+				padding:10px;
+				}
+		footer{
+			background-color: gray;
+			height: 400px;
+		}
+		footer a{
+			position: fixed;
+			right: 20px;
+			bottom: 30px;
+			display: none;
+		}
+        h2[data-aos="fade-up"] {
+            transform: translate3d(0,30px,0);
+        }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    $(document).ready(function(){
+        AOS.init();
+        $("body").attr("data-aos-duration","2000");
+        $("[data-aos='fade-up']").css("transform","translate3d(0,30px,0) !important");
+    });
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+    	<div id="menu">
+        	<ul>
+            	<li class="num1">마이프로필</li>
+                <li>그래픽작품</li>
+                <li>웹작품</li>     
+            </ul>
+        </div>
+        <div id="area1">
+			<h2 data-aos="fade-up">타이틀</h2>
+        </div>
+        <div id="area2">
+			<h2 data-aos="fade-up">마이프로필</h2>
+        </div>
+        <div id="area3">
+			<h2 data-aos="fade-up">그래픽작품</h2>
+        </div>
+        <div id="area4">
+			<h2 data-aos="fade-up">웹작품</h2>
+        </div>
+		<footer data-aos="fade-up">
+			<a href="">위로가기</a>
+		</footer>
+    </div>
+
+</body>
+</html>

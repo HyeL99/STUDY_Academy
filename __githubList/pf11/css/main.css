@@ -1,0 +1,202 @@
+@charset'UTF-8';
+
+img {
+    max-width: 100%; /*이미지의 원래 사이즈보다 커지진 않음*/
+}
+body {
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+}
+header {
+    background: url('../assets/img/main.jpeg') no-repeat center center / cover;
+    padding: 180px 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Kanit', sans-serif;
+}
+.h1{
+    width: 90px;
+}
+.nav-item {
+    margin-right: 30px;
+}
+.nav-item > a {
+    font-weight: 700;
+}
+.nav-item:first-child {
+    margin-right: 20px;
+}
+.m-info span {
+    font-family: 'Kanit', sans-serif;
+}
+.m-info p {
+    font-size: 18px;
+}
+
+.mainText {
+    margin:0 0 0 10vw;
+}
+.mainText h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight:700;
+    font-size:30px;
+    color:rgba(0,0,0,0.7)
+}
+.mainText span { 
+    font-size:12px;
+}
+
+/* section */
+section, footer {
+    padding: 70px 0 80px;
+}
+.sectionTitle {} 
+.sectionTitle h2 {
+    font-size: 30px;
+    margin: 0 0 30px 0;
+}
+.sectionTitle img { 
+    width:50px; height:50px;} 
+
+.sectionTitle {
+    padding: 15px;
+}
+
+.sectionThumbnail {
+    padding: 15px;
+}
+.sectionThumbnail a {
+    font-weight: 500;
+}
+.sectionThumbnail a:hover {
+    color: inherit;
+}
+.sectionThumbnail p {
+    margin: 15px 0 0 0;
+    font-size: 1.05em;
+}
+.sectionThumbnail span {
+    font-weight: 300;
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+    margin-left: 10px;
+    color: #666;
+}
+
+.section02 {
+    height: 80vh;
+    padding: 0;
+    max-height: 600px;
+}
+.section02 .sectionBg {
+    background: url('../assets/img/2-1.jpg') no-repeat top center / 100% auto;
+    width: 100%;
+    height: 100%;
+}
+.section02 .sectionTitle {
+    color: #fff;
+    padding-top: 70px;
+}
+
+.section03 {}
+.section03 .sectionThumbnail a {
+    display: block;
+}
+.section03 .sectionTextWrap {
+    background: #fff;
+    padding: 30px;
+}
+.section03 .sectionTextDesc {
+    color: #666;
+    font-size: 1.05em;
+}
+.section03 .sectionWriter {
+    color: #aaa;
+    text-align: end;
+    margin-top: 40px;
+}
+
+.section04{
+    padding: 70px 0 150px;
+}
+.section04 .storeInfoWrap p {
+    word-break: keep-all;
+}
+.section04 .storeInfo .title{
+    font-family: 'Kanit', sans-serif;
+    color: #555;
+}
+
+.section05{
+    height: 48vh;
+    max-height: 480px;
+    min-height: 350px;
+    background: url('../assets/img/5-1.jpg') no-repeat center / cover;
+}
+
+.section06 {}
+.section06 .noticeList span {
+    font-size: 0.85em;
+    font-family: 'Kanit', sans-serif;
+}
+.section06 .accordion .accordion-body {
+    font-size: 0.8em;
+}
+.section06 .accordion .accordion-body .subBox {
+    background: var(--bs-gray-200);
+}
+.section06 .accordion .accordion-button:not(.collapsed) {
+    background: var(--bs-gray-400);
+    color:var(--bs-gray-700);
+}
+.section06 .accordion .accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon);
+}
+.section06 .accordion .accordion-button:focus {
+    border-color: var(--bs-gray-500);
+    box-shadow: var(--bs-gray-700);
+}
+
+footer{}
+footer .eng {
+    font-weight: 700;
+    font-family: 'Kanit', sans-serif;
+}
+footer .snsIcon {
+    width: 1em;
+}
+footer .storeInfo {
+    font-size: 11px;
+    color: #666;
+}
+footer .storeInfo li {
+    line-height: 2;
+}
+footer .storeInfo li a {
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom : 1px solid;
+    color: #999;
+}
+footer .infoPlace {
+    color: #999;
+    font-size: 11px;
+}
+footer .infoList li {
+    margin-right: 1em;
+    line-height: 2;
+}
+footer .infoList span{
+    color: #666;
+    margin-left: 0.5em;
+}
+footer .infoList .copy {
+    line-height: 2;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
+.navbar-toggler {
+    border: 0 solid transparent;
+}

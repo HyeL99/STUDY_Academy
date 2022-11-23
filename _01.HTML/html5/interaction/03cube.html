@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>큐브 예제</title>
+    <style>
+      html,
+      bodt,
+      div {
+        margin: 0;
+        padding: 0;
+      }
+      div.container {
+        width: 300px;
+        height: 300px;
+        perspective: 800px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      div.cube {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: 3s;
+      }
+      div.cube:hover {
+        transform: rotate3d(0, 1, 0, -180deg);
+        transition: 2s;
+        /*
+        rotate3d(x, y, z, deg)
+            x, y, z는 0과 1 사이의 회전축
+            deg : 몇도가 돌아가는가
+        */
+      }
+      div.cube-face {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        line-height: 300px;
+        font-size: 70px;
+        font-weight: 700;
+        color: white;
+      }
+      .front {
+        background: red;
+        opacity: 0.7;
+        transform: translateZ(150px);
+      }
+      .back {
+        background: gray;
+        opacity: 0.7;
+        transform: translateZ(-150px) rotateY(180deg);
+      }
+      .right {
+        background: rgb(255, 238, 0);
+        opacity: 0.7;
+        transform: rotateY(90deg) translateZ(150px);
+      }
+      .left {
+        background: green;
+        opacity: 0.7;
+        transform: rotateY(-90deg) translateZ(150px);
+      }
+      .top {
+        background: blue;
+        opacity: 0.7;
+        transform: rotateX(90deg) translateZ(150px);
+      }
+      .bottom {
+        background: blueviolet;
+        opacity: 0.7;
+        transform: rotateX(-90deg) translateZ(150px);
+      }
+      .center {
+        background: white;
+        opacity: 0.7;
+        transform: translate(100px, 100px) ;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cube">
+        <div class="cube-face front">front</div>
+        <div class="cube-face back">back</div>
+        <div class="cube-face right">right</div>
+        <div class="cube-face left">left</div>
+        <div class="cube-face top">top</div>
+        <div class="cube-face bottom">bottom</div>
+        <div class="center"></div>
+      </div>
+    </div>
+  </body>
+</html>

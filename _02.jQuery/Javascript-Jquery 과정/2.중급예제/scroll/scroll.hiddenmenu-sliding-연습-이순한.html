@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ㄴ</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		font-family: 'notokr-demilight';
+		}
+	html,body{
+		height:100%;
+		}	
+	body{
+		padding: 0 0 100px 0;
+		}
+	ul{
+		list-style:none;
+		}
+	a{
+		text-decoration:none;
+		color:#666;
+		}
+	h1{
+		font-size:25px;
+		}
+	/* 슬라이딩시 등장메뉴 */	
+	ul.hiddenmenu{
+		width:70px;
+		float: left;
+		position: fixed;
+		right: -86px;
+		top: 100px;
+		background:
+		#f4f4f4;
+		border-radius: 8px 0 0 8px;
+		padding: 8px;
+		box-shadow: 0px 1px 3px;
+		transition: all 0.5s;
+		}	
+		ul.hiddenmenu li{
+			line-height: 1.5em;
+			font-size: 12px;
+			border-bottom: 1px dotted #999;
+			padding: 0 3px;
+			transition: all 0.1s;
+			}
+		.slide{
+			right: 0 !important;
+		}
+		.current{
+			font-size:19px  !important;
+			font-weight:bold  !important;
+		}
+		ul.hiddenmenu li.last{
+			border:none;
+		}
+		/* 로고 순차적 등장 */
+					div#logo{
+						margin:20px auto 10px;
+						}
+						div#logo h1{
+							width:500px;
+							text-align:center;
+							border-bottom:2px solid #CCC;
+							overflow:hidden;
+							margin:0 auto;
+							}
+						div#logo h1 span{
+							background:#ccc;
+							width:60px;
+							display:inline-block;
+							text-align:center;
+							font-size:40px;
+							border-radius:6px 6px 0 0 ;
+							position:relative;
+							transform-origin:left bottom; /* 회전축  위치 지정*/
+							transition:transform 0.5s , text-shadow 0.5s; /* 여러개 속성 지정 */
+							}
+				.title{
+						height:400px;
+						background-color:#eee;
+					}
+				section{
+					height:400px;
+				}
+				.about{
+					background-color: red;
+				}
+				.portfolio{
+					background-color: green;
+				}
+				.contact{
+					background-color: blue;
+				}
+				.a1{
+					width: 800px;
+					margin: 0 auto;
+					opacity: 0.4;
+					transition:all 0.5s;
+					}
+				.a1 h2{
+					text-align: center;
+    				line-height: 3;
+    				transition:all 0.9s;
+    				transform: translateX(-60px);
+					}
+				.a1 div{
+					color: #fff;
+					transform: translateX(-120px);
+					transition:all 0.9s;
+				  }
+				  .op{
+				  	opacity: 1 !important;
+				  }
+				  .trans{
+				  	transform: translateY(0px) !important;
+				  	transform: translateX(0px) !important;
+				  }
+	</style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="easing/jquery.easing.1.3.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+
+				var t=$(".title").offset().top;
+				var a=$(".about").offset().top-100;
+				var p=$(".portfolio").offset().top-100;
+
+				console.log(t);
+
+				$(window).scroll(
+					function(){
+
+						if($(window).scrollTop()>t){
+							$(".hiddenmenu").addClass("slide");
+						}
+						if($(window).scrollTop()<t){
+							$(".hiddenmenu").removeClass("slide");
+						}
+						if($(window).scrollTop()>a){
+							$(".hiddenmenu li:nth-child(1)").addClass("current");
+							$(".hiddenmenu li:nth-child(1)").siblings().removeClass("current");
+							$(".about>.a1").addClass("op");
+							$(".about>.a1 h2,.about>.a1 div").addClass("trans");
+
+						}
+						if($(window).scrollTop()>p){
+							$(".hiddenmenu li:nth-child(2)").addClass("current");
+							$(".hiddenmenu li:nth-child(2)").siblings().removeClass("current");	
+						}
+
+					}
+				);
+				
+				
+				
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<div id="logo">
+    	<h1>
+        	<span>J</span>
+            <span>Q</span>
+            <span>U</span>
+            <span>E</span>
+            <span>R</span>
+            <span>Y</span>
+        </h1>
+    </div>
+<!-- 페이지스크롤시 왼쪽에 등장 -->
+    <ul class="hiddenmenu">
+        <li>home</li>
+        <li>about</li>
+        <li>portfolio</li>
+        <li>contact</li>
+    </ul>
+    <div class="title">
+    	
+    </div>
+    <section class="about">
+    	<div class="a1">
+		    <h2>about</h2>
+		    <div>Documentation
+
+		The following pages contain the official documentation for Sublime Text 3. The Sublime Text Unofficial Documentation is an excellent supplementary resource, with a huge amount of information not covered in the official documentation.
+		Usage
+
+		    Git Integration New!
+		    Incremental Diff New!
+		    Column Selection
+		    Multiple Selection with the Keyboard
+		    Auto Complete
+		    Tab Completion
+		    Distraction Free Mode
+		    Vintage Mode
+		    Projects
+
+		Customization
+
+		    Settings
+		    Key Bindings
+		    Changing the Font
+		    Indentation
+		    Spell Checking
+		    Build Systems
+		    Packages
+		    Selectors
+
+		Miscellaneous
+			</div>
+		</div>
+    </section>
+    <section class="portfolio">
+    	
+    </section>
+    <section class="contact">
+    	
+    </section>
+</body>
+</html>

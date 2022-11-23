@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container{
+            display: flex;
+            /* flex-direction: column; */
+        }
+        .item{
+            flex-basis: 150px;
+            flex-grow: 1;
+        }
+        .item:nth-of-type(1){
+            flex-grow: 3;
+        }
+        .item:nth-of-type(2){
+            flex-grow: 2;
+        }
+        .item:nth-of-type(3){
+            flex-grow: 1;
+        }
+        .item:nth-of-type(4){
+            flex-grow: 5;
+        }
+        /*
+        flex-basis : 자식요소들의 기본 크기 설정
+            width와 같이 영역을 설정하는 값이지만 다른 점은 direction의 방향에 따라 영역이 달라지게 된다.
+            direction이 row일 때 : width
+            direction이 column일 때 : height
+            px이나 %로 영역을 설정한다.
+            기본값 auto
+            flex-basis의 값이 설정되면 min-width 처럼 최소값이 수치로 해당 수치로 적용되며, 컨텐츠 내용이 basis의 수치를 넘어가게 되면 유연하게 늘어나게 된다.
+            반면, width값으로 고정 px를 주게 되면 유연하게 늘어나지 않는다.
+
+        flex-grow : 아이템들의 값이 flex-basis보다 커질 때 결정하는 속성
+            양수값이 들어가며, 기본값은 0이다.
+            0보다 큰 값이 들어가면 해당 아이템들은 원래의 크기보다 커지며 빈 영역을 채우게 된다.
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="item">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="item">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+        <div class="item">cccccccccccccccccccccccccccccccc</div>
+        <div class="item">dddddddddddddddddddddddddddddddddddd</div> -->
+        <div class="item">aaaaaaaa</div>
+        <div class="item">bbbbbbbbb</div>
+        <div class="item">cccccccc</div>
+        <div class="item">dddddddddddd</div>
+    </div>
+    Lorem ipsum dolor sit amet.
+</body>
+</html>

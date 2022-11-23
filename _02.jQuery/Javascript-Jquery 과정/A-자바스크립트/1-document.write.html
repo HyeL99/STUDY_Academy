@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>자바스크립트기초-1</title>
+    <script type="text/javascript">
+      document.write("기초");
+      var firstStr = "이것도 문자열입니다.";
+      //alert(firstStr.length);
+      //alert(1*2);
+      var a=1;
+      var b=2;
+      c=2;
+      //alert(a*b);
+      // alert(Math.floor("2.345"));
+      // alert("c의값:"+c);
+
+      let num = 10;		// 변수의 선언과 함께 초기화
+  		document.getElementById("result").innerHTML = num + "<br>";
+  		num = [10, 20, 30];	// 배열 할당
+  		document.getElementById("result").innerHTML += num + "<br>";
+  		// let num=20; 			// 이 재선언문은 무시됨.
+  		document.getElementById("result").innerHTML += num;
+
+      var d_day = new date();
+      alert(d_day);
+  		</script>
+    </script>
+    <script type="text/javascript" src="js/sample.js"></script>
+
+  </head>
+  <body onload="printDate()">
+    <h1>자바스크립트</h1>
+    <button type="button" name="button" onclick="printDate()">날짜보 </button>
+    <h2>오늘의 날짜:<span id="date"></span></h2>
+  </body>
+</html>

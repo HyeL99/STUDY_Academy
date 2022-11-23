@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.container{
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            background-color: coral;
+            grid-auto-flow: row dense;
+            margin-bottom: 50px;
+        }
+
+        .item{
+            background-color: pink;
+        }
+
+        div.container .item:nth-child(2) {
+            grid-column: span 3;
+        }
+
+        div.container02{
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            background-color: coral;
+            grid-auto-flow: column dense;
+        }
+        div.container02 .item:nth-child(1) {
+            grid-column: 2 / span 2;
+        }
+
+        div.container02 .item:nth-child(2) {
+            grid-column: span 3;
+        }
+        
+
+        /*
+        grid-auto-flow
+        배치하지 않은 아이템(Item)을 어떤 방식의 ‘자동 배치 알고리즘’으로 처리할지 정의합니다.
+
+        row	각 행 축을 따라 차례로 배치	<- 기본값
+        column	각 열 축을 따라 차례로 배치	
+        row dense(dense)	각 행 축을 따라 차례로 배치, 빈 영역 메움!	dense= 밀집
+        column dense	각 열 축을 따라 차례로 배치, 빈 영역 메움!	
+        
+        */
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <div class="container02">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>attr()메서드:마크업의 속성교체</title>
+	<style type="text/css">
+		div{
+			width:181px;
+			height:103px;
+			}
+		ul{
+			list-style:none;
+			}
+		ul li{
+			float:left;
+			padding: 0 12px;
+			background:#999;
+			text-align:center;
+			margin:0 6px 0 0;
+			cursor:pointer;
+			}
+	</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+		$().ready(function() {
+			   /*
+				//$("img").attr("src","images/pic2.jpg");	
+				              //태그의 속성값을 변경하는 명령어    attr( "속성","값") 
+				//첫번째li에 마우스올리면 pic2번이미지로 교체되고 마우스를 띄면 1번 이미지로... 
+				$("li:eq(0)").hover( 
+					// :eq(숫자) 숫자에 해당하는 위치의 대상을 찾는다 .제이쿼리는 0번부터시작               
+					// li:eq(0) 0번째에 위치한 li를 의미
+					function(){
+						$("img").attr("src","images/pic1.jpg").hide().fadeIn("slow");
+						} // 메서드(명령어)를 이어서 실행할 수있다 : 메서드체인 (.으로 구분)
+						  // hide()는 안보이게 함 , fadeIn()은 서서히 나타나게 함/fadeOut는 서서히 사라지게
+					);
+					
+				$("li:eq(1)").hover( 
+					// :eq(숫자) 숫자에 해당하는 위치의 대상을 찾는다 .제이쿼리는 0번부터시작               
+					// li:eq(0) 0번째에 위치한 li를 의미
+					function(){
+						$("img").attr("src","images/pic2.jpg").fadeIn("slow");
+						}
+					);
+				*/
+				var n;
+				$("ul").before("<h2></h2>");
+				//$("h2").text("작업리스트");
+				$("h2").html("<a>작업리스트</a>");
+				$("li").hover(
+					function(){
+						n=$(this).text();
+						//console.log(n);
+						$("img").attr("src","images/pic"+n+".jpg").hide().fadeIn();
+					}
+				);
+
+      		 }
+		);
+    </script>
+</head>
+
+<body>
+	<div>
+		<img src="images/pic1.jpg" />
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+</body>
+</html>

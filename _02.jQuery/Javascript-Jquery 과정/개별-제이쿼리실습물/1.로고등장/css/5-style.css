@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+div#popup{
+	height:100px;
+	background:#ededed;
+	}
+	h1{
+		outline: 1px solid;		text-align: center;
+		padding: 15px;
+		}
+	ul.menu{
+		list-style: none;
+		/*overflow: hidden;*/
+		background: #ccc;
+		padding: 6px;
+		text-align:center;
+		z-index:12;
+		}
+		ul.menu>li{
+			/* float:left; */
+			display: inline-block;
+			width:15%;
+			cursor:pointer;
+			transition:background 1s;
+			position:relative;
+			}
+			ul.menu>li ul{
+				position:absolute;
+				left:0;
+				top:20px;
+				z-index:2;
+				background:#CCC;
+				display:none;
+				}
+		.active{
+			background:#F90;
+			}
+		.over{
+			background:brown !important;
+			}
+		.click{
+			color:#F60;
+			background:#FFF !important;
+			}
+		/* 타이틀영역 */
+		div#title{
+			width:1000px;
+			margin:0 auto;
+			height:200px;
+			background:#FC3;
+			position: relative;
+			overflow: hidden;
+			}
+div#title ul{
+	width: 5000px;
+	position: absolute;
+		
+}
+div#title ul li{
+	float: left;
+}
+div#title p:hover{
+	background:#F30;
+	}
+div#title p.prev{
+	background:#FC0;
+	padding:9px;
+	position:absolute;
+	left:0;
+	top:100px;
+	cursor:pointer;
+	}
+div#title p.next{
+	background:#FC0;
+	padding:9px;
+	position:absolute;
+	right:0;
+	top:100px;
+	cursor:pointer;
+	}
+/* 내용영역 */
+div#cont{
+	width:1000px;
+	margin:0 auto;
+	outline:3px solid gray;
+	}
+	div#cont h2{
+		background:#0FF;
+		cursor:pointer;
+		}
+	div#cont p{
+		outline:2px solid gray;
+		height:70px;
+		display:none;
+		}
+	

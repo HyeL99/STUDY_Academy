@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-2</title>
+<style type="text/css">
+	.st{ /* .은 class를 의미함 */
+		text-transform:uppercase; /* 대문자처리 */
+		font-weight:bold; /* 폰트를 두껍게 */
+		color: red; /* 글자색 */
+		width: 170px; /* 너비 */
+		background: #eee; /* 배경색 */
+		}
+</style>
+<script src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			//h1에 클래스를 붙여라(이름은 st로) : class란 그룹명,이름을 의미
+			$("h1").addClass("st");
+			//h1을 클릭하면 실행하시오()
+			$("h1").click(
+		//click()는 클릭하면 실행하시오라는 명령어 하위에 function(){}배치후 {}안에 ...기재
+				function(){
+					//h1에 클래스를 제거하시오(이름은 st)
+					$("h1").removeClass("st");
+					//두개의 단어가 이어진경우 2번째단어첫글자는 대문자로 쓴다
+				}
+			);
+		}
+	);
+</script>
+</head>
+
+<body>
+	<h1>addClass</h1>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>자바스크립트기초-1</title>
+    <script type="text/javascript">
+      window.onload=function(){
+
+        function Person(name, gender) {
+          this.name = name;
+          this.gender = gender;
+          this.sayHello = function() {
+            alert(this.name + ' said "hello"');
+          }
+        }
+
+        var zero = new Person('이순한', 'm'); // Person {name: 'Zero', gender: 'm'}
+        var hero = new Person('Hero', 'f'); // Person {name: 'Hero', gender: 'f'}
+        zero.sayHello(); // 'Zero said "hello"'
+        hero.sayHello(); // 'Hero said "hello"
+
+      }
+
+    </script>
+    <script type="text/javascript">
+      var mmm={
+        name:'이선',
+        birth:'경기도 동두천',
+        hi:function(){
+          return `이름은 ${this.name}이고, 나이는 ${this.birth}입니다.`;
+        }
+      };
+      console.log(mmm.css());
+    </script>
+    <style>
+      body{
+        text-align: center;
+      }
+
+      time{
+      background-color: #333;
+      display: inline-block;
+      padding: 4px;
+      }
+
+      time span{
+      background-color: #fff;
+      width: 60px;
+      display: inline-block;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>날짜</h1>
+    <time>
+      <span id="a"></span>
+      <span id="b" class="bb"></span>
+      <span id="c"></span>
+      <span id="d"></span>
+      <span id="e"></span>
+      <span id="f"></span>
+      <span id="g"></span>
+    </time>
+
+  </body>
+</html>

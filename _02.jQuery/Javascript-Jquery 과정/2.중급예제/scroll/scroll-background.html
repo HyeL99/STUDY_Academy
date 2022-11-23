@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollstop</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	  }
+	  body{
+		  }
+	div#menu h1{
+		text-align:center;
+		height:100px;
+		line-height:100px;	
+		}
+	div#menu ul{
+		background:rgba(0,0,0,0.5);
+		transition:all 1s;
+		height:80px;
+		width:100%;
+		/*z-index:2;*/
+		text-align:center;
+		line-height:80px;
+		}
+		div#menu ul li{
+			display:inline-block;
+			width:25%;
+			vertical-align:top;
+			}
+		.a{
+			
+			}
+		.red{
+			background: #F60 !important;
+			}
+		.green{
+			background: #6C0 !important;
+			}
+		.blue{
+			background: #39F   !important;
+			}
+		.yellow{
+			background: #F0F !important;
+			}
+	div#wrap{
+		width:1000px;
+		padding:120px 0 0 0;
+		margin:0 auto;
+		}
+	div#wrap div#title{
+		height:600px;
+		}
+	div#wrap div{
+		height:600px;
+		}
+	div#area1{
+		/* background:#0C0; */
+		transition:background 1s, margin-top 3s;
+		margin-top:100px;
+		}
+	div#area2{
+		background: #FF6;
+		}
+	div#area3{
+		background: #CCF;
+		}
+	div#area4{
+		background: #099;
+		}
+	.fixed{
+		position:fixed !important;
+		top:0 !important;
+		}
+	.current{
+		background:#ededed !important;
+		margin-top:0px !important;
+		
+		}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+	<div id="menu" class="a">
+        <h1>로고</h1>
+        <ul>
+        	<li>회사소개</li><!--
+            --><li>제품소개</li><!--
+            --><li>주문상담</li><!--
+            --><li>고객문의</li>
+        </ul>
+    </div>
+    
+	<div id="wrap">
+        <div id="title">
+            타이틀
+        </div>
+        <div id="area1">
+        	회사소개
+        </div>
+        <div id="area2">
+        </div>
+        <div id="area3">
+        </div>
+        <div id="area4">
+        </div>
+    </div>
+    <script>
+		//on()메서드 는 대상에 이벤트와 실행명령을 붙여라
+		// $(document).on("이벤트",function(){});
+		var m=$("div#menu ul").offset().top;
+		//console.log("메뉴위치top:"+m);
+
+		$(document).on("scroll",function(){
+			var n=$("div#menu").offset().top; //offset()는 대상의 위치값left와top을 가져오라는 명령
+			//
+			//var m=$("div#menu ul").offset().top;
+			//console.log("메뉴위치top:"+m);
+			var a=$("div#area1").offset().top;
+			var b=$("div#area2").offset().top;
+			var c=$("div#area3").offset().top;
+			var d=$("div#area4").offset().top;
+			//var scfinish=$(window).scrollTop();
+			
+			if($(window).scrollTop()>=m){
+				//$("#wrap div:eq(0)").animate({"opacity":0.2},500);
+				//$("div#menu").animate({"top":-120},500);
+				$("div#menu ul").css({"position":"fixed","top":0});//addClass("fixed");
+				console.log("메뉴위치top2:"+m+"/ : 윈도우탑:"+$(window).scrollTop());
+				
+			}
+			if($(window).scrollTop()<m){
+				$("div#menu ul").css({"position":"relative","top":""});//removeClass("fixed");
+				
+			}
+			
+			if($(window).scrollTop()>a-500){
+				//$("#wrap div:eq(0)").animate({"opacity":0.2},500);
+				//$("div#menu").animate({"top":-120},500);
+				$("div#area1").addClass("current");
+			}
+			if($(window).scrollTop()>b){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+				$("div#menu ul").attr("class","green");
+			}
+			if($(window).scrollTop()>c){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+				$("div#menu ul").attr("class","blue");
+			}
+				if($(window).scrollTop()>d){
+				//$("div#menu").animate({"top":0},500);
+				//$("#wrap div:eq(0)").animate({"opacity":1},500);
+				$("div#menu ul").attr("class","yellow");
+			}
+		});
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pop up</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/popup2.js"></script>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+body{font-size:12px;}
+#wrap{width:900px; margin:0 auto; height:1100px; background:#D4D4D4;}
+#showimage{position:absolute; top:50px; left:100px; z-index:999; width:250px; height:300px; background:#FFEC8C; text-align:center;}
+#showimage2{position:absolute; top:150px; left:600px; z-index:999; width:250px; height:300px; background:#FFEC8C; text-align:center;}
+.img_pop{margin:10px 0px;}
+.btn_close{color:#8CC540; cursor:pointer;}
+label, select, input, textarea{vertical-align:middle;}
+</style>
+
+</head>
+
+<body>
+
+<div id="wrap">
+
+</div>
+
+ <div id="showimage">
+	  <script language="JavaScript" type="text/javascript">
+        function closeWin(){
+           var chk = document.getElementById('Notice')
+           if ( chk.checked ) {
+                 setCookie( "Notice", "done" , 1); // 1 은 1일을 뜻함.
+            }
+        }
+       if ( getCookie( "Notice" ) == "done" ) {
+           hidebox();
+       }
+     </script>
+     <div class="img_pop">
+     	<iframe width="560" height="315" src="https://www.youtube.com/embed/m3k1T8ETwtc" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div class="check_pop">
+     <input type="checkbox" name="Notice" id="Notice" value="" title="오늘은 이창을 열지 않음 선택상자" /><label for="Notice">오늘은 이창을 열지 않음.</label> <a class="btn_close" onclick="closeWin();hidebox();return false;"> [close] </a>
+      </div>
+
+   </div>
+   
+   <!-- 2번째 팝업 -->
+   <div id="showimage2">
+	  <script language="JavaScript" type="text/javascript">
+        function closeWin2(){
+           var chk = document.getElementById('Notice2')
+           if ( chk.checked ) {
+                 setCookie( "Notice2", "done" , 1); // 1 은 1일을 뜻함.
+            }
+        }
+       if ( getCookie( "Notice2" ) == "done" ) {
+           hidebox2();
+       }
+     </script>
+     <div class="img_pop">
+     	<iframe width="560" height="315" src="https://www.youtube.com/embed/m3k1T8ETwtc" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div class="check_pop">
+     <input type="checkbox" name="Notice2" id="Notice2" value="" title="오늘은 이창을 열지 않음 선택상자" /><label for="Notice2">오늘은 이창을 열지 않음.</label> <a class="btn_close" onclick="closeWin2();hidebox2();return false;"> [close] </a>
+      </div>
+
+   </div>
+
+</body>
+</html>

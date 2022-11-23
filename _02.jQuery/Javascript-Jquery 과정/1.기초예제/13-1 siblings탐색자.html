@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>필터선택자</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(document).ready(	
+	function(){
+		//표준이라는 문자가 들어가는 가는 li에 클래스명 kor을 지정
+		$("li:contains('표준')").addClass("kor");
+		//클래스명이 kor인 요소를 제외한 나머지 요소의 폰트를 arial로 지정
+		$("li.kor").siblings().css("font-family","arial").css("color","red");		
+		 //siblings() 탐색자는 앞요소를 제외한 형제요소(인접)를 의미(선택)
+		 
+		 //li의 부모인 ul에 border를 지정css
+		 $("li").parent().css("border","2px solid #444");
+		 //parent()탐색자는 대상의 부모(상위요소)를 선택
+		 
+		 //ul의 자식중 class명이 kor인 li를 찾아서 글자폰트를 나눔고딕으로 처리해라
+		 $("ul").children("li.kor").css("color","blue");
+		 //children()탐색자는 앞요소의 자식요소를 탐색(찾음)
+		 
+		 //첫번째li의 다음에 오는 li의 글자색을 green으로 설정하시오
+		 $("li:first").next().css("color","green");
+		 
+		 //마지막li의 이전에 오는 li의 글자색을 yellow으로 설정하시오
+		  $("li:last").prev().css("color","yellow");
+		  
+		  //li의 상위의 상위인 body의 배경색을 gray로 설정하시오
+		  $("li").parent().parent().css("background","gray");
+		  
+		 
+	}
+	);
+</script>
+</head>
+
+<body>
+    <ul>
+    	<li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>html5</li>
+        <li>css3</li>
+        <li>표준게시판</li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        수직축 정렬
+        normal	stretch와 같습니다.	normal
+        start	시작점(위쪽) 정렬	
+        center	수직 가운데 정렬	
+        end	끝점(아래쪽) 정렬	
+        space-around	각 행 위아래에 여백을 고르게 정렬	
+        space-between	첫 행은 시작점에, 끝 행은 끝점에 정렬되고 나머지 여백으로 고르게 정렬	
+        space-evenly	모든 여백을 고르게 정렬	
+        stretch	열 축을 채우기 위해 그리드 콘텐츠를 늘림
+
+
+        수평축 정렬
+        normal	stretch와 같습니다.	normal
+        start	시작점(왼쪽) 정렬	
+        center	수평 가운데 정렬	
+        end	끝점(오른쪽) 정렬	
+        space-around	각 열 좌우에 여백을 고르게 정렬	
+        space-between	첫 열은 시작점에, 끝 열은 끝점에 정렬되고 나머지 여백으로 고르게 정렬	
+        space-evenly	모든 여백을 고르게 정렬	
+        stretch	행 축을 채우기 위해 그리드 콘텐츠를 늘림
+
+
+                
+        
+        */
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        div.container{
+            width: 950px;
+            height: 400px;
+            display: grid;
+            grid-template-rows: repeat(2,100px);
+            grid-template-columns:repeat(3,1fr);
+            gap: 10px;
+            background-color: coral;
+            /* align-content: end;
+            justify-content: stretch; strecth는 고정값일때는 안됨*/
+            place-content: center center;
+            /* justify-items: center; */
+        }
+
+        .item{
+            width: 100px;
+            background-color: pink;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    
+</body>
+</html>

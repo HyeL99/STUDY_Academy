@@ -1,0 +1,93 @@
+@charset 'UTF-8';
+
+$yellow01:#fcc419;
+$yellow02:#fff9db;
+$lime01:#94d82d;
+$lime02:#f4fce3;
+$blue01:#339af0;
+$blue02:#e7f5ff;
+$grape01:#cc5de8;
+$grape02:#f8f0fc;
+
+//mixin 추가
+@mixin BtnColor($mainColor,$subColor) {
+  background: $mainColor;
+  color: $subColor;
+  border:1px solid $mainColor;
+  &:hover {
+    background: lighten($mainColor, 40%);
+    color: $mainColor;
+  }
+  &:active {
+    background: darken($mainColor, 30%);
+    color: $mainColor;
+  }
+  &.outline {
+    border:3px solid $mainColor;
+    background: $subColor;
+    color:$mainColor;
+    &:hover {
+      background-color: $mainColor;
+      color: $subColor;
+    }
+  }
+}
+
+.btnWrap {
+  & + & {
+    margin-top : 1rem;
+  }
+}
+.Button {
+  /* open-color 사용 */
+  outline: 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  vertical-align: top;
+
+  /* 사이즈 관리 */
+  &.large {
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+  }
+  &.medium {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  &.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  &.yellow {
+    @include BtnColor($yellow01,$yellow02);
+  }
+  &.lime {
+    @include BtnColor($lime01,$lime02);
+  }
+  &.blue {
+    @include BtnColor($blue01,$blue02);
+  }
+  &.grape {
+    @include BtnColor($grape01,$grape02);
+  }
+  
+  & + & {
+    margin-left: 1rem;
+  }
+
+  &.fullWidth {
+    width: 100%;
+    margin:0;
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+}
+
+// .Button + .Button {
+//   margin-left: 1rem;
+// }
+//버튼 클라스 뒤에 있는 버튼 클라스 선택(형제선택자)
+// .Button:not(first-child) 와 같은 역할

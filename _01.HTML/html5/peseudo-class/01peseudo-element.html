@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소</title>
+    <style>
+        /*
+         peseudo-element 가상 요소
+         태그상에는 존재하지 않지만 화면상에는 존재하는 것처럼 객체를 생성해서 css를 함께 추가하여 하나의 객체처럼 보이게 하는 요소
+
+         html로 표현하기 어려운 컨텐츠의 특정부분만을 구성하거나 html의 내용을 변경하지 않고도 선택한 요소의 특정 위치에 새로운 컨텐츠를 추가할 때 사용한다.
+
+         종류 (: 가상이라는 의미)
+         선택자:before - 선택자의 내용 앞쪽에 새로운 inline 객체 생성
+         선택자:after - 선택자의 내용 뒤쪽에 새로운 inline 객체 생성
+         선택자:before와 선택자::before의 차이점
+            출력에는 차이가 없으나, 가상 요소와 가상 선택자를 구분하기 위해서 가상 요소에는 ::을 사용하도록 하고 있다.
+                *구버전 브라우저에서는 ::을 인식하지 못하는 경우도 있음
+            before, after에는 반드시 필요한 속성이 있다.
+                content=""
+                가상 요소에 내용을 부여하는 css
+                컨텐츠 안에 텍스트, 특수분자 등을 표시할 수 있으며 직접 커스텀할 때에도 content는 필요하지만 내용을 비워두면 된다.
+            그 외에도 모든 css를 지원한다.
+
+            선택자:selection - 드래그 했을 때 속성 변화
+            선택자:placeholder - input창의 placeholder 부분의 디자인 변화
+        자주 사용하는 용도는 내용표시보다는 꾸미는 요소나 float 요소를 해제하는 clearfix용도로 많이 사용한다.
+            .clearfix::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+        */
+        html, body, div, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        div.box::before{
+            content: "";
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background: cornsilk;
+        }
+        div.box2::before{
+            content: "안녕하세요";
+        }
+        div.box::after{
+            content: "★";
+
+        }
+
+        div.gnb{
+            width: 100%;
+            margin:25px 0;
+            padding: 25px;
+            background: cornsilk;
+        }
+        div.gnb li{
+            width:200px;
+            height: 50px;
+            float: left;
+            background: lightskyblue;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* div.gnb ul::after{
+            content: "";
+            display: block;
+            clear: both;
+        } */
+
+        div.box::selection{
+            background: red;
+            color:white
+        } /*드래그 선택시 설정*/
+
+        input.name::placeholder{
+            color: red;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        저는 박스입니다.
+    </div>
+    
+    <div class="box2">
+        저는 박스입니다.
+    </div>
+
+    <div class="gnb">
+        <ul class="clearfix">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <!-- <div class="clearfix"></div> 구조적 오류 -->
+        </ul>
+        
+    </div>
+    <div class="box01">box01</div>
+    <input class="name" type="text" placeholder="이름을 입력해주세요">
+    
+</body>
+</html>

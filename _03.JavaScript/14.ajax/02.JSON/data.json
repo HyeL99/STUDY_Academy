@@ -1,0 +1,20 @@
+{"events" : [
+    {
+        "location" : "샌프란시스코, CA",
+        "date" : "10월 14일",
+        "map" : "img/map-ca.png",
+        "imgAlt" : "califonia"
+    },
+    {
+        "location" : "오스틴, TX",
+        "date" : "10월 17일",
+        "map" : "img/map-tx.png",
+        "imgAlt" : "texas"
+    },
+    {
+        "location" : "뉴욕, YK",
+        "date" : "10월 20일",
+        "map" : "img/map-ny.png",
+        "imgAlt" : "newyork"
+    }
+]}

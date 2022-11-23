@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>title-fade</title>
+<style type="text/css">
+#box_wrap{
+	margin:50px auto;
+	padding:0;
+	width:600px;
+	background:#192839;
+}
+
+.fadeShow{
+	position:relative;
+	background:#666;
+	width:600px;
+	height:350px;
+	border:2px solid #fdf6dd;	
+	overflow:hidden;
+}
+
+.fadeShow img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.fadeShow .active{
+	z-index:1; /* 대상의 높이 조정함 보통은 0에 위치함 */
+}
+ul{
+	list-style:none;
+	}
+ul.multi{
+	position:absolute;
+	top:0px;
+	}
+	ul.multi li{
+		float:left;
+		padding:0 10px;
+		}
+	.topli{
+		font-size:26px;
+		margin:0 0 10px 0;
+		font-weight:bold;
+		background:#CCC;
+		}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+ 	<div id="box_wrap">
+       <ul class="multi">
+          <li class="topli">작품1</li>
+          <li>작품2</li>
+          <li>작품3</li>
+       </ul>
+       <div class="fadeShow">
+           <img class='active' src='images/1/slide1.jpg' alt='image1' />
+           <img src="images/1/slide2.jpg" alt="image2" />
+           <img src="images/1/slide3.jpg" alt="image3" />
+       </div>
+   </div>
+   <script>
+   			var ff=function(){
+				var current=$("div.fadeShow img:eq(0)");
+				var next=$("div.fadeShow img:eq(1)");
+				$(next).addClass("active").css("opacity","0").animate({"opacity":"1"},2000,function(){
+						$("div.fadeShow").append(current); //div안의 맨뒤에 배치하라(추가하라)
+						$(current).removeClass("active");
+					}
+				);
+			}
+		   var timer=setInterval(ff,3000);
+   /*  ---------- 방식1
+   $(document).ready(
+   		function(){
+			function ff(){
+				var current=$("div.fadeShow img:eq(0)");
+				var next=$("div.fadeShow img:eq(1)");
+				$(next).addClass("active").css("opacity","0").animate({"opacity":"1"},2000,function(){
+						$("div.fadeShow").append(current); //div안의 맨뒤에 배치하라(추가하라)
+						$(current).removeClass("active");
+					}
+				);
+			}
+		   var timer=setInterval(ff,3000);
+		}
+	);	*/	  
+	//function ff(){  ---- 방식2 ---------
+//				var current=$("div.fadeShow img:eq(0)");
+//				var next=$("div.fadeShow img:eq(1)");
+//				$(next).addClass("active").css("opacity","0").animate({"opacity":"1"},2000,function(){
+//						$("div.fadeShow").append(current); //div안의 맨뒤에 배치하라(추가하라)
+//						$(current).removeClass("active");
+//					}
+//				);
+//			}
+//		   var timer=setInterval("ff()",3000); 
+	</script>
+  
+</body>
+</html>

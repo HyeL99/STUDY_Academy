@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MY PAGE</title>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<link href="reset.css" type="text/css" rel="stylesheet" />
+<link href="common.css" type="text/css" rel="stylesheet" />
+<link href="font.css" type="text/css" rel="stylesheet" />
+<link href="graphic.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.6.2.min.js"></script>
+
+<!--탑버튼-->
+<script type="text/javascript" src="js/quickmenu/topscroll.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/galleryhover.js"></script>
+
+<!--스크롤링-->
+<link href="scrolling/style.css" rel="stylesheet" type="text/css" />
+<!--<script type="text/javascript" src="scrolling/https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>-->
+<script type="text/javascript" src="scrolling/scripts/jquery.parallax-1.1.js"></script>
+<script type="text/javascript" src="scrolling/scripts/jquery.scrollTo-1.4.2-min.js"></script>
+<script src="scrolling/js/jquery.easing.1.3.js"></script>
+<script src="scrolling/js/jquery.scrollorama.js"></script>
+
+<script src="scrolling/js/jquery.scrolldeck.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//$('#nav').localScroll(800);
+	
+	RepositionNav();
+	
+	$(window).resize(function(){
+		RepositionNav();
+	});	
+	
+	//.parallax(xPosition, adjuster, inertia, outerHeight) options:
+	//xPosition - Horizontal position of the element
+	//adjuster - y position to start from
+	//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+	$('#contact').parallax("50%", 0, 0.1, true);
+	$('#second').parallax("50%", 0, 0.1, true);
+	$('.bg').parallax("50%", 2500, 0.4, true);
+	$('#third').parallax("50%", 2750, 0.3, true);
+	
+	var deck = new $.scrolldeck({
+		slides: '.slide',
+		buttons: '#nav li a',
+		easing: 'easeInOutExpo'
+	});
+
+})
+</script>
+<script>
+	$(document).ready(
+		function(){
+			//$("a[href='#contact']").click(
+			  $(window).scroll(
+				function(){
+					$("section div#about").css("opacity","0.5");
+					var wh=$(window).scrollTop();
+					if(wh<300){
+						//$("section div#about").css("background","white");
+						$("section div#about .small2 h1").css("font-size","44px")
+						$(".fullbg img").attr("src","img/main2.jpg"); 
+						}	
+					if(wh>620){
+						$("section div#about").animate({"opacity":"1"},2000);
+						//$("section div#about").css("background","gray")
+						$("section div#about .small2 h1").css("font-size","22px")
+						}
+					if(wh>1000){
+						$(".fullbg img").attr("src","scrolling/images/firstBG.jpg"); 
+						}
+				}
+		  
+			);
+		}
+	);
+
+</script>
+
+</head>
+
+<body>
+<div class="fullbg">
+	<img src="img/main2.jpg">
+</div>
+<header>
+<!--메뉴영역..............................................................................................................................................-->
+<div id="menu">
+    <div class="small1">
+        <ul>
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#graphic">GRAPHIC</a></li>
+            <li><a href="#web">WEB</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--메인영역..............................................................................................................................................-->
+<div id="main">
+	<p><a href="#about"><img src="img/down.png" /></a></p>
+    <div id="quick">
+		<p><a href="#menu"><img src="img/up.png" /></a></p>
+	</div><!-- quick -->
+    <script type="text/javascript">
+		//<![CDATA[
+		initializequick("quick",1150,800)
+		//]]>
+	</script>
+</div>
+</header>
+
+<section>         
+
+<!--어바웃영역...........................................................................................................................................-->
+<div id="about">
+	<div class="small2">
+        <h1>ABOUT ME</h1>
+        <h2>WEB DESIGNER CHOI SONG I</h2>
+        <ul>
+            <li>
+            	<img src="img/photo.jpg" />
+           	</li>
+            <li>
+                
+                <h3>Web Designer CHOI SONG I</h3>
+                
+                <p>Age : 1993.04.08</p>
+                <p>Residence : Ansan, south korea</p>
+                
+                <p>Adobe Photoshop</p>
+                
+                <p>Adobe Illustrator</p>
+                
+                <p>Adobe Dreamweaver</p>
+                
+                <p>CSS Cording</p>
+            </li>
+        </ul>
+	</div>
+</div>
+<!--그래픽영역...........................................................................................................................................-->
+<div id="graphic">
+	<div class="small3">
+      <h1>GRAPHIC</h1>
+      <h2>PHOTOSHOP & ILLUSTRATION</h2>
+      <ul>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li class="last">
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+    </ul>
+    <ul>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li class="last">
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+    </ul>
+    <ul>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li class="last">
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+    </ul>
+    <ul>
+          <li>
+             <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li>
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+          <li class="last">
+              <a href="#"><img src="img/graphic/g1.jpg" alt="description" /><img src="img/graphic/g1.jpg" alt="description" class="preview" /></a>
+          </li>
+    </ul>
+    </div>    
+</div>
+
+<!--웹영역.................................................................................................................................................-->
+<div id="web">
+	<div class="small4">
+        <h1>WEB</h1>
+        <h2>WEB DESIGN & PUBLISHING</h2>
+        <p class="leftp"><img src="img/left.jpg" /></p>
+        <p class="rightp"><img src="img/right.jpg" /></p>
+        <div class="slide">
+            <ul>
+                <li>
+                    <a href="http://esc8040.dothome.co.kr/pf1" target="_blank"><img src="img/web/w1.jpg" /></a>
+                </li>
+                <li>
+                    <a href="http://esc8040.dothome.co.kr/pf2" target="_blank"><img src="img/web/w2.jpg" /></a>
+                </li>
+                <li>
+                    <a href="http://esc8040.dothome.co.kr/pf3" target="_blank"><img src="img/web/w3.jpg" /></a>
+                </li>
+                <li>
+                    <a href="http://esc8040.dothome.co.kr/pf4" target="_blank"><img src="img/web/w4.jpg" /></a>
+                </li>
+                <li>
+                    <a href="http://songi0408.cafe24.com/" target="_blank"><img src="img/web/w5.jpg" /></a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+<!--컨텍트영역...........................................................................................................................................-->
+<div id="contact">
+	<div class="small5">
+        <h1>CONTACT</h1>
+        <h2>WEB DESIGN & PUBLISHING</h2>     
+		<p>010-4761-2384</p><br><br>
+        <p>songi0408@hanmail.net</p><br><br>
+        <p>경기도 안산시 단원구 와동</p><br>
+        </ul>
+	</div>
+   
+</div>
+</section>
+<footer>
+</footer>
+<!--페이지스크롤-->
+
+<script src="scrollpage/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="scrollpage/js/jquery.smooth-scroll.min.js"></script>
+<!--<script src="lightbox/js/lightbox.js"></script>-->
+
+<script>
+  jQuery(document).ready(function($) {
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
+
+      $('.showOlderChanges').on('click', function(e){
+        $('.changelog .old').slideDown('slow');
+        $(this).fadeOut();
+        e.preventDefault();
+      })
+  });
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2196019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

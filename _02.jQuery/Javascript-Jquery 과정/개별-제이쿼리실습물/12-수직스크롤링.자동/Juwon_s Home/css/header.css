@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.absolute {
+
+  position: absolute;
+  top: 0;
+}
+.right{
+  
+  right: 0;
+}
+.container-fluid{
+  
+  width: 1200px;
+}
+.navbar-default{
+ background-color:#bfffbf;
+  
+}  
+

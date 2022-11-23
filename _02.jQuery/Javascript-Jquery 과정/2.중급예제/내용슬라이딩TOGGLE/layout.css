@@ -1,0 +1,305 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/*div{ font-family: 'Nanum Gothic', sans-serif;}*/
+#wrap{
+	width:1089px;
+	margin: 0 auto;
+	}
+body{
+	background:url(topbar.gif) repeat-x;
+	}
+#top{
+	height:128px;
+	position:relative;
+	background:url(h1.gif) no-repeat 86px 53px;
+	z-index:100;
+	}
+	#top h1{
+		position:absolute;
+		top:54px;
+		font:Arial, Helvetica, sans-serif;
+		text-transform:uppercase;
+		text-indent:-900px;
+		
+		}
+		#top h1 span.h1{
+			font-size:10px;
+			}
+	#top ul.top1{
+		position:absolute;
+		left:302px;
+		top:73px;
+		/*overflow:hidden;*/
+		font:Arial, Helvetica, sans-serif;
+		text-transform:uppercase;
+		font-weight:bold;
+		/*border:#000 2px solid;*/
+		}
+		#top ul.top1>li.m1{
+			padding-left:0;
+			}
+			#top ul.top1>li.m1>h2 a{
+				padding-left:0;
+				}
+		#top ul.top1>li{
+			float:left;
+			margin:0 0 0 0;
+			position:relative;
+			/*padding:0 45px 45px 10px;*/
+			padding:0 65px 0 0;
+			/*border:#000 1px solid;*/
+			}
+			#top ul.top1>li>h2 a{
+				display:block;
+				padding:0 15px 40px 0px;
+				}
+		/*대메뉴 링크스타일 서브메뉴 링크스타일----시작----*/
+			#top ul.top1 li h2 a{
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:12px;
+				color:#393939;
+				text-transform:uppercase;
+				font-weight:bold;
+				}
+				#top ul.top1 li h2 a:hover{
+					color:#699901;
+				}
+				#top ul.top1>li ul{
+					display:none;
+					position:absolute;
+					left:-25px;
+					top:55px;
+					background:#afafaf;
+					z-index:100; /*대상의 높이 조정.먼저 배치된 것이 하단에 깔린다*/
+					width:120px;
+					/*border:#000 1px solid;*/
+					}
+						#top ul.top1>li:hover ul{/*li에 마우스를 올리면 하위ul을 보이게 해라*/
+							display:block;
+							}
+				#top ul.top1>li ul li{
+					/*padding:3px 15px 3px 22px;*/
+					padding:10px 0 10px 0;
+					margin:0 0 0 15px;
+					}
+				#top ul.top1>li ul li a{
+					font-family:'Nanum Gothic';
+					color:#ededed;
+					font-size: 14px;
+					font-weight:800;
+					}
+					#top ul.top1>li ul li a:hover{
+						color:#fff;
+						}
+	
+	#top ul.top2{
+		position:absolute;
+		left:940px;
+		font-family:Arial, Helvetica, sans-serif;
+		top:0;
+		font-size:9px;
+		font-weight:bold;
+		text-transform:uppercase;
+		background:#11bcc4;
+		padding:8px 0 5px 12px;
+		color:#ecfefe;
+		}
+		#top p{
+			float:left;
+			position:absolute;
+			left:767px;
+			top:8px;
+			font:Arial, Helvetica, sans-serif;
+			font-size:9px;
+			font-weight:bold;
+			text-transform:uppercase;
+			color:#efffe0;
+			}
+			#top p span.num{
+				color:#eeff2e;
+				}
+		#top ul.top2 li{
+			float:left;
+			margin:0 18px 0 0;
+			}
+#title{
+	height:409px;
+	background:url(title.gif);
+	position:relative;
+	}
+	#title h2{
+		position:absolute;
+		top:254px;
+		left:8px;
+		font-family:'Nanum Gothic';
+		font-size:15px;
+		font-weight:800;
+		}
+	#title p{
+		position:absolute;
+		left:8px;
+		top:292px;
+		font-size:10px;
+		font-family:'Nanum Gothic';
+		font-weight:700;
+		}
+	
+#contents{
+	
+	}
+	#contents ul.con1{
+		height:225px;
+		overflow:hidden;
+		}	
+	#contents ul.con2{
+		height:160px;
+		font-family:'Nanum Gothic';
+		
+		}
+		#contents ul.con1 li{
+			float:left;
+			margin:0 0 0 0;
+			}
+		#contents ul.con1 li.con1-1{
+			height:226px;
+			width:272px;
+			background:url(con1-1.gif) no-repeat 0px 0px;
+			}
+		#contents ul.con1 li.con1-2{
+			height:226px;
+			width:272px;
+			background:url(con1-2.gif) no-repeat 0px 0px;
+			}
+		#contents ul.con1 li.con1-3{
+			height:226px;
+			width:272px;
+			background:url(con1-3.gif) no-repeat 0px 0px;
+			}
+		#contents ul.con1 li.con1-4{
+			height:226px;
+			width:272px;
+			background:url(con1-4.gif) no-repeat 0px 0px;
+			}
+			
+			#contents ul.con1 li h3{
+				margin:175px 0 0 16px;
+				font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+				text-transform:uppercase;
+				font-weight:bold;
+				color:#f8f506;
+				}
+			#contents ul.con1 li p{
+				text-indent:15px;
+				color:#FFF;
+				font-family:'Nanum Gothic';
+				font-size:11px;
+				font-weight:700;
+				
+				}
+				#contents ul.con1 li h3 span.info{
+					color:#FFF;
+					}
+		#contents ul.con2{
+			overflow:hidden;
+			margin:40px 0 0 0;
+			}
+		#contents ul.con2>li{
+			float:left;
+
+			}
+			#contents ul.con2>li.con2-1{
+				width:272px;
+				position:relative;
+				}
+				/*공지사항스팬*/
+					#contents ul.con2 li.con2-1 ul li{
+						overflow:hidden;}
+					#contents ul.con2 li.con2-1 ul li span.not1{
+						display:block
+						float:left;
+						}
+					#contents  ul.con2 li.con2-1 ul li span.not2{
+						display:block;
+						float:right;
+						}
+			#contents ul.con2>li.con2-2{
+				width:162px;
+				padding:0 0 0 110px;
+				background:url(con2-2.gif) no-repeat;
+				}
+			#contents ul.con2>li.con2-3{
+				width:168px;
+				padding:0 0 0 104px;
+				background:url(con2-3.gif) no-repeat;
+				}
+			#contents ul.con2>li.con2-4{
+				width:165px;
+				padding:0 0 0 107px;
+				background:url(con2-4.gif) no-repeat;
+				}
+				#contents ul.con2>li p.con2p{
+					margin:8px 0 9px 0;
+					}
+				#contents ul.con2 li.con2-1 h3{
+					margin:0 0 0 10px;
+					
+					}
+				#contents ul.con2 li.con2-1 p{
+					position:absolute;
+					left:227px;
+					top:2px;
+					}
+				#contents ul.con2 li.con2-1 ul{
+					margin:17px 0 0 0;
+					}
+					#contents ul.con2 li.con2-1 ul li{
+						background:url(con2-1-li.gif) no-repeat 10px 0px;
+						padding:0 0 0 24px;
+						}
+				/*폰트*/
+					#contents ul.con2 li h3{
+						font-size:17px;
+						font-weight:800;
+						}
+					#contents ul.con2 li.con2-1 li{
+						font-size:12px;
+						}
+					#contents ul.con2 li.con2-2 p{
+						font-size:12px;
+						}
+					#contents ul.con2 li.con2-3 p{
+						font-size:12px;
+						}
+					#contents ul.con2 li.con2-4 p{
+						font-size:12px;
+						}
+					
+#bottom{
+	height:91px;
+	position:relative;
+	overflow:hidden;
+	background:url(bot-border.gif) repeat-x;
+	}
+	#bottom h1{
+		position:absolute;
+		left:50px;
+		top:32px;
+		width:101px;
+		height:37px;
+		background:url(botlogo.gif) no-repeat;
+		text-indent:-700px;
+		}
+	#bottom address{
+		margin:35px 0 0 201px;
+		font-family:'Nanum Gothic';
+		font-size:10px;
+		font-style:normal;
+		}
+	#bottom p{
+		margin:6px 0 0 201px;
+		font-family:'Nanum Gothic';
+		font-size:10px;
+		
+		}
+	

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--
+        grid
+        grid-template-xxx과 grid-auto-xxx의 그룹 속성
+
+
+
+    -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.container{
+            display: grid;
+            /* grid : 100px 200px / 1fr 2fr; */
+            /*grid-template-rows: 100px 200px; grid-template-columns: 1fr 2fr;*/
+            /* grid : 100px 200px / auto-flow 100px; */
+            /*
+            grid-template-row: 100px 100px;
+            grid-auto-flow: column;
+            grid-auto-columns: 150px;
+            
+            
+            */
+
+
+            grid : auto-flow 200px / 1fr 2fr;
+            /*
+            grid-template-columns: 100px 100px;
+            grid-auto-flow: row;
+            grid-auto-rows: 150px;
+            
+            */
+
+
+            gap: 10px;
+            background-color: pink;
+            /*
+             grid: <grid-template>;
+             grid: <grid-template-rows> / <grid-auto-flow> <grid-auto-columns>;
+             grid: <grid-auto-flow> <grid-auto-rows> / <grid-template-columns>;
+            
+            */
+        }
+
+        .item{
+            background-color: coral;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+    
+</body>
+</html>

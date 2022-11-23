@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션</title>
+    <style>
+        /*
+        transition
+        선택된 개체의 css 속성값이 변화가 진행되는 시간을 적용하는 css
+
+        transition은 단독적으로 실행할 수 없다.
+        이벤트 요소와 결합하여 사용자가 특정 행동(이벤트)을 했을 때 변화하는 css를 적용할 때에 진행되는 시간을 넣어주는 역할을 한다.
+
+        transition 세부 속성
+        transition-property : transition 대상이 되는 css의 속성을 지정
+            속성이 많거나 단일 속성을 지칭할 수 없는 상황일 때 all이라고 표시
+        **transition-duration : transition이 진행되는 지속시간
+            단위는 초(s), 밀리세컨(ms)
+            0.3초 정도가 적당
+            1s=1000ms
+        transition-delay : transition 진행 전 지연시간
+            단위는 초(s), 밀리세컨(ms)
+        transition-timing-function : 진행시간 안에서 시간의 굴곡을 줄 수 있는 시간 속도 변화 속성
+            linear : 처음부터 끝까지 일정한 속도 유지
+            ease : 느리게 시작해서 가속하다가 느리게 종료
+            ease-in : 느리게 시작해서 가속하면서 종료 (기본값)
+            ease-out : 빠르게 시작해서 감속하면서 종료
+            ease-in-out : 느리게 시작해서 가속하다가 느리게 종료
+                ease보다 변화속도가 빠름
+            cubic-bezier : 사용자가 직접 만든 시간 함수
+
+        transition 그룹 속성
+        transition(생략 가능 여부): property(O) duration(X) delay(O) function(O)
+            duration, delay 순서 바뀌면 안됨
+        
+
+        */
+        div.box{
+            width: 300px;
+            height: 300px;
+            background: cornsilk;
+        }
+        div.box2{
+            width: 300px;
+            height: 300px;
+            background: rgb(221, 255, 220);
+        }
+        div.box:hover{
+            background: lightpink;
+            /* transition-property: background; */
+            transition-property: all;
+            transition-duration: 500ms; /*==0.5s*/
+            /* transition-delay: 300ms; */
+            transition-timing-function: linear;
+            /* transition: 0.5s; */
+            transform: rotate(90deg);
+        }
+        div.box2:hover{
+            background: lightcyan;
+            transition: background 0.5s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <div class="box2">box2</div>
+</body>
+</html>

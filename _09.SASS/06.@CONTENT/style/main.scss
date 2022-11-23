@@ -1,0 +1,74 @@
+/*
+    @content - @mixin 사용시 지정된 스타일 이외에 별도로 스타일을 추가
+*/
+
+@mixin btnStyle01() {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    font-weight: 700;
+    @content;
+}
+@mixin btnStyle02($hvBgColor) { //필터링, 인자값 지정
+    width: 100px;
+    height: 50px;
+    border: 0;
+    font-weight: 700;
+    @content;
+    &:hover{
+        background: $hvBgColor;
+    }
+}
+button {
+    @include btnStyle01;
+}
+.b01 {
+    @include btnStyle01{
+        background: crimson;
+        color: cornsilk;
+    };
+}
+.b02 {
+    @include btnStyle02(#000){
+        background: cornsilk;
+        color: crimson;
+    }
+}
+.b03 {
+    @include btnStyle01{
+        background: coral;
+        color: #fff;
+    }
+}
+
+
+@mixin pStyle($bgColor:crimson){
+    padding: 5px;
+    margin: 5px 0;
+    background: $bgColor;
+    @content
+}
+p {
+    
+    &:nth-of-type(1){
+        @include pStyle{
+            color: cornsilk
+        };
+    }
+    &:nth-of-type(2){
+        @include pStyle(cornsilk){
+            color: crimson;
+            font-weight: 700
+        };
+    }
+    &:nth-of-type(3){
+        @include pStyle(coral){
+            text-align: center;
+            padding: 0 100px;
+            color: #fff;
+        };
+    }
+    &:nth-of-type(4){
+        @include pStyle(red);
+    }
+}

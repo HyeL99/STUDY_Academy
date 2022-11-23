@@ -1,0 +1,42 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body {
+  background: url('./bg-sky.jpg') no-repeat bottom center / cover;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.weatherBox{
+  background-color: rgba(227, 178, 118, 0.4);
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  border-radius: 24px;
+  padding: 50px;
+  margin-bottom: 20px;
+}
+.buttonBox {
+  background-color: rgba(227, 178, 118, 0.4);
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px;
+}
+.buttonBox .btn {
+  width: 100%;
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+}
+.buttonBox .btn:first-child {
+  white-space: nowrap;
+}

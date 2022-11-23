@@ -1,0 +1,26 @@
+header {
+  ul {
+    li {
+      button {}
+      &.on {
+        button {}
+      }
+    }
+  }
+}
+
+section {
+  ul {
+    li {
+      input[type='checkbox'] {}
+      label {}
+      button {}
+      &.completed {}
+      &.active {}
+    }
+  }
+  form {
+    input {}
+    button {}
+  }
+}

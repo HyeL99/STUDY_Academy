@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ㅏㅐ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 태그</title>
+    <style>
+        table {
+            border-spacing: 0;
+            /*td와 th는 테이블 요소 간의 여백이 생기게 된다.
+              이를 없애주는 css요소이다.*/
+              border-collapse:collapse;
+              /*테이블의 외곽선을 한줄로 표시하는 css
+                기본값은 seperate*/
+        }
+        table, th, td {
+            border: 2px solid black;
+            
+            /*
+            border
+            컨텐츠의 영역 외곽에 외곽선을 표시하는 css
+            style, weight, color를 top, left, right, bottom에 표시하며, 그룹속성을 보통 사용한다.
+
+            border : style weight color;
+            */
+        }/*tr에는 border를 부여하지 않음*/
+        th, td {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        테이블 태그
+        사이트에서 정보들을 행과 열로 이루어진 표로 구성하여 제공하는 태그
+        옛날에는 레이아웃을 설정하는 용도로 사용도 했지만 더이상 레이아웃은 사용하지 않고 게시판 형태와 같은 곳에 많이 사용하고 있다.
+
+        사용되는 태그
+        table : 하나의 테이블을 구성하는 container 역할
+        caption : 해당 테이블의 제목이나 설명
+            제목요소이기 때문에 가운데 정렬을 기본으로 한다.
+        tr : 가로열 행 (tr 안에는 td와 th만 올 수 있으며, 반드시 하나 이상 있어야 한다.)
+        td : 셀의 한 종류로서 일반 내용을 담을 때 사용한다.
+        th : 셀의 한 종류로서 제목을 담는다.
+            제목요소이기 때문에 가운데 정렬을 기본으로 한다.
+
+        html5 새로 추가된 태그
+        thead : 테이블의 제목들을 묶어주는 태그
+        tbody : 테이블의 일반 내용들을 묶어주는 태그
+        tfoot : 테이블의 마지막 부분(결과물 도출)을 묶어주는 태그
+        위의 태그들은 사용하지 않아도 웹표준에 어긋나지 않으며 복잡한 테이블에서 레이아웃을 묶는 용도로 사용하면 되는 선택사항이다.
+    -->
+    <table>
+        <caption>점심메뉴</caption>
+        <tr>
+            <th colspan="5">한식메뉴</th>
+        </tr>
+        <tr>
+            <td>메뉴1</td>
+            <td>메뉴2</td>
+            <td>메뉴3</td>
+            <td>메뉴4</td>
+            <td>메뉴5</td>
+        </tr>
+        <tr>
+            <th colspan="5">중식메뉴</th>
+        </tr>
+        <tr>
+            <td>메뉴1</td>
+            <td>메뉴2</td>
+            <td>메뉴3</td>
+            <td>메뉴4</td>
+            <td>메뉴5</td>
+        </tr>
+        <tr>
+            <th colspan="5">일식메뉴</th>
+        </tr>
+        <tr>
+            <td>메뉴1</td>
+            <td>메뉴2</td>
+            <td>메뉴3</td>
+            <td>메뉴4</td>
+            <td>메뉴5</td>
+        </tr>
+    </table>
+    <br/>
+    <table>
+        <tr>
+            <th rowspan="3">한식</th>
+            <td>메뉴1</td>
+            <td>메뉴2</td>
+        </tr>
+        <tr>
+            <td>메뉴1</td>
+            <td>메뉴2</td>
+        </tr>
+        <tr>
+            <td>메뉴1</td>
+            <td>메뉴2</td>
+        </tr>
+    </table>
+</body>
+</html>

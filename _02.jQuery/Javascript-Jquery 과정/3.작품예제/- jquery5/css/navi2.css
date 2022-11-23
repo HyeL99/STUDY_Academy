@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+*{	margin:0; padding:0;	}
+
+div#container {
+	width:600px;
+	height:200px;
+	left:0px;
+	top:0px;
+	position:relative;
+}
+				
+div#home {
+	width:50px;
+	height:200px;
+	background:#0099FF;
+	left:0px;
+	top:0px;
+	position:absolute;
+	z-index:1;
+}
+		   
+ul { 
+	width:600px; 
+	height:200px;
+	list-style:none;
+	left:-600px;
+	top:0px;
+	position:absolute;
+}
+	 
+ul li {
+	width:200px;
+	height:200px;
+	float:left;
+	opacity:0.7;
+}

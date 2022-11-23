@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Components 01</title>
+    
+    <!-- Bootstrap script and css (local file) -->
+    <link rel="stylesheet" href="../plugin/bootstrap.css">
+    <script defer src="../plugin/bootstrap.min.js"></script>
+    <!-- Bootstrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- defer : 화면 로딩 후 스크립트 실행 -->
+
+    <style>
+        #w_num {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        header span:not(:first-child) {
+            margin-left: 15px;
+        }
+        main {
+            margin-top: 120px;
+            border: 10px solid green;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary bg-opacity-25 text-center py-3 fixed-top">
+        <div class="inner">
+            <p id="w_num" class="border p-2 bg-white fs-2 text-primary">가로너비</p>
+            <div class="wrap">
+                <span><strong>xs</strong> &lt;576px </span><!-- '&lt;' = '>' -->
+                <span><strong>sm</strong> ≥576px </span>
+                <span><strong>md</strong> ≥768px </span>
+                <span><strong>lg</strong> ≥992px </span>
+                <span><strong>xl</strong> ≥1200px </span>
+                <span><strong>xxl</strong> ≥1400px </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-xl py-3 mb-5">
+        <div>
+            <h1>Alerts</h1>
+
+            <div class="alert alert-primary" role="alert">
+                A simple primary alert—check it out!
+            </div>
+            <div class="alert alert-danger" role="alert">
+                A simple warning alert—check it out!
+            </div>
+            <div class="alert alert-warning" role="alert">
+                A simple warning alert—check it out! <a href="#" class="alert-link">링크를 걸어보아요</a>
+            </div>
+            <div class="alert alert-info" role="alert">
+                A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+            </div>
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">성공했어요!</h4>
+                <p>
+                    Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+                </p>
+                <hr>
+                <p class="mb-0">
+                    Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                </p>
+            </div>
+        </div> <!-- END Alerts -->
+        
+        <div>
+            <h1 class="mt-5">Buttons</h1>
+
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-link">Link</button>
+    
+            <input type="submit" value="Input BTN" class="btn btn-warning">
+            <a href="#" class="btn btn-secondary">A-Button</a>
+    
+            <button class="btn btn-outline-danger ms-4">Danger</button>
+            <button class="btn btn-outline-light">Light</button>
+    
+            <a href="#" class="btn btn-outline-secondary ms-4 btn-lg">A-Button</a>
+            <a href="#" class="btn btn-secondary btn-sm">A-Button</a>
+    
+            <button class="btn btn-primary ms-4" disabled>disabled Button</button>
+        </div> <!-- END Buttons -->
+        
+        <div>
+            <h1 class="mt-5">Badges</h1>
+
+            <h3 class="mb-5">Example heading <span class="badge bg-secondary">New</span></h3>
+            <button class="btn btn-warning">BUTTON<span class="badge bg-danger">NEW</span></button>
+
+            <button class="btn bg-primary position-relative text-white me-4">
+                MESSAGE
+                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">
+                    999+
+                    <span class="visually-hidden" role="뱃지 역할">읽지 않은 메세지 수 표시</span>
+                </span>
+            </button>
+            <button class="btn bg-success position-relative text-white">
+                PROFILE
+                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-circle p-2 border border-white">
+                    <!-- &nbsp; -->
+                    <span class="visually-hidden" role="뱃지 역할">업데이트 관련 표시</span>
+                </span>
+            </button>
+
+            <!-- 뱃지에는 기본적으로 인라인블록이 들어가 있음 -->
+            <p class="badge bg-info">뱃지</p>
+            <p class="badge text-bg-info rounded-circle">뱃지</p>
+            <p class="badge bg-info rounded-pill">뱃지</p>
+            
+        </div> <!-- END Badges -->
+
+        <div>
+            <h1 class="mt-5">Button Group</h1>
+
+            <div class="btn-group" aria-label="그룹버튼 샘플">
+                <button class="btn btn-success">BUTTON01</button>
+                <button class="btn btn-success active">B                       UTTON02</button>
+                <button class="btn btn-success">BUTTON03</button>
+                <button class="btn btn-success">BUTTON04</button>
+            </div>
+            <div class="btn-group" aria-label="그룹 아웃라인버튼 샘플">
+                <button class="btn btn-outline-success">BUTTON01</button>
+                <button class="btn btn-outline-success">BUTTON02</button>
+                <button class="btn btn-outline-success active">BUTTON03</button>
+                <button class="btn btn-outline-success">BUTTON04</button>
+            </div>
+        </div> <!-- END Button Group -->
+    </main>
+    <script>
+        function setBg(){
+            width01.style.backgroundColor = 'rgba(255,0,0,0)';
+            width02.style.backgroundColor = 'rgba(255,0,0,0)';
+            width03.style.backgroundColor = 'rgba(255,0,0,0)';
+            width04.style.backgroundColor = 'rgba(255,0,0,0)';
+            width05.style.backgroundColor = 'rgba(255,0,0,0)';
+            width06.style.backgroundColor = 'rgba(255,0,0,0)';
+            if(window.innerWidth < 576) {
+                width01.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 768){
+                width02.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 992){
+                width03.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1200){
+                width04.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1400){
+                width05.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else {
+                width06.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            }                
+        }
+        function winWidth() {
+            let winW = window.innerWidth;
+            w_num.innerText = `가로너비 : ${winW}px`;
+            setBg();
+        }
+        winWidth();
+        setBg();
+        window.addEventListener('resize', winWidth)
+    </script>
+</body>
+</html>

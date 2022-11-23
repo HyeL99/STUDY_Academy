@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>필터선택자</title>
+<style type="text/css">
+	.current{
+		font-size:30px;
+		}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(document).ready(
+	function(){
+		//css라는 글자가 들어간 li에 클래스를 붙여라(current)
+		//$("li:contains('css')").addClass("current");
+		//.css를 클릭하면 실행하시오(css라는 글자가 들어간 li에 클래스를 붙이시$
+		$(".css").click(
+			function(){
+				$("li:contains('css')").addClass("current");
+				$("li").not("li:contains('css')").removeClass("current");
+				return false; // a태그를 클릭시 새로고침되지 않게 처리
+			}
+		);
+		$(".html").click(
+			function(){
+				$("li:contains('html')").addClass("current");
+				$("li").not("li:contains('html')").removeClass("current");
+				return false; // a태그를 클릭시 새로고침되지 않게 처리
+			}
+		);
+
+	}
+);4
+</script>
+</head>
+
+<body>
+	<a href="" class="css">css</a>
+	<a href="" class="html">html</a>
+  <ul>
+  	<li>html</li>
+    <li>css</li>
+    <li>javascript</li>
+    <li>jquery</li>
+    <li>html5</li>
+    <li>css3</li>
+    <li>표준게시판</li>
+  </ul>
+
+</body>
+</html>

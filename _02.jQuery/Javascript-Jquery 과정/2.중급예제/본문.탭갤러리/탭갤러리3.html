@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>click()메서드</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			}
+			/*
+			ul{
+				list-style:none;
+				border:1px solid #09C;
+				overflow:hidden;
+				width:145px;
+				margin:0 auto;
+				text-transform:uppercase;
+				}
+				ul li{
+					float:left;
+					padding:0 7px;
+					background:#999;
+					}
+					*/
+			ul.first{
+				list-style:none;
+				border:1px solid #09C;
+				overflow:hidden;
+				display:table;
+				margin:0 auto;
+				text-transform:uppercase;
+				}
+				ul.first li{
+					display:inline-block;
+					padding:0 7px;
+					/*background:#999;*/
+					cursor:hand;
+					}
+			.bg{
+				background: #FC0;
+				}
+			div{
+				width:200px;
+				height:300px;
+				border:1px #666 solid;
+				margin:0 auto;
+				position:relative;
+				}
+			div ul{
+				position:absolute;
+				left:0;
+				top:0;
+				}
+    </style>
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+				$("li.l1").addClass("bg");
+				$("div ul").hide();
+				$("div ul.u1").show();
+				/*
+				$("li.l1").click(
+					function(){
+						$("li.l1").addClass("bg");
+						$("li.l2").removeClass("bg");
+						$("li.l3").removeClass("bg");
+						
+						$("div ul.u1").show();
+						$("div ul.u2").hide();
+						$("div ul.u3").hide();
+					}
+				);
+				$("li.l2").click(
+					function(){
+						$("li.l2").addClass("bg");
+						$("li.l1").removeClass("bg");
+						$("li.l3").removeClass("bg");
+						
+						$("div ul.u2").show();
+						$("div ul.u1").hide();
+						$("div ul.u3").hide();
+					}
+				);
+				$("li.l3").click(
+					function(){
+						$("li.l3").addClass("bg");
+						$("li.l2").removeClass("bg");
+						$("li.l1").removeClass("bg");
+						
+						$("div ul.u3").show();
+						$("div ul.u2").hide();
+						$("div ul.u1").hide();
+					}
+				);
+				*/
+				var n;
+				$("ul li").click(function(){
+					n=$(this).attr("data-n");
+					$("div ul:eq("+n+")").show();
+					$("div ul").not("div ul:eq("+n+")").hide();
+
+					$(this).addClass("bg");
+					$("ul li").not(this).removeClass("bg");
+
+				});
+
+			}
+		);
+	</script>
+</head>
+
+<body>
+    <ul class="first">
+        <li class="l1" data-n="0"><a href="#">html5</a></li>
+        <li class="l2" data-n="1"><a href="#">css3</a></li>
+        <li class="l3" data-n="2"><a href="#">javascript</a></li>
+    </ul>
+    <div>
+        <ul class="u1">
+            <li>html5설명입니다</li>
+            <li>html5설명입니다</li>
+            <li>html5설명입니다</li>
+        </ul>
+        <ul class="u2">
+            <li>css설명입니다</li>
+            <li>css설명입니다</li>
+            <li>css설명입니다</li>
+        </ul>
+        <ul class="u3">
+            <li>java설명입니다</li>
+            <li>java설명입니다</li>
+            <li>java설명입니다</li>
+        </ul>
+    </div>
+</body>
+</html>

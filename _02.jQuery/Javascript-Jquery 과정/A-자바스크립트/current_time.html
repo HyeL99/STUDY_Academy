@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재시간</title>
+    <style>
+
+
+
+
+
+div.currentTime,div.dday{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        ol{
+           list-style: none;
+           text-align: center;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           gap:20px
+        }
+        li{
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border: 1px solid #666;
+            border-radius:10px;
+
+        }
+        .clock{
+            background-color: #333;
+            color: #fff;
+            width: 300px;
+            margin: 0 auto;
+            }
+        .clock>*{
+           display: flex;
+           justify-content: center;
+           align-items: end;
+         }
+         /* 원형시계 */
+        .wallwatch{
+
+        width: 240px;
+        height: 240px;
+        border: 10px solid;
+        border-radius: 50%;
+        margin: 0 auto;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        background-color: #fff;
+        position: relative;
+        }
+        .wallwatch ol.number{
+
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        }
+        .wallwatch ol.number li{
+        width: auto;
+        height: auto;
+        line-height: initial;
+        position: absolute;
+        border: none;
+        color: #fa0000;
+        font-size: 26px;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        line-height: 1;
+        text-align: center;
+        transform-origin:50% 50%;
+        display: none;
+        }
+        .wallwatch ol.number li:nth-child(3){
+        transform: rotate(90deg);
+        display:block;
+        }
+        .wallwatch ol.number li:nth-child(3) span{
+         transform: rotate(-90deg);
+         display:block;
+        }
+        .wallwatch ol.number li:nth-child(6){
+        transform: rotate(180deg);
+        display:block;
+        }
+        .wallwatch ol.number li:nth-child(6) span{
+         transform: rotate(180deg);
+         display:block;
+        }
+        .wallwatch ol.number li:nth-child(9){
+        transform: rotate(270deg);
+        display:block;
+        }
+        .wallwatch ol.number li:nth-child(9) span{
+         transform: rotate(-270deg);
+         display:block;
+        }
+        .wallwatch ol.number li:nth-child(12){
+        transform: rotate(360deg);
+        display:block;
+        }
+
+        .wallwatch ol.hms{
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        }
+        .wallwatch ol.hms li{
+        width: 6px;
+        height: 50%;
+        border-radius: 0;
+        border: none;
+        position: absolute;
+        top: 0;
+        background-color: #333;
+        transform-origin: 3px 100%;
+        transform: scaleY(0.5);
+        }
+        .wallwatch ol.hms li.h{
+        width: 6px;
+        transform-origin: 3px 100%;
+        transform: rotate(0deg) scaleY(0.5);
+        }
+        .wallwatch ol.hms li.m{
+        width: 4px;
+        transform-origin: 2px 100%;
+        transform: rotate(10deg) scaleY(0.65);
+        }
+        .wallwatch ol.hms li.s{
+        width: 2px;
+        transform-origin: 1px 100%;
+        transform: rotate(100deg) scaleY(0.7);
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var year,month,date,day,hour,minute,second;
+            var dhour,dminute,dsecond;
+            var apm,kday;
+            var daybg=[];
+            var rhour,rminute,rsecond; // 회전시계
+
+            // 회전시계
+            var cDay=new Date();
+            hour=cDay.getHours();
+            minute=cDay.getMinutes();
+            second=cDay.getSeconds();
+            rhour=hour*15;
+            rminute=minute*6;
+            rsecond=second*6;
+            $(".s").css("transform","rotate("+rsecond+"deg) scaleY(0.8)");
+            $(".m").css("transform","rotate("+rminute+"deg) scaleY(0.6)");
+            $(".h").css("transform","rotate("+rhour+"deg) scaleY(0.4)")
+
+            countrepeat();
+            function countrepeat(){
+                var cDay=new Date();
+                year=cDay.getFullYear();
+                month=cDay.getMonth()+1;
+                date=cDay.getDate();
+                day=cDay.getDay();
+                hour=cDay.getHours();
+                minute=cDay.getMinutes();
+                second=cDay.getSeconds();
+                if(month<10){
+                    month="0"+month;
+                }
+                if(hour<10){
+                    hour="0"+hour;
+                }
+                //day값마다 지정될 요일
+                k=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+
+                //요일마다 변경될 이미지를 배열에 넣기
+                daybg[0]="https://images.unsplash.com/photo-1627483262268-9c2b5b2834b5?ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8Y29sb3JmdWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+                daybg[1]="https://images.unsplash.com/photo-1464820453369-31d2c0b651af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+                daybg[2]="https://images.unsplash.com/photo-1498940757830-82f7813bf178?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80";
+                daybg[3]="https://images.unsplash.com/photo-1526161955674-92d767589833?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80";
+                daybg[4]="https://images.unsplash.com/photo-1464692805480-a69dfaafdb0d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80";
+                daybg[5]="https://images.unsplash.com/photo-1509664158680-07c5032b51e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80";
+                daybg[6]="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80";
+
+                // 현재 시간
+                $(".current .year").text(year+"년");
+                $(".current .month").text(month+"월");
+                $(".current .date").text(date+"일");
+                $(".current .day").text(k[day]); //요일은 숫자값을 반환 일-0 . . . 토-6
+                $(".current .hour").text(hour+"시");
+                $(".current .minute").text(minute+"분");
+                $(".current .second").text(second+"초");
+
+                $("body").css("background-image","url("+daybg[day]+")");//요일마다 배경이미지 변경
+
+                // 남은 시간
+                dhour=23-hour;
+                dminute=59-minute;
+                dsecond=59-second;
+                if(dhour<10){
+                    dhour="0"+dhour;
+                }
+                if(dminute<10){
+                    dminute="0"+dminute;
+                }
+                if(dsecond<10){
+                    dsecond="0"+dsecond;
+                }
+                $(".count .hour").text(dhour+"시");
+                $(".count .minute").text(dminute+"분");
+                $(".count .second").text(dsecond+"초");
+
+                // clock
+                if(hour<12){
+                   apm="오전";
+                   $("body").css("background-color","red"); //오전배경색
+                }else{
+                   hour=hour%12;
+                   $(".clock .hour").text(hour+"시");
+                   apm="오후";
+                   $("body").css("background-color","gray");//오후배경색
+                }
+                $(".apm").text(apm); //
+
+                // 벽시계1번 - 초침은 1초마다 회전/분침은 1분마다 /시침은 1시간마다 움직임
+               /* second=second*6;
+                minute=minute*6;
+                hour=hour*30;
+                $(".s").css("transform","rotate("+second+"deg) scaleY(0.7)");
+                $(".m").css("transform","rotate("+minute+"deg) scaleY(0.7)");
+                $(".h").css("transform","rotate("+hour+"deg) scaleY(0.7)");
+                */
+
+                rsecond=second*6;
+                rminute=minute*6;
+                rhour=hour*30;
+
+                rsecond=second*6;
+                rminute=rminute+rsecond/60;
+                // rhour=rhour+rminute/720;
+
+                $(".s").css("transform","rotate("+rsecond+"deg) scaleY(0.8)");
+                $(".m").css("transform","rotate("+rminute+"deg) scaleY(0.6)");
+                $(".h").css("transform","rotate("+rhour+"deg) scaleY(0.4)");
+
+
+
+            }
+            setInterval(countrepeat,1000);
+        });
+    </script>
+</head>
+<body>
+    <div class="currentTime">
+        <h2>현재시간</h2>
+        <ol class="current">
+            <li class="year"></li>
+            <li class="month"></li>
+            <li class="date"></li>
+            <li class="hour"></li>
+            <li class="minute"></li>
+            <li class="second"></li>
+        </ol>
+    </div>
+    <div class="dday">
+        <h2>자정까지 시간</h2>
+        <ol class="count">
+            <li class="hour"></li>
+            <li class="minute"></li>
+            <li class="second"></li>
+        </ol>
+    </div>
+    <div class="clock">
+        <div class="a">
+            <span class="apm"></span>
+            <ol class="count">
+                <li class="hour"></li>
+                <li class="minute"></li>
+            </ol>
+        </div>
+        <div class="b">
+            <ol class="current">
+                <li class="month"></li>
+                <li class="date"></li>
+                <li class="day"></li>
+            </ol>
+        </div>
+    </div>
+    <div class="wallwatch">
+        <ol class="number">
+            <li>1</li>
+            <li>2</li>
+            <li><span>3</span></li>
+            <li>4</li>
+            <li>5</li>
+            <li><span>6</span></li>
+            <li>7</li>
+            <li>8</li>
+            <li><span>9</span></li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+        </ol>
+        <ol class="hms">
+            <li class="h"></li>
+            <li class="m"></li>
+            <li class="s"></li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

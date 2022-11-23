@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>title-fade</title>
+
+<!--<script>
+		function fadei(){
+				var nowimg=$("div.fadeShow img:eq(0)");
+				var nextimg=$("div.fadeShow img:eq(1)");
+				$(nextimg).addClass("active")
+				.css({"opacity":"0","left":"100px"})
+				.animate({"opacity":"1","left":"0px"},1900, function(){
+					$("div.fadeShow").append(nowimg);
+					$(nowimg).removeClass("active");
+					}
+					);
+					
+				var current=$("ul.multi li:eq(0)");
+				var next=$("ul.multi li:eq(1)");
+				$(next).addClass("topli")	;
+				$(current).removeClass("topli");
+				$("ul.multi").append(current);
+			}
+
+				$("ul.alone li:not('.topli')").hide();
+				var timer=setInterval("fadei()",3000);
+
+	</script>-->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+#box_wrap{
+	margin:50px auto;
+	padding:0;
+	width:600px;
+	background:#192839;
+}
+
+.fadeShow{
+	position:relative;
+	background:#666;
+	width:600px;
+	height:350px;
+	border:2px solid #fdf6dd;	
+	overflow:hidden;
+}
+
+.fadeShow img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.fadeShow .active{
+	z-index:1;
+}
+ul{
+	list-style:none;
+	}
+ul.multi{
+	position:absolute;
+	top:0px;
+	}
+	ul.multi li{
+		float:left;
+		padding:0 10px;
+		}
+	.topli{
+		font-size:26px;
+		margin:0 0 10px 0;
+		font-weight:bold;
+		background:#CCC;
+		}
+</style>
+</head>
+
+<body>
+   <div id="box_wrap">
+       <ul class="multi">
+          <li class="topli">작품1</li>
+          <li>작품2</li>
+          <li>작품3</li>
+       </ul>
+       <div class="fadeShow">
+           <img class='active' src='images/1/slide1.jpg' alt='image1' />
+           <img src="images/1/slide2.jpg" alt="image2" />
+           <img src="images/1/slide3.jpg" alt="image3" />
+       </div>
+   </div>
+   
+
+   <script>
+		function fadei(){
+			var nowimg=$("div.fadeShow img:eq(0)");
+			var nextimg=$("div.fadeShow img:eq(1)");
+			$(nextimg).addClass("active")
+			.css({"opacity":"0","left":"100px"})
+			.animate({"opacity":"1","left":"0px"},1900, function(){
+				$("div.fadeShow").append(nowimg);
+				$(nowimg).removeClass("active");
+				}
+				);
+				
+			//var current=$("ul.multi li:eq(0)");
+//			var next=$("ul.multi li:eq(1)");
+//			$(next).addClass("topli")	;
+//			$(current).removeClass("topli");
+//			$("ul.multi").append(current);
+//			
+//			var current2=$("ul.alone li:eq(0)");
+//			var next2=$("ul.alone li:eq(1)");
+//			$(next2).addClass("topli").show()	;
+//			$(current2).removeClass("topli").hide();
+//			$("ul.alone").append(current2);
+//			
+		}
+//			
+//		$("ul.alone li:not('.topli')").hide();
+		var timer=setInterval("fadei()",3000);
+
+	</script>
+</body>
+</html>

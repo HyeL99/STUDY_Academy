@@ -1,0 +1,659 @@
+.content{
+}
+.content #news{
+  width: 100%;
+} 
+.content #news .w1200{
+  width: 1760px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content #news .w1200 .nin{
+  
+}
+.content #news .w1200 .jd{
+  
+  width: 480px;
+  height: 380px;
+  background-color: #f4f4f9;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.content #news .w1200 .jd h2{
+  padding-top: 35px;
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: #333;
+}
+.content #news .w1200 .jd h2::before{
+  content: "ㅡ";
+  width: 50px;
+  height: 2px;
+  display: block;
+  color: #000;
+  transform: scaleX(3);
+  margin: 0 auto; 
+  margin-bottom: 20px;
+}
+.content #news .w1200 .jd h3{
+  margin-top: 20px;
+  font-size: 28px;
+  color: #333;
+  letter-spacing:-2px;
+}
+.content #news .w1200 .jd p{
+  margin-top: 30px;
+  color: #8b8b8b;
+}
+.content #news .w1200 .jd>a{
+  
+}
+.content #news .w1200 .jd>a::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #bebed3;
+}
+.content #news .w1200 .jd>a::after{
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #bebed3;
+}
+
+.content #news .w1200 .jd .list{
+  
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 50px;
+}
+.active{
+  background-color: #41478f;
+  position: relative;
+  right: -30px;
+}
+.content #news .w1200 .jd .list li{
+  border-bottom: 1px solid #e1e1e1;
+  width: 120px;
+  height: 50px;
+  line-height: 3.5;
+}
+.content #news .w1200 .jd .list li a{
+  transition: 0.5s all;
+  color: #000;
+}
+.content #news .w1200 .jd .list li.active a{
+  color: #fff;
+}
+.content #news .w1200 .white{
+  
+  width: 1280px;
+  float: left;
+  height: 380px;
+  background-color: #f9fafa;
+  /*! overflow: hidden; */
+}
+
+.content #news .w1200 .white .notice{
+  
+  /*! width: 300px; */
+  /*! height: 380px; */
+  /*! margin: 25px; */
+  /*! display: inline-block; */
+}
+.content #news .w1200 .white .sub1{
+}
+
+
+.content #news .w1200 .white .notice h2{
+
+  display: none;
+}
+.content #news .w1200 .white .notice .detail{
+  
+  display: ;
+}
+
+.content #news .w1200 .white .notice .no{
+  
+  display: none;
+}
+.content #news .w1200 .white .sub1>.detail{
+  
+  /*! float: left; */
+}
+.content #news .w1200 .white .notice .detail li{
+  
+  float: left;
+  /*! vertical-align: top; */
+  width: 30%;
+  position: relative;
+  margin: 20px 10px;
+}
+.content #news .w1200 .white .notice .detail li a{
+  
+  /*! display: inline-block; */
+  /*! width: 350px; */
+ 
+}
+
+.content #news .w1200 .white .notice .detail li a h3{
+  margin: 40px 0px 25px 40px;
+  height: 40px;
+  width: 310px;
+  display: inline-block; 
+  position: relative;
+}
+.content #news .w1200 .white .notice .detail li a h3 i{
+  color: #000;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: bold;
+  text-align: left;
+  
+  font-style: unset;
+}
+.content #news .w1200 .white .notice .detail li a h3 i:hover{
+   box-shadow: 0 -10px 0 rgba(246,191,209,0.7) inset;
+}
+
+/* .content #news .w1200 .white .notice .detail li a h3:after{
+  content:"";
+  width: 0;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  bottom:20px;
+  left:-7px;
+
+} */
+.content #news .w1200 .white .notice .detail li a h3:hover:after{
+  background-color:rgba(246,191,209,0.7);
+  width: 100%;
+  z-index: -1
+  transition: 0.5s all;
+}
+
+.content #news .w1200 .white .notice .detail li a>span{
+  overflow: hidden;
+  /*! display: inline-block; */
+  white-space: normal; 
+  line-height: 1.2;
+  height: 3.6em; 
+  /*! text-align: left; */ 
+  word-wrap: break-word; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-indent: 30px;
+  width: 350px;
+  color: #000;
+}
+.content #news .w1200 .white .notice .detail li a span>span{
+  
+  display: inline-block;
+  width: 30px;
+}
+.content #news .w1200 .white .notice .detail li:nth-child(2) a p:nth-of-type(1){
+  
+  /*! text-indent: 30px; */
+}
+.content #news .w1200 .white .notice .detail li+li a p:nth-of-type(1){
+  
+  color: #666;
+  margin-left: 30px;
+}
+.content #news .w1200 .white .notice .detail li a p:nth-of-type(1){
+  
+  position: absolute;
+  bottom: -120px;
+  color: #666;
+  margin-left: 30px;
+}
+.content #news .w1200 .white .notice .detail li a p:nth-of-type(2){
+  
+  /*! color: #9a9a9a; */
+  /*! margin-top: 50px; */
+}
+/* 행사일정*/
+
+.content .schedule{
+  
+  margin: 0 auto;
+  width: 1760px;
+}
+.content .schedule .center{
+  
+  width: 100%;
+  overflow: hidden;
+}
+
+.content .schedule .center .event{
+  
+  width: 480px;
+  float: left;
+  overflow: hidden;
+  height: 380px;
+}
+.content .schedule .center .event h2{
+  margin-top: 80px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #333;
+  text-align: center;
+}
+.content .schedule .center .event h2:before{
+  
+  content: "ㅡ";
+  width: 50px;
+  height: 2px;
+  display: block;
+  color: #000;
+  transform: scaleX(3);
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.content .schedule .center .event h3{
+  
+  margin-top: 20px;
+  font-size: 28px;
+  color: #333;
+  letter-spacing: -2px;
+  text-align: center;
+}
+.content .schedule .center .event p{
+  margin-top: 30px;
+  color: #8b8b8b;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.content .schedule .center span{
+  
+  float: left;
+  width: 400px;
+  height: 380px;
+  text-align: center;
+  color: #8b8b8b;
+  padding-top: 180px;
+  box-sizing: border-box;
+}
+.content .schedule .center .banner{
+  
+  width: 880px;
+  float: left;
+  height: 380px;
+  background-color: #f6f1f2;
+  position: relative;
+}
+
+.content .schedule .center .banner .banner-left{
+  float: left;
+  height: 100%;
+  position: relative;
+}
+.content .schedule .center .banner .banner-right{
+  width: 540px;
+  height: 285px;
+  overflow: hidden;
+  margin-top: 60px;
+}
+.content .schedule .center  .banner .banner-right ul{
+  width: 2800px;
+  /*! height: 285px; */
+  position: relative;
+}
+.content .schedule .center  .banner .banner-right ul li{
+  
+  float: left;
+  margin-left: 20px;
+}
+
+.content .schedule .center  .banner .banner-right ul li a{
+  
+  /*! vertical-align: top; */
+}
+.content .schedule .center  .banner .banner-right ul li a img{
+  
+}
+.content .schedule .center  .banner h2{
+  
+  margin: 60px 0 30px 50px;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+.content .schedule .center  .banner h2::before{
+ content: "ㅡ";
+  width: 50px;
+  height: 2px;
+  display: block;
+  color: #000;
+  transform: scaleX(5);
+  margin-bottom: 20px;
+ margin-left: 90px;
+}
+.content .schedule .center  .banner h3{
+  
+  margin-left: 50px;
+  font-size: 27px;
+  font-weight: bold;
+}
+.content .schedule .center .banner .prebt{
+height: 66px;
+position: absolute;
+bottom: 36px;
+left: -36px;
+}
+.content .schedule .center .banner .prebt p{
+  display: block;
+  width: 95px;
+  height: 100%;
+  float: left;
+  background-color: #d84351;
+  background-position-y: 50%;
+}
+.content .schedule .center .banner .prebt p:hover{
+  background-color: #c03441;
+  
+}
+.content .schedule .center .banner .prebt p.pre{
+  border-right: 1px solid rgba(229,79,93,0.5);
+  background-image: url(../img/dir2.png);
+  background-repeat: no-repeat;
+}
+.content .schedule .center .banner .prebt p.next{
+  background-image: url(../img/dir.png);
+  background-repeat: no-repeat;
+  
+}
+
+
+/* 알림존 */
+
+
+/* 독도라이브 */
+.content .live{
+  
+  width: 1760px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content .live div{
+  
+  width: 440px;
+  height: 530px;
+  float: left;
+}
+.content .live h2{
+  
+  font-size: 23px;
+}
+.content .live .live1{
+  
+  background-color: #41478f;
+}
+.content .live div.live2{
+  
+  background-image: url(http://www.koreadokdo.or.kr/images/main/bg_live.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  position: relative;
+}
+.content .live div.live3{
+  
+  width: 340px;
+}
+.content .live div.live4{
+  width: 540px;
+  position: relative;
+  background-image: url(http://www.koreadokdo.or.kr/images/main/bg_road.gif);
+  background-repeat: no-repeat;
+  background-position-y: 342px;
+  overflow: hidden;
+}
+
+
+.content .live div.live4>a{
+  display: block;
+  width: 100px; 
+  height: 65px;
+  float: right;
+  background-color: #27272f;
+}
+.content .live div.live4>a::before{
+  content: "";
+  display: block;
+  background-image: url(../img/dir3.png);
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 29px;
+  margin: 0 auto;
+  margin-top: calc(29px /2 );
+}
+.content .live div.live4>a:hover::before{
+  transform: translateX(20px);
+}
+.content .live div.live4>a::after{
+ content: "";
+ background-image: url(http://www.koreadokdo.or.kr/images/main/img_road01.png);
+ display: block;
+ width: 232px;
+ height: 98px;
+ position: absolute;
+ bottom: 32%;
+ left: 30px;
+}
+.content .live div.live4 h2{
+  
+  color: #27272f;
+  padding: 50px 0 20px 20px;
+}
+.content .live div.live4 p{
+  
+  color: #666;
+  margin: 20px;
+  line-height: 1.4;
+  /*! margin-bottom: 115px; */
+}
+
+.content .live div.live4 span{
+  
+
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: #fff;
+}
+
+.content .live div.live4 span a{
+  display: block;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #fff;
+}
+.content .live div.live3 .color{
+  background-color: #d84351;
+  width: 100%;
+  height: 190px;
+  position: relative;
+  /*! bottom: 24px; */
+}
+.content .live div.live3 .color:after{
+  content: "";
+  background-image: url(../img/dir3.png);
+  display: block;
+  width: 70px;
+  height: 29px;
+  position: absolute;
+  right: 0;
+}
+.content .live div.live3 .ebook{
+  
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-top: 1px solid #e95563;
+}
+.content .live div.live3 .ebook a{
+  
+  color: #fff;
+  width: 50%;
+  display: block;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  line-height: 3;
+}
+.content .live div.live3 .ebook a:hover{
+  background-color: #c03441;
+}
+.content .live div.live3 .ebook a+a{
+  border-left: 1px solid #e95563;
+}
+
+.content .live div.live3 h2{
+  
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 50px 55px 0;
+}
+.content .live div.live3 h2::before{
+  content: "ㅡ";
+  width: 50px;
+  height: 2px;
+  display: block;
+  color: #000;
+  transform: scaleX(6);
+  margin-bottom: 20px;
+  margin-left: 120px;
+}
+.content .live div.live3 h3{
+  
+  font-size: 28px;
+  margin: 20px 50px;
+  letter-spacing: -1px;
+}
+.content .live >div.live3> span{
+  
+  position: relative;
+  z-index: 2;
+  bottom: -80px;
+}
+.content .live div.live3  span a{
+  
+}
+.content .live div.live3 span a img{width: 165px;position: absolute;top: -34px;z-index: 2;left: 90px;}
+.content .live div.live3  span p{
+  
+  color: #fff;
+}
+.content .live div.live3 span a p:nth-child(2){
+  
+  margin-top: 135px;
+  /*! padding: 22px; */
+}
+.content .live div.live3 span a p:nth-child(3){
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: -12px;
+}
+.content .live div >.box{
+  
+  width: 240px;
+  height: 250px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+.content .live div > .box h2{
+  
+  margin-bottom: 20px;
+  color: #41478f;
+}
+.content .live div > .box p{
+  
+}
+.content .live div > .box p i{
+  
+  color: #41478f;
+}
+.content .live div > .box p:nth-of-type(1){
+  
+  margin-bottom: 20px;
+}
+.content .live div > .box p:nth-of-type(2){}
+.content .live .live1 h2{
+  
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content .live .live1 h2::before{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image:url(../img/live.png);
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.content .live .live1 img{
+  
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 30px;
+  height: 240px;
+}
+.content .live>div:nth-child(1) p{
+  
+  color: #fff;
+  text-align: center;
+}
+/*  배너 */
+.content .logo{
+  
+}
+.content .logo .btcontrol{
+  
+}
+.content .logo .btcontrol a{
+  display: block;
+}
+.content .logo .btcontrol a:nth-child(1){
+  
+}
+.content .logo .btcontrol a:nth-child(2){
+  
+}
+.content .logo .btcontrol a:nth-child(3){
+  
+}
+.content .logo .center{
+  
+}
+.content .logo ul.bannerautoplay{
+  
+  height: 150px;
+}
+.content .logo ul.bannerautoplay li{
+  
+}
+.content .logo ul.bannerautoplay li a{
+  
+}
+.content .logo ul.bannerautoplay li a img{
+  
+}

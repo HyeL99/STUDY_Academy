@@ -1,0 +1,188 @@
+@charset "UTF-8";
+#About {
+  margin-top: 70px;  
+  width: 100%;
+  height: 900px;
+}
+#About .w1200{  
+  max-width: 992px;
+  margin: 0 auto;
+  border-radius: 3%;
+  border: 1px solid #e2e2ee;
+  height: 700px;
+  background-color: #e2e2ee; 
+}
+#About .w1200 h2{  
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #0d132b;
+}
+#About .w1200 h2::after{
+    content: "";
+  width: 500px;
+  height: 500px;
+  border: 1px solid #d4d4ee;
+  background-color: #d4d4ee;
+  border-radius: 50%;
+  display: block;
+  margin-top: 70px;
+  margin-left: 250px;
+  position: absolute;
+  background-position-x: center;
+}
+#About .w1200 .wphone{
+  width: 280px;
+  margin: 0 auto;
+}
+#About .w1200 .phone{
+  width: 280px;
+  height: 533px;
+  border: 1px solid #4b49eb;
+  background-color: #4b49eb;
+  border-radius: 30px;
+  margin-top: 33px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#About .w1200 .p1 h3{
+  
+  text-align: center;
+  margin-top: 72px;
+  font-size: xx-large;
+  color: #fff;
+  font-weight: bold;
+}
+#About .w1200 .p1 p{
+ 
+  text-align: center;
+  margin-top: 263px;
+  color: #fff;
+  font-weight: bold;
+  font-size: xx-large;
+}
+#About .w1200 .p2{
+  
+}
+#About .w1200 .p2 h3{
+  
+  text-align: center;
+  margin-top: 72px;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+#About .w1200 .p2 ul{
+  
+  margin-top: 70px;
+}
+#About .w1200 .p2 ul li{  
+  text-align: center;
+  line-height: 4;
+  color: #fff;
+  font-weight: bold;  
+  font-size: 15px;
+}
+#About .w1200 .p3{
+  
+}
+#About .w1200 .p3 h3{
+  
+  text-align: center;
+  margin-top: 72px;
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+}
+#About .w1200 .p3 ul{
+  margin-top: 70px;
+}
+#About .w1200 .p3 ul li{
+    text-align: center;
+  line-height: 4;
+  color: #fff;
+  font-weight: bold;
+    font-size: 18px;
+}
+#Portfolio {  
+  width: 100%;
+  height: 900px;
+}
+#Portfolio .wPortfolio{  
+  background-image: url(../img/br.jpg);
+  width: 1200px;
+  height: 730px;
+  margin: 0 auto;
+  position: relative;
+}
+#Portfolio .wPortfolio h2{
+  color: #fff;
+  font-size: 40px;
+  float: left;
+  margin-left: 50px;
+  font-weight: bold;
+}
+#Portfolio .wPortfolio ul{  
+  margin-right: 85px;
+  padding-top: 30px;
+}
+#Portfolio .wPortfolio ul li{ 
+  float: right;
+  padding: 0 20px;
+  font-weight: bold;
+}
+#Portfolio .wPortfolio ul li a{
+  
+}
+#Portfolio .wPortfolio .imges{ 
+  width: 1000px;
+  height: 550px;
+  margin: 0 auto;
+  position: absolute;
+  top: 87px;
+  left: 96px;
+  overflow: hidden;
+}
+#Portfolio .wPortfolio .imges .imge_list{
+  position: absolute;
+  animation-name: vertical_ani;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear ;
+  animation-iteration-count: 1;
+  top:0;
+}
+@keyframes vertical_ani{
+  100%{
+    top: -3300px;
+  }
+}
+#Portfolio .wPortfolio .imges .imge_list:hover{
+animation-play-state: paused;
+
+}
+.stop{
+ animation-play-state: paused; 
+}
+.play{
+ animation-play-state: running ; 
+}
+.reverse{
+  animation-direction: reverse ;
+}
+
+#Portfolio .wPortfolio .imges .imge_list img{
+  
+}
+span.pcontrol{
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  }
+span.pcontrol a{
+  background-color: red;
+  padding: 10px;
+  color: #fff;
+}

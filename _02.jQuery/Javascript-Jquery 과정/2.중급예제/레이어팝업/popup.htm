@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>레이어팝업</TITLE>
+  <style type="text/css">
+    #pop{
+      width:405px; height:325px; background:#000; 
+      position:absolute;z-index:999; top:10px; left:480px; text-align:center; 
+    }
+    #pop a{color:#fff;text-decoration:none;}
+    #pop a:hover{color:#fff;text-decoration:underline;}
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+      $('.close').click(function() {
+        $('#pop').hide();
+      });
+    });
+ </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.close2').click(function() {
+        $('#pop2').hide();
+      });
+    });
+ </script>
+ <style>
+   table{
+    width: 800px;
+    margin:0 auto;
+    border: 1px solid;
+    border-collapse: collapse;
+   }
+   tr{
+
+   }
+   th,td{
+    border: 1px solid;
+   }
+ </style>
+ </HEAD>
+ <BODY>
+
+  <!-- <div id="pop"> -->
+    <!-- <table border="0" width="400" cellpadding="0" >
+      <tr>
+        <td>
+          <img src="pop.jpg" width="400" height="300" border="0">
+        </td>
+      </tr>
+      <tr>
+        <td align="right">
+          <a href="javascript:;" onclick="close_divpop('divpop_frm', 'divpop')"><b><span class="close">닫기</span></b></a>
+        </td>
+      </tr>
+    </table> -->
+
+    <table>
+      <caption>서울경기지역 연령별 거주현황</caption>
+      <thead>
+        <tr>
+          <th>학교</th><th>창립년도</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>서울대학교</td><td>1976</td>
+        </tr>
+        <tr>
+          <td>경기대학교</td><td>1986</td>
+        </tr>
+      </tbody>
+    </table>
+  <!-- </div> -->
+ </BODY>
+</HTML>

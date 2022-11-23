@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*grid-area
+        그리드 각 영역에 이름을 붙여서 배치하는 방법
+        label과 비슷한 방법이며 column이 차지할 영역만큼 이름을 넣어주면 된다.
+        빈칸으로 표시해야 하거나 할때는 마침표 또는 none을 표시한다.
+        
+        */
+        div.container{
+            display: grid;
+            gap: 20px;
+            grid-template-columns:1fr 3fr 1fr;
+            grid-template-areas:
+            'header header header'
+            'sideA content sideB'
+            '... footer footer'
+
+        }
+        div.item{
+            border: solid 3px black;
+            background-color: coral;
+
+        }
+
+        div.header{grid-area: header;}
+        div.sideA{grid-area: sideA;}
+        div.sideB{grid-area: sideB;}
+        div.content{grid-area: content;}
+        div.footer{grid-area: footer;}
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class=" header item">header</div>
+        <div class="sideA item">aside</div>
+        <div class="sideB item">bside</div>
+        <div class="content item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore consequatur maxime ipsa in magnam sit quis dolorum. Quaerat quo deserunt eligendi ad incidunt, facilis nostrum sunt, earum aut perferendis ipsam atque commodi cupiditate explicabo accusamus at est? Odit corporis ad recusandae atque repellendus, ipsum consequuntur maiores est velit fugiat eveniet!</div>
+        <div class="footer item">footer</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(document).ready(	
+		
+		function(){//-------------------------------------------
+			//영문버튼을 클릭하면 실행해라
+			$("button.en").click(
+				function(){
+					//li의 안의 한글텍스트를 영문텍스트로 배치하시오
+					$("li:eq(0) a").text("company");
+					$("li:eq(0) a").attr("href","en/1.html");
+					$("li:eq(1) a").text("product");
+					$("li:eq(1) a").attr("href","en/2.html");
+					$("li:eq(2) a").text("customer");
+					$("li:eq(2) a").attr("href","en/3.html");
+				}
+			);
+			//영문버튼을 클릭하면 실행해라
+			$("button.ko").click(
+				function(){
+					//li의 안의 한글텍스트를 영문텍스트로 배치하시오
+					$("li:eq(0) a").text("회사소개");
+					$("li:eq(0) a").attr("href","ko/1.html");
+					$("li:eq(1) a").text("제품소개");
+					$("li:eq(1) a").attr("href","ko/2.html");
+					$("li:eq(2) a").text("고객센타");
+					$("li:eq(2) a").attr("href","ko/3.html");
+				}
+			);
+			
+			//갤러리tab ----------------------------------------
+			$("div#gallery ul li:eq(0)").addClass("bg");
+			$("div#gallery ul li:eq(0)").siblings().children("p").hide();
+			$("div#gallery ul li h3").hover(
+				function(){
+					//$(this).next().show();
+					$(this).next().fadeIn(500);//이미지페이드인
+					$(this).parent().addClass("bg"); //제목배경지정
+					$(this).parent().siblings().children("p").hide(); // 다른 li이미지 감추기
+					$(this).parent().siblings().removeClass("bg"); //다른제목배경해제
+				}
+			);	
+			// 갤러리 이미지오버시 페이드처리
+			$("div#gallery ul li p.ex").hide();
+			$("div#gallery ul li h3").hover(
+				function(){
+					$(this).next("img").fadeTo(500,0);
+					//$(this).children("p.ex").show();
+					
+				},
+				function(){
+					$(this).children("p.img").fadeTo(500,1);
+					$(this).children("p.ex").hide();
+				}
+			);
+			
+			
+			
+			// 4번 이미지 슬라이드 -----------------------------
+			var movex=0;  // 변수(그릇) 지정 . 변수movex안에 0값을 넣음
+			                     // 폴더 c드라이브안에 0을 넣어라
+			$("div#wslide p.next").click(
+				function(){
+					// 00을 애니메이트시켜라...
+					if(movex==2){ // ==은 같다
+					
+					}else{ //그렇치 않다면
+						movex+=1; //  movex=movex+1 과 동일 ,변수movex안에 1을 추가하라
+						$("div#wslide div ul").animate({"left":-400*movex},2000);
+					}
+				}
+			);
+			
+			$("div#wslide p.prev").click(
+				function(){
+					// 00을 애니메이트시켜라...
+					if(movex==0){ // ==은 같다
+					
+					}else{ //그렇치 않다면
+						movex-=1; //  movex=movex+1 과 동일 ,변수movex안에 1을 추가하라
+						$("div#wslide div ul").animate({"left":-400*movex},2000);
+					}
+				}
+			);
+			
+			// 수직갤러리 애니
+			/*$("div#wslide2>ul>li:eq(0)").click(
+				function(){
+					$("div#slide2 ul").animate({"top":"0px"},1000);
+				}
+			);
+			$("div#wslide2>ul>li:eq(1)").click(
+				function(){
+					$("div#slide2 ul").animate({"top":"-249px"},1000);
+				}
+			);
+			$("div#wslide2>ul>li:eq(2)").click(
+				function(){
+					$("div#slide2 ul").animate({"top":"-498px"},1000);
+				}
+			);*/
+			var my=0;
+			$("div#wslide2>ul>li").click(
+				function(){
+					my=$(this).attr("data-y"); // 클릭한 li의 속성 data-y의 값을 my에 넣어라
+					$("div#slide2 ul").animate({"top":-249*my},1000,"easeInOutBounce");
+				}
+			);
+		}//------------------------------------------------------------------------------------	
+	);
+</script>
+<script type="text/javascript" src="easing/jquery.easing.1.3.js"></script>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		font-family: 'notokr-demilight';
+		}
+	body{
+		padding: 0 0 100px 0;
+		}
+	ul{
+		list-style:none;
+		}
+	a{
+		text-decoration:none;
+		color:#666;
+		}
+	h1{
+		font-size:25px;
+		}
+	div#wrap{
+		width:500px;
+		margin:40px auto 0;
+		font-family: 'notokr-demilight';
+		overflow:hidden;
+		}
+	div#wrap ul{
+		list-style:none;
+		background:#CCC;
+		overflow:hidden;
+		width:320px;
+		float:left;
+		}
+		div#wrap ul li{
+			float:left;
+			border-right:1px solid #666;
+			text-align:center;
+			}
+			div#wrap ul li:last-child{
+				border:none;
+				}
+			div#wrap ul li a{
+				display:block;
+				padding:5px 20px;
+				text-decoration:none;
+				color:#333;
+				}
+		div.button{
+			float:right;
+			}
+			div.button button{
+				display:block;
+				background:none;
+				border:none;
+				cursor:pointer;
+				font-size:11px;
+				font-family: 'notokr-demilight';
+				}
+		div#gallery{
+			width:500px;
+			height:500px;
+			margin:100px auto 0;
+			}
+			div#gallery h2{
+				float:left;
+				}
+			div#gallery ul{
+				float:right;
+				position:relative;
+				width:400px;
+				height:500px;
+				}
+				div#gallery ul li{
+					float:left;
+					width:25%;
+					text-align:center;
+					cursor:pointer;
+					transition:all 0.5s;
+					}
+					div#gallery ul li:hover{
+						color:#F60;
+						}
+					.bg{
+						background:#CCC;
+						}
+					div#gallery ul li h3+p{
+						position:absolute;
+						left:0;
+						width:400px;
+						height:400px
+						}
+					div#gallery ul li p.ex{
+						position:absolute;
+						left:0;
+						bottom:100px;
+						width:100%;
+						background:rgba(212,85,85,0.6); /*red green blue alpha*/
+						color:#FFF;
+						/*opacity:0.5;*/
+						}
+						div#gallery ul li p img{
+							border:1px solid gray;
+							width:100%;
+							height:100%;
+							}
+				/*  3번 서브메뉴 */
+				div#submenu{
+					width:500px;
+					height:400px;
+					margin:0 auto;
+					}
+					div#submenu>ul{
+						background:#F3F3F3;
+						border-radius:0 0 5px 5px;
+						width:120px;
+						padding: 8px 8px 25px 8px;
+						}
+					div#submenu h1{
+						margin:0 0 20px 0;
+						}
+					div#submenu h2{
+						font-size:14px;
+						}
+						div#submenu h2 i{
+							font-size:11px;
+							margin:0 0 0 5px;
+							}
+						div#submenu>ul>li{
+							border-bottom:1px #999999 dotted;
+							line-height:1.9em;
+							}
+						div#submenu>ul>li:last-child{
+							border:none;
+							}
+							div#submenu ul li ul{
+								margin:0 0 6px 8px;
+								}
+								div#submenu>ul>li ul li{
+									line-height:1.2em;}
+								div#submenu ul li ul li a{
+									font-size:12px;
+									}
+						/* 4 이미지 슬라이드 */
+						div#wslide{
+							width:500px;
+							margin:0 auto;
+							position:relative;
+							}
+							div#wslide h1{
+								margin:0 0 20px 0;
+								}
+							div#slide{
+								width:400px;
+								height:265px;
+								margin:0 auto;
+								overflow:hidden;
+								position:relative;
+								}
+								div#slide ul{
+									width:1200px;
+									position:absolute;
+									left:0;
+									top:0;
+									}
+									div#slide ul li{
+										float:left;
+										}
+							div#wslide p i{
+								font-size:50px;
+								color:#999;
+								cursor:pointer;
+								}
+							div#wslide p.next{
+								position:absolute;
+								right:0;
+								top:50%;
+								}
+							div#wslide p.prev{
+								position:absolute;
+								left:0;
+								top:50%;
+								}
+				/* 수직갤러리 */
+						div#wslide2{
+							width:500px;
+							margin:100px auto 0;
+							position:relative;
+							}
+							div#wslide2 h1{
+								margin:0 0 20px 0;
+								font-size:20px;
+								}
+							div#wslide2>ul>li{
+								border-bottom:1px dotted #ccc;
+								width:60px;
+								font-size:12px;
+								line-height:2em;
+								cursor:pointer;
+								transition:color 0.5s;
+								}
+							div#wslide2>ul>li:hover{
+								color:#F00;
+								}
+							div#slide2{
+								width:379px;
+								height:249px;
+								margin:0 auto;
+								overflow:hidden;
+								position:absolute;
+								right:0;
+								top:0;
+								}
+								div#slide2 ul{
+									position:absolute;
+									left:0;
+									top:0;
+									}
+									div#slide2 ul li{
+										
+										}
+									div#slide2 ul li img{
+										vertical-align:top;
+										}
+</style>
+<link href="css/bonGothic.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome-4.6.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="wrap">
+        <div class="button">
+            <button class="ko">한글</button>
+            <button class="en">영문</button>
+        </div>
+        <ul>
+            <li><a href="ko/1.html">회사소개</a></li>
+            <li><a href="ko/2.html">제품소개</a></li>
+            <li><a href="ko/3.html">고객센타</a></li>
+        </ul>
+    </div>
+    <div id="gallery">
+        <h2>갤러리</h2>
+        <ul>
+            <li>
+                <h3>작품1</h3>
+                <p class="img"><img src="img/1.png" /></p>
+                <p class="ex">작품1번은 포토샵으로 제작하였으며........<a href="#">상세보기</a></p>
+            </li>
+            <li>
+                <h3>작품2</h3>
+                <p class="img"><img src="img/2.png" /></p>
+                <p class="ex">작품2번은 포토샵으로 제작하였으며........<a href="#">상세보기</a></p>
+            </li>
+            <li>
+                <h3>작품3</h3>
+                <p class="img"><img src="img/3.png" /></p>
+                <p class="ex">작품3번은 포토샵으로 제작하였으며........<a href="#">상세보기</a></p>
+            </li>
+            <li>
+                <h3>작품4</h3>
+                <p class="img"><img src="img/4.png" /></p>
+                <p class="ex">작품4번은 포토샵으로 제작하였으며........<a href="#">상세보기</a></p>
+            </li>
+        </ul>
+    </div>
+    <div id="submenu">
+    	<h1>서브메뉴애니</h1>
+    	<ul class="menu">
+                <li>
+                    <h2><a href="sub.html">메인 올섹션</a></h2>
+                </li>
+                <li>
+                    <h2><a href="sub.html">메인 활용</a></h2>
+                    <ul>
+                        <li><a href="sub.html">메인 스타일 A</a></li>
+                        <li><a href="sub.html">메인 스타일 B</a></li>
+                        <li><a href="sub.html">메인 스타일 C </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="sub.html">메인 영상</a></h2>
+                </li>
+                <li>
+                    <h2><a href="sub.html">메인 박스</a></h2>
+                    <ul>
+                        <li><a href="sub.html">메인 스타일</a></li>
+                        <li><a href="sub.html">서브 스타일</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="sub.html">문서 스킨</a></h2>
+                    <ul>
+                        <li><a href="sub.html">2차 메뉴</a></li>
+                        <li><a href="sub.html">2차 메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="sub.html">게시판</a></h2>
+                </li>
+            </ul>
+    </div>
+    <div id="wslide">
+    	<h1>이미지 슬라이드</h1>
+        <div id="slide">
+            <ul>
+                <li><img src="img/slide1.jpg" alt="" /></li>
+                <li><img src="img/slide2.jpg" alt="" /></li>
+                <li><img src="img/slide3.jpg" alt="" /></li>
+            </ul>
+        </div>
+        <p class="next"><i class="fa fa-caret-right" aria-hidden="true"></i></p>
+        <p class="prev"><i class="fa fa-caret-left" aria-hidden="true"></i></p>
+    </div>
+    <!-- 수직갤러리2 -->
+    <div id="wslide2">
+    	<h1>작품갤러리</h1>
+        <ul>
+        	<li data-y="0">작품1</li>
+            <li data-y="1">작품2</li>
+            <li data-y="2">작품3</li>
+        </ul>
+        <div id="slide2">
+            <ul>
+                <li><img src="img/up1.jpg" alt="" /></li>
+                <li><img src="img/up2.jpg" alt="" /></li>
+                <li><img src="img/up3.jpg" alt="" /></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+		//본문하단에 배치할때는 $(document).ready();를 생략할 수 있다
+		$("ul.menu li").has("ul").children("h2").append("<i class='fa fa-caret-down' aria-hidden='true'></i>");
+		//서브ul을 hide하시오
+		$("ul.menu li ul").hide();
+		// 서브ul을 가진 li를 클릭하면 실행하시오(서브ul을 slideDown)
+		$("ul.menu>li").click(
+			function(){
+				return false;
+			}
+		);
+		$("ul.menu li").has("ul").click(
+			function(){
+				$(this).children("ul").slideToggle(500);
+				$(this).siblings().children("ul").slideUp(500);
+				return false;
+			}
+		);
+		
+	</script>
+</body>
+</html>

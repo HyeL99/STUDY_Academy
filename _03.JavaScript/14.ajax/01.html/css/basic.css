@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* 모든 태그의 고유 마진과 패딩 삭제 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+/* html5에서 추가된 시멘틱 태그 */
+header, main, footer, nav, section, aside, article, menu, details, figure, figcaption{
+    display: block;
+}
+/* 앞에 찍힌 점 삭제 */
+ul, li {
+    list-style: none;
+}
+/* 언더라인 및 텍스트 컬러 삭제 */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* html5에서 추가된 시멘틱 태그 */
+header, main, footer, nav, section, aside, article, menu, details, figure, figcaption{
+    display: block;
+}
+/* 옛날 버전에서는 이미지에 링크를 걸면 보더가 생기기 때문에 삭제 */
+img {
+    border: 0;
+    vertical-align: middle;
+}
+body {
+    font-family: 'Noto Sans KR', '맑은고딕',sans-serif;
+    width: 960px;
+    margin: auto;
+    color: #666;
+}
+
+header {
+    height: 120px;
+    border-bottom: 1px solid #666;
+    margin-bottom: 30px;
+}
+header h1 {
+    margin-top: 25px;
+    width: 220px;
+    height: 90px;
+    text-indent: -9999px;
+    background: url(../img/maker-logo.png) no-repeat center / contain;
+}
+h2 {
+    margin-bottom: 40px;
+}
+main#content {
+    display: flex;
+}
+#content .event {
+    flex:1;
+    text-align: center;
+}
+#content .event p {
+    margin-top: 15px;
+    border-left: 1px solid #999;
+}
+#content .event:first-child p {
+    border: 0;
+}

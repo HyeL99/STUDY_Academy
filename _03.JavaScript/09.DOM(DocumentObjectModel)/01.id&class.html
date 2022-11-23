@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        li {
+            list-style: none;
+        }
+        body{
+            background: #ffe48a;
+            color: rgba(0,0,0,0.2);
+        }
+        body > div{
+            width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 150px auto;
+            padding: 20px;
+            color: rgb(255, 200, 17);
+        }
+        h1 {
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 img {
+            width: 200px;
+        }
+        li {
+            line-height: 50px;
+            margin-top: 2px;
+            background: #ffe48a;
+            padding-left: 20px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .red {
+            background: crimson;
+        }
+        .sky {
+            background: skyblue;
+        }
+        .orange {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h1><img src="img/icon.svg" alt=""></h1>
+        <h2>id, class로 선택</h2>
+        <ul>
+            <li id="one">리코타 치즈 샐러드</li>
+            <li id="two">연어 스테이크</li>
+            <li class="orange">치즈 비프 샌드위치</li>
+            <li class="sky">화이트와인</li>
+            <li class="red">믹스 베리 요거트</li>
+            <li class="red">크로플</li>
+        </ul>
+    </div>
+    <script>
+        // const $page = document.querySelector('#page');
+        const $page = document.getElementById("page");  // 문서객체모델
+        $page.style.backgroundColor = 'lightyellow';
+
+        const $one = document.getElementById('one');
+        $one.className = "red"; //엘리먼트의 클래스 속성값 설정
+        // id 'one'가 있는 부분에 클래스 'red'를 추가한다.
+
+        two.style.color = 'blueviolet';
+        // id는 그냥 사용해도 적용됨.
+        // red.style.color = 'blueviolet';
+        // ❌클래스는 불가능함❌
+
+        const $red1 = document.querySelector('.red')
+        console.log($red1)
+        // 클래스가 여러개일 때는 첫번째 것만 적용 가능
+
+        const $red2 = document.getElementsByClassName('red');
+        console.log($red2)
+        // class는 여러개가 있다는 것으로 간주하고 배열 형식으로 가져옴
+        $red2[0].className = 'orange'; //작동 안함
+
+        //모두 적용하고 싶을 때
+        for (let item of $red2) {
+            item.style.fontSize = '25px';
+        }
+        for (let i=0; i<$red2.length; i++) {
+            $red2[i].style.fontWeight = '700';
+        }
+
+        // 클래스가 적용된 마지막 요소 선택
+        if($red2.length >= 2) {
+            $red2[$red2.length-1].className = 'sky';
+        }
+        // 제일 마지막 배열값의 클래스를 sky로 바꿔준다.
+    </script>
+</body>
+</html>

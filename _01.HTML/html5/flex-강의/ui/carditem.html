@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+    /* .card-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .card-image {
+        height: 0;
+        padding-bottom: 60%;
+        background-color: lightgray;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image:url('images/movie.jpg');
+    }
+    .card-image img {
+        display: none;
+    }
+    .card-desc {
+        flex: 1 1 auto;
+        padding: 1em;
+        background: white;
+    }
+
+    @media (min-width: 600px) {
+	.card-list-con {
+		overflow-x: hidden;
+	}
+	.card-list {
+		display: flex;
+		flex-wrap: wrap;
+		
+	}
+	.card-item {
+		width: 50%;
+		padding: 0 1rem;
+	}
+    }
+
+    @media (min-width: 1200px) {
+        .card-item {
+            width: 33.33333%;
+        }
+    }
+             */
+
+	.card-list-con {
+		overflow-x: hidden;
+	}
+	.card-list {
+		display: flex;
+		flex-wrap: wrap;
+		
+	}
+
+	.card-item {
+            width: 33.33333%;
+			display: flex;
+        	flex-direction: column;
+        	margin-bottom: 2rem;
+			padding: 0 1rem;
+    }
+	.card-image {
+        height: 0;
+        padding-bottom: 80%;
+        background-color: lightgray;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image:url('images/movie.jpg');
+    }
+	.card-image img {
+        display: none;
+    }
+	.card-desc {
+        flex: 1 1 auto;
+        padding: 1em;
+        background: white;
+    }
+    
+
+	@media screen and (max-width: 900px){
+		.card-item {
+		width: 50%;
+		
+	}
+	
+	}
+
+	@media screen and (max-width: 600px){
+		.card-item {
+		width: 100%;
+
+		
+	}
+	
+	}
+	
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="card-list-con">
+    	<ul class="card-list">
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, perferendis? dolor sit, amet consectetur adipisicing elit. Hic, perferendis?
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum.
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim impedit odio expedita pariatur architecto molestias recusandae quam distinctio! Nemo sapiente laborum fugit adipisci reiciendis eos in eveniet dicta iure unde vel beatae nihil sit necessitatibus similique perspiciatis saepe aperiam, expedita laudantium consequatur? Blanditiis, rem exercitationem. Exercitationem odio aliquam distinctio unde?
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, perferendis?
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, perferendis?
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, perferendis?
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, perferendis?
+    			</div>
+    		</li>
+    		<li class="card-item">
+    			<figure class="card-image">
+    				<img src="images/movie.jpg" alt="영화포스터">
+    			</figure>
+    			<div class="card-desc">
+    				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, perferendis?
+    			</div>
+    		</li>
+    	</ul>
+	</div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,608 @@
+<style>
+	.bottom_nav { display: none; }
+	.footer_fixed {
+		width:100%;
+		height: 72px;
+		position:fixed;
+		bottom:0;
+		padding: 1px 0;
+		box-sizing: border-box;
+		background:#67b694;
+		z-index:999;
+		font-size: 13px;
+		line-height: 1.1;
+		text-align: left;
+		color: #fff;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+	}
+	.footer_fixed #contentsWrap{
+		position: relative;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0;
+	}
+	.bnr_tit {
+		display: inline-block;
+		vertical-align: middle;
+		width: 330px;
+		height: 34px;
+		background: url("/upload/event/2021/brn_tit_06.png") no-repeat center / 100%;
+	}
+	.bnr_dday {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 15px;
+		padding: 8px 12px;
+		height: 28px;
+		line-height: 28px;
+		font-size: 24px;
+		font-weight: bold;
+		letter-spacing: -1.5px;
+		background-color: #000;
+		border-radius: 4px;
+		position: relative;
+	}
+	.bnr_dday:after {
+		content: "";
+		position: absolute;
+		top: 16px;
+		right: -10px;
+		border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+		border-left: 10px solid #000;
+	}
+	.bnr_content {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 25px;
+	}
+	.hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+		border: 0;
+	}
+	.footer_bnr h3{
+		margin-bottom: 0;
+		font-size: 28px;
+		font-weight: bold;
+		line-height: 1.1;
+		text-align: left;
+		letter-spacing: -0.5px;
+		color: #fff;
+		position: relative;
+		z-index: 100;
+	}
+	.footer_bnr h3 span {font-size: 18px;}
+	.footer_bnr h3:before{
+		display: none;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 8px;
+		bottom:0;
+		left: 0;
+		background-color: #005732;
+		z-index: -1;
+	}
+
+	.bnr_txt {
+		margin-bottom: 3px;
+		font-size: 16px;
+		font-weight: normal;
+		text-align: center;
+		line-height: 1.1;
+		color: #010101;
+	}
+	.bnr_txt span {
+		font-weight: bold;
+		position: relative;
+	}
+	.bnr_txt span:after{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 8px;
+		bottom: 0;
+		left: 0;
+		background-color: #005732;
+		z-index: -1;
+	}
+	.bnr_counter {
+		display: inline-block;
+		vertical-align: middle;
+		width: 298px;
+		height: 70px;
+		padding: 24px 6px 0 5px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		background: url('/tpl/images/contents/event_benefit/count_down.png') no-repeat;
+	}
+	.bnr_counter span {
+		float: left;
+		width: 64px;
+		margin-left: 9px;
+		font-size: 32px;
+		text-align: center;
+	}
+	.bnr_counter span:first-child{
+		margin-left: 0;
+	}
+	.footer_bnr .bnr_mobile {
+		display: none;
+	}
+	.bnr_link {
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		right: 0;
+		padding: 12px 20px;
+		vertical-align: middle;
+		font-size: 15px;
+		font-weight: bold;
+		color: #fff;
+		background-color: #005732;
+		box-shadow: 2px 2px 4px rgba(64, 21, 21, 0.3);
+
+	}
+	@media screen and (max-width: 960px) {
+		.footer_fixed {
+			height: 60px;
+			padding: 4px 8px 4px 14px;
+		}
+		.footer_bnr .bnr_pc {
+			display: none;
+		}
+		.footer_bnr .bnr_mobile {
+			display: block;
+		}
+		.bnr_txt {
+			position: relative;
+		}
+		.bnr_txt strong {font-size: 15px;}
+		.bnr_dday {
+			padding: 6px 12px;
+			position: absolute;
+			top: -36px;
+			left: -9px;
+			height: 22px;
+			line-height: 22px;
+			font-size: 18px;
+			border-radius: 2px;
+		}
+		.bnr_dday:after {
+			top: 32px;
+			left: 0;
+			border-top: none;
+			border-left: 10px solid #000;
+			border-bottom: 10px solid transparent;
+		}
+		.bnr_content  {
+			display: block;
+		}
+		.bnr_tit {
+			width: 181px;
+			height: 18px;
+		}
+		.footer_bnr h3 {
+			font-size: 14px;
+			margin-bottom: 2px;
+		}
+		.footer_bnr h3.bnr_mobile { display: inline-block; }
+		.footer_bnr h3 strong { font-size: 15px; }
+		.footer_bnr h3 span { color: #fff694; position: relative; }
+		.footer_bnr h3:after {
+			display: block;
+			width: 19px;
+			height: 23px;
+			top: 24px;
+			left: 210px;
+			background-image:url(/upload/event/2020/bnr_bg_m.png);
+		}
+		.footer_bnr h3 span:before{
+			display: none;
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 6px;
+			bottom: 3px;
+			left: 0;
+			background-color: #F25146;
+			z-index: -1;
+		}
+		.bnr_counter {
+			display: block;
+			width: 203px;
+			height: 33px;
+			padding: 6px 2px 0 2px;
+			background: url("/tpl/images/contents/event_benefit/count_down_m.png") no-repeat center / 100%;
+		}
+		.bnr_counter span {
+			font-size: 19px;
+			width: 36px;
+			margin-left: 10px;
+		}
+		.bnr_counter span:first-child{
+			margin-right: 25px;
+		}
+		.bnr_link {
+			padding: 10px 12px;
+			right: 5px;
+			font-size: 14px;
+		}
+	}
+
+
+</style>
+
+<section class="footer_fixed" style="line-height: 1.1">
+	<div id="contentsWrap">
+
+		<!-- 카운트다운 띠배너 -->
+		<div id="footerBnr" class="footer_bnr">
+			<div class="bnr_inner">
+				<div class="bnr_dday">D-5</div>
+				<div class="bnr_content">
+					<h3 class="bnr_pc"><span class="bnr_tit"></span></h3>
+					<p class="bnr_txt bnr_pc">This Summer, New York comes to you</p>
+					<h3 class="bnr_mobile" style="line-height: 1.1"><span class="bnr_tit"></span></h3>
+				</div>
+				<div class="bnr_counter">
+					<span class="timer_cell" id="timeDay" title="day">00</span>
+					<span class="timer_cell" id="timeHours" title="hours">00</span>
+					<span class="timer_cell" id="timeMinutes" title="minutes">00</span>
+					<span class="timer_cell" id="timeSeconds" title="seconds">00</span>
+				</div>
+				<a class="bnr_link bnr_pc" href="/event/1143" >혜택 받기 &gt;</a>
+				<a class="bnr_link bnr_mobile" href="/event/1143" >혜택 받기 &gt;</a>
+			</div>
+		</div>
+		<script>
+			// 하단띠배너 카운드 다운
+			var $document = $(document);
+			$document.ready(function() {
+				const countDownTimer = function (date) {
+					var _vDate = new Date(date); // 전달 받은 일자
+					var _second = 1000;
+					var _minute = _second * 60;
+					var _hour = _minute * 60;
+					var _day = _hour * 24;
+					var timer;
+					function showRemaining() {
+						var now = new Date();
+						var distDt = _vDate - now;
+						var days = Math.floor(distDt / _day);
+						var hours = Math.floor((distDt % _day) / _hour);
+						var minutes = Math.floor((distDt % _hour) / _minute);
+						var seconds = Math.floor((distDt % _minute) / _second);
+						if (days < 10) days = '0'+days;
+						if (hours < 10) hours = '0'+hours;
+						if (minutes < 10) minutes = '0'+minutes;
+						if (seconds < 10) seconds = '0'+seconds;
+						$('#timeDay').html(days);
+						$('#timeHours').html(hours);
+						$('#timeMinutes').html(minutes);
+						$('#timeSeconds').html(seconds);
+					}
+					timer = setInterval(showRemaining, 1000);
+				}
+				var today = new Date();
+
+				// 자정까지
+				today.setHours(23);
+				today.setMinutes(59);
+				today.setSeconds(59);
+
+
+				if (today.getDate() >= 29){
+					var order_day = [0,1,2,3,4,5,6]; // 월-1, 화-2, 수-3. 목-4. 금-5, 토-6. 일-0
+					var dday_txt = '';
+					var getDay = today.getDay();
+
+					/* if (getDay == 0) {
+						dday_txt = '오늘마감';
+					} else {
+						dday_txt = 'D - ' + (7 - order_day[getDay]);
+					}
+					$('.bnr_dday').html(dday_txt);
+
+					if (getDay > 0) {
+						today.setDate(today.getDate() + (7 - getDay));
+					} else {
+						today.setDate(today.getDate());
+					}
+					countDownTimer(today); */
+
+					today.setDate(30);
+					countDownTimer(today);
+
+					var dDayString = '', dDay = Math.floor(((new Date('2021-06-30T23:59:59')).getTime() - (new Date()).getTime()) / 86400000);
+					if (dDay >= 1) dDayString = 'D-' + dDay;
+					else if (dDay == 0) {
+						document.querySelector('.footer_fixed #contentsWrap .bnr_dday').classList.add('d-day');
+						dDayString = '오늘마감';
+					}
+					else document.querySelector('.footer_fixed').style.display = 'none';
+					document.querySelector('.footer_fixed #contentsWrap .bnr_dday').innerHTML = dDayString;
+
+				} else {
+					var order_day = [6,0,1,2,3,4,5]; // 월-1, 화-2, 수-3. 목-4. 금-5, 토-6. 일-0
+					var dday_txt = '';
+					var getDay = today.getDay();
+
+					if (getDay == 1) {
+						dday_txt = '오늘마감';
+					} else {
+						dday_txt = 'D - ' + (7 - order_day[getDay]);
+					}
+					$('.bnr_dday').html(dday_txt);
+
+					if (getDay > 1) {
+						today.setDate(today.getDate() + (8 - getDay));
+					} else {
+						today.setDate(today.getDate()+ (1 - getDay));
+					}
+					countDownTimer(today);
+				}
+
+			});
+
+		</script>
+
+
+	</div>
+</section>
+<section class="bottom_nav">
+	<ul>
+		<li class="tel"><a href="tel:1588-5605"><span><img src="/images/common/tel_icon_w.svg" alt="전화 아이콘"></span>전화상담 1588-5605</a></li>
+		<li class="kakao_talk"><a href="http://pf.kakao.com/_xmvMsd/chat" target="_blank"><span><img src="/images/common/kakao_icon_bb.svg" alt="카카오 아이콘"></span>카톡문의</a></li>
+	</ul>
+</section>
+
+<div id="footer">
+	<div class="footer_wrap w_1200">
+		<ul>
+			<li><a href="/about/wse">회사소개</a></li>
+			<li><a href="/guide/privacy">개인정보처리방침</a></li>
+			<li><a href="/guide/policy">이용약관</a></li>
+			<!-- <li><a href="mailto:info.marketing@wsekorea.com">마케팅제안</a></li> -->
+			<li><a href="/program/corporate#apply_view">제휴문의</a></li>
+			<!-- <li><a href="/guide/sitemap">사이트맵</a></li>
+            <li><a href="/about/map">CONTACT US</a></li> -->
+			<li><a href="/about/recruit">RECRUIT</a></li>
+			<li><a href="/community/qna">고객센터</a></li>
+			<!-- <li class="end"><a href="/event/notice">공지사항</a></li> -->
+
+			<ul class="sns">
+				<li class="kakao"><a href="https://pf.kakao.com/_xmvMsd" target="_new">카카오톡 플러스친구 바로가기</a></li>
+				<li class="blog"><a href="http://blog.naver.com/wsekorea" target="_new">블로그 바로가기</a></li>
+				<li class="facebook"><a href="https://www.facebook.com/WSE.Korea/" target="_new">페이스북 바로가기</a></li>
+				<li class="instagram"><a href="https://www.instagram.com/wsekorea" target="_new">인스타그램 바로가기</a></li>
+				<li class="youtube"><a href="https://www.youtube.com/channel/UC1LGplOt30iNeMDicizZXIg" target="_new">유튜브 바로가기</a></li>
+				<li class="post"><a href="https://post.naver.com/wsekorea?isHome=1" target="_new">포스트 바로가기</a></li>
+			</ul>
+
+		</ul>
+		<p class="first">(06037) 서울시 강남구 도산대로 19길 6, 2층 (신사동, 신웅빌딩 3) 월스트리트인스티튜트코리아㈜<span>대표이사:조재범</span></p>
+		<p>사업자등록번호:220-86-49426 <span>개인정보보호 책임자:김태희</span></p>
+		<p>Tel:1588-5605 <span>Fax:82-2-561-0540</span> <span>E-mail:info@wsekorea.com</span></p>
+		<p>{COPYRIGHT}</p>
+		<a class="cs" href="tel:1588-5605">전화문의 1588-5605</a>
+	</div>
+</div>
+
+
+
+<!-- (e) wrap -->
+<!-- 개인정보취급방침 -->
+<div class="background_layer"></div>
+
+<div class="agree_layer agree_privacy_layer">
+	<div class="agree_txt">
+		<h5>개인정보의 수집 및 이용목적 동의</h5>
+		<h6>■ 개인정보의 수집범위</h6>
+		<p>월스트리트인스티튜트코리아㈜는 최초 상담신청 및 회원가입 시 회원 식별 및 다양하고 편리한 서비스를 제공하기 위해 아래와 같은 정보를 수집합니다.</p>
+		<dl>
+			<dt>최초 홈페이지 내 상담, 체험, 정보 조회 신청 시 수집 항목</dt>
+			<dd>- 필수 항목 : 이름, 휴대전화번호, 이메일, 상담희망센터</dd>
+			<dt>최초 홈페이지 회원 가입 시 수집 항목</dt>
+			<dd>- 필수 항목: 이름, 아이디(이메일주소), 비밀번호, 휴대폰번호, 성별, 본인인증 시 본인 확인 정보(CI/DI), 가입인증정보(메일주소, 휴대폰 번호)</dd>
+			<dt>홈페이지 서비스 이용 시 아래와 같은 정보들이 자동 수집될 수 있습니다.</dt>
+			<dd>- 서비스 이용기록, 접속 로그, 쿠키, 접속 IP정보, 결제기록, 이용정지 기록</dd>
+		</dl>
+		<br />
+		<h6>■ 개인정보 수집 및 이용목적</h6>
+		<dl>
+			<dt>가. 서비스 제공에 대한 계약 이행</dt>
+			<dd>- 콘텐츠 제공, 금융거래 본인 인증 금융서비스, 구매 및 요금 결제</dd>
+			<dt>나. 고객 관리</dt>
+			<dd>- 서비스 이용에 따른 본인 식별, 불량회원의 부정 이용 방지와 비인가 사용 방지, 만14세 미만 아동 개인정보 수집 시 법정대리인 동의 여부 확인, 가입 의사 확인, 가입 제한, 추후 법정 대리인 본인확인, 분쟁 조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달</dd>
+		</dl>
+		<br />
+		<h6>■ 개인정보의 보유기간 및 이용기간</h6>
+		<ul>
+			<li>- 계약 또는 청약철회, 대금결제 및 재화 등의 공급에 관한 기록 (보존기간: 5년)</li>
+			<li>- 소비자의 불만 또는 분쟁처리에 관한 기록(보존기간: 3년)</li>
+			<li>- 본인확인에 관한 기록(보전기간: 6개월)</li>
+			<li>- 웹사이트 방문 기록(보전기간: 3개월)</li>
+		</ul>
+		<p>※ 귀하는 월스트리트인스티튜트코리아㈜의 서비스 이용에 필요한 최소한의 개인 정보 수집 및 이용에 동의하지 않을 권리가 있으며, 동의 거부 시 거부한 내용에 대해 서비스가 제한될 수 있습니다.</p>
+		<a class="btn_close">확인</a>
+	</div>
+</div>
+
+<div class="agree_layer agree_commision_layer">
+	<div class="agree_txt">
+		<h5>제 3자에 대한 제공 및 공유</h5>
+		<p>■ 개인정보가 제 3자에게 수집 목적 이내에서 제공될 수 있습니다.</p>
+		<p>이용자가 사전에 동의한 경우, 회사는 이용자의 개인정보를 제3자에게 제공하기 이전에 다음의 모든 사항을 회원에게 알리고 동의를 받습니다.</p>
+		<p>※ 회사는 개인정보를 수집 시 명시한 범위 내에서만 3자에게 정보를 제공합니다. 이용자는 제공에 동의하더라도 언제든지 그 동의를 철회할 수 있습니다. 정보 제공 미동의 시, 상담 및 서비스에 대한 제한이 있음을 알려드립니다.</p>
+		<br />
+		<table>
+			<thead>
+			<tr>
+				<th style="width: 20%;">제공 기관</th>
+				<th style="width: 25%;">제공 목적</th>
+				<th style="width: 25%;">제공 항목</th>
+				<th style="width: 30%;">보유 및 이용 기간</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>스티비</td>
+				<td>이메일 발송</td>
+				<td>이름, 이메일주소</td>
+				<td>관계법령에 정해진 규정에 따라 법정기간 동안 보관</td>
+			</tr>
+			<tr>
+				<td>(주)다우기술</td>
+				<td>알림톡 및 문자 발송</td>
+				<td>이름, 휴대전화번호</td>
+				<td>관계법령에 정해진 규정에 따라 법정기간 동안 보관</td>
+			</tr>
+			<tr>
+				<td>애드티브 이노베이션㈜</td>
+				<td>상담신청 이용자 관리 서비스 및 정보 전달</td>
+				<td>이름, 휴대전화번호</td>
+				<td>관계법령에 정해진 규정에 따라 법정기간 동안 보관</td>
+			</tr>
+			</tbody>
+		</table>
+		<a class="btn_close">확인</a>
+	</div>
+</div>
+
+<div class="agree_layer agree_event_layer">
+	<div class="agree_txt">
+		<h5>할인/이벤트 안내 동의</h5>
+		<h6>■ 마케팅 및 광고 활용 동의</h6>
+		<p>월스트리트인스티튜트코리아㈜에서 제공하는 행사 및 이벤트 안내 등 광고성 정보를 받으시려면 행사/이벤트 안내 이용에 동의해주시기 바랍니다.</p>
+		<table>
+			<thead>
+			<tr>
+				<th style="width: 30%;">수집 목적</th>
+				<th style="width: 30%;">수집 항목</th>
+				<th style="width: 40%;">보유 기간</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>상담 고객 유치</td>
+				<td>이름, 휴대전화번호, 이메일주소</td>
+				<td>개인정보 보존기간 만료 또는 동의 철회 시 까지</td>
+			</tr>
+			<tr>
+				<td>이벤트 /프로모션, 회원관리 등을 위한 알림톡 및 문자 발송</td>
+				<td>이름, 휴대전화번호</td>
+				<td>개인정보 보존기간 만료 또는 동의 철회 시 까지</td>
+			</tr>
+			<tr>
+				<td>상담신청 이용자 관리 서비스 및 정보 전달</td>
+				<td>이름, 휴대전화번호</td>
+				<td>개인정보 보존기간 만료 또는 동의 철회 시 까지</td>
+			</tr>
+			</tbody>
+		</table>
+		<p>※ 이용자는 개인 정보 수집 및 이용에 동의하지 않을 권리가 있으며, 동의를 거부할 경우에도 상담 및 서비스, 이벤트, 프로모션 참여 기회 이용에 제한이 없습니다.</p>
+		<a class="btn_close">확인</a>
+	</div>
+</div>
+
+
+
+<!-- 개인정보취급방침 -->
+
+<!-- Naver Analytics ->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "48f41606e25290";
+//wcs_add["wa"] = "8c8c75580bdc10";
+wcs_do();
+</script>
+
+<!-- Naver 프리미엄로그 ->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
+<script type="text/javascript">
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_47fd46b34f64";
+if (!_nasa) var _nasa={};
+wcs.inflow();
+wcs_do(_nasa);
+</script>
+
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "월스트리트 잉글리쉬",
+		"url": "http://new.wallstreetenglish.co.kr",
+		"sameAs": [
+			"https://www.facebook.com/WSE.Korea",
+			"http://blog.naver.com/wsekorea",
+			"https://story.kakao.com/ch/wallstreetenglish"
+		]
+	}
+</script>
+
+
+<iframe name="wse_usr_proc" width="0" height="0" style="display:none;"></iframe>
+
+
+<!-- leads 완료 후 출력 동영상 -->
+<script type="text/javascript" src="/_sys/js/youtubepopup.js"></script>
+<link rel="stylesheet" type="text/css" href="/_sys/css/youtubepopup.css">
+
+<span class="leads_youtube" href="https://www.youtube.com/watch?v=NthuUeFTMwk">&nbsp;</span>
+<script>
+	$(function(){
+
+		//if(window.location.href.indexOf("counsel") > -1 )
+		//{
+		//	$(".footer_fixed").hide();
+		//}
+
+		if ($('.leads_youtube').length && typeof $.prototype.YouTubePopUp != 'undefined') {
+			$(".leads_youtube").YouTubePopUp({ autoplay: 0 });
+		}
+	});
+</script>
+
+
+<!-- 2018-09-13 Beusalble+naver 요청->
+<script type="text/javascript">
+(function(w, d, a){
+	w.__beusablerumclient__ = {
+		load : function(src){
+			var b = d.createElement("script");
+			b.src = src; b.async=true; b.type = "text/javascript";
+			d.getElementsByTagName("head")[0].appendChild(b);
+		}
+	};w.__beusablerumclient__.load(a);
+})(window, document, '//naverrum.beusable.net/script/b171222e160453u176/0c05488b76');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRBB599');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRBB599"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> 
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script> 
+<script type="text/javascript"> if (!wcs_add) var wcs_add={}; wcs_add["wa"] = "s_47fd46b34f64"; if (!_nasa) var _nasa={}; if(window.wcs){ wcs.inflow(); wcs_do(_nasa); } </script>

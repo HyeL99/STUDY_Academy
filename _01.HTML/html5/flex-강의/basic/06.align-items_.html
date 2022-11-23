@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container{
+            display: flex;
+            align-items: flex-start;
+            height: 300px;
+        }
+        /*
+        align-items : justify-content의 반대축 방향 정렬
+            stretch : 부모요소의 높이값을 받아서 길이가 늘어난다.(기본값)
+            flex-start : 시작점으로 정렬 (direction이 row일 때 위쪽 column일 때 왼쪽 기준)
+            flex-end : 끝점으로 정렬 (row일 때 아래쪽 column일 때 오른쪽 기준)
+            center : 가운데 정렬
+            baseline : 텍스트의 베이스라인 기준으로 정렬이 된다.
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="item">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="item">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+        <div class="item">cccccccccccccccccccccccccccccccc</div>
+        <div class="item">dddddddddddddddddddddddddddddddddddd</div> -->
+        <div class="item">aaaaaaaa</div>
+        <div class="item">bbbbbbbbb</div>
+        <div class="item">cccccccc</div>
+        <div class="item">dddddddddddd</div>
+    </div>
+    Lorem ipsum dolor sit amet.
+</body>
+</html>

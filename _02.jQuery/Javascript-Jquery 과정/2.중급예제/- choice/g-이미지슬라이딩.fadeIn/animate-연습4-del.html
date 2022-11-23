@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>갤러리</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			}
+		ul{
+			list-style:none;
+			}
+		div{
+			width:960px;
+			height:640px;
+			border:2px solid gray;
+			margin:90px auto 0;
+			position:relative;
+			overflow:hidden;
+			border-radius:7px;
+			box-shadow:7px 7px 15px #CCC;
+			}
+			div>ul:first-child{
+				position:absolute;
+				width:960px;
+				z-index:1;
+				}
+				div>ul:first-child>li{
+					position:absolute;
+					width:960px;
+					height:640px;
+					line-height:240px;
+					text-align:center;
+					}
+				.zz{
+					z-index:1;
+					}
+			div ul.list{
+				z-index:12;
+				margin:600px auto 0;
+				text-align:center;
+				position:relative;
+				}
+				div ul.list li{
+					display:inline-block;
+					margin:3px;
+					padding:7px;
+					background:#999;
+					color:#FFF;
+					}
+			div a[href="#prev"]{
+				text-decoration:none;
+				position:absolute;
+				left:0;
+				top:320px;
+				background:#FC0;
+				border-radius:0 7px 7px 0;
+				padding:3px;
+				z-index:3;
+				}	
+			div a[href="#next"]{
+				text-decoration:none;
+				position:absolute;
+				right:0;
+				top:320px;
+				background:#FC0;
+				border-radius:7px 0 0 7px;
+				padding:3px;
+				z-index:3;
+				}
+				.current{
+					background:#FC0 !important;
+					color:#333 !important;
+					}
+	</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				var prev="a[href='#prev']";
+				var next="a[href='#next']";
+				$(prev).hide(); //속성선택자
+				$("ul.list li.num1").addClass("current");
+				//1번이미지 보이게 높이 z-index를 조정
+				$("ul.big li.num1").addClass("zz");
+				$("ul.big li.num1").siblings().css("opacity",0);
+				var n=1;
+				
+				$(next).click(
+					function(){
+						n++;
+						console.log(n);
+						if(n<5){
+							$("ul.big li.num"+n).addClass("zz").animate({"opacity":1},1000);
+						  $("ul.big li.num"+n).siblings().removeClass("zz");
+						  $("ul.list li.num"+n).addClass("current");
+						  $("ul.list li.num"+n).siblings().removeClass("current");
+							$(prev).show();
+						}else{
+							n=4
+							}
+						 if(n==4){
+							$(next).hide();
+						 }
+					}
+				);
+				
+				$(prev).click(
+					function(){
+						n--;
+						console.log(n);
+						if(n>0){
+							$("ul.big li.num"+n).addClass("zz").animate({"opacity":1},1000);
+						  $("ul.big li.num"+n).siblings().removeClass("zz");
+						  $("ul.list li.num"+n).addClass("current");
+						  $("ul.list li.num"+n).siblings().removeClass("current");
+							$(next).show();
+						}else{
+							n=1;
+							}
+						 if(n==1){
+							$(prev).hide();
+						 }
+					}
+				);
+				
+				$("ul.list li").click(
+					function(){
+						n=$(this).attr("data-n");
+						$("ul.big li.num"+n).addClass("zz").animate({"opacity":1},1000);
+						$("ul.big li.num"+n).siblings().removeClass("zz");
+						$("ul.list li.num"+n).addClass("current");
+						$("ul.list li.num"+n).siblings().removeClass("current");
+						if(n==1){
+							$(prev).hide();
+							$(next).show();
+						}else if(n==4){
+							$(next).hide();
+							$(prev).show();
+							}
+						else if(1<n<4){
+							$(prev).show();
+							$(next).show();
+							}	
+					}
+				);
+
+			}
+		);
+	</script>
+	<script src="easing/jquery.easing.1.3.js"></script>
+	<script src="easing/jquery.easing.compatibility.js"></script>
+</head>
+
+<body>
+	<div class="pro">
+    <ul class="big">
+        <li class="num1"><img src="img/p1.jpg" alt="그림1"></li>
+        <li class="num2"><img src="img/p2.jpg" alt="그림2"></li>
+        <li class="num3"><img src="img/p3.jpg" alt="그림3"></li>
+        <li class="num4"><img src="img/p4.jpg" alt="그림4"></li>
+    </ul>
+		<ul class="list">
+			<li class="num1" data-n="1">1</li>
+			<li class="num2" data-n="2">2</li>
+			<li class="num3" data-n="3">3</li>
+			<li class="num4" data-n="4">4</li>
+		</ul>
+    <a href="#prev">이전</a><a href="#next">이후</a>
+    </div>
+</body>
+</html>

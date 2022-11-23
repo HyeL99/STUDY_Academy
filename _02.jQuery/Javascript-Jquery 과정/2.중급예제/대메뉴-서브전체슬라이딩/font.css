@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body{ font-family:'Nanum Gothic'; color:#666;}
+#slider p{ text-align:center; text-transform:uppercase; font-size:60px; font-family: Georgia, "Times New Roman", Times, serif; color:#FFF; text-shadow:2px 2px 1px #666;}
+p{ font-family:'Nanum Gothic';}
+a{color:#666;}
+#header .top_menu li a{font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; font-size:12px; color:#999;}
+#header .main_menu li a{ font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; font-size:13px; ; font-weight:600;}
+#header .main_menu li ul a{ font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; font-size:12px; ; color:#CCC;}
+#header .main_menu li ul a:hover{ text-decoration:underline;}
+#title a{text-align:center; color:#e61e2b; font-size:12px; font-weight:800;}
+
+#contents  #ctext h2{ font-size:16px; text-transform: capitalize; color: #e61e2b; font-weight: 800;}
+#contents  #ctext p{ text-align:justify; font-size:12px;}
+#contents  #ctext p.view{ text-transform: uppercase; font-size:12px;  font-weight:800;}
+#contents  #ctext .news .come p{font-size:18px; font-weight:600; letter-spacing:-2px;}
+#contents  #ctext .news .phone h3{font-size:14px; font-weight:600;}
+#contents  #ctext .news .phone p{font-size:20px; font-weight:800; letter-spacing:-1px;}
+#contents  #ctext .news .co6 h3{ text-transform:uppercase; }
+#contents  #ctext .news .co6 li{font-size:12px;}
+#footer{font-size:12px;}
+#footer .nb{ letter-spacing:-1px;}

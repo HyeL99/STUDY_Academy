@@ -1,0 +1,127 @@
+header .inner {
+    margin: 0 auto 20px;
+    padding: 50px 0 20px;
+    position: relative;
+}
+header a.youtube {
+    position: absolute;
+    right:10px;
+    top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background: coral;
+    font-weight: 700;
+    border:1px solid #ccc;
+    font-family: 'GmarketSansMedium' ,sans-serif;
+}
+header a.youtube:hover {
+    color: coral;
+    background: #fff;
+}
+h1 {
+    font-size: 70px;
+}
+main .nav {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+ul::after,
+main .nav::after {
+    display: block;
+    content:"";
+    clear: both;
+}
+main .nav ul {
+    text-align: end;
+    float: right;
+}
+main .nav ul li {
+    float: left;
+    border: 1px solid #ccc;
+    border-right:0px;
+    border-bottom:0px;
+}
+main .nav ul li:last-child {
+    border-right: 1px solid #ccc;
+}
+main .nav ul li a {
+    width: 120px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    color: #999;
+}
+main .nav ul li a:hover,
+main .nav ul li a.active {
+    background: coral;
+    color: #fff;
+}
+
+section {}
+section ul {}
+section ul li {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+section ul li a {
+    display: block;
+}
+section ul li a img {
+}
+section ul li a .detail{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 1vw;
+}
+section ul li:hover a .detail {
+    opacity: 100%;
+}
+section ul li a .detail .title {
+    transform: translateY(50px);
+    
+    word-break: keep-all;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+section ul li:hover a .detail .title {
+    transform: translateY(0px);
+}
+section ul li a .detail .title strong{
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 2vw 0 5vw;
+    position: relative;
+}
+section ul li a .detail .title strong::before {
+    content:"";
+    position: absolute;
+    width: 100%;
+    left:0;
+    bottom:-3px;
+    border-bottom: 3px solid coral;
+}
+section ul li a .detail .type {
+    transform: translateY(50px);
+    color:rgba(255,255,255,0.8);
+    font-size: 0.8rem;
+    transition: all 0.5s;
+}
+section ul li:hover a .detail .type {
+    transform: translateY(0px);
+}

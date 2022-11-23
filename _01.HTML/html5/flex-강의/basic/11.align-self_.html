@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-self</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    /*
+        align-self
+        align-items의 자식요소 버전으로 items는 전체 자식요소 정렬요소라면 self는 해당 아이템에 개별적으로 적용하는 요소
+            기본값은 auto이며, align-items의 값을 상속받는다.
+            self가 items보다 더 우선순위를 가진다.
+        */
+        .container{
+            display: flex;
+            height: 500px;
+            align-items: center;
+        }
+        .item:nth-of-type(3){
+            align-self: flex-start;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="item">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="item">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+        <div class="item">cccccccccccccccccccccccccccccccc</div>
+        <div class="item">dddddddddddddddddddddddddddddddddddd</div> -->
+        <div class="item">aaaaaaaa</div>
+        <div class="item">bbbbbbbbb</div>
+        <div class="item">cccccccc</div>
+        <div class="item">cccccccc</div>
+        <!-- <div class="item">dddddddddddd</div> -->
+    </div>
+    Lorem ipsum dolor sit amet.
+</body>
+</html>

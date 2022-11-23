@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블로 게시판 만들기</title>
+    <style>
+        html, body, table, tr, td, th {
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        table.freeBoard {
+            width: 1200px;
+            margin: 100px auto;
+            /*margin: 0 auto;
+              컨텐츠 가운데 가로 정렬하는 가장 기본적인 방법
+              영역값을 제외한 나머지 값을 좌 우 margin으로 대신 해주는 방법
+              *반드시 영역값이 있어야 한다.*/
+        }
+        caption {
+            text-align: left;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 550;
+        }
+        tr {
+            border-top: 1px solid black;
+            border-bottom: 1px solid #dddddd;
+            height: 50px;
+        }
+        td {
+            text-align: center;
+        }
+        .number, .view{
+            width: 100px;
+        }
+        .title{
+            width: 700px;
+        }
+        td.title{
+            text-align: left;
+        }
+        .name, .time {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <table class="freeBoard">
+        <caption>자유게시판</caption>
+        <tr>
+            <th class="number">No</th>
+            <th class="title">제목</th>
+            <th class="name">글쓴이</th>
+            <th class="time">시간</th>
+            <th class="view">좋아요</th>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">테이블 영역 연습하기</td>
+            <td class="name">그린컴퓨터</td>
+            <td class="time">22-07-14</td>
+            <td class="view">10</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">테이블 영역 연습하기</td>
+            <td class="name">그린컴퓨터</td>
+            <td class="time">22-07-14</td>
+            <td class="view">10</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">테이블 영역 연습하기</td>
+            <td class="name">그린컴퓨터</td>
+            <td class="time">22-07-14</td>
+            <td class="view">10</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">테이블 영역 연습하기</td>
+            <td class="name">그린컴퓨터</td>
+            <td class="time">22-07-14</td>
+            <td class="view">10</td>
+        </tr>
+    </table>
+</body>
+</html>

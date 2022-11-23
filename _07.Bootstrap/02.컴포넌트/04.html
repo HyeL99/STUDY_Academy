@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Components04</title>
+    
+    <!-- Bootstrap css (cdn) -->
+    <link href="../plugin/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <!-- font awesome script (cdn) -->
+    <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap script (cdn) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        #w_num {
+            display: inline-block;
+        }
+        header span:not(:first-child) {
+            margin-left: 15px;
+        }
+        main {
+            margin-top: 120px;
+            border: 10px solid green;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary bg-opacity-25 text-center py-3 fixed-top">
+        <div class="inner">
+            <p id="w_num" class="border p-2 mb-0 bg-white fs-2 text-primary">가로너비</p>
+            <div class="wrap">
+                <span class="p-2" id="width01"><strong>xs</strong> &lt;576px </span><!-- '&lt;' = '>' -->
+                <span class="p-2" id="width02"><strong>sm</strong> ≥576px </span>
+                <span class="p-2" id="width03"><strong>md</strong> ≥768px </span>
+                <span class="p-2" id="width04"><strong>lg</strong> ≥992px </span>
+                <span class="p-2" id="width05"><strong>xl</strong> ≥1200px </span>
+                <span class="p-2" id="width06"><strong>xxl</strong> ≥1400px </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-xl py-3 mb-5">
+        <div>
+            <h1 class="mt-5">Navbar</h1>
+            <nav class="navbar navbar-expand-md bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent01" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent01">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <hr> <!-- ============================================================================================== -->
+
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark rounded-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-light" href="#">
+                        <i class="bi bi-cloud-sun-fill fs-2"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent02" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent02">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled text-muted">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div> <!-- END Navbar -->
+
+        <div>
+            <h1 class="mt-5">Navs and tabs</h1>
+
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+
+            <hr>
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <h3>Home</h3>
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                    <h3>profile</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, quibusdam laborum, nihil minima nesciunt perferendis labore et quae assumenda ducimus iusto provident excepturi? Labore molestias, vel repudiandae laudantium sequi quo?</p>
+                </div>
+                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                    <h3>contact</h3>
+                    <p>tel: 010-1234-5678</p>
+                    <p>abc123@example.com</p>
+                </div>
+                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+
+                </div>
+            </div>
+
+        </div> <!-- END Navs and tabs -->
+
+        <div>
+            <h1 class="mt-5">Dropdowns</h1>
+        </div> <!-- END Dropdowns -->
+    </main>
+    <script>
+        function setBg(){
+            width01.style.backgroundColor = 'rgba(255,0,0,0)';
+            width02.style.backgroundColor = 'rgba(255,0,0,0)';
+            width03.style.backgroundColor = 'rgba(255,0,0,0)';
+            width04.style.backgroundColor = 'rgba(255,0,0,0)';
+            width05.style.backgroundColor = 'rgba(255,0,0,0)';
+            width06.style.backgroundColor = 'rgba(255,0,0,0)';
+            if(window.innerWidth < 576) {
+                width01.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 768){
+                width02.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 992){
+                width03.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1200){
+                width04.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else if(window.innerWidth < 1400){
+                width05.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            } else {
+                width06.style.backgroundColor = 'rgba(255,0,0,0.5)';
+            }                
+        }
+        function winWidth() {
+            let winW = window.innerWidth;
+            w_num.innerText = `가로너비 : ${winW}px`;
+            setBg();
+        }
+        winWidth();
+        setBg();
+        window.addEventListener('resize', winWidth)
+    </script>
+</body>
+</html>

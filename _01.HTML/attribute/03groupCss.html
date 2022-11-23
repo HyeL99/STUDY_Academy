@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그룹 속성</title>
+    <style>
+      /*
+        속성-세부속성으로 나뉘어져 있는 속성은 대부분 그룹속성을 가지고 있다.
+        그룹속성은 속성마다 다르지만 몇가지 규칙을 가지고 있다.
+        공통적으로 가지고 있는 규칙은 '순서'이다.
+
+        margin, padding
+        값이 1개일 때 : 4방향 적용
+        값이 2개일 때 : 상하 / 좌우 적용
+        값이 3개일 때 : 상, 좌우, 하
+        값이 4개일 때 : 상, 우, 하, 좌 (시계방향)
+
+        마진 상쇄 현상(마진 겹침 현상) -block에서만 발생
+            컨텐츠 요소의 margin-top과 margin-bottom은 서로 겹치게 되는 부분은 둘 중에 더 큰 값이 적용되고, 작은 값은 합쳐지는 것이 아니라 겹쳐지므로 출력되지 않는 현상
+            해결 방법 :
+                display: inline-block/flex/gid/float, position:absolute 상태로 변경
+        
+        font
+        */
+      div.box {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 127, 80, 0.445);
+        margin: 100px;
+        padding: 100px;
+        font-size: 30px; /*크기, html의 기본 font-size는 16px이다.*/
+        font-weight: 700; /*굵기, 주로 100 300 500 700 ... 사용, 숫자로 표현하거나 light, bold처럼 굵기를 정해줌(100=light, 300=normal, 700=bold)*/
+        font-family: Arial, Helvetica, sans-serif; /*글꼴, 글꼴을 많이 등록하는 이유는 앞에 있는 글꼴을 읽지 못하는 경우 뒤에 있는 글꼴을 순서대로 읽어서 비슷한 글꼴을 출력하기 위함, 앞선 폰트가 없으면 뒤의 후보 폰트 적용, selif(sans-serif)는 selif(sans-serif)체 중 아무거나 선택 */
+        font-style: italic;
+      }
+      div.box1 {
+        width: 400px;
+        height: 100px;
+        background-color: rgba(83, 80, 255, 0.445);
+        margin: 100px 50px;
+        padding: 100px 50px;
+        font: normal bold 30px/100px "Roboto";
+        /*
+        필수값: size, family
+        순서 : (style) weight size(/line-height:행간) family
+        line-height는 font-size 뒤에 붙어야 하며, /로 구분한다.
+        폰트를 감싸고 있는 컨텐츠의 높이값과 line-height의 값이 동일하면 텍스트 한 줄 한정일 때에 수직으로 가운데 정렬할 수 있다.
+        *(생략가능)
+        
+        */
+      }
+      div.box2 {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(80, 255, 103, 0.445);
+        margin: 100px 50px 200px;
+        padding: 100px 50px 200px;
+      }
+      div.box3 {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(176, 80, 255, 0.445);
+        margin: 100px 50px 200px 150px;
+        padding: 100px 50px 200px 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">box 1/전방향</div>
+    <div class="box1">box1 2/상하, 좌우</div>
+    <div class="box2">box2 3/상, 좌우, 하</div>
+    <div class="box3">box3 4/시계방향</div>
+  </body>
+</html>

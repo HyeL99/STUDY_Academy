@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>5-1</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <style type="text/css">
+      /* 배경색지정.글자대문자 */
+      .sb {
+        background: #ccc; /* 배경색을 #ccc로 지정 */
+        text-transform: uppercase; /* 영문소문자를 대문자로 전환 */
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 20px;
+      }
+      p {
+        border: 2px solid transparent;
+        transition: border 0.3s;
+        background-color: transparent;
+      }
+    </style>
+    <!-- 제이쿼리연결하기 -->
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <!-- 제이쿼리 기본구문 -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //a태그를 클릭하면 실행하시오(클릭한a에 클래스sb를 붙이시오);
+        //객체.메서드() > $().메서드(); > $("").메서드();
+        $("h2").click(function () {
+          //클릭한a에 클래스sb를 붙이시오 this addClass();
+          //객체.메서드() > $().메서드(); > $("").메서드();
+          $(this).addClass("sb");
+          //클릭한 a(this)의 상위요소(parent),그 상위요소를 제외한 나머지 형제요소(siblings),그 형제요소의 하위요소(children)a의 클래스sb를 제거하시오
+          $(this).parent().siblings().children("a").removeClass("sb");
+
+          //클릭한a의 다음에 오는 형제요소(next)을 보이게 해라
+          //$(this).next().show(500);
+          $(this)
+            .next()
+            .slideToggle(300, function () {
+              $(this).parent().css("border", "2px solid red");
+            });
+          //클릭한 a(this)의 상위요소(parent),그 상위요소를 제외한 나머지 형제요소(siblings),그 형제요소의 하위요소(children) p를 감춰라
+          $(this)
+            .parent()
+            .siblings()
+            .children("p")
+            .slideUp(300, function () {
+              $(this).css("border", "0px");
+            });
+          //$("p").not(this).hide();
+        });
+
+        //p태그를 감춰라
+        $("p").hide();
+        //ul을 감춰라.보이게해라
+        $("ul").hide().show(500); //메서드체인:명령어를 .으로 이어쓸 수 있다
+        //h1을 클릭하면 실행하시오(ul을 slideUp();)
+        $("h1").click(function () {
+          //$("ul").slideUp(); //접기
+          $("ul").slideToggle();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>jquery</h1>
+    <ul>
+      <li>
+        <h2>기초예제</h2>
+        <p>
+          Be aware that the CSS for these layouts is heavily commented. If you
+          do most of your work in Design view, have a peek at the code to get
+          tips on working with the CSS for the fixed layouts. You can remove
+          these comments before you launch your site. To learn more about the
+          techniques used in these CSS Layouts, read this article at Adobe's
+          Developer Center - http://www.adobe.com/go/adc_css_layouts.
+        </p>
+      </li>
+      <li>
+        <h2>중급예제</h2>
+        <p>
+          Because all the columns are floated, this layout uses overflow:hidden
+          on the .container. This clearing technique forces the .container to
+          understand where the columns end in order to show any borders or
+          background colors you place on the .container. If you have a large
+          element that protrudes outside the .container, it will appear to be
+          cut off. You also won't be able to use negative margins or absolute
+          positioning with negative values to pull elements outside the
+          .container or they will also won't display outside the .container.
+        </p>
+      </li>
+      <li>
+        <h2>실습예제</h2>
+        <p>
+          Adding a footer following the columns, yet still inside the
+          .container, will cause this overflow:hidden clearing method to fail.
+          You can place a .footer into a second .container outside the first one
+          with no detrimental effects. The simplest choice may be to start with
+          a layout containing headers and footers and remove the header to
+          utilize the clearing methods in that layout type.
+        </p>
+      </li>
+    </ul>
+  </body>
+</html>

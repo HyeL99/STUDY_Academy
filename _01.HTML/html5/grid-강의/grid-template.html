@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드</title>
+    <style>
+        /*
+        
+        
+        
+        */
+        div.container{
+            display: grid;
+            background-color: yellow;
+            padding: 10px;
+            /*display:inline-grid*/
+
+
+            /* grid-template-columns: 100px 300px 200px; */
+		    /* grid-template-columns: 1fr 2fr 1fr; */
+		    /* grid-template-columns: 1fr 500px 1fr; */
+		    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+		    grid-template-columns: repeat(3, 1fr);
+		    /* grid-template-columns: repeat(3, 1fr 2fr 1fr); */
+		    /* grid-template-rows: 200px 200px auto; */
+		    /* grid-template-rows: repeat(2, 1fr); */
+
+            /* 
+            grid 트랙의 크기들을 지정해주는 속성
+            grid-template-columns: 100px 300px 200px;
+            의 뜻은 가로열로 200px 300px 200px로 설정하겠다는 뜻
+
+
+             fr: fraction (조각)이라는 뜻
+             grid-template-columns: 2fr 1fr 1fr;
+             비율대로 트랙의 크기를 나눈다
+             위의 뜻은 2칸 1칸 1칸씩 트랙의 크기를 설정하겠다는 뜻
+
+             repeat 패턴 반복
+             repeat(횟수, 값)
+             grid-template-columns: repeat(3, 1fr 2fr 1fr);
+              1fr, 2fr, 1fr 값을 3번 반복한다.
+             
+            
+            
+            */
+
+
+        }
+        div.item{
+            border: solid 3px black;
+            background-color: coral;
+
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/flex.jpg">
+    <img src="images/grid.jpg">
+    <!--flex의 1차원적인 레이아웃(가로 혹은 세로) 배치방향을 보완하여 나온 grid는 
+    2차원적인 가로 세로 방향으로 레이아웃을 생성할 수 있다.
+
+    아직까지는 ie 지원에 대해 인색하지만 부분적으로 호환을 하고 있다.
+
+    -->
+
+    <div class="container">
+        <div class="item">item01</div>
+        <div class="item">item02</div>
+        <div class="item">item03</div>
+        <div class="item">item04</div>
+        <div class="item">item05</div>
+        <div class="item">item06</div>
+        <div class="item">item07</div>
+        <div class="item">item08</div>
+        <div class="item">item09</div>
+        <div class="item">item010</div>
+    </div>
+    
+</body>
+</html>

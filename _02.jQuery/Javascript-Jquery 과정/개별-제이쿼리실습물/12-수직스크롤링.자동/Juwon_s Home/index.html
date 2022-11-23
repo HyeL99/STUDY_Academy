@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JUWON's Home</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- normalize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/response.css">
+    <link rel="stylesheet" href="css/star.css">
+    <!-- slick -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $("document").ready(
+        function(){
+          $('.wphone').slick({
+            dots:true
+          });
+        }
+      );
+
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          var con;
+          $(".pcontrol a").click(
+            function(){
+              
+              con=$(this).attr("data-p");
+              $(".imge_list").attr("class","imge_list "+con);
+              return false;
+
+            }
+          );
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <!--    상단영역         -->
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">푸른별</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#">About me</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+    </header>
+    <!--     타이틀 영역     -->
+    <div id="title">
+        <div class="room">
+          <h2>UIUX  DESIGNER ' 푸른별 '</h2>
+          <p>Create your life</p>
+          <p> 밤하늘의 푸른별을 꿈꾸는 디자이너..</p>
+          <span>
+            <input id="user" type="text">
+            <button>search</button>
+          </span>
+        </div>-
+      <div class="starfield">
+        <div class="static"></div>
+        <div class="moving-1"></div>
+        <div class="moving-2"></div>
+        <div class="moving-3"></div>
+      </div>
+    </div>
+
+    <!-- 컨텐츠 영역         -->
+    <div id="section">
+      <div id="About">
+        <div class="w1200">
+          <h2>About me</h2>
+          <div class="wphone">
+            <div class="phone p1">
+              <h3>HELLO!</h3>
+              <img src="" alt="">
+              <p>푸른별</p>
+            </div>
+            <div class="phone p2">
+              <h3>Profile</h3>
+              <ul>
+                <li>전공; 뇌교육 융합</li>
+                <li>크리스챤 쇼보 아카데미 수료 및 자격</li>
+                <li>아샤 아카데미 수료 및 자격</li>
+                <li>웹디자인 ,웹퍼블리싱 과정</li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="phone p3">
+              <h3>Design Concept</h3>
+              <ul>
+                <li>핵심과 방향성</li>
+                <li>세련된 디자인<br>(깔끔,모던,편안)</li>
+                <li>차별화된 디자인</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--    포트폴리오    -->
+      <div id="Portfolio">
+        <div class="wPortfolio">
+          <h2>Portfolio</h2>
+          <ul>
+            <li><a href="">아신아이</a></li>
+            <li><a href="">(주)GS</a></li>
+            <li><a href="">GS건설<br>(리뉴얼)</a></li>
+            <li><a href="">스톰프뮤직</a></li>
+            <li><a href="">스톰프뮤직<br>(리뉴얼)</a></li>
+            <li><a href="">윤성하우징</a></li>
+            <li><a href="">시스클라인</a></li>
+          </ul>
+          <div class="imges">
+            <div class="imge_list">
+              <img src="img/p1.jpg" alt="">
+              <img src="img/p2.jpg" alt="">
+              <img src="img/p3.jpg" alt="">
+              <img src="img/p4.jpg" alt="">
+              <img src="img/p5.jpg" alt="">
+              <img src="img/p6.jpg" alt="">
+              <img src="img/p7.jpg" alt="">
+            </div>
+          </div>
+          <span class="pcontrol">
+            <a href="" data-p="play">play</a>
+            <a href="" data-p="stop">stop</a>
+            <a href="" data-p="reverse">reverse</a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!--    하단영역        -->
+    <div id="footer">
+
+    </div>
+
+  </body>
+</html>

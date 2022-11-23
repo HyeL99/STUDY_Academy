@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 100px);
+            gap: 10px;
+            background-color: coral;
+            grid-template: 
+            "header header header header" 150px
+            "body body body none" 300px
+            "item01 item01 item01 item01" 100px
+            "item02 item02 item03 item03" 150px
+            "footer footer footer footer" 200px / 100px 200px 300px
+            /*
+            grid-template-rows: 80px 350px 130px;
+            grid-template-columns: 2fr 100px 1fr;*/
+            /*grid-template-rows, grid-template-columns 그리고 grid-template-areas의 단축 속성입니다.*/
+
+        }
+        div.item{
+            background-color: pink;
+            border: solid 1px #000;
+        }
+        div.header{ grid-area: header;}
+        div.body{grid-area: body;}
+        div.side{grid-area:side}
+        div.item01{grid-area:item01}
+        div.item02{grid-area:item02}
+        div.item03{grid-area:item03}
+        div.footer{grid-area:footer}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item header">1</div>
+        <div class="item body">2</div>
+        <div class="item side">3</div>
+        <div class="item item01">4</div>
+        <div class="item item02">5</div>
+        <div class="item item03">6</div>
+        <div class="item footer">7</div>
+    </div>
+    
+</body>
+</html>

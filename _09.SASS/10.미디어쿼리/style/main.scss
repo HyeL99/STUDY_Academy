@@ -1,0 +1,21 @@
+$resSmall: "(max-width:767px)";
+$resMedium: "(max-width:1000px) and (min-width: 768px)";
+$resLarge: "(min-width:1001px)";
+
+
+div {
+    width: 200px;
+    height: 200px;
+    // 모바일 버전
+    @media #{$resSmall} {
+        background-color: seagreen;
+    }
+    // 테블릿 버전
+    @media #{$resMedium} {
+        background-color: crimson;
+    }
+    // 데스크탑 버전
+    @media #{$resLarge} {
+        background-color: cornflowerblue;
+    }
+}

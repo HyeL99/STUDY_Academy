@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+.container {
+    // .container 안에서 사용할 수 있는 변수 선언
+    $size: 100px;
+
+    border: 2px solid red;
+    .item { /* 중첩 */
+        width: 3*$size;
+        height: $size;
+        background: lightgreen;
+        margin: 0.5*$size auto;
+    }
+    .box{
+        width: $size *7.5;
+        background: yellow;
+        margin: 0 auto;
+        border: 5px solid lightgray;
+        p{
+            color: grey;
+            span{
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+}
+
+/*
+npm i -g sass     --sass 컴파일러 설치 
+sass --version    --sass 컴파일러 버전 확인
+sass style/main.scss:style/main.css       --컴파일
+sass --watch style/main.scss:style/main.css     --실시간컴파일
+sass --style compressed style/main.scss:style/main.css     --압축형으로
+*/

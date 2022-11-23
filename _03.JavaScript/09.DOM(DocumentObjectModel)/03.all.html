@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        li {
+            list-style: none;
+        }
+        body{
+            background: #ffe48a;
+            color: rgba(0,0,0,0.2);
+        }
+        body > div{
+            width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 150px auto;
+            padding: 20px;
+            color: rgb(255, 200, 17);
+        }
+        h1 {
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 img {
+            width: 200px;
+        }
+        li {
+            line-height: 50px;
+            margin-top: 2px;
+            background: #ffe48a;
+            padding-left: 20px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .red {
+            background: crimson;
+        }
+        .sky {
+            background: skyblue;
+        }
+        .orange {
+            background: orange;
+        }
+        .line {
+            text-decoration: underline overline;
+        }
+        .bigBold {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h1><img src="img/icon.svg" alt=""></h1>
+        <h2>모든 선택이 가능</h2>
+        <ul>
+            <li>리코타 치즈 샐러드</li>
+            <li class="sky">연어 스테이크</li>
+            <li>치즈 비프 샌드위치</li>
+            <li class="red">화이트와인</li>
+            <li class="red">믹스 베리 요거트</li>
+            <li class="red">크로플</li>
+        </ul>
+    </div>
+    <script>
+        /*
+            .querySelector() : 모든 선택자 선택 가능 (tag, class, id)
+                선택자가 여러개일 때에는 첫번째 것만 선택
+            .querySelectorAll() : 모든 선택자 선택 가능 (tag, class, id)
+                선택자가 여러개일 때 모든 선택자 선택
+        */
+        const $red = document.querySelector('.red');
+        $red.classList.add('line');
+
+        const $redAll = document.querySelectorAll('.red');
+        for(let item of $redAll){
+            item.classList.add('bigBold');
+            item.style.fontSize = '30px';
+        }
+        for(let i=1; i<$redAll.length; i++){
+            $redAll[i].style.cssText = 'font-weight : 500';
+        }
+        // .cssText : 자바스크립트로 적용한 직접 css들을 덮어씌움
+        // .style.css속성 : 새로운 css 속성 추가
+        $redAll[1].style.color = '#ffe48a'; 
+
+        const $liAll = document.querySelectorAll('li');
+        document.querySelectorAll('li').forEach(item => item.style.borderRadius = '15px')
+        
+    </script>
+</body>
+</html>

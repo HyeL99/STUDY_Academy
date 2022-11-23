@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>dua</title>
+<style type="text/css">
+	div{
+		background:#000;
+		width:600px;
+		margin:0 auto;
+		}
+		div#big img{
+					opacity:1;
+					width:600px;
+					}
+		div#small img{
+					opacity:0.2;
+					width:80px;
+					}
+</style>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(
+		function(){
+			//id가big인 div의 첫번째img을 제외한 나머지img를 hide시켜라
+          $("#big img").first().siblings().hide();
+		//id가 small인 div의 img에 마우스를 올리면 실행해라
+		  //(마우스를 올리면 img의 투명도를 1로 페이드시키고 마우스를 띄면 0.2로 페이드 시켜라)
+		  $("#small img").hover(
+		  	function(){
+				$(this).fadeTo(500,1);
+			},
+			function(){
+				$(this).fadeTo(500,0.2);
+			}
+		  );	
+		//id가 small인 div의  두번째 img를 클릭하면 실행해라
+		  //(id가big인 div의 두번째img를 보이게 해라.나머지img는 감춰라)
+		  var n;
+		  $("#small img").click(
+		  	function(){
+				n=$(this).attr("alt");
+				//alert(n);
+				$("#big img:eq"+"("+n+")").hide().fadeIn();
+				$("#big img:eq"+"("+n+")").siblings().hide();
+			}
+		  );
+
+		}
+	);
+</script>
+</head>
+
+<body>
+	<div id="big">
+    	<img src="img/m06_01.jpg" alt="2" />
+        <img src="img/m06_02.jpg" alt="2" />
+        <img src="img/m06_03.jpg" alt="2" />
+        <img src="img/m06_04.jpg" alt="2" />
+        <img src="img/m06_05.jpg" alt="2" />
+        <img src="img/m06_06.jpg" alt="2" />
+    </div>
+    <div id="small">
+        <img src="img/m06_01.jpg" alt="0" />
+        <img src="img/m06_02.jpg" alt="1" />
+        <img src="img/m06_03.jpg" alt="2" />
+        <img src="img/m06_04.jpg" alt="3" />
+        <img src="img/m06_05.jpg" alt="4" />
+        <img src="img/m06_06.jpg" alt="5" />
+    </div>
+</body>
+</html>

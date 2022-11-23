@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function-덧셈곰셈</title>
+    <style>
+        body{
+            background: crimson;
+            color: #fff;
+            text-align: center;
+        }
+        body > div{
+            width: 500px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 200px auto;
+            padding: 20px;
+            color: crimson;
+        }
+        #p1{
+            font-size: 20px;;
+        }
+        #p2{
+            background: crimson;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>두 숫자의 덧셈과 곱셈
+        </h1>
+        <p id="p1">
+            <script>
+                let num1 = Number(prompt('첫번째 숫자는?'));
+                let num2 = Number(prompt('두번째 숫자는?'));
+                document.write(`첫번째 숫자: ${num1}, 두번째 숫자: ${num2}`)
+            </script>
+        </p>
+        <p id="p2">
+            <script>
+                const add = function(a,b){
+                    return a+b;
+                }
+                const multi = function(a,b){
+                    return a*b;
+                }
+                document.write(`더한 값은 ${add(num1,num2)}, 곱한 값은 ${multi(num1,num2)}`)
+            </script>
+        </p>
+    </div>
+</body>
+</html>
+
+<!-- 
+    조건문(Conditional Statement)
+
+    if(조건문){조건 충족시 실행문}
+    if(조건문){조건 충족시 실행문} else {조건 미충족시 실행문}
+    if(조건문1){조건1 충족시 실행문} else if(조건문2){조건2 충족시 실행문}... else {조건 미충족시 실행문}
+
+    조건문에서
+    A && B : A 그리고 B (A와 B 조건문을 모두 충족시켜야 true)
+    A || B : A 또는 B (A조건문과 B조건문 중 하나 이상을 충족하면 true)
+    A != B : A 조건문과 B 조건문 모두 충족하지 않아야 true
+-->

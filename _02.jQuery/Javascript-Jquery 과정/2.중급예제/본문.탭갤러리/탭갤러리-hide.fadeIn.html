@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>제이쿼리-addclass</title>
+<style type="text/css">
+a{
+	text-decoration:none;
+	color: #333;
+	font-weight:bold;
+	font-size:16px;
+	cursor:hand;
+	}
+ul{
+	list-style:none;
+	overflow:hidden;
+	background:#CCC;
+	}
+	ul li{
+		float:left;
+		}
+		ul li a{
+			padding:3px 10px;
+			}
+div{
+	width:400px;
+	 height:300px;
+	 border:#900 2px solid;
+   }
+ p{
+	 width:400px;
+	 height:300px;
+	 display:none;
+	 }
+	 
+	 .bg1{
+		 background:url(images/pic1.jpg) no-repeat;
+		 }
+	 .bg2{
+		 background:url(images/pic2.jpg) no-repeat;
+		 }
+	 .bg3{
+		 background:url(images/pic3.jpg) no-repeat;
+		 }
+		 .on{
+			background:#F90;
+			 }
+		 .off{
+			background: none;
+			 }
+</style>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script>
+
+		$(document).ready(
+		    function(){
+				$("a.a1").click(
+					function(){
+						$("p").hide().fadeIn(500).addClass("bg1");
+						$("p").removeClass("bg2");
+						$("p").removeClass("bg3");
+						
+						$(this).addClass("on");
+						$("a.a2").removeClass("on");
+						$("a.a3").removeClass("on");
+						
+					}
+				);
+				$("a.a2").click(
+					function(){
+						$("p").hide().fadeIn(500).addClass("bg2");
+						$("p").removeClass("bg1");
+						$("p").removeClass("bg3");
+						
+						$(this).addClass("on");
+						$("a.a1").removeClass("on");
+						$("a.a3").removeClass("on");
+					}
+				);
+				$("a.a3").click(
+					function(){
+						$("p").hide().fadeIn(500).addClass("bg3");
+						$("p").removeClass("bg2");
+						$("p").removeClass("bg1");
+						
+						$(this).addClass("on");
+						$("a.a1").removeClass("on");
+						$("a.a2").removeClass("on");
+					}
+				);
+			}
+		);
+		
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a class="a1" alt="1">제품1</a></li>
+        <li><a class="a2" alt="2">제품2</a></li>
+        <li><a class="a3" alt="3">제품3</a></li>
+    </ul>
+    <div>
+    <p class="pic"></p>
+    </div>
+</body>
+</html>

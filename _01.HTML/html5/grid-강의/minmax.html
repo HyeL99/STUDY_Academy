@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div.container {
+		    display: grid;
+		    grid-template-columns: repeat(3, 1fr);
+		    grid-template-rows: repeat(3, minmax(100px, auto));
+	    }
+
+        div.item{
+            border: solid 3px black;
+            background-color: coral;
+
+        }
+
+        /*minmax 최소값과 최대값 설정
+        min-width, max-width와 같은 원리이며, 영역안에 내용이 없어도 최소값만큼 유지하며
+        내용이 많을 경우 max값 만큼까지 늘어날 수 있다.
+        px과 같은 고정값이 아닌 auto의 경우에는 내용에 따라 크기를 계속 늘릴 수 있다.
+        
+        */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">item01</div>
+        <div class="item">item02</div>
+        <div class="item">item03</div>
+        <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus consequatur similique aperiam ratione voluptatum non, aliquam officia! In provident recusandae libero officiis doloremque unde maiores quisquam eveniet, exercitationem, perferendis iure!</div>
+        <div class="item">item05</div>
+        <div class="item">item06</div>
+        <div class="item">item07</div>
+        <div class="item">item08</div>
+        <div class="item">item09</div>
+        <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore a nam voluptatibus! Nulla a omnis excepturi tempore officiis? Veritatis possimus magni cumque optio suscipit architecto maxime nesciunt recusandae voluptatibus consectetur vitae minima perspiciatis ex quae dolor, repudiandae reprehenderit inventore obcaecati dolorem! Neque beatae rem in, velit repellendus eaque molestias nihil reiciendis iste! Pariatur architecto ducimus iusto sit quae impedit similique eligendi consequatur tempora, ab magnam, assumenda recusandae doloremque ex hic. Deserunt officiis porro quasi non consequuntur quidem ratione, repellendus ut sapiente commodi facere voluptatem ab reprehenderit quibusdam ipsa, architecto atque numquam voluptate quisquam, nihil laudantium nisi impedit? Dolorum, illo sint!</div>
+    </div>
+    
+</body>
+</html>

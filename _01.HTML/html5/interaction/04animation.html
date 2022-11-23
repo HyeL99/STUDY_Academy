@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        /*
+        애니메이션
+        html에 적용되는 css 스타일을 다른 css스타일로 부드럽게 전환시키는 css3 속성이다.
+        특징은 진행시간 안에 세부시간들을 시퀀스로 나눠서 여러개의 프레임으로 다양한 효과들을 정리하여 적용할 수도 있다.
+
+        트랜지션으로 어느정도 간단한 애니메이션은 해결할 수 있지만 특정 행동 이후에 진행된다는 조건과 애니메이션보다 효과가 제한적이라는 단점이 존재한다.
+
+        animation 속성
+        name(필수속성)
+            keyframes와 연결하는 중요한 요소이며, 네이밍은 임의대로 작성한다.( 목적에 맞는 네이밍)
+        duration(필수속성) : 진행시간
+        delay(선택속성) : 애니메이션이 시작되기 전에 지연되는 시간
+        iteration-count(선택속성) : 애니메이션의 반복 횟수 설정
+            기본값은 1회이며, 숫자만큼 카운트를 반복한다.
+            무한반복의 의미로 9999와 같은 값은 미리 메모리를 확보하는 과정에서 과부하의 원인이 되므로 infinite로 설정하는 것이 좋다.
+        derection(선택속성): 애니메이션이 종료후 반복될 때 진행방향 설정
+            normal(기본값) 0%시작 100%종료
+            reverse : 100%시작 0%종료
+            alternate : 홀수번(normal) 짝수번(reverse)
+            alternate-reverse : 홀수번(reverse) 짝수번(normal)
+        fill-mode : 애니메이션이 종료 또는 대기 상태일 때 스타일을 지정
+            무한반복이거나 delay가 없을 경우 확인 불가
+            none(기본값)
+                대기 : 시작 프레임(0%)에 설정된 스타일을 적용하지 않음
+                종료 : 실행 전 상태로 스타일을 되돌리고 종료
+            backwords
+                대기 : 시작 프레임(0%)에 설정된 스타일을 적용하고 대기
+                종료 : 실행 전 상태로 스타일을 되돌리고 종료
+            forwards
+                대기 : 시작 프레임(0%)에 설정된 스타일을 적용하지 않음
+                종료 : 종료 프레임에 설정된 스타일을 적용하고 종료
+            both
+                대기 : 시작 프레임(0%)에 설정된 스타일을 적용하고 대기
+                종료 : 종료 프레임에 설정된 스타일을 적용하고 종료
+        
+        animation 그룹속성
+        animation: name(필수) duration(필수) delay(선택) direction(선택) timing(선택) couunt(선택)
+        fill-mode는 개별로만 사용한다.
+        
+
+        */
+        html, body, div{
+            margin: 0;
+            padding: 0;
+        }
+        div.box{
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+            background: cornsilk;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+            animation-name: boxAni;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+            /* animation-iteration-count: infinite;
+            animation-direction: alternate; */
+            
+        }
+
+        div.box1 {
+            animation-timing-function: ease;
+            animation-fill-mode: none;
+        }
+        div.box2 {
+            animation-timing-function: ease-in;
+            animation-fill-mode: backwards;
+        }
+        div.box3 {
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        div.box4 {
+            animation-timing-function: ease-out;
+            animation-fill-mode: both;
+        }
+        div.box5 {
+            animation-timing-function:linear;
+        }
+        @keyframes boxAni{
+            0%{
+                background: red;
+            }
+            100%{
+                transform: translateX(200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+</body>
+</html>

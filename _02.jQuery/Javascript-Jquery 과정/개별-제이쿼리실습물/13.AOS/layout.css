@@ -1,0 +1,453 @@
+html,body{
+  height: 100%;
+}
+body>*{
+  height: 500px;
+  text-align: center;
+}
+body>*>h2{
+  font-size: 40px;
+  line-height: 3;
+}
+/* 상단영역 */
+header{
+ height: 100px;
+ background-color: rgba(0,0,0,0.5);
+ position: absolute;
+ z-index: 2;
+ width: 100%;
+}
+
+header ul {
+		list-style: none;
+		background: #CCC;
+		overflow: hidden;
+		display: inline-block;
+		height: 30px;
+		position: relative;
+		top: 0;
+    /*! transition: all 1s; */
+		}
+	header ul li{
+		float:left;
+		border-right:1px solid #666;
+		text-align:center;
+		}
+		header ul li:last-child{
+			border:none;
+			}
+		header ul li a{
+			display:block;
+			padding:5px 20px;
+			text-decoration:none;
+			color:#333;
+			font-size:0.75em;
+			}
+
+/* 대메뉴 고정 */
+.fixed{
+ position: fixed;
+ left: calc(50% - 121px);
+ z-index: 2;
+ top:-30px;
+ animation-name:down;
+ animation-duration: 1.5s;
+ animation-direction: revert;
+ animation-fill-mode:forwards;
+}
+@keyframes down{
+  100%{
+    top:0;
+  } 
+}
+@keyframes up{
+  100%{
+    top:-30px;
+  } 
+}
+
+
+#title{
+ background-color: #ccc;
+ height: 100%;
+}
+/* about */
+#about{
+ background-color: #fefefe;
+ height: auto;
+ padding: 80px 0;
+}
+#about .profile{
+ max-width: 1200px;
+ margin:0 auto;
+ text-align: center;
+  overflow: hidden;
+}
+#about .profile img{
+ float: left;
+ width: 40%; 
+ margin-right:20%; 
+ vertical-align: top;
+ clip-path: polygon(50% 0%, 100% 50%, 51% 70%, 0% 50%);
+ shape-outside: polygon(50% 0%, 100% 50%, 50% 70%, 0% 50%); 
+}
+#about .profile p{
+ line-height: 1.5;
+}
+/* 포트폴리오 */
+#porfolio{
+ background-color: aliceblue;
+ height: auto;
+ padding-top: 60px;
+}
+#porfolio h2{
+  color: transparent;
+  -webkit-text-fill-color: transparent; 
+  background-image: url(https://images.unsplash.com/photo-1506792006437-256b665541e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
+ -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 10%;
+  font-size:60px;
+  line-height:60px;
+  font-weight:bold;
+  transition: all 2.5s;
+  background-position: center;
+}
+.portani{
+  background-size: 100% !important;
+}
+#porfolio>section{
+  height: 600px;
+}
+#porfolio>section h3{
+  border-top:1px solid #ccc;
+  font-size: 35px;
+  line-height: 3;
+}
+/* 그래픽작품 슬라이더 */
+#porfolio>section.Graphic>div{
+ margin: 0 auto; 
+}
+/* 웹사이트 작품 */
+#porfolio > section.WebSite {
+  height: auto;
+  padding: 80px 0;
+  background-color: #fff;
+}
+#porfolio > section.WebSite .monitor{
+  background-image: url(img/monitor.png);
+  width: 593px;
+  height: 488px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+#porfolio > section.WebSite .monitor .screen{
+  width: 100%;
+  height: 333px;
+  padding: 4px 4px 0 4px;
+  box-sizing: border-box;
+}
+#porfolio > section.WebSite .monitor .screen .slick-list{
+ height: 333px; 
+ overflow: hidden; 
+}
+#porfolio > section.WebSite .monitor .screen .slick-dots li button::before{
+ color:#fff;
+ font-size: 13px;
+ top: -6px;
+}
+#porfolio > section.WebSite .monitor .screen img{
+ width: 100%; 
+}
+#porfolio > section.WebSite .monitor .screen .slick-list li{
+  position: relative;
+}
+#porfolio > section.WebSite .monitor .screen .webdescription{
+ position: absolute;
+ top: 0;
+ left: 0; 
+ width: 100%;
+ height: 100%;
+ padding-top: 20px;
+ box-sizing: border-box;
+}
+#porfolio > section.WebSite .monitor .screen .webdescription h4{
+  font-size: 25px;
+  line-height: 2;
+}
+#porfolio > section.WebSite .monitor .screen .webdescription p{
+  line-height: 2;
+}
+#porfolio > section.WebSite .monitor .screen .webdescription a{
+  position: absolute;
+  bottom:80px;
+  left: calc(50% - 85px);
+  width: 170px;
+  padding: 7px;
+  box-sizing: border-box;
+  background-color: rgba(255,0,0,0.5);
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 6px;
+}
+/* 제이쿼리 작품 */
+#porfolio > section.jQuery{
+  height: auto;
+}
+#porfolio > section.jQuery .jportfolio{
+  overflow: hidden;
+  width: 900px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+#porfolio > section.jQuery .jportfolio li{
+  width: 300px;
+  float: left;
+  height: 300px;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+#porfolio > section.jQuery .jportfolio li h3{
+  
+}
+#porfolio > section.jQuery .jportfolio li a{
+  
+}
+/* 제이쿼리작품 view */
+#porfolio > section.jQuery .jview{
+  position:fixed;
+  left:0;
+  top:0;
+  background-color:rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#porfolio > section.jQuery .jview iframe{
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  position: relative;
+  top:calc(50% - 250px);
+}
+#porfolio > section.jQuery .jview button{
+  position: absolute;
+  top: calc(50% - 275px);
+  left: calc(50% + 225px);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+/*  */
+/*  */
+#title::before{
+ content: "scroll"; 
+ position: absolute;
+ bottom:80px;
+ width: 100%;
+ display: block;
+ text-align: center; 
+ text-transform: uppercase; 
+ z-index: 3;
+}
+#title::after{
+ content: ">>"; 
+ position: absolute;
+ bottom:30px;
+ display: block; 
+ width: 20px;
+ height: 20px; 
+ border-radius: 50%;
+ padding: 10px; 
+ color:#fff; 
+ z-index: 3;
+ left: calc(50% - 20px);
+ transform: rotate(90deg) scaleY(3); 
+ animation-name: updown;
+ animation-duration: 2s;
+ animation-iteration-count: infinite ; 
+}
+@keyframes updown{
+  50%{
+/*  bottom:20px; */
+    transform: translateY(20px)  rotate(90deg) scaleY(3);
+  }
+} 
+
+/* 컨택 */
+#contact{
+  background-color: aqua;
+}
+#contact ul{
+  text-align: center;
+}
+#contact ul li{
+  
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin: 0 30px;
+}
+#contact ul li:nth-child(1){
+  
+}
+#contact ul li:nth-child(2){
+  
+}
+#contact ul li:nth-child(3){
+
+}
+#contact ul li a{
+  display: block;
+  height: 100%;
+  line-height: 200px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #333;
+  letter-spacing: 1px;
+  position: relative;
+}
+#contact ul li a::before{
+ content: ""; 
+ width:70px;
+ height:70px;
+ display: block; 
+ background-repeat:no-repeat ;
+ background-position:center; 
+ background-size:100%;  
+ position: absolute;
+ left: calc(50% - 35px); 
+ top: 10px; 
+
+}
+#contact ul li:nth-child(1) a::before{
+ background-image: url(img/email.svg);
+}
+#contact ul li:nth-child(2)  a::before{
+ background-image: url(img/call.svg);  
+}
+
+/* sns */
+#sns{
+  background-color: bisque;
+}
+#sns ul{
+  text-align: center;
+}
+#sns ul li{
+  display: inline-block;
+  width: 200px;
+  border-radius: 50%;
+  margin: 0 30px;
+}
+
+#sns ul li a{
+  display: block;
+  height: 100%;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #333;
+  letter-spacing: 1px;
+  position: relative;
+}
+#sns ul li a i{
+  display: block;
+  font-size: 50px;
+  line-height:1.4;
+}
+
+footer{
+
+  height: 200px;
+  background-color: blueviolet;
+}
+[data-aos]{
+  font-size: 50px;
+  transition-property: font-size;
+  transition-duration:2.5s !important;
+}
+[class="aos-init"]{
+ font-size: 30px; 
+}
+
+/* 타이틀분할 */
+ul.ftitle{
+  color: #fff;
+  height: 100%;
+  overflow: hidden;
+}
+ul.ftitle li{
+  float: left;
+  width: 33.33333%;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 1s;
+  cursor: pointer;
+}
+ul.ftitle li:nth-child(1){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg1.jpg?ukey=2VxcVW8);
+}
+ul.ftitle li:nth-child(2){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg2.jpg?ukey=rHIaRCv);
+}
+ul.ftitle li:nth-child(3){
+  background-image: url(https://celltrionwelfare.com:447/File/Details/mainCon_bg3.jpg?ukey=nvvQbhS);
+}
+ul.ftitle li h2{
+  
+  font-size: 30px;
+  line-height: 3;
+  width: 150px;
+}
+ul.ftitle li h3{
+  
+  font-size: 20px;
+  line-height: 3;
+  width: 250px;
+}
+ul.ftitle li p{
+  
+  font-size: 15px;
+  line-height: 1.5;
+  width: 410px;
+}
+.wide{
+/*   animation-name:wide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards ;
+  animation-direction: alternate ; */
+  width:70% !important;
+position: relative;
+z-index: 1;
+}
+@keyframes wide{
+  100%{
+    width:70%;
+  }
+}
+.narrow{
+/*   animation-name:narrow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards ; */
+  width:15% !important;
+  filter: brightness(30%);
+}
+@keyframes narrow{
+  100%{
+    width:15% ;
+    
+  }
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        li {
+            list-style: none;
+        }
+        body{
+            background: #ffe48a;
+            color: rgba(0,0,0,0.2);
+        }
+        body > div{
+            width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 150px auto;
+            padding: 20px;
+            color: rgb(255, 200, 17);
+        }
+        h1 {
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 img {
+            width: 200px;
+        }
+        li {
+            line-height: 50px;
+            margin-top: 2px;
+            background: #ffe48a;
+            padding-left: 20px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .red {
+            background: crimson;
+        }
+        .sky {
+            background: skyblue;
+        }
+        .orange {
+            background: orange;
+        }
+        .line {
+            text-decoration: underline overline;
+        }
+        .bigBold {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h1><img src="img/icon.svg" alt=""></h1>
+        <h2>html(tag)선택</h2>
+        <ul>
+            <li class="orange line">리코타 치즈 샐러드</li>
+            <li class="orange line">연어 스테이크</li>
+            <li>치즈 비프 샌드위치</li>
+            <li class="red line">화이트와인</li>
+            <li class="red">믹스 베리 요거트</li>
+            <li class="red">크로플</li>
+        </ul>
+    </div>
+    <script>
+        const $li1 = document.querySelector('li');
+        console.log($li1);
+
+        const $li2 = document.getElementsByTagName('li');
+        console.log($li2);
+
+        $li2[$li2.length-1].className = 'sky';       //프로퍼티
+        $li2[$li2.length-1].classList.remove('sky'); //매서드
+
+        $li2[0].className = 'line'; // class를 덮어씀
+        $li2[1].classList.remove('line') // 지정된 클래스 삭제
+
+        for(let i=1; i<$li2.length; i++){
+            // $li2[i].className = 'bigBold' // 클래스 덮어쓰기
+            $li2[i].classList.add('bigBold'); // 클래스 추가
+        }
+
+    </script>
+</body>
+</html>

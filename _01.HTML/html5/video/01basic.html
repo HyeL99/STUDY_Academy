@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비디오 태그</title>
+    <style>
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!--ogv, webm 웹폰트처럼 동영상 확장자
+
+        비디오 태그
+        html5에 추가된 태그로 기존에는 스크립트나 기타 라이브러리를 통해 동영상을 올려야 했다면, 간단하게 태그로 동영상을 올릴 수 있게 되었다.
+
+        동영상을 업로드하는 방법
+        1. 직접 파일을 업로드 하는 방법
+            확장자명은 avi는 압축률이나 용량에 있어서 웹 사이트에 적합하지 않은 확장자명이므로 사용하지 않는다. 주로 mp4가 균일화되어서 사용하기는 하나, 브라우저마다 재생하는 확장자가 다르기 때문에 확장자끼리 올리는 것이 좋다. (인코딩 이용)
+            avi는 브라우저용이 아니라 감상용이기 때문에 파일 용량이 매우 커서 사용하지 않는다.
+
+                mp4 : 모든 브라우저 호환
+                ogv : ie, 사파리 미호환
+                webM : ie, 사파리 미호환
+
+                video 태그 속성
+                controls : 플레이버튼/음량조절 같은 컨트롤 창을 생성
+                autoplay : 비디오가 실행할 준비가 되면 자동 재생
+                muted : 음소거 (웹 접근성 지침에 의해 소리가 나는 동영상 자동 재생 금지)
+                loop : 비디오 재생이 끝나면 바로 반복 재생
+                *웹 접근성 지침에 의하면 웹 사이트 내에서 비디오 자동반복재생을 지원하기 위해서는 autoplay muted loop 속성을 항상 넣어야한다.
+                → autoplay muted loop : 무한 자동 재생
+
+                poster : 동영상이 재생되기 전 정지상태일 때에 썸네일 형태의 이미지를 제공해주는 태그
+                    자동반복재생시에는 정지상태가 안되기 때문에 확인할 수 없다.
+                    최초 실행시에 이미지는 삭제되고 중간에 정지해도 나타나지 않음.
+                    이미지 최초의 사이즈만 제공하기 때문에 동영상의 크기와 다르다면 오차가 생길 수 있다. css가 아닌 속성이기 때문에 css로 사이즈를 조절할 수 없다.
+                preload : 영상이 있는 페이지를 로드할 때 사전에 영상에 대한 정보 다운로드 관리에 대한 속성
+                    none : 사전에 비디어에 대한 어떤 정보도 받지 않고 재생 시에 모든 정보를 한번에 다운로드 함
+                        비디오의 용향에 따라서 로딩 속도가 느려질 수 있음
+                    metadata : 영상에 대한 간단한 정보들(시간, 크기 등)만 다운 후 재생시에 나머지 정보를 다 받음
+                    auto : 로드와 동시에 모든 비디오의 정보를 받음
+                        동영상의 크기과 사이트 내의 정보에 따라 로드 시간에 영향을 받음
+                        자동반복재생 설정시 preload의 값이 none이나 metadata라면 값이 무시되고 auto로 강제 변환된다.
+                playsinline : pc나 안드로이드는 동영상 재생 시 현재화면(inline)에서 확인할 수 있지만 ios는 정책때문에 전체화면으로 바뀌어서 재생된다.
+                    모바일 지원시 playsinline을 같이 설정해서 ios에서도 인라인으로 재생되도록 해야 한다.
+
+        2. iframe으로 유튜브, vimeo 영상을 긁어오는 방법
+    
+    -->
+    <video controls poster="./video/poster.jpg" preload="auto" playsinline>
+        <!--controls="controls" autoplay="autoplay"-->
+        <source src="./video/video.mp4">
+    </video>
+
+    <iframe src="https://player.vimeo.com/video/712561471?h=d02b1a3a51" width="640" height="426" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/712561471">&quot;BREATHE&quot; -  idk+Kaytranada</a> from <a href="https://vimeo.com/remibesse">REMI BESSE</a> on <a href="https://vimeo.com">Vimeo</a>.</p> <!--vimeo 소스 가져오기-->
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TgOu00Mf3kI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <!--유튜브 소스 가져오기-->
+</body>
+</html>

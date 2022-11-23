@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드</title>
+    <style>
+        /*
+        
+        
+        
+        */
+        div.container{
+            display: grid;
+            background-color: yellow;
+            padding: 10px;
+            grid-template-columns: repeat(3, 1fr);
+		    grid-template-rows: repeat(3, minmax(150px, auto));
+            gap: 20px;
+            /* row-gap: 20px; */
+		    /* column-gap: 20px; */
+		    /* grid-gap: 20px;
+            단일속성으로도 사용하지만 그룹속성으로는 gap을 사용한다.
+            
+            
+            */
+
+        }
+        div.item{
+            border: solid 3px black;
+            background-color: coral;
+
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="item">item01</div>
+        <div class="item">item02</div>
+        <div class="item">item03</div>
+        <div class="item">item04</div>
+        <div class="item">item05</div>
+        <div class="item">item06</div>
+        <div class="item">item07</div>
+        <div class="item">item08</div>
+        <div class="item">item09</div>
+        <div class="item">item010</div>
+    </div>
+    
+</body>
+</html>

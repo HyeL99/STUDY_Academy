@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>마우스 휠 슬라이드</title>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
+                var E = e.originalEvent;
+                delta = 0;
+                console.log(E);
+                if (E.detail) {
+                    delta = E.detail * -1;
+                   // $('body').text(delta);
+                }else{
+                    delta = E.wheelDelta;
+                   // $('body').text(delta);
+                };
+            });
+        });
+   </script>
+    </head>
+    <body>
+	<div id="wrap">
+        <div id="main_bn">
+            <li style="">
+                <img src="./img/image_1.jpg" alt="" />
+            </li>
+            <li>
+                <img src="./img/image_2.jpg" alt="" />
+            </li>
+            <li>
+                <img src="./img/image_3.jpg" alt="" />
+            </li>
+        </div>
+
+
+	</div>
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+li{
+	cursor:pointer;
+	}
+
+</style>
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			//ul을 가지고 있는 li에 추가하시오(<i class='ion-arrow-down-b'></i>)
+			//$("li").has("ul").children().prepend("<i class='ion-arrow-down-b'></i>");
+			$("li").has("ul").children().before("<i class='ion-arrow-down-b'></i>");
+			//before()는 요소밖의 앞에 배치....
+			//ul을 가지고 있는 li를 클릭하면 실행하시오(ul을 slideToggle하시오)
+			var n;
+			n=0; //0을 n에 넣어라 = 대입연산자
+			//var n=0;
+			$("li").has("ul").click(
+				function(){
+					$(this).children("ul").slideToggle();
+					//i태그의 속성값을 변경하시오
+					if(n==0){ // ==은 비교연산자: 같다
+						$("i").attr("class","ion-arrow-up-b");
+						n=1;
+						console.log(n);
+					}else{
+						$("i").attr("class","ion-arrow-down-b");
+						n=0;
+						console.log(n);
+						}
+					
+				}
+			);
+			////서브ul이 처음에는 접혀있게 처리 has()이용
+			$("li").has("ul").children("ul").hide();
+		}
+	);
+</script>
+</head>
+
+<body>
+<div id="container">
+	<ul>
+      <li>1
+        <ul>
+              <li>1-1</li>
+              <li>1-2</li>
+              <li>1-3</li>
+          </ul>
+      </li>
+      <li>2</li>
+      <li>3
+        <ul>
+            <li>3-1</li>
+              <li>3-2</li>
+          </ul>
+      </li>
+      <li>4</li>
+  </ul>
+</div>
+</body>
+</html>

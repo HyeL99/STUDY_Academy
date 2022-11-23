@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>타이틀분할애니</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css">
+
+    <script  src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="title.css">
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $(".title li").click(
+            function(){
+              $(this).attr("class","wide");
+              $(this).siblings().attr("class","narrow");
+            }
+          );
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <!-- https://celltrionwelfare.com:447/ -->
+    <ul class="title">
+      <li class="">
+        <h2>sponsorship</h2>
+        <h3>후원 사업</h3>
+        <p>도움의 손길이 필요한 우리 주변의 많은 소외된 이웃에게<br>빛이되는 다양한 사업을 진행하고 있습니다.</p>
+      </li>
+      <li class="">
+        <h2>story</h2>
+        <h3>"셀트리온복지재단 이야기</h3>
+        <p>어려운 이웃에게 나눔과 사랑을 주고 더불어 살아가는 사회,<br>셀트리온복지재단이 만들어가고 있습니다.</p>
+      </li>
+      <li class="">
+        <h2>news</h2>
+        <h3>활동 소식</h3>
+        <p>아름다운 사회를 만들기 위해 노력하는 셀트리온복지재단의<br>다양한 소식과 감동의 순간을 전달해드립니다.</p>
+      </li>
+    </ul>
+  </body>
+</html>

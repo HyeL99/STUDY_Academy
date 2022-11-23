@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>타이틀애니</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/title.css">
+    <!-- 제이쿼리 연결하기-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+      $(document).ready(
+        function(){
+
+          // 다음버튼 클릭
+          var n=1;
+          console.log(n);
+
+          $(".next").click(
+            function(){
+              if(n<4){
+                n=n+1; // n값에 1을 더하기 = 넣어라
+                $("ul li:nth-child("+n+")").prev().addClass("z1");
+                $("ul li:nth-child("+n+")").addClass("current").addClass("z2");
+                $("ul li").not("ul li:nth-child("+n+")").removeClass("current z2");
+
+                console.log(n);
+
+                // 번호변경
+                $("span.control strong i").text("0"+n);
+
+                //텍스트 애니
+                $("#title ul li:nth-child("+n+") div.in").addClass("current");
+                $("#title ul li div.in").not("#title ul li:nth-child("+n+") div.in").removeClass("current");
+
+              }
+              return false; //a태그를 클릭해도 새로고침되지 않게.비활성화
+            }
+          );
+
+          $(".prev").click(
+            function(){
+
+              if(n>1){
+                n=n-1;
+                $("#title ul li:nth-child("+n+")").next().addClass("z1");
+                $("#title ul li:nth-child("+n+")").addClass("z2").addClass("current");
+                $("ul li").not("ul li:nth-child("+n+")").removeClass("current").removeClass("z2").removeClass("z1");
+
+                console.log("prev클릭시 n값: "+n);
+                // 번호변경
+                $("span.control strong i").text("0"+n);
+
+                //텍스트 애니
+                $("#title ul li:nth-child("+n+") div.in").addClass("current");
+                $("#title ul li div.in").not("#title ul li:nth-child("+n+") div.in").removeClass("current");
+
+              }
+              return false;
+            }
+          );
+
+
+        } //end
+      );
+    </script>
+  </head>
+  <body>
+    <!-- 타이틀애니 -->
+    <div id="title">
+      <ul>
+        <li class="z1">
+          <div class="in current">
+            <h2>윤성하우징코딩작품1</h2>
+            <p>마크업,css,jquery</p>
+            <a href="">자세히 보기</a>
+          </div>
+          <img src="img/t1.jpg" alt="">
+        </li>
+        <li>
+          <div class="in">
+            <h2>윤성하우징코딩작품2</h2>
+            <p>마크업,css,jquery</p>
+            <a href="">자세히 보기</a>
+          </div>
+          <img src="img/t2.jpg" alt="">
+        </li>
+        <li>
+          <div class="in">
+            <h2>윤성하우징코딩작품3</h2>
+            <p>마크업,css,jquery</p>
+            <a href="">자세히 보기</a>
+          </div>
+          <img src="img/t3.jpg" alt="">
+        </li>
+        <li>
+          <div class="in">
+            <h2>윤성하우징코딩작품4</h2>
+            <p>마크업,css,jquery</p>
+            <a href="">자세히 보기</a>
+          </div>
+          <img src="img/t4.jpg" alt="">
+        </li>
+      </ul>
+      <span class="control">
+        <strong><i>01</i>/04</strong>
+        <a href="" class="prev"></a>
+        <a href="" class="next"></a>
+      </span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>조건문</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+		}
+	body>div{
+		outline:2px solid black;
+		width:720px;
+		overflow:hidden;
+		margin:0 auto;
+		}
+		div#con div{
+			width:200px;
+			height:200px;
+			background:#ccc;
+			margin:0 20px;
+			cursor:pointer;
+			transition:background 0.5s;
+			float:left;
+			text-align:center;
+			line-height:200px;
+			outline:1px solid red;
+		}
+		.over{
+			background:#F90;
+		}
+    </style>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script>
+		$(document).ready(
+			function(){
+				$("div div").hover(
+					function(){
+						//$(this).addClass("over").css("opacity",0).animate({"opacity":1},500);
+						$(this).addClass("over");
+					},
+					function(){
+						$(this).removeClass("over");
+					}
+					
+				);
+
+			}
+		);
+	</script>
+    <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/jquery.lightbox-0.5.css" />
+    
+</head>
+
+<body>
+    <div id="con">
+        <div id="box1"><a href="images/b1.jpg"><img src="images/s1.jpg" /></a></div>
+        <div id="box2"><a href="images/b2.jpg"><img src="images/s2.jpg" /></a></div>
+        <div id="box3"><a href="images/b3.jpg"><img src="images/s3.jpg" /></a></div>
+    </div>
+    <script type="text/javascript">
+
+	/*$("#con a").lightBox()*/
+	
+	/* 확장옵션 */
+	$("#con a").lightBox( {
+		   overlayBgColor:'red',       // 배경색
+		   overlayOpacity:0.7,          // 배경 불투명도  
+		   containerResizeSpeed:1000     // 사진을 포함한 요소가 보이는 속도
+	});
+	
+	</script>
+</body>
+</html>

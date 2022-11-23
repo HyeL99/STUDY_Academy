@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery basic</title>
+    <style>
+        a{
+            margin-right: 20px;
+        }
+        .upper{
+            text-transform: uppercase;
+        }
+        .big{
+            font-size: 30px;
+        }
+        .small{
+            font-size: 15px;
+        }
+        .dark{
+            background-color: #000;
+            color: #fff;
+        }
+        aside{
+            background-color: #eee;
+            width: 200px;
+            height: 400px;
+            position: absolute;
+            right: -200px;
+        }
+        aside span{
+            position: absolute;
+            left: -70px;
+            width: 70px;
+            background-color: #eee;
+            text-align: center;
+        }
+        .show{
+            right: 0 !important;
+            transition: all 1s;
+        }
+        .close{
+            right: -200px !important;
+            transition: all 1s;
+        }
+    </style>
+    <!-- 직접 입력 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- cdn가져오기 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script type="text/javascript">
+        $(document).ready( //제어대상(객체).제어명령(method)
+            ()=>{ // //명령들을 묶어주는 봉투역활, function() {} 로 써도 됨
+                //적용 속성이 한쌍일 경우 $(" ").css(" "," ");
+                $("body").css("background", "cornsilk"); 
+                //적용 속성이 여러쌍일 경우 $(" ").css(" ":" ", " ":" ", ...);
+                $("h1").css({"font-size":"25px", "width":"100px", "background":"yellowgreen"})
+
+                $(".up").click( // 클릭이벤트 추가
+                    ()=>{ //대상이 다를 경우 보통 하위 function 생성
+                        $("h2").addClass("upper"); //class추가
+                        return false; //a태그의 새로고침이나 링크를 비활성화시킴
+                    }
+                )
+                $(".big30").click( // 클릭이벤트 추가
+                    ()=>{ //대상이 다를 경우 보통 하위 function 생성
+                        $("h2").addClass("big"); //class추가
+                        $("h2").removeClass("small"); //class 제거
+                        return false; //a태그의 새로고침이나 링크를 비활성화시킴
+                    } 
+                )
+                $(".small10").click( // 클릭이벤트 추가
+                    ()=>{ //대상이 다를 경우 보통 하위 function 생성
+                        $("h2").addClass("small"); //class추가
+                        $("h2").removeClass("big"); //class제거
+                        return false; //a태그의 새로고침이나 링크를 비활성화시킴
+                    }
+                )
+                $(".darkbg").click( // 클릭이벤트 추가
+                    ()=>{ //대상이 다를 경우 보통 하위 function 생성
+                        $("h2").toggleClass("dark"); //class 스위치 형식으로 추가
+                        return false; //a태그의 새로고침이나 링크를 비활성화시킴
+                    }
+                )
+                $(".resetAll").click( // 클릭이벤트 추가
+                    ()=>{ //대상이 다를 경우 보통 하위 function 생성
+                        $("h2").removeClass("upper"); //class제거
+                        $("h2").removeClass("big"); //class제거
+                        $("h2").removeClass("small"); //class제거
+                        $("h2").removeClass("dark"); //class제거
+                        return false; //a태그의 새로고침이나 링크를 비활성화시킴
+                    }
+                )
+                //사이드메뉴 클릭시 보이게
+                $("aside span").click(
+                    ()=>{
+                    // $("aside").addClass("show");
+                    $("aside").toggleClass("show"); //class 스위치 형식으로 추가
+                    }
+                )
+            }
+        )
+    </script>
+</head>
+<body>
+    <aside>
+        <span>펼치기</span>
+    </aside>
+    <h1>h1</h1>
+    <h2>add class</h2>
+    <span>
+        <a href="" class="up">글자 대문자로</a>
+        <a href="" class="big30">글자 30px</a>
+        <a href="" class="small10">글자 10px</a>
+        <a href="" class="darkbg">반전</a>
+        <a href="" class="resetAll">리셋</a>
+    </span>
+</body>
+</html>

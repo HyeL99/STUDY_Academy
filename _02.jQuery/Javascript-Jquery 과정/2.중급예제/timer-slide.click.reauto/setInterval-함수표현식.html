@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>아름다운 커피</title>
+<!--IE9이하에서도 HTML5태그를 사용가능하게 처리해줌-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div.rotate{
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+    h1{
+        width: 300px;
+        display: flex;
+        justify-content: left;
+    }
+    span.line{
+       border: 1px solid #ccc;
+       width: 20%;
+       box-sizing: border-box;
+       font-size: 20px;
+       font-weight: bold;
+       display: block;
+       width: calc(100% / 7);
+       text-align: center;
+       transform: translateY(-100px);
+       /* transition: all 1s;
+       transform: scale(1.5); */
+    }
+    span.control{
+        display: flex;
+        gap:20px;
+    }
+    .zoom{
+        /* transform: scale(1); */
+        animation-name:zoom ;
+        animation-duration: 1s;
+        animation-fill-mode:forwards;
+        animation-iteration-count:1;
+        animation-timing-function:ease-in-out;
+    }
+    @keyframes zoom {
+        from{
+            transform:translateY(-100px) scale(2) rotate(180deg);
+        }
+        to{
+            transform:translateY(-100px) scale(1)  rotate(0deg);
+        }
+    }
+</style>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<script src="js/jquery-1.6.2.min.js"></script>
+    <script>
+        $(function(){
+            /*
+            var r=10;
+            setInterval(function(){
+                $(".line").css("transform","rotate("+r+"deg)");
+                //r++; //r의 값을 1씩 증가시키시오
+                r+=10; //r의 값에 10을 추가하시오
+            },1000);
+            */
+
+            /*
+
+            var words=["대","한","민","국","코","리","아",]; // 배열(여러칸그릇,다중그릇)
+            var n=0;
+            //alert(words[0]);
+            //alert(words.length); //words.length 배열요소의 갯수
+            var timer = setInterval(function(){
+                            if(n<words.length){
+                                $(".rotate h1").append("<span class='w"+n+"'>"+words[n]+"</span>");
+                                $("span.w"+n).hide().addClass("zoom").fadeIn();
+                                n++;
+                            }
+                        },500);
+            */   
+           
+            
+            var r=10;
+            var count=setInterval(function(){
+                $(".line").css("transform"," translateY(-100px) rotate("+r+"deg)");
+                //r++; //r의 값을 1씩 증가시키시오
+                r+=10; //r의 값에 10을 추가하시오
+            },1000);
+            
+            //setInterval중지
+            $("button.pause").click(function(){
+                clearInterval(count);
+            });
+
+            //setInter재시작
+            $(".replay").click(function(){
+                count=setInterval(function(){
+                        $(".line").css("transform"," translateY(-100px) rotate("+r+"deg)");
+                        //r++; //r의 값을 1씩 증가시키시오
+                        r+=10; //r의 값에 10을 추가하시오
+                      },1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="rotate">
+        <h1></h1>
+        <span class="line"></span>
+        <span class="control">
+            <button class="pause">멈춤</button>
+            <button class="replay">시작</button>
+        </span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{/*모든 마크업태그의 기본여백을 초기화*/
+	margin:0;/*바깥여백*/
+	padding:0;/*안여백*/
+	}
+	
+ul{/*목록의 .표시 없애기*/
+	list-style:none;
+	}
+	
+h1,h2,h3,h4,h5,h6{
+	font-weight:normal;/*폰트의 두께를 normal하게*/
+	font-size:100%;/*폰트크기를 기본크기로 16px*/
+	}
+	
+address{
+	font-style:normal;/*링크걸린 텍스트의 밑줄을 없애기*/
+	}
+		
+a{
+	text-decoration:none;/*링크걸린 텍스트의 밑줄을 없애기*/
+	}
+	
+img{
+	border:none;/*이미지에 링크걸었을 때 생기는 파란테두리를 없앰*/
+	}
+
+body{
+	line-height:1;
+	}
+hr{
+	display:none;
+	}		
+
