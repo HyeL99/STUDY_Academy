@@ -1,0 +1,89 @@
+/*=================== todoList ===================*/
+#todoListPage {
+  .inner{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .todoListSection{
+      flex: 1;
+      min-height: 0;
+      padding: 1rem;
+      h2{
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .filterBtns{
+        border:1px solid $subColor;
+        border-width: 1px 0;
+        margin-bottom: 0.5rem;
+        button{
+          padding: 0 0.8rem;
+          background: transparent;
+          opacity: 0.8;
+          transform-origin: center bottom;
+          transition: all 0.3s;
+          height: 1.6rem;
+          &.active {
+            font-weight: 700;
+            opacity: 1;
+          }
+        }
+      }
+      .todos{
+        li{
+          @include SetBox();
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:not(:first-child) {
+            border-top:0px;
+          }
+          input {
+            display: none
+          }
+          input + label{
+            @include Dots();
+            padding-left: 1.5rem;
+            font-size: 1rem;
+            flex:1;
+          }
+          input:checked + label{
+            opacity: 0.6;
+            text-decoration: line-through;
+            &::before{
+            }
+          }
+          button{
+            height: 1.5rem;
+            width: 1.5rem;
+            background: transparent;
+          }
+        }
+      }
+    }
+    form{
+      margin: 0 1rem;
+      display: flex;
+      input{
+        flex-grow: 1;
+        border: 0;
+        border-radius: 5px 0 0 5px;
+        padding: 0.5rem;
+        color: $subColor;
+        border: 1px solid $subColor;
+        &::placeholder{
+          color: $mainColor;
+        }
+      }
+      button{
+        background: $subColor;
+        color: #fff;
+        width: 2.5rem;
+        border-radius: 0 5px 5px 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

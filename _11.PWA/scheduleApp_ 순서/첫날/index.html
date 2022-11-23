@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일정관리앱</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="나의 시간">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+  <link rel="shortcut icon" href="images/mainIcon.png" type="image/x-icon">
+
+  <!-- link manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+
+  <!-- font awesome script (cdn) -->
+  <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="plugin/jQeury/jquery-ui.css" />
+  <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
+  <script src="plugin/jQeury/jquery-ui.js"></script>
+    
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- jQuery script
+  <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
+
+  jQuery UI script and stylesheet
+  <script src="plugin/jQeury/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="plugin/jQeury/jquery-ui.min.css"> -->
+
+  <script defer src="./js/loadCalandar.js"></script>
+  <script defer src="./js/addDBtem.js"></script>
+  <script defer src="js/d-day.js"></script>
+  <script defer src="js/todo.js"></script>
+  <script defer src="js/time.js"></script>
+  <script defer src="js/today.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script> // 공식처럼 쓰임, 서비스워커가 있을 때
+    if('serviceWorker' in navigator){
+      
+      navigator.serviceWorker.register('sw.js') //프로미스형태,등록
+        .then(function(success){
+          console.log('serviceWorker install success😊 \n',success);
+        })
+        .catch(function(e){
+          console.log('serviceWorker install failed😥 \n',e)
+        }) 
+
+    }
+  </script>
+</head>
+<body>
+  <div id="mobileContainer">
+    <header>
+      <div class="inner">
+        <h1>
+          <img src="./assets/img/headerPoint.png">
+          <span>나의 시간</span>
+        </h1>
+      </div>
+    </header>
+    <main>
+      <div class="inner">
+        <div class="year-month">
+
+        </div>
+        <section id="calendar">
+          <ul class="days">
+            <li class="day">일</li>
+            <li class="day">월</li>
+            <li class="day">화</li>
+            <li class="day">수</li>
+            <li class="day">목</li>
+            <li class="day">금</li>
+            <li class="day">토</li>
+          </ul>
+          <ul class="dates">
+          </ul>
+        </section>
+        <span class="bar"><img src="./assets/img/line.png"></span>
+        <section id="contentsBtn">
+          <article class="day">
+            <div class="title">
+              <h2>오늘의 일정</h2>
+              <button>+</button>
+            </div>
+            <ul class="contents">
+              <li>오늘 일정은 없습니다.</li>
+            </ul>
+          </article>
+          <article class="d-day">
+            <div class="title">
+              <h2>D-day</h2>
+              <button>+</button>
+            </div>
+            <ul class="contents">
+              <li>❤종강<span>d-72</span></li>
+            </ul>
+          </article>
+          <article class="timeTable">
+            <div class="title">
+              <h2>타임테이블</h2>
+              <button>+</button>
+            </div>
+            <ul class="contents">
+              <li>코딩<span>03:28:12</span></li>
+            </ul>
+          </article>
+          <article class="todoList">
+            <h2>Todo List</h2>
+          </article>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="inner">
+        <button id="timerBtn"><img src="./assets/img/logoClock-bright.png" alt="타이머 오픈"></button>
+      </div>
+    </footer>
+  </div>
+  <div id="todayPage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+      <Section class="todaySection">
+        <div class="top">
+          <button id="prevDay">2022.11.21(월)</button>
+          <p>2022.11.22(화)</p>
+          <button id="nextDay">2022.11.23(수)</button>
+        </div>
+        <div class="contents">
+          <article>
+            <h2>오늘의 일정</h2>
+            <button id="editScheduleBtn" class="edit">edit</button>
+            <ul id="scheduleList">
+              <li>오늘은 일정이 없습니다.</li>
+            </ul>
+          </article>
+          <article id="todayTimeTableArticle">
+            <h2>타임테이블</h2>
+            <button>+</button>
+            <ul id="timeTableList">
+              <li>코딩<span>01:20:00</span></li>
+            </ul>
+          </article>
+          <span class="bar"><img src="./assets/img/line.png"></span>
+          <article>
+            <h2>오늘의 기록</h2>
+            <button id="editDiaryBtn" class="edit">edit</button>
+            <ul id="diaryList">
+              <li>아직 기록이 없습니다.</li>
+            </ul>
+          </article>
+        </div>
+      </Section>
+      <article id="editSchedulePopup">
+        <h2>일정</h2>
+        <form action="">
+          <input type="text" id="scheduleTitle" placeholder="제목 입력" autocomplete="off">
+          <input type="text" id="scheduleContent" placeholder="내용 입력" autocomplete="off">
+          <hr>
+          <div class="wrap">
+            <label for="scheduleDatepicker"><img src="./assets/img/iconCalendar.svg" alt="일정 날짜 선택"></label>
+            <input type="text" id="scheduleDatepicker" autocomplete="off" placeholder="일정 날짜 선택">
+          </div>
+        </form>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
+      <article id="editDiaryPopup">
+        <div class="top">
+          <h2>오늘의 기록</h2>
+          <div class="wrap">
+            <label for="diarydDatepicker"><img src="./assets/img/iconCalendar.svg" alt="일정 날짜 선택"></label>
+            <input type="text" id="diaryDatepicker">
+          </div>
+        </div>
+        <form action="">
+          <div id="fileBox">
+            <input class="uploadName" placeholder="이미지 선택(최대 1개)" disabled="disabled">
+            <label for="diaryFile">첨부</label>
+            <input type="file" id="diaryFile" accept="image/*" autocomplete="off">
+          </div>
+          <div id="imgViewer">
+            <img id="preview" alt="No Image">
+          </div>
+          <hr>
+          <textarea id="diaryContent" placeholder="내용 입력" autocomplete="off"></textarea>
+        </form>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div id="d-dayPage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+      <Section class="d-daySection">
+        <h2>D-day</h2>
+        <ul class="d-dayList">
+          <li id="d-dayItem01">
+            <h3>수능</h3>
+            <span>d-2</span>
+            <button class="deleteD-day">휴지통</button>
+          </li>
+          <li id="d-dayItem02">
+            <h3>크리스마스</h3>
+            <span>d-40</span>
+            <button class="deleteD-day">휴지통</button>
+          </li>
+        </ul>
+      </Section>
+      <button id="addD-dayItemBtn">추가하기</button>
+      <article id="d-dayPopup">
+        <h2>D-day</h2>
+        <form action="">
+          <input type="text" id="d-dayTitle" placeholder="제목 입력" autocomplete="off">
+          <hr>
+          <div class="wrap">
+            <label for="d-dayDatepicker"><img src="./assets/img/iconCalendar.svg" alt="d-day 날짜 선택"></label>
+            <input type="text" id="d-dayDatepicker" autocomplete="off" placeholder="d-day 날짜 선택">
+          </div>
+        </form>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div id="todoListPage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+      <section class="todoListSection">
+        <h2>Todo List</h2>
+        <div class="filterBtns">
+          <button id="all" class="active">ALL</button>
+          <button id="active">active</button>
+          <button id="done">done</button>
+        </div>
+        <ul class="todos">
+          <li id="todoItem01">
+            <input type="checkbox" id="checkItem01">
+            <label for="checkItem01">1번 투두 아이템</label>
+            <button class="deleteTodo">X</button>
+          </li>
+          <li id="todoItem02">
+            <input type="checkbox" id="checkItem02">
+            <label for="checkItem02">2번 투두 아이템</label>
+            <button class="deleteTodo">X</button>
+          </li>
+        </ul>
+      </section>
+      <form action="">
+        <input type="text" placeholder="할 일을 입력해주세요.">
+        <button type="submit">+</button>
+      </form>
+    </div>
+  </div>
+  <div id="timeTablePage">
+    <div class="inner">
+      <button class="closeBtn">X</button>
+      <section class="timeSection">
+        <div class="date">2022.11.18(금)</div>
+        <span class="bar"><img src="./assets/img/line.png"></span>
+        <div class="timerContainer">
+          <div class="left">
+            <div class="topic">코딩</div>
+            <div class="player on">타이머 버튼버튼</div>
+          </div>
+          <div id="timerNumber">
+            00:03:02
+          </div>
+        </div>
+        <span class="bar"><img src="./assets/img/line.png"></span>
+        <div class="contentsContainer">
+          <div id="topicContents">
+            <h2>TOPIC</h2>
+            <ul id="topicList">
+              <li>코딩 <span>00:03:28</span></li>
+            </ul>
+          </div>
+          <div id="timelineContents">
+            <h2>타임라인</h2>
+            <ul id="timeLineList">
+              <li>
+                <div class="top">
+                  코딩 <span>01:20:00</span>
+                </div>
+                <div class="bottom">
+                  <div class="start">
+                    시작시간: 09:05:00
+                  </div>
+                  <div class="end">
+                    종료시간: 10:25:00
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <aside>
+    <div id="enterPage">
+      <div class="logo">
+        <img src="./assets/img/logoClock.png" alt="나의 시간">
+        <div class="backBubble">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <h1><img src="./assets/img/title.png" alt="나의 시간 - 일정관리앱"></h1>
+    </div>
+  </aside>
+</body>
+</html>

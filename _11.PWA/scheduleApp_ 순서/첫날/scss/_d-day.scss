@@ -1,0 +1,87 @@
+/*=================== d-day ===================*/
+#d-dayPage {
+  background: $mainColor;
+  .d-daySection{
+    @include SetBox();
+    h2{}
+    .d-dayList{
+      li{
+        display: flex;
+        align-items: center;
+        h3{
+          flex:1;
+          padding-left: 1.5rem;
+          @include Dots();
+        }
+        span{
+          margin: 0.5rem;
+        }
+        button{}
+      }
+    }
+  }
+  #addD-dayItemBtn{
+    float: right;
+    padding: 0.5rem;
+    background: transparent;
+    transform: translateX(0.5rem);
+    font-weight: 700;
+  }
+  
+  #d-dayPopup{
+    @include SetBox();
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:100vh;
+    z-index:3;
+    transition: all 0.5s;
+    h2{
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    form{
+      #d-dayTitle{
+        width: 100%;
+        font-size: 1.25rem;
+        border: 0;
+        color:$subColor;
+        padding: 0.3rem;
+        &::placeholder {
+          color: $mainColor;
+        }
+      }
+      hr{
+        margin: 0.5rem 0;
+        border:0;
+        border-top: 1px solid $subColor;
+      }
+      .wrap{
+        display: flex;
+        column-gap: 1rem;
+        align-items: center;
+        label{
+          width: 1.3rem;
+          height: 1.3rem;
+          img{
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        #d-dayDatepicker{
+          flex: 1;
+          border:0;
+          width: 100%;
+          position: relative;
+          color:$subColor;
+          padding: 0.3rem;
+          &::placeholder{
+            color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+

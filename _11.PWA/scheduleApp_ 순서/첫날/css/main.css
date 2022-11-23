@@ -1,0 +1,1007 @@
+@charset "UTF-8";
+/*=================== reset ===================*/
+@import url("https://webfontworld.github.io/heiroflight/HeirofLight.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #354463;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; /*기본크기로 16px*/
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+}
+
+input {
+  outline: 0;
+}
+
+/*=================== variable ===================*/ /*=================== mixin ===================*/ /*=================== font ===================*/
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*=================== common ===================*/
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "HeirofLight", sans-serif;
+  font-weight: 300;
+  background: #E9D5DA;
+}
+
+.inner {
+  margin: 0 10px;
+  position: relative;
+}
+.inner .closeBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  padding: 0.5rem;
+}
+
+.bar {
+  width: 100%;
+}
+.bar img {
+  width: 100%;
+}
+
+.btnPlace {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 1rem;
+  margin-top: 100px;
+}
+.btnPlace button {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.3rem 2rem;
+  border-width: 1px;
+  display: block;
+}
+.btnPlace button h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/*=================== index ===================*/
+#enterPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #E9D5DA;
+}
+#enterPage .logo {
+  position: relative;
+  width: 80%;
+  margin-bottom: 50px;
+}
+#enterPage .logo img {
+  width: 100%;
+}
+#enterPage .logo .backBubble {
+  width: 100%;
+  height: 100%;
+}
+#enterPage .logo .backBubble span {
+  position: absolute;
+}
+#enterPage .logo .backBubble span::before {
+  content: "";
+  width: 100%;
+  display: block;
+  padding-top: 100%;
+  background-color: #827397;
+  border-radius: 50%;
+}
+#enterPage .logo .backBubble span:nth-child(1) {
+  width: 40%;
+  opacity: 0.6;
+  left: -6%;
+  bottom: -2%;
+}
+#enterPage .logo .backBubble span:nth-child(2) {
+  width: 30%;
+  opacity: 0.4;
+  left: -10%;
+  bottom: -18%;
+}
+#enterPage .logo .backBubble span:nth-child(3) {
+  width: 15%;
+  opacity: 0.2;
+  left: -20%;
+  bottom: -5%;
+}
+#enterPage .logo .backBubble span:nth-child(4) {
+  width: 35%;
+  opacity: 0.5;
+  right: 0%;
+  top: -2%;
+}
+#enterPage .logo .backBubble span:nth-child(5) {
+  width: 28%;
+  opacity: 0.4;
+  right: -7%;
+  top: -20%;
+}
+#enterPage .logo .backBubble span:nth-child(6) {
+  width: 20%;
+  opacity: 0.2;
+  right: -24%;
+  top: -17%;
+}
+#enterPage h1 {
+  min-width: 200px;
+  width: 60%;
+  text-align: center;
+}
+
+/*=================== home ===================*/
+header {
+  background: #827397;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 7;
+}
+header h1 {
+  color: #E9D5DA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header h1 img {
+  height: 30px;
+  object-fit: contain;
+}
+header h1 span {
+  font-size: 20px;
+  transform: translateY(-5px);
+}
+
+main {
+  width: 100%;
+  padding: 50px 0;
+}
+main .inner {
+  padding: 10px 0;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  overflow-y: auto;
+}
+main #calendar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main #calendar .days {
+  display: flex;
+  text-align: center;
+  background: #827397;
+  color: #E9D5DA;
+}
+main #calendar .days .day {
+  width: 14.2857142857%;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+main #calendar .days .day:nth-child(7n) {
+  color: rgb(98, 166, 255);
+}
+main #calendar .days .day:nth-child(7n+1) {
+  color: rgb(255, 129, 129);
+}
+main #calendar .dates {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  background: #fff;
+  border: 2px solid #827397;
+}
+main #calendar .dates .date {
+  width: 14.2857142857%;
+  height: 16.6666666667%;
+  padding: 0.3rem;
+  border-bottom: 1px dashed #827397;
+  border-left: 1px dashed #827397;
+}
+main #calendar .dates .date:nth-child(7n) {
+  color: rgb(98, 166, 255);
+}
+main #calendar .dates .date:nth-child(7n+1) {
+  color: rgb(255, 129, 129);
+  border-left: 0;
+}
+main #calendar .dates .date:nth-child(n+36) {
+  border-bottom: 0;
+}
+main #calendar .dates .date .num {
+  display: inline-block;
+  width: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+main #calendar .dates .date.today .num span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-weight: 700;
+}
+main #calendar .dates .date.today .num span::before {
+  content: "";
+  position: absolute;
+  left: -0.1rem;
+  top: -0.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #E9D5DA;
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 50%;
+  filter: saturate(200%);
+}
+main #calendar .dates .date.other .num {
+  opacity: 0.5;
+}
+main #contentsBtn {
+  width: 100%;
+  height: 200px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-shrink: 0;
+}
+main #contentsBtn article {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: calc((100% - 20px) / 2);
+  height: calc((100% - 20px) / 2);
+}
+main #contentsBtn article h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+main #contentsBtn article .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+main #contentsBtn article .title h2 {
+  font-weight: 700;
+  margin: 0;
+}
+main #contentsBtn article .title button {
+  background: transparent;
+}
+main #contentsBtn article .contents li {
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  position: relative;
+}
+main #contentsBtn article .contents li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+main #contentsBtn article.timeTable {
+  height: calc((100% - 20px) * 2 / 3);
+}
+main #contentsBtn article.todoList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc((100% - 20px) / 3);
+}
+main #contentsBtn article.todoList h2 {
+  margin: 0;
+}
+
+footer {
+  z-index: 6;
+  background: #827397;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+footer button {
+  height: 50px;
+  background: transparent;
+}
+footer button img {
+  height: 100%;
+}
+
+/*=================== d-day ===================*/
+#d-dayPage {
+  background: #E9D5DA;
+}
+#d-dayPage .d-daySection {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#d-dayPage .d-daySection h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#d-dayPage .d-daySection .d-dayList li {
+  display: flex;
+  align-items: center;
+}
+#d-dayPage .d-daySection .d-dayList li h3 {
+  flex: 1;
+  padding-left: 1.5rem;
+  position: relative;
+}
+#d-dayPage .d-daySection .d-dayList li h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#d-dayPage .d-daySection .d-dayList li span {
+  margin: 0.5rem;
+}
+#d-dayPage #addD-dayItemBtn {
+  float: right;
+  padding: 0.5rem;
+  background: transparent;
+  transform: translateX(0.5rem);
+  font-weight: 700;
+}
+#d-dayPage #d-dayPopup {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100vh;
+  z-index: 3;
+  transition: all 0.5s;
+}
+#d-dayPage #d-dayPopup h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#d-dayPage #d-dayPopup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+#d-dayPage #d-dayPopup form #d-dayTitle {
+  width: 100%;
+  font-size: 1.25rem;
+  border: 0;
+  color: #827397;
+  padding: 0.3rem;
+}
+#d-dayPage #d-dayPopup form #d-dayTitle::placeholder {
+  color: #E9D5DA;
+}
+#d-dayPage #d-dayPopup form hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #827397;
+}
+#d-dayPage #d-dayPopup form .wrap {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+#d-dayPage #d-dayPopup form .wrap label {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+#d-dayPage #d-dayPopup form .wrap label img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#d-dayPage #d-dayPopup form .wrap #d-dayDatepicker {
+  flex: 1;
+  border: 0;
+  width: 100%;
+  position: relative;
+  color: #827397;
+  padding: 0.3rem;
+}
+#d-dayPage #d-dayPopup form .wrap #d-dayDatepicker::placeholder {
+  color: #E9D5DA;
+}
+
+/*=================== todoList ===================*/
+#todoListPage .inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#todoListPage .inner .todoListSection {
+  flex: 1;
+  min-height: 0;
+  padding: 1rem;
+}
+#todoListPage .inner .todoListSection h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#todoListPage .inner .todoListSection .filterBtns {
+  border: 1px solid #827397;
+  border-width: 1px 0;
+  margin-bottom: 0.5rem;
+}
+#todoListPage .inner .todoListSection .filterBtns button {
+  padding: 0 0.8rem;
+  background: transparent;
+  opacity: 0.8;
+  transform-origin: center bottom;
+  transition: all 0.3s;
+  height: 1.6rem;
+}
+#todoListPage .inner .todoListSection .filterBtns button.active {
+  font-weight: 700;
+  opacity: 1;
+}
+#todoListPage .inner .todoListSection .todos li {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#todoListPage .inner .todoListSection .todos li h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#todoListPage .inner .todoListSection .todos li:not(:first-child) {
+  border-top: 0px;
+}
+#todoListPage .inner .todoListSection .todos li input {
+  display: none;
+}
+#todoListPage .inner .todoListSection .todos li input + label {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  flex: 1;
+}
+#todoListPage .inner .todoListSection .todos li input + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#todoListPage .inner .todoListSection .todos li input:checked + label {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+#todoListPage .inner .todoListSection .todos li button {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: transparent;
+}
+#todoListPage .inner form {
+  margin: 0 1rem;
+  display: flex;
+}
+#todoListPage .inner form input {
+  flex-grow: 1;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  padding: 0.5rem;
+  color: #827397;
+  border: 1px solid #827397;
+}
+#todoListPage .inner form input::placeholder {
+  color: #E9D5DA;
+}
+#todoListPage .inner form button {
+  background: #827397;
+  color: #fff;
+  width: 2.5rem;
+  border-radius: 0 5px 5px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/*=================== today ===================*/
+#todayPage .inner {
+  height: 100%;
+}
+#todayPage .inner .closeBtn {
+  top: -0.5rem;
+}
+#todayPage .inner .todaySection {
+  padding: 1rem;
+  height: 100%;
+}
+#todayPage .inner .todaySection .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.7rem;
+}
+#todayPage .inner .todaySection .top button {
+  background: transparent;
+  font-size: 0.7rem;
+  padding: 0.3rem;
+}
+#todayPage .inner .todaySection .top button#prevDay {
+  transform: translateX(-0.3rem) translateY(0.3rem);
+}
+#todayPage .inner .todaySection .top button#nextDay {
+  transform: translateX(0.3rem) translateY(0.3rem);
+}
+#todayPage .inner .todaySection .top p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#todayPage .inner .todaySection .contents {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+#todayPage .inner .todaySection .contents article {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-width: 1px;
+  position: relative;
+}
+#todayPage .inner .todaySection .contents article h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#todayPage .inner .todaySection .contents article button {
+  background: transparent;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+#todayPage .inner .todaySection .contents article button.edit {
+  background: url(../assets/img/diaryPen.png) no-repeat center/cover;
+  font-size: 0;
+}
+#todayPage .inner .todaySection .contents article li {
+  position: relative;
+  padding-left: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+#todayPage .inner .todaySection .contents article li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#todayPage .inner .todaySection .contents article li span {
+  margin-right: 1rem;
+}
+#todayPage .inner #editSchedulePopup {
+  position: absolute;
+  left: 1rem;
+  top: 100vh;
+  transition: all 0.5s;
+  width: calc(100% - 2rem);
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#todayPage .inner #editSchedulePopup h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#todayPage .inner #editSchedulePopup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+#todayPage .inner #editSchedulePopup form #scheduleTitle {
+  width: 100%;
+  font-size: 1.25rem;
+  border: 0;
+  color: #827397;
+  padding: 0.3rem;
+}
+#todayPage .inner #editSchedulePopup form #scheduleTitle::placeholder {
+  color: #E9D5DA;
+}
+#todayPage .inner #editSchedulePopup form #scheduleContent {
+  width: 100%;
+  font-size: 1rem;
+  border: 0;
+  color: #827397;
+  padding: 0.3rem;
+}
+#todayPage .inner #editSchedulePopup form #scheduleContent::placeholder {
+  color: #E9D5DA;
+}
+#todayPage .inner #editSchedulePopup form hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #827397;
+}
+#todayPage .inner #editSchedulePopup form .wrap {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+#todayPage .inner #editSchedulePopup form .wrap label {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+#todayPage .inner #editSchedulePopup form .wrap label img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#todayPage .inner #editSchedulePopup form .wrap #scheduleDatepicker {
+  flex: 1;
+  border: 0;
+  width: 100%;
+  position: relative;
+  color: #827397;
+  padding: 0.3rem;
+}
+#todayPage .inner #editSchedulePopup form .wrap #scheduleDatepicker::placeholder {
+  color: #E9D5DA;
+}
+#todayPage .inner #editDiaryPopup {
+  position: absolute;
+  left: 1rem;
+  top: 0vh;
+  transition: all 0.5s;
+  width: calc(100% - 2rem);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#todayPage .inner #editDiaryPopup h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#todayPage .inner #editDiaryPopup .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+#todayPage .inner #editDiaryPopup .top h2 {
+  margin: 0;
+  flex: 1;
+}
+#todayPage .inner #editDiaryPopup .top .wrap {
+  display: flex;
+  column-gap: 0.5rem;
+}
+#todayPage .inner #editDiaryPopup .top .wrap input {
+  width: 90px;
+  text-align: center;
+  border: 0;
+  color: #827397;
+  font-size: 1.1rem;
+}
+#todayPage .inner #editDiaryPopup form {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.5rem;
+}
+#todayPage .inner #editDiaryPopup form #fileBox {
+  display: flex;
+  border: 1px solid #827397;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+#todayPage .inner #editDiaryPopup form #fileBox .uploadName:disabled {
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  padding-left: 0.5rem;
+}
+#todayPage .inner #editDiaryPopup form #fileBox label {
+  padding: 0.2rem 0.5rem;
+  background-color: #827397;
+  color: white;
+}
+#todayPage .inner #editDiaryPopup form #fileBox #diaryFile {
+  display: none;
+}
+#todayPage .inner #editDiaryPopup form #imgViewer {
+  height: 200px;
+  border: 1px solid #827397;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#todayPage .inner #editDiaryPopup form #imgViewer img {
+  width: calc(100% - 0.5rem);
+  height: calc(100% - 0.5rem);
+  object-fit: contain;
+}
+#todayPage .inner #editDiaryPopup form hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #827397;
+}
+#todayPage .inner #editDiaryPopup form #diaryContent {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  outline: 0;
+  border: 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #827397;
+}
+#todayPage .inner #editDiaryPopup form #diaryContent::placeholder {
+  color: #E9D5DA;
+}
+#todayPage .inner #editDiaryPopup .btnPlace {
+  margin-top: 1rem;
+}
+
+/*=================== timer ===================*/
+#timeTablePage .inner .timeSection {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px - 2rem);
+  overflow-y: auto;
+}
+#timeTablePage .inner .timeSection .date {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+#timeTablePage .inner .timeSection .timerContainer {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 2rem;
+}
+#timeTablePage .inner .timeSection .timerContainer .left .topic {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+#timeTablePage .inner .timeSection .timerContainer .left .player {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/img/play.png") no-repeat center/contain;
+  font-size: 0;
+}
+#timeTablePage .inner .timeSection .timerContainer #timerNumber {
+  font-size: 2.25rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: end;
+}
+#timeTablePage .inner .timeSection span.bar:nth-of-type(2) img {
+  transform: rotate(180deg);
+}
+#timeTablePage .inner .timeSection .contentsContainer {
+  display: flex;
+  column-gap: 10px;
+  height: 100%;
+  flex: 1;
+  margin-top: 0.5rem;
+  min-height: 0;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents #topicList li {
+  font-size: 0.8rem;
+  position: relative;
+  padding-left: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents #topicList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents #topicList li::before {
+  background-image: url(../assets/img/play.png);
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents #timeLineList {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  min-height: 0;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents #timeLineList li .top {
+  font-size: 0.9rem;
+  padding-left: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents #timeLineList li .top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents #timeLineList li .bottom {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+/*=================== main ===================*/
+#mobileContainer {
+  min-width: 300px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: #E9D5DA;
+  color: #827397;
+  height: 100%;
+  position: relative;
+}
+
+#d-dayPage,
+#todayPage,
+#todoListPage,
+#timeTablePage {
+  z-index: 2;
+  min-width: 300px;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  transform: translateX(-50%);
+  height: calc(100% - 100px);
+  min-height: 0;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  transition: all 0.5s;
+  background: #E9D5DA;
+  color: #827397;
+}
+
+#timeTablePage {
+  z-index: 4;
+}
+
+aside {
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,64 @@
+{
+  "name":"일정관리앱 - 나의 시간",
+  "short_name":"나의 시간",
+  "description": "PWA 연습용 일정관리앱입니다.",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "start_url": "/",
+  "dir": "ltr",
+  "scope": "/",
+  "lang":"ko",
+  "orientation": "portrait",
+  "display": "standalone",
+  "gcm_sender_id": "49625052041",
+  "gcm_user_visible_only": true,
+  "categories": [],
+  "screenshots": [
+    {
+      "src": "images/screenshot1.png",
+      "size": "562x1002",
+      "type": "image/png"
+    },
+    {
+      "src": "images/screenshot2.png",
+      "size": "566x1000",
+      "type": "image/png"
+    },
+    {
+      "src": "images/screenshot3.png",
+      "size": "565x1000",
+      "type": "image/png"
+    },
+    {
+      "src": "images/screenshot4.png",
+      "size": "565x1002",
+      "type": "image/png"
+    },
+    {
+      "src": "images/screenshot5.png",
+      "size": "564x1001",
+      "type": "image/png"
+    }
+  ],
+  "icons": [
+    {
+      "purpose": "maskable",
+      "src": "images/Icon_x48.png",
+      "size": "48x48",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "src": "images/Icon_x128.png",
+      "size": "128x128",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "src": "images/Icon_x512.png",
+      "size": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": []
+}

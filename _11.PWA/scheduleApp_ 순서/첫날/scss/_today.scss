@@ -1,0 +1,227 @@
+/*=================== today ===================*/
+#todayPage {
+  .inner{
+    height: 100%;
+    .closeBtn{
+      top: -0.5rem;
+    }
+    .todaySection{
+      padding:1rem;
+      height: 100%;
+      .top{
+        display: flex;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-bottom: 0.7rem;
+        button{
+          background: transparent;
+          font-size: 0.7rem;
+          padding: 0.3rem;
+          &#prevDay{
+            transform: translateX(-0.3rem) translateY(0.3rem);
+          }
+          &#nextDay{
+            transform: translateX(0.3rem) translateY(0.3rem);
+          }
+        }
+        p{
+          font-size: 1.1rem;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+      }
+      .contents{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        article{
+          @include SetBox();
+          border-width: 1px;
+          position: relative;
+          button{
+            background: transparent;
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+            font-weight: 700;
+            &.edit{
+              background: url(../assets/img/diaryPen.png) no-repeat center / cover;
+              font-size: 0
+            }
+          }
+          li{
+            @include Dots;
+            padding-left: 1.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            span{
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+    #editSchedulePopup {
+      position: absolute;
+      left: 1rem;
+      top:100vh;
+      transition: all 0.5s;
+      width: calc(100% - 2rem);
+      @include SetBox();
+      h2{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      form{
+        #scheduleTitle{
+          width: 100%;
+          font-size: 1.25rem;
+          border: 0;
+          color:$subColor;
+          padding: 0.3rem;
+          &::placeholder {
+            color: $mainColor;
+          }
+        }
+        #scheduleContent{
+          width: 100%;
+          font-size: 1rem;
+          border: 0;
+          color:$subColor;
+          padding: 0.3rem;
+          &::placeholder {
+            color: $mainColor;
+          }
+        }
+        hr{
+          margin: 0.5rem 0;
+          border:0;
+          border-top: 1px solid $subColor;
+        }
+        .wrap{
+          display: flex;
+          column-gap: 1rem;
+          align-items: center;
+          label{
+            width: 1.3rem;
+            height: 1.3rem;
+            img{
+              width:100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          #scheduleDatepicker{
+            flex: 1;
+            border:0;
+            width: 100%;
+            position: relative;
+            color:$subColor;
+            padding: 0.3rem;
+            &::placeholder{
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+    #editDiaryPopup {
+      position: absolute;
+      left: 1rem;
+      top:0vh;
+      transition: all 0.5s;
+      width: calc(100% - 2rem);
+      display: flex;
+      flex-direction: column;
+      @include SetBox();
+      .top{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        h2{
+          margin:0;
+          flex:1;
+        }
+        .wrap{
+          display: flex;
+          column-gap: 0.5rem;
+          label{}
+          input{
+            width: 90px;
+            text-align: center;
+            border:0;
+            color: $subColor;
+            font-size: 1.1rem;
+          }
+        }
+      }
+      form{
+        flex:1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        column-gap: 0.5rem;
+        #fileBox{
+          display: flex;
+          border: 1px solid $subColor;
+          font-size: 0.9rem;
+          margin-bottom: 0.5rem;
+          .uploadName:disabled{
+            flex: 1;
+            background-color: transparent;
+            border:0;
+            padding-left: 0.5rem;
+          }
+          label{
+            padding: 0.2rem 0.5rem;
+            background-color: $subColor;
+            color: white;
+          }
+          #diaryFile{
+            display: none;
+          }
+        }
+        #diaryFile{}
+        #imgViewer{
+          height: 200px;
+          border: 1px solid $subColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            width:calc(100% - 0.5rem);
+            height:calc(100% - 0.5rem);
+            object-fit: contain;
+          }
+        }
+        hr{
+          margin: 0.5rem 0;
+          border:0;
+          border-top: 1px solid $subColor;
+        }
+        #diaryContent{
+          width: 100%;
+          height: 100px;
+          resize: none;
+          outline: 0;
+          border: 0;
+          padding: 0.5rem;
+          font-size: 0.9rem;
+          color: $subColor;
+          &::placeholder{
+            color: $mainColor;
+          }
+        }
+      }
+      .btnPlace{
+        margin-top:1rem;
+      }
+    }
+  }
+}
