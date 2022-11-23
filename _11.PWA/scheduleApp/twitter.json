@@ -1,0 +1,139 @@
+{
+  "background_color": "#ffffff",
+  "categories": [
+    "social",
+    "news",
+    "magazines"
+  ],
+  "description": "뉴스 속보, 정치, 유행하는 음악, 전 세계에서 벌어지는 이벤트와 스포츠 경기 득점 결과까지, 최신 글로벌 뉴스 기사를 실시간으로, 그리고 더 적은 데이터로 확인하세요.",
+  "display": "standalone",
+  "gcm_sender_id": "49625052041",
+  "gcm_user_visible_only": true,
+  "icons": [
+    {
+      "src": "https://abs.twimg.com/responsive-web/client-web/icon-default.ee534d89.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://abs.twimg.com/responsive-web/client-web/icon-default-large.8e027b69.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "src": "https://abs.twimg.com/responsive-web/client-web/icon-default-maskable.2fd29c89.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "src": "https://abs.twimg.com/responsive-web/client-web/icon-default-maskable-large.ee2b7aa9.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "Twitter",
+  "screenshots": [
+    {
+      "src": "https://abs.twimg.com/responsive-web/client-web/twitter-lite-data-saver-marketing.68059869.png",
+      "sizes": "586x1041",
+      "type": "image/png"
+    },
+    {
+      "src": "https://abs.twimg.com/responsive-web/client-web/twitter-lite-explore-marketing.fd45b029.png",
+      "sizes": "586x1041",
+      "type": "image/png"
+    },
+    {
+      "src": "https://abs.twimg.com/responsive-web/client-web/twitter-lite-timeline-marketing.befcdb49.png",
+      "sizes": "586x1041",
+      "type": "image/png"
+    }
+  ],
+  "share_target": {
+    "action": "compose/tweet",
+    "enctype": "multipart/form-data",
+    "method": "POST",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "externalMedia",
+          "accept": [
+            "image/jpeg",
+            "image/png",
+            "image/gif",
+            "video/quicktime",
+            "video/mp4"
+          ]
+        }
+      ]
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "새 트윗",
+      "url": "/compose/tweet?utm_source=jumplist&utm_medium=shortcut",
+      "icons": [
+        {
+          "src": "https://abs.twimg.com/responsive-web/client-web/icon-compose.12384429.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "탐색하기",
+      "url": "/explore?utm_source=jumplist&utm_medium=shortcut",
+      "icons": [
+        {
+          "src": "https://abs.twimg.com/responsive-web/client-web/icon-search-stroke.5f9aa889.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "알림",
+      "url": "/notifications?utm_source=jumplist&utm_medium=shortcut",
+      "icons": [
+        {
+          "src": "https://abs.twimg.com/responsive-web/client-web/icon-notifications-stroke.429602d9.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "쪽지",
+      "url": "/messages?utm_source=jumplist&utm_medium=shortcut",
+      "icons": [
+        {
+          "src": "https://abs.twimg.com/responsive-web/client-web/icon-messages-stroke.5f95edc9.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "short_name": "Twitter",
+  "start_url": "https://twitter.com/?utm_source=homescreen&utm_medium=shortcut",
+  "theme_color": "#ffffff",
+  "scope": "/",
+  "android_package_name": "com.twitter.android",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "id": "com.twitter.android",
+      "platform": "chromeos_play",
+      "url": "https://play.google.com/store/apps/details?id=com.twitter.android"
+    }
+  ],
+  "launch_handler": {
+    "route_to": "existing-client",
+    "navigate_existing_client": "never"
+  }
+}

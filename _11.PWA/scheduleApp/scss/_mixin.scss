@@ -1,0 +1,25 @@
+/*=================== mixin ===================*/
+@mixin Dots() {
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 1em;
+    height: 1em;
+    background: url(../assets/img/dot.png) no-repeat center / cover;
+  }
+}
+
+@mixin SetBox() {
+  background-color: white;
+  border: 1px solid $subColor;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  h2{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}
