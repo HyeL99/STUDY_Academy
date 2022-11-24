@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-title" content="나의 시간">
   <meta name="apple-mobile-web-app-status-bar-style" content="white">
 
-  <link rel="shortcut icon" href="images/mainIcon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/img/mainIcon.png" type="image/x-icon">
 
   <!-- link manifest -->
   <link rel="manifest" href="manifest.json">
@@ -41,7 +41,7 @@
   <script defer src="js/today.js"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/layout.js"></script>
-  <script> // 공식처럼 쓰임, 서비스워커가 있을 때
+  <script> // 공식처럼 쓰임, serviceWorker가 있을 때 (serviceWorker 지원여부)
     if('serviceWorker' in navigator){
       navigator.serviceWorker.register('sw.js') //프로미스형태,등록
         .then(function(success){

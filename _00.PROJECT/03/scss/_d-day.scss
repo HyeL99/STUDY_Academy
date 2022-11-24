@@ -2,7 +2,7 @@
 #d-dayPage {
   background: $mainColor;
   .d-daySection{
-    @include SetBox();
+    @include SetBox;
     h2{}
     .d-dayList{
       li{
@@ -11,7 +11,7 @@
         h3{
           flex:1;
           padding-left: 1.5rem;
-          @include Dots();
+          @include Dots;
         }
         span{
           margin: 0.5rem;
@@ -29,7 +29,7 @@
   }
   
   #d-dayPopup{
-    @include SetBox();
+    @include SetBox;
     position: absolute;
     width: 100%;
     left:0;

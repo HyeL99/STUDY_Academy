@@ -1,5 +1,5 @@
 /*=================== mixin ===================*/
-@mixin Dots() {
+@mixin Dots {
   position: relative;
   &::before{
     content:"";
@@ -12,7 +12,7 @@
   }
 }
 
-@mixin SetBox() {
+@mixin SetBox {
   background-color: white;
   border: 1px solid $subColor;
   padding: 0.5rem;
@@ -21,5 +21,21 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
+  }
+}
+
+@mixin EditBtn {
+  background: transparent;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  &.edit{
+    background: url(../assets/img/diaryPen.png) no-repeat center / cover;
+    font-size: 0
   }
 }

@@ -32,7 +32,7 @@
       }
       .todos{
         li{
-          @include SetBox();
+          @include SetBox;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -43,7 +43,7 @@
             display: none
           }
           input + label{
-            @include Dots();
+            @include Dots;
             padding-left: 1.5rem;
             font-size: 1rem;
             flex:1;

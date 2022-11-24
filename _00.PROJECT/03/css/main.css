@@ -269,6 +269,9 @@ main #calendar .dates .date .num {
   text-align: center;
   font-size: 0.8rem;
 }
+main #calendar .dates .date.holiday {
+  color: rgb(255, 129, 129);
+}
 main #calendar .dates .date.today .num span {
   position: relative;
   display: block;
@@ -311,6 +314,7 @@ main #contentsBtn article {
   box-sizing: border-box;
   width: calc((100% - 20px) / 2);
   height: calc((100% - 20px) / 2);
+  position: relative;
 }
 main #contentsBtn article h2 {
   font-size: 1.25rem;
@@ -329,6 +333,18 @@ main #contentsBtn article .title h2 {
 }
 main #contentsBtn article .title button {
   background: transparent;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+main #contentsBtn article .title button.edit {
+  background: url(../assets/img/diaryPen.png) no-repeat center/cover;
+  font-size: 0;
 }
 main #contentsBtn article .contents li {
   padding-left: 1.5rem;
@@ -742,7 +758,7 @@ footer button img {
 #todayPage .inner #editDiaryPopup {
   position: absolute;
   left: 1rem;
-  top: 0vh;
+  top: 100vh;
   transition: all 0.5s;
   width: calc(100% - 2rem);
   display: flex;
@@ -866,6 +882,9 @@ footer button img {
   background: url("../assets/img/play.png") no-repeat center/contain;
   font-size: 0;
 }
+#timeTablePage .inner .timeSection .timerContainer .left .player.on {
+  background-image: url(../assets/img/pause.png);
+}
 #timeTablePage .inner .timeSection .timerContainer #timerNumber {
   font-size: 2.25rem;
   font-weight: 700;
@@ -889,11 +908,27 @@ footer button img {
   padding: 0.5rem;
   box-sizing: border-box;
   width: 100%;
+  position: relative;
 }
 #timeTablePage .inner .timeSection .contentsContainer #topicContents h2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents button {
+  background: transparent;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+#timeTablePage .inner .timeSection .contentsContainer #topicContents button.edit {
+  background: url(../assets/img/diaryPen.png) no-repeat center/cover;
+  font-size: 0;
 }
 #timeTablePage .inner .timeSection .contentsContainer #topicContents #topicList li {
   font-size: 0.8rem;
@@ -924,11 +959,27 @@ footer button img {
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 #timeTablePage .inner .timeSection .contentsContainer #timelineContents h2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents button {
+  background: transparent;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+#timeTablePage .inner .timeSection .contentsContainer #timelineContents button.edit {
+  background: url(../assets/img/diaryPen.png) no-repeat center/cover;
+  font-size: 0;
 }
 #timeTablePage .inner .timeSection .contentsContainer #timelineContents #timeLineList {
   flex: 1;
@@ -956,6 +1007,89 @@ footer button img {
 #timeTablePage .inner .timeSection .contentsContainer #timelineContents #timeLineList li .bottom {
   font-size: 0.8rem;
   opacity: 0.8;
+}
+#timeTablePage .inner #editTopicPopup {
+  position: absolute;
+  left: 1rem;
+  top: 100vh;
+  width: calc(100% - 2rem);
+  transition: all 0.5s;
+  height: calc(100vh - 2rem - 100px);
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#timeTablePage .inner #editTopicPopup h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner #editTopicPopup form {
+  display: flex;
+  align-items: center;
+}
+#timeTablePage .inner #editTopicPopup form input {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  border: 0;
+  color: #827397;
+  padding: 0.3rem;
+  width: calc(100% - 50px);
+}
+#timeTablePage .inner #editTopicPopup form input::placeholder {
+  color: #E9D5DA;
+}
+#timeTablePage .inner #editTopicPopup form button {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 0;
+  display: block;
+  line-height: 1;
+  height: 1.6rem;
+  width: 50px;
+}
+#timeTablePage .inner #editTopicPopup form button h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner #editTopicPopup hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #827397;
+}
+#timeTablePage .inner #editTopicPopup #popupTopicList li {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+#timeTablePage .inner #editTopicPopup #popupTopicList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#timeTablePage .inner #editTopicPopup #popupTopicList li button {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.3rem 0;
+  width: 50px;
+  line-height: 1;
+}
+#timeTablePage .inner #editTopicPopup #popupTopicList li button h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 /*=================== main ===================*/
 #mobileContainer {

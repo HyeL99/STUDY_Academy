@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
   <title>일정관리앱</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
@@ -253,7 +256,7 @@
         <div class="timerContainer">
           <div class="left">
             <div class="topic">코딩</div>
-            <div class="player on">타이머 버튼버튼</div>
+            <button class="player off">타이머 버튼</button>
           </div>
           <div id="timerNumber">
             00:03:02
@@ -263,12 +266,14 @@
         <div class="contentsContainer">
           <div id="topicContents">
             <h2>TOPIC</h2>
+            <button class="edit" id="editTopicBtn">edit</button>
             <ul id="topicList">
               <li>코딩 <span>00:03:28</span></li>
             </ul>
           </div>
           <div id="timelineContents">
             <h2>타임라인</h2>
+            <button class="edit" id="editTimelineBtn">edit</button>
             <ul id="timeLineList">
               <li>
                 <div class="top">
@@ -287,8 +292,27 @@
           </div>
         </div>
       </section>
+      <article id="editTopicPopup">
+        <h2>TOPIC</h2>
+        <form action="">
+          <input type="text" id="topicTitle" placeholder="제목입력">
+          <button id="addTopic">추가</button>
+        </form>
+        <hr>
+        <ul id="popupTopicList">
+          <li>코딩<button class="deleteTopicItem">삭제</button></li>
+          <li>토익<button class="deleteTopicItem">삭제</button></li>
+        </ul>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
     </div>
   </div>
+  <article id="editTimelinePopup">
+    
+  </article>
   <aside>
     <div id="enterPage">
       <div class="logo">

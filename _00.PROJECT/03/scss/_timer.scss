@@ -26,8 +26,9 @@
             height: 30px;
             background: url('../assets/img/play.png') no-repeat center / contain;
             font-size: 0;
-            &.on{}
-            
+            &.on{
+              background-image: url(../assets/img/pause.png);
+            }
           }
         }
         #timerNumber{
@@ -48,12 +49,16 @@
         margin-top: 0.5rem;
         min-height: 0;
         #topicContents{
-          @include SetBox();
+          @include SetBox;
           width: 100%;
+          position: relative;
+          button{
+            @include EditBtn;
+          }
           #topicList{
             li{
               font-size: 0.8rem;
-              @include Dots();
+              @include Dots;
               padding-left: 1rem;
               width: 100%;
               display: flex;
@@ -66,11 +71,15 @@
           }
         }
         #timelineContents{
-          @include SetBox();
+          @include SetBox;
           width: 100%;
           height: 100%;
           display: flex;
           flex-direction: column;
+          position: relative;
+          button{
+            @include EditBtn;
+          }
           #timeLineList{
             flex:1;
             overflow-y: auto;
@@ -83,7 +92,7 @@
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 0.5rem;
-                @include Dots();
+                @include Dots;
                 span{}
               }
               .bottom{
@@ -95,6 +104,62 @@
             }
           }
         }
+      }
+    }
+    #editTopicPopup{
+      position: absolute;
+      left: 1rem;
+      top: 100vh;
+      width: calc(100% - 2rem);
+      transition: all 0.5s;
+      height: calc(100vh - 2rem - 100px);
+      @include SetBox;
+      h2{}
+      form{
+        display: flex;
+        align-items: center;
+        input{
+          flex-grow:1;
+          font-size: 1.1rem;
+          border: 0;
+          color:$subColor;
+          padding: 0.3rem;
+          width:calc(100% - 50px);
+          &::placeholder {
+            color: $mainColor;
+          }
+        }
+        button{
+          @include SetBox;
+          padding: 0;
+          display: block;
+          line-height: 1;
+          height:1.6rem;
+          width: 50px;
+        }
+      }
+      hr{
+        margin: 0.5rem 0;
+        border:0;
+        border-top: 1px solid $subColor;
+      }
+      #popupTopicList{
+        li{
+          display: flex;
+          justify-content: space-between;
+          margin: 0.5rem 0;
+          padding-left: 1.5rem;
+          @include Dots;
+          button{
+            @include SetBox;
+            padding: 0.3rem 0;
+            width: 50px;
+            line-height:1;
+          }
+        }
+      }
+      .btnPlace{
+        button{}
       }
     }
   }

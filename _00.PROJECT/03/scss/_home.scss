@@ -84,6 +84,9 @@ main{
           font-size: 0.8rem;
         }
         .view{}
+        &.holiday{
+          color: $sundayColor;
+        }
         &.today{
           .num{
             span{
@@ -129,9 +132,10 @@ main{
     row-gap: 20px;
     flex-shrink: 0;
     article{
-      @include SetBox();
+      @include SetBox;
       width: calc((100% - 20px) / 2);
       height: calc((100% - 20px) / 2);
+      position: relative;
       .title {
         display: flex;
         justify-content: space-between;
@@ -141,7 +145,8 @@ main{
           font-weight: 700;
           margin:0;
         }
-        button{background: transparent;
+        button{
+          @include EditBtn;
         }
       }
       .contents{
@@ -151,7 +156,7 @@ main{
           justify-content: space-between;
           align-items: center;
           font-size: 0.8rem;
-          @include Dots();
+          @include Dots;
         }
       }
       &.timeTable {
