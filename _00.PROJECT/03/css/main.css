@@ -61,6 +61,10 @@ body {
   background: #E9D5DA;
 }
 
+input, textarea {
+  font-family: "HeirofLight", sans-serif;
+}
+
 .inner {
   margin: 0 10px;
   position: relative;
@@ -315,6 +319,7 @@ main #contentsBtn article {
   width: calc((100% - 20px) / 2);
   height: calc((100% - 20px) / 2);
   position: relative;
+  cursor: pointer;
 }
 main #contentsBtn article h2 {
   font-size: 1.25rem;
@@ -531,6 +536,9 @@ footer button img {
   font-weight: 700;
   opacity: 1;
 }
+#todoListPage .inner .todoListSection .todos {
+  border-top: 1px solid #827397;
+}
 #todoListPage .inner .todoListSection .todos li {
   background-color: white;
   border: 1px solid #827397;
@@ -539,14 +547,12 @@ footer button img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 0px;
 }
 #todoListPage .inner .todoListSection .todos li h2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-}
-#todoListPage .inner .todoListSection .todos li:not(:first-child) {
-  border-top: 0px;
 }
 #todoListPage .inner .todoListSection .todos li input {
   display: none;
@@ -575,11 +581,26 @@ footer button img {
   width: 1.5rem;
   background: transparent;
 }
-#todoListPage .inner form {
+#todoListPage .inner .todoListSection .todos.active li:not(.done) {
+  display: flex;
+}
+#todoListPage .inner .todoListSection .todos.active li.done {
+  display: none;
+}
+#todoListPage .inner .todoListSection .todos.done li:not(.done) {
+  display: none;
+}
+#todoListPage .inner .todoListSection .todos.done li.done {
+  display: flex;
+}
+#todoListPage .inner .todoListSection .todos.done li.done:nth-of-type(1) {
+  border-top: 1px solid #827397;
+}
+#todoListPage .inner .wrap {
   margin: 0 1rem;
   display: flex;
 }
-#todoListPage .inner form input {
+#todoListPage .inner .wrap input {
   flex-grow: 1;
   border: 0;
   border-radius: 5px 0 0 5px;
@@ -587,10 +608,10 @@ footer button img {
   color: #827397;
   border: 1px solid #827397;
 }
-#todoListPage .inner form input::placeholder {
+#todoListPage .inner .wrap input::placeholder {
   color: #E9D5DA;
 }
-#todoListPage .inner form button {
+#todoListPage .inner .wrap button {
   background: #827397;
   color: #fff;
   width: 2.5rem;
@@ -1014,7 +1035,6 @@ footer button img {
   top: 100vh;
   width: calc(100% - 2rem);
   transition: all 0.5s;
-  height: calc(100vh - 2rem - 100px);
   background-color: white;
   border: 1px solid #827397;
   padding: 0.5rem;
@@ -1091,6 +1111,198 @@ footer button img {
   font-weight: 700;
   margin-bottom: 1rem;
 }
+#timeTablePage .inner #editTimelinePopup {
+  position: absolute;
+  left: 1rem;
+  top: 20vh;
+  width: calc(100% - 2rem);
+  transition: all 0.5s;
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#timeTablePage .inner #editTimelinePopup h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap {
+  position: relative;
+  display: flex;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap input:disabled {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.2rem 0.5rem;
+  flex-grow: 1;
+  background: transparent;
+  color: #827397;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  outline: 0;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap input:disabled h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap input:disabled::placeholder {
+  color: #E9D5DA;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap label {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: #827397;
+  color: white;
+  line-height: 1.5rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap label h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap .selectList {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap .selectList .selectItem {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-top: 0;
+}
+#timeTablePage .inner #editTimelinePopup form .selectBoxWrap .selectList .selectItem h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#timeTablePage .inner #editTimelinePopup hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #827397;
+}
+#timeTablePage .inner #editTimelinePopup .timeInputWrap li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5rem;
+  position: relative;
+  margin: 1rem 0;
+}
+#timeTablePage .inner #editTimelinePopup .timeInputWrap li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+#timeTablePage .inner #editTimelinePopup .timeInputWrap li::before {
+  top: 0.3rem;
+}
+#timeTablePage .inner #editTimelinePopup .timeInputWrap li input {
+  width: 9rem;
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  color: #827397;
+  text-align: center;
+  cursor: pointer;
+}
+#timeTablePage .inner #editTimelinePopup .timeInputWrap li input h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.timePickiCSS {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+.timePickiCSS h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.timePickiCSS .time,
+.timePickiCSS .mins {
+  width: 60px;
+  margin: 0;
+}
+.timePickiCSS .time .prev,
+.timePickiCSS .mins .prev {
+  padding: 1rem;
+  background: url("../assets/img/arrow-top.svg") no-repeat center/75%;
+  border: 0;
+}
+.timePickiCSS .time .ti_tx,
+.timePickiCSS .time .mi_tx,
+.timePickiCSS .mins .ti_tx,
+.timePickiCSS .mins .mi_tx {
+  position: relative;
+}
+.timePickiCSS .time .ti_tx input,
+.timePickiCSS .time .mi_tx input,
+.timePickiCSS .mins .ti_tx input,
+.timePickiCSS .mins .mi_tx input {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 0;
+  color: #827397;
+  width: 70% !important;
+}
+.timePickiCSS .time .ti_tx input h2,
+.timePickiCSS .time .mi_tx input h2,
+.timePickiCSS .mins .ti_tx input h2,
+.timePickiCSS .mins .mi_tx input h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.timePickiCSS .time .ti_tx::before,
+.timePickiCSS .time .mi_tx::before,
+.timePickiCSS .mins .ti_tx::before,
+.timePickiCSS .mins .mi_tx::before {
+  font-size: 0.7rem;
+  position: absolute;
+  top: -0.7rem;
+  color: #827397;
+}
+.timePickiCSS .time .next,
+.timePickiCSS .mins .next {
+  padding: 1rem;
+  background: url("../assets/img/arrow-bottom.svg") no-repeat center/75%;
+  border: 0;
+}
+.timePickiCSS .time .ti_tx::before,
+.timePickiCSS .mins .ti_tx::before {
+  content: "HOUR";
+}
+.timePickiCSS .time .mi_tx::before,
+.timePickiCSS .mins .mi_tx::before {
+  content: "MINUTE";
+}
+
 /*=================== main ===================*/
 #mobileContainer {
   min-width: 300px;
@@ -1123,8 +1335,27 @@ footer button img {
   color: #827397;
 }
 
+#d-dayPopup,
+#editSchedulePopup,
+#editDiaryPopup {
+  z-index: 3;
+}
+
 #timeTablePage {
   z-index: 4;
+}
+
+#editTimelinePopup,
+#editTopicPopup {
+  z-index: 5;
+}
+
+.timePickiCSS {
+  z-index: 6;
+}
+
+.selectList {
+  z-index: 7;
 }
 
 aside {

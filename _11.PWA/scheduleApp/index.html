@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>일정관리앱</title>
+  <meta name="thema-color" content="'#ffffff">
+  <title>precache - 일정관리앱</title>
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="나의 시간">
@@ -33,7 +34,7 @@
   <script src="plugin/jQeury/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="plugin/jQeury/jquery-ui.min.css"> -->
 
-  <script defer src="./js/loadCalandar.js"></script>
+  <script defer src="./js/loadCalendar.js"></script>
   <script defer src="./js/addDBtem.js"></script>
   <script defer src="js/d-day.js"></script>
   <script defer src="js/todo.js"></script>
@@ -43,7 +44,7 @@
   <script defer src="js/layout.js"></script>
   <script> // 공식처럼 쓰임, serviceWorker가 있을 때 (serviceWorker 지원여부)
     if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('sw.js') //프로미스형태,등록
+      navigator.serviceWorker.register('service-worker.js') //프로미스형태,등록
         .then(function(success){
           console.log('serviceWorker install success😊 \n',success);
         })

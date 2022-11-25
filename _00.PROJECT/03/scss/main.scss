@@ -40,8 +40,23 @@
   background: $mainColor;
   color: $subColor;
 }
+#d-dayPopup,
+#editSchedulePopup,
+#editDiaryPopup {
+  z-index: 3;
+}
 #timeTablePage {
   z-index: 4;
+}
+#editTimelinePopup,
+#editTopicPopup {
+  z-index: 5;
+}
+.timePickiCSS{
+  z-index: 6;
+}
+.selectList{
+  z-index: 7;
 }
 aside {
   z-index: 999;

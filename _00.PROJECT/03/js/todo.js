@@ -12,7 +12,11 @@ $(function(){
   });
   /* 필터링 */
   $('.filterBtns button').on('click',function(){
+    $('.todoListSection .todos').removeClass('ALL');
+    $('.todoListSection .todos').removeClass('active');
+    $('.todoListSection .todos').removeClass('done');
     $(this).addClass('active');
     $(this).siblings('button').removeClass('active');
+    $('.todoListSection .todos').addClass($(this).text());
   })
 })

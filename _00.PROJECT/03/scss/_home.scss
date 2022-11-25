@@ -136,6 +136,7 @@ main{
       width: calc((100% - 20px) / 2);
       height: calc((100% - 20px) / 2);
       position: relative;
+      cursor: pointer;
       .title {
         display: flex;
         justify-content: space-between;

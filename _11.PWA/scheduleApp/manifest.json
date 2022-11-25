@@ -4,8 +4,8 @@
   "description": "PWA 연습용 일정관리앱입니다.",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "https://hyel99.github.io/PWA01/",
+  "scope": "https://hyel99.github.io/PWA01/",
   "dir": "ltr",
   "lang":"ko",
   "orientation": "portrait",
@@ -43,19 +43,19 @@
   "icons": [
     {
       "purpose": "maskable",
-      "src": "/images/Icon_x48.png",
+      "src": "images/Icon_x48.png",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
-      "src": "/images/Icon_x128.png",
+      "src": "images/Icon_x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
       "purpose": "any",
-      "src": "/images/Icon_x512.png",
+      "src": "images/Icon_x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

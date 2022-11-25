@@ -112,7 +112,7 @@
       top: 100vh;
       width: calc(100% - 2rem);
       transition: all 0.5s;
-      height: calc(100vh - 2rem - 100px);
+      //height: calc(100vh - 2rem - 100px);
       @include SetBox;
       h2{}
       form{
@@ -161,6 +161,127 @@
       .btnPlace{
         button{}
       }
+    }
+    #editTimelinePopup{
+      position: absolute;
+      left: 1rem;
+      top: 20vh;
+      width: calc(100% - 2rem);
+      transition: all 0.5s;
+      //height: calc(100vh - 2rem - 100px);
+      @include SetBox;
+      h2{}
+      form{
+        .selectBoxWrap{
+          position: relative;
+          display: flex;
+          input:disabled{
+            @include SetBox;
+            padding: 0.2rem 0.5rem;
+            flex-grow: 1;
+            background: transparent;
+            color:$subColor;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            outline: 0;
+            &::placeholder{
+              color: $mainColor;
+            }
+          }
+          label{
+            @include SetBox;
+            background-color: $subColor;
+            color: white;
+            line-height: 1.5rem;
+            padding: 0.2rem 0.5rem;
+            cursor: pointer;
+          }
+          .selectList{
+            position: absolute;
+            top: 2rem;
+            left:0;
+            width: 100%;
+            .selectItem{
+              cursor: pointer;
+              @include SetBox;
+              border-top: 0;
+            }
+          }
+        }
+      }
+      hr{
+        margin: 0.5rem 0;
+        border:0;
+        border-top: 1px solid $subColor;
+      }
+      .timeInputWrap{
+        li{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 1.5rem;
+          @include Dots;
+          margin: 1rem 0;
+          &::before{
+            top:0.3rem;
+          }
+          input{
+            width: 9rem;
+            @include SetBox;
+            padding:0.3rem;
+            color: $subColor;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+      }
+      .btnPlace{
+        button{}
+      }
+    }
+  }
+}
+
+.timePickiCSS{
+  @include SetBox;
+  border-radius: 0;
+  .time,
+  .mins{
+    width: 60px;
+    margin:0;
+    .prev{
+      padding: 1rem;
+      background: url('../assets/img/arrow-top.svg') no-repeat center / 75%;
+      border:0;
+    }
+    .ti_tx,
+    .mi_tx{
+      position: relative;
+      input{
+        @include SetBox;
+        font-size: 1.5rem;
+        padding: 0.2rem;
+        border-radius: 0;
+        color:$subColor;
+        width: 70% !important;
+      }
+      &::before{
+        font-size: 0.7rem;
+        position: absolute;
+        top: -0.7rem;
+        color: $subColor;
+      }
+    }
+    .next{
+      padding: 1rem;
+      background: url('../assets/img/arrow-bottom.svg') no-repeat center / 75%;
+      border:0;
+    }
+    .ti_tx::before{
+      content: "HOUR";
+    }
+    .mi_tx::before{
+      content: "MINUTE";
     }
   }
 }

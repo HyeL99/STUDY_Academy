@@ -15,8 +15,10 @@
   <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="plugin/jQeury/jquery-ui.css" />
+  <link rel="stylesheet" href="plugin/timePicki/timePicki.css">
   <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
   <script src="plugin/jQeury/jquery-ui.js"></script>
+  <script src="plugin/timePicki/timePicki.js"></script>
     
   <link rel="stylesheet" href="css/main.css">
 
@@ -27,7 +29,7 @@
   <script src="plugin/jQeury/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="plugin/jQeury/jquery-ui.min.css"> -->
 
-  <script defer src="./js/loadCalandar.js"></script>
+  <script defer src="./js/loadCalendar.js"></script>
   <script defer src="./js/addDBtem.js"></script>
   <script defer src="js/d-day.js"></script>
   <script defer src="js/todo.js"></script>
@@ -241,10 +243,10 @@
           </li>
         </ul>
       </section>
-      <form action="">
-        <input type="text" placeholder="할 일을 입력해주세요.">
-        <button type="submit">+</button>
-      </form>
+      <div class="wrap">
+        <input type="text" placeholder="할 일을 입력해주세요." id="todoTitle">
+        <button id="addTodoItem">+</button>
+      </div>
     </div>
   </div>
   <div id="timeTablePage">
@@ -308,11 +310,37 @@
           <button class="popupCancel">취소</button>
         </div>
       </article>
+      <article id="editTimelinePopup">
+        <h2>Timeline</h2>
+        <form action="">
+          <div class="selectBoxWrap">
+            <input type="text" placeholder="TOPIC을 선택해주세요." id="selectTopic" disabled>
+            <label for="selectTopic">선택</label>
+            <ul class="selectList">
+              <li class="selectItem">코딩</li>
+              <li class="selectItem">토익</li>
+            </ul>
+          </div>
+          <hr>
+          <ul class="timeInputWrap">
+            <li>
+              시작한 시간
+              <input type="text" class="timePicki" id="startTime">
+            </li>
+            <li>
+              종료한 시간
+              <input type="text" class="timePicki" id="endTime">
+            </li>
+          </ul>
+        </form>
+        <div class="btnPlace">
+          <button class="popupSubmit">등록</button>
+          <button class="popupCancel">취소</button>
+        </div>
+      </article>
     </div>
   </div>
-  <article id="editTimelinePopup">
-    
-  </article>
+  
   <aside>
     <div id="enterPage">
       <div class="logo">

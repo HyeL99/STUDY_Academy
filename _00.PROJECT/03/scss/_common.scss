@@ -17,6 +17,9 @@ body {
     font-weight: 300;
     background: $mainColor;
 }
+input,textarea{
+  font-family: 'HeirofLight' ,sans-serif;
+}
 .inner {
   margin: 0 10px;
   position: relative;

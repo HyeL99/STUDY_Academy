@@ -14,6 +14,7 @@ $(function(){
 
   /*================== TOPIC 입력 관련 이벤트 ================== */
   let topicTitle = '';
+
   $('#topicTitle').on('change',function(e){
     topicTitle = e.target.value;
   });
@@ -41,6 +42,59 @@ $(function(){
     $('#editTopicPopup').css('top','0');
   });
   deleteTopicItem();
+
+
+  /*================== TIMELINE 입력 관련 이벤트 ================== */
+  $('.timePicki').timepicki({
+    increase_direction: 'up',
+    max_hour_value:24,
+    show_meridian:false,
+    step_size_hours:1,
+    step_size_minutes:5,
+    overflow_minutes:true,
+    start_time: ["09", "30", "AM"],
+    disable_keyboard_mobile: false,
+    custom_classes:"timePickiCSS"
+  });
+  
+  $('.selectList').slideUp();
+
+  $('.selectBoxWrap label').on('click',function(){
+    $('.selectList').slideToggle(100);
+  });
+
+  let selectedValue = '';
+  let timeStart = '';
+  let timeEnd = '';
+
+  $('.selectItem').on('click',function(){
+    selectedValue = $(this).text();
+    $('#selectTopic').attr('value',selectedValue);
+    $('.selectList').slideUp(100);
+  });
+
+  $('#editTimelineBtn').on('click',function(){
+    $('#editTimelinePopup').css('top','0vh');
+  })
+  $('#editTimelinePopup .popupSubmit').on('click',function(){
+    selectedValue = '';
+    timeStart = '';
+    timeEnd = '';
+    $('#selectTopic').attr('value','');
+    $('.timePicki').val('');
+    $('#editTimelinePopup').css('top','100vh');
+  });
+  $('#editTimelinePopup .popupCancel').on('click',function(){
+    selectedValue = '';
+    timeStart = '';
+    timeEnd = '';
+    $('#selectTopic').attr('value','');
+    $('.timePicki').val('');
+    $('#editTimelinePopup').css('top','100vh');
+  });
+
+  /*================== TIMER 관련 이벤트 ================== */
+  let currentTopic = '코딩';
 });
 
 const deleteTopicItem = () => {

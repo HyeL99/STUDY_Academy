@@ -980,25 +980,4 @@ const showHolidayOnTheCalendar = (date) => {
 renderCalendar(selectedFullDay);  //달력 불러옴
 showHolidayOnTheCalendar(selectedFullDay);  //공휴일 표시
 
-
-
-
-/*
-const prevMonth = () => {
-  date.setDate(1);
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-}
-const nextMonth = () => {
-  date.setDate(1);
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-}
-const goToday = () => {
-  date = new Date();
-  renderCalendar();
-}
-
-*/
-
 //일정 추가하는 함수
