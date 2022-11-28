@@ -882,7 +882,7 @@ const renderCalendar = (date) => {
   const viewMonth = date.getMonth();
 
   //날짜와 요일 표시하기
-  document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
+  //document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
 
   //지난달 마지막 날짜와 요일, 이번달 마지막 날짜와 요일 불러오기
   const prevLast = new Date(viewYear, viewMonth, 0);

@@ -10,23 +10,23 @@
 let dataList = {
   date: [
     {
-      date:"2022-11-27",
+      date:"2022-11-28",
       plan : "러프스케치 마감",
       timeTable:[
         {
           topic:"topic01",
-          startTime:"2022-11-27 09:00:00",
-          endTime:"2022-11-27 12:30:00"
+          startTime:"2022-11-28 09:00:00",
+          endTime:"2022-11-28 12:30:00"
         },
         {
           topic:"topic02",
-          startTime:"2022-11-27 13:08:00",
-          endTime:"2022-11-27 15:27:00"
+          startTime:"2022-11-28 13:08:00",
+          endTime:"2022-11-28 15:28:00"
         },
         {
           topic:"topic01",
-          startTime:"2022-11-27 17:16:00",
-          endTime:"2022-11-27 20:00:00"
+          startTime:"2022-11-28 17:16:00",
+          endTime:"2022-11-28 20:00:00"
         }
       ],
       record:{
@@ -974,21 +974,6 @@ $(function(){
   getDdayList(todayObject);//디데이 일정 불러오기
   getTodoList();//투두리스트 불러오기
   getTimeLine(todayObject);
-
-  let todoTitle;
-  $('#todoTitle').on('change',function(e){
-    todoTitle = e.target.value;
-  });
-
-  //추가 버튼 클릭 시 투두 아이템 추가
-  $('#addTodoItem').on('click',function(){
-    let addItemId = dataList.todoList.length+1;
-    let addItem = {id:addItemId,name:todoTitle,done:false};
-    console.log(addItem);
-    dataList.todoList.push(addItem);
-    console.log(dataList);
-    getTodoList();
-  });
 });
 //================================== 실행 함수 ==================================//
 
@@ -1127,8 +1112,26 @@ const getTodoList = () => {
   }
   $('.todoListSection .todos').html(listHTML);
 
+  addTodoItem();
   deleteTodoItem();
   updateTodoItem();
+}
+//투두리스트 화면 투두아이템 추가 이벤트
+const addTodoItem = () => {
+  let todoTitle = '';
+  
+  $('#todoTitle').on('change',function(e){
+    todoTitle = e.target.value;
+  });
+
+  $('#addTodoItem').on('click',function(){
+    let addItemId = dataList.todoList.length+1;
+    let addItem = {id:addItemId, name:todoTitle, done:false};
+    console.log(addItem);
+    dataList.todoList.push(addItem);
+    console.log(dataList);
+    getTodoList();
+  });
 }
 //투두리스트 화면 투두아이템 제거 이벤트
 const deleteTodoItem = () => {
@@ -1178,7 +1181,7 @@ const renderCalendar = (date) => {
   const viewMonth = date.getMonth();
 
   //날짜와 요일 표시하기
-  document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
+  //document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
 
   //지난달 마지막 날짜와 요일, 이번달 마지막 날짜와 요일 불러오기
   const prevLast = new Date(viewYear, viewMonth, 0);
@@ -1274,21 +1277,30 @@ const showHolidayOnTheCalendar = (date) => {
     }
   }
 };
+//달력 이동 이벤트
+const updateCalendar= () => {
+
+}
 
 //타임라인 불러오는 함수
 const getTimeLine = (dayObject) => {
   let timelineList = [];
+  let settimgTimeline = [];
   dataList.date.map((item)=>{
     if(item.date == dayObject.fullDate){
       timelineList = item.timeTable;
       console.log('timelineList',timelineList);
     };
   });
+  timelineList.map((item) => {
+    settimgTimeline = [...settimgTimeline]
+  })
 
 }
-const getTimeText = (time) => {
-  let hour = time / (1000*60*60);
-  let min = (time % (1000*60*60)) / (1000*60);
+//초를 HH:mm:ss 형태로 바꿔주는 함수
+const getTimeText = (fullSeconds) => {
+  let hour = fullSeconds / (1000*60*60);
+  let min = (fullSeconds % (1000*60*60)) / (1000*60);
   let sec = (time % (1000*60)) / 1000;
-  return `${hour}:${min}:${sec}`;
+  return `${hour}:${min}:${sec<10 ? '0'+sec : sec}`;
 }
