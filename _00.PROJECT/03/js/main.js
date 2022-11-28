@@ -10,23 +10,23 @@
 let dataList = {
   date: [
     {
-      date:"2022-11-28",
-      plan : "러프스케치 마감",
+      date:"2022-11-29",
+      plan: ["러프스케치 마감"],
       timeTable:[
         {
           topic:"topic01",
-          startTime:"2022-11-28 09:00:00",
-          endTime:"2022-11-28 12:30:00"
+          startTime:"2022-11-29 09:00:00",
+          endTime:"2022-11-29 12:30:00"
         },
         {
           topic:"topic02",
-          startTime:"2022-11-28 13:08:00",
-          endTime:"2022-11-28 15:28:00"
+          startTime:"2022-11-29 13:08:00",
+          endTime:"2022-11-29 15:29:00"
         },
         {
           topic:"topic01",
-          startTime:"2022-11-28 17:16:00",
-          endTime:"2022-11-28 20:00:00"
+          startTime:"2022-11-29 17:16:00",
+          endTime:"2022-11-29 20:00:00"
         }
       ],
       record:{
@@ -126,6 +126,16 @@ const holidayList = [ //설(1.1),추석(8.15),석가탄신일(4.8)
     name:'크리스마스',
     month: '12',
     day: '25'
+  },
+  {
+    name:"test01",
+    month:"11",
+    day:"29"
+  },
+  {
+    name:"test03",
+    month:"11",
+    day:"30"
   },
 ];
 const lunarDays = [ // 2015-2030 구현 완
@@ -526,6 +536,11 @@ const lunarDays = [ // 2015-2030 구현 완
         name:"대체공휴일",
         month:"10",
         day:"10"
+      },
+      {
+        name:"test02",
+        month:"11",
+        day:"29"
       },
     ]
   },  //2022
@@ -962,15 +977,16 @@ const lunarDays = [ // 2015-2030 구현 완
 ];
 
 //================================== 실행 함수 ==================================//
-$(function(){
+$(async function(){
   const today = new Date();
   const todayObject = getDateObject(today);
   console.log('todayObject',todayObject);
 
-  renderCalendar(today);  //달력 불러옴
-  showHolidayOnTheCalendar(today);  //공휴일 표시
+  await renderCalendar(today);  //달력 불러옴
+  getTodayList(todayObject);//오늘의 일정 불러오기(일정,공휴일)
+  getYearList();  //year select list 불러옴
+  updateCalendar(); //달력 업데이트 이벤트 추가
 
-  getTodayList(todayObject);//오늘의 일정 불러오기
   getDdayList(todayObject);//디데이 일정 불러오기
   getTodoList();//투두리스트 불러오기
   getTimeLine(todayObject);
@@ -985,20 +1001,7 @@ const getDateObject = (day) => {
     month: day.getMonth()+1,
     date: day.getDate()
   }
-}
-//홈화면 오늘의 일정 추가
-const getTodayList = (dayObject) => {
-  let listHTML = '';
-  for(let item of dataList.date){
-    if(item.date == dayObject.fullDate){
-      listHTML += `<li>${item.plan}</li>`;
-    }
-  }
-  if(listHTML.length === 0) {
-    listHTML = `<li>오늘 일정은 없습니다.</li>`;
-  }
-  $('#contentsBtn .day .contents').html(listHTML);
-}
+};
 
 //홈화면,디데이팝업 디데이 일정 추가
 const getDdayList = (dayObject) => {
@@ -1023,7 +1026,7 @@ const getDdayList = (dayObject) => {
   $('#d-dayPage .d-daySection .d-dayList').html(pageHtml);
   deleteDdayItem(dayObject);
   addDdayItem(dayObject);
-}
+};
 //디데이 남은날짜 계산, d-nn 형태로 반환
 const getRestDayText = (todayDate,dDayDate) => {
   const today = new Date(todayDate);
@@ -1037,7 +1040,7 @@ const getRestDayText = (todayDate,dDayDate) => {
   } else {
     return `D+${-1*restDay}`
   }
-}
+};
 //디데이 제거 이벤트
 const deleteDdayItem = (dayObject) => {
   $('.deleteD-day').on('click',function(){
@@ -1053,7 +1056,7 @@ const deleteDdayItem = (dayObject) => {
     console.log(dDayList);
     getDdayList(dayObject);
   });
-}
+};
 //디데이 추가 이벤트
 const addDdayItem = (dayObject) => {
   let dDayTitle = '';
@@ -1086,7 +1089,7 @@ const addDdayItem = (dayObject) => {
     $('#d-dayPopup form')[0].reset();
     $('#d-dayPopup').css('top','100vh');
   });
-}
+};
 
 //투두리스트 화면 투두리스트 추가
 const getTodoList = () => {
@@ -1115,7 +1118,7 @@ const getTodoList = () => {
   addTodoItem();
   deleteTodoItem();
   updateTodoItem();
-}
+};
 //투두리스트 화면 투두아이템 추가 이벤트
 const addTodoItem = () => {
   let todoTitle = '';
@@ -1132,7 +1135,7 @@ const addTodoItem = () => {
     console.log(dataList);
     getTodoList();
   });
-}
+};
 //투두리스트 화면 투두아이템 제거 이벤트
 const deleteTodoItem = () => {
   $('.deleteTodo').on('click',function(){
@@ -1154,7 +1157,7 @@ const deleteTodoItem = () => {
     console.log(dataList);
     getTodoList();
   });
-}
+};
 //투두리스트 화면 투두아이템 업데이트 이벤트
 const updateTodoItem = () => {
   $('.todoListSection .todos li').on('click',function(){
@@ -1172,20 +1175,22 @@ const updateTodoItem = () => {
     console.log(dataList);
     getTodoList();
   });
-}
+};
 
 //홈화면 달력 렌더링 함수
-const renderCalendar = (date) => {
+const renderCalendar = async (date) => {
   // 오늘의 년도와 월 불러오기
   const viewYear = date.getFullYear();
-  const viewMonth = date.getMonth();
+  const viewMonth = date.getMonth() + 1;
+  
+  console.log('yy,mm',viewYear, viewMonth);
 
   //날짜와 요일 표시하기
-  //document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
+  //document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth}월`;
 
   //지난달 마지막 날짜와 요일, 이번달 마지막 날짜와 요일 불러오기
-  const prevLast = new Date(viewYear, viewMonth, 0);
-  const thisLast = new Date(viewYear, viewMonth+1, 0);
+  const prevLast = new Date(viewYear, viewMonth-1, 0);
+  const thisLast = new Date(viewYear, viewMonth, 0);
 
   const PLDate = prevLast.getDate();
   const PLDay = prevLast.getDay();
@@ -1205,7 +1210,7 @@ const renderCalendar = (date) => {
     }
   }
   //newDates계산
-  for (let i = 1; i < 14 - TLDay; i++) {
+  for (let i = 1; i <= 42-(prevDates.length + thisDates.length); i++) {
     nextDates.push(i);
   }
   //날짜에 맞춰 클라스 부여
@@ -1225,7 +1230,8 @@ const renderCalendar = (date) => {
 
   //오늘 날짜 표시
   const today = new Date();
-  if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+
+  if (viewMonth === today.getMonth()+1 && viewYear === today.getFullYear()) {
     for (let date of document.querySelectorAll('.this')) {
       if (+date.innerText === today.getDate()) {
         date.classList.add('today');
@@ -1233,11 +1239,15 @@ const renderCalendar = (date) => {
       }
     }
   }
+  //공휴일과 일정 표시
+  showHolidayOnTheCalendar(date);
+  viewScheduleDots(viewYear, viewMonth);
+
   //날짜 클릭하면 일정 팝업 뜨도록 하기
   $('#calendar .date').on('click',function(){
     $('#todayPage').css('top','50px');
   });
-}
+};
 //홈화면 달력에 공휴일 추가하는 함수
 const showHolidayOnTheCalendar = (date) => {
   let selectYear = date.getFullYear();
@@ -1276,10 +1286,178 @@ const showHolidayOnTheCalendar = (date) => {
       }
     }
   }
-};
-//달력 이동 이벤트
-const updateCalendar= () => {
 
+  
+};
+//음력 구현된 년도 만큼 드롭다운메뉴 추가
+const getYearList = () => {
+  let yearList = [];
+  let listHtml = '';
+  lunarDays.map((item)=>{
+    yearList = [...yearList,item.year];
+  });
+  for(let item of yearList){
+    listHtml += `<li>${item}</li>`;
+  }
+  $('#selectYearList').html(listHtml);
+  
+  $('#selectYearList').slideUp();
+  $('#selectMonthList').slideUp();
+
+  $('#selectYear button').on('click',function(){
+    $('#selectYearList').slideToggle();
+  });
+  $('#selectMonth button').on('click',function(){
+    $('#selectMonthList').slideToggle();
+  });
+};
+//달력 업데이트 이벤트
+const updateCalendar= () => {
+  let selectedYear = new Date().getFullYear();
+  let selectedMonth = new Date().getMonth() + 1;
+  $('#selectYear button').text(selectedYear);
+  $('#selectMonth button').text(selectedMonth);
+  $('#selectYearList li').on('click',function(){
+    selectedYear = $(this).text();
+    $('#selectYear button').text(selectedYear);
+    console.log(new Date(`${selectedYear}-${selectedMonth}-01`));
+    renderCalendar(new Date(`${selectedYear}-${selectedMonth}-01`));
+    $('#selectYearList').slideUp();
+  });
+  $('#selectMonthList li').on('click',function(){
+    selectedMonth = $(this).text();
+    $('#selectMonth button').text(selectedMonth);
+    console.log(new Date(`${selectedYear}-${selectedMonth}-01`));
+    renderCalendar(new Date(`${selectedYear}-${selectedMonth}-01`));
+    $('#selectMonthList').slideUp();
+  });
+};
+//달력에 일정 Dot 표시하는 함수
+const viewScheduleDots = (selectedYear,selectedMonth) => {
+  let scheduleList = [];
+  let scheduleListAll = [];
+  let dayFromSelectedYear = [];
+  let dayFromSelectedMonth = [];
+  let objectsFromDayArray = [];
+  let itemYear = '';
+  let itemMonth = '';
+
+  for(let item of dataList.date){
+    itemYear = new Date(item.date).getFullYear();
+    itemMonth = new Date(item.date).getMonth() +1;
+    console.log('selectedMonth',selectedMonth);
+    if(itemYear == selectedYear && itemMonth == selectedMonth){
+      scheduleList = [...scheduleList,item];
+    }
+  }
+
+  lunarDays.map((day) => {
+    if(day.year == selectedYear){
+      dayFromSelectedYear = day.dayList;
+    }
+  });
+  console.log('dayFromSelectedYear',dayFromSelectedYear);
+  dayFromSelectedYear.map((day) => {
+    if(day.month == selectedMonth){
+      dayFromSelectedMonth = [...dayFromSelectedMonth,day];
+    }
+  });
+  holidayList.map((day) => {
+    if(day.month == selectedMonth){
+      dayFromSelectedMonth = [...dayFromSelectedMonth,day];
+    }
+  });
+  dayFromSelectedMonth.map((item) => {
+    objectsFromDayArray = [...objectsFromDayArray,getScheduleObject(selectedYear,item)]
+  });
+
+  for(let i=0; i<objectsFromDayArray.length; i++){
+    for(let j=0; j<i; j++){
+      if(objectsFromDayArray[i].date == objectsFromDayArray[j].date){
+        let array = objectsFromDayArray[j].plan.concat(objectsFromDayArray[i].plan)
+        objectsFromDayArray[j] = {...objectsFromDayArray[j],plan:array}
+        objectsFromDayArray.splice(i,1);
+        i--;
+      }
+    }
+  }
+  console.log('objectsFromDayArray',objectsFromDayArray);
+  console.log('scheduleList',scheduleList);
+  objectsFromDayArray.map((selectedDay) => {  //일정 리스트를 만듦
+    scheduleList.map((scheduleListItem,index) => {
+      if(selectedDay.date == scheduleListItem.date){
+        let planArray = scheduleListItem.plan.concat(selectedDay.plan);
+        scheduleListAll = [
+          ...scheduleListAll,
+          {
+            date:scheduleListItem.date,
+            plan:planArray,
+            timeTable:scheduleListItem.timeTable
+          }
+        ];
+        scheduleList.splice(index,1);
+      } else {
+        scheduleListAll = [
+          ...scheduleListAll,
+          {
+            date:scheduleListItem.date,
+            plan:scheduleListItem.plan,
+            timeTable:scheduleListItem.timeTable
+          }
+        ];
+        scheduleListAll = [
+          ...scheduleListAll,
+          {
+            date:selectedDay.date,
+            plan:selectedDay.plan,
+            timeTable:selectedDay.timeTable
+          }
+        ];
+      }
+    });
+  });
+  console.log(`scheduleListAll`,scheduleListAll);
+  //dot표시
+  for(let item of scheduleListAll){
+
+  }
+}
+//공휴일 일정 형식화된 오브젝트로 반환
+const getScheduleObject = (selectedYear,object) => {//{name,month,day}
+  return {
+    date: `${selectedYear}-${object.month}-${object.day}`,
+    plan: [`${object.name}`]
+  }
+}
+//홈화면 오늘의 일정 추가
+const getTodayList = (dayObject) => {
+  let listHTML = '';
+  for(let item of dataList.date){
+    if(item.date == dayObject.fullDate){
+      item.plan.map((planName)=>{
+        listHTML += `<li>${planName}</li>`;
+      });
+    }
+  }
+  //홈화면 오늘의 일정에 공휴일 관련 일정 추가
+  for(let day of holidayList){
+    if(day.month == dayObject.month && day.day == dayObject.date){
+      listHTML += `<li>${day.name}</li>`;
+    }
+  }
+  for(let selectedDayList of lunarDays){
+    if(selectedDayList.year == dayObject.year){
+      selectedDayList.dayList.map((day)=>{
+        if(day.month == dayObject.month && day.day == dayObject.date){
+          listHTML += `<li>${day.name}</li>`;
+        }
+      })
+    }
+  }
+  if(listHTML.length === 0) {
+    listHTML += `<li>오늘 일정은 없습니다.</li>`;
+  }
+  $('#contentsBtn .day .contents').html(listHTML);
 }
 
 //타임라인 불러오는 함수
@@ -1296,11 +1474,11 @@ const getTimeLine = (dayObject) => {
     settimgTimeline = [...settimgTimeline]
   })
 
-}
+};
 //초를 HH:mm:ss 형태로 바꿔주는 함수
 const getTimeText = (fullSeconds) => {
   let hour = fullSeconds / (1000*60*60);
   let min = (fullSeconds % (1000*60*60)) / (1000*60);
   let sec = (time % (1000*60)) / 1000;
   return `${hour}:${min}:${sec<10 ? '0'+sec : sec}`;
-}
+};

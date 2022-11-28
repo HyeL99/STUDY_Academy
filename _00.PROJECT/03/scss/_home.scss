@@ -37,63 +37,77 @@ main{
       display: flex;
       justify-content: space-between;
       #selectYear{
-        position: relative;
         display: flex;
         align-items: center;
         .selectYearWrap{
-          input:disabled{
+          position: relative;
+          button{
             font-size: 1rem;
             line-height: 1;
             width: 3rem;
             text-align: center;
             background: transparent;
             border: 0;
+            height: 1rem;
+            color: $subColor;
           }
           #selectYearList{
             position: absolute;
             left:0;
-            top: 30px;
-            width: calc(100% - 1rem);
-            border-top: 1px solid $subColor;
-            max-height: calc(7rem + 6px);
+            top: 1.2rem;
+            width: 100%;
+            border: 1px solid $subColor;
+            max-height: calc(7rem + 7px);
             overflow-y: auto;
             z-index: 1;
             li{
               @include SetBox;
+              font-size: 0.9rem;
+              line-height: 1;
+              border: 0;
               padding:0.2rem 0;
               text-align: center;
-              border-top: 0;
+              &:not(:last-child){
+                border-bottom: 1px solid $subColor;
+              }
             }
           }
         }
       }
       #selectMonth{
-        position: relative;
         display: flex;
         align-items: end;
         .selectMonthWrap{
-          input:disabled{
+          position: relative;
+          button{
             font-size: 1.8rem;
             width: 2.4rem;
             height: 1.8rem;
+            line-height: 1.8rem;
             text-align: center;
             background: transparent;
             border: 0;
+            color: $subColor;
           }
           #selectMonthList{
             position: absolute;
             left:0;
             top: 2rem;
-            width: calc(100% - 1rem);
-            border-top: 1px solid $subColor;
-            max-height: calc(7rem + 6px);
+            width: 100%;
+            border: 1px solid $subColor;
+            max-height: calc(7rem + 7px);
             overflow-y: auto;
             z-index: 1;
             li{
               @include SetBox;
-              border-top: 0;
+              font-size: 0.9rem;
+              line-height: 1rem;
+              border: 0;
               padding:0.2rem 0;
               text-align: center;
+              &:not(:last-child){
+                border-bottom: 1px solid $subColor;
+              }
             }
           }
         }
@@ -132,6 +146,7 @@ main{
         padding: 0.3rem;
         border-bottom: 1px dashed $subColor;
         border-left: 1px dashed $subColor;
+        position: relative;
         &:nth-child(7n){
           color: $saturdayColor
         }
@@ -149,7 +164,29 @@ main{
           text-align: center;
           font-size: 0.8rem;
         }
-        .view{}
+        .view{
+          position: absolute;
+          left: 0.5rem;
+          bottom: 0.2rem;
+          display: flex;
+          column-gap: 0.2rem;
+          span{
+            display: block;
+            width:0.4rem;
+            height: 0.4rem;
+            font-size: 0;
+            border-radius: 50%;
+            &.scheduleDot{
+              background-color: red;
+            }
+            &.timelineDot{
+              background-color: rgb(0, 81, 255);
+            }
+            &.diaryDot{
+              background-color: rgb(98, 255, 0);
+            }
+          }
+        }
         &.holiday{
           color: $sundayColor;
         }

@@ -105,6 +105,14 @@ input, textarea {
   margin-bottom: 1rem;
 }
 
+.scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
 /*=================== index ===================*/
 #enterPage {
   width: 100%;
@@ -222,25 +230,29 @@ main .inner .year-month {
   justify-content: space-between;
 }
 main .inner .year-month #selectYear {
-  position: relative;
   display: flex;
   align-items: center;
 }
-main .inner .year-month #selectYear .selectYearWrap input:disabled {
+main .inner .year-month #selectYear .selectYearWrap {
+  position: relative;
+}
+main .inner .year-month #selectYear .selectYearWrap button {
   font-size: 1rem;
   line-height: 1;
   width: 3rem;
   text-align: center;
   background: transparent;
   border: 0;
+  height: 1rem;
+  color: #827397;
 }
 main .inner .year-month #selectYear .selectYearWrap #selectYearList {
   position: absolute;
   left: 0;
-  top: 30px;
-  width: calc(100% - 1rem);
-  border-top: 1px solid #827397;
-  max-height: calc(7rem + 6px);
+  top: 1.2rem;
+  width: 100%;
+  border: 1px solid #827397;
+  max-height: calc(7rem + 7px);
   overflow-y: auto;
   z-index: 1;
 }
@@ -249,35 +261,44 @@ main .inner .year-month #selectYear .selectYearWrap #selectYearList li {
   border: 1px solid #827397;
   padding: 0.5rem;
   box-sizing: border-box;
+  font-size: 0.9rem;
+  line-height: 1;
+  border: 0;
   padding: 0.2rem 0;
   text-align: center;
-  border-top: 0;
 }
 main .inner .year-month #selectYear .selectYearWrap #selectYearList li h2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
+main .inner .year-month #selectYear .selectYearWrap #selectYearList li:not(:last-child) {
+  border-bottom: 1px solid #827397;
+}
 main .inner .year-month #selectMonth {
-  position: relative;
   display: flex;
   align-items: end;
 }
-main .inner .year-month #selectMonth .selectMonthWrap input:disabled {
+main .inner .year-month #selectMonth .selectMonthWrap {
+  position: relative;
+}
+main .inner .year-month #selectMonth .selectMonthWrap button {
   font-size: 1.8rem;
   width: 2.4rem;
   height: 1.8rem;
+  line-height: 1.8rem;
   text-align: center;
   background: transparent;
   border: 0;
+  color: #827397;
 }
 main .inner .year-month #selectMonth .selectMonthWrap #selectMonthList {
   position: absolute;
   left: 0;
   top: 2rem;
-  width: calc(100% - 1rem);
-  border-top: 1px solid #827397;
-  max-height: calc(7rem + 6px);
+  width: 100%;
+  border: 1px solid #827397;
+  max-height: calc(7rem + 7px);
   overflow-y: auto;
   z-index: 1;
 }
@@ -286,7 +307,9 @@ main .inner .year-month #selectMonth .selectMonthWrap #selectMonthList li {
   border: 1px solid #827397;
   padding: 0.5rem;
   box-sizing: border-box;
-  border-top: 0;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  border: 0;
   padding: 0.2rem 0;
   text-align: center;
 }
@@ -294,6 +317,9 @@ main .inner .year-month #selectMonth .selectMonthWrap #selectMonthList li h2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+main .inner .year-month #selectMonth .selectMonthWrap #selectMonthList li:not(:last-child) {
+  border-bottom: 1px solid #827397;
 }
 main #calendar {
   width: 100%;
@@ -333,6 +359,7 @@ main #calendar .dates .date {
   padding: 0.3rem;
   border-bottom: 1px dashed #827397;
   border-left: 1px dashed #827397;
+  position: relative;
 }
 main #calendar .dates .date:nth-child(7n) {
   color: rgb(98, 166, 255);
@@ -350,6 +377,29 @@ main #calendar .dates .date .num {
   line-height: 1rem;
   text-align: center;
   font-size: 0.8rem;
+}
+main #calendar .dates .date .view {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.2rem;
+  display: flex;
+  column-gap: 0.2rem;
+}
+main #calendar .dates .date .view span {
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  font-size: 0;
+  border-radius: 50%;
+}
+main #calendar .dates .date .view span.scheduleDot {
+  background-color: red;
+}
+main #calendar .dates .date .view span.timelineDot {
+  background-color: rgb(0, 81, 255);
+}
+main #calendar .dates .date .view span.diaryDot {
+  background-color: rgb(98, 255, 0);
 }
 main #calendar .dates .date.holiday {
   color: rgb(255, 129, 129);
