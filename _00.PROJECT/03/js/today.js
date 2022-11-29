@@ -4,6 +4,7 @@ let scheduleDate = '';
   
 let diaryImageUrl = '';
 let diaryContent = '';
+let diaryDate = '';
 
 let selectedDay = '';
 
@@ -13,6 +14,7 @@ $(function(){
   });
   $('#todayPage .closeBtn').on('click',function(){
     $('#todayPage').css('top','100%');
+    renderCalendar(new Date());
   });
 
   /*================== 일정 입력 관련 이벤트 ================== */
@@ -21,41 +23,54 @@ $(function(){
 
   /* input 입력 이벤트 */
   scheduleTitle = '';
-  scheduleContent = '';
-  scheduleDate = '';
+  scheduleDate = $('#scheduleDatepicker').val();
 
   $('#editScheduleBtn').on('click',function(){
     $('#editSchedulePopup').css('top','0');
+    scheduleDate = $('.todaySection .top p').text();
+    scheduleDate = scheduleDate.substring(0, 10);
+    scheduleDate = scheduleDate.replaceAll('.','-');
+    $('#scheduleDatepicker').val(scheduleDate);
+
   });
 
   $('#scheduleTitle').on('change',function(e){
     scheduleTitle = e.currentTarget.value;
     console.log('scheduleTitle',scheduleTitle);
   });
-  $('#scheduleContent').on('change',function(e){
-    scheduleContent = e.currentTarget.value;
-    console.log('scheduleContent',scheduleContent);
-  });
   $('#scheduleDatepicker').on('change',function(){
     scheduleDate = $(this).val();
     console.log('scheduleDate',scheduleDate);
   });
 
-  
-
   $('#editSchedulePopup .popupSubmit').on('click',function(){
-    /* ======= 받아온 값 넣는 이벤트 필요 ======*/
-
+    console.log( scheduleDate)
+    let unChange = true;
+    dataList.date.map((item)=>{
+      if(item.date == scheduleDate){
+        let array = item.plan
+        if(item.plan){
+          item.plan = [...array,scheduleTitle];
+        }else{
+          item.plan = [scheduleTitle];
+        }
+        unChange = false;
+      }
+    })
+    if(unChange){
+      let array = dataList.date;
+      dataList.date = [...array,{date:scheduleDate,plan:[scheduleTitle],timeTable:[],record:{}}];
+    }
+    openTodayPage(scheduleDate);
     $('#editSchedulePopup form')[0].reset();
     scheduleTitle = '';
-    scheduleContent = '';
     scheduleDate = '';
     $('#editSchedulePopup').css('top','100vh');
   });
+
   $('#editSchedulePopup .popupCancel').on('click',function(){
     $('#editSchedulePopup form')[0].reset();
     scheduleTitle = '';
-    scheduleContent = '';
     scheduleDate = '';
     $('#editSchedulePopup').css('top','100vh');
   });
@@ -63,15 +78,46 @@ $(function(){
   /*================== 일기 입력 관련 이벤트 ================== */
   diaryImageUrl = '';
   diaryContent = '';
+  diaryDate = $('#diaryDatepicker').val();
 
   $("#diaryDatepicker").datepicker()
   $('#diaryDatepicker').datepicker('setDate', 'today');
 
   $('#editDiaryBtn').on('click',function(){
+    diaryDate = $('.todaySection .top p').text();
+    diaryDate = diaryDate.substring(0, 10);
+    diaryDate = diaryDate.replaceAll('.','-');
+    $('#diaryDatepicker').val(diaryDate);
+
+    console.log('diaryDate',diaryDate);
     $('#editDiaryPopup').css('top','0');
     $('#preview').attr('src','');
     $('#preview').attr('alt','No Image');
+    $('#diaryContent').value='';
+    dataList.date.map(item=>{
+      if(item.date == diaryDate && item.record){
+        $('#preview').attr('src',item.record.img);
+        $('#imgArea').attr('alt','첨부이미지');
+        $('#diaryContent').value = item.record.story;
+      }
+    })
   });
+
+  $('#diaryDatepicker').on('change',function(){
+    diaryDate = $(this).val();
+    console.log('diaryDate',diaryDate);
+    $('#preview').attr('src','');
+    $('#preview').attr('alt','No Image');
+    $('#diaryContent').value='';
+    dataList.date.map(item=>{
+      if(item.date == diaryDate && item.record){
+        $('#preview').attr('src',item.record.img);
+        $('#imgArea').attr('alt','첨부이미지');
+        $('#diaryContent').value = item.record.story;
+      }
+    })
+  });
+
   $("#diaryFile").on('change',function(){
       readURL(this);
       $('#imgArea').attr('alt','첨부이미지');
@@ -83,21 +129,33 @@ $(function(){
   });
 
   $('#editDiaryPopup .popupSubmit').on('click',function(){
-    /* ======= 받아온 값 넣는 이벤트 필요 ======*/
-    $('#editSchedulePopup form')[0].reset();
-    scheduleTitle = '';
-    scheduleContent = '';
-    scheduleDate = '';
+    diaryDate = $('#diaryDatepicker').val();
+    console.log(diaryDate,diaryContent)
+    let fileURL = $('#preview').attr('src');
+    let unChange = true;
+    dataList.date.map((item)=>{
+      if(item.date == diaryDate){
+        item.record = {
+          img: fileURL,
+          story:diaryContent
+        }
+        unChange=false;
+      }
+    })
+    
+    if(unChange){
+      let array = dataList.date;
+      dataList.date = [...array,{date:diaryDate,record:{img: fileURL,story:diaryContent},timeTable:[],plan:[]}];
+    }
+    console.log(dataList.date);
+
+    openTodayPage(diaryDate);
     $('.uploadName').attr('value','');
     setImage('');
     $('#editDiaryPopup').css('top','100vh');
   });
 
   $('#editDiaryPopup .popupCancel').on('click',function(){
-    $('#editSchedulePopup form')[0].reset();
-    scheduleTitle = '';
-    scheduleContent = '';
-    scheduleDate = '';
     $('.uploadName').attr('value','');
     setImage('');
     $('#editDiaryPopup').css('top','100vh');
@@ -125,8 +183,6 @@ const readURL = (input) => {
 }
 const setImage = (link) => {
   diaryImageUrl = link == '' ? '' : link;
-  console.log('diaryImageUrl',diaryImageUrl);
-
   let img = `
     <img
       id='preview'

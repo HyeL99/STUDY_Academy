@@ -8,6 +8,8 @@
     .todaySection{
       padding:1rem;
       height: 100%;
+      display: flex;
+      flex-direction: column;
       .top{
         display: flex;
         justify-content: space-between;
@@ -31,9 +33,12 @@
         }
       }
       .contents{
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
+        height: 100%;
+        overflow-y: auto;
         article{
           @include SetBox;
           border-width: 1px;
@@ -41,15 +46,39 @@
           button{
             @include EditBtn;
           }
-          li{
+          li:not(.diaryPlace){
             @include Dots;
             padding-left: 1.5rem;
             width: 100%;
             display: flex;
             justify-content: space-between;
             font-size: 0.9rem;
+            line-height: 1.25rem;
+            &::before{
+              top: 0.1rem;
+            }
             span{
               margin-right: 1rem;
+            }
+            button{
+              display: block;
+              white-space: nowrap;
+              line-height:1;
+              font-size: 0.9rem;
+              padding: 0;
+              width: auto;
+              position: relative;
+              top: 0;
+              font-weight: 300;
+            }
+          }
+          li.diaryPlace{
+            div:not(.story){
+              @include SetBox;
+              img{}
+            }
+            .story{
+              padding: 0.5rem;
             }
           }
         }
@@ -70,16 +99,6 @@
         #scheduleTitle{
           width: 100%;
           font-size: 1.25rem;
-          border: 0;
-          color:$subColor;
-          padding: 0.3rem;
-          &::placeholder {
-            color: $mainColor;
-          }
-        }
-        #scheduleContent{
-          width: 100%;
-          font-size: 1rem;
           border: 0;
           color:$subColor;
           padding: 0.3rem;
@@ -145,7 +164,7 @@
             text-align: center;
             border:0;
             color: $subColor;
-            font-size: 1.1rem;
+            font-size: 0.8rem;
           }
         }
       }

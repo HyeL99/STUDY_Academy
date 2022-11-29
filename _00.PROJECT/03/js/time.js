@@ -3,15 +3,22 @@ $(function(){
     $('#timeTablePage').css('top','50px');
   });
   $('#timerBtn').on('click',function(){
-    $('#timeTablePage').css('top','50px');
-  });
-  $('#todayTimeTableArticle').on('click',function(){
+    let today = new Date();
+    openTimePage(getDateObject(today).fullDate);
     $('#timeTablePage').css('top','50px');
   });
   $('#timeTablePage .closeBtn').on('click',function(){
     $('#timeTablePage').css('top','100%');
   });
 
+  $('#todayTimeTableArticle').on('click',function(){
+     let selectedDate = $('.todaySection .top p').text();
+     selectedDate =  selectedDate.substring(0, 10);
+     selectedDate =  selectedDate.replaceAll('.','-');
+     openTimePage(selectedDate);
+    $('#timeTablePage').css('top','50px');
+
+  });
   /*================== TOPIC 입력 관련 이벤트 ================== */
   let topicTitle = '';
 

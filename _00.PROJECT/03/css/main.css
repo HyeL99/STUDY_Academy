@@ -356,10 +356,13 @@ main #calendar .dates {
 main #calendar .dates .date {
   width: 14.2857142857%;
   height: 16.6666666667%;
-  padding: 0.3rem;
+  padding: 0.2rem;
   border-bottom: 1px dashed #827397;
   border-left: 1px dashed #827397;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 main #calendar .dates .date:nth-child(7n) {
   color: rgb(98, 166, 255);
@@ -379,27 +382,37 @@ main #calendar .dates .date .num {
   font-size: 0.8rem;
 }
 main #calendar .dates .date .view {
-  position: absolute;
-  left: 0.5rem;
-  bottom: 0.2rem;
   display: flex;
+  justify-content: flex-end;
   column-gap: 0.2rem;
 }
 main #calendar .dates .date .view span {
   display: block;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.8rem;
+  height: 0.8rem;
   font-size: 0;
-  border-radius: 50%;
 }
 main #calendar .dates .date .view span.scheduleDot {
-  background-color: red;
+  background: url(../assets/img/miniScheduleIcon.png) no-repeat center/contain;
 }
 main #calendar .dates .date .view span.timelineDot {
-  background-color: rgb(0, 81, 255);
+  background: url(../assets/img/miniClockIcon.png) no-repeat center/contain;
 }
 main #calendar .dates .date .view span.diaryDot {
-  background-color: rgb(98, 255, 0);
+  position: absolute;
+  right: 0.1rem;
+  width: 0.6rem;
+  height: 0.8rem;
+  top: 0;
+  background: #827397;
+}
+main #calendar .dates .date .view span.diaryDot::before {
+  content: "";
+  position: absolute;
+  border: 0.3rem solid transparent;
+  border-bottom-color: #fff;
+  left: 0;
+  bottom: 0;
 }
 main #calendar .dates .date.holiday {
   color: rgb(255, 129, 129);
@@ -444,9 +457,12 @@ main #contentsBtn article {
   border: 1px solid #827397;
   padding: 0.5rem;
   box-sizing: border-box;
+  padding: 0.5rem;
   width: calc((100% - 20px) / 2);
   height: calc((100% - 20px) / 2);
   position: relative;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 main #contentsBtn article h2 {
@@ -458,7 +474,7 @@ main #contentsBtn article .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
 }
 main #contentsBtn article .title h2 {
   font-weight: 700;
@@ -479,12 +495,17 @@ main #contentsBtn article .title button.edit {
   background: url(../assets/img/diaryPen.png) no-repeat center/cover;
   font-size: 0;
 }
+main #contentsBtn article .contents {
+  height: 100%;
+  overflow-y: auto;
+}
 main #contentsBtn article .contents li {
   padding-left: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+  line-height: 1rem;
   position: relative;
 }
 main #contentsBtn article .contents li::before {
@@ -495,6 +516,9 @@ main #contentsBtn article .contents li::before {
   width: 1em;
   height: 1em;
   background: url(../assets/img/dot.png) no-repeat center/cover;
+}
+main #contentsBtn article .contents li::before {
+  top: 0.1rem;
 }
 main #contentsBtn article.timeTable {
   height: calc((100% - 20px) * 2 / 3);
@@ -758,6 +782,8 @@ footer button img {
 #todayPage .inner .todaySection {
   padding: 1rem;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #todayPage .inner .todaySection .top {
   display: flex;
@@ -782,9 +808,12 @@ footer button img {
   line-height: 1.2;
 }
 #todayPage .inner .todaySection .contents {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  height: 100%;
+  overflow-y: auto;
 }
 #todayPage .inner .todaySection .contents article {
   background-color: white;
@@ -814,15 +843,16 @@ footer button img {
   background: url(../assets/img/diaryPen.png) no-repeat center/cover;
   font-size: 0;
 }
-#todayPage .inner .todaySection .contents article li {
+#todayPage .inner .todaySection .contents article li:not(.diaryPlace) {
   position: relative;
   padding-left: 1.5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
+  line-height: 1.25rem;
 }
-#todayPage .inner .todaySection .contents article li::before {
+#todayPage .inner .todaySection .contents article li:not(.diaryPlace)::before {
   content: "";
   position: absolute;
   left: 0;
@@ -831,8 +861,36 @@ footer button img {
   height: 1em;
   background: url(../assets/img/dot.png) no-repeat center/cover;
 }
-#todayPage .inner .todaySection .contents article li span {
+#todayPage .inner .todaySection .contents article li:not(.diaryPlace)::before {
+  top: 0.1rem;
+}
+#todayPage .inner .todaySection .contents article li:not(.diaryPlace) span {
   margin-right: 1rem;
+}
+#todayPage .inner .todaySection .contents article li:not(.diaryPlace) button {
+  display: block;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 0.9rem;
+  padding: 0;
+  width: auto;
+  position: relative;
+  top: 0;
+  font-weight: 300;
+}
+#todayPage .inner .todaySection .contents article li.diaryPlace div:not(.story) {
+  background-color: white;
+  border: 1px solid #827397;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#todayPage .inner .todaySection .contents article li.diaryPlace div:not(.story) h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#todayPage .inner .todaySection .contents article li.diaryPlace .story {
+  padding: 0.5rem;
 }
 #todayPage .inner #editSchedulePopup {
   position: absolute;
@@ -862,16 +920,6 @@ footer button img {
   padding: 0.3rem;
 }
 #todayPage .inner #editSchedulePopup form #scheduleTitle::placeholder {
-  color: #E9D5DA;
-}
-#todayPage .inner #editSchedulePopup form #scheduleContent {
-  width: 100%;
-  font-size: 1rem;
-  border: 0;
-  color: #827397;
-  padding: 0.3rem;
-}
-#todayPage .inner #editSchedulePopup form #scheduleContent::placeholder {
   color: #E9D5DA;
 }
 #todayPage .inner #editSchedulePopup form hr {
@@ -940,7 +988,7 @@ footer button img {
   text-align: center;
   border: 0;
   color: #827397;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 #todayPage .inner #editDiaryPopup form {
   flex: 1;
