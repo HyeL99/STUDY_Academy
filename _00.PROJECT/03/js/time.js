@@ -1,3 +1,55 @@
+let time = 0;
+let timerOff = true;
+const startTimer = () => {
+  const timer = setInterval(function(){
+    let hour = Math.floor(time / (60*60*1000));
+    let min = Math.floor((time % (60*60*1000)) / (60 * 1000));
+    let sec = Math.floor((time % (60*1000)) / 1000);
+    if(hour<10){
+      hour = `0${hour}`;
+    }
+    if(min<10){
+      min = `0${min}`;
+    }
+    if(sec<10){
+      sec = `0${sec}`;
+    }
+    $('#timerNumber').text(`${hour}:${min}:${sec}`);
+    time++;
+    if(timerOff){
+      clearInterval(timer);
+    }
+  },1000);
+}
+
+let checkStartTime = '';
+let checkEndTime = '';
+const setTimer = () => {
+  $('.player').on('click',function(){
+    if($(this).hasClass('on')){ //타이머 종료, 값 반환 필요
+      $(this).removeClass('on');
+      $(this).addClass('off');
+      timerOff = true;
+      let selectedTopic = $('#selectedTopicPlace').text();
+
+
+    }else{  //타이머 시작 필요
+      $(this).removeClass('off');
+      $(this).addClass('on');
+      timerOff = false;
+      startTimer();
+      let today = new Date();
+      let hours = today.getHours(); // 시
+      let minutes = today.getMinutes();  // 분
+      let seconds = today.getSeconds();  // 초
+    }
+  })
+}
+
+
+
+
+
 $(function(){
   $('#contentsBtn .timeTable').on('click',function(){
     $('#timeTablePage').css('top','50px');

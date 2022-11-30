@@ -918,9 +918,8 @@ $(async function(){
 //================================== 실행 함수 ==================================//
 
 const openTimePage = (fullDate) => {
-  getDateObject(new Date()).fullDate
   if(fullDate == getDateObject(new Date()).fullDate){
-    setTimer();
+    setTimer(); //time.js에 선언되어있음
   } else {
     $('.player').off();
     $('.player').removeClass('on');
@@ -929,23 +928,6 @@ const openTimePage = (fullDate) => {
   let selectedDate = fullDate;
   $('#timeTablePage .timeSection .date').text(`${selectedDate.replaceAll('-','.')}(${getDayName(selectedDate)})`);
 }
-
-const setTimer = () => {
-  $('.player').on();
-  $('.player').on('click',function(){
-    if($(this).hasClass('on')){ //타이머 종료, 값 반환 필요
-      $(this).removeClass('on');
-      $(this).addClass('off');
-    }else{  //타이머 시작 필요
-      $(this).removeClass('off');
-      $(this).addClass('on');
-    }
-  })
-}
-
-
-
-
 //day의 날짜 오브젝트 반환
 const getDateObject = (day) => {
   let month = day.getMonth()+1;
