@@ -5,11 +5,17 @@
 //     dataList = {...dataList,holiday:holidayList}
 //   }
 //   console.log(dataList);
+
 // });
+
 let datalist = [];
 let prevDate = '';
 let nextDate = '';
-url='http://localhost:5000/dataList'
+//url='https://my-json-server.typicode.com/HyeL99/CalendarDB'
+//let response = fetch('db.json');
+//dataList = response.json();
+let dataList = JSON.parse(JSON.stringify(DB));
+dataList = dataList.dataList;
 
 const holidayList = [ //설(1.1),추석(8.15),석가탄신일(4.8)
   {
@@ -888,25 +894,26 @@ const lunarDays = [ // 2015-2030 구현 완
 
 //================================== 실행 함수 ==================================//
 $(async function(){
-  let response = await fetch(url);
-  dataList = await response.json();
-  console.log('dataList',dataList)
-  //await getDataToJsonServer();
+  $('aside').on('click',function(){
+    $(this).css('top','200vh')
+  })
 
   const today = new Date();
   const todayObject = getDateObject(today);
-  console.log('todayObject',todayObject);
 
   await renderCalendar(today);  //달력 불러옴
   getTodayList(todayObject);//오늘의 일정 불러오기(일정,공휴일)
   getYearList();  //year select list 불러옴
   updateCalendar(); //달력 업데이트 이벤트 추가
+  openTimePage(todayObject.fullDate);
 
   getDdayList(todayObject);//디데이 일정 불러오기
   getTodoList();//투두리스트 불러오기
   addTodoItem();
   getTimeLine(todayObject);
   addDdayItem(todayObject);
+  loadTopicList(dataList.topic);
+  loadTimeLine(todayObject.fullDate)
 
   $('.todaySection .top #prevDay').on('click',function(){
     openTodayPage(prevDate);
@@ -916,18 +923,187 @@ $(async function(){
   })
 });
 //================================== 실행 함수 ==================================//
-
+//타임테이블 화면 세팅
 const openTimePage = (fullDate) => {
+  $('.player').removeClass('on');
+  $('.player').addClass('off');
+  loadTimePage(fullDate);
   if(fullDate == getDateObject(new Date()).fullDate){
-    setTimer(); //time.js에 선언되어있음
+    setTimer(fullDate); //time.js에 선언되어있음
   } else {
     $('.player').off();
-    $('.player').removeClass('on');
-    $('.player').removeClass('off');
   }
-  let selectedDate = fullDate;
-  $('#timeTablePage .timeSection .date').text(`${selectedDate.replaceAll('-','.')}(${getDayName(selectedDate)})`);
 }
+const getTimeLi = (fullDate,state) => {
+  let selectedDay = fullDate;
+  let timeLineArray = [];
+  let timeLineObject = [];
+
+  dataList.topic.map((item)=>{
+    timeLineObject = [...timeLineObject,{topic:item,time:[]}];
+  })
+
+  dataList.date.map(item => {
+    if(item.date == selectedDay && item.timeTable.length>0){
+      let array = timeLineArray;
+      timeLineArray = array.concat(item.timeTable);
+    }
+  });
+  timeLineArray.map((timeObject)=>{
+    for (let topicObject of timeLineObject){
+      if(topicObject.topic == timeObject.topic){
+        let array = topicObject.time;
+        array = [...array,{startTime:timeObject.startTime,endTime:timeObject.endTime}];
+        topicObject.time = array;
+      }
+    }
+  })
+  let calculateTimeArray = [];
+
+  for(let item of timeLineObject){
+    let time=0;
+    for(let timeItem of item.time){
+      let startSec = new Date(timeItem.startTime).getTime();
+      let endSec = new Date(timeItem.endTime).getTime();
+      let  fullSec= endSec - startSec;
+      time += fullSec;
+    }
+    let timeText = getTimeText(time)
+
+    calculateTimeArray = [...calculateTimeArray,{topic:item.topic,time:getTimeText(time)}];
+    time=0;
+  };
+  
+
+  if(state == 'array'){
+    return calculateTimeArray;
+  }
+  if(state == 'object'){
+    return timeLineObject;
+  }
+}
+
+//타임라인 로드
+const loadTimePage = (fullDate) => {
+  $('.player').off();
+
+  $('.player').on('click',function(){
+    if(fullDate == getDateObject(new Date()).fullDate){
+      if($(this).hasClass('on')){ //타이머 종료, 값 반환 필요
+        $(this).removeClass('on');
+        $(this).addClass('off');
+        timerOffSetting = true;
+      }else{  //타이머 시작 필요
+        timerOffSetting = false;
+        $(this).removeClass('off');
+        checkStartTime = `${fullDate} ${getThisTime()}`
+        startTimer();
+        $(this).addClass('on');
+      }
+    }
+  })
+
+  $('#timeTablePage .timeSection .date').text(`${fullDate.replaceAll('-','.')}(${getDayName(fullDate)})`);
+
+  calculateTimeArray = getTimeLi(fullDate,'array');
+  
+  let contentHtml = '';
+  calculateTimeArray.map(item => {
+    contentHtml += `<li><span class='topic'>${item.topic}</span><span class='timer'>${item.time}</span></li>`;
+  });
+  
+  $('#topicList').html(contentHtml);
+  contentHtml = '';
+
+  if(selectedDay = getDateObject(new Date()).fullDate){
+    let articleHtml = '';
+    calculateTimeArray.map(item => {
+      if(item.time !== '00:00:00'){
+        articleHtml += `<li><span class='topic'>${item.topic}</span><span class='timer'>${item.time}</span></li>`;
+      }
+    });
+    $('#contentsBtn .timeTable .contents').html(articleHtml);
+    loadTimeLine(fullDate);
+  }
+
+  $('#topicList li').on('click',function(){
+    let selectedTitle = $(this).children('.topic').text();
+    $('#selectedTopicPlace').text(selectedTitle);
+  })
+  $('.deleteTimelineItemBtn').off();
+  $('.deleteTimelineItemBtn').on('click',function(){
+    let select = $(this).siblings('.start').text().trim();
+    select = select.substring(select.length-8,select.length);
+    select = `${fullDate} ${select}`;
+    for(let item of dataList.date){
+      if(item.date == fullDate){
+        let list = item.timeTable;
+        list.map((el,index) => {
+          if(el.startTime == select){
+            list.splice(index,1);
+          }
+        })
+        item.timeTable = list;
+        break;
+      }
+    }
+    loadTimePage(fullDate);
+  })
+}
+
+// topic 렌더링
+const loadTopicList = (listArray) => {
+  let topicArray = listArray;
+  let listHtml = '';
+  topicArray.map(item => {
+    listHtml += `<li><span>${item}</span><button class="deleteTopicItem">삭제</button></li>`;
+  });
+  $('#popupTopicList').html(listHtml);
+  deleteTopicItem();
+}
+
+//타임테이블 페이지 타임라인 렌더링
+const loadTimeLine = (fullDate) => {
+  let setObject = getTimeLi(fullDate,'object');
+  let timelineHtml = '';
+  for(let item of setObject){
+    let topic = item.topic;
+    let innerHtml = '';
+    if(item.time.length > 0){
+      for(let time of item.time){
+        let startTime = new Date(time.startTime).getTime();
+        let endTime = new Date(time.endTime).getTime();
+        startTime = time.startTime.substring(11);
+        endTime = time.endTime.substring(11);
+        innerHtml += `
+          <hr>
+          <div class='itemPlace'>
+            <button class='deleteTimelineItemBtn'>X</button>
+            <div class="start">
+              시작시간: ${startTime}
+            </div>
+            <div class="end">
+              종료시간: ${endTime}
+            </div>
+          </div>          
+        `;
+      }
+  
+      timelineHtml += `
+        <li>
+          <div class="top">
+            ${topic}
+          </div>
+          <div class="bottom">
+            ${innerHtml}
+          </div>
+        </li>
+      `;
+    }
+  }
+  $('#timeLineListAll').html(timelineHtml);
+}
+
 //day의 날짜 오브젝트 반환
 const getDateObject = (day) => {
   let month = day.getMonth()+1;
@@ -991,7 +1167,6 @@ const deleteDdayItem = (dayObject) => {
       }
     });
     dataList.dDay = dDayList;
-    console.log(dDayList);
     getDdayList(dayObject);
   });
 };
@@ -1002,11 +1177,9 @@ const addDdayItem = (dayObject) => {
 
   $('#d-dayTitle').on('change',function(e){
     dDayTitle = e.currentTarget.value;
-    console.log('dDayTitle',dDayTitle);
   });
   $('#d-dayDatepicker').on('change',function(){
     dDayDate = $(this).val();
-    console.log('dDayDate',dDayDate);
   });
 
   $('#d-dayPopup .popupSubmit').on('click',function(){
@@ -1071,9 +1244,7 @@ const addTodoItem = () => {
   $('#addTodoItem').on('click',function(){
     let addItemId = dataList.todoList.length+1;
     let addItem = {id:addItemId, name:todoTitle, done:false};
-    console.log(addItem);
     dataList.todoList.push(addItem);
-    console.log(dataList);
     getTodoList();
   });
 };
@@ -1083,7 +1254,6 @@ const deleteTodoItem = () => {
     let todoList = dataList.todoList;
     let deleteItemID = $(this).parent('li').attr('id');
     deleteItemID = deleteItemID.replace('todoItem@','');
-    console.log(deleteItemID);
     $(this).parent('li').remove();
 
     todoList.map((item,index)=>{
@@ -1104,7 +1274,6 @@ const updateTodoItem = () => {
     let todoList = dataList.todoList;
     let updateItemID = $(this).attr('id');
     updateItemID = updateItemID.replace('todoItem@','');
-    console.log(updateItemID);
 
     todoList.map((item,index)=>{
       if(Number(item.id) === Number(updateItemID)){
@@ -1121,8 +1290,9 @@ const renderCalendar = async (date) => {
   // 오늘의 년도와 월 불러오기
   const viewYear = date.getFullYear();
   const viewMonth = date.getMonth() + 1;
-  
-  console.log('yy,mm',viewYear, viewMonth);
+
+  $('.selectYearWrap button').text(viewYear);
+  $('.selectMonthWrap button').text(viewMonth);
 
   //날짜와 요일 표시하기
   //document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth}월`;
@@ -1205,7 +1375,6 @@ const openTodayPage = (fullDate) => {
   let nextDateObject = new Date(currentDateObject.setDate(currentDateObject.getDate()+2));
   prevDate = getDateObject(prevDateObject).fullDate;
   nextDate = getDateObject(nextDateObject).fullDate;
-  console.log(prevDate,selectedDate,nextDate);
 
   $('.todaySection .top p').text(`${selectedDate.replaceAll('-','.')}(${getDayName(selectedDate)})`);
   $('.todaySection .top #prevDay').text(`${prevDate.replaceAll('-','.')}(${getDayName(prevDate)})`);
@@ -1236,7 +1405,7 @@ const getSelectedDayList = (fullDate) => {
       selectedDayObject = item;
 
       item.plan?item.plan.map(plan=>{
-        scheduleHtml += `<li>${plan}<button class="deleteSchedule">삭제</button></li>`;
+        scheduleHtml += `<li><span>${plan}</span><button class="deleteSchedule">삭제</button></li>`;
       }):'';
     }
   });
@@ -1261,10 +1430,24 @@ const getSelectedDayList = (fullDate) => {
   }
   $('#scheduleList').html(scheduleHtml);
 
-  console.log(selectedDayObject,dataList);
+  $('.deleteSchedule').off();
+  $('.deleteSchedule').on('click',function(){
+    let deleteItem = $(this).siblings('span').text();
+    for(let item of dataList.date){
+      if(item.date == fullDate){
+        let list = item.plan;
+        list.map((el,index)=>{
+          if(el == deleteItem){
+            list.splice(index,1);
+          }
+        })
+        item.plan = list;
+      }
+    }
+    getSelectedDayList(fullDate)
+  })
 
   let diaryHtml = '';
-  console.log(selectedDayObject);
   if(!selectedDayObject.record.story || !selectedDayObject){
     diaryHtml = `<li>아직 기록이 없습니다.</li>`
   } else {
@@ -1285,15 +1468,22 @@ const getSelectedDayList = (fullDate) => {
   }
   $('#diaryList').html(diaryHtml);
   selectedDayObject = null;
-}
 
+  calculateTimeArray = getTimeLi(fullDate,'array');
+  
+  let timelineHtml = '';
+  calculateTimeArray.map(item => {
+    if(item.time !== '00:00:00'){
+      timelineHtml += `<li><span class='topic'>${item.topic}</span><span class='timer'>${item.time}</span></li>`;
+    }
+  });
+  $('#timeTableList').html(timelineHtml);
+  timelineHtml = '';
+}
 //홈화면 달력에 공휴일 추가하는 함수
 const showHolidayOnTheCalendar = (date) => {
   let selectYear = date.getFullYear();
   let selectMonth = date.getMonth()+1;
-
-  console.log('selectYear',selectYear);
-  console.log('selectMonth',selectMonth);
 
   let holidayArray = [];
 
@@ -1324,8 +1514,6 @@ const showHolidayOnTheCalendar = (date) => {
       }
     }
   }
-
-  
 };
 //음력 구현된 년도 만큼 드롭다운메뉴 추가
 const getYearList = () => {
@@ -1358,18 +1546,24 @@ const updateCalendar= () => {
   $('#selectYearList li').on('click',function(){
     selectedYear = $(this).text();
     $('#selectYear button').text(selectedYear);
-    console.log(new Date(`${selectedYear}-${selectedMonth}-01`));
     renderCalendar(new Date(`${selectedYear}-${selectedMonth}-01`));
     $('#selectYearList').slideUp();
   });
   $('#selectMonthList li').on('click',function(){
     selectedMonth = $(this).text();
     $('#selectMonth button').text(selectedMonth);
-    console.log(new Date(`${selectedYear}-${selectedMonth}-01`));
     renderCalendar(new Date(`${selectedYear}-${selectedMonth}-01`));
     $('#selectMonthList').slideUp();
   });
 };
+
+
+
+
+
+
+
+
 //달력에 일정 Dot 표시하는 함수
 const viewScheduleDots = (selectedYear,selectedMonth) => {
   let scheduleList = [];
@@ -1411,6 +1605,7 @@ const viewScheduleDots = (selectedYear,selectedMonth) => {
       dayFromSelectedMonth = [...dayFromSelectedMonth,day];
     }
   });
+
   dayFromSelectedMonth.map((item) => {
     objectsFromDayArray = [...objectsFromDayArray,getScheduleObject(selectedYear,item)]
   });
@@ -1425,7 +1620,6 @@ const viewScheduleDots = (selectedYear,selectedMonth) => {
       }
     }
   }
-
   if(scheduleList.length==0){
     objectsFromDayArray.map((selectedDay)=>{
       scheduleListAll = [
@@ -1475,37 +1669,24 @@ const viewScheduleDots = (selectedYear,selectedMonth) => {
               record:scheduleListItem.record
             }
           ];
+          scheduleListAll = [
+            ...scheduleListAll,
+            {
+              date:selectedDay.date,
+              plan:selectedDay.plan?selectedDay.plan:[],
+              timeTable:selectedDay.timeTable?selectedDay.timeTable:[],
+              record:selectedDay.record
+            }
+          ];
         }
       });
     });
   }
 
-  console.log('scheduleListAll',scheduleListAll);
-  let filteredArray = [];
-  for(let item of scheduleListAll){
-    let check = false;
-    if(filteredArray.length==0){
-      filteredArray = [item];
-    }else{
-      for(let el of filteredArray){
-        if(item.date != el.date){
-          check = true;
-        }
-      }
-      console.log(check,item);
-      if(check){
-        
-      }
-    }
-    
-  }
-  console.log(filteredArray)
-
   //dot표시
   for(let item of scheduleListAll){
     let date = new Date(item.date).getDate();
     let text = '';
-    console.log('item',item)
     for(i=0; i<31; i++){
       if($(`#calendar .this:eq(${i}) .num span`).text() == date){
         $dotPlace = $(`#calendar .this:eq(${i}) .view`);
@@ -1572,7 +1753,6 @@ const getTimeLine = (dayObject) => {
   dataList.date.map((item)=>{
     if(item.date == dayObject.fullDate){
       timelineList = item.timeTable;
-      //console.log('timelineList',timelineList);
     };
   });
   timelineList.map((item) => {
@@ -1582,11 +1762,21 @@ const getTimeLine = (dayObject) => {
 };
 //초를 HH:mm:ss 형태로 바꿔주는 함수
 const getTimeText = (fullSeconds) => {
-  let hour = fullSeconds / (1000*60*60);
-  let min = (fullSeconds % (1000*60*60)) / (1000*60);
-  let sec = (time % (1000*60)) / 1000;
-  return `${hour}:${min}:${sec<10 ? '0'+sec : sec}`;
+  let hour = Math.floor(fullSeconds / (1000*60*60));
+  let min = Math.floor((fullSeconds % (1000*60*60)) / (1000*60));
+  let sec = Math.floor((fullSeconds % (1000*60)) / 1000);
+  if(hour < 10){
+    hour = `0${hour}`;
+  }
+  if(min < 10){
+    min = `0${min}`;
+  }
+  if(sec < 10){
+    sec = `0${sec}`;
+  }
+  return `${hour}:${min}:${sec}`;
 };
+
 /*
 //json 서버로 데이터를 보내는 함수
 const pushDataToJsonServer = (data) => {

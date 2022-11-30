@@ -9,10 +9,11 @@
 
   <title>일정관리앱</title>
 
+  <link rel="manifest" href="manifest.json">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 
-  <!-- font awesome script (cdn) -->
-  <script src="https://kit.fontawesome.com/da8c886e38.js" crossorigin="anonymous"></script>
+  <script src="db.json" type="text/javascript"></script>
 
   <link rel="stylesheet" href="plugin/jQeury/jquery-ui.css" />
   <link rel="stylesheet" href="plugin/timePicki/timePicki.css">
@@ -22,21 +23,25 @@
     
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- jQuery script
-  <script src="plugin/jQeury/jquery-3.6.0.min.js"></script>
-
-  jQuery UI script and stylesheet
-  <script src="plugin/jQeury/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="plugin/jQeury/jquery-ui.min.css"> -->
-
-  <!-- <script defer src="./js/loadCalendar.js"></script> -->
   <script defer src="./js/addDBtem.js"></script>
-  <script defer src="js/d-day.js"></script>
+  <script defer src="js/dDay.js"></script>
   <script defer src="js/todo.js"></script>
   <script defer src="js/time.js"></script>
   <script defer src="js/today.js"></script>
   <script defer src="js/main.js"></script>
-  <script defer src="js/layout.js"></script>
+
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(success){
+          console.log('serviceWorker install success😊 \n',success);
+        })
+        .catch(function(e){
+          console.log('serviceWorker install failed😥 \n',e)
+        });
+    }
+  </script>
+
 </head>
 <body>
   <div id="mobileContainer">
@@ -283,7 +288,7 @@
   <div id="timeTablePage">
     <div class="inner">
       <button class="closeBtn">X</button>
-      <section class="timeSection">
+      <section class="timeSection scroll">
         <div class="date">2022.11.18(금)</div>
         <span class="bar"><img src="./assets/img/line.png"></span>
         <div class="timerContainer">
@@ -292,7 +297,7 @@
             <button class="player off">타이머 버튼</button>
           </div>
           <div id="timerNumber">
-            00:03:02
+            00:00:00
           </div>
         </div>
         <span class="bar"><img src="./assets/img/line.png"></span>
@@ -307,7 +312,7 @@
           <div id="timelineContents">
             <h2>타임라인</h2>
             <button class="edit" id="editTimelineBtn">edit</button>
-            <ul id="timeLineList">
+            <ul id="timeLineListAll" class="scroll">
               <li>
                 <div class="top">
                   코딩 <span>01:20:00</span>
@@ -329,13 +334,14 @@
         <h2>TOPIC</h2>
         <form action="">
           <input type="text" id="topicTitle" placeholder="제목입력">
-          <button id="addTopic">추가</button>
+          <button id="addTopic" type="submit">추가</button>
         </form>
         <hr>
         <ul id="popupTopicList">
           <li>코딩<button class="deleteTopicItem">삭제</button></li>
           <li>토익<button class="deleteTopicItem">삭제</button></li>
         </ul>
+        <p>※topic을 삭제하면 관련 기록들이 모두 사라집니다.</p>
         <div class="btnPlace">
           <button class="popupSubmit">등록</button>
           <button class="popupCancel">취소</button>
@@ -386,6 +392,7 @@
         </div>
       </div>
       <h1><img src="./assets/img/title.png" alt="나의 시간 - 일정관리앱"></h1>
+      <p>TAB TO START</p>
     </div>
   </aside>
 </body>

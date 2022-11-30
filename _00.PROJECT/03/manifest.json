@@ -1,0 +1,69 @@
+{
+  "name":"일정관리앱 - 나의 시간",
+  "short_name":"나의 시간",
+  "description": "일정을 관리하는 앱입니다.",
+  "background_color": "#E9D5DA",
+  "theme_color": "#E9D5DA",
+  "start_url": "https://hyel99.github.io/CalendarApp/",
+  "scope": "https://hyel99.github.io/CalendarApp/",
+  "dir": "ltr",
+  "lang":"ko",
+  "orientation": "portrait",
+  "display": "standalone",
+  "gcm_sender_id": "",
+  "gcm_user_visible_only": true,
+  "categories": [],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/screenshot1.png",
+      "sizes": "1440x2960",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/screenshot2.png",
+      "sizes": "1440x2960",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/screenshot3.png",
+      "sizes": "1440x2960",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/screenshot4.png",
+      "sizes": "1440x2960",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/screenshot5.png",
+      "sizes": "1440x2960",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/screenshot6.png",
+      "sizes": "1440x2960",
+      "type": "image/png"
+    }
+  ],
+  "icons": [
+    {
+      "purpose": "maskable",
+      "src": "assets/icons/icon_x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "src": "assets/icons/icon_x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "src": "assets/icons/icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": []
+}
