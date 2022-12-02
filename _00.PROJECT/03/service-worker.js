@@ -71,7 +71,7 @@ var precacheConfig = [
   ["index.html", "e8f58b1785318eaea3562ac6c1d2d425"],
   ["js/addDBtem.js", "d41d8cd98f00b204e9800998ecf8427e"],
   ["js/dDay.js", "1b8dc46d85da1571c81b24924bf3f7ef"],
-  ["js/main.js", "2fcad40c22a2b4dc46388c0e316376de"],
+  ["js/main.js", "d7255bd5766a61eb51bd37e71011e3de"],
   ["js/time.js", "c68b97acb14741029a77d0c2d59a874b"],
   ["js/today.js", "9800a4c9f91c67a80e498d8e71a5105c"],
   ["js/todo.js", "e94270923f4f707b613b9586b2bc31ab"],

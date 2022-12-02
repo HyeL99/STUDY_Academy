@@ -14,6 +14,20 @@ $(function(){
   });
   $('#todayPage .closeBtn').on('click',function(){
     $('#todayPage').css('top','100%');
+
+    todayArray = getTimeLi(getDateObject(new Date()).fullDate,'array');
+
+    let articleHtml = '';
+    todayArray.map(item => {
+      if(item.time !== '00:00:00'){
+        articleHtml += `<li><span class='topic'>${item.topic}</span><span class='timer'>${item.time}</span></li>`;
+      }
+    });
+    if(articleHtml.length == 0){
+      articleHtml = `<li>아직 기록이 없습니다.</li>`;
+    }
+    $('#contentsBtn .timeTable .contents').html(articleHtml);
+
     renderCalendar(new Date());
   });
 
