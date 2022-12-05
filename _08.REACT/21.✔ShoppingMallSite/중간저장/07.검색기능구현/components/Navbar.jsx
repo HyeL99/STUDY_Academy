@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { RiLoginCircleLine, RiAccountCircleLine} from 'react-icons/ri';
+import { VscAccount } from 'react-icons/vsc';
 import { FiSearch } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.scss'
 import logoImage from '../assets/LOGO.png'
 
 
-const Navbar = ({authenticate, setAuthenticate }) => {
+const Navbar = () => {
   const menuList = ['여성','Divided','남성','신생아/유아','아동','H&M HOME','스포츠','Sale','지속가능성'];
 
   const [keyword,setKeyword] = useState('');
@@ -20,23 +20,13 @@ const Navbar = ({authenticate, setAuthenticate }) => {
       navigate(`/?q=${keyword}`);  //추가조건은 쿼리로 붙임, 키워드를 읽어와서 url에 넣어줌
     }
   }
-  const goToLogin = () => {
-    navigate('/login')  //로그인 페이지로 이동
-  }
 
   return (
     <div className='navBar'>
       <div className='loginBtnWrap'>
-      {authenticate? (
-        <div className="loginBtn" onClick={()=>setAuthenticate(false)}>
-          <RiAccountCircleLine className='loginIcon' /><span>로그아웃</span>
+        <div className="loginBtn">
+          <VscAccount /><span>로그인</span>
         </div>
-      ):(
-        <div className="loginBtn" onClick={goToLogin}>
-          <RiLoginCircleLine className='loginIcon' /><span>로그인</span>
-        </div>
-      )}
-        
       </div>
       <h1>
         <Link to='/'>

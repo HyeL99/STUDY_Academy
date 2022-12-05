@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 import './App.scss';
 import {Routes, Route} from 'react-router-dom'
 import ProductAll from './pages/ProductAll';
@@ -19,14 +19,12 @@ import Navbar from './components/Navbar';
   7. 로그인, 로그아웃은 토글 버튼
 */
 function App() {
-  const [authenticate , setAuthenticate ] = useState(false);  //로그인 상태 구분
-
   return (
     <div style={{margin:"0 30px"}}>
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Navbar />
       <Routes>
         <Route path='/' element={<ProductAll />} />
-        <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />}/>
+        <Route path='/login' element={<Login />} />
         <Route path='/product/:id' element={<ProductDetail />} />
       </Routes>
     </div>
