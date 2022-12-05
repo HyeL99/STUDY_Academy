@@ -1,0 +1,8 @@
+.navbar{
+  opacity: 1;
+  background-color: rosybrown;
+  transition: all 0.5s;
+  &.loading{
+    opacity: 0;
+  }
+}

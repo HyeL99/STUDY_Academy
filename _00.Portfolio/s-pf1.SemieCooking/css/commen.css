@@ -6,6 +6,7 @@
 }
 body{
   font-family: 'GowunDodum-Regular';
+  overflow-x: hidden;
 }
 button{
   cursor: pointer;
