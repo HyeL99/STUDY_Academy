@@ -1,0 +1,61 @@
+.detailImage{
+  width: 100%;
+}
+.detailTitleWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .detailTitle{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0.2rem;
+    margin-left: 0;
+  }
+  .like{
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    line-height: 1.2rem;
+    .heartFill{
+      color: var(--color-point);
+    }
+  }
+}
+.detailPrice{
+  color: var(--color-point);
+  margin-bottom: 0.5rem;
+}
+.detailNew{
+  width: 50%;
+  color: white;
+  background-color: var(--color-point-opacity);
+  padding: 0.1rem 0.5rem;
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    border:1rem solid transparent;
+    border-right-color: #fff;
+    height: 100%;
+    right:-2px;
+    top:-0.1rem;
+  }
+}
+.detailEvent{
+  width: 80%;
+  color: var(--color-point);
+  background-color: white;
+  padding: 0.1rem 0.5rem;
+  position: relative;
+  border: 1px solid var(--color-point);
+}
+.dropdownWrap{
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  & > * > * {
+    width: 100%;
+  }
+}
+button {
+  width: 100%;
+}

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;500;700;900&display=swap');
+:root{
+  --color-bg: rgb(253, 233, 239);
+}
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +28,25 @@ button{
 html,body{
   width: 100%;
   height: 100%;
+}
+body{
   font-family: 'Hahmlet', serif;
-  background-color:azure;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+#root{
+  width: 100%;
+  height: 100%;
+  .wrap{
+    opacity: 1;
+    transition: all 0.5s;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    &.loading{
+      opacity: 0;
+    }
+  }
+
 }

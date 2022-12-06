@@ -6,7 +6,7 @@ import { BsSuitHeartFill, BsSuitHeart } from 'react-icons/bs';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import './ProductDetail.scss';
 
-const ProductDetail = () => {
+const ProductDetail = ({authenticate}) => {
 
   const [product,setProduct] = useState(null);
   const [like, setLike] = useState(false);
@@ -31,6 +31,10 @@ const ProductDetail = () => {
 
   const getPrice = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  if(authenticate === false) {
+    return (<p>로그인이 필요합니다.</p>)
   }
 
   return (

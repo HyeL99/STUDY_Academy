@@ -1,20 +1,22 @@
 import React,{ useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import Navbar from './components/Navbar';
+import Navbar from './components/Header';
 import Home from './pages/Home/Home';
 import Intro from './pages/Intro/Intro';
 
 function App() {
   const [loading, setLoading] = useState(true);
   return (
-    <>
+    <div>
       <Intro setLoading={setLoading} loading={loading} />
-      <Navbar loading={loading} />
-      <Routes>
-        <Route path='/' element={<Home loading={loading} />} />
-      </Routes>
-    </>
+      <div className={loading?'wrap loading':'wrap'}>
+        <Navbar loading={loading} />
+        <Routes>
+          <Route path='/' element={<Home loading={loading} />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
