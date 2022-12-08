@@ -1,0 +1,33 @@
+/*=================<background.scss>===============*/
+.background{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(25, 19, 39)80%, rgb(43, 32, 72));
+  z-index: -999;
+  .sky{
+    width: 100vw;
+    height: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveStar 1000s linear infinite;
+    .star {
+      fill: #fff;
+      stroke: none;
+      stroke-width: 0;
+    }
+  }
+}
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/*=================</ background.scss>===============*/

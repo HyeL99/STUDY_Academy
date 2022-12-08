@@ -1,11 +1,14 @@
 const initialState = {
-  state: '0'
+  contactList: [],
+  keyword:''
 }
 
 const reducer = (state = initialState, action) => {
   switch(action.type){
-    case 'a':
-      return {...state}
+    case 'ADD_CONTACT':
+      return {...state,contactList:[...state.contactList,action.payload]}
+    case 'SEARCH':
+      return {...state, keyword:action.payload}
     default:
       return {...state}
   }
