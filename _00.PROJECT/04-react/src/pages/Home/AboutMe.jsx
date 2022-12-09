@@ -5,7 +5,6 @@ import {useSelector} from 'react-redux'
 
 const AboutMe = () => {
   const skillList = useSelector(state => state.skills);
-  console.log(skillList);
   return (
     <div id='aboutMe'>
       <div className="top">
@@ -48,9 +47,9 @@ const AboutMe = () => {
       <div className="bottom">
         <Row>
           <Col xs={7} className="skills">
-            {skillList.map(item=>{
+            {skillList.map((item,index)=>{
               return (
-                <Row>
+                <Row key={index}>
                   <Col xs={3}>{item.name}</Col>
                   <Col xs={7} className="skillBar"><span style={{width:item.percent}}></span></Col>
                   <Col xs={2} className="skillPercent">{item.percent}</Col>

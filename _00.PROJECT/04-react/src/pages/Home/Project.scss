@@ -1,0 +1,10 @@
+#projectPage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .projectContainer{
+    flex:1;
+    overflow-y: auto;
+  }
+}

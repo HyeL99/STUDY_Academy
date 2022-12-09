@@ -1,0 +1,43 @@
+* {
+  margin:0;
+  padding:0;
+  line-height:1;
+  box-sizing: border-box;
+}
+a{
+  color: inherit;
+  text-decoration: underline;
+}
+ul,li{
+  list-style: none;
+  padding: 0;
+}
+
+.outline{
+  border: 1px solid #198754;
+}
+body{
+  background-color: #f0ffe5;
+  color: #198754;
+}
+hr{
+  opacity: 1;
+  border:0;
+  border-top: 2px solid #198754;
+}
+input{
+  color: #198754 !important;
+}
+input:focus{
+  box-shadow: none !important;
+  border-color: #198754 !important;
+}
+input::placeholder{
+  color: #198754a2 !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

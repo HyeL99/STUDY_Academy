@@ -10,6 +10,7 @@ const initialState = {
   ],
   projects:[
     {
+      id:'project01',
       name:'OUTBACK Redesign',
       working:'2022.10.03 - 2022.10.20 (3주)',
       contribution:'개인작업 (100%)',
@@ -25,6 +26,7 @@ const initialState = {
       `
     },
     {
+      id:'project02',
       name:'일정관리앱 - 나의 시간',
       working:'2022.11.07 - 2022.12.01 (1개월)',
       contribution:'개인작업 (100%)',
@@ -47,6 +49,7 @@ const initialState = {
       `
     },
     {
+      id:'project03',
       name:'쇼핑몰 사이트',
       working:'2022.11.28 - 2022.12.06 (9일)',
       contribution:'개인작업 (100%)',
@@ -61,8 +64,9 @@ const initialState = {
       `
     },
     {
+      id:'project04',
       name:'투두리스트',
-      working:' 2022.11.00 - 2022.11.00 (00일)',
+      working:' 2022.11.14 - 2022.11.23 (10일)',
       contribution:'개인작업 (100%)',
       tool:'React, CSS',
       page:'main',
@@ -73,8 +77,9 @@ const initialState = {
       `
     },
     {
+      id:'project05',
       name:'메신저 프로그램',
-      working:'2022.11 - 2022.11.02 (1개월)',
+      working:'2022.10.27 - 2022.11.02 (1주)',
       contribution:'개인작업 (100%)',
       tool:'REACT, SASS',
       page:'main + sub',

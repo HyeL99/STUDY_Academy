@@ -1,4 +1,5 @@
 import React from 'react';
+import Stars from '../../components/Stars';
 import './Intro.scss';
 
 const Intro = ({loading,setLoading}) => {
@@ -7,9 +8,7 @@ const Intro = ({loading,setLoading}) => {
   }
   return (
     <div id='introPage' className={loading?'':'loadingComplete'}>
-      <div className="background">
-        <svg className="sky"></svg>
-      </div>
+      <Stars />
       <div className='box' onClick={openHome}>
         <div className='wave -one'></div>
         <div className='wave -two'></div>

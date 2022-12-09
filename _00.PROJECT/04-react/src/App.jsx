@@ -6,12 +6,14 @@ import './background.scss'
 import Menu from './components/Menu';
 import Home from './pages/Home/Home';
 import Intro from './pages/Intro/Intro';
+import Stars from './components/Stars';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   return (
     <div>
+      <Stars />
       <Intro setLoading={setLoading} loading={loading} />
       <div className={loading?'wrap loading':'wrap'}>
         <Menu loading={loading} />

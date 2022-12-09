@@ -1,0 +1,38 @@
+.cloneCard{
+  width: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  .imgPlace{
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+  }
+  .contentsWrap{
+    padding: 1rem;
+    background-color: var(--color-main);
+    color: var(--color-bg);
+    h3{
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .row > *{
+      line-height: 1;
+      font-size: 0.9rem;
+    }
+    .btnWrap{
+      margin-top: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+    button{
+      width: 40%;
+      border: 0;
+      background-color: var(--color-bg);
+      color: var(--color-main);
+      border-radius: 0.5rem;
+      line-height:1;
+      padding: 0.5rem 0;
+    }
+  }
+}
