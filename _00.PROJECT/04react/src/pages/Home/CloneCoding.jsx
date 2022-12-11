@@ -8,7 +8,7 @@ const CloneCoding = () => {
   return (
     <div id='cloneCoding' className='scrollContainer'>
       <h2>CLONE CODING</h2>
-      <ul className='scroll'>
+      <ul>
           {cloneList.map((item,index)=>(
             <CloneCodingCard clone={item} key={index} />
           ))}

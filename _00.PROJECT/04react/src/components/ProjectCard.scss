@@ -1,0 +1,24 @@
+hr{
+  opacity: 1;
+}
+#project01,
+#project02,
+#project03,
+#project04,
+#project05{
+  //margin: 2em 0;
+  box-sizing: border-box;
+  padding: 2rem 0 10rem;
+  
+  >.row{
+    height: 100%;
+  }
+  .imgWrap{
+    padding: 2rem 2rem 2rem 0;
+    div{
+      border: 1px solid red;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -9,7 +9,7 @@ const ProjectCard = ({project}) => {
     <li id={id} className='scrollContainer'>
       <Row>
         <Col xs={7} className='imgWrap'>
-          <div style={{backgroundColor:'white',width:'100%',height:'100%'}}></div>
+          <div></div>
         </Col>
         <Col xs={5}>
           <h3>{name}</h3>

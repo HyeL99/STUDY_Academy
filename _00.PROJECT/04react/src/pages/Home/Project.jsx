@@ -4,12 +4,12 @@ import './Project.scss'
 import ProjectCard from '../../components/ProjectCard'
 import ProjectHeader from '../../components/ProjectHeader'
 
-const Project = () => {
+const Project = ({setCurrentPage,setScrollH}) => {
   const projectList = useSelector(state => state.projects);
 
   return (
     <div id='projectPage'>
-      <ProjectHeader />
+      <ProjectHeader setCurrentPage={setCurrentPage} setScrollH={setScrollH} />
       <ul className='projectContainer'>
         {projectList.map((item,index) => {
           return <ProjectCard project={item} key={index} />
