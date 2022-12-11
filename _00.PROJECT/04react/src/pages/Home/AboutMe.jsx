@@ -10,12 +10,14 @@ const AboutMe = () => {
       <div className="top">
         <Row>
           <Col xs={5} className="profileWrap">
+            <div className="profileBg"></div>
+            <div className="profileImage"></div>
             <h2>About Me</h2>
           </Col>
           <Col xs className="contents">
             <div className="info">
               <div className="profile">
-                <h3>Profile</h3>
+                <h3>PROFILE</h3>
                 <Row>
                   <Col xs={3}>Name</Col>
                   <Col xs={9}>강혜리</Col>
@@ -28,7 +30,7 @@ const AboutMe = () => {
                 </Row>
               </div>
               <div className="education">
-                <h3>Education</h3>
+                <h3>EDUCATION</h3>
                 <Row>
                   <Col xs={3}>2023.01</Col>
                   <Col xs={9}>프로젝트기반 프론트엔드(React,Vue) 웹&앱 SW개발자 양성과정 수료 예정</Col>
@@ -46,7 +48,7 @@ const AboutMe = () => {
       </div>
       <div className="bottom">
         <Row>
-          <Col xs={7} className="skills">
+          <Col xs={6} className="skills">
             {skillList.map((item,index)=>{
               return (
                 <Row key={index}>
@@ -57,7 +59,8 @@ const AboutMe = () => {
               )
             })}
           </Col>
-          <Col xs={5}>
+          <Col xs={5} className='skillIndexWrap'>
+            <div className="skillBg"></div>
             <h2>Skills</h2>
           </Col>
         </Row>
