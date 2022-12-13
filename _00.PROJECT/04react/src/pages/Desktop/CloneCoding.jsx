@@ -12,9 +12,9 @@ const CloneCoding = () => {
         <h2>CLONE CODING</h2>
       </div>
       <ul>
-          {cloneList.map((item,index)=>(
-            <CloneCodingCard clone={item} key={index} />
-          ))}
+        {cloneList.map((item,index)=>(
+          <CloneCodingCard clone={item} key={index} />
+        ))}
       </ul>
     </div>
   )

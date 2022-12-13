@@ -3,6 +3,7 @@ import AboutMeM from './AboutMeM'
 import CloneM from './CloneM'
 import ContactMeM from './ContactMeM'
 import ProjectM from './ProjectM'
+import './MobileHome.scss'
 
 const MobileHome = ({loading}) => {
   return (

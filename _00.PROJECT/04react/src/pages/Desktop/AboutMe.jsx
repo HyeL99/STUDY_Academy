@@ -21,14 +21,12 @@ const AboutMe = () => {
               <div className="profile">
                 <h3>PROFILE</h3>
                 <Row>
-                  <Col xs={3}>Name</Col>
-                  <Col xs={9}>강혜리</Col>
-                  <Col xs={3}>Birth</Col>
-                  <Col xs={9}>1999.03.25</Col>
-                  <Col xs={3}>Phone</Col>
-                  <Col xs={9}>010-7558-8149</Col>
-                  <Col xs={3}>Mail</Col>
-                  <Col xs={9}>kanghr8149@gmail.com</Col>
+                  <Col xs={4}>Name</Col>
+                  <Col xs={8}>강혜리</Col>
+                  <Col xs={4}>Birth</Col>
+                  <Col xs={8}>1999.03.25</Col>
+                  <Col xs={4}>Address</Col>
+                  <Col xs={8}>경기도 고양시</Col>
                 </Row>
               </div>
               <div className="education">
