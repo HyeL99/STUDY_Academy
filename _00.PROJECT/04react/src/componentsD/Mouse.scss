@@ -8,6 +8,7 @@
   height: 80px;
   border-radius: 25px;
   animation: rollMouse 0.8s linear alternate infinite;
+  z-index: -1;
   &::before{
     content:"Scroll";
     position: absolute;
