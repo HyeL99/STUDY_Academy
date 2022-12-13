@@ -1,5 +1,5 @@
 import React from 'react';
-import Stars from '../../components/Stars';
+import Stars from '../../componentsD/Stars';
 import './Intro.scss';
 import { Link } from "react-router-dom";
 

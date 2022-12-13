@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './CloneCoding.scss'
-import CloneCodingCard from '../../components/CloneCodingCard';
+import CloneCodingCard from '../../componentsD/CloneCodingCard';
 
 const CloneCoding = () => {
   const cloneList = useSelector(state => state.clones)

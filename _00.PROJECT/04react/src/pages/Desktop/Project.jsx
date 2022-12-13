@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import './Project.scss'
-import ProjectCard from '../../components/ProjectCard'
-import ProjectHeader from '../../components/ProjectHeader'
+import ProjectCard from '../../componentsD/ProjectCard'
+import ProjectHeader from '../../componentsD/ProjectHeader'
 
 const Project = ({setCurrentPage,setScrollH}) => {
   const projectList = useSelector(state => state.projects);

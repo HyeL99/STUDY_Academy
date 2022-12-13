@@ -7,7 +7,8 @@ import Project from './Project'
 import $ from 'jquery';
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import OpenMenu from '../../components/OpenMenu'
+import OpenMenu from '../../componentsD/OpenMenu'
+import Menu from '../../componentsD/Menu'
 
 const Home = ({loading, openMenu, setOpenMenu}) => {
   const [currentPage,setCurrentPage] = useState(1);
@@ -16,6 +17,7 @@ const Home = ({loading, openMenu, setOpenMenu}) => {
 
   const scrollPage = () => {
     setCurrentPage(1);
+    setScrollH(0)
     const $home = $('.home');
     const winH = $home.innerHeight();
     console.log(winH);
@@ -67,6 +69,7 @@ const Home = ({loading, openMenu, setOpenMenu}) => {
   
   return (
     <div className={loading? 'home loading scroll':'home scroll'}>
+      <Menu loading={loading} openMenu={openMenu} setOpenMenu={setOpenMenu}/>
       <OpenMenu openMenu={openMenu} setOpenMenu={setOpenMenu} setCurrentPage={setCurrentPage} setScrollH={setScrollH} />
       <AboutMe />
       <Project setCurrentPage={setCurrentPage} setScrollH={setScrollH} />

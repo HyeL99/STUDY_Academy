@@ -2,11 +2,13 @@ import React from 'react'
 import './AboutMe.scss'
 import {Row, Col} from 'react-bootstrap'
 import {useSelector} from 'react-redux'
+import Mouse from '../../componentsD/Mouse'
 
 const AboutMe = () => {
   const skillList = useSelector(state => state.skills);
   return (
     <div id='aboutMe' className='scrollContainer'>
+      <Mouse />
       <div className="top">
         <Row>
           <Col xs={5} className="profileWrap">
@@ -40,8 +42,8 @@ const AboutMe = () => {
               </div>
             </div>
             <div className="texts">
-            블라블라 항상 노력하는 <span>강혜리</span>입니다.<br />
-            아래 멘트 열심히 생각해 봅시다.
+              천리길도 한걸음부터,<br />
+              매일 한걸음씩 나아가기 위해 노력하는 <span>강혜리</span>입니다.<br />
             </div>
           </Col>
         </Row>
