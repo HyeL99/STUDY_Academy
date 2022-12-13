@@ -9,6 +9,7 @@
   background-color: var(--color-main);
   transition: all 0.3s;
   font-size: 0;
+  z-index: 3;
   &::before{
     content:"";
     position: absolute;
@@ -36,7 +37,7 @@
   &.loading{
     opacity: 0;
   }
-  &:hover {
+  &:hover,&.openMenu {
     left: -5vw;
     &::before{
       transform: scale(1.5);

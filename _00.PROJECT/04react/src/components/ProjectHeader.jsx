@@ -5,14 +5,14 @@ import $ from 'jquery'
 
 const ProjectHeader = ({setCurrentPage,setScrollH}) => {
   const projectList = useSelector(state => state.projects);
-  
-  const dispatch = useDispatch();
+
   const scrollProject = async (page) => {
     let setPage = Number(page)+1;
     setScrollH(setPage * $(window).height());
     console.log(setPage);
     await setCurrentPage(++setPage);
   }
+
   return (
     <div id='projectHeader'>
       <span className="backBar"></span>
@@ -27,7 +27,7 @@ const ProjectHeader = ({setCurrentPage,setScrollH}) => {
             ))}
         </ul>
       </nav>
-      <div>우주선아이콘</div>
+      <div className='spaceSheep'>우주선아이콘</div>
     </div>
   )
 }

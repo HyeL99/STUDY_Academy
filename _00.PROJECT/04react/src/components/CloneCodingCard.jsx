@@ -1,12 +1,17 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import './CloneCodingCard.scss'
+import AOS from 'aos';
 
 const CloneCodingCard = ({clone}) => {
-  const {name,tool,page,git,demo}=clone;
+
+  const {name,tool,page,image,git,demo}=clone;
+
   return (
     <li className='cloneCard'>
-      <div className="imgPlace"></div>
+      <div className="imgPlace">
+        <img src={image} alt="" />
+      </div>
       <div className="contentsWrap">
         <h3>{name}</h3>
         <Row>
