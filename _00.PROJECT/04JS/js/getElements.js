@@ -39,18 +39,14 @@ const projects = [
     tool:'HTML,CSS,JS,jQuery',
     page:'main + sub*4',
     contents:`
-      일정 관리에 관련된 모든 정보를 한번에 관리할 수 있는 웹앱을 제작했습니다.
+      일정 관리에 관련된 정보를 한번에 관리할 수 있는 웹앱을 제작했습니다.
       <br /><br />
       총 여섯가지의 기능을 구현했습니다.<br />
       - 공휴일과 일정이 포함된 달력 렌더링<br />
-      - 스케줄 관리<br />
-      - 일기 기록 관리<br />
-      - 할 일 관리<br />
-      - 디데이 관리<br />
-      - 타임라인 관리
+      - 스케줄 관리, 일기 기록 관리<br />
+      - 할 일 관리, 디데이 관리, 타임라인 관리
       <br /><br />
-      달력에서 아이콘을 통해 다양한 정보를 확인할 수 있도록 하였습니다.
-      <br /><br />
+      달력에서 아이콘을 통해 다양한 정보를 확인할 수 있도록 하였으며,<br />
       하단바의 아이콘을 클릭하여 타이머 기능을 통해 당일의 타임라인을 추가할 수 있습니다.
     `,
     git:'https://github.com/HyeL99/CalendarApp',
@@ -155,9 +151,9 @@ const clones = [
   }
 ];
 
-/*=====================================
-  #skillBarPlace에 skills 삽입
-=====================================*/
+/*==============================================
+  #skillBarPlace, #skillBarPlaceM에 skills 삽입
+===============================================*/
 let skillHTML = '';
 skills.map(item => {
   skillHTML += `
@@ -168,9 +164,10 @@ skills.map(item => {
       </div>
       <div class="skillPercent col-2">${item.percent}</div>
     </div>
-  `
-})
+  `;
+});
 $('#skillBarPlace').html(skillHTML);
+$('#skillBarPlaceM').html(skillHTML);
 
 /*=====================================
   #navPlace에 projects 삽입
@@ -186,11 +183,12 @@ projects.map((item,index) => {
 })
 $('#navPlace').html(navHTML);
 
-/*=====================================
-  #projectContainer에 projects 삽입
-=====================================*/
+/*=========================================================
+  #projectContainer, #projectContainerM에 projects 삽입
+=========================================================*/
 
 let projectHTML = '';
+let projectHTMLM = '';
 projects.map(item => {
   const {id,name,working,contribution,tool,page,contents, git, demo, preview} = item;
     projectHTML += `
@@ -215,20 +213,51 @@ projects.map(item => {
             <div class="col-9">${tool}</div>
             <div class="col-3">PAGE</div>
             <div class="col-9">${page}</div>
-            <hr />
-            <p>
-              ${contents}
-            </p>
           </div>
+          <hr />
+          <p>
+            ${contents}
+          </p>
+        </div>
+      </li>
+    `;
+    projectHTMLM += `
+      <li id=${id}>
+        <div class="imgWrap">
+          <div class="links">
+            ${git? '<a href='+git+'>VIEW CODE</a>':''}
+            ${demo? '<a href='+demo+'>DEMO</a>':''}
+            ${preview? '<a href='+preview+'>VIEW DOCUMENT</a>':''}
+          </div>
+          <div class='preview'></div>
+        </div>
+        <div class="contents">
+          <h3>${name}</h3>
+          <hr>
+          <div class="row">
+            <div class="col-3">작업기간</div>
+            <div class="col-9">${working}</div>
+            <div class="col-3">기여도</div>
+            <div class="col-9">${contribution}</div>
+            <div class="col-3">TOOL</div>
+            <div class="col-9">${tool}</div>
+            <div class="col-3">PAGE</div>
+            <div class="col-9">${page}</div>
+          </div>
+          <hr />
+          <p>
+            ${contents}
+          </p>
         </div>
       </li>
     `
 })
 $('#projectContainer').html(projectHTML);
+$('#projectContainerM').html(projectHTMLM);
 
-/*=====================================
-  #cloneCardPlace에 clones 삽입
-=====================================*/
+/*================================================
+  #cloneCardPlace, #cloneCardPlaceM에 clones 삽입
+================================================*/
 
 let cloneHTML = '';
 clones.map(item => {
@@ -255,3 +284,4 @@ clones.map(item => {
   `
 })
 $('#cloneCardPlace').html(cloneHTML);
+$('#cloneCardPlaceM').html(cloneHTML);

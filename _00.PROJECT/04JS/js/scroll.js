@@ -1,7 +1,7 @@
 let scrollPage = 0;
 let maxScroll = $('.home').prop('scrollHeight') -  $('.home').prop('clientHeight')
 
-$('.home').on('mousewheel',function(e){
+$('.home').on('wheel',function(e){
   e.preventDefault();
 
   if($('.home').is(':animated')) return;
@@ -20,7 +20,7 @@ $('.home').on('mousewheel',function(e){
     $('.home').animate({scrollTop: nextPosition});
   } else {  console.log('up')
     let currentPosition = $('.home').scrollTop();
-    if(currentPosition < maxScroll && currentPosition > maxScroll - $('.home').prop('clientHeight')){
+    if(currentPosition < maxScroll && currentPosition > maxScroll - $('.home').prop('clientHeight') - 10){
       nextPosition = currentPosition - winH - $('#projectHeader').innerHeight();
     } else {
       nextPosition = currentPosition - winH;

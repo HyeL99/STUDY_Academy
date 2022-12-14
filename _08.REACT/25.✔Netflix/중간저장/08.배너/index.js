@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-multi-carousel/lib/styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -60,9 +59,4 @@ root.render(
   == Axios ==
     https://axios-http.com/kr/
     $ yarn add axios
-
-  == react multi carousel ==
-    https://www.npmjs.com/package/react-multi-carousel
-    $ npm install react-multi-carousel --save
-    import 'react-multi-carousel/lib/styles.css';
 */
