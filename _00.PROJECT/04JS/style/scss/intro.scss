@@ -1,0 +1,111 @@
+@import 'reset.scss';
+@import 'common.scss';
+@import 'stars.scss';
+
+$smallScreen: '(max-width: 570px)';
+
+body{
+  width: 100vw;
+  height: 100vh;
+}
+#introPage{
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left:0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  .box {
+    width: 500px;
+    height: 500px;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f4edc3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    @media #{$smallScreen} {
+      width: 300px;
+      height: 300px;
+    }
+
+    .wave {
+      opacity: .4;
+      position: absolute;
+      top: 3%;
+      left: 50%;
+      background: rgb(255, 230, 0);
+      width: 166%;
+      height: 166%;
+      margin-left: -84%;
+      margin-top: -84%;
+      transform-origin: 50% 48%;
+      border-radius: 43%;
+      animation: drift 3000ms infinite linear;
+      &.-two{
+        animation: drift 7000ms infinite linear;
+        opacity: .2;
+        background: rgb(255, 115, 0);
+      }
+      &.-three{
+        animation: drift 5000ms infinite linear;
+      }
+    }
+    &::after{
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--color-main), rgba(rgb(255, 245, 222), .5));
+      z-index: 11;
+      transform: translate3d(0, 0, 0);
+    }
+    .title {
+      position: absolute;
+      left: 2rem;
+      top: 2rem;
+      width: 100%;
+      z-index: 12;
+      line-height: 1.2;
+      text-align: start;
+      //color: var(--color-bg);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 3rem;
+      text-shadow: 1px 1px 5px rgba(#241746, 0.5);
+      text-indent: .3em;
+      font-weight: 700;
+      @media #{$smallScreen} {
+        font-size: 1.5rem;
+      }
+      a{
+        margin-top: 3rem;
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s;
+        @media #{$smallScreen} {
+          margin-top: 1rem;
+          font-size: 0.8rem;
+        }
+        &:hover{
+          transform: scale(1.05);
+          color: var(--color-bg)
+        }
+      }
+    }
+  }
+}
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}

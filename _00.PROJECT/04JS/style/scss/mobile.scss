@@ -1,0 +1,109 @@
+@import 'reset.scss';
+@import 'resetBootstrap.scss';
+@import 'common.scss';
+@import 'stars.scss';
+@import 'M_aboutMe.scss';
+@import 'M_project.scss';
+@import 'M_cloneCoding.scss';
+@import 'M_contactMe.scss';
+
+html{
+  font-size: 14px;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  word-break: keep-all;
+}
+#mobileHome{
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  max-width: 600px;
+  overflow-y: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  #menuBack{
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(3,1,10,0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+    &.open{
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+  header{
+    position: sticky;
+    left:0;
+    top:0;
+    z-index: 2;
+    background-color: rgba(3,1,10,0.5);
+    backdrop-filter: blur(2px);
+    button{
+      position: absolute;
+      line-height: 2;
+      padding: 0 1rem;
+      border: 0;
+      background-color: transparent;
+      color: var(--color-main);
+      @media #{$largeMobile} {
+        padding: 0 3rem;
+      }
+    }
+    h1{
+      text-align: center;
+      font-size: 1.3rem;
+      line-height: 2rem;
+      cursor: pointer;
+    }
+    #sideMenuM{
+      position: absolute;
+      width: 250px;
+      left: -251px;
+      top: 2rem;
+      height: calc(100vh - 2rem);
+      background-color: rgba(3,1,10,0.8);
+      z-index: 1;
+      padding: 2rem;
+      transition: all 0.3s;
+      a{
+        display: block;
+        line-height: 2.5;
+        transition: all 0.3s;
+        &::after{
+          content: "➡";
+          margin-left: 1rem;
+          opacity: 0;
+        }
+        &:hover,
+        &:focus{
+          transform: scale(1.05) translateX(1rem);
+          color: white;
+          &::after{
+            opacity: 1;
+          }
+        }
+      }
+      &.open{
+        left:0;
+      }
+    }
+  }
+  section{
+    padding: 0 1rem;
+    @media #{$largeMobile} {
+      padding: 0 3rem;
+    }
+  }
+}
+
+h2{
+  font-size: 1.2rem;
+}

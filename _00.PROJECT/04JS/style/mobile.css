@@ -1,0 +1,707 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+input {
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.row {
+  margin: 0;
+}
+.row > * {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #241746;
+  --color-main: #FEC260;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+body {
+  font-family: "Hahmlet", serif;
+  background: -webkit-linear-gradient(top, rgb(3, 1, 10) 30%, rgb(25, 19, 39) 70%, rgb(36, 23, 70));
+  overflow: hidden;
+  color: var(--color-main);
+  width: 100%;
+  height: 100%;
+}
+
+.scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.skybg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.skybg .sky {
+  width: 200vw;
+  height: 200vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveStar 1000s linear infinite;
+}
+.skybg .sky .star {
+  fill: white;
+  stroke: none;
+  stroke-width: 0;
+}
+
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+#aboutMeM {
+  font-size: 0.9rem;
+  color: white;
+}
+@media (min-width: 500px) {
+  #aboutMeM {
+    font-size: 1rem;
+  }
+}
+#aboutMeM h3 {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  font-size: 1.1rem;
+}
+@media (min-width: 500px) {
+  #aboutMeM h3 {
+    font-size: 1.3;
+  }
+}
+#aboutMeM .profileWrap {
+  position: relative;
+  height: 140px;
+}
+#aboutMeM .profileWrap .profileBg {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, rgba(255, 47, 47, 0.6) 0%, rgba(159, 199, 255, 0.5) 100%);
+  border-radius: 50%;
+}
+#aboutMeM .profileWrap .profileBg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/planetbg.png) no-repeat center/100%;
+  opacity: 0.3;
+  transform: rotate(25deg);
+}
+#aboutMeM .profileWrap .profileImage {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 75px;
+  background: url(../assets/myphoto.png) no-repeat center bottom -1px/105%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 47, 47, 0.4);
+}
+#aboutMeM .texts {
+  font-size: 0.8rem;
+  color: white;
+  padding: 1rem 0;
+}
+@media (min-width: 500px) {
+  #aboutMeM .texts {
+    font-size: 0.9rem;
+  }
+}
+#aboutMeM .texts span {
+  color: var(--color-main);
+  font-size: 1.5em;
+}
+#aboutMeM .profile {
+  padding-top: 2rem;
+  position: relative;
+}
+#aboutMeM .profile h3 {
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  width: 200px;
+  line-height: 1.5rem;
+  background-color: var(--color-main);
+  color: white;
+  padding-left: 1rem;
+}
+@media (min-width: 500px) {
+  #aboutMeM .profile h3 {
+    width: 300px;
+    left: -3rem;
+    padding-left: 3rem;
+  }
+}
+#aboutMeM .profile h3::before, #aboutMeM .profile h3::after {
+  content: "";
+  position: absolute;
+  right: -1.4rem;
+  top: 0px;
+  width: 1.4em;
+  height: 1.4rem;
+  border: 0.75rem solid transparent;
+  border-top-color: var(--color-main);
+  border-left-color: var(--color-main);
+}
+#aboutMeM .profile h3::after {
+  border-top-color: transparent;
+  border-bottom-color: var(--color-main);
+}
+#aboutMeM .profile .row {
+  padding: 0.5rem 0 1rem;
+}
+#aboutMeM .education {
+  padding-top: 2rem;
+  position: relative;
+}
+#aboutMeM .education h3 {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 200px;
+  line-height: 1.5rem;
+  background-color: var(--color-main);
+  color: white;
+}
+@media (min-width: 500px) {
+  #aboutMeM .education h3 {
+    width: 300px;
+  }
+}
+#aboutMeM .education h3::before, #aboutMeM .education h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 1.06rem;
+  height: 1.06rem;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: center center;
+  background-color: var(--color-main);
+}
+#aboutMeM .education h3::before {
+  left: -0.53rem;
+}
+#aboutMeM .education h3::after {
+  right: -0.53rem;
+}
+#aboutMeM .education .row {
+  padding: 0.5rem 0 1rem;
+}
+#aboutMeM .skills {
+  padding-top: 2rem;
+  position: relative;
+}
+#aboutMeM .skills h3 {
+  text-align: end;
+  position: absolute;
+  right: -1rem;
+  top: 0;
+  width: 200px;
+  line-height: 1.5rem;
+  background-color: var(--color-main);
+  color: white;
+  padding-right: 1rem;
+}
+@media (min-width: 500px) {
+  #aboutMeM .skills h3 {
+    width: 300px;
+    right: -3rem;
+    padding-right: 3rem;
+  }
+}
+#aboutMeM .skills h3::before, #aboutMeM .skills h3::after {
+  content: "";
+  position: absolute;
+  left: -1.4rem;
+  top: 0px;
+  width: 1.4em;
+  height: 1.4rem;
+  border: 0.75rem solid transparent;
+  border-top-color: var(--color-main);
+  border-right-color: var(--color-main);
+}
+#aboutMeM .skills h3::after {
+  border-top-color: transparent;
+  border-bottom-color: var(--color-main);
+}
+#aboutMeM .skills #skillBarPlaceM {
+  margin-top: 0.5rem;
+}
+#aboutMeM .skills #skillBarPlaceM .row {
+  font-size: 0.8rem;
+  align-items: center;
+}
+#aboutMeM .skills #skillBarPlaceM .row .skillBar {
+  margin: 0.25rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 0.6rem;
+  position: relative;
+}
+#aboutMeM .skills #skillBarPlaceM .row .skillBar span {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+}
+#aboutMeM .skills #skillBarPlaceM .row .skillBar span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-main);
+}
+#aboutMeM .skills #skillBarPlaceM .row .skillPercent {
+  text-align: center;
+}
+
+#projectM h2 {
+  position: relative;
+  padding: 0.5rem 0;
+  margin: 2.5rem 0 1.5rem;
+  text-align: center;
+  border: 2px solid var(--color-main);
+  border-left: 0;
+  border-right: 0;
+  background-color: rgba(254, 194, 96, 0.1);
+}
+#projectM h2 span {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.2rem;
+  font-size: 0.5em;
+  opacity: 0.8;
+  animation: scrollRight 0.5s both ease-in alternate infinite;
+}
+@keyframes scrollRight {
+  from {
+    right: 0.5rem;
+  }
+  to {
+    right: 0rem;
+  }
+}
+#projectM #projectContainerM {
+  display: flex;
+  overflow-x: auto;
+  column-gap: 2rem;
+  padding-bottom: 1rem;
+  scrollbar-color: rgba(254, 194, 96, 0.8) rgba(255, 255, 255, 0.3);
+  scrollbar-width: thin;
+}
+#projectM #projectContainerM::-webkit-scrollbar {
+  height: 5px;
+}
+#projectM #projectContainerM::-webkit-scrollbar-thumb {
+  background-color: rgba(254, 194, 96, 0.8);
+  border-radius: 5px;
+}
+#projectM #projectContainerM::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#projectM #projectContainerM li {
+  flex-shrink: 0;
+  width: calc(300px - 2rem);
+  height: 400px;
+  position: relative;
+  padding: 1rem;
+}
+#projectM #projectContainerM li .imgWrap .links {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding-left: 1rem;
+}
+#projectM #projectContainerM li .imgWrap .links a {
+  display: inline-block;
+  line-height: 2rem;
+  padding: 0 0.8rem;
+  color: white;
+  font-size: 0.8rem;
+}
+#projectM #projectContainerM li .imgWrap .links a:hover {
+  color: var(--color-main);
+}
+#projectM #projectContainerM li .imgWrap .preview {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  background-color: #fff;
+  width: 100%;
+  height: calc(100% - 2rem);
+}
+#projectM #projectContainerM li .contents {
+  position: absolute;
+  left: 0rem;
+  top: 2rem;
+  width: 100%;
+  height: calc(100% - 2rem);
+  font-size: 0.7rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+  transition: all 0.3s;
+  opacity: 0;
+}
+#projectM #projectContainerM li .contents:hover, #projectM #projectContainerM li .contents:focus {
+  opacity: 1;
+}
+#cloneCodingM h2 {
+  position: relative;
+  padding: 0.5rem 0;
+  margin: 2.5rem 0 1.5rem;
+  text-align: center;
+  border: 2px solid var(--color-main);
+  border-left: 0;
+  border-right: 0;
+  background-color: rgba(254, 194, 96, 0.1);
+}
+#cloneCodingM h2 span {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.2rem;
+  font-size: 0.5em;
+  opacity: 0.8;
+  animation: scrollRight 0.5s both ease-in alternate infinite;
+}
+@keyframes scrollRight {
+  from {
+    right: 0.5rem;
+  }
+  to {
+    right: 0rem;
+  }
+}
+#cloneCodingM #cloneCardPlaceM {
+  display: flex;
+  column-gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-color: rgba(254, 194, 96, 0.8) rgba(255, 255, 255, 0.3);
+  scrollbar-width: thin;
+}
+#cloneCodingM #cloneCardPlaceM::-webkit-scrollbar {
+  height: 5px;
+}
+#cloneCodingM #cloneCardPlaceM::-webkit-scrollbar-thumb {
+  background-color: rgba(254, 194, 96, 0.8);
+  border-radius: 5px;
+}
+#cloneCodingM #cloneCardPlaceM::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard {
+  flex-shrink: 0;
+  width: calc(300px - 2rem);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 3px solid var(--color-main);
+  background-color: var(--color-main);
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .imgPlace {
+  width: 100%;
+  height: 30vh;
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .imgPlace img {
+  width: 100%;
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .contentsWrap {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--color-main);
+  color: var(--color-bg);
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .contentsWrap h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .contentsWrap .row > * {
+  line-height: 1;
+  font-size: 0.9rem;
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .contentsWrap .btnWrap {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#cloneCodingM #cloneCardPlaceM .cloneCard .contentsWrap a {
+  width: 40%;
+  border: 0;
+  background-color: var(--color-bg);
+  color: var(--color-main);
+  border-radius: 0.5rem;
+  line-height: 1;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+#contactMeM {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#contactMeM h2 {
+  position: relative;
+  padding: 0.5rem 0;
+  margin: 2.5rem 0 1.5rem;
+  text-align: center;
+  border: 2px solid var(--color-main);
+  border-left: 0;
+  border-right: 0;
+  background-color: rgba(254, 194, 96, 0.1);
+}
+#contactMeM .texts {
+  font-size: 0.9rem;
+  color: white;
+  word-break: keep-all;
+}
+@media (min-width: 500px) {
+  #contactMeM .texts {
+    font-size: 1rem;
+  }
+}
+#contactMeM .texts span {
+  font-size: 1.5em;
+  color: var(--color-main);
+}
+#contactMeM .links {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+@media (min-width: 500px) {
+  #contactMeM .links {
+    font-size: 0.9rem;
+  }
+}
+#contactMeM .links a {
+  color: white;
+}
+#contactMeM .links a:hover, #contactMeM .links a:focus {
+  color: var(--color-main);
+}
+#contactMeM p {
+  margin-top: 5rem;
+  font-size: 0.8rem;
+  align-self: flex-end;
+  opacity: 0.7;
+}
+#contactMeM p button {
+  background-color: transparent;
+  border: 0;
+  line-height: 1;
+  font-size: 0.8rem;
+  color: var(--color-main);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-main);
+  margin-left: 0.5rem;
+}
+#contactMeM #sourceCard {
+  background-color: white;
+  position: absolute;
+  width: calc(300px - 2rem);
+  right: -400px;
+  bottom: 7rem;
+  padding: 1.5rem;
+  color: var(--color-bg);
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+#contactMeM #sourceCard.open {
+  right: 1rem;
+}
+#contactMeM #sourceCard a {
+  color: var(--color-bg);
+  opacity: 0.8;
+}
+#contactMeM #sourceCard a:hover {
+  opacity: 1;
+}
+#contactMeM #sourceCard button {
+  position: absolute;
+  line-height: 1;
+  background-color: transparent;
+  border: 0;
+  right: 0;
+  top: -1.5rem;
+  color: var(--color-main);
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  word-break: keep-all;
+}
+
+#mobileHome {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  max-width: 600px;
+  overflow-y: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+#mobileHome #menuBack {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(3, 1, 10, 0.5);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+#mobileHome #menuBack.open {
+  z-index: 1;
+  opacity: 1;
+}
+#mobileHome header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(3, 1, 10, 0.5);
+  backdrop-filter: blur(2px);
+}
+#mobileHome header button {
+  position: absolute;
+  line-height: 2;
+  padding: 0 1rem;
+  border: 0;
+  background-color: transparent;
+  color: var(--color-main);
+}
+@media (min-width: 500px) {
+  #mobileHome header button {
+    padding: 0 3rem;
+  }
+}
+#mobileHome header h1 {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  cursor: pointer;
+}
+#mobileHome header #sideMenuM {
+  position: absolute;
+  width: 250px;
+  left: -251px;
+  top: 2rem;
+  height: calc(100vh - 2rem);
+  background-color: rgba(3, 1, 10, 0.8);
+  z-index: 1;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+#mobileHome header #sideMenuM a {
+  display: block;
+  line-height: 2.5;
+  transition: all 0.3s;
+}
+#mobileHome header #sideMenuM a::after {
+  content: "➡";
+  margin-left: 1rem;
+  opacity: 0;
+}
+#mobileHome header #sideMenuM a:hover, #mobileHome header #sideMenuM a:focus {
+  transform: scale(1.05) translateX(1rem);
+  color: white;
+}
+#mobileHome header #sideMenuM a:hover::after, #mobileHome header #sideMenuM a:focus::after {
+  opacity: 1;
+}
+#mobileHome header #sideMenuM.open {
+  left: 0;
+}
+#mobileHome section {
+  padding: 0 1rem;
+}
+@media (min-width: 500px) {
+  #mobileHome section {
+    padding: 0 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=mobile.css.map */

@@ -1,0 +1,16 @@
+@import 'reset.scss';
+@import 'resetBootstrap.scss';
+@import 'common.scss';
+@import 'D_aboutMe.scss';
+@import 'D_project.scss';
+@import 'D_cloneCoding.scss';
+@import 'D_contactMe.scss';
+@import 'D_menu.scss';
+@import 'stars.scss';
+
+.home{
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0 2rem;
+}

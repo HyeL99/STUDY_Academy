@@ -36,6 +36,18 @@ img {
   width: 100%;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.row {
+  margin: 0;
+}
+.row > * {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --color-bg: #241746;
   --color-main: #FEC260;
@@ -60,18 +72,6 @@ body {
 }
 .scroll::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-.row {
-  margin: 0;
-}
-.row > * {
-  margin: 0;
-  padding: 0;
 }
 
 #aboutMe {
@@ -134,15 +134,15 @@ body {
 }
 #aboutMe .top .profileWrap {
   position: relative;
-  height: 20vw;
+  height: 250px;
 }
 #aboutMe .top .profileWrap .profileBg {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 20vw;
-  height: 20vw;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(45deg, rgba(255, 47, 47, 0.6) 0%, rgba(159, 199, 255, 0.5) 100%);
   border-radius: 50%;
   margin-top: -1rem;
@@ -160,11 +160,11 @@ body {
 }
 #aboutMe .top .profileWrap .profileImage {
   position: absolute;
-  bottom: 0rem;
+  bottom: 0;
   left: 25%;
   transform: translateX(-50%);
-  width: 10vw;
-  height: 10vw;
+  width: 140px;
+  height: 140px;
   background: url(../assets/myphoto.png) no-repeat center bottom -5px/105%;
   border-radius: 50%;
   border: 2px solid rgba(255, 47, 47, 0.4);
@@ -176,8 +176,10 @@ body {
   background-color: var(--color-main);
   color: var(--color-bg);
   line-height: 1.2;
+  font-size: 1.5rem;
+  font-weight: 700;
   padding-left: 1rem;
-  width: 70%;
+  width: 400px;
 }
 #aboutMe .top .contents .info {
   display: flex;
@@ -210,6 +212,9 @@ body {
 #aboutMe .bottom {
   align-items: flex-end;
 }
+#aboutMe .bottom #skillBarPlace .row {
+  align-items: center;
+}
 #aboutMe .bottom #skillBarPlace .row .skillBar {
   margin: 0.5rem 0;
   background-color: white;
@@ -231,21 +236,54 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--color-main);
+  animation: setSkills 2s ease-in-out both;
 }
 #aboutMe .bottom #skillBarPlace .row .skillPercent {
   text-align: center;
 }
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(0) .skillBar span::before {
+  animation-delay: 0.8s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(1) .skillBar span::before {
+  animation-delay: 0.2s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(2) .skillBar span::before {
+  animation-delay: 0.7s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(3) .skillBar span::before {
+  animation-delay: 0.4s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(4) .skillBar span::before {
+  animation-delay: 1.2s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(5) .skillBar span::before {
+  animation-delay: 0s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(6) .skillBar span::before {
+  animation-delay: 1s;
+}
+#aboutMe .bottom #skillBarPlace .row:nth-of-type(7) .skillBar span::before {
+  animation-delay: 0.6s;
+}
+@keyframes setSkills {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 #aboutMe .bottom .skillIndexWrap {
   position: relative;
-  height: 20vw;
+  height: 300px;
 }
 #aboutMe .bottom .skillIndexWrap .skillBg {
   position: absolute;
   top: 0;
   left: 60%;
   transform: translateX(-50%);
-  width: 20vw;
-  height: 20vw;
+  width: 300px;
+  height: 300px;
   background: linear-gradient(45deg, rgba(224, 47, 255, 0.3) 0%, rgba(159, 207, 255, 0.5) 100%);
   border-radius: 50%;
   margin-top: -1rem;
@@ -264,7 +302,7 @@ body {
 #aboutMe .bottom .skillIndexWrap .skillBg::after {
   content: "";
   position: absolute;
-  right: -50%;
+  right: -40%;
   bottom: -20%;
   width: 80%;
   height: 80%;
@@ -280,8 +318,9 @@ body {
   background-color: var(--color-main);
   color: var(--color-bg);
   line-height: 1.2;
+  font-size: 1.5rem;
   padding-right: 1rem;
-  width: 60%;
+  width: 300px;
 }
 
 #project {
@@ -458,6 +497,8 @@ body {
   margin-top: 10vh;
   margin-left: 4rem;
   padding-bottom: 1rem;
+  scrollbar-color: rgba(254, 194, 96, 0.8) rgba(255, 255, 255, 0.3);
+  scrollbar-width: thin;
 }
 #cloneCoding #cloneCardPlace::-webkit-scrollbar {
   height: 5px;
@@ -553,6 +594,7 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   font-size: 1.2rem;
+  word-break: keep-all;
 }
 #contactMe .contents .row {
   width: 100%;
