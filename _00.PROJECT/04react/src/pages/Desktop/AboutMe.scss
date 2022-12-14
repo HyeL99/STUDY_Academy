@@ -170,7 +170,7 @@
   animation: setSkills 2s ease-in-out both;
 }
 .home:not(.loading) .skills > .row{
-  &:nth-of-type(1) .skillBar span::before,{
+  &:nth-of-type(1) .skillBar span::before{
     animation-delay: 0.2s;
   }
   &:nth-of-type(2) .skillBar span::before{

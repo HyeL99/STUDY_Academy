@@ -12,7 +12,7 @@ $('.home').on('wheel',function(e){
   if(wheel > 0){  console.log('down')
     let currentPosition = $('.home').scrollTop();
     let nextPosition = '';
-    if(currentPosition > winH*4){
+    if(currentPosition > winH*4+10){
       nextPosition = currentPosition + winH + $('#projectHeader').innerHeight();
     } else {
       nextPosition = currentPosition + winH;
@@ -20,7 +20,7 @@ $('.home').on('wheel',function(e){
     $('.home').animate({scrollTop: nextPosition});
   } else {  console.log('up')
     let currentPosition = $('.home').scrollTop();
-    if(currentPosition < maxScroll && currentPosition > maxScroll - $('.home').prop('clientHeight') - 10){
+    if(currentPosition < maxScroll - 10 && currentPosition > maxScroll - $('.home').prop('clientHeight') - 10){
       nextPosition = currentPosition - winH - $('#projectHeader').innerHeight();
     } else {
       nextPosition = currentPosition - winH;
