@@ -64,6 +64,7 @@ body {
   color: var(--color-main);
   width: 100%;
   height: 100%;
+  word-break: keep-all;
 }
 
 .scroll {
@@ -129,20 +130,17 @@ body {
     bottom: 16px;
   }
 }
-#aboutMe .top {
-  align-items: flex-end;
-}
 #aboutMe .top .profileWrap {
   position: relative;
-  height: 250px;
+  height: 35vh;
 }
 #aboutMe .top .profileWrap .profileBg {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 250px;
-  height: 250px;
+  width: 35vh;
+  height: 35vh;
   background: linear-gradient(45deg, rgba(255, 47, 47, 0.6) 0%, rgba(159, 199, 255, 0.5) 100%);
   border-radius: 50%;
   margin-top: -1rem;
@@ -161,17 +159,17 @@ body {
 #aboutMe .top .profileWrap .profileImage {
   position: absolute;
   bottom: 0;
-  left: 25%;
+  left: calc(50% - 18vh);
   transform: translateX(-50%);
-  width: 140px;
-  height: 140px;
-  background: url(../assets/myphoto.png) no-repeat center bottom -5px/105%;
+  width: 15vh;
+  height: 15vh;
+  background: url(../assets/myphoto.png) no-repeat center/105%;
   border-radius: 50%;
   border: 2px solid rgba(255, 47, 47, 0.4);
 }
 #aboutMe .top .profileWrap h2 {
   position: absolute;
-  top: 0.5rem;
+  top: 2vh;
   left: 60%;
   background-color: var(--color-main);
   color: var(--color-bg);
@@ -180,6 +178,9 @@ body {
   font-weight: 700;
   padding-left: 1rem;
   width: 400px;
+}
+#aboutMe .top .contents {
+  padding-top: 10vh;
 }
 #aboutMe .top .contents .info {
   display: flex;
@@ -275,15 +276,15 @@ body {
 }
 #aboutMe .bottom .skillIndexWrap {
   position: relative;
-  height: 300px;
+  height: 30vh;
 }
 #aboutMe .bottom .skillIndexWrap .skillBg {
   position: absolute;
   top: 0;
-  left: 60%;
+  left: 55%;
   transform: translateX(-50%);
-  width: 300px;
-  height: 300px;
+  width: 30vh;
+  height: 30vh;
   background: linear-gradient(45deg, rgba(224, 47, 255, 0.3) 0%, rgba(159, 207, 255, 0.5) 100%);
   border-radius: 50%;
   margin-top: -1rem;
@@ -429,18 +430,22 @@ body {
 #project #projectContainer #project05 .imgWrap {
   padding: 3rem 2rem 2rem 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 #project #projectContainer #project01 .imgWrap .links,
 #project #projectContainer #project02 .imgWrap .links,
 #project #projectContainer #project03 .imgWrap .links,
 #project #projectContainer #project04 .imgWrap .links,
 #project #projectContainer #project05 .imgWrap .links {
+  border-radius: 1rem 1rem 0 0;
   position: absolute;
   left: 0;
   top: 0;
   width: calc(100% - 2rem);
   height: 3rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(89, 91, 156, 0.3);
   padding-left: 1rem;
 }
 #project #projectContainer #project01 .imgWrap .links a,
@@ -465,9 +470,21 @@ body {
 #project #projectContainer #project03 .imgWrap .preview,
 #project #projectContainer #project04 .imgWrap .preview,
 #project #projectContainer #project05 .imgWrap .preview {
-  background-color: #fff;
+  flex: 1 1 auto;
+  background-color: rgba(190, 190, 220, 0.6);
   width: 100%;
   height: 100%;
+  border-radius: 0 0 1rem 1rem;
+}
+#project #projectContainer #project01 .imgWrap .preview img,
+#project #projectContainer #project02 .imgWrap .preview img,
+#project #projectContainer #project03 .imgWrap .preview img,
+#project #projectContainer #project04 .imgWrap .preview img,
+#project #projectContainer #project05 .imgWrap .preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 #cloneCoding {

@@ -20,7 +20,7 @@ $('.home').on('wheel',function(e){
     $('.home').animate({scrollTop: nextPosition});
   } else {  console.log('up')
     let currentPosition = $('.home').scrollTop();
-    if(currentPosition < maxScroll - 10 && currentPosition > maxScroll - $('.home').prop('clientHeight') - 10){
+    if(currentPosition < maxScroll - 10 && currentPosition >= maxScroll - $(window).height()-10){
       nextPosition = currentPosition - winH - $('#projectHeader').innerHeight();
     } else {
       nextPosition = currentPosition - winH;

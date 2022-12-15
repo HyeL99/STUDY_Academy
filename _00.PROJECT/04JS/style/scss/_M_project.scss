@@ -48,6 +48,13 @@
       height: 400px;
       position: relative;
       padding: 1rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      &#project02{
+        .imgWrap .preview img{
+          object-fit: cover;
+        }
+      }
       .imgWrap{
         .links{
           position: absolute;
@@ -55,7 +62,7 @@
           top:0;
           width: calc(100%);
           height: 2rem;
-          background-color: rgba(255, 255, 255, 0.3);
+          background-color: rgba(89, 91, 156, 0.3);
           padding-left: 1rem;
           a{
             display: inline-block;
@@ -72,9 +79,15 @@
           position: absolute;
           left:0;
           top:2rem;
-          background-color: #fff;
+          background-color: rgba(190, 190, 220, 0.6);
           width: 100%;
           height: calc(100% - 2rem);
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
         }
       }
       .contents{

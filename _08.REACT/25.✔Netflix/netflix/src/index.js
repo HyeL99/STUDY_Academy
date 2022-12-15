@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import store from './redux/store';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-multi-carousel/lib/styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,6 +34,7 @@ root.render(
   == 리덕스 ==
     https://redux.js.org/
     $ yarn add redux
+    
   == 리액트 리덕스 ==
     https://react-redux.js.org/
     $ yarn add react-redux
@@ -65,4 +64,8 @@ root.render(
     https://www.npmjs.com/package/react-multi-carousel
     $ npm install react-multi-carousel --save
     import 'react-multi-carousel/lib/styles.css';
+
+  == react spinners ==
+    https://www.davidhu.io/react-spinners/
+    $ npm install react-spinners --save
 */
