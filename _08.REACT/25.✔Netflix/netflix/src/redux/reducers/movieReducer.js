@@ -3,6 +3,11 @@ const initialState = {
   popularMovies: {},
   topRatedMovies: {},
   upcomingMovies: {},
+  movieDetails:{},
+  movieKeywords:{},
+  movieVideos:[],
+  movieSimilar:[],
+  genreList:[],
   loading: true
 };
 
@@ -17,10 +22,20 @@ const movieReducer = (state = initialState, action) => {
         popularMovies:payload.popularMovies,
         topRatedMovies:payload.topRatedMovies,
         upcomingMovies:payload.upcomingMovies,
+        genreList:payload.genreList,
         loading: false
       };
     case 'GET_MOVIE_FAIL':
       return {...state, loading:false};
+    case 'GET_MOVIE_D_SUCCESS':
+      return {
+        ...state,
+        movieDetails: payload.movieDetails,
+        movieKeywords: payload.movieKeywords,
+        movieVideos: payload.movieVideos,
+        movieSimilar: payload.movieSimilar,
+        loading: false
+      };
     default:
       return {...state};
   }

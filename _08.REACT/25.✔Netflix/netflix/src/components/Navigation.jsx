@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import LOGO from '../assets/하얀제목.png'
 
 const Navigation = () => {
@@ -15,12 +15,12 @@ const Navigation = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           > &nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/" className='navItem'>홈</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/movies" className='navItem'>영화를 한눈에</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="#" className='navItem'>이 달의 화제작</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="#" className='navItem'>콕! 찜한 영화</Link>
+            <a href="/" className='navItem'>홈</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/#popularArea" className='navItem'>오늘의 화제작</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/#topRatedArea" className='navItem'>평점이 와르르</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/#upcomingArea" className='navItem'>개봉예정작</a>&nbsp;&nbsp;&nbsp;&nbsp;
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -28,7 +28,7 @@ const Navigation = () => {
               aria-label="Search"
             />
             <Button variant="danger">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -31,6 +31,11 @@ a {
   color: inherit;
 }
 .navTop{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  left:0;
+  top:0;
   img{
     width: 100px;
     margin-top: -5px;
@@ -55,6 +60,12 @@ html, body {
   color: #fff;
   overflow-x: hidden;
   word-break: keep-all;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 }
 #root{
   width: 100%;
@@ -71,7 +82,8 @@ html, body {
     height: 200px;
   }
 }
-.banner{
+#banner{
+  margin-top: 70px;
   height: 60vw;
   display: flex;
   align-items: flex-end;
@@ -132,7 +144,7 @@ html, body {
   }
   h2{
     font-family: 'GmarketSansBold', sans-serif;
-    padding-top: 50px;
+    padding-top: 70px;
     @media #{$smallWidth} {
     padding-top: 20px;
     }
@@ -238,5 +250,113 @@ footer{
   .right{
     padding-top: 3rem;
     display: inline-block;
+  }
+}
+
+#movieDetailPage{
+  position: relative;
+  background: {
+    size: cover;
+    repeat:no-repeat;
+    position: left top;
+  };
+  margin-top: 70px;
+  #detailBgOpacity{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+    background: linear-gradient(rgba(#222, 0.8), #222);
+  }
+  .detailImg{
+    position: relative;
+    img{
+      margin-top: 10%;
+      width: 80%;
+      object-fit: contain;
+      border-radius: 2rem;
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .detailContentsWrap{
+    position: relative;
+    .detailContents{
+      width: 100%;
+      height: 100%;
+      margin-top: 10%;
+      h2{
+        display: inline-block;
+        margin:0;
+        font-family: 'GmarketSansBold', sans-serif;
+        span{
+          opacity: 0.6;
+          font-weight: 300;
+          font-size: 0.8em;
+          font-family: 'GmarketSansLight', sans-serif;
+        }
+      }
+      .detailRuntime{
+        font-size: calc((1.325rem + .9vw) * 0.6);
+      }
+      hr{
+        margin: 0.5rem 0;
+      }
+      .tagline{
+        font-family: 'GmarketSansMedium', sans-serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
+      p{
+        margin: 0;
+      }
+      .infoPlace{
+        font-size: 0.8rem;
+        .infos{
+          display: flex;
+          align-items: center;
+          column-gap: 0.5rem;
+        }
+      }
+      .detailCategorys{
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+      }
+    }
+  }
+}
+
+
+
+.modal-dialog{
+  max-width: 90%;
+  height: 90%;
+  .modal-content{
+    background-color: #222;
+    color: #fff;
+    height: 100%;
+    .modal-header{
+      padding: 0.5rem 1rem;
+      border: 0;
+      text-align: end;
+      .btn-close{
+        background-color: rgba(255,255,255,0.8);
+        margin-top: 0.5rem;
+        margin-right:0;
+      }
+    }
+    .modal-body{
+      >div{
+        height: 100%;
+      }
+    }
+  }
+}
+
+.similarMoviesArea{
+  margin-top: 100px;
+  h2{
+    font-family: 'GmarketSansBold', sans-serif;
   }
 }

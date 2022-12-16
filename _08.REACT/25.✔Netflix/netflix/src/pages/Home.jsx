@@ -23,14 +23,14 @@ const Home = () => {
     </div>)
   }
   return (
-    <div>
+    <div id='mainHome'>
       {popularMovies.results && <Banner movie={ popularMovies.results[0]} />}
         <div className="slideContainer">
-        <h2>오늘의 화제작</h2>
+        <h2 id='popularArea'>오늘의 화제작</h2>
         <MovieSlide movies={popularMovies.results} />
-        <h2>평점이 와르르</h2>
+        <h2 id='topRatedArea'>평점이 와르르</h2>
         <MovieSlide movies={topRatedMovies.results} />
-        <h2>개봉예정작</h2>
+        <h2 id='upcomingArea'>개봉예정작</h2>
         <MovieSlide movies={upcomingMovies.results} />
       </div>
       <Footer />

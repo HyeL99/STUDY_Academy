@@ -68,4 +68,8 @@ root.render(
   == react spinners ==
     https://www.davidhu.io/react-spinners/
     $ npm install react-spinners --save
+
+  == react-youtube ==
+    https://www.npmjs.com/package/react-youtube
+    $ npm i react-youtube
 */
