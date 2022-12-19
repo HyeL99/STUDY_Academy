@@ -8,30 +8,28 @@
   
 </head>
 <body>
-  <div id="app">
-    {{ msg }}
-  <div>
+  <div id="app">{{ msg }}</div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script>
     var vm = new Vue({
-      el: '#app',
+      el: "#app",
       data: {
-        msg: '라이프 사이클이 무엇인지 알아보아요',
+        msg: "라이프 사이클이 무엇인지 알아보아요",
       },
       beforeCreate: function(){//인스턴스가 생성되고 나서 가장 먼저 실행
-        console.log('beforeCreate');
+        console.log("beforeCreate");
       },
       created: function(){ //beforeCreate 다음 인스턴스가 화면에 붙기 전 실행
-        console.log('created');
+        console.log("created");
       },
       mounted: function(){ //el요소가 지정된 요소에 부착되고 난 후 호출
-        console.log('mounted');
-        this.msg='업데이트 해볼까요?'
+        console.log("mounted");
+        this.msg="업데이트 해볼까요?"
       },
       updated: function(){ //데이터가 변경되고 나서 호출
-        console.log('updated');
+        console.log("updated");
       },
-    })
+    });
     /*
       인스턴스 lifeCycle - Vue의 인스턴스가 생성되서 소멸되기까지의 과정
       lifeCycle Hook - 인스턴스 특정 시점에 원하는 로직 구현 가능

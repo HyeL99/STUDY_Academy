@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
+import { loginAction } from '../redux/action/userDataAction';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
   const [loginMod, setLoginMod] = useState(true);
+  const dispatch = useDispatch();
 
   const SetValues = (e) => {
     if(e.target.id === 'loginEmail'){
@@ -36,6 +39,13 @@ const Login = () => {
       console.log(error)
     }
   }
+
+  
+
+  useEffect(()=>{
+    dispatch(loginAction.getUserData())
+  },[])
+
 
   const onLogin = (e) => {
     e.preventDefault();

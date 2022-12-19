@@ -29,9 +29,9 @@ root.render(
     v6.3.0 : https://reactrouter.com/en/v6.3.0
     $ yarn add react-router-dom
 
-  == 리덕스 ==
-    https://redux.js.org/
-    $ yarn add redux
+  == 리덕스 툴킷 ==
+    https://redux-toolkit.js.org/introduction/getting-started
+    $ yarn add @reduxjs/toolkit
     
   == 리액트 리덕스 ==
     https://react-redux.js.org/

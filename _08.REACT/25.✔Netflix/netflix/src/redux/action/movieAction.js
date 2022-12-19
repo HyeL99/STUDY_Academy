@@ -1,5 +1,5 @@
 import api from '../api'
-import { getMovieDetailSuccess, getMovieFail, getMovieRequest, getMovieSuccess, GET_MOVIE_FAIL } from '../reducers/movieReducer';
+import { getMovieDetailSuccess, getMovieFail, getMovieRequest, getMovieSuccess } from '../reducers/movieReducer';
 //미들웨어부분
 // popular : https://developers.themoviedb.org/3/movies/get-popular-movies
 
