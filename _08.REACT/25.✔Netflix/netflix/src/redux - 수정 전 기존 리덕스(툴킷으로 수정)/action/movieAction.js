@@ -1,5 +1,4 @@
 import api from '../api'
-import { getMovieDetailSuccess, getMovieFail, getMovieRequest, getMovieSuccess, GET_MOVIE_FAIL } from '../reducers/movieReducer';
 //미들웨어부분
 // popular : https://developers.themoviedb.org/3/movies/get-popular-movies
 
@@ -14,14 +13,13 @@ function getMovies(){
 
   return async (dispatch) => {
     try{
-      //dispatch({type:'GET_MOVIE_REQUEST'}) //로딩 전
-      dispatch(getMovieRequest())
+      dispatch({type:'GET_MOVIE_REQUEST'}) //로딩 전
 
-      const popularMovieApi = api.get(`/movie/popular?api_key=${APIkey}&language=ko-KR&page=1`);
-      const topRatedMovieApi = api.get(`/movie/top_rated?api_key=${APIkey}&language=ko-KR&page=1`);
-      const upcomingMovieApi = api.get(`/movie/upcoming?api_key=${APIkey}&language=ko-KR&page=1`);
+      const popularMovieApi = await api.get(`/movie/popular?api_key=${APIkey}&language=ko-KR&page=1`);
+      const topRatedMovieApi = await api.get(`/movie/top_rated?api_key=${APIkey}&language=ko-KR&page=1`);
+      const upcomingMovieApi = await api.get(`/movie/upcoming?api_key=${APIkey}&language=ko-KR&page=1`);
       //장르도 같이 가져옴
-      const genresApi = api.get(`/genre/movie/list?api_key=${APIkey}&language=ko-KR`)
+      const genresApi = await api.get(`/genre/movie/list?api_key=${APIkey}&language=ko-KR`)
       //3개의 데이터를 병렬로 동시에 -> 4개의 데이터를 병렬로 동시에
       //let data = await Promise.all([ popularMovieApi,topRatedMovieApi,upcomingMovieApi])
       //console.log('data', data)
@@ -33,15 +31,6 @@ function getMovies(){
       // console.log('upcomingMovies data',  upcomingMovies);
 
       //데이터 도착 후
-      dispatch(getMovieSuccess({
-        popularMovies: popularMovies.data,
-        topRatedMovies: topRatedMovies.data,
-        upcomingMovies: upcomingMovies.data,
-        genreList: genreList.data.genres
-      }))
-
-
-      /*
       dispatch({
         type:"GET_MOVIE_SUCCESS",
         payload:{
@@ -51,10 +40,8 @@ function getMovies(){
           genreList: genreList.data.genres
         } //data필드만 보내줌. Axios는 받은 데이터를 data필드에 넣어서 줌
       })
-      */
     } catch (error) { //에러 핸들링
-      //dispatch({type:'GET_MOVIE_FAIL'}) //로딩 후
-      dispatch(getMovieFail())
+      dispatch({type:'GET_MOVIE_FAIL'}) //로딩 전
     }
   }
 }
@@ -64,24 +51,18 @@ function getMovieDetails(id){
 
   return async (dispatch) => {
     try{
-      //dispatch({type:'GET_MOVIE_REQUEST'}) //로딩 전
-      dispatch(getMovieRequest())
+      dispatch({type:'GET_MOVIE_REQUEST'}) //로딩 전
 
-      const movieDetailApi = api.get(`/movie/${id}?api_key=${APIkey}&language=ko-KR`);
-      const movieKeywordsApi = api.get(`/movie/${id}/keywords?api_key=${APIkey}&language=ko-KR`);
-      const movieVideosApi = api.get(`/movie/${id}/videos?api_key=${APIkey}&language=ko-KR`);
-      const movieSimilarApi = api.get(`/movie/${id}/similar?api_key=${APIkey}&language=ko-KR&page=1`);
+      const genresApi = await api.get(`/genre/movie/list?api_key=${APIkey}&language=ko-KR`)
+      const movieDetailApi = await api.get(`/movie/${id}?api_key=${APIkey}&language=ko-KR`);
+      const movieKeywordsApi = await api.get(`/movie/${id}/keywords?api_key=${APIkey}&language=ko-KR`);
+      const movieVideosApi = await api.get(`/movie/${id}/videos?api_key=${APIkey}&language=ko-KR`);
+      const movieSimilarApi = await api.get(`/movie/${id}/similar?api_key=${APIkey}&language=ko-KR&page=1`);
 
-      let [movieDetails, movieKeywords,movieVideos, movieSimilar] = await Promise.all([ movieDetailApi, movieKeywordsApi,movieVideosApi, movieSimilarApi]);
+      let [movieDetails, movieKeywords,movieVideos, movieSimilar, genreList] = await Promise.all([ movieDetailApi, movieKeywordsApi,movieVideosApi, movieSimilarApi,genresApi])
 
-      dispatch(getMovieDetailSuccess({
-        movieDetails: movieDetails.data,
-        movieKeywords: movieKeywords.data,
-        movieVideos:movieVideos.data.results,
-        movieSimilar: movieSimilar.data.results
-      }))
+      console.log(movieSimilar)
 
-      /*
       dispatch({
         type:"GET_MOVIE_D_SUCCESS",
         payload:{
@@ -89,12 +70,11 @@ function getMovieDetails(id){
           movieKeywords: movieKeywords.data,
           movieVideos:movieVideos.data.results,
           movieSimilar: movieSimilar.data.results,
+          genreList: genreList.data.genres
         }
       })
-      */
     } catch (error) {
-      //dispatch({type:'GET_MOVIE_FAIL'}) //로딩 전
-      dispatch(getMovieFail())
+      dispatch({type:'GET_MOVIE_FAIL'}) //로딩 전
     }
   }
 }

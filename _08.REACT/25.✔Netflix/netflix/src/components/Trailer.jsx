@@ -22,11 +22,6 @@ const Trailer = ({videos}) => {
     event.target.pauseVideo();
   }
 
-
-  // {videos ? <YouTube videoId={videos.key} opts={opts} onReady={(e)=>_onReady(e)} />:<p>트레일러 영상이 없습니다.</p>}
-
-
-  console.log('###############',videos);
   return (
     <div>
       <Button variant="danger" onClick={() => setShow(true)}>

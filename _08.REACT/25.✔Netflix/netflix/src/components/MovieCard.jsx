@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Badge } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
-const {title,poster_path,release_date, genre_ids,vote_average,adult,id} = movie;
+  const {title,poster_path,release_date, genre_ids,vote_average,adult,id} = movie;
+
   let realeaseDateArray = release_date.split('-');
   const genreList = useSelector(state=>state.movie.genreList);
 
   const navigate = useNavigate();
 
+  let genreResultArray = genre_ids && genre_ids.map(item => genreList && genreList.find(genre=> genre.id===item)?.name)
+
   //카드 클릭시 디테일 페이지로 전환
   const goToDetail = () => {
-    navigate(`/movies/${id}`)
+    navigate(`/movies/${id}`);
   }
 
   return (
@@ -28,7 +31,7 @@ const {title,poster_path,release_date, genre_ids,vote_average,adult,id} = movie;
               {adult ? <Badge bg="danger">19+</Badge>:<Badge bg="success">R</Badge>}<br />
             </div>
             <div className="genres">
-              {genre_ids.map((item,index) => <Badge bg="secondary" key={index}>{genreList.find(genre=> genre.id===item).name}</Badge>)}
+              {genreResultArray &&genreResultArray.map((item,index) => <Badge bg="secondary" key={index}>{item}</Badge>)}
             </div>
           </div>
         </div>

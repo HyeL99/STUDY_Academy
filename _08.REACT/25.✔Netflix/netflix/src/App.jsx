@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import MovieDetail from './pages/MovieDetail';
 import Movies from './pages/Movies';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/movies' element={<Movies />}/>
         <Route path='/movies/:id' element={<MovieDetail />}/>
       </Routes>
+      <Footer />
     </div>
   );
 }

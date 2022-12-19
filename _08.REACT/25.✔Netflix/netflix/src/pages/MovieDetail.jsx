@@ -15,8 +15,9 @@ const MovieDetail = () => {
   let movieId = useParams().id;
 
   useEffect(()=>{ //화면이 로드되자마자 바로 데이터를 불러와야함, 리덕스 미들웨어 이용
-    dispatch(movieAction.getMovieDetails(movieId))
     window.scrollTo(0,0);
+    dispatch(movieAction.getMovieDetails(movieId))
+    
   },[movieId]);
 
   if(loading){
@@ -35,9 +36,7 @@ const MovieDetail = () => {
         <h2>관련 영화</h2>
         <MovieSlide movies={movieSimilar} />
       </Container>
-      <Footer />
     </div>
-     
   )
 }
 

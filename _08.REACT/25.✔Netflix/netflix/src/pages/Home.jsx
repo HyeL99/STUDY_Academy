@@ -33,7 +33,6 @@ const Home = () => {
         <h2 id='upcomingArea'>개봉예정작</h2>
         <MovieSlide movies={upcomingMovies.results} />
       </div>
-      <Footer />
     </div>
   )
 }

@@ -34,6 +34,10 @@ root.render(
   == 리덕스 ==
     https://redux.js.org/
     $ yarn add redux
+
+  == 리덕스 툴킷 == -> 리덕스, 미들웨어, 데브툴 삭제해도 됨
+    https://redux-toolkit.js.org/introduction/getting-started
+    $ yarn add @reduxjs/toolkit
     
   == 리액트 리덕스 ==
     https://react-redux.js.org/
@@ -46,12 +50,12 @@ root.render(
   == 리액트 Sass ==
     $ yarn add sass
 
-  == 리덕스 미들웨어 (redux-thunk) ==
+  == 리덕스 미들웨어 (redux-thunk) == -> 삭제
     https://redux.js.org/understanding/history-and-design/middleware
     https://github.com/reduxjs/redux-thunk
     $ yarn add redux-thunk
 
-  == 리덕스 데브툴스 ==
+  == 리덕스 데브툴스 == -> 삭제
     https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related
     https://github.com/zalmoxisus/redux-devtools-extension
     $ npm install --save redux-devtools-extension
