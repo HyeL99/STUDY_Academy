@@ -1,0 +1,58 @@
+.chatMessage{
+  padding: 0.5rem 0;
+  width:100%;
+  display: flex;
+  .cardContentsWrap{
+    width: 70%;
+    max-width: 600px;
+    display: flex;
+    align-items: flex-start;
+    .profileWrap{
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--color-gray);
+      margin: 0 1rem;
+    }
+    .messageArea{
+      display: flex;
+      .message{
+        background-color: var(--color-gray);
+        color:black;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        flex-grow: 1;
+        cursor: default;
+      }
+      .timeArea{
+        flex-shrink: 0;
+        align-self: flex-end;
+        padding: 0 0.5rem;
+        color:black;
+        cursor: default;
+      }
+    }
+  }
+  
+  &.me{
+    justify-content: flex-end;
+    .cardContentsWrap{
+      flex-direction: row-reverse;
+      .profileWrap{
+        background-color: var(--color-text);
+      }
+      .messageArea{
+        flex-direction: row-reverse;
+        .message{
+          background-color: var(--color-text);
+          color:var(--color-main);
+        }
+        .timeArea{
+          color:var(--color-text);
+        }
+      }
+      
+    }
+  }
+}

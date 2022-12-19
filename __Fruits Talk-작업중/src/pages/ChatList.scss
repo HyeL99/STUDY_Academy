@@ -1,0 +1,54 @@
+#chatListPage{
+  padding-left: 50px;
+  height: 100%;
+  .contentsWarp{
+    //position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    h2{
+      padding: 1.5rem 1rem 0.5rem;
+      border-bottom: 1px solid var(--color-text);
+      font-size: 1.2rem;
+      margin: 0 1rem;
+      left:0;
+      top:0;
+      background-color: var(--color-main);
+    }
+    .listPlace{
+      padding:  0rem 1rem;
+      flex-grow: 1;
+      height: 100%;
+      overflow-y: auto;
+      .chattingListCard{
+        display: flex;
+        column-gap: 1rem;
+        padding: 1rem;
+        border-bottom: 1px solid var(--color-gray);
+        .profileWrap{
+          width: 50px;
+          height: 50px;
+          background-color: var(--color-text);
+          border-radius: 50%;
+        }
+        .contents{
+          .title{
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+          }
+          .message{
+            width: calc(100vw - 5rem - 100px);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @media (min-width: 600px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+#settingPage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .contentsWrap{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    .top{
+      text-align: center;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+      background-color: var(--color-text);
+      color: var(--color-main);
+      button{
+        background-color: transparent;
+        position: absolute;
+        left:1rem;
+        top:1rem;
+        line-height: 1.2rem;
+      }
+      h2{
+        font-size: 1.2rem;
+      }
+    }
+    .editProfilePlace{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      padding: 1rem;
+      form{
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        .profileWrap{
+          max-width: 180px;
+          max-height: 180px;
+          width: 60vw;
+          height: 60vw;
+          margin: 0 auto;
+          background-color: var(--color-text);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color:var(--color-main);
+          margin-bottom: 3rem;
+          cursor: pointer;
+        }
+        input:first-of-type{
+          width: 100%;
+          border:0;
+          border-bottom: 1px solid var(--color-gray);
+          line-height: 2rem;
+          &::placeholder{
+            color:var(--color-gray)
+          }
+        }
+        input:last-child{
+          margin-top: 1rem;
+          width: 100%;
+          border:0;
+          background-color: var(--color-text);
+          color: white;
+          line-height: 2;
+          cursor: pointer;
+        }
+      }
+    }
+    
+  }
+  .handleAccountPlace{
+    padding: 0 1rem 1rem;
+    text-align: end;
+    button{
+      line-height: 2rem;
+      padding: 0 1.5rem;
+      margin-left: 1rem;
+      background-color: var(--color-text);
+      color: var(--color-main)
+    }
+  }
+}
