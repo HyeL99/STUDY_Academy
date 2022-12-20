@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <title>template문법</title>
+  
+</head>
+<body>
+  <div id="app">
+    <h1>--{{title}}--</h1>
+    <section id="header">
+      <ul>
+        <li v-for="item in sites">
+          <a v-bind:href="item.link">{{item.name}}</a>
+        </li>
+      </ul>
+    </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    // 인스턴스 선언 (vm인스턴스 생성)
+    var vm = new Vue({  //vm(vue model)
+      el: "#app",
+      data: {
+        title:"template문법",
+        sites:[
+          {
+            name: '네이버',
+            link:'https://www.naver.com/'
+          },
+          {
+            name: '다음',
+            link:'https://www.daum.net/'
+          },
+          {
+            name: '페이스북',
+            link:'https://www.facebook.com/'
+          },
+          {
+            name: '구글',
+            link:'https://www.google.co.kr/'
+          }
+        ]
+      },
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+  vue 인스턴스 내에서 사용할 수 있는 속성
+    el    - 적용 시킬 요소
+    data  - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+          - 적용할 요소(객체 형식), html 내에서 {{객체 속성명}} 삽입
+
+  vue의 template 문법 - 뷰로 화면을 조작하는 방법
+  1.data:{} - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+  2.디렉티브(directive) - 뷰로 화면요소를 더 쉽게 조작하기 위한 프로그래밍적 문법
+    v-if    - <v-if="data 속성명">
+            - if구문 구현
+    v-for   - <li v-for="아이템(이름 자유) in 배열명">{{아이템}}</li>
+            - for구문, for(let item of array) 처럼 쓰임
+    v-bind: - 태그 속성 내에서 변수를 쓸 수 있도록 하는 속성
+            - .attr()과 비슷한 기능, 태그의 속성을 동적으로 변경할 때 사용
+
+-->

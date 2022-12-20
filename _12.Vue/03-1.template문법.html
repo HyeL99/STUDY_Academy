@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <title>template문법</title>
+  
+</head>
+<body>
+  <div id="app">
+    <h1>--{{title}}--</h1>
+    <p>{{msg}}</p>
+    <div>지금 배워볼 부분은 디렉티브가 적용된 💡<span v-if="show">{{title}}</span>💡입니다.</div>
+    <ul>
+      <li v-for="item in items">{{item}}</li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    // 인스턴스 선언 (vm인스턴스 생성)
+    var vm = new Vue({  //vm(vue model)
+      el: "#app",
+      data: {
+        msg: "msg 데이터",
+        title:"template문법",
+        show:true,
+        items:['유자차', '아이스티','밀크티']
+      },
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+  vue 인스턴스 내에서 사용할 수 있는 속성
+    el    - 적용 시킬 요소
+    data  - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+          - 적용할 요소(객체 형식), html 내에서 {{객체 속성명}} 삽입
+
+  vue의 template 문법 - 뷰로 화면을 조작하는 방법
+  1.data:{} - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+  2.디렉티브(directive) - 뷰로 화면요소를 더 쉽게 조작하기 위한 프로그래밍적 문법
+    if구문 - <v-if="data 속성명">
+    for구문- <li v-for="아이템 in 배열명">{{아이템}}</li>
+
+-->

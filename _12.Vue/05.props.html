@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <title>컴포넌트 통신방식 - props</title>
+  
+</head>
+<body>
+  <div id="app">
+    <h1>💡 {{title}}</h1>
+    <app-header v-bind:propsdata="year"></app-header>
+    <app-main v-bind:propsmsg="msg" v-bind:propsyear="year"></app-main>
+    <app-footer></app-footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    var headerContents = {
+      template:'<header><h2>HEADER{{propsdata}}</h2></header>',
+      props:['propsdata']
+    }
+    var mainContents = {
+      template:`
+        <main>
+          <h2>MAIN - {{propsyear}}</h2>
+          {{propsmsg}}
+        </main>
+      `,
+      props:['propsmsg', 'propsyear'] //props name 다른 컴포넌트와 중복 가능
+    }
+    var footerContents = {template:'<footer><h2>FOOTER</h2></footer>'}
+    
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        title:"컴포넌트 통신방식 - prop",
+        msg:'안녕, 날씨가 추워요:)',
+        year: 2022,
+
+      },
+      components:{
+        'app-header': headerContents,
+        'app-main': mainContents,
+        'app-footer': footerContents ,
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+  vue 인스턴스 내에서 사용할 수 있는 속성
+    el    - 적용 시킬 요소
+    data  - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+          - 적용할 요소(객체 형식), html 내에서 {{객체 속성명}} 삽입
+    components - 지역 컴포넌트 선언 (❗❗컴포넌트 이름 카멜 표기법으로 사용 불가)
+
+
+  vue의 template 문법 - 뷰로 화면을 조작하는 방법
+  1.data:{} - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+  2.디렉티브(directive) - 뷰로 화면요소를 더 쉽게 조작하기 위한 프로그래밍적 문법
+    v-if    - <v-if="data 속성명">
+            - if구문 구현
+    v-for   - <li v-for="아이템(이름 자유) in 배열명">{{아이템}}</li>
+            - for구문, for(let item of array) 처럼 쓰임
+    v-bind: - 태그 속성 내에서 변수를 쓸 수 있도록 하는 속성
+            - .attr()과 비슷한 기능, 태그의 속성을 동적으로 변경할 때 사용
+  Vue.component('컴포넌트이름',{컴포넌트 내용}) - 전역 컴포넌트
+  컴포넌트 내용 :  template:'<h1>HEADER</h1>' - 화면에 사용할 요소
+
+  props - 상위컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성
+  v-bind:propsname="data속성명" 형태로 상위 컴포넌트에서 하위 컴포넌트로 값 전달
+-->
