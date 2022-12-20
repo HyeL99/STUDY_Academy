@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
-import { loginAction } from '../redux/action/userDataAction';
-import { useDispatch } from 'react-redux';
+import { getDataListAction } from '../redux/action/userDataListAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAccountData, setUserEmail } from '../redux/reducer/userDataReducer';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,6 +15,9 @@ const Login = () => {
   const [checkPassword, setCheckPassword] = useState('');
   const [loginMod, setLoginMod] = useState(true);
   const dispatch = useDispatch();
+
+  const userList = useSelector(state => state.userDataList.userData);
+  console.log(userList)
 
   const SetValues = (e) => {
     if(e.target.id === 'loginEmail'){
@@ -32,18 +36,17 @@ const Login = () => {
       let data = await signInWithPopup(auth, provider);
       await setUserData(data.user);
       console.log(data.user);
+
+
       setEmail(userData.email);
       setPassword(null);
       navigate('/home')
     } catch(error){
-      console.log(error)
+      console.log('구글 로그인에 실패했습니다!')
     }
   }
-
-  
-
   useEffect(()=>{
-    dispatch(loginAction.getUserData())
+    dispatch(getDataListAction.getUserData())
   },[])
 
 
@@ -56,10 +59,12 @@ const Login = () => {
         alert('비밀번호를 입력해주세요.');
       } else {
         if(loginMod === true){
-          navigate('/home');
+          doLogin();
         } else {
-          if(password === checkPassword){
-            navigate('/signup');
+          if(password.length < 6){
+            alert('비밀번호는 6자리 이상 입력해주세요');
+          }else if(password === checkPassword){
+            doSignUp();
           } else {
             alert('비밀번호가 일치하지 않습니다.');
           }
@@ -68,6 +73,32 @@ const Login = () => {
     }
   }
 
+  const doLogin = () => {
+    let duplication = userList?.filter(item => item.userEmail === email)
+    console.log(duplication[0])
+    if(duplication){
+      signInWithEmailAndPassword(auth, email, password)
+        .then(()=>{
+          dispatch(setAccountData({accountData:duplication[0]}))
+          navigate('/home')
+        })
+        .catch((e)=>{
+          alert('이메일 또는 비밀번호가 일치하지 않습니다.')
+        })
+    } else {
+      alert('일치하는 계정이 없습니다!')
+    }
+  }
+  const doSignUp = () => {
+    let duplication = userList?.filter(item => item.email === email)
+    if(duplication){
+      alert('이메일이 중복됩니다.')
+    } else {
+      console.log(email, password)
+      dispatch(setUserEmail({email:email, password:password}))
+      navigate('/signup');
+    }
+  }
   return (
     <div id='loginPage'>
       <h2>Fruits Talk</h2>

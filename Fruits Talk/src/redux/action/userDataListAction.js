@@ -1,6 +1,6 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../firebase";
-import { getDataFail, getDataRequest, getDataSuccess } from "../reducer/userDataReducer";
+import { getDataFail, getDataRequest, getDataSuccess } from "../reducer/userDataListReducer";
 
 const getUserData = () => {
   let userData = [];
@@ -43,5 +43,4 @@ const getUserData = () => {
     }
   }
 }
-
-export const loginAction = {getUserData};
+export const getDataListAction = {getUserData};

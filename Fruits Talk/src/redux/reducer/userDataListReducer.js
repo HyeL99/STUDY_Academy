@@ -8,8 +8,8 @@ const initialState = {
   userLoginData:[]
 }
 
-const userDataSlice = createSlice({
-  name:'userData',
+const userDataListSlice = createSlice({
+  name:'userDataList',
   initialState,
   reducers:{
     getDataRequest:(state,action)=>{
@@ -27,6 +27,6 @@ const userDataSlice = createSlice({
   }
 })
 
-export const { getDataRequest, getDataSuccess, getDataFail } = userDataSlice.actions;
+export const { getDataRequest, getDataSuccess, getDataFail } = userDataListSlice.actions;
 
-export default userDataSlice.reducer;
+export default userDataListSlice.reducer;

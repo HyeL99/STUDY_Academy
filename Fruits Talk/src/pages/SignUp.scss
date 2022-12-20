@@ -45,4 +45,13 @@
       cursor: pointer;
     }
   }
+  button{
+    margin-top: 0.5rem;
+    max-width: 300px;
+      width: 100%;
+      border:0;
+      background-color: var(--color-text);
+      color: white;
+      line-height: 2;
+  }
 }

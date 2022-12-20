@@ -1,15 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { useEffect } from "react";
 
 function App() {
   const getData = async () => {
     const firebaseConfig = {
-      apiKey: "AIzaSyAbQr98pD63IAMOuk9J-14A-kTDRjN-fBU",
-      authDomain: "test-201c7.firebaseapp.com",
-      projectId: "test-201c7",
-      storageBucket: "test-201c7.appspot.com",
-      messagingSenderId: "579317914780",
-      appId: "1:579317914780:web:9b23d326076f43ffa76159"
+      apiKey: process.env.REACT_APP_FB_API_KEY,
+  authDomain: process.env.REACT_APP_FB_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FB_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FB_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FB_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FB_API_ID,
+  measurementId: process.env.REACT_APP_FB_MEASUREMENT_ID
     };
     
     // Initialize Firebase
@@ -19,12 +21,14 @@ function App() {
     // Initialize Cloud Firestore and get a reference to the service
     const db = getFirestore(app);
     
-    
     try {
-      const docRef = await addDoc(collection(db, "users"), {
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815
+      const docRef = await addDoc(collection(db, "userData"), {
+        username: 'settingData.username',
+        userEmail: 'settingData.email',
+        userId: `userId#${123456}`,
+        userProfile:'no-data',
+        userFriends:['no-data'],
+        userChatRooms:['no-data']
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -36,7 +40,11 @@ function App() {
       console.log(`${doc.id} => ${doc.data()}`);
     });
   }
-  getData();
+  useEffect(()=>{
+    getData();
+  },[])
+
+  
   return (
     <div className="App">
 
