@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
-  <title>컴포넌트 통신방식 - props</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <title>컴포넌트 통신방식 - eventEmit (이벤트 발생)</title>
   
 </head>
 <body>
   <div id="app">
     <h1>💡 {{title}}</h1>
     <app-header v-bind:propsdata="year"></app-header>
-    <app-main v-bind:propsmsg="msg" v-bind:propsyear="year"></app-main>
+    <app-main v-bind:propsyear="year" v-on:pass="logText"></app-main>
     <app-footer></app-footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
   <script>
     var headerContents = {
       template:'<header><h2>HEADER{{propsdata}}</h2></header>',
@@ -27,10 +28,16 @@
       template:`
         <main>
           <h2>MAIN - {{propsyear}}</h2>
-          {{propsmsg}}
+          <button v-on:click="passEvent">Click me!</button>
         </main>
       `,
-      props:['propsmsg', 'propsyear'] //props name 다른 컴포넌트와 중복 가능
+      props:['propsmsg', 'propsyear'],
+      //함수선언
+      methods:{
+        passEvent:function(){
+          this.$emit('pass')
+        }
+      }
     }
     
     var footerContents = {template:'<footer><h2>FOOTER</h2></footer>'}
@@ -38,15 +45,21 @@
     var vm = new Vue({
       el: "#app",
       data: {
-        title:"컴포넌트 통신방식 - prop",
+        title:"컴포넌트 통신방식 - eventEmit (이벤트 발생)",
         msg:'안녕, 날씨가 추워요:)',
         year: 2022,
 
       },
+      //로컬 컴포넌트 등록
       components:{
         'app-header': headerContents,
         'app-main': mainContents,
         'app-footer': footerContents ,
+      },
+      methods:{
+        logText:function(){
+          console.log('logText 이벤트 발생!! 하위컴포넌트에서 받아옴!!')
+        }
       }
     });
   </script>
@@ -70,9 +83,22 @@
             - for구문, for(let item of array) 처럼 쓰임
     v-bind: - 태그 속성 내에서 변수를 쓸 수 있도록 하는 속성
             - .attr()과 비슷한 기능, 태그의 속성을 동적으로 변경할 때 사용
+    v-on:   - v-on:하위컴포넌트에서 발생한 이벤트 이름 = '상위컴포넌트의 메소드 명'
+    
+
   Vue.component('컴포넌트이름',{컴포넌트 내용}) - 전역 컴포넌트
   컴포넌트 내용 :  template:'<h1>HEADER</h1>' - 화면에 사용할 요소
 
   props - 상위컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성
-  v-bind:propsname="data속성명" 형태로 상위 컴포넌트에서 하위 컴포넌트로 값 전달
+    v-bind:propsname="data속성명" 형태로 상위 컴포넌트에서 하위 컴포넌트로 값 전달
+  
+  eventEmit - 하위 컴포넌트에서 상위 컴포넌트로 통신
+    v-on: - 이벤트 핸들러 (클릭 - v-on:click="함수이름")
+    this.$emit('pass') - 이벤트에밋을 이용해서 pass라는 이벤트를 발생, this필수
+    컴포넌트 속성 method 추가
+      methods:{
+        이벤트 함수명:function(){
+          this.$emit('전달할 이벤트 이름')
+        }
+      } 형식으로 삽입
 -->
