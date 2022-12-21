@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <title>같은 레벨의 컴포넌트 간 통신</title>
+  
+</head>
+<body>
+  <div id="app">
+    <h1>💡 {{title}}</h1>
+    <app-header></app-header>
+    <app-main v-bind:propsnum="number"></app-main>
+    <app-contents v-on:pass-num="passNum"></app-contents>
+    <app-footer></app-footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script>
+    var appHeader = {
+      template:'<header><h2>HEADER</h2></header>',
+    }
+
+    var mainContents = {
+      template:`
+        <main>
+          <h2>MAIN - NUMBER {{propsnum}}</h2>
+        </main>
+      `,
+      //함수선언
+      props:['propsnum'],
+    }
+
+    var subContents = {
+      template:`<div><button v-on:click="passNumEvent10">10 넘겨주기</button><button v-on:click="passNumEvent20">20 넘겨주기</button></div>`,
+      methods:{
+        passNumEvent10:function(){
+          this.$emit('pass-num',10) //this.$emit으로 pass-num이라는 이벤트와 10을 넘김
+          //삼수 안에서 데이터를 쓸 때는 this.'데이터명'으로 작성해야 오류 발생X
+        },
+        passNumEvent20:function(){
+          this.$emit('pass-num',20) //this.$emit으로 pass-num이라는 이벤트와 10을 넘김
+          //삼수 안에서 데이터를 쓸 때는 this.'데이터명'으로 작성해야 오류 발생X
+        }
+      }
+    }
+    
+    var appFooter = {template:'<footer><h2>FOOTER</h2></footer>'}
+
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        title:"같은 레벨의 컴포넌트 간 통신",
+        number:0,
+      },
+      //로컬 컴포넌트 등록
+      components:{
+        'app-header': appHeader,
+        'app-main': mainContents,
+        'app-contents': subContents,
+        'app-footer': appFooter ,
+      },
+      methods:{
+        logText:function(){
+          console.log('logText 이벤트 발생!! 하위컴포넌트에서 받아옴!!')
+        },
+        passNum:function(value){
+          this.number = value;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+  vue 인스턴스 내에서 사용할 수 있는 속성
+    el    - 적용 시킬 요소
+    data  - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+          - 적용할 요소(객체 형식), html 내에서 {{객체 속성명}} 삽입
+    components - 지역 컴포넌트 선언 (❗❗컴포넌트 이름 카멜 표기법으로 사용 불가)
+
+
+  vue의 template 문법 - 뷰로 화면을 조작하는 방법
+  1.data:{} - 데이터 바인딩 : vue인스턴스에서 정의한 속성들을 화면에 표시하는 방법
+  2.디렉티브(directive) - 뷰로 화면요소를 더 쉽게 조작하기 위한 프로그래밍적 문법
+    v-if    - <v-if="data 속성명">
+            - if구문 구현
+    v-for   - <li v-for="아이템(이름 자유) in 배열명">{{아이템}}</li>
+            - for구문, for(let item of array) 처럼 쓰임
+    v-bind: - 태그 속성 내에서 변수를 쓸 수 있도록 하는 속성
+            - .attr()과 비슷한 기능, 태그의 속성을 동적으로 변경할 때 사용
+    v-on:   - v-on:하위컴포넌트에서 발생한 이벤트 이름 = '상위컴포넌트의 메소드 명'
+    
+
+  Vue.component('컴포넌트이름',{컴포넌트 내용}) - 전역 컴포넌트
+  컴포넌트 내용 :  template:'<h1>HEADER</h1>' - 화면에 사용할 요소
+
+  props - 상위컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성
+    v-bind:propsname="data속성명" 형태로 상위 컴포넌트에서 하위 컴포넌트로 값 전달
+  
+  eventEmit - 하위 컴포넌트에서 상위 컴포넌트로 통신
+    v-on: - 이벤트 핸들러 (클릭 - v-on:click="함수이름")
+    this.$emit('pass') - 이벤트에밋을 이용해서 pass라는 이벤트를 발생, this필수
+    컴포넌트 속성 method 추가
+      methods:{
+        이벤트 함수명:function(){
+          this.$emit('전달할 이벤트 이름')
+        }
+      } 형식으로 삽입
+  
+  같은 레벨의 컴포넌트끼리 통신하기 위해서는 부모 컴포넌트로 이벤트를 던지고 부모 컴포넌트에서 자식컴포넌트로  props data를 보내야 한다.
+-->
