@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <title>자바스크립트 표현식</title>
+  
+</head>
+<body>
+  <div id="app">
+    <h1>{{title}}</h1>
+    <hr>
+    <p>{{msg}}</p>
+    <p>{{msg + '날씨가 추워요'}} - 문자열과 함께 사용할 때</p>
+    <p>{{msg.split('').reverse().join('')}}</p>
+    <hr>
+    <!-- {{const a = 10}} - ❌선언문 사용 불가 -->
+    <!-- {{if(num){return 100} - ❌분기구문 사용 불가 }} -->
+    {{num? 100:0}} <!-- 삼항연산자 가능 -->
+    <hr>
+    <p>{{num}}</p>
+    <p>{{num * 2}}</p>
+    <!-- <p>{{doubleNum}} - ❌사용 불가</p> -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        title:"자바스크립트 표현식",
+        msg:"HELLO!! I'm Vue!!😊",
+        num:10,
+        //doubleNum:num*2 - ❌
+      },
+      methods:{
+
+      }
+    });
+  </script>
+</body>
+</html>

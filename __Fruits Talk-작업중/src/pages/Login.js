@@ -76,7 +76,7 @@ const Login = () => {
   const doLogin = () => {
     let duplication = userList?.filter(item => item.userEmail === email)
     console.log(duplication[0])
-    if(duplication){
+    if(duplication.length>0){
       signInWithEmailAndPassword(auth, email, password)
         .then(()=>{
           dispatch(setAccountData({accountData:duplication[0]}))
@@ -91,7 +91,7 @@ const Login = () => {
   }
   const doSignUp = () => {
     let duplication = userList?.filter(item => item.email === email)
-    if(duplication){
+    if(duplication>0){
       alert('이메일이 중복됩니다.')
     } else {
       console.log(email, password)

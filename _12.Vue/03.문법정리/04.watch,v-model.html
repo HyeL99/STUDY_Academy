@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <title>watch, v-model</title>
+  
+</head>
+<body>
+  <div id="app01">
+    <h1>{{title}}</h1>
+    {{num}}
+    <button v-on:click="addNum">increase</button>
+  </div>
+
+  <div id="app02">
+    <input type="text" v-model="msg" placeholder="입력해주세요"/>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script>
+    var vm01 = new Vue({
+      el: "#app01",
+      data: {
+        title:"watch, v-model",
+        num:10
+      },
+      methods:{
+        addNum:function(){
+          this.num = this.num + 1;
+        }
+      },
+      watch:{//감지,데이터의 변화에 따라 특정 로직(함수) 실행
+        num:function(){
+          console.log('숫자 변했음')
+        }
+      }
+    });
+
+    var vm02 = new Vue({
+      el:'#app02',
+      data:{
+        msg:'',  //초기값 설정 필수, 안하면 오류 발생
+      },
+      watch:{
+        msg:function(text){
+          console.log('입력값 변화',text)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
+<!--
+  v-model : form요소를 개발할 때 사용, 입력값을 뷰 인스턴스의 데이터와 동기화
+-->
