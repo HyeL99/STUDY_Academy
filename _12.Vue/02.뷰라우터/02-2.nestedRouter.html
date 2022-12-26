@@ -1,0 +1,46 @@
+<!-- Nested Router 상위 컴포넌트에 하위 컴포넌트를 포함하는 구조 -->
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nested Router</title>
+	</head>
+	<body>
+		<div id="app">
+			<router-view></router-view>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
+		<script>
+			const User = {
+				template: `
+          <div>User 콤포넌트
+            <router-view></router-view> 
+          </div>`,
+			}; //하위 컴포넌트가 보여지는 부분추가
+
+			const UserPost = { template: `<div>UserPost 콤포넌트</div>` };
+			const UserProfile = { template: `<div>UserProfile 콤포넌트</div>` };
+
+			//네스티드 라우팅 정의, children추가
+			const routes = [
+				{
+					path: "/user",
+					component: User,
+					children: [
+						{ path: "posts", component: UserPost },
+						{ path: "profile", component: UserProfile },
+					],
+				},
+			];
+
+			const router = new VueRouter({
+				routes,
+			});
+
+			new Vue({ router }).$mount("#app");
+		</script>
+	</body>
+</html>

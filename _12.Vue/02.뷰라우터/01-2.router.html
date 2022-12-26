@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>뷰 라우터</title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>뷰 라우터</h1>
+			<p>
+				<router-link to="/login">login 컴포넌트로 이동</router-link>
+				<router-link to="/main">main 컴포넌트로 이동</router-link>
+			</p>
+			<router-view></router-view>
+			<!-- url에 따라 라우터가 적용되는 부분 -->
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@3.0.0/dist/vue-router.js"></script>
+		<script>
+			const Login = { template: "<div>로그인</div>" };
+			const Main = { template: "<div>main component</div>" };
+
+			//라우터 인스턴스를 생성
+			const router = new VueRouter({
+				//페이지의 라우팅 정보
+				routes: [
+					//각 페이지를 객체로 {페이지의 url이름, 컴포넌트}
+					{ path: "/login", component: Login },
+					{ path: "/main", component: Main },
+				],
+			});
+
+			new Vue({
+				//el: "#app",
+				router, //인스턴스에 라우터 인스턴스를 등록
+			}).$mount("#app");
+			// el속성 같이 인스턴스를 화면에 붙여주는 역할
+		</script>
+	</body>
+</html>

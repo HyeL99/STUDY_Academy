@@ -101,16 +101,16 @@ const projects = [
   },
   {
     id:'project05',
-    name:'메신저 프로그램(수정예정)',
+    name:'메신저 프로그램(개발중)',
     shortname:'메신저',
-    working:'2022.10.27 - 2022.11.02 (1주)',
+    working:'2022.12.19 - 현재 (1주)',
     contribution:'개인작업 (100%)',
-    tool:'HTML,SASS',
+    tool:'REACT,SASS,Firebase',
     page:'main + sub',
     imgD:'./assets/screenshots/메신저-D.png',
     imgM:'./assets/screenshots/메신저-M.png',
     contents:`
-      json파일에서 친구 목록과 대화 목록을 불러옵니다.
+      파이어베이스를 이용하여 회원가입 및 로그인 기능을 구현하고, 친구 목록과 대화 목록을 불러옵니다.
       <br /><br />
       입력창에 대화를 입력하면 채팅을 보낼 수 있습니다.
     `,

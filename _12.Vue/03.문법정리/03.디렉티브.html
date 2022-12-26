@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <title>Directive</title>
+  
+</head>
+<body>
+  <div id="app">
+    <h1>{{title}}</h1>
+    <p v-if="exp">Directive란 HTML태그 안에 v- 접두사를 가지는 모든 속성들</p>
+			<hr />
+			<div v-if="loading">Loading...(v-if)</div>
+			<div v-else="loading">사용자는 이미 로그인된 상태입니다</div>
+			<hr />
+			<div v-show="loading">Loading...(v-show)</div>
+			<hr />
+			<ul>
+				<li v-for="aa in systems">{{aa}}</li>
+			</ul>
+			<hr />
+			<h3>이벤트 처리</h3>
+			<button v-on:click="popupAlert">경고창 띄우기</button>
+			<button v-on:click="clickBtn1(2023)">인자값 넘겨줘!</button>
+			<button v-on:click="clickBtn2">돔 이벤트에 접근</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        title:'Directive',
+        exp: true,
+        loading: true,
+        systems: ["android", "ios", "window", "linux"],
+      },
+      methods: {
+        popupAlert: function () {
+          return alert("경고 창 표시!");
+        },
+        clickBtn1: function (yy) {
+          alert("내년 " + yy + "년이 코앞에 왔어요!");
+        },
+        clickBtn2: function (e) {
+          console.log(e);
+        },
+      },
+    });
+  </script>
+</body>
+</html>

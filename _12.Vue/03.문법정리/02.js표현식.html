@@ -15,13 +15,15 @@
     <p>{{msg}}</p>
     <p>{{msg + '날씨가 추워요'}} - 문자열과 함께 사용할 때</p>
     <p>{{msg.split('').reverse().join('')}}</p>
+    <p>{{reverseMsg}} - 함수호출</p>
     <hr>
     <!-- {{const a = 10}} - ❌선언문 사용 불가 -->
     <!-- {{if(num){return 100} - ❌분기구문 사용 불가 }} -->
-    {{num? 100:0}} <!-- 삼항연산자 가능 -->
+    {{num? 100 : 0}} <!-- 삼항연산자 가능 -->
     <hr>
     <p>{{num}}</p>
     <p>{{num * 2}}</p>
+    <p>{{doubleNum}}</p>
     <!-- <p>{{doubleNum}} - ❌사용 불가</p> -->
   </div>
 
@@ -36,10 +38,20 @@
         num:10,
         //doubleNum:num*2 - ❌
       },
-      methods:{
-
+      computed:{
+        doubleNum: function(){
+          return this.num * 2;
+        },
+        reverseMsg:function(){
+          return this.msg.split('').reverse().join('')
+        }
       }
     });
   </script>
 </body>
 </html>
+
+<!--
+  method: 호출해야만 실행
+  computed: 대상 값을 인식하면 자동수행
+-->
