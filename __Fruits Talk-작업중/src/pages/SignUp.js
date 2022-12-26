@@ -9,7 +9,7 @@ import './SignUp.scss'
 const SignUp = () => {
   let settingData = useSelector(state => state.userData.settingData);
   const [username, setUsername] = useState('');
-
+  const [usernameState, setUsernameState] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -17,6 +17,7 @@ const SignUp = () => {
     if(!settingData.email){
       navigate('/login')
     }
+    setUsernameState(false);
   },[]);
 
   const onUsernameDispatch = (e) => {
@@ -26,6 +27,7 @@ const SignUp = () => {
       return;
     }
     dispatch(addUsername({username:username}));
+    setUsernameState(true);
   }
   
   return (
@@ -36,7 +38,7 @@ const SignUp = () => {
         <input type="text" placeholder='이메일' value={settingData.email} disabled/>
         <input type="submit" value='닉네임 등록'/>
       </form>
-      <SignUpButton username={username}/>
+      <SignUpButton usernameState={usernameState}/>
     </div>
   )
 }

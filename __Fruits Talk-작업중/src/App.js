@@ -8,9 +8,18 @@ import Setting from './pages/Setting';
 import Login from './pages/Login';
 import ChattingRoom from './pages/ChattingRoom';
 import SignUp from './pages/SignUp';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getDataListAction } from './redux/action/userDataListAction';
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getDataListAction.getUserData())
+  },[])
+
   return (
     <div className="App">
       <Routes>

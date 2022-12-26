@@ -2,10 +2,10 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { addDoc, collection, doc } from 'firebase/firestore';
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
 
-const SignUpButton = () => {
+const SignUpButton = ({usernameState}) => {
   const settingData = useSelector(state => state.userData.settingData);
   const navigate = useNavigate();
   
@@ -33,9 +33,16 @@ const SignUpButton = () => {
 
   }
 
-  return (
-    <button onClick={createAccount}>시작하기</button>
-  )
+  if(usernameState){
+    return (
+      <button onClick={createAccount}>시작하기</button>
+    )
+  } else {
+    return (
+      <button onClick={createAccount} disabled>시작하기</button>
+    )
+  }
+  
 }
 
 export default SignUpButton

@@ -53,5 +53,9 @@
       background-color: var(--color-text);
       color: white;
       line-height: 2;
+      transition: all 0.3s;
+  }
+  button:disabled{
+    background-color: var(--color-gray);
   }
 }

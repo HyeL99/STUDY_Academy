@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
@@ -9,7 +9,6 @@ import { setAccountData, setUserEmail } from '../redux/reducer/userDataReducer';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
@@ -30,25 +29,9 @@ const Login = () => {
     }
   }
 
-  const onGoogleLogin = async (e) => {
-    try{
-      const provider = new GoogleAuthProvider();
-      let data = await signInWithPopup(auth, provider);
-      await setUserData(data.user);
-      console.log(data.user);
-
-
-      setEmail(userData.email);
-      setPassword(null);
-      navigate('/home')
-    } catch(error){
-      console.log('구글 로그인에 실패했습니다!')
-    }
-  }
   useEffect(()=>{
-    dispatch(getDataListAction.getUserData())
+    localStorage.setItem('accountData','');
   },[])
-
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -80,6 +63,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then(()=>{
           dispatch(setAccountData({accountData:duplication[0]}))
+          localStorage.setItem('accountData',JSON.stringify(duplication[0]));
           navigate('/home')
         })
         .catch((e)=>{
@@ -109,7 +93,6 @@ const Login = () => {
 
         <input type="submit" value={loginMod?'로그인':'회원가입'} />
       </form>
-      <button onClick={onGoogleLogin}>구글 계정으로 {loginMod?'로그인':'회원가입'}</button>
       {loginMod?
         <div onClick={()=>setLoginMod(false)}>계정이 없으신가요? <button>계정 생성</button></div>:
         <div onClick={()=>setLoginMod(true)}>계정이 있으신가요? <button>로그인</button></div>

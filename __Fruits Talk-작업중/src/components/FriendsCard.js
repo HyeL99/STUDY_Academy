@@ -1,11 +1,12 @@
 import React from 'react'
 
-const FriendsCard = () => {
+const FriendsCard = ({userData}) => {
+  console.log(userData);
   return (
     <div className='friendsCard'>
       <div className="right">
         <div className="cardProfileWrap"></div>
-        <div className="nickname">닉네임</div>
+        <div className="nickname">{userData.username}</div>
       </div>
       <div className="left">
         채팅하러가기
