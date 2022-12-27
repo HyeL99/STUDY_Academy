@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <TodoHeader />
-    <TodoInput />
-    <TodoList />
-    <TodoFooter />
+    <TodoInput @addTodo='addTodo' />
+    <TodoList v-bind:propsdata='todoItems' @removeTodo='removeTodo'/>
+    <!-- v-bind:프롭스 속성 이름='상위컴포넌트의 데이터이름' -->
+    <TodoFooter @clearTodos='clearTodos'/>
   </div>
 </template>
 
@@ -15,11 +16,38 @@ import TodoFooter from './components/TodoFooter.vue';
 
 export default {
   name: 'App',
+  data(){
+    return {todoItems:[]};//로컬스토리지 내용을 집어넣을 빈 배열 생성
+  },
   components: {
     TodoHeader,
     TodoInput,
     TodoList,
     TodoFooter
+  },
+  methods:{
+    addTodo(todoItem){
+      if(!this.todoItems.includes(todoItem)){
+        localStorage.setItem(todoItem,todoItem);
+        this.todoItems.push(todoItem)
+      }
+    },
+    clearTodos(){
+      localStorage.clear();
+      this.todoItems = [];
+    },
+    removeTodo(todoItem,index){
+      localStorage.removeItem(todoItem);
+      this.todoItems.splice(index,1)
+    }
+  },
+  created(){
+    if(localStorage.length > 0){
+      for(let i=0; i < localStorage.length; i++){
+        this.todoItems.push(localStorage.key(i));
+      }
+      console.log(this.todoItems)
+    }
   }
 }
 </script>
@@ -43,7 +71,7 @@ html,body{
   background: aliceblue;
 
 }
-#app {border: 1px solid red;
+#app {
   font-family: 'Pretendard-Light', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

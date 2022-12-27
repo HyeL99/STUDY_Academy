@@ -11,6 +11,7 @@ export default {
   data(){
     return {newTodoItem:""}
   },
+  
   methods:{
     addTodo:function(e){
       e.preventDefault();
@@ -21,8 +22,9 @@ export default {
       if(value.length === 0 || value === ' '){
         alert('할 일을 입력해주세요');
       } else {
-        localStorage.setItem(value,value);
+        //localStorage.setItem(value,value); - 직접 저장하지 않고 부모에게 전달
         //setItem(key,value) - 로컬스토리지에 데이터를 추가하는 API
+        this.$emit('addTodo',value); //상위 App.vue에 addTodo, value 전달
       }
       //this.newTodoItem='';
       this.clearInput();  //분리, 단일책임원칙
@@ -43,7 +45,7 @@ form{
 }
 form input{
   flex-grow: 1;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border: 0;
   outline: 0;
 }

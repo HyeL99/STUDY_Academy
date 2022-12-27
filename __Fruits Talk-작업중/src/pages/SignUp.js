@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import SignUpButton from '../components/SignUpButton';
-import { addUserDataAction } from '../redux/action/userDataAction';
 import { addUsername } from '../redux/reducer/userDataReducer';
 import './SignUp.scss'
 

@@ -36,4 +36,8 @@ root.render(
   == 리액트 리덕스 ==
     https://react-redux.js.org/
     $ yarn add react-redux
+
+  == react-uuid ==
+  https://www.npmjs.com/package/react-uuid
+  $ npm i react-uuid
 */

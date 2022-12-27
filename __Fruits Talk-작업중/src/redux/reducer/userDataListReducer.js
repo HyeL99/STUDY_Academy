@@ -24,9 +24,21 @@ const userDataListSlice = createSlice({
     getDataFail:(state,action)=>{
       state.loading = true;
     },
+    updateUserData:(state,action)=>{
+      state.userData = action.payload.userData;
+    },
+    updateChatrooms:(state,action)=>{
+      state.chatrooms = action.payload.chatrooms;
+    },
+    updateMessages:(state,action)=>{
+      state.messages = action.payload.messages;
+    },
+    updateUserLoginData:(state,action)=>{
+      state.userLoginData = action.payload.userLoginData;
+    },
   }
 })
 
-export const { getDataRequest, getDataSuccess, getDataFail } = userDataListSlice.actions;
+export const { getDataRequest, getDataSuccess, getDataFail, updateUserData, updateChatrooms, updateMessages, updateUserLoginData } = userDataListSlice.actions;
 
 export default userDataListSlice.reducer;

@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { addDoc, collection, doc } from 'firebase/firestore';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -16,20 +16,26 @@ const SignUpButton = ({usernameState}) => {
     .then((userCredential) => {
       accountData = userCredential.user;
     })
-    try {
-      const docRef = await addDoc(collection(db, "userData"), {
-        username: settingData.username,
-        userEmail: settingData.email,
-        userId: `userId#${accountData.uid}`,
-        userProfile:'no-data',
-        userFriends:['no-data'],
-        userChatRooms:['no-data']
-      });
-      console.log("Document written with ID: ", docRef.id);
-      navigate('/login')
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+    .then(async ()=>{
+      try {
+        console.log('settingData',settingData);
+        console.log('accountData', accountData);
+        await setDoc(doc(db, "userData",settingData.email), {
+          userUid:accountData.uid,
+          username: settingData.username,
+          userEmail: settingData.email,
+          userId: `userId#${accountData.uid}`,
+          userProfile:'no-data',
+          userFriends:[],
+          userChatRooms:[],
+        });
+        //console.log("Document written with ID: ", docRef.id);
+        navigate('/login')
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    })
+    
 
   }
 

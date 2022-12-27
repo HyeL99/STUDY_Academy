@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { addDoc, doc } from "firebase/firestore";
+import { addDoc, doc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { setUserUid } from "../reducer/userDataReducer";
 
@@ -14,7 +14,8 @@ const createAccount = (settingData, username) => {
           userData = userCredential.user;
         })
       let userId = `userId#${userData.uid}`
-      let docRef = await addDoc(doc(db,'userData'),{
+      let docRef = await addDoc(doc(db,'userData',userData.uid),{
+          userUid:userData.uid,
           username: username,
           userEmail: userData.email,
           userId: userId,
@@ -28,5 +29,17 @@ const createAccount = (settingData, username) => {
     }
   }
 }
-
-export const addUserDataAction = {createAccount};
+const updateAccount = (settingData, friendsList) => {
+  console.log('settingData',settingData ,'friendsList',settingData);
+  return async (dispatch) => {
+    try{
+      const updateDocRef = doc(db, 'userData', settingData.userEmail);
+      await updateDoc(updateDocRef,{
+        userFriends:friendsList
+      })
+    } catch(e){
+      console.log(e);
+    }
+  }
+}
+export const handleUserDataAction = {createAccount, updateAccount};

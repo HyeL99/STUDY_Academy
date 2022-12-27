@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
 import { getDataListAction } from '../redux/action/userDataListAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAccountData, setUserEmail } from '../redux/reducer/userDataReducer';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Login = () => {
   const [loginMod, setLoginMod] = useState(true);
   const dispatch = useDispatch();
 
-  const userList = useSelector(state => state.userDataList.userData);
+  let userList = useSelector(state => state.userDataList.userData);
   console.log(userList)
 
   const SetValues = (e) => {
@@ -94,7 +95,7 @@ const Login = () => {
         <input type="submit" value={loginMod?'로그인':'회원가입'} />
       </form>
       {loginMod?
-        <div onClick={()=>setLoginMod(false)}>계정이 없으신가요? <button>계정 생성</button></div>:
+        <div onClick={()=>setLoginMod(false)}>계정이 없으신가요? <button>계정 생성</button></div> :
         <div onClick={()=>setLoginMod(true)}>계정이 있으신가요? <button>로그인</button></div>
       }
     </div>

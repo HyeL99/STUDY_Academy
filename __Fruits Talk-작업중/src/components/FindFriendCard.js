@@ -1,13 +1,35 @@
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { db } from '../firebase';
+import { handleUserDataAction } from '../redux/action/userDataAction';
 
-const FindFriendCard = ({friendId}) => {
+const FindFriendCard = ({friendItem}) => {
+
+  const dispatch = useDispatch();
   const [friend, setFriend] = useState(false);
-  const [friendsList, setFriendsList] = useState(['1','2','3'])
-
+  let userData = JSON.parse(localStorage.getItem('accountData'))
+  let friendsList = [];
   
+  let data = JSON.parse(localStorage.getItem('accountData')).userFriends;
+  
+  if(data?.length > 0){
+    friendsList = data;
+  }
+
   const addFriend = (e) => {
     let userId = e.target.id;
-    setFriendsList([...friendsList, userId])
+    if(!friendsList.includes(userId)){
+      friendsList.push(userId);
+      console.log(userData, friendsList);
+      dispatch(handleUserDataAction.updateAccount(userData,friendsList));
+
+      let saveData = {...userData}
+      console.log(saveData);
+      saveData.userFriends = friendsList;
+      localStorage.setItem('accountData',JSON.stringify(saveData))
+      setFriend(true);
+    }
   }
   const removeFriend = (e) => {
     let userId = e.target.id;
@@ -17,31 +39,36 @@ const FindFriendCard = ({friendId}) => {
         resultList.splice(index, 1);
       }
     })
-    setFriendsList(resultList);
+    console.log(userData, resultList);
+    dispatch(handleUserDataAction.updateAccount(userData,resultList))
+    let saveData = {...userData}
+    saveData.userFriends = resultList;
+    localStorage.setItem('accountData',JSON.stringify(saveData))
+    setFriend(false);
   }
-
   useEffect(()=>{
-    if(friendsList.includes(friendId)){
+    if(friendsList?.includes(friendItem?.userId)){
       setFriend(true);
     } else{
       setFriend(false);
     }
-  },[friendsList, friendId])
-  
 
+  },[friendsList, friendItem.userId, userData,data])
+  
+  console.log(friend);
   return (
     <div className='findFriendCard'>
       <div className="right">
         <div className="cardProfileWrap"></div>
         <div className="contents">
-          <div className="nickname">닉네임</div>
-          <div className="email">nickname@gmail.com</div>
+          <div className="nickname">{friendItem?.username}</div>
+          <div className="email">{friendItem?.userEmail}</div>
         </div>
       </div>
       <div className="left">
         {friend?
-          <button id={friendId} onClick={(e) => removeFriend(e)}>친구 취소</button>:
-          <button id={friendId} onClick={(e) => addFriend(e)}>친구 추가</button>
+          <button id={friendItem?.userId} onClick={(e) => removeFriend(e)}>친구 취소</button>:
+          <button id={friendItem?.userId} onClick={(e) => addFriend(e)}>친구 추가</button>
         }
         
       </div>

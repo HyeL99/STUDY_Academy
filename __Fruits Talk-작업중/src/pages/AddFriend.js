@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import FindFriendCard from '../components/FindFriendCard';
-import FriendsCard from '../components/FriendsCard';
-import Navbar from '../components/Navbar'
 import './AddFriend.scss'
 
 const AddFriend = () => {
   const [searchEmail, setSearchEmail] = useState('');
-  const [resultsList, setResultsList] = useState(['11','12','13'])
+  const [result, setResult] = useState();
+  const userData = useSelector(state => state.userDataList.userData)
   const findFriend = (e) => {
     e.preventDefault();
+    console.log(userData);
+    let list = userData?.filter(item => item.userEmail === searchEmail);
+    console.log(list);
+    setResult(list[0]);
   }
+  console.log(result);
+
   return (
     <div id='addFriendPage'>
       <div className="top">
@@ -23,9 +29,9 @@ const AddFriend = () => {
           <input type="submit" value="검색" />
         </form>
 
-        <h3>검색결과 ({resultsList.length}명)</h3>
+        <h3>검색결과</h3>
         <div className="resultContainer">
-          {resultsList.map((item, index) => <FindFriendCard friendId={item} key={index} />)}
+          {result && <FindFriendCard friendItem={result}/>}
         </div>
       </div>
     </div>
