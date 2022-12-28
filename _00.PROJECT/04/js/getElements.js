@@ -12,28 +12,73 @@ const skills = [
 const projects = [
   {
     id:'project01',
-    name:'OUTBACK Redesign',
-    shortname:'OUTBACK',
-    working:'2022.10.03 - 2022.10.20 (3주)',
+    name:'Red Talk',
+    shortname:'Red Talk',
+    working:'2022.12.19 - 2022.12.29 (11일)',
     contribution:'개인작업 (100%)',
-    tool:'HTML,CSS,jQuery',
-    page:'main + sub*9',
-    imgD:'./assets/screenshots/아웃백-D.png',
-    imgM:'./assets/screenshots/아웃백-M.png',
+    tool:'React,SASS,Firebase',
+    page:'SPA',
+    imgD:'./assets/screenshots/메신저-D.png',
+    imgM:'./assets/screenshots/메신저-M.png',
     contents:`
-      기존의 메뉴 소개가 중심이 되는 아웃백 사이트와는 다르게 ‘아웃백 스테이크 하우스’라는 회사 소개에 좀 더 집중하여 홈화면을 리디자인하였으며, 반응형도 적용하였습니다.
+      파이어베이스를 이용하여 실시간 채팅 웹을 만들었습니다.
       <br /><br />
-      홈화면의 메인배너는 slick  플러그인을 이용하여 슬라이드로 볼 수 있도록 하였고,
-      뉴스와 공지를 한 부분으로 합쳐서 최신순으로 홈화면에서 볼 수 있도록 제작했으며, 뉴스와 공지에 따른 필터링 기능도 추가하였습니다.
+      회원가입 및 로그인 , 친구 추가 등의 기능을 구현하였고,
       <br /><br />
-      서브페이지에서는 드롭다운 메뉴를 통해 페이지를 전환할 수 있습니다.
+      실시간으로 친구 목록과 대화 목록을 불러오도록 하였습니다.
+      <br /><br />
+      파이어베이스의 Storage를 활용하여 프로필 사진을 사용할 수 있도록 하였습니다.
     `,
-    git:'https://github.com/HyeL99/outback',
-    demo:'https://hyel99.github.io/outback/',
+    git:'https://github.com/HyeL99/RedTalk',
+    demo:'https://hyel-red-talk.netlify.app',
     preview:''
   },
   {
     id:'project02',
+    name:'VueTodo',
+    shortname:'VueTodo',
+    working:'2022.12.26 - 2022.12.28 (3일)',
+    contribution:'개인작업 (100%)',
+    tool:'Vue,CSS',
+    page:'SPA',
+    imgD:'./assets/screenshots/뷰투두-D.png',
+    imgM:'./assets/screenshots/뷰투두-M.png',
+    contents:`
+      Vue.js를 이용한 투두리스트를 만들었습니다.
+      <br /><br />
+      리스트는 localStorage로 관리되며, 리스트 아이템 추가, 삭제 기능을 구현하였습니다. 
+      <br /><br />
+      입력한 값이 없거나 공백일 경우 입력한 값이 없다는 경고 팝업창을 띄우도록 하였습니다.
+    `,
+    git:'https://github.com/HyeL99/VueTodo',
+    demo:'https://hyel-vue-todo.netlify.app',
+    preview:''
+  },
+  {
+    id:'project03',
+    name:'영화 정보 사이트 - 영화를 콕!',
+    shortname:'영화를 콕!',
+    working:'2022.12.12 - 2022.12.16 (5일)',
+    contribution:'개인작업 (100%)',
+    tool:'React,Sass',
+    page:'SPA',
+    imgD:'./assets/screenshots/영화를콕-D.png',
+    imgM:'./assets/screenshots/영화를콕-M.png',
+    contents:`
+      <a href='https://www.themoviedb.org/'>TMDB</a>에서 제공하는 API를 이용하여 영화 정보를 제공하는 페이지를 만들었습니다.
+      <br /><br />
+      메인페이지에서는 인기순, 평점순, 개봉예정작을 볼 수 있으며, 영화 보스터를 클릭하면 디테일 페이지로 연결됩니다.
+      <br /><br />
+      디테일 페이지에서는 영화에 대한 상세정보와 트레일러 영상을 확인할 수 있으며, 관련 영화도 볼 수 있습니다.
+      <br /><br />
+      레이아웃은 부트스트랩을 이용하였습니다.
+    `,
+    git:'https://github.com/HyeL99/ReactMovies',
+    demo:'https://hyel-movies.netlify.app/',
+    preview:''
+  },
+  {
+    id:'project04',
     name:'일정관리앱 - 나의 시간',
     shortname:'나의 시간',
     working:'2022.11.07 - 2022.12.01 (1개월)',
@@ -58,66 +103,46 @@ const projects = [
     preview:''
   },
   {
-    id:'project03',
-    name:'영화 정보 사이트 - 영화를 콕!',
-    shortname:'영화를 콕!',
-    working:'2022.12.12 - 2022.12.16 (5일)',
-    contribution:'개인작업 (100%)',
-    tool:'React,Sass',
-    page:'main + sub*1',
-    imgD:'./assets/screenshots/영화를콕-D.png',
-    imgM:'./assets/screenshots/영화를콕-M.png',
-    contents:`
-      <a href='https://www.themoviedb.org/'>TMDB</a>에서 제공하는 API를 이용하여 영화 정보를 제공하는 페이지를 만들었습니다.
-      <br /><br />
-      메인페이지에서는 인기순, 평점순, 개봉예정작을 볼 수 있으며, 영화 보스터를 클릭하면 디테일 페이지로 연결됩니다.
-      <br /><br />
-      디테일 페이지에서는 영화에 대한 상세정보와 트레일러 영상을 확인할 수 있으며, 관련 영화도 볼 수 있습니다.
-      <br /><br />
-      레이아웃은 부트스트랩을 이용하였습니다.
-    `,
-    git:'https://github.com/HyeL99/ReactMovies',
-    demo:'https://hyel-movies.netlify.app/',
-    preview:''
-  },
-  {
-    id:'project04',
-    name:'투두리스트',
-    shortname:'투두리스트',
+    id:'project05',
+    name:'ReactTodo',
+    shortname:'ReactTodo',
     working:' 2022.11.14 - 2022.11.23 (10일)',
     contribution:'개인작업 (100%)',
     tool:'React,CSS',
-    page:'main',
+    page:'SPA',
     imgD:'./assets/screenshots/투두리스트-D.png',
     imgM:'./assets/screenshots/투두리스트-M.png',
     contents:`
       투두리스트에 투두아이템을 추가, 삭제할 수 있고, 좌상단 버튼을 통해 다크 모드를 설정할 수 있습니다. 해당 투두 아이템을 완료했는지에 따라서 필터링도 가능합니다.
       <br /><br />
-      window.localStorage를 이용하여 등록한 투두리스트와 다크모드 설정을 유지하도록 하였습니다.
+      localStorage를 이용하여 등록한 투두리스트와 다크모드 설정을 유지하도록 하였습니다.
     `,
     git:'https://github.com/HyeL99/ReactTodo',
     demo:'https://hyel-react-todo-app.netlify.app/',
     preview:''
   },
   {
-    id:'project05',
-    name:'메신저 프로그램(개발중)',
-    shortname:'메신저',
-    working:'2022.12.19 - 현재 (1주)',
+    id:'project06',
+    name:'OUTBACK Redesign',
+    shortname:'OUTBACK',
+    working:'2022.10.03 - 2022.10.20 (3주)',
     contribution:'개인작업 (100%)',
-    tool:'REACT,SASS,Firebase',
-    page:'main + sub',
-    imgD:'./assets/screenshots/메신저-D.png',
-    imgM:'./assets/screenshots/메신저-M.png',
+    tool:'HTML,CSS,jQuery',
+    page:'main + sub*9',
+    imgD:'./assets/screenshots/아웃백-D.png',
+    imgM:'./assets/screenshots/아웃백-M.png',
     contents:`
-      파이어베이스를 이용하여 회원가입 및 로그인 기능을 구현하고, 친구 목록과 대화 목록을 불러옵니다.
+      기존의 메뉴 소개가 중심이 되는 아웃백 사이트와는 다르게 ‘아웃백 스테이크 하우스’라는 회사 소개에 좀 더 집중하여 홈화면을 리디자인하였으며, 반응형도 적용하였습니다.
       <br /><br />
-      입력창에 대화를 입력하면 채팅을 보낼 수 있습니다.
+      홈화면의 메인배너는 slick  플러그인을 이용하여 슬라이드로 볼 수 있도록 하였고,
+      뉴스와 공지를 한 부분으로 합쳐서 최신순으로 홈화면에서 볼 수 있도록 제작했으며, 뉴스와 공지에 따른 필터링 기능도 추가하였습니다.
+      <br /><br />
+      서브페이지에서는 드롭다운 메뉴를 통해 페이지를 전환할 수 있습니다.
     `,
-    git:'https://github.com/HyeL99/Portfolio/tree/master/pf9',
-    demo:'https://hyel99.github.io/Portfolio/pf9',
+    git:'https://github.com/HyeL99/outback',
+    demo:'https://hyel99.github.io/outback/',
     preview:''
-  }
+  },
 ];
 
 const clones = [

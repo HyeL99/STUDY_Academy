@@ -29,10 +29,13 @@ const userDataSlice = createSlice({
     },
     setAccountData:(state,action) => {
       state.AccountData = action.payload.accountData;
+    },
+    addProfile:(state,action) => {
+      state.settingData.profile = action.payload.profile;
     }
   }
 })
 
-export const { setUserEmail, addUsername,setUserUid,setAccountData } = userDataSlice.actions;
+export const { setUserEmail, addUsername,setUserUid,setAccountData,addProfile } = userDataSlice.actions;
 
 export default userDataSlice.reducer;

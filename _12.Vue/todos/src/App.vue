@@ -65,6 +65,12 @@ export default {
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 html,body{
   padding:0;
   margin:0;

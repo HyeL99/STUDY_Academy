@@ -1,16 +1,39 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../firebase';
+import { auth, db, storage } from '../firebase';
 
-const SignUpButton = ({usernameState}) => {
+const SignUpButton = ({usernameState, profileImage}) => {
+  console.log(profileImage);
   const settingData = useSelector(state => state.userData.settingData);
   const navigate = useNavigate();
-  
+
+  let profileUrl = '';
+
   const createAccount = async () => {
-    console.log(settingData);
+
+    if(profileImage !== ''){
+      const editProfileImage = profileImage;
+
+      const storageRef = ref(storage, `images/${editProfileImage.name}`);
+      
+      uploadBytes(storageRef, editProfileImage).then((snapshot) => {
+        getDownloadURL(storageRef).then((url)=>{
+          profileUrl = url;
+        }).then(()=>{
+          setAccount();
+        })
+      });
+    } else {
+      setAccount();
+    }
+
+    
+  }
+  const setAccount = async () => {
     let accountData={};
     await createUserWithEmailAndPassword(auth, settingData.email, settingData.password)
     .then((userCredential) => {
@@ -18,25 +41,20 @@ const SignUpButton = ({usernameState}) => {
     })
     .then(async ()=>{
       try {
-        console.log('settingData',settingData);
-        console.log('accountData', accountData);
         await setDoc(doc(db, "userData",settingData.email), {
           userUid:accountData.uid,
           username: settingData.username,
           userEmail: settingData.email,
-          userId: `userId#${accountData.uid}`,
-          userProfile:'no-data',
+          userId: `userId@${accountData.uid}`,
+          userProfile:profileUrl?profileUrl:'no-data',
           userFriends:[],
           userChatRooms:[],
         });
-        //console.log("Document written with ID: ", docRef.id);
         navigate('/login')
       } catch (e) {
-        console.error("Error adding document: ", e);
+        console.log(e)
       }
     })
-    
-
   }
 
   if(usernameState){

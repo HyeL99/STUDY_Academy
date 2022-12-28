@@ -1,34 +1,30 @@
-import { collection, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import uuid from 'react-uuid';
 import { db } from '../firebase';
+import { handleUserDataAction } from '../redux/action/userDataAction';
+import { BsChatFill } from 'react-icons/bs';
+import { RiDeleteBack2Fill } from 'react-icons/ri';
 
-const FriendsCard = ({userData}) => {
+const FriendsCard = ({userData,deleteMode}) => {
   let chatroomList = useSelector(state => state.userDataList.chatrooms);
   const accountData = JSON.parse(localStorage.getItem('accountData'))
+  let data = JSON.parse(localStorage.getItem('accountData')).userFriends;
+  let friendsList = [];
+  const dispatch = useDispatch();
 
-  const qChatrooms =  query(collection(db,"chatrooms"));
-
-  //채팅방 추가시 데이터 갱신 코드 추가
-  const unsubscribeChatrooms = onSnapshot(qChatrooms, (querySnapshot) => {
-    let chatrooms=[];
-    querySnapshot.forEach((doc)=>{return chatrooms = [...chatrooms, doc.data()]});
-    chatroomList = chatrooms
-    console.log('chatroom 업데이트',chatrooms);
-  })
+  if(data?.length > 0){
+    friendsList = data;
+  }
 
   const navigate = useNavigate();
 
-  console.log(chatroomList);
   const goToChattingRoom = async () => {
-    console.log(userData);
     let chattingRoomItem = null;
     for(let chatroom of chatroomList){
-      console.log('chatroom',chatroom);
       let chatroomUsers = chatroom.chatroomUsersId;
-      console.log(chatroomUsers);
       let hasAccount = chatroomUsers.includes(accountData.userId)
       let hasUser = chatroomUsers.includes(userData.userId)
       if( hasAccount && hasUser){
@@ -37,32 +33,64 @@ const FriendsCard = ({userData}) => {
     }
 
     if(chattingRoomItem){
-      console.log('채팅방 있음',chattingRoomItem);
       navigate(`/chatting-room/${chattingRoomItem.chatroomId}`)
     } else {
-      console.log('채팅방 없음',chattingRoomItem);
       const geteduuid = uuid();
-      console.log(geteduuid);
       try{
-        await setDoc(doc(db, "chatrooms",`chatroom#${geteduuid}`), {
-        chatroomId:`chatroom#${geteduuid}`,
-        chatroomUsersId:[accountData.userId,userData.userId]
-      });
+        await setDoc(doc(db, "chatrooms",`chatroom@${geteduuid}`), {
+        chatroomId:`chatroom@${geteduuid}`,
+        chatroomUsersId:[accountData.userId,userData.userId],
+        recentMessage:{}
+        });
+        navigate(`/chatting-room/chatroom@${geteduuid}`)
       } catch(e){
         console.log(e);
       }
     }
+  }
+  const deleteFriend = async() => {
+    let deleteResult = window.confirm(`정말 ${userData?.username}님을 삭제하시겠습니까?`);
+    let myData = JSON.parse(localStorage.getItem('accountData'))
+    if(deleteResult){
+      let resultList = [...friendsList];
+      resultList.map((item, index) => {
+        if(item === userData?.userId){
+          resultList.splice(index, 1);
+        }
+      })
+      dispatch(handleUserDataAction.updateAccount(myData,resultList))
+      let saveData = {...myData}
+      saveData.userFriends = resultList;
+      localStorage.setItem('accountData',JSON.stringify(saveData))
+    }
+  }
 
+  //상대 계정 탈퇴시 보여주지 않음
+  if(!userData){
+    return
   }
 
   return (
-    <div className='friendsCard' onClick={goToChattingRoom}>
+    <div className='friendsCard' onClick={deleteMode?deleteFriend:goToChattingRoom}>
       <div className="right">
-        <div className="cardProfileWrap"></div>
+        {userData?.userProfile === 'no-data'?
+          <div className="cardProfileWrap"></div>:
+          <div className="cardProfileWrap" style={{backgroundImage:`url(${userData?.userProfile})`,backgroundColor:'white'}}></div>
+        }
         <div className="nickname">{userData?.username}</div>
       </div>
       <div className="left">
-        채팅하러가기
+        {deleteMode?(
+          <div className="warp">
+            <RiDeleteBack2Fill />
+            <span className="ex">친구 삭제</span>
+          </div>
+        ):(
+          <div className="warp">
+            <BsChatFill />
+            <span className="ex">채팅하러 가기</span>
+          </div>
+        )}
       </div>
     </div>
   )

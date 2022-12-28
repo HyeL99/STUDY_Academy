@@ -1,5 +1,6 @@
 #homePage{
   padding-left: 50px;
-  #friendsPage{
+  @media (max-width:600px) {
+    padding-left: 30px;
   }
 }

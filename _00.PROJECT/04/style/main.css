@@ -428,7 +428,8 @@ body {
 #project #projectContainer #project02,
 #project #projectContainer #project03,
 #project #projectContainer #project04,
-#project #projectContainer #project05 {
+#project #projectContainer #project05,
+#project #projectContainer #project06 {
   box-sizing: border-box;
   padding: 3rem 0 12rem;
   height: 100vh;
@@ -437,7 +438,8 @@ body {
 #project #projectContainer #project02 .imgWrap,
 #project #projectContainer #project03 .imgWrap,
 #project #projectContainer #project04 .imgWrap,
-#project #projectContainer #project05 .imgWrap {
+#project #projectContainer #project05 .imgWrap,
+#project #projectContainer #project06 .imgWrap {
   padding: 3rem 2rem 2rem 0;
   position: relative;
   display: flex;
@@ -448,7 +450,8 @@ body {
 #project #projectContainer #project02 .imgWrap .links,
 #project #projectContainer #project03 .imgWrap .links,
 #project #projectContainer #project04 .imgWrap .links,
-#project #projectContainer #project05 .imgWrap .links {
+#project #projectContainer #project05 .imgWrap .links,
+#project #projectContainer #project06 .imgWrap .links {
   border-radius: 1rem 1rem 0 0;
   position: absolute;
   left: 0;
@@ -462,7 +465,8 @@ body {
 #project #projectContainer #project02 .imgWrap .links a,
 #project #projectContainer #project03 .imgWrap .links a,
 #project #projectContainer #project04 .imgWrap .links a,
-#project #projectContainer #project05 .imgWrap .links a {
+#project #projectContainer #project05 .imgWrap .links a,
+#project #projectContainer #project06 .imgWrap .links a {
   display: inline-block;
   line-height: 3rem;
   padding: 0 1rem;
@@ -472,14 +476,16 @@ body {
 #project #projectContainer #project02 .imgWrap .links a:hover,
 #project #projectContainer #project03 .imgWrap .links a:hover,
 #project #projectContainer #project04 .imgWrap .links a:hover,
-#project #projectContainer #project05 .imgWrap .links a:hover {
+#project #projectContainer #project05 .imgWrap .links a:hover,
+#project #projectContainer #project06 .imgWrap .links a:hover {
   color: var(--color-main);
 }
 #project #projectContainer #project01 .imgWrap .preview,
 #project #projectContainer #project02 .imgWrap .preview,
 #project #projectContainer #project03 .imgWrap .preview,
 #project #projectContainer #project04 .imgWrap .preview,
-#project #projectContainer #project05 .imgWrap .preview {
+#project #projectContainer #project05 .imgWrap .preview,
+#project #projectContainer #project06 .imgWrap .preview {
   flex: 1 1 auto;
   background-color: rgba(190, 190, 220, 0.6);
   width: 100%;
@@ -490,7 +496,8 @@ body {
 #project #projectContainer #project02 .imgWrap .preview img,
 #project #projectContainer #project03 .imgWrap .preview img,
 #project #projectContainer #project04 .imgWrap .preview img,
-#project #projectContainer #project05 .imgWrap .preview img {
+#project #projectContainer #project05 .imgWrap .preview img,
+#project #projectContainer #project06 .imgWrap .preview img {
   width: 100%;
   height: 100%;
   object-fit: contain;

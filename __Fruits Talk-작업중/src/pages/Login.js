@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth, db } from '../firebase';
+import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import './Login.scss'
-import { getDataListAction } from '../redux/action/userDataListAction';
+import './Login.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAccountData, setUserEmail } from '../redux/reducer/userDataReducer';
-import { collection, onSnapshot, query } from 'firebase/firestore';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,14 +15,12 @@ const Login = () => {
   const dispatch = useDispatch();
 
   let userList = useSelector(state => state.userDataList.userData);
-  console.log(userList)
 
   const SetValues = (e) => {
     if(e.target.id === 'loginEmail'){
       setEmail(e.target.value);
     } else if(e.target.id === 'loginPassword') {
       setPassword(e.target.value);
-      console.log(password);
     } else if(e.target.id === 'checkPassword') {
       setCheckPassword(e.target.value);
     }
@@ -59,7 +55,6 @@ const Login = () => {
 
   const doLogin = () => {
     let duplication = userList?.filter(item => item.userEmail === email)
-    console.log(duplication[0])
     if(duplication.length>0){
       signInWithEmailAndPassword(auth, email, password)
         .then(()=>{
@@ -75,18 +70,18 @@ const Login = () => {
     }
   }
   const doSignUp = () => {
-    let duplication = userList?.filter(item => item.email === email)
-    if(duplication>0){
+    let duplication = userList?.filter(item => item.userEmail
+      === email)
+    if(duplication.length>0){
       alert('이메일이 중복됩니다.')
     } else {
-      console.log(email, password)
       dispatch(setUserEmail({email:email, password:password}))
       navigate('/signup');
     }
   }
   return (
     <div id='loginPage'>
-      <h2>Fruits Talk</h2>
+      <h2>Red Talk</h2>
       <form onSubmit={(e)=>onLogin(e)}>
         <input type="email" id="loginEmail" placeholder='이메일을 입력해주세요.' value={email} onChange={(e)=>SetValues(e)} />
         <input type="password" id="loginPassword" placeholder='비밀번호를 입력해주세요.' value={password} onChange={(e)=>SetValues(e)} />

@@ -1,7 +1,5 @@
-import { collection, onSnapshot, query } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { db } from '../firebase';
 import { handleUserDataAction } from '../redux/action/userDataAction';
 
 const FindFriendCard = ({friendItem}) => {
@@ -21,11 +19,9 @@ const FindFriendCard = ({friendItem}) => {
     let userId = e.target.id;
     if(!friendsList.includes(userId)){
       friendsList.push(userId);
-      console.log(userData, friendsList);
       dispatch(handleUserDataAction.updateAccount(userData,friendsList));
 
       let saveData = {...userData}
-      console.log(saveData);
       saveData.userFriends = friendsList;
       localStorage.setItem('accountData',JSON.stringify(saveData))
       setFriend(true);
@@ -39,7 +35,6 @@ const FindFriendCard = ({friendItem}) => {
         resultList.splice(index, 1);
       }
     })
-    console.log(userData, resultList);
     dispatch(handleUserDataAction.updateAccount(userData,resultList))
     let saveData = {...userData}
     saveData.userFriends = resultList;
@@ -55,11 +50,13 @@ const FindFriendCard = ({friendItem}) => {
 
   },[friendsList, friendItem.userId, userData,data])
   
-  console.log(friend);
   return (
     <div className='findFriendCard'>
       <div className="right">
-        <div className="cardProfileWrap"></div>
+        {friendItem?.userProfile === 'no-data'?
+          <div className="cardProfileWrap"></div>:
+          <div className="cardProfileWrap" style={{backgroundImage:`url(${friendItem?.userProfile})`,backgroundColor:'white'}}></div>
+        }
         <div className="contents">
           <div className="nickname">{friendItem?.username}</div>
           <div className="email">{friendItem?.userEmail}</div>
@@ -70,7 +67,6 @@ const FindFriendCard = ({friendItem}) => {
           <button id={friendItem?.userId} onClick={(e) => removeFriend(e)}>친구 취소</button>:
           <button id={friendItem?.userId} onClick={(e) => addFriend(e)}>친구 추가</button>
         }
-        
       </div>
     </div>
   )

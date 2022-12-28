@@ -28,11 +28,12 @@
   font-family: 'GowunBatang-Regular';
 }
 html, body{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--color-main);
   color: var(--color-text);
   font-family: 'GowunBatang-Regular';
+  word-break: keep-all;
 }
 a{
   color: inherit;
@@ -64,4 +65,8 @@ textarea{
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
   }
+}
+
+.ex{
+  font-size: 0;
 }

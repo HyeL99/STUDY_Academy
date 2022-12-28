@@ -2,6 +2,7 @@
   padding: 0.5rem 0;
   width:100%;
   display: flex;
+  flex-shrink: 0;
   .cardContentsWrap{
     width: 70%;
     max-width: 600px;
@@ -12,19 +13,36 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background-color: var(--color-gray);
       margin: 0 1rem;
+      background:{
+        color: var(--color-gray);
+        repeat:no-repeat;
+        position: center;
+        size: cover;
+      }
     }
     .messageArea{
       display: flex;
-      .message{
-        background-color: var(--color-gray);
-        color:black;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
+      .messageWrap{
         flex-grow: 1;
-        cursor: default;
+        .name{
+          color:black;
+          margin-bottom: 5px;
+          padding-left: 0.5rem;
+        }
+        .message{
+          background-color: var(--color-gray);
+          color:black;
+          padding: 0.2rem 1rem;
+          border-radius: 0.5rem;
+          cursor: default;
+          span{
+            display: block;
+            line-height: 1.5em;
+          }
+        }
       }
+      
       .timeArea{
         flex-shrink: 0;
         align-self: flex-end;
@@ -39,15 +57,22 @@
     justify-content: flex-end;
     .cardContentsWrap{
       flex-direction: row-reverse;
+      padding-right:1rem;
       .profileWrap{
-        background-color: var(--color-text);
+        display: none;
       }
       .messageArea{
         flex-direction: row-reverse;
-        .message{
-          background-color: var(--color-text);
-          color:var(--color-main);
+        .messageWrap{
+          .name{
+            display: none;
+          }
+          .message{
+            background-color: var(--color-text);
+            color:var(--color-main);
+          }
         }
+        
         .timeArea{
           color:var(--color-text);
         }

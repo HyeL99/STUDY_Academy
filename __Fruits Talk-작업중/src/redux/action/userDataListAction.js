@@ -1,6 +1,6 @@
 import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../firebase";
-import { getDataFail, getDataRequest, getDataSuccess, updateChatrooms, updateMessages, updateUserData, updateUserLoginData } from "../reducer/userDataListReducer";
+import { getDataFail, getDataRequest, getDataSuccess } from "../reducer/userDataListReducer";
 
 const getUserData = () => {
   let userData = [];
@@ -29,32 +29,22 @@ const getUserData = () => {
 
       messages.forEach((item) => item.timestamp = item.timestamp.toDate().toString())
 
-      console.log(userData, chatrooms, messages, userLoginData);
-
       const unsubscribeUserData = onSnapshot(qUserData, (querySnapshot) => {
         userData=[];
         querySnapshot.forEach((doc)=>{return userData = [...userData, doc.data()]});
-        //dispatch(updateUserData({userData}))
-        console.log('userData 업데이트',userData);
       })
       const unsubscribeChatrooms = onSnapshot(qChatrooms, (querySnapshot) => {
         chatrooms=[];
         querySnapshot.forEach((doc)=>{return chatrooms = [...chatrooms, doc.data()]});
-        //dispatch(updateChatrooms({chatrooms}))
-        console.log('chatroom 업데이트',chatrooms);
       })
       const unsubscribeMessages = onSnapshot(qMessages, (querySnapshot) => {
         messages=[];
         querySnapshot.forEach((doc)=>{return messages = [...messages, doc.data()]});
         messages.forEach((item) => item.timestamp = item.timestamp.toDate().toString())
-        //dispatch(updateMessages({messages}))
-        console.log('message 업데이트',messages);
       })
       const unsubscribeUserLoginData = onSnapshot(qUserLoginData, (querySnapshot) => {
         userLoginData=[];
         querySnapshot.forEach((doc)=>{return userLoginData = [...userLoginData, doc.data()]});
-        //dispatch(updateUserLoginData({userLoginData}))
-        console.log('logindata 업데이트',userLoginData);
       })
 
       dispatch(getDataSuccess({
@@ -63,8 +53,8 @@ const getUserData = () => {
         messages:messages,
         userLoginData:userLoginData,
       }))
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.log(e);
       dispatch(getDataFail())
     }
   }

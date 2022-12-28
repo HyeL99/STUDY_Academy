@@ -12,7 +12,7 @@ $('.home').on('wheel',function(e){
   if(wheel > 0){  console.log('down')
     let currentPosition = $('.home').scrollTop();
     let nextPosition = '';
-    if(currentPosition > winH*4+10){
+    if(currentPosition > winH*5+10){
       nextPosition = currentPosition + winH + $('#projectHeader').innerHeight();
     } else {
       nextPosition = currentPosition + winH;
@@ -42,7 +42,7 @@ $('#openMenu button').on('click',function(){
   page = Number($(this).attr('data-page'))-1;
   $('#openMenu').removeClass('openMenu');
   $('#moonMenu').removeClass('openMenu');
-  if(page>=6){
+  if(page>=7){
     $('.home').animate({scrollTop:winH * page + $('#projectHeader').innerHeight()})
   } else {
     $('.home').animate({scrollTop:winH * page})

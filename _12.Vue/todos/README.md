@@ -1,24 +1,9 @@
 # todos
 
-## Project setup
-```
-npm install
-```
+<https://hyel-vue-todo.netlify.app/>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+vue.js를 이용한 투두리스트를 만들었습니다.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+리스트는 로컬스토리지로 관리되며, 리스트 아이템 추가, 삭제 기능을 구현하였습니다.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+입력한 값이 없거나 공백일 경우 입력한 값이 없다는 경고 팝업창을 띄우도록 하였습니다.

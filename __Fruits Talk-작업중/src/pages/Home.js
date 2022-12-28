@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import AddFriend from './AddFriend'
-import ChatList from './ChatList'
 import FriendsList from './FriendsList'
-import Setting from './Setting'
 import './Home.scss'
-import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { getDataListAction } from '../redux/action/userDataListAction'
 
 const Home = () => {
-  
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getDataListAction.getUserData())
+  },[])
   return (
     <div id='homePage'>
       <Navbar />

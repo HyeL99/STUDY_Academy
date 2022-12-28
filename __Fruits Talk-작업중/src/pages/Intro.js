@@ -7,7 +7,7 @@ const Intro = () => {
     <Link to='/login'>
       <div id='introContainer'>
         <div className="logoWrap"></div>
-        <h1>Fruits Talk</h1>
+        <h1>Red Talk</h1>
         <span>TAB TO START</span>
       </div>
     </Link>

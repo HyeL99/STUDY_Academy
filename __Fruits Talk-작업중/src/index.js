@@ -13,7 +13,6 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-
 /*
   설치한 것들
 
@@ -38,6 +37,10 @@ root.render(
     $ yarn add react-redux
 
   == react-uuid ==
-  https://www.npmjs.com/package/react-uuid
-  $ npm i react-uuid
+    https://www.npmjs.com/package/react-uuid
+    $ npm i react-uuid
+
+  == 리액트 아이콘 ==  
+    https://react-icons.github.io/react-icons/
+    $ npm install react-icons --save
 */

@@ -27,7 +27,7 @@
   }
   .chattingPlace{
     flex-grow: 1;
-    overflow: auto;
+    overflow-y: auto;
   }
   #chattingFooter{
     padding: 0.5rem 0.5rem;
@@ -55,7 +55,7 @@
           color: rgba(255,255,255,0.7)
         }
       }
-      input{
+      button{
         width: 50px;
         background-color: transparent;
         border: 0;

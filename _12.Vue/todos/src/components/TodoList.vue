@@ -1,13 +1,15 @@
 <template>
   <div id='todoList'>
     <ul>
-      <li v-for="(todoItem,index) in propsdata" :key='index' class="shadow">
-        <i class="checkBtn fa-regular fa-square-check"></i>
-        <span class="text">{{todoItem}}</span>
-        <button class="removeBtn" @click='removeTodo(todoItem,index)'>
-          <i class="fa-solid fa-eraser"></i>
-        </button>
-      </li>
+      <TransitionGroup name="list" tag="ul">
+        <li v-for="(todoItem,index) in propsdata" :key='index' class="shadow listItem">
+          <i class="checkBtn fa-regular fa-square-check"></i>
+          <span class="text">{{todoItem}}</span>
+          <button class="removeBtn" @click='removeTodo(todoItem,index)'>
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+        </li>
+      </TransitionGroup>
     </ul>
   </div>
 </template>
@@ -75,5 +77,16 @@ li{
   border: 0;
   background: none;
   cursor: pointer;
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

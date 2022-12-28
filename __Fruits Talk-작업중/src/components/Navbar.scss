@@ -11,6 +11,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media (max-width:600px) {
+    width: 30px;
+  }
   .top{
     display: flex;
     flex-direction: column;
@@ -23,5 +26,8 @@
     line-height: 2;
     background-color: var(--color-text);
     color: var(--color-main);
+    @media (max-width:600px) {
+      width: 30px;
+    }
   }
 }
