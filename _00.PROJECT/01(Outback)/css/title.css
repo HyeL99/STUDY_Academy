@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+#title {
+  padding-top: 100px;
+  position: relative;
+}
+#title .inner {
+  width: 100%;
+  padding: 0;
+}
+#title .inner img {
+  max-height: calc(100vh - 100px);
+  object-fit: cover;
+  object-position: top center;
+}
+#title #pagingWrap {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+}
+#title #pagingWrap button {
+  font-size: 1.5rem;
+  padding: 2px 5px;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  margin: 0 10px;
+}
+#title #pagingWrap .numbers {
+  display: inline-block;
+}
+#title #pagingWrap .numbers span {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+}

@@ -1,0 +1,53 @@
+메뉴
+- brand
+OUTBACK STORY  	-brand01.html
+BEEF STORY  	-brand02.html
+STEAK ACADEMY  	-brand03.html
+OUTBACK CSR  	-brand04.html
+PRESS CENTER  	-brand05.html
+
+- memu
+TOMAHAWK PREMIUM CHOICE  -menu01.html
+TOMAHAWK STEAK	     -menu02.html
+T-BONE STEAK		     -menu03.html
+BLACK LABEL STEAKS	     -menu04.html
+STEAK ＆ FAVORITES	     -menu05.html
+LUNCH SET		     -menu06.html
+PASTA ＆ SALADS		     -menu07.html
+WINES			     -menu08.html
+DESSERTS ＆ OTHERS    	     -menu09.html
+DELIVERY			     -menu10.html
+LUNCH BOX		     -menu11.html
+
+- membership
+MEMBERSHIP BENEFIT	-membership01.html
+BOOMERANG VIP		-membership02.html
+
+- benefit
+CREDIT CARDS	-benefit01.html
+SKT＆KT		-benefit02.html
+POINT PAYMENT	-benefit03.html
+VOUCHER	-benefit04.html
+EVENT		-benefit05.html
+
+- academy
+Steak Cooking Class Ⅰ	-academy01.html
+Steak Cooking Class Ⅱ	-academy02.html
+Culinary Class		-academy03.html
+Wine Class		-academy04.html
+
+- store			-store.html
+
+resolve.html
+savePoint.html
+
+개인정보처리방침		-etc01.html
+홈페이지 이용약관		-etc02.html
+위치정보 이용약관		-etc03.html
+윤리경영			-etc04.html
+공지사항			-etc05.html
+사이트맵			-etc06.html
+
+아웃백 소개		- aboutOutback.html
+채용 안내			- recruit.html
+신규 입점 제의		- newStore.html

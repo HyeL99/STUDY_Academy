@@ -1,0 +1,7 @@
+.slick-dots {
+    bottom: 0;
+    display: none !important;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
