@@ -27,6 +27,8 @@
   --color-point: #71b2ff;
   --color-bg: #eee;
   --color-white: #fff;
+  --color-text: #666;
+  --color-footer: #8b8b8b;
 }
 *{
   padding:0;
@@ -42,6 +44,16 @@ html, body{
   height:100%;
   background-color: var(--color-bg);
   font-family: 'NanumBarunGothic', sans-serif;
+  color:var(--color-text);
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 700;
+}
+ul,li{
+  list-style: none;
+}
+img{
+  width: 100%;
 }
 a{
   text-decoration: none;
@@ -58,4 +70,28 @@ button{
 }
 .shadowBottom{
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.scroll{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+.scrollBottom{
+  scrollbar-color: var(--color-main) rgba(0,0,0,0.3);
+  scrollbar-width: thin;
+  padding-bottom: 1rem;
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-main);
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
+  }
 }

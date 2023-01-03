@@ -15,6 +15,7 @@ const Setting = () => {
 
   let currentUsername = currentAccount.username;
   const [editUsername, setEditUsername] = useState(currentAccount.username);
+  const gettedUserData = JSON.parse(localStorage.getItem('accountData'));
   let userData = JSON.parse(localStorage.getItem('accountData'))
   const [editProfileImage, setEditProfileImage] = useState(currentAccount.userProfile)
 
@@ -23,18 +24,19 @@ const Setting = () => {
     dispatch(handleUserDataAction.updateUsername(userData,editUsername));
     currentAccount.username = editUsername;
     localStorage.setItem('accountData',JSON.stringify(currentAccount))
-
-    const storageRef = ref(storage, `images/${editProfileImage.name}`);
-
-    uploadBytes(storageRef, editProfileImage).then((snapshot) => {
-      getDownloadURL(storageRef).then((url)=>{
-        dispatch(handleUserDataAction.updateProfileImage(userData,url));
-        currentAccount.userProfile = url;
-        localStorage.setItem('accountData',JSON.stringify(currentAccount))
-      })
-    });
     setEditUsername('')
-    setEditProfileImage('')
+
+    if(gettedUserData.userProfile !== editProfileImage){
+      const storageRef = ref(storage, `images/${editProfileImage.name}`);
+      uploadBytes(storageRef, editProfileImage).then((snapshot) => {
+        getDownloadURL(storageRef).then((url)=>{
+          dispatch(handleUserDataAction.updateProfileImage(userData,url));
+          currentAccount.userProfile = url;
+          localStorage.setItem('accountData',JSON.stringify(currentAccount))
+        })
+      });
+      setEditProfileImage('')
+    }    
   }
 
   const logOut = () => {

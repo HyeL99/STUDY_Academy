@@ -33,10 +33,6 @@ const FriendsList = () => {
   const goToAddFriendPage = () => {
     navigate('/add-friend')
   }
-  const deleteFriendModeOn = () => {
-    setDeleteFriendMode(!deleteFriendMode)
-  }
-
 
   return (
     <div id='friendsPage'>

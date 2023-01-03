@@ -9,6 +9,7 @@ import SignUpGetInterest from './pages/SignUpGetInterest';
 import Search from './pages/Search';
 import Category from './pages/Category';
 import MyPage from './pages/MyPage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/category' element={<Category />} />
         <Route path='/mypage/:id' element={<MyPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

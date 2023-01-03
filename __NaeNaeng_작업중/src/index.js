@@ -46,4 +46,11 @@ root.render(
   == 리액트 아이콘 ==  
     https://react-icons.github.io/react-icons/
     $ npm install react-icons --save
+
+  == 리액트 슬릭(캐러셀) ==  
+    https://react-slick.neostack.com/
+    $ yarn add react-slick
+    $ npm install slick-carousel --save
+    import "slick-carousel/slick/slick.css"; 
+    import "slick-carousel/slick/slick-theme.css";
 */

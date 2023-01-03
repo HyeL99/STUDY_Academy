@@ -1,0 +1,21 @@
+#footer{
+  background-color: var(--color-footer);
+  color: var(--color-white);
+  .inner{
+    nav{
+      padding: 40px 0;
+      a{}
+    }
+    p{
+      font-weight: 700;
+      padding-bottom: 40px;
+      font-size: 0.8rem;
+      span{
+        padding-top: 1rem;
+        display: block;
+        opacity: 0.6;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}
