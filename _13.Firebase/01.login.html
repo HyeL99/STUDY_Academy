@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파이어베이스</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+      background:linear-gradient(45deg,rgb(107, 79, 158),rgb(211, 211, 255));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .wrap{
+      width: 80vw;
+      margin: 0 auto;
+      background-color: rgba(220, 244, 255,0.7);
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+    h1{
+      margin-bottom: 3rem;
+      text-align: center;
+      //color: rgb(106, 83, 127);
+    }
+    form input{
+      display: block;
+      width: 100%;
+      padding: 1rem 1rem;
+      border:0;
+      border-radius: 1rem;
+      margin-top: 1.5rem;
+      outline: 0;
+      font-size: 1rem;
+    }
+    form input:last-child{
+      margin: 3rem 0 5rem;
+      background-color: rgb(168, 181, 231);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5) ;
+    }
+    form:first-of-type input:last-child{
+      background-color: rgb(96, 112, 176);
+    }
+    form input:last-child:hover{
+      box-shadow:0 2px 2px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>로그인</h1>
+    <form>
+      <input type="email" name="signInEmail" id="signInEmail" placeholder="이메일을 입력해주세요.">
+      <input type="password" name="signInPassword" id="signInPassword" placeholder="비밀번호를 입력해주세요. (6자 이상)" minlength="6">
+      <input type="submit" value="로그인" id="signInBtn">
+    </form>
+    <h1>회원가입</h1>
+    <form>
+      <input type="email" name="signUpEmail" id="signUpEmail" placeholder="이메일을 입력해주세요.">
+      <input type="password" name="signUpPassword" id="signUpPassword" placeholder="비밀번호를 입력해주세요. (6자 이상)" minlength="6">
+      <input type="submit" value="회원가입" id="signUpBtn">
+    </form>
+  </div>
+  
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    //import { getFirestore } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAHFHsBJgfdA88_xkL2-3Y_biI4g7MgBqU",
+      authDomain: "login-5f33b.firebaseapp.com",
+      projectId: "login-5f33b",
+      storageBucket: "login-5f33b.appspot.com",
+      messagingSenderId: "947602879819",
+      appId: "1:947602879819:web:b12fdaedef2f84deffa4ce",
+      measurementId: "G-3CB3X9RPYS"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    //const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    document.querySelector('#signInBtn').addEventListener('click',(e) => {
+      e.preventDefault();
+      const signInEmail = document.querySelector('#signInEmail').value;
+      const signInPassword = document.querySelector('#signInPassword').value;
+      document.querySelector('#signInEmail').value = null;
+      document.querySelector('#signInPassword').value = null;
+      console.log('signIn',signInEmail,signInPassword);
+      signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage,errorCode)
+      });
+    })
+
+    document.querySelector('#signUpBtn').addEventListener('click',(e) => {
+      e.preventDefault();
+      const signUpEmail = document.querySelector('#signUpEmail').value;
+      const signUpPassword = document.querySelector('#signUpPassword').value;
+      document.querySelector('#signUpEmail').value = null;
+      document.querySelector('#signUpPassword').value = null;
+      console.log('signUp',signUpEmail,signUpPassword);
+      createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage,errorCode)
+      });
+    })
+  </script>
+</body>
+</html>

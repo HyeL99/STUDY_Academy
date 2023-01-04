@@ -11,5 +11,8 @@
     "react-router-dom": "^6.6.1",
     "sass": "^1.57.1",
     "server": "^1.0.37"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
   }
 }

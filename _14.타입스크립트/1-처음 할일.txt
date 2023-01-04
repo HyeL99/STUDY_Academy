@@ -1,0 +1,15 @@
+폴더 생성후
+$ yarn init -y
+$ yarn add typescript ts-node	:ts-node   -컴파일 하지 않고도 실행할 수 있게 해줌
+$ yarn run tsc --init   :config파일 생김 (환경설정)
+$ yarn run tsc	:js파일로 컴파일
+
+=js로 컴파일 해줄때=
+config.json내부 
+    // "outDir": "./",    이 부분 "outDir":"./dist"     -새로운 폴더 만들고 그 안에 js로 저장
+
+node ./dist/practice.js   or) nodemon ./dist/practice.js
+
+== ts바로 사용  ==
+yarn run ts-node ./src/05_TypeAlias.ts
+  
